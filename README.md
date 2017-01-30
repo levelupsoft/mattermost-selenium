@@ -1,8 +1,16 @@
 Mattermost Selenium 
 ==========================
 
-TODO - how to use guide
+Setup for Mac:
 
+1. Make sure you have the latest versions of Firefox and Chrome installed.
+1. Install the Selenium IDE from http://www.seleniumhq.org/
+1. Install java JDK 1.8 from  http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+1. Set `export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home` in your `.bash_profile`
+1. Install Maven from http://maven.apache.org/install.html
+1. Verify Maven in installed correctly with `mvn -version`
+1. Start a local Mattermost server
+1. Run `make` 
 
 Selenium IDE Setup:
 
