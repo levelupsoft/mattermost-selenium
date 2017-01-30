@@ -14,7 +14,7 @@ Setup for Mac:
 
 Selenium IDE Setup:
 
-`Options` > `Options ...`` > `Format`
+`Options` > `Options ...` > `Format`
 
 Select `Java / JUnit 4 / WebDriver`
 
