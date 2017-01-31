@@ -94,3 +94,12 @@ make
 ```
 
 
+# Selenium Server
+
+To use Selenium Server you can use the docker-compose file and this will spin up the Selenium Server and two nodes (one Chrome and one Firefox). With that you dont need to install Chrome or Firefox in your local development.
+
+To run (assuming you have docker installed):
+
+```
+$ docker-compose up
+```
