@@ -2,8 +2,8 @@
 
 sudo systemctl stop mattermost
 
-tar czPf ~/logs/archive-pre-$BUILD_ID.tar.gz ~/mattermost/logs
-cp ~/mattermost/logs/mattermost.log $WORKSPACE/mm-latest.log
+tar czPf ~/logs/archive-pre-$0.tar.gz ~/mattermost/logs
+cp ~/mattermost/logs/mattermost.log $1/mm-latest.log
 
 rm -f mattermost.tar.gz
 
@@ -22,5 +22,16 @@ mkdir -p ~/mattermost
 tar -C ~/ -xzf mattermost.tar.gz
 
 cp ~/config.json ~/mattermost/config/config.json
+
+cd ~/mattermost
+./bin/platform reset --confirm true
+
+./bin/platform user create --email test@test.com --username test --password passwd
+./bin/platform user create --email test2@test.com --username test2 --password passwd
+./bin/platform user create --email test3@test.com --username test3 --password passwd
+./bin/platform user create --email test4@test.com --username test4 --password passwd
+
+./bin/platform team create --name ui-automation --display_name "UI Automation" --email "test2@test.com"
+./bin/platform team add ui-automation test@test.com test2@test.com test3@test.com test4@test.com
 
 sudo systemctl start mattermost

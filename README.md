@@ -1,7 +1,7 @@
 Mattermost Selenium 
 ==========================
 
-Setup for Mac:
+# Setup for Mac:
 
 1. Make sure you have the latest versions of Firefox and Chrome installed.
 1. Install the Selenium IDE from http://www.seleniumhq.org/
@@ -12,7 +12,7 @@ Setup for Mac:
 1. Start a local Mattermost server
 1. Run `make` 
 
-Selenium IDE Setup:
+# Selenium IDE Setup:
 
 `Options` > `Options ...` > `Format`
 
@@ -64,3 +64,16 @@ Indent:
 ```
 4 spaces
 ```
+
+# Teams and Users created by the setup script
+Team Name: ui-automation
+Test Account 1 (System Admin): Email: `test@test.com` | Password: `passwd`
+Test Account 2 (Team Admin): Email: `test2@test.com` | Password: `passwd`
+Test Account 3 (Normal): Email: `test3@test.com` | Password: `passwd`
+Test Account 4 (Normal): Email: `test4@test.com` | Password: `passwd`
+
+Also all the accounts are set to bypass the tutorial.
+
+
+
+
