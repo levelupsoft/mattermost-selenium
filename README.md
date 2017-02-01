@@ -79,5 +79,18 @@ Test Account 4 (Normal): Email: `test4@test.com` | Password: `passwd`
 Also all the accounts are set to bypass the tutorial.
 
 
+# Build machine
+1. Run the script `setup-test-machine.sh` to configure the machine
+2. Our jenkins job runs
+
+```
+# setup the server for the run
+bash -ex ./setup-for-run.sh
+
+export DISPLAY=:99
+
+# run both chrome and firefox automated UI tests
+make
+```
 
 
