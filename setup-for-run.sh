@@ -21,6 +21,6 @@ mkdir -p ~/mattermost
 
 tar -C ~/ -xzf mattermost.tar.gz
 
-mv ~/config.json ~/mattermost/config/config.json
+cp ~/config.json ~/mattermost/config/config.json
 
 sudo systemctl start mattermost
