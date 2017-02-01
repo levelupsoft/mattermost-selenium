@@ -34,4 +34,7 @@ cd ~/mattermost
 ./bin/platform team create --name ui-automation --display_name "UI Automation" --email "test2@test.com"
 ./bin/platform team add ui-automation test@test.com test2@test.com test3@test.com test4@test.com
 
+mysql -u mmuser -ppasswd -h localhost -e "UPDATE Preferences SET Value = '999' WHERE Category = 'tutorial_step';" mattermost
+
+
 sudo systemctl start mattermost

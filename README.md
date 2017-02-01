@@ -67,9 +67,13 @@ Indent:
 
 # Teams and Users created by the setup script
 Team Name: ui-automation
+
 Test Account 1 (System Admin): Email: `test@test.com` | Password: `passwd`
+
 Test Account 2 (Team Admin): Email: `test2@test.com` | Password: `passwd`
+
 Test Account 3 (Normal): Email: `test3@test.com` | Password: `passwd`
+
 Test Account 4 (Normal): Email: `test4@test.com` | Password: `passwd`
 
 Also all the accounts are set to bypass the tutorial.
