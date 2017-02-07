@@ -47,7 +47,7 @@ import org.testng.annotations.Test;
 
 import java.util.regex.Pattern;
 
-public class ${className}IT extends DriverBase {
+public class ${className} extends DriverBase {
 
     @Test
     public void ${methodName}() throws Exception {
