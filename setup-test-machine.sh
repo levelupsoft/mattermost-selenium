@@ -11,6 +11,8 @@ sudo apt-get update
 
 sudo apt-get -y install make
 
+sudo apt-get -y install mailutils
+
 sudo add-apt-repository -y ppa:webupd8team/java
 echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections
 sudo apt-get install -y oracle-java8-installer
@@ -33,9 +35,9 @@ sudo apt-get -y install firefox
 
 sudo apt-get -y install google-chrome-stable
 
-sudo sed -i'' -e 's|exit 0| |g' /etc/rc.local
-echo "Xvfb :99 -ac -screen 0 1920x1080x24 2>&1 >/dev/null &" | sudo tee -a /etc/rc.local
+#sudo sed -i'' -e 's|exit 0| |g' /etc/rc.local
+#echo "Xvfb :99 -ac -screen 0 1920x1080x24 2>&1 >/dev/null &" | sudo tee -a /etc/rc.local
 #echo "export DISPLAY=:99" | sudo tee -a /etc/rc.local
-echo "exit 0" | sudo tee -a /etc/rc.local
+#echo "exit 0" | sudo tee -a /etc/rc.local
 
 # Make sure to install mattermost with on the same machine https://docs.mattermost.com/install/install-ubuntu-1604.html
