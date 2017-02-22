@@ -39,7 +39,7 @@ public class AccountSettingsOpenIT extends DriverBase {
         driver.findElement(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li/a/span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("(//button[@type='button'])[11]"))) break; } catch (Exception e) {}
+        	try { if ("Account Settings".equals(driver.findElement(By.xpath("//body/div[2]/div/div[2]/div/div/div/h4/span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -53,5 +53,5 @@ public class AccountSettingsOpenIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-   }
+    }
 }
