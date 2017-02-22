@@ -44,6 +44,7 @@ public class AccountSettingsOpenIT extends DriverBase {
         }
 
         driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
+        // Thread.sleep(1000);
         // Log out
         driver.findElement(By.id("sidebar-header-dropdown")).click();
         driver.findElement(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[4]/a")).click();
