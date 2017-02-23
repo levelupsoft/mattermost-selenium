@@ -69,7 +69,7 @@ public class DriverBase {
         // }
     }
 
-    public void disableAnnimations() {
+    public void disableAnimations() {
         String script = "var styleEl = document.createElement('style'); " +
                         "styleEl.textContent = '*{ " +
                         "    transition-property: none !important; " +

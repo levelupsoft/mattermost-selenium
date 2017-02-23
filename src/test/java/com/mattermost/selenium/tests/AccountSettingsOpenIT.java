@@ -18,7 +18,7 @@ public class AccountSettingsOpenIT extends DriverBase {
     @Test
     public void testAccountSettingsOpenIT() throws Exception {
         driver.get(baseUrl + "/login");
-        // DisableAnnimations
+        // DisableAnimations
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary"))) break; } catch (Exception e) {}

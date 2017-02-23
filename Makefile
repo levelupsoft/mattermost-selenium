@@ -13,7 +13,7 @@ nuke:
 
 patch-files:
 	sed -i'' -e 's|// Sleep|Thread.sleep(1000);|g' ./src/test/java/com/mattermost/selenium/tests/*.java
-	sed -i'' -e 's|// DisableAnnimations|disableAnnimations();|g' ./src/test/java/com/mattermost/selenium/tests/*.java
+	sed -i'' -e 's|// DisableAnimations|disableAnimations();|g' ./src/test/java/com/mattermost/selenium/tests/*.java
 
 test: patch-files
 	mvn clean verify
