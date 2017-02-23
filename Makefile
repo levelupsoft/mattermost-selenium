@@ -1,4 +1,4 @@
-.PHONY: test test-chrome test-all clean
+.PHONY: test test-chrome test-all clean patch-files
 
 all: test-all
 
@@ -10,17 +10,20 @@ nuke:
 	rm -rf src/test/resources/selenium_standalone_binaries
 	rm -rf src/test/resources/selenium_standalone_zips
 
-test:
+
+patch-files:
+	sed -i'' -e 's|// Sleep|Thread.sleep(1000);|g' ./src/test/java/com/mattermost/selenium/tests/*.java
+	sed -i'' -e 's|// DisableAnnimations|disableAnnimations();|g' ./src/test/java/com/mattermost/selenium/tests/*.java
+
+test: patch-files
 	mvn clean verify
 
-test-chrome:
+test-chrome: patch-files
 	mvn -Dbrowser=chrome clean verify
 
-test-firefox:
+test-firefox: patch-files
 	mvn -Dbrowser=firefox clean verify
 
-test-all: 
-
-	sed -i'' -e 's|// Thread.sleep(1000);|Thread.sleep(1000);|g' ./src/test/java/com/mattermost/selenium/tests/*.java
+test-all: patch-files
 	mvn -Dbrowser=firefox clean verify
 	mvn -Dbrowser=chrome clean verify

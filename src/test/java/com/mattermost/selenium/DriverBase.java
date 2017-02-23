@@ -3,6 +3,7 @@ package com.mattermost.selenium;
 import com.mattermost.selenium.config.DriverFactory;
 import com.mattermost.selenium.listeners.ScreenshotListener;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 
@@ -66,6 +67,29 @@ public class DriverBase {
         // if (!"".equals(verificationErrorString)) {
         //     fail(verificationErrorString);
         // }
+    }
+
+    public void disableAnnimations() {
+        String script = "var styleEl = document.createElement('style'); " +
+                        "styleEl.textContent = '*{ " +
+                        "    transition-property: none !important; " +
+                        "    -o-transition-property: none !important; " +
+                        "    -moz-transition-property: none !important; " +
+                        "    -ms-transition-property: none !important; " +
+                        "    -webkit-transition-property: none !important; " +
+                        "    transform: none !important; " +
+                        "    -o-transform: none !important; " +
+                        "    -moz-transform: none !important; " +
+                        "    -ms-transform: none !important; " +
+                        "    -webkit-transform: none !important; " +
+                        "    animation: none !important; " +
+                        "    -o-animation: none !important; " +
+                        "    -moz-animation: none !important; " +
+                        "    -ms-animation: none !important; " +
+                        "    -webkit-animation: none !important; " +
+                        "}'; " +
+                        "document.head.appendChild(styleEl); ";
+        ((JavascriptExecutor) driver).executeScript(script);
     }
 
     protected boolean isElementPresent(By by) {

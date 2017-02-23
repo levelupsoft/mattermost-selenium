@@ -16,7 +16,9 @@ import java.util.regex.Pattern;
 public class AccountSettingsOpenIT extends DriverBase {
 
     @Test
-    public void testAccountSettingsOpenIT() throws Exception {        driver.get(baseUrl + "/login");
+    public void testAccountSettingsOpenIT() throws Exception {
+        driver.get(baseUrl + "/login");
+        // DisableAnnimations
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary"))) break; } catch (Exception e) {}
@@ -43,8 +45,9 @@ public class AccountSettingsOpenIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.xpath("(//a[contains(text(),'General')])[2]")).click();
         driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
-        // Thread.sleep(1000);
+        // Sleep
         // Log out
         driver.findElement(By.id("sidebar-header-dropdown")).click();
         driver.findElement(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[4]/a")).click();
