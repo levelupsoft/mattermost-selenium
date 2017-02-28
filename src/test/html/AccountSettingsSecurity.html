@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://selenium.mattermost.com/" />
+<title>AccountSettingsPassword</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">AccountSettingsPassword</td></tr>
+</thead><tbody>
+<tr>
+	<td>openAndWait</td>
+	<td>/login</td>
+	<td></td>
+</tr>
+<!--DisableAnimations-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>test@test.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<!--Security-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='sidebar-left']/div/div[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//body/div[2]/div/div[2]/div/div/div/h4/span</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Security</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/h3/span</td>
+	<td>Security Settings</td>
+</tr>
+<!--Password-->
+<tr>
+	<td>click</td>
+	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[2]/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.col-sm-7 &gt; input.form-control</td>
+	<td>paaaaaaa</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>xpath=(//input[@value=''])[2]</td>
+	<td>passwdd</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>xpath=(//input[@value=''])[2]</td>
+	<td>passwdd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=label.col-sm-12.has-error</td>
+	<td>The &quot;Current Password&quot; you entered is incorrect. Please check that Caps Lock is off and try again.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.btn.btn-sm &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[2]/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.col-sm-7 &gt; input.form-control</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>xpath=(//input[@value=''])[2]</td>
+	<td>passwdd</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>xpath=(//input[@value=''])[2]</td>
+	<td>passwdd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li/span</td>
+	<td>Password</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[11]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@id='sidebar-left']/div/div[2]/ul/li[4]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>test@test.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>passwdd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='sidebar-left']/div/div[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='sidebar-left']/div/div[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//body/div[2]/div/div[2]/div/div/div/h4/span</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Security</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/h3/span</td>
+	<td>Security Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[2]/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.col-sm-7 &gt; input.form-control</td>
+	<td>passwdd</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>xpath=(//input[@value=''])[2]</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>xpath=(//input[@value=''])[2]</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li/span</td>
+	<td>Password</td>
+</tr>
+<!--Open Access History and Active Sessions Views-->
+<tr>
+	<td>click</td>
+	<td>css=a.security-links.theme &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=th &gt; span</td>
+	<td>Timestamp</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.modal-lg.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[2]/a[2]/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.session-help-text &gt; span</td>
+	<td>Sessions are created when you log in to a new browser on a device. Sessions let you use Mattermost without having to log in again for a time period specified by the System Admin. If you want to log out sooner, use the 'Logout' button below to end a session.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.modal-lg.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@id='sidebar-left']/div/div[2]/ul/li[4]/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
