@@ -53,6 +53,12 @@ public class AccountSettingsSecurityIT extends DriverBase {
 
         // Password
         driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[2]/a/span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("div.col-sm-7 > input.form-control"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("paaaaaaa");
         driver.findElement(By.xpath("(//input[@value=''])[2]")).sendKeys("passwdd");
         driver.findElement(By.xpath("(//input[@value=''])[2]")).sendKeys("passwdd");
@@ -65,18 +71,25 @@ public class AccountSettingsSecurityIT extends DriverBase {
 
         driver.findElement(By.cssSelector("a.btn.btn-sm > span")).click();
         driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[2]/a/span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("div.col-sm-7 > input.form-control"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("passwd");
         driver.findElement(By.xpath("(//input[@value=''])[2]")).sendKeys("passwdd");
         driver.findElement(By.xpath("(//input[@value=''])[2]")).sendKeys("passwdd");
         driver.findElement(By.xpath("//input[@value='Save']")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Password".equals(driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li/span")).getText())) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[2]/a/span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
         driver.findElement(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[4]/a")).click();
+        // DisableAnimations
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.name("loginId"))) break; } catch (Exception e) {}
@@ -109,6 +122,12 @@ public class AccountSettingsSecurityIT extends DriverBase {
         }
 
         driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[2]/a/span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("div.col-sm-7 > input.form-control"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("passwdd");
         driver.findElement(By.xpath("(//input[@value=''])[2]")).sendKeys("passwd");
         driver.findElement(By.xpath("(//input[@value=''])[2]")).sendKeys("passwd");
