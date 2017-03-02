@@ -70,9 +70,27 @@ public class AccountSettingsNicknameIT extends DriverBase {
         }
 
         driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[3]/li[2]/a/span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Edited Nick".equals(driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).getAttribute("value"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("div.col-sm-7 > input.form-control"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).clear();
         driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("");
         driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys(Keys.BACK_SPACE);
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("".equals(driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         driver.findElement(By.xpath("//input[@value='Save']")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
