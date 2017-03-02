@@ -83,11 +83,23 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.xpath("//input[@value='Save']")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[2]/a/span"))) break; } catch (Exception e) {}
+        	try { if (!isElementPresent(By.xpath("//input[@value='Save']"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.xpath("(//button[@type='button'])[11]"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[4]/a"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         driver.findElement(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[4]/a")).click();
         // DisableAnimations
         for (int second = 0;; second++) {
