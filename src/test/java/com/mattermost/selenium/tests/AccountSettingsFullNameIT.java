@@ -125,7 +125,6 @@ public class AccountSettingsFullNameIT extends DriverBase {
         driver.findElement(By.xpath("//input[@value='LastName']")).sendKeys("");
         driver.findElement(By.xpath("//input[@value='LastName']")).sendKeys(Keys.BACK_SPACE);
         driver.findElement(By.xpath("//input[@value='Save']")).click();
-        // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | null | ]]
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Click 'Edit' to add your full name".equals(driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[3]/span")).getText())) break; } catch (Exception e) {}
