@@ -107,9 +107,9 @@ public class AccountSettingsFullNameIT extends DriverBase {
         driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).clear();
         driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("");
         driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("Edited");
-        driver.findElement(By.xpath("//input[@value='Name']")).clear();
-        driver.findElement(By.xpath("//input[@value='Name']")).sendKeys("");
-        driver.findElement(By.xpath("//input[@value='Name']")).sendKeys("LastName");
+        driver.findElement(By.xpath("(//input[@value='Name'])")).clear();
+        driver.findElement(By.xpath("(//input[@value='Name'])")).sendKeys("");
+        driver.findElement(By.xpath("(//input[@value='Name'])")).sendKeys("LastName");
         driver.findElement(By.xpath("//input[@value='Save']")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -131,7 +131,6 @@ public class AccountSettingsFullNameIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[2]/a/span")).click();
         driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
         driver.findElement(By.id("sidebar-header-dropdown")).click();
         driver.findElement(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[4]/a/span")).click();
