@@ -19,7 +19,7 @@
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-primary</td>
+	<td>id=loginButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -34,23 +34,23 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
+	<td>id=loginButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebar-header-dropdown</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebar-header-dropdown</td>
 	<td></td>
 </tr>
 <!--General Settings-->
 <tr>
 	<td>click</td>
-	<td>//div[@id='sidebar-left']/div/div[2]/ul/li/a/span</td>
+	<td>css=#accountSettings &gt; span</td>
 	<td></td>
 </tr>
 <!--Full Name-->
@@ -61,7 +61,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[2]/a/span</td>
+	<td>//a[@id='Full Name']/span</td>
 	<td> </td>
 </tr>
 <tr>
@@ -71,13 +71,13 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=a.btn.btn-sm &gt; span</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[2]/a/span</td>
-	<td></td>
+	<td>//a[@id='Full Name']/span</td>
+	<td> </td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -86,32 +86,27 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
+	<td>id=firstName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
+	<td>id=firstName</td>
 	<td>Added</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[2]/label</td>
-	<td>Last Name</td>
-</tr>
-<tr>
 	<td>type</td>
-	<td>//input[@value='LastName']</td>
+	<td>id=lastName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>//input[@value='LastName']</td>
+	<td>id=lastName</td>
 	<td>Name</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//input[@value='Save']</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
@@ -121,38 +116,48 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[2]/a/span</td>
-	<td></td>
+	<td>//a[@id='Full Name']/span</td>
+	<td> </td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=label.col-sm-5.control-label</td>
+	<td>First Name</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
+	<td>id=firstName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
+	<td>id=firstName</td>
 	<td>Edited</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>xpath=(//input[@value='Name'])</td>
+	<td>id=lastName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>xpath=(//input[@value='Name'])</td>
+	<td>id=lastName</td>
 	<td>LastName</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//input[@value='Save']</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[3]</td>
 	<td>Edited LastName</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[11]</td>
+	<td></td>
 </tr>
 </tbody></table>
 </body>
