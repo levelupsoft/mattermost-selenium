@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://selenium.mattermost.com/login" />
-<title>AccountSettingsNickname</title>
+<link rel="selenium.base" href="http://selenium.mattermost.com" />
+<title>AccountSettingsUsername</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">AccountSettingsNickname</td></tr>
+<tr><td rowspan="1" colspan="3">AccountSettingsUsername</td></tr>
 </thead><tbody>
 <tr>
 	<td>openAndWait</td>
@@ -19,7 +19,7 @@
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-primary</td>
+	<td>id=loginButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -34,23 +34,23 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
+	<td>id=loginButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebar-header-dropdown</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebar-header-dropdown</td>
 	<td></td>
 </tr>
 <!--General Settings-->
 <tr>
 	<td>click</td>
-	<td>//div[@id='sidebar-left']/div/div[2]/ul/li/a/span</td>
+	<td>css=#accountSettings &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -59,84 +59,24 @@
 	<td>Account Settings</td>
 </tr>
 <tr>
-	<td>verifyText</td>
-	<td>//ul[3]/li[3]/span</td>
-	<td>Click 'Edit' to add a nickname</td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[3]/li[2]/a/span</td>
+	<td>css=#Username &gt; span</td>
 	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
-	<td>Added Nick</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//input[@value='Save']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[3]/li[3]</td>
-	<td>Added Nick</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[3]/li[2]/a/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
-	<td>Edited Nick</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//input[@value='Save']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[3]/li[3]</td>
-	<td>Edited Nick</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[3]/li[2]/a/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
-	<td>Edited Nick</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
+	<td>id=username</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
+	<td>id=username</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
+	<td>id=username</td>
 	<td>${KEY_BACKSPACE}</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
-	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -145,8 +85,98 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//ul[3]/li[3]/span</td>
-	<td>Click 'Edit' to add a nickname</td>
+	<td>id=clientError</td>
+	<td>Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols '.', '-', and '_'.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#UsernameCancel &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=UsernameDesc</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#Username &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=username</td>
+	<td>hi</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=clientError</td>
+	<td>Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols '.', '-', and '_'.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=username</td>
+	<td>test2</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=serverError</td>
+	<td>This username is already taken. Please choose another.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=username</td>
+	<td>test-1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=UsernameDesc</td>
+	<td>test-1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[11]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=@</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>@test-1</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -154,13 +184,158 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>//div[@id='sidebar-left']/div/div[2]/ul/li[4]/a/span</td>
+	<td>click</td>
+	<td>css=#accountSettings &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>name=loginId</td>
+	<td>css=#Username &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#Username &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=username</td>
+	<td>_test</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=clientError</td>
+	<td>Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols '.', '-', and '_'.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=username</td>
+	<td>all</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=clientError</td>
+	<td>This username is reserved, please choose a new one.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=username</td>
+	<td>channel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=clientError</td>
+	<td>This username is reserved, please choose a new one.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=username</td>
+	<td>here</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=clientError</td>
+	<td>This username is reserved, please choose a new one.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=username</td>
+	<td>matterbot</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=clientError</td>
+	<td>This username is reserved, please choose a new one.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=username</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=UsernameDesc</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[11]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; span	</td>
 	<td></td>
 </tr>
 </tbody></table>
