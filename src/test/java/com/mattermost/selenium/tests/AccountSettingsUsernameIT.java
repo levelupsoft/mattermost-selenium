@@ -20,7 +20,7 @@ public class AccountSettingsUsernameIT extends DriverBase {
         // DisableAnimations
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("loginButton"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -28,105 +28,163 @@ public class AccountSettingsUsernameIT extends DriverBase {
         driver.findElement(By.name("loginId")).sendKeys("test@test.com");
         driver.findElement(By.name("password")).clear();
         driver.findElement(By.name("password")).sendKeys("passwd");
-        driver.findElement(By.cssSelector("button.btn.btn-primary")).click();
+        driver.findElement(By.id("loginButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("span.sidebar-header-dropdown__icon"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("sidebar-header-dropdown"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("span.sidebar-header-dropdown__icon")).click();
+        driver.findElement(By.id("sidebar-header-dropdown")).click();
         // General Settings
-        driver.findElement(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li/a/span")).click();
+        driver.findElement(By.cssSelector("#accountSettings > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Account Settings".equals(driver.findElement(By.xpath("//body/div[2]/div/div[2]/div/div/div/h4/span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[2]/li[2]/a/span")).click();
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).clear();
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("");
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys(Keys.BACK_SPACE);
+        driver.findElement(By.cssSelector("#Username > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("username"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("username")).clear();
+        driver.findElement(By.id("username")).sendKeys("");
+        driver.findElement(By.id("username")).sendKeys(Keys.BACK_SPACE);
         driver.findElement(By.xpath("//input[@value='Save']")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols '.', '-', and '_'.".equals(driver.findElement(By.cssSelector("label.col-sm-12.has-error")).getText())) break; } catch (Exception e) {}
+        	try { if ("Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols '.', '-', and '_'.".equals(driver.findElement(By.id("clientError")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("a.btn.btn-sm > span")).click();
+        driver.findElement(By.cssSelector("#UsernameCancel > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[2]/li[2]/a/span"))) break; } catch (Exception e) {}
+        	try { if ("test".equals(driver.findElement(By.id("UsernameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[2]/li[2]/a/span")).click();
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).clear();
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("");
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("edited");
+        driver.findElement(By.cssSelector("#Username > span")).click();
+        driver.findElement(By.id("username")).clear();
+        driver.findElement(By.id("username")).sendKeys("");
+        driver.findElement(By.id("username")).sendKeys("hi");
         driver.findElement(By.xpath("//input[@value='Save']")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("edited".equals(driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[2]/li[3]")).getText())) break; } catch (Exception e) {}
+        	try { if ("Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols '.', '-', and '_'.".equals(driver.findElement(By.id("clientError")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[2]/li[2]/a/span")).click();
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).clear();
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("");
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("***");
+        driver.findElement(By.id("username")).clear();
+        driver.findElement(By.id("username")).sendKeys("");
+        driver.findElement(By.id("username")).sendKeys("test2");
         driver.findElement(By.xpath("//input[@value='Save']")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols '.', '-', and '_'.".equals(driver.findElement(By.cssSelector("label.col-sm-12.has-error")).getText())) break; } catch (Exception e) {}
+        	try { if ("This username is already taken. Please choose another.".equals(driver.findElement(By.id("serverError")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("a.btn.btn-sm > span")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[2]/li[2]/a/span"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[2]/li[2]/a/span")).click();
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).clear();
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("");
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("hi");
+        driver.findElement(By.id("username")).clear();
+        driver.findElement(By.id("username")).sendKeys("");
+        driver.findElement(By.id("username")).sendKeys("test-1");
         driver.findElement(By.xpath("//input[@value='Save']")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols '.', '-', and '_'.".equals(driver.findElement(By.cssSelector("label.col-sm-12.has-error")).getText())) break; } catch (Exception e) {}
+        	try { if ("test-1".equals(driver.findElement(By.id("UsernameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("a.btn.btn-sm > span")).click();
+        driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
+        driver.findElement(By.linkText("@")).click();
+        // Warning: waitForTextPresent may require manual changes
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[2]/li[2]/a/span"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[2]/li[2]/a/span")).click();
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).clear();
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("");
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("test");
-        driver.findElement(By.xpath("//input[@value='Save']")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("test".equals(driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[2]/li[3]")).getText())) break; } catch (Exception e) {}
+        	try { if (driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*$")) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         driver.findElement(By.id("sidebar-header-dropdown")).click();
-        driver.findElement(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[4]/a/span")).click();
+        driver.findElement(By.cssSelector("#accountSettings > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.name("loginId"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#Username > span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-   }
+        driver.findElement(By.cssSelector("#Username > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("username"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("username")).clear();
+        driver.findElement(By.id("username")).sendKeys("");
+        driver.findElement(By.id("username")).sendKeys("_test");
+        driver.findElement(By.xpath("//input[@value='Save']")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols '.', '-', and '_'.".equals(driver.findElement(By.id("clientError")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("username")).clear();
+        driver.findElement(By.id("username")).sendKeys("");
+        driver.findElement(By.id("username")).sendKeys("all");
+        driver.findElement(By.xpath("//input[@value='Save']")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("This username is reserved, please choose a new one.".equals(driver.findElement(By.id("clientError")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("username")).clear();
+        driver.findElement(By.id("username")).sendKeys("");
+        driver.findElement(By.id("username")).sendKeys("channel");
+        driver.findElement(By.xpath("//input[@value='Save']")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("This username is reserved, please choose a new one.".equals(driver.findElement(By.id("clientError")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("username")).clear();
+        driver.findElement(By.id("username")).sendKeys("");
+        driver.findElement(By.id("username")).sendKeys("here");
+        driver.findElement(By.xpath("//input[@value='Save']")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("This username is reserved, please choose a new one.".equals(driver.findElement(By.id("clientError")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("username")).clear();
+        driver.findElement(By.id("username")).sendKeys("");
+        driver.findElement(By.id("username")).sendKeys("matterbot");
+        driver.findElement(By.xpath("//input[@value='Save']")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("This username is reserved, please choose a new one.".equals(driver.findElement(By.id("clientError")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("username")).clear();
+        driver.findElement(By.id("username")).sendKeys("");
+        driver.findElement(By.id("username")).sendKeys("test");
+        driver.findElement(By.xpath("//input[@value='Save']")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("test".equals(driver.findElement(By.id("UsernameDesc")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
+        driver.findElement(By.id("sidebar-header-dropdown")).click();
+        driver.findElement(By.cssSelector("#logout > span")).click();
+    }
 }
