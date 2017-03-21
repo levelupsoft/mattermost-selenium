@@ -17,7 +17,7 @@ public class AccountSettingsFullNameIT extends DriverBase {
 
     @Test
     public void testAccountSettingsFullNameIT() throws Exception {        driver.get(baseUrl + "/login");
-        disableAnimations();
+        // DisableAnimations
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("loginButton"))) break; } catch (Exception e) {}
@@ -53,6 +53,12 @@ public class AccountSettingsFullNameIT extends DriverBase {
         }
 
         driver.findElement(By.id("saveSetting")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Click 'Edit' to add your full name".equals(driver.findElement(By.id("Full NameDesc")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         driver.findElement(By.xpath("//a[@id='Full Name']/span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -63,13 +69,24 @@ public class AccountSettingsFullNameIT extends DriverBase {
         driver.findElement(By.id("firstName")).clear();
         driver.findElement(By.id("firstName")).sendKeys("");
         driver.findElement(By.id("firstName")).sendKeys("Added");
-        driver.findElement(By.id("lastName")).clear();
-        driver.findElement(By.id("lastName")).sendKeys("");
-        driver.findElement(By.id("lastName")).sendKeys("Name");
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Added Name".equals(driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[3]")).getText())) break; } catch (Exception e) {}
+        	try { if ("Added".equals(driver.findElement(By.id("Full NameDesc")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.xpath("//a[@id='Full Name']/span")).click();
+        driver.findElement(By.id("firstName")).clear();
+        driver.findElement(By.id("firstName")).sendKeys("");
+        driver.findElement(By.id("firstName")).sendKeys("This Is a Very Long Name");
+        driver.findElement(By.id("lastName")).clear();
+        driver.findElement(By.id("lastName")).sendKeys("");
+        driver.findElement(By.id("lastName")).sendKeys("That Should Truncate");
+        driver.findElement(By.id("saveSetting")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("This Is a Very Long Name That Should Truncate".equals(driver.findElement(By.id("Full NameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -82,17 +99,39 @@ public class AccountSettingsFullNameIT extends DriverBase {
 
         driver.findElement(By.id("firstName")).clear();
         driver.findElement(By.id("firstName")).sendKeys("");
-        driver.findElement(By.id("firstName")).sendKeys("Edited");
+        driver.findElement(By.id("firstName")).sendKeys(Keys.BACK_SPACE);
         driver.findElement(By.id("lastName")).clear();
         driver.findElement(By.id("lastName")).sendKeys("");
-        driver.findElement(By.id("lastName")).sendKeys("LastName");
+        driver.findElement(By.id("lastName")).sendKeys(Keys.BACK_SPACE);
+        driver.findElement(By.xpath("//a[@id='Full NameCancel']/span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("This Is a Very Long Name That Should Truncate".equals(driver.findElement(By.id("Full NameDesc")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.xpath("//a[@id='Full Name']/span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("First Name".equals(driver.findElement(By.cssSelector("label.col-sm-5.control-label")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("firstName")).clear();
+        driver.findElement(By.id("firstName")).sendKeys("");
+        driver.findElement(By.id("firstName")).sendKeys(Keys.BACK_SPACE);
+        driver.findElement(By.id("lastName")).clear();
+        driver.findElement(By.id("lastName")).sendKeys("");
+        driver.findElement(By.id("lastName")).sendKeys(Keys.BACK_SPACE);
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Edited LastName".equals(driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[3]")).getText())) break; } catch (Exception e) {}
+        	try { if ("Click 'Edit' to add your full name".equals(driver.findElement(By.id("Full NameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
-   }
+        driver.findElement(By.id("sidebar-header-dropdown")).click();
+        driver.findElement(By.cssSelector("#logout > span")).click();
+    }
 }
