@@ -75,6 +75,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>id=Full NameDesc</td>
+	<td>Click 'Edit' to add your full name</td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>//a[@id='Full Name']/span</td>
 	<td> </td>
@@ -95,6 +100,31 @@
 	<td>Added</td>
 </tr>
 <tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=Full NameDesc</td>
+	<td>Added</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id='Full Name']/span</td>
+	<td> </td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=firstName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=firstName</td>
+	<td>This Is a Very Long Name</td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>id=lastName</td>
 	<td></td>
@@ -102,7 +132,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=lastName</td>
-	<td>Name</td>
+	<td>That Should Truncate</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -111,8 +141,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[3]</td>
-	<td>Added Name</td>
+	<td>id=Full NameDesc</td>
+	<td>This Is a Very Long Name That Should Truncate</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -132,7 +162,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=firstName</td>
-	<td>Edited</td>
+	<td> ${KEY_BACKSPACE}</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -142,7 +172,47 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=lastName</td>
-	<td>LastName</td>
+	<td> ${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id='Full NameCancel']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=Full NameDesc</td>
+	<td>This Is a Very Long Name That Should Truncate</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id='Full Name']/span</td>
+	<td> </td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=label.col-sm-5.control-label</td>
+	<td>First Name</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=firstName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=firstName</td>
+	<td> ${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=lastName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=lastName</td>
+	<td> ${KEY_BACKSPACE}</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -151,12 +221,22 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[3]</td>
-	<td>Edited LastName</td>
+	<td>id=Full NameDesc</td>
+	<td>Click 'Edit' to add your full name</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>xpath=(//button[@type='button'])[11]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; span</td>
 	<td></td>
 </tr>
 </tbody></table>
