@@ -17,10 +17,10 @@ public class AccountSettingsPositionIT extends DriverBase {
 
     @Test
     public void testAccountSettingsPositionIT() throws Exception {        driver.get(baseUrl + "/login");
-        // DisableAnimations
+        disableAnimations();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("loginButton"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -28,60 +28,121 @@ public class AccountSettingsPositionIT extends DriverBase {
         driver.findElement(By.name("loginId")).sendKeys("test@test.com");
         driver.findElement(By.name("password")).clear();
         driver.findElement(By.name("password")).sendKeys("passwd");
-        driver.findElement(By.cssSelector("button.btn.btn-primary")).click();
+        driver.findElement(By.id("loginButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("span.sidebar-header-dropdown__icon"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.cssSelector("span.sidebar-header-dropdown__icon")).click();
-        // General Settings
-        driver.findElement(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li/a/span")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Account Settings".equals(driver.findElement(By.xpath("//body/div[2]/div/div[2]/div/div/div/h4/span")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[4]/li[2]/a/span")).click();
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("Tester");
-        driver.findElement(By.xpath("//input[@value='Save']")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Tester".equals(driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[4]/li[3]")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[4]/li[2]/a/span")).click();
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).clear();
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("");
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("Edited Tester");
-        driver.findElement(By.xpath("//input[@value='Save']")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Edited Tester".equals(driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[4]/li[3]")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[4]/li[2]/a/span")).click();
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).clear();
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys("");
-        driver.findElement(By.cssSelector("div.col-sm-7 > input.form-control")).sendKeys(Keys.BACK_SPACE);
-        driver.findElement(By.xpath("//input[@value='Save']")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Click 'Edit' to add your job title / position".equals(driver.findElement(By.xpath("//ul[4]/li[3]/span")).getText())) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("sidebar-header-dropdown"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         driver.findElement(By.id("sidebar-header-dropdown")).click();
-        driver.findElement(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[4]/a/span")).click();
+        // General Settings
+        driver.findElement(By.cssSelector("#accountSettings > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Click 'Edit' to add your job title / position".equals(driver.findElement(By.cssSelector("#PositionDesc > span")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("#Position > span"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("#Position > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("position"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("position")).clear();
+        driver.findElement(By.id("position")).sendKeys("");
+        driver.findElement(By.id("position")).sendKeys("Tester");
+        driver.findElement(By.id("saveSetting")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Tester".equals(driver.findElement(By.id("PositionDesc")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("#Position > span")).click();
+        driver.findElement(By.id("position")).clear();
+        driver.findElement(By.id("position")).sendKeys("");
+        driver.findElement(By.id("position")).sendKeys("Edited Tester");
+        driver.findElement(By.id("saveSetting")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Edited Tester".equals(driver.findElement(By.id("PositionDesc")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.navigate().refresh();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("post_textbox")).sendKeys("Message" + Keys.ENTER);
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("img.more-modal__image"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("img.more-modal__image")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Edited Tester".equals(driver.findElement(By.xpath("//div[@id='user-profile-popover']/div[2]/div")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("sidebar-header-dropdown")).click();
+        driver.findElement(By.cssSelector("#accountSettings > span")).click();
+        driver.findElement(By.cssSelector("#Position > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("position"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("position")).clear();
+        driver.findElement(By.id("position")).sendKeys("");
+        driver.findElement(By.id("position")).sendKeys("Temp");
+        driver.findElement(By.cssSelector("#PositionCancel > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Edited Tester".equals(driver.findElement(By.id("PositionDesc")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("#Position > span")).click();
+        driver.findElement(By.id("position")).clear();
+        driver.findElement(By.id("position")).sendKeys("");
+        driver.findElement(By.id("position")).sendKeys("*" + Keys.BACK_SPACE);
+        driver.findElement(By.id("saveSetting")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Click 'Edit' to add your job title / position".equals(driver.findElement(By.cssSelector("#PositionDesc > span")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.navigate().refresh();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("sidebar-header-dropdown"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("sidebar-header-dropdown")).click();
+        driver.findElement(By.cssSelector("#logout > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.name("loginId"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-   }
+    }
 }
