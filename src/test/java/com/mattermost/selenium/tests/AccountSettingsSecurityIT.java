@@ -211,6 +211,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.id("sidebar-header-dropdown")).click();
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("#accountSettings > span")).click();
+        Thread.sleep(1000);
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.linkText("Security"))) break; } catch (Exception e) {}
