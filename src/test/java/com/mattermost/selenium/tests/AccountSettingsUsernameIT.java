@@ -17,7 +17,7 @@ public class AccountSettingsUsernameIT extends DriverBase {
 
     @Test
     public void testAccountSettingsUsernameIT() throws Exception {        driver.get(baseUrl + "/login");
-        // DisableAnimations
+        disableAnimations();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("loginButton"))) break; } catch (Exception e) {}
@@ -40,7 +40,7 @@ public class AccountSettingsUsernameIT extends DriverBase {
         driver.findElement(By.cssSelector("#accountSettings > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Account Settings".equals(driver.findElement(By.xpath("//body/div[2]/div/div[2]/div/div/div/h4/span")).getText())) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#Username > span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -53,7 +53,7 @@ public class AccountSettingsUsernameIT extends DriverBase {
 
         driver.findElement(By.id("username")).clear();
         driver.findElement(By.id("username")).sendKeys("");
-        driver.findElement(By.id("username")).sendKeys(Keys.BACK_SPACE);
+        driver.findElement(By.id("username")).sendKeys("*" + Keys.BACK_SPACE);
         driver.findElement(By.xpath("//input[@value='Save']")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -65,6 +65,13 @@ public class AccountSettingsUsernameIT extends DriverBase {
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("test".equals(driver.findElement(By.id("UsernameDesc")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        Thread.sleep(1000);
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("#Username > span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -183,7 +190,13 @@ public class AccountSettingsUsernameIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
+        driver.navigate().refresh();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("sidebar-header-dropdown"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         driver.findElement(By.id("sidebar-header-dropdown")).click();
         driver.findElement(By.cssSelector("#logout > span")).click();
     }
