@@ -161,7 +161,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.linkText("Security")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Security Settings".equals(driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/h3/span")).getText())) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.xpath("//a[@id='[object Object]']/span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
