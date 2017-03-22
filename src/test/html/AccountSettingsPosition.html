@@ -19,7 +19,7 @@
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-primary</td>
+	<td>id=loginButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -34,99 +34,194 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
+	<td>id=loginButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebar-header-dropdown</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebar-header-dropdown</td>
 	<td></td>
 </tr>
 <!--General Settings-->
 <tr>
 	<td>click</td>
-	<td>//div[@id='sidebar-left']/div/div[2]/ul/li/a/span</td>
+	<td>css=#accountSettings &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//body/div[2]/div/div[2]/div/div/div/h4/span</td>
-	<td>Account Settings</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[4]/li[2]/a/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
-	<td>Tester</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//input[@value='Save']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[4]/li[3]</td>
-	<td>Tester</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[4]/li[2]/a/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
-	<td>Edited Tester</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//input[@value='Save']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[4]/li[3]</td>
-	<td>Edited Tester</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul[4]/li[2]/a/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
-	<td>${KEY_BACKSPACE}</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//input[@value='Save']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//ul[4]/li[3]/span</td>
+	<td>css=#PositionDesc &gt; span</td>
 	<td>Click 'Edit' to add your job title / position</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#Position &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#Position &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=position</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=position</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=position</td>
+	<td>Tester</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=PositionDesc</td>
+	<td>Tester</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#Position &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=position</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=position</td>
+	<td>Edited Tester</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=PositionDesc</td>
+	<td>Edited Tester</td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Message${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=img.more-modal__image</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img.more-modal__image</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[@id='user-profile-popover']/div[2]/div</td>
+	<td>Edited Tester</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettings &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#Position &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=position</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=position</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=position</td>
+	<td>Temp</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#PositionCancel &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=PositionDesc</td>
+	<td>Edited Tester</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#Position &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=position</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=position</td>
+	<td>*${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#PositionDesc &gt; span</td>
+	<td>Click 'Edit' to add your job title / position</td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -135,7 +230,7 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//div[@id='sidebar-left']/div/div[2]/ul/li[4]/a/span</td>
+	<td>css=#logout &gt; span</td>
 	<td></td>
 </tr>
 <tr>
