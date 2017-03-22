@@ -19,7 +19,7 @@
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-primary</td>
+	<td>id=loginButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -34,23 +34,23 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
+	<td>id=loginButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebar-header-dropdown</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebar-header-dropdown</td>
 	<td></td>
 </tr>
 <!--Security-->
 <tr>
 	<td>click</td>
-	<td>//div[@id='sidebar-left']/div/div[2]/ul/li/a/span</td>
+	<td>css=#accountSettings &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -71,82 +71,162 @@
 <!--Password-->
 <tr>
 	<td>click</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[2]/a/span</td>
+	<td>//a[@id='[object Object]']/span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
-	<td>paaaaaaa</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>xpath=(//input[@value=''])[2]</td>
-	<td>passwdd</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>xpath=(//input[@value=''])[2]</td>
-	<td>passwdd</td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>//input[@value='Save']</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=label.col-sm-12.has-error</td>
-	<td>The &quot;Current Password&quot; you entered is incorrect. Please check that Caps Lock is off and try again.</td>
+	<td>id=clientError</td>
+	<td>Please enter your current password.</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=a.btn.btn-sm &gt; span</td>
+	<td>//a[@id='[object Object]Cancel']/span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[2]/a/span</td>
+	<td>//a[@id='[object Object]']/span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
+	<td>id=currentPassword</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
+	<td>id=currentPassword</td>
 	<td>passwd</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>xpath=(//input[@value=''])[2]</td>
+	<td>id=newPassword</td>
 	<td>passwdd</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>xpath=(//input[@value=''])[2]</td>
+	<td>id=confirmPassword</td>
+	<td>passwddd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=clientError</td>
+	<td>The new passwords you entered do not match.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id='[object Object]Cancel']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id='[object Object]']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=currentPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=currentPassword</td>
+	<td>paaaaaa</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=newPassword</td>
+	<td>passwdd</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=confirmPassword</td>
 	<td>passwdd</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//input[@value='Save']</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementNotPresent</td>
-	<td>//input[@value='Save']</td>
+	<td>waitForText</td>
+	<td>id=serverError</td>
+	<td>The &quot;Current Password&quot; you entered is incorrect. Please check that Caps Lock is off and try again.</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=currentPassword</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=newPassword</td>
+	<td>pass</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=confirmPassword</td>
+	<td>pass</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=clientError</td>
+	<td>Your password must contain at least 5 characters.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id='[object Object]Cancel']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id='[object Object]']/span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[11]</td>
+	<td>id=currentPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=currentPassword</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=newPassword</td>
+	<td>passwdd</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=confirmPassword</td>
+	<td>passwdd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id='[object Object]Cancel']/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -155,44 +235,59 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='sidebar-left']/div/div[2]/ul/li[4]/a</td>
+	<td>refreshAndWait</td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>//div[@id='sidebar-left']/div/div[2]/ul/li[4]/a</td>
+	<td>click</td>
+	<td>id=sidebar-header-dropdown</td>
 	<td></td>
 </tr>
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>name=loginId</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>name=loginId</td>
-	<td>test@test.com</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=password</td>
-	<td>passwdd</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
+	<td>clickAndWait</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='sidebar-left']/div/div[2]/ul/li/a/span</td>
+	<td>name=loginId</td>
+	<td>test@test.com</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>name=loginId</td>
+	<td>test@test.com</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>name=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebar-header-dropdown</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='sidebar-left']/div/div[2]/ul/li/a/span</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettings &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -212,40 +307,158 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li[2]/a/span</td>
+	<td>//a[@id='[object Object]']/span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
+	<td>id=currentPassword</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.col-sm-7 &gt; input.form-control</td>
+	<td>id=currentPassword</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=newPassword</td>
 	<td>passwdd</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>xpath=(//input[@value=''])[2]</td>
-	<td>passwd</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>xpath=(//input[@value=''])[2]</td>
-	<td>passwd</td>
+	<td>id=confirmPassword</td>
+	<td>passwdd</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//input[@value='Save']</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/ul/li/span</td>
-	<td>Password</td>
+	<td>//li[@id='[object Object]Desc']/span</td>
+	<td>Last updated*</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[11]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<!--DisableAnimations-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td>test@test.com</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>name=loginId</td>
+	<td>test@test.com</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>name=password</td>
+	<td>passwdd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<tr>
+	<td>click</td>
+	<td>css=#accountSettings &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Security</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Security</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/h3/span</td>
+	<td>Security Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id='[object Object]']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=currentPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=currentPassword</td>
+	<td>passwdd</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=newPassword</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=confirmPassword</td>
+	<td>passwd</td>
+</tr>
+<!--Sleep-->
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//li[@id='[object Object]Desc']/span</td>
+	<td>Last updated*</td>
 </tr>
 <!--Open Access History and Active Sessions Views-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=a.security-links.theme &gt; span</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>css=a.security-links.theme &gt; span</td>
@@ -257,8 +470,54 @@
 	<td>Timestamp</td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>//th[2]/span</td>
+	<td>Action</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//th[3]/span</td>
+	<td>IP Address</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//th[4]/span</td>
+	<td>Session ID</td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=div.modal-lg.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettings &gt; span</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Security</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Security</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[2]/a[2]/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -272,23 +531,18 @@
 	<td>Sessions are created when you log in to a new browser on a device. Sessions let you use Mattermost without having to log in again for a time period specified by the System Admin. If you want to log out sooner, use the 'Logout' button below to end a session.</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.modal-lg.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.activity-log__action &gt; button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>//div[@id='sidebar-left']/div/div[2]/ul/li[4]/a/span</td>
+	<td>css=div.activity-log__action &gt; button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>name=loginId</td>
+	<td>id=loginButton</td>
 	<td></td>
 </tr>
 </tbody></table>
