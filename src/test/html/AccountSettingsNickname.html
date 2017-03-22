@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://selenium.mattermost.com" />
-<title>AccountSettingsUsername</title>
+<link rel="selenium.base" href="http://selenium.mattermost.com/login" />
+<title>AccountSettingsNickname</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">AccountSettingsUsername</td></tr>
+<tr><td rowspan="1" colspan="3">AccountSettingsNickname</td></tr>
 </thead><tbody>
 <tr>
 	<td>openAndWait</td>
@@ -19,7 +19,7 @@
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=loginButton</td>
+	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
@@ -54,278 +54,108 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=#Nickname &gt; span</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
-	<td>//body/div[2]/div/div[2]/div/div/div/h4/span</td>
-	<td>Account Settings</td>
+	<td>css=#NicknameDesc &gt; span</td>
+	<td>Click 'Edit' to add a nickname</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Username &gt; span</td>
+	<td>css=#Nickname &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=username</td>
+	<td>id=nickname</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=username</td>
+	<td>id=nickname</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=username</td>
-	<td>${KEY_BACKSPACE}</td>
+	<td>id=nickname</td>
+	<td>Added Nick</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//input[@value='Save']</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=clientError</td>
-	<td>Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols '.', '-', and '_'.</td>
+	<td>id=NicknameDesc</td>
+	<td>Added Nick</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#UsernameCancel &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=UsernameDesc</td>
-	<td>test</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Username &gt; span</td>
+	<td>css=#Nickname &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=username</td>
+	<td>id=nickname</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=username</td>
-	<td>hi</td>
+	<td>id=nickname</td>
+	<td>Edited Nick</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//input[@value='Save']</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=clientError</td>
-	<td>Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols '.', '-', and '_'.</td>
+	<td>id=NicknameDesc</td>
+	<td>Edited Nick</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#Nickname &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=nickname</td>
+	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=username</td>
+	<td>id=nickname</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=username</td>
-	<td>test2</td>
+	<td>id=nickname</td>
+	<td>*${KEY_BACKSPACE}</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//input[@value='Save']</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=serverError</td>
-	<td>This username is already taken. Please choose another.</td>
+	<td>css=#NicknameDesc &gt; span</td>
+	<td>Click 'Edit' to add a nickname</td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=username</td>
+	<td>refreshAndWait</td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>id=username</td>
-	<td>test-1</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//input[@value='Save']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=UsernameDesc</td>
-	<td>test-1</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[11]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=@</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td></td>
-	<td>@test-1</td>
-</tr>
-<tr>
-	<td>click</td>
+	<td>waitForElementPresent</td>
 	<td>id=sidebar-header-dropdown</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Username &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Username &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=username</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=username</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=username</td>
-	<td>_test</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//input[@value='Save']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=clientError</td>
-	<td>Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols '.', '-', and '_'.</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=username</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=username</td>
-	<td>all</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//input[@value='Save']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=clientError</td>
-	<td>This username is reserved, please choose a new one.</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=username</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=username</td>
-	<td>channel</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//input[@value='Save']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=clientError</td>
-	<td>This username is reserved, please choose a new one.</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=username</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=username</td>
-	<td>here</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//input[@value='Save']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=clientError</td>
-	<td>This username is reserved, please choose a new one.</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=username</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=username</td>
-	<td>matterbot</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//input[@value='Save']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=clientError</td>
-	<td>This username is reserved, please choose a new one.</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=username</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=username</td>
-	<td>test</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//input[@value='Save']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=UsernameDesc</td>
-	<td>test</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[11]</td>
 	<td></td>
 </tr>
 <tr>
@@ -334,8 +164,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=#logout &gt; span	</td>
+	<td>clickAndWait</td>
+	<td>css=#logout &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
 	<td></td>
 </tr>
 </tbody></table>
