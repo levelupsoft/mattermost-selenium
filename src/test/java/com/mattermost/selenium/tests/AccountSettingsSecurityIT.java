@@ -166,9 +166,10 @@ public class AccountSettingsSecurityIT extends DriverBase {
         }
 
         driver.findElement(By.xpath("//a[@id='[object Object]']/span")).click();
+        Thread.sleep(1000);
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("currentPassword"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("saveSetting"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -176,6 +177,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.id("newPassword")).sendKeys("passwdd");
         driver.findElement(By.id("confirmPassword")).sendKeys("passwdd");
         driver.findElement(By.id("saveSetting")).click();
+        Thread.sleep(1000);
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (driver.findElement(By.xpath("//li[@id='[object Object]Desc']/span")).getText().matches("^Last updated[\\s\\S]*$")) break; } catch (Exception e) {}
@@ -226,6 +228,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         }
 
         driver.findElement(By.xpath("//a[@id='[object Object]']/span")).click();
+        Thread.sleep(1000);
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("currentPassword"))) break; } catch (Exception e) {}
