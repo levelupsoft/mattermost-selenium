@@ -78,29 +78,6 @@ public class AccountSettingsPositionIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.navigate().refresh();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("post_textbox")).sendKeys("Message" + Keys.ENTER);
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("img.more-modal__image"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.cssSelector("img.more-modal__image")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Edited Tester".equals(driver.findElement(By.xpath("//div[@id='user-profile-popover']/div[2]/div")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("sidebar-header-dropdown")).click();
-        driver.findElement(By.cssSelector("#accountSettings > span")).click();
         driver.findElement(By.cssSelector("#Position > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
