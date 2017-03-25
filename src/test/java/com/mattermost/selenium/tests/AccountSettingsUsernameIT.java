@@ -37,14 +37,20 @@ public class AccountSettingsUsernameIT extends DriverBase {
 
         driver.findElement(By.id("sidebar-header-dropdown")).click();
         // General Settings
-        driver.findElement(By.cssSelector("#accountSettings > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#Username > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#accountSettings > span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Username > span")).click();
+        driver.findElement(By.cssSelector("#accountSettings > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("#UsernameEdit > span"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("#UsernameEdit > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("username"))) break; } catch (Exception e) {}
@@ -68,14 +74,13 @@ public class AccountSettingsUsernameIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        Thread.sleep(1000);
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#Username > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#UsernameEdit > span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Username > span")).click();
+        driver.findElement(By.cssSelector("#UsernameEdit > span")).click();
         driver.findElement(By.id("username")).clear();
         driver.findElement(By.id("username")).sendKeys("");
         driver.findElement(By.id("username")).sendKeys("hi");
@@ -119,11 +124,11 @@ public class AccountSettingsUsernameIT extends DriverBase {
         driver.findElement(By.cssSelector("#accountSettings > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#Username > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#UsernameEdit > span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Username > span")).click();
+        driver.findElement(By.cssSelector("#UsernameEdit > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("username"))) break; } catch (Exception e) {}
