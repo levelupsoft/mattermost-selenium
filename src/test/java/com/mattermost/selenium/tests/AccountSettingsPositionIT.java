@@ -17,7 +17,7 @@ public class AccountSettingsPositionIT extends DriverBase {
 
     @Test
     public void testAccountSettingsPositionIT() throws Exception {        driver.get(baseUrl + "/login");
-        disableAnimations();
+        // DisableAnimations
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("loginButton"))) break; } catch (Exception e) {}
@@ -46,11 +46,11 @@ public class AccountSettingsPositionIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#Position > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#PositionEdit > span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Position > span")).click();
+        driver.findElement(By.cssSelector("#PositionEdit > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("position"))) break; } catch (Exception e) {}
@@ -67,7 +67,7 @@ public class AccountSettingsPositionIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Position > span")).click();
+        driver.findElement(By.cssSelector("#PositionEdit > span")).click();
         driver.findElement(By.id("position")).clear();
         driver.findElement(By.id("position")).sendKeys("");
         driver.findElement(By.id("position")).sendKeys("Edited Tester");
@@ -78,7 +78,7 @@ public class AccountSettingsPositionIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Position > span")).click();
+        driver.findElement(By.cssSelector("#PositionEdit > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("position"))) break; } catch (Exception e) {}
@@ -95,7 +95,7 @@ public class AccountSettingsPositionIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Position > span")).click();
+        driver.findElement(By.cssSelector("#PositionEdit > span")).click();
         driver.findElement(By.id("position")).clear();
         driver.findElement(By.id("position")).sendKeys("");
         driver.findElement(By.id("position")).sendKeys("*" + Keys.BACK_SPACE);
