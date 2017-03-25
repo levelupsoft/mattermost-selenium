@@ -40,7 +40,7 @@ public class AccountSettingsNicknameIT extends DriverBase {
         driver.findElement(By.cssSelector("#accountSettings > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#Nickname > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#NicknameEdit > span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -50,7 +50,7 @@ public class AccountSettingsNicknameIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Nickname > span")).click();
+        driver.findElement(By.cssSelector("#NicknameEdit > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("nickname"))) break; } catch (Exception e) {}
@@ -67,7 +67,7 @@ public class AccountSettingsNicknameIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Nickname > span")).click();
+        driver.findElement(By.cssSelector("#NicknameEdit > span")).click();
         driver.findElement(By.id("nickname")).clear();
         driver.findElement(By.id("nickname")).sendKeys("");
         driver.findElement(By.id("nickname")).sendKeys("Edited Nick");
@@ -78,7 +78,7 @@ public class AccountSettingsNicknameIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Nickname > span")).click();
+        driver.findElement(By.cssSelector("#NicknameEdit > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("nickname"))) break; } catch (Exception e) {}
