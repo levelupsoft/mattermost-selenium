@@ -262,6 +262,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        Thread.sleep(1000);
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("currentPassword"))) break; } catch (Exception e) {}
@@ -420,6 +421,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        Thread.sleep(1000);
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.linkText("Security"))) break; } catch (Exception e) {}
