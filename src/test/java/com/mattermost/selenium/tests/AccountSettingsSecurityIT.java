@@ -330,6 +330,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#accountSettings > span")).click();
+        Thread.sleep(1000);
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.linkText("Security"))) break; } catch (Exception e) {}
@@ -347,12 +348,6 @@ public class AccountSettingsSecurityIT extends DriverBase {
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("saveSetting"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("currentPassword"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
