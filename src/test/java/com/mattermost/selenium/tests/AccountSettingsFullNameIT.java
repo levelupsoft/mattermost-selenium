@@ -95,12 +95,26 @@ public class AccountSettingsFullNameIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        // 1 of 4: After export to java, replace these two lines in the java file:
+        // driver.findElement(By.id("firstName")).sendKeys("");
+        // driver.findElement(By.id("firstName")).sendKeys(Keys.BACK_SPACE);
+        // with these two lines:
+        // driver.findElement(By.id("firstName")).sendKeys("h");
+        // driver.findElement(By.id("firstName")).sendKeys("\u0008");
         driver.findElement(By.id("firstName")).clear();
         driver.findElement(By.id("firstName")).sendKeys("h");
         driver.findElement(By.id("firstName")).sendKeys("\u0008");
+        Thread.sleep(1000);
+        // 2 of 4: After export to java, replace these two lines in the java file:
+        // driver.findElement(By.id("lastName")).sendKeys("");
+        // driver.findElement(By.id("lastName")).sendKeys(Keys.BACK_SPACE);
+        // with these two lines:
+        // driver.findElement(By.id("lastName")).sendKeys("h");
+        // driver.findElement(By.id("lastName")).sendKeys("\u0008");
         driver.findElement(By.id("lastName")).clear();
         driver.findElement(By.id("lastName")).sendKeys("h");
         driver.findElement(By.id("lastName")).sendKeys("\u0008");
+        Thread.sleep(1000);
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -167,12 +181,24 @@ public class AccountSettingsFullNameIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        // 3 of 4: After export to java, replace these two lines in the java file:
+        // driver.findElement(By.id("firstName")).sendKeys("");
+        // driver.findElement(By.id("firstName")).sendKeys(Keys.BACK_SPACE);
+        // with these two lines:
+        // driver.findElement(By.id("firstName")).sendKeys("h");
+        // driver.findElement(By.id("firstName")).sendKeys("\u0008");
         driver.findElement(By.id("firstName")).clear();
         driver.findElement(By.id("firstName")).sendKeys("h");
         driver.findElement(By.id("firstName")).sendKeys("\u0008");
+        // 4 of 4: After export to java, replace these two lines in the java file:
+        // driver.findElement(By.id("lastName")).sendKeys("");
+        // driver.findElement(By.id("lastName")).sendKeys(Keys.BACK_SPACE);
+        // with these two lines:
+        // driver.findElement(By.id("lastName")).sendKeys("h");
+        // driver.findElement(By.id("lastName")).sendKeys("\u0008");
         driver.findElement(By.id("lastName")).clear();
         driver.findElement(By.id("lastName")).sendKeys("h");
-        driver.findElement(By.id("lastName")).sendKeys("\u0008");
+        driver.findElement(By.id("lastName")).sendKeys(Keys.BACK_SPACE);
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
