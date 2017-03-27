@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://selenium.mattermost.com" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>openAndWait</td>
+	<td>/login</td>
+	<td></td>
+</tr>
+<!--DisableAnimations-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>test@test.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettings &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettings &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Display</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Display</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//li[@id='[object_Object]Desc']/span</td>
+	<td>Open to manage your theme</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc'])[2]</td>
+	<td>Open Sans</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[2]</td>
+	<td>12-hour clock (example: 4:00 PM)</td>
+</tr>
+<!--Clock Display-->
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=clockFormat12h</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=clockFormat24h</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>id=clockFormat24h</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//li/div/div[3]/span</td>
+	<td>Select how you prefer time displayed.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id='[object_Object]Cancel']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[2]</td>
+	<td>12-hour clock (example: 4:00 PM)</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=clockFormat12h</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=clockFormat24h</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>id=clockFormat24h</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[2]</td>
+	<td>24-hour clock (example: 16:00)</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=clockFormat12h</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=clockFormat12h</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForChecked</td>
+	<td>id=clockFormat12h</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[2]</td>
+	<td>12-hour clock (example: 4:00 PM)</td>
+</tr>
+<!--Teammate Name Display-->
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[3]</td>
+	<td>Show username (default)</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=nameFormatNickname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=nameFormatFullName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=nameFormatNickname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=nameFormatFullName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[@id='[object_Object]Cancel']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id='[object_Object]Cancel']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[3]</td>
+	<td>Show username (default)</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=nameFormatUsername</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=nameFormatUsername</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=nameFormatNickname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=nameFormatNickname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[3]</td>
+	<td>Show nickname if one exists, otherwise show first and last name</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=nameFormatFullName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=nameFormatNickname</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=nameFormatFullName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=nameFormatFullName</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[3]</td>
+	<td>Show first and last name</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=nameFormatFullName</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=nameFormatUsername</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=nameFormatUsername</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[3]</td>
+	<td>Show username (default)</td>
+</tr>
+<!--Default appearance of image link previews-->
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[4]</td>
+	<td>Expanded</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[5]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//li/div/div[3]/span</td>
+	<td>Set whether previews of image links show as expanded or collapsed by default. This setting can also be controlled using the slash commands /expand and /collapse.</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=collapseFormat</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=collapseFormatOff</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=collapseFormatOff</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[4]</td>
+	<td>Collapsed</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[5]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=collapseFormat</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=collapseFormat</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=collapseFormat</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[4]</td>
+	<td>Expanded</td>
+</tr>
+<!--Message Display-->
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[5]</td>
+	<td>Standard</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//li/div/div[3]/span</td>
+	<td>Select how messages in a channel should be displayed.</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=messageFormatStandard</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=messageFormatCompact</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=messageFormatCompact</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id='[object_Object]Cancel']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[5]</td>
+	<td>Standard</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=messageFormatStandard</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=messageFormatCompact</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=messageFormatCompact</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[4]</td>
+	<td>Expanded</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=messageFormatCompact</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=messageFormatStandard</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=messageFormatStandard</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[5]</td>
+	<td>Standard</td>
+</tr>
+<!--Channel Display Mode-->
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[6]</td>
+	<td>Full width</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[7]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=channelDisplayFormatFullScreen</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelDisplayFormatCentered</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=channelDisplayFormatCentered</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//li/div/div[3]/span</td>
+	<td>Select the width of the center channel.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id='[object_Object]Cancel']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[6]</td>
+	<td>Full width</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[7]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=channelDisplayFormatFullScreen</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelDisplayFormatCentered</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=channelDisplayFormatCentered</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[6]</td>
+	<td>Fixed width, centered</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[7]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=channelDisplayFormatCentered</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelDisplayFormatFullScreen</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=channelDisplayFormatFullScreen</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc']/span)[6]</td>
+	<td>Full width</td>
+</tr>
+<!--Language-->
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//li[@id='[object_Object]Desc'])[8]</td>
+	<td>English</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//li/div/div[2]/span</td>
+	<td>*Select which language Mattermost displays in the user interface.*Would like to help with translations? Join the Mattermost Translation Server to contribute.*</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Mattermost Translation Server</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=displayLanguage</td>
+	<td>label=Deutsch</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.channel-intro__content &gt; strong</td>
+	<td>Willkommen zu Town Square!</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettings &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Anzeige</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Anzeige</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=displayLanguage</td>
+	<td>label=Español</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.channel-intro__content &gt; strong</td>
+	<td>¡Bienvenido a Town Square!</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettings &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Visualización</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Visualización</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=displayLanguage</td>
+	<td>label=Français</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.channel-intro__content &gt; strong</td>
+	<td>Bienvenue sur Town Square!</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettings &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Affichage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Affichage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=displayLanguage</td>
+	<td>label=Nederlands (Alpha)</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.channel-intro__content &gt; strong</td>
+	<td>Welkom bij Town Square!</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettings &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Weergave</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Weergave</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=displayLanguage</td>
+	<td>label=Português (Brasil)</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.channel-intro__content &gt; strong</td>
+	<td>Bem-vindo a Town Square!</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettings &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Exibição</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Exibição</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=displayLanguage</td>
+	<td>label=Pусский (Beta)</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.channel-intro__content &gt; strong</td>
+	<td>Town Square - добро пожаловать!</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettings &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Вид</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Вид</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=displayLanguage</td>
+	<td>label=한국어 (Alpha)</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.channel-intro__content &gt; strong</td>
+	<td>Town Square에 오신 것을 환영합니다!</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettings &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=화면</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=화면</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=displayLanguage</td>
+	<td>中文 (简体)</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.channel-intro__content &gt; strong</td>
+	<td>欢迎进入Town Square!</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettings &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=显示</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=显示</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=displayLanguage</td>
+	<td>label=中文 (繁體)</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.channel-intro__content &gt; strong</td>
+	<td>歡迎來到Town Square！</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettings &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=顯示</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=顯示</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=displayLanguage</td>
+	<td>label=日本語</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.channel-intro__content &gt; strong</td>
+	<td>Town Squareへようこそ!</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettings &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=表示</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=表示</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=displayLanguage</td>
+	<td>label=English</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.channel-intro__content &gt; strong</td>
+	<td>Welcome to Town Square!</td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#logout &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
+
+</tbody></table>
+</body>
+</html>
