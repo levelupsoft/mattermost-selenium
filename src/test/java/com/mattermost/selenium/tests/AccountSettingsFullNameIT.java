@@ -102,6 +102,7 @@ public class AccountSettingsFullNameIT extends DriverBase {
         // driver.findElement(By.id("firstName")).sendKeys("h");
         // driver.findElement(By.id("firstName")).sendKeys("\u0008");
         driver.findElement(By.id("firstName")).clear();
+        driver.findElement(By.id("firstName")).sendKeys("");
         driver.findElement(By.id("firstName")).sendKeys("h");
         driver.findElement(By.id("firstName")).sendKeys("\u0008");
         Thread.sleep(1000);
@@ -112,6 +113,7 @@ public class AccountSettingsFullNameIT extends DriverBase {
         // driver.findElement(By.id("lastName")).sendKeys("h");
         // driver.findElement(By.id("lastName")).sendKeys("\u0008");
         driver.findElement(By.id("lastName")).clear();
+        driver.findElement(By.id("lastName")).sendKeys("");
         driver.findElement(By.id("lastName")).sendKeys("h");
         driver.findElement(By.id("lastName")).sendKeys("\u0008");
         Thread.sleep(1000);
@@ -188,6 +190,7 @@ public class AccountSettingsFullNameIT extends DriverBase {
         // driver.findElement(By.id("firstName")).sendKeys("h");
         // driver.findElement(By.id("firstName")).sendKeys("\u0008");
         driver.findElement(By.id("firstName")).clear();
+        driver.findElement(By.id("firstName")).sendKeys("");
         driver.findElement(By.id("firstName")).sendKeys("h");
         driver.findElement(By.id("firstName")).sendKeys("\u0008");
         // 4 of 4: After export to java, replace these two lines in the java file:
@@ -197,6 +200,7 @@ public class AccountSettingsFullNameIT extends DriverBase {
         // driver.findElement(By.id("lastName")).sendKeys("h");
         // driver.findElement(By.id("lastName")).sendKeys("\u0008");
         driver.findElement(By.id("lastName")).clear();
+        driver.findElement(By.id("lastName")).sendKeys("");
         driver.findElement(By.id("lastName")).sendKeys("h");
         driver.findElement(By.id("lastName")).sendKeys(Keys.BACK_SPACE);
         driver.findElement(By.id("saveSetting")).click();
