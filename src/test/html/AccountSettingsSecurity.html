@@ -17,6 +17,7 @@
 	<td></td>
 </tr>
 <!--DisableAnimations-->
+<!--Using test2@test.com for Security tests to avoid failure of this test affecting all other tests-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=loginButton</td>
@@ -25,7 +26,7 @@
 <tr>
 	<td>type</td>
 	<td>name=loginId</td>
-	<td>test@test.com</td>
+	<td>test2@test.com</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -95,8 +96,18 @@
 	<td>Please enter your current password.</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//a[@id='[object_Object]Cancel']/span</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>//a[@id='[object_Object]Cancel']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[@id='[object_Object]Edit']/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -115,9 +126,19 @@
 	<td>passwd</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPassword</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=newPassword</td>
 	<td>passwdd</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=confirmPassword</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -155,9 +176,19 @@
 	<td>paaaaaa</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPassword</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=newPassword</td>
 	<td>passwdd</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=confirmPassword</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -175,14 +206,29 @@
 	<td>The &quot;Current Password&quot; you entered is incorrect. Please check that Caps Lock is off and try again.</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=currentPassword</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=currentPassword</td>
 	<td>passwd</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPassword</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=newPassword</td>
 	<td>pass</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=confirmPassword</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -205,6 +251,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//a[@id='[object_Object]Edit']/span</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>//a[@id='[object_Object]Edit']/span</td>
 	<td></td>
@@ -220,9 +271,19 @@
 	<td>passwd</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPassword</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=newPassword</td>
 	<td>passwdd</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=confirmPassword</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -263,12 +324,12 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=loginId</td>
-	<td>test@test.com</td>
+	<td>test2@test.com</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
 	<td>name=loginId</td>
-	<td>test@test.com</td>
+	<td>test2@test.com</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -326,14 +387,29 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=currentPassword</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=currentPassword</td>
 	<td>passwd</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPassword</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=newPassword</td>
 	<td>passwdd</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=confirmPassword</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -371,7 +447,12 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
 	<td>id=logout</td>
 	<td></td>
 </tr>
@@ -379,12 +460,12 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=loginId</td>
-	<td>test@test.com</td>
+	<td>test2@test.com</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
 	<td>name=loginId</td>
-	<td>test@test.com</td>
+	<td>test2@test.com</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -404,6 +485,11 @@
 <tr>
 	<td>click</td>
 	<td>id=sidebar-header-dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettings &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -432,13 +518,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=label.col-sm-5.control-label</td>
-	<td>Current Password</td>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=currentPassword</td>
 	<td></td>
 </tr>
 <tr>
@@ -447,9 +533,19 @@
 	<td>passwdd</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPassword</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=newPassword</td>
 	<td>passwd</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=confirmPassword</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
