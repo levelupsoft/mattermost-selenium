@@ -243,7 +243,13 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.xpath("//a[@id='[object_Object]Edit']/span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("currentPassword"))) break; } catch (Exception e) {}
+        	try { if ("Current Password".equals(driver.findElement(By.cssSelector("label.col-sm-5.control-label")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("saveSetting"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
