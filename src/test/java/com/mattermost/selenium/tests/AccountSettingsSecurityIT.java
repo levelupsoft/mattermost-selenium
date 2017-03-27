@@ -17,7 +17,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
 
     @Test
     public void testAccountSettingsSecurityIT() throws Exception {        driver.get(baseUrl + "/login");
-        // DisableAnimations
+        disableAnimations();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("loginButton"))) break; } catch (Exception e) {}
@@ -41,6 +41,12 @@ public class AccountSettingsSecurityIT extends DriverBase {
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Account Settings".equals(driver.findElement(By.xpath("//body/div[2]/div/div[2]/div/div/div/h4/span")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.linkText("Security"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -125,8 +131,14 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.id("confirmPassword")).sendKeys("passwdd");
         driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
         driver.navigate().refresh();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("sidebar-header-dropdown"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         driver.findElement(By.id("sidebar-header-dropdown")).click();
-        // DisableAnimations
+        disableAnimations();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
@@ -154,6 +166,12 @@ public class AccountSettingsSecurityIT extends DriverBase {
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Account Settings".equals(driver.findElement(By.xpath("//body/div[2]/div/div[2]/div/div/div/h4/span")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.linkText("Security"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -191,7 +209,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
 
         driver.findElement(By.id("sidebar-header-dropdown")).click();
         driver.findElement(By.id("logout")).click();
-        // DisableAnimations
+        disableAnimations();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.name("loginId"))) break; } catch (Exception e) {}
@@ -218,7 +236,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.linkText("Security")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Security Settings".equals(driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/h3/span")).getText())) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.xpath("//a[@id='[object_Object]Edit']/span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -280,6 +298,12 @@ public class AccountSettingsSecurityIT extends DriverBase {
 
         driver.findElement(By.id("sidebar-header-dropdown")).click();
         driver.findElement(By.cssSelector("#accountSettings > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Account Settings".equals(driver.findElement(By.xpath("//body/div[2]/div/div[2]/div/div/div/h4/span")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.linkText("Security"))) break; } catch (Exception e) {}
