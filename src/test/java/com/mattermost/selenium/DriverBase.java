@@ -56,7 +56,7 @@ public class DriverBase {
     public void setUp() throws Exception {
         driver = getDriver();
         baseUrl = "http://localhost:8065/";
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @AfterMethod(alwaysRun = true)
@@ -93,12 +93,7 @@ public class DriverBase {
     }
 
     protected boolean isElementPresent(By by) {
-        try {
-            driver.findElement(by);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
+        return driver.findElements(by).size() > 0;
     }
 
     protected boolean isAlertPresent() {
