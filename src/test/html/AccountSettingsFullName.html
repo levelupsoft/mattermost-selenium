@@ -134,7 +134,10 @@
 	<td>id=firstName</td>
 	<td></td>
 </tr>
-<!--After export, replace the KEY_BACKSPACE line with two lines:-->
+<!--After export to java, replace these two lines in the java file:-->
+<!--driver.findElement(By.id("firstName")).sendKeys("");-->
+<!--driver.findElement(By.id("firstName")).sendKeys(Keys.BACK_SPACE);-->
+<!--with these two lines:-->
 <!--driver.findElement(By.id("firstName")).sendKeys("h");-->
 <!--driver.findElement(By.id("firstName")).sendKeys("\u0008");-->
 <tr>
@@ -142,16 +145,24 @@
 	<td>id=firstName</td>
 	<td> ${KEY_BACKSPACE}</td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>type</td>
 	<td>id=lastName</td>
 	<td></td>
 </tr>
+<!--After export to java, replace these two lines in the java file:-->
+<!--driver.findElement(By.id("lastName")).sendKeys("");-->
+<!--driver.findElement(By.id("lastName")).sendKeys(Keys.BACK_SPACE);-->
+<!--with these two lines:-->
+<!--driver.findElement(By.id("lastName")).sendKeys("h");-->
+<!--driver.findElement(By.id("lastName")).sendKeys("\u0008");-->
 <tr>
 	<td>sendKeys</td>
 	<td>id=lastName</td>
 	<td> ${KEY_BACKSPACE}</td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>click</td>
 	<td>id=saveSetting</td>
