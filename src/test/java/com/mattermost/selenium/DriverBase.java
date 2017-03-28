@@ -56,7 +56,13 @@ public class DriverBase {
     public void setUp() throws Exception {
         driver = getDriver();
         baseUrl = "http://localhost:8065/";
+        driver.manage().window().setPosition(new Point(0,0));
         driver.manage().window().maximize();
+        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        Dimension dim = new Dimension((int) screenSize.getWidth(), (int) screenSize.getHeight());
+        driver.manage().window().setSize(dim);
+        System.out.println("Width: " + screenSize.getWidth());
+        System.out.println("Height: " + screenSize.getHeight());
     }
 
     @AfterMethod(alwaysRun = true)

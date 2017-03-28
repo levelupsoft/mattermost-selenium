@@ -17,7 +17,6 @@ public class AccountSettingsDisplayIT extends DriverBase {
 
     @Test
     public void testAccountSettingsDisplayIT() throws Exception {        driver.get(baseUrl + "/login");
-    driver.manage().window().maximize();
         disableAnimations();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
