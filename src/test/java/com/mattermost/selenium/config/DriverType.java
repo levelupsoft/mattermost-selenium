@@ -49,7 +49,7 @@ public enum DriverType implements DriverSetup {
         }
 
         public WebDriver getWebDriverObject(DesiredCapabilities capabilities) {
-            return new ChromeDriver(capabilities);
+            return new WaitChromeDriver(capabilities);
         }
     },
     IE {
@@ -62,7 +62,8 @@ public enum DriverType implements DriverSetup {
         }
 
         public WebDriver getWebDriverObject(DesiredCapabilities capabilities) {
-            return new InternetExplorerDriver(capabilities);
+            throw new RuntimeException("need to implement a wait for driver");
+            //return new InternetExplorerDriver(capabilities);
         }
     },
     EDGE {
@@ -72,7 +73,8 @@ public enum DriverType implements DriverSetup {
         }
 
         public WebDriver getWebDriverObject(DesiredCapabilities capabilities) {
-            return new EdgeDriver(capabilities);
+            throw new RuntimeException("need to implement a wait for driver");
+            //return new EdgeDriver(capabilities);
         }
     },
     SAFARI {
@@ -83,7 +85,8 @@ public enum DriverType implements DriverSetup {
         }
 
         public WebDriver getWebDriverObject(DesiredCapabilities capabilities) {
-            return new SafariDriver(capabilities);
+            throw new RuntimeException("need to implement a wait for driver");
+            //return new SafariDriver(capabilities);
         }
     },
     OPERA {
@@ -93,7 +96,8 @@ public enum DriverType implements DriverSetup {
         }
 
         public WebDriver getWebDriverObject(DesiredCapabilities capabilities) {
-            return new OperaDriver(capabilities);
+            throw new RuntimeException("need to implement a wait for driver");
+            //return new OperaDriver(capabilities);
         }
     },
     PHANTOMJS {
@@ -110,7 +114,8 @@ public enum DriverType implements DriverSetup {
         }
 
         public WebDriver getWebDriverObject(DesiredCapabilities capabilities) {
-            return new PhantomJSDriver(capabilities);
+            throw new RuntimeException("need to implement a wait for driver");
+            //return new PhantomJSDriver(capabilities);
         }
     };
 

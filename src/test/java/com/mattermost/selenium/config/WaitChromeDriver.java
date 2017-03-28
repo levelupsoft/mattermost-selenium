@@ -1,6 +1,6 @@
 package com.mattermost.selenium.config;
 
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -8,8 +8,8 @@ import org.openqa.selenium.NoSuchElementException;
 
 import static org.junit.Assert.fail;
 
-public class WaitFirefoxDriver extends FirefoxDriver {
-    WaitFirefoxDriver(DesiredCapabilities caps) {
+public class WaitChromeDriver extends ChromeDriver {
+    WaitChromeDriver(DesiredCapabilities caps) {
         super(caps);
     }
 
