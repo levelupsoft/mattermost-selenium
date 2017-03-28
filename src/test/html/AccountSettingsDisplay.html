@@ -69,23 +69,23 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//li[@id='[object_Object]Desc']/span</td>
+	<td>css=#ThemeDesc &gt; span</td>
 	<td>Open to manage your theme</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc'])[2]</td>
+	<td>id=Display_FontDesc</td>
 	<td>Open Sans</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[2]</td>
+	<td>css=#Clock_DisplayDesc &gt; span</td>
 	<td>12-hour clock (example: 4:00 PM)</td>
 </tr>
 <!--Clock Display-->
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[3]</td>
+	<td>css=#Clock_DisplayEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -110,17 +110,17 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='[object_Object]Cancel']/span</td>
+	<td>css=#Clock_DisplayCancel &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[2]</td>
+	<td>css=#Clock_DisplayDesc &gt; span</td>
 	<td>12-hour clock (example: 4:00 PM)</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[3]</td>
+	<td>css=#Clock_DisplayEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -145,12 +145,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[2]</td>
+	<td>css=#Clock_DisplayDesc &gt; span</td>
 	<td>24-hour clock (example: 16:00)</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[3]</td>
+	<td>css=#Clock_DisplayEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -175,18 +175,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[2]</td>
+	<td>css=#Clock_DisplayDesc &gt; span</td>
 	<td>12-hour clock (example: 4:00 PM)</td>
 </tr>
 <!--Teammate Name Display-->
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[3]</td>
+	<td>css=#Teammate_Name_DisplayDesc &gt; span</td>
 	<td>Show username (default)</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[4]</td>
+	<td>css=#Teammate_Name_DisplayEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -211,22 +211,29 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@id='[object_Object]Cancel']/span</td>
+	<td>css=#Teammate_Name_DisplayCancel &gt; span</td>
 	<td></td>
 </tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>click</td>
-	<td>//a[@id='[object_Object]Cancel']/span</td>
+	<td>css=#Teammate_Name_DisplayCancel &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[3]</td>
+	<td>css=#Teammate_Name_DisplayDesc &gt; span</td>
 	<td>Show username (default)</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[4]</td>
+	<td>css=#Teammate_Name_DisplayEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -256,12 +263,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[3]</td>
+	<td>css=#Teammate_Name_DisplayDesc &gt; span</td>
 	<td>Show nickname if one exists, otherwise show first and last name</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[4]</td>
+	<td>css=#Teammate_Name_DisplayEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -291,12 +298,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[3]</td>
+	<td>css=#Teammate_Name_DisplayDesc &gt; span</td>
 	<td>Show first and last name</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[4]</td>
+	<td>css=#Teammate_Name_DisplayEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -321,18 +328,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[3]</td>
+	<td>css=#Teammate_Name_DisplayDesc &gt; span</td>
 	<td>Show username (default)</td>
 </tr>
 <!--Default appearance of image link previews-->
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[4]</td>
+	<td>css=#Default_appearance_of_image_link_previewsDesc &gt; span</td>
 	<td>Expanded</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[5]</td>
+	<td>css=#Default_appearance_of_image_link_previewsEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -351,9 +358,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>assertValue</td>
+	<td>waitForChecked</td>
 	<td>id=collapseFormatOff</td>
-	<td>on</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -362,12 +369,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[4]</td>
+	<td>css=#Default_appearance_of_image_link_previewsDesc &gt; span</td>
 	<td>Collapsed</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[5]</td>
+	<td>css=#Default_appearance_of_image_link_previewsEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -392,18 +399,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[4]</td>
+	<td>css=#Default_appearance_of_image_link_previewsDesc &gt; span</td>
 	<td>Expanded</td>
 </tr>
 <!--Message Display-->
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[5]</td>
+	<td>css=#Message_DisplayDesc &gt; span</td>
 	<td>Standard</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[6]</td>
+	<td>css=#Message_DisplayEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -428,17 +435,17 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='[object_Object]Cancel']/span</td>
+	<td>css=#Message_DisplayCancel &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[5]</td>
+	<td>css=#Message_DisplayDesc &gt; span</td>
 	<td>Standard</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[6]</td>
+	<td>css=#Message_DisplayEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -463,17 +470,23 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[4]</td>
+	<td>css=#Default_appearance_of_image_link_previewsDesc &gt; span</td>
 	<td>Expanded</td>
+</tr>
+<!--Sleep-->
+<tr>
+	<td>waitForText</td>
+	<td>css=#Message_DisplayDesc &gt; span</td>
+	<td>Compact</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#Message_DisplayEdit &gt; span</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[6]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[6]</td>
+	<td>id=messageFormatCompact</td>
 	<td></td>
 </tr>
 <tr>
@@ -487,7 +500,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>assertValue</td>
+	<td>waitForValue</td>
 	<td>id=messageFormatStandard</td>
 	<td>on</td>
 </tr>
@@ -498,18 +511,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[5]</td>
+	<td>css=#Message_DisplayDesc &gt; span</td>
 	<td>Standard</td>
 </tr>
 <!--Channel Display Mode-->
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[6]</td>
+	<td>css=#Channel_Display_ModeDesc &gt; span</td>
 	<td>Full width</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[7]</td>
+	<td>css=#Channel_Display_ModeEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -523,7 +536,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>assertValue</td>
+	<td>waitForValue</td>
 	<td>id=channelDisplayFormatCentered</td>
 	<td>on</td>
 </tr>
@@ -534,17 +547,17 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='[object_Object]Cancel']/span</td>
+	<td>css=#Channel_Display_ModeCancel &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[6]</td>
+	<td>css=#Channel_Display_ModeDesc &gt; span</td>
 	<td>Full width</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[7]</td>
+	<td>css=#Channel_Display_ModeEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -558,7 +571,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>assertValue</td>
+	<td>waitForValue</td>
 	<td>id=channelDisplayFormatCentered</td>
 	<td>on</td>
 </tr>
@@ -569,12 +582,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[6]</td>
+	<td>css=#Channel_Display_ModeDesc &gt; span</td>
 	<td>Fixed width, centered</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[7]</td>
+	<td>css=#Channel_Display_ModeEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -588,7 +601,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>assertValue</td>
+	<td>waitForValue</td>
 	<td>id=channelDisplayFormatFullScreen</td>
 	<td>on</td>
 </tr>
@@ -599,23 +612,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc']/span)[6]</td>
+	<td>css=#Channel_Display_ModeDesc &gt; span</td>
 	<td>Full width</td>
 </tr>
 <!--Language-->
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//li[@id='[object_Object]Desc'])[8]</td>
+	<td>id=LanguageDesc</td>
 	<td>English</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -665,12 +673,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -710,12 +718,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -755,12 +763,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -800,12 +808,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -845,12 +853,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -890,12 +898,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -935,12 +943,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -980,12 +988,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -1025,12 +1033,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -1070,12 +1078,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='[object_Object]Edit']/span)[8]</td>
+	<td>css=#LanguageEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -1118,11 +1126,12 @@
 	<td>name=loginId</td>
 	<td></td>
 </tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 </tbody>
 </table>
-</body>
-</html>
-
-</tbody></table>
 </body>
 </html>
