@@ -63,8 +63,6 @@ public class DriverBase {
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
         Dimension dim = new Dimension((int) screenSize.getWidth(), (int) screenSize.getHeight());
         driver.manage().window().setSize(dim);
-        System.out.println("Width: " + screenSize.getWidth());
-        System.out.println("Height: " + screenSize.getHeight());
     }
 
     @AfterMethod(alwaysRun = true)
