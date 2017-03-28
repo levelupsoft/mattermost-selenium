@@ -59,7 +59,13 @@ public class AccountSettingsSecurityIT extends DriverBase {
         }
 
         // Password
-        driver.findElement(By.xpath("//a[@id='[object_Object]Edit']/span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("#PasswordEdit > span"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("#PasswordEdit > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("saveSetting"))) break; } catch (Exception e) {}
@@ -75,18 +81,18 @@ public class AccountSettingsSecurityIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//a[@id='[object_Object]Cancel']/span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#PasswordCancel > span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//a[@id='[object_Object]Cancel']/span")).click();
+        driver.findElement(By.cssSelector("#PasswordCancel > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//a[@id='[object_Object]Edit']/span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#PasswordEdit > span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//a[@id='[object_Object]Edit']/span")).click();
+        driver.findElement(By.cssSelector("#PasswordEdit > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("currentPassword"))) break; } catch (Exception e) {}
@@ -115,8 +121,20 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//a[@id='[object_Object]Cancel']/span")).click();
-        driver.findElement(By.xpath("//a[@id='[object_Object]Edit']/span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("#PasswordCancel > span"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("#PasswordCancel > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("#PasswordEdit > span"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("#PasswordEdit > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("currentPassword"))) break; } catch (Exception e) {}
@@ -173,14 +191,20 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//a[@id='[object_Object]Cancel']/span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//a[@id='[object_Object]Edit']/span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#PasswordCancel > span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//a[@id='[object_Object]Edit']/span")).click();
+        driver.findElement(By.cssSelector("#PasswordCancel > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("#PasswordEdit > span"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("#PasswordEdit > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("currentPassword"))) break; } catch (Exception e) {}
@@ -251,11 +275,11 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.linkText("Security")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//a[@id='[object_Object]Edit']/span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#PasswordEdit > span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//a[@id='[object_Object]Edit']/span")).click();
+        driver.findElement(By.cssSelector("#PasswordEdit > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("saveSetting"))) break; } catch (Exception e) {}
@@ -287,7 +311,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.xpath("//li[@id='[object_Object]Desc']/span")).getText().matches("^Last updated[\\s\\S]*$")) break; } catch (Exception e) {}
+        	try { if (driver.findElement(By.cssSelector("#PasswordDesc > span")).getText().matches("^Last updated[\\s\\S]*$")) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -341,11 +365,11 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.linkText("Security")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//a[@id='[object_Object]Edit']/span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#PasswordEdit > span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//a[@id='[object_Object]Edit']/span")).click();
+        driver.findElement(By.cssSelector("#PasswordEdit > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("saveSetting"))) break; } catch (Exception e) {}
@@ -370,7 +394,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.xpath("//li[@id='[object_Object]Desc']/span")).getText().matches("^Last updated[\\s\\S]*$")) break; } catch (Exception e) {}
+        	try { if (driver.findElement(By.cssSelector("#PasswordDesc > span")).getText().matches("^Last updated[\\s\\S]*$")) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
