@@ -3,6 +3,8 @@ package com.mattermost.selenium;
 import com.mattermost.selenium.config.DriverFactory;
 import com.mattermost.selenium.listeners.ScreenshotListener;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
