@@ -13,6 +13,8 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 
+import static org.junit.Assert.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -20,8 +22,8 @@ import java.util.List;
 
 import static org.openqa.selenium.remote.CapabilityType.PROXY;
 
-public enum DriverType implements DriverSetup {
 
+public enum DriverType implements DriverSetup {
     FIREFOX {
         public DesiredCapabilities getDesiredCapabilities(Proxy proxySettings) {
             DesiredCapabilities capabilities = DesiredCapabilities.firefox();
@@ -30,7 +32,7 @@ public enum DriverType implements DriverSetup {
         }
 
         public WebDriver getWebDriverObject(DesiredCapabilities capabilities) {
-            return new FirefoxDriver(capabilities);
+            return new WaitFirefoxDriver(capabilities);
         }
     },
     CHROME {
