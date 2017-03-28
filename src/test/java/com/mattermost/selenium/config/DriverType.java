@@ -2,6 +2,7 @@ package com.mattermost.selenium.config;
 
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -35,6 +36,9 @@ public enum DriverType implements DriverSetup {
     CHROME {
         public DesiredCapabilities getDesiredCapabilities(Proxy proxySettings) {
             DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--start-maximized");
+            capabilities.setCapability(ChromeOptions.CAPABILITY, options);
             capabilities.setCapability("chrome.switches", Arrays.asList("--no-default-browser-check"));
             HashMap<String, String> chromePreferences = new HashMap<String, String>();
             chromePreferences.put("profile.password_manager_enabled", "false");
