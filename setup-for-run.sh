@@ -26,7 +26,7 @@ cp ~/config.json ~/mattermost/config/config.json
 cd ~/mattermost
 ./bin/platform reset --confirm true
 
-./bin/platform user create --email admin@test.com --username test --password passwd
+./bin/platform user create --email admin@test.com --username admin --password passwd
 ./bin/platform user create --email test@test.com --username test --password passwd
 ./bin/platform user create --email test2@test.com --username test2 --password passwd
 ./bin/platform user create --email test3@test.com --username test3 --password passwd
