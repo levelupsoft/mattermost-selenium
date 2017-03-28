@@ -2,6 +2,7 @@ package com.mattermost.selenium.config;
 
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.Proxy;
+import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -69,6 +70,10 @@ public class DriverFactory {
         System.out.println("Current Architecture: " + systemArchitecture);
         System.out.println("Current Browser Selection: " + selectedDriverType);
         System.out.println(" ");
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-maximized");
+        desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
         if (useRemoteWebDriver) {
             URL seleniumGridURL = new URL(System.getProperty("gridURL"));
