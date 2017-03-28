@@ -37,6 +37,12 @@ public class AccountSettingsFullNameIT extends DriverBase {
 
         driver.findElement(By.id("sidebar-header-dropdown")).click();
         // General Settings
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("#accountSettings > span"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         driver.findElement(By.cssSelector("#accountSettings > span")).click();
         // Full Name
         for (int second = 0;; second++) {
@@ -45,12 +51,7 @@ public class AccountSettingsFullNameIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Click 'Edit' to add your full name".equals(driver.findElement(By.cssSelector("#Full_NameDesc > span")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        String fullNameDesc = driver.findElement(By.id("Full_NameDesc")).getText();
         driver.findElement(By.xpath("//a[@id='Full_NameEdit']/span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -61,7 +62,7 @@ public class AccountSettingsFullNameIT extends DriverBase {
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Click 'Edit' to add your full name".equals(driver.findElement(By.cssSelector("#Full_NameDesc > span")).getText())) break; } catch (Exception e) {}
+        	try { if (fullNameDesc.equals(driver.findElement(By.id("Full_NameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -78,7 +79,7 @@ public class AccountSettingsFullNameIT extends DriverBase {
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Added".equals(driver.findElement(By.id("Full_NameDesc")).getText())) break; } catch (Exception e) {}
+        	try { if (driver.findElement(By.id("Full_NameDesc")).getText().matches("^Added[\\s\\S]*$")) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -95,42 +96,6 @@ public class AccountSettingsFullNameIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        // 1 of 4: After export to java, replace these two lines in the java file:
-        // driver.findElement(By.id("firstName")).sendKeys("");
-        // driver.findElement(By.id("firstName")).sendKeys(Keys.BACK_SPACE);
-        // with these two lines:
-        // driver.findElement(By.id("firstName")).sendKeys("h");
-        // driver.findElement(By.id("firstName")).sendKeys("\u0008");
-        driver.findElement(By.id("firstName")).clear();
-        driver.findElement(By.id("firstName")).sendKeys("");
-        driver.findElement(By.id("firstName")).sendKeys("h");
-        driver.findElement(By.id("firstName")).sendKeys("\u0008");
-        Thread.sleep(1000);
-        // 2 of 4: After export to java, replace these two lines in the java file:
-        // driver.findElement(By.id("lastName")).sendKeys("");
-        // driver.findElement(By.id("lastName")).sendKeys(Keys.BACK_SPACE);
-        // with these two lines:
-        // driver.findElement(By.id("lastName")).sendKeys("h");
-        // driver.findElement(By.id("lastName")).sendKeys("\u0008");
-        driver.findElement(By.id("lastName")).clear();
-        driver.findElement(By.id("lastName")).sendKeys("");
-        driver.findElement(By.id("lastName")).sendKeys("h");
-        driver.findElement(By.id("lastName")).sendKeys("\u0008");
-        Thread.sleep(1000);
-        driver.findElement(By.id("saveSetting")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Click 'Edit' to add your full name".equals(driver.findElement(By.cssSelector("#Full_NameDesc > span")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//a[@id='Full_NameEdit']/span"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.xpath("//a[@id='Full_NameEdit']/span")).click();
         driver.findElement(By.id("firstName")).clear();
         driver.findElement(By.id("firstName")).sendKeys("");
         driver.findElement(By.id("firstName")).sendKeys("This Is a Very Long Name");
@@ -146,7 +111,7 @@ public class AccountSettingsFullNameIT extends DriverBase {
         driver.findElement(By.cssSelector("#Full_NameCancel > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Click 'Edit' to add your full name".equals(driver.findElement(By.cssSelector("#Full_NameDesc > span")).getText())) break; } catch (Exception e) {}
+        	try { if (driver.findElement(By.id("Full_NameDesc")).getText().matches("^Added[\\s\\S]*$")) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -180,33 +145,6 @@ public class AccountSettingsFullNameIT extends DriverBase {
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("First Name".equals(driver.findElement(By.cssSelector("label.col-sm-5.control-label")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        // 3 of 4: After export to java, replace these two lines in the java file:
-        // driver.findElement(By.id("firstName")).sendKeys("");
-        // driver.findElement(By.id("firstName")).sendKeys(Keys.BACK_SPACE);
-        // with these two lines:
-        // driver.findElement(By.id("firstName")).sendKeys("h");
-        // driver.findElement(By.id("firstName")).sendKeys("\u0008");
-        driver.findElement(By.id("firstName")).clear();
-        driver.findElement(By.id("firstName")).sendKeys("");
-        driver.findElement(By.id("firstName")).sendKeys("h");
-        driver.findElement(By.id("firstName")).sendKeys("\u0008");
-        // 4 of 4: After export to java, replace these two lines in the java file:
-        // driver.findElement(By.id("lastName")).sendKeys("");
-        // driver.findElement(By.id("lastName")).sendKeys(Keys.BACK_SPACE);
-        // with these two lines:
-        // driver.findElement(By.id("lastName")).sendKeys("h");
-        // driver.findElement(By.id("lastName")).sendKeys("\u0008");
-        driver.findElement(By.id("lastName")).clear();
-        driver.findElement(By.id("lastName")).sendKeys("");
-        driver.findElement(By.id("lastName")).sendKeys("h");
-        driver.findElement(By.id("lastName")).sendKeys(Keys.BACK_SPACE);
-        driver.findElement(By.id("saveSetting")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Click 'Edit' to add your full name".equals(driver.findElement(By.cssSelector("#Full_NameDesc > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 

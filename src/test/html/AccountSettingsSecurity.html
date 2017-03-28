@@ -17,6 +17,7 @@
 	<td></td>
 </tr>
 <!--DisableAnimations-->
+<!--Using test2@test.com for Security tests to avoid failure of this test affecting all other tests-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=loginButton</td>
@@ -25,7 +26,7 @@
 <tr>
 	<td>type</td>
 	<td>name=loginId</td>
-	<td>test@test.com</td>
+	<td>test2@test.com</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -75,8 +76,13 @@
 </tr>
 <!--Password-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=#PasswordEdit &gt; span</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>//a[@id='[object_Object]Edit']/span</td>
+	<td>css=#PasswordEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -95,13 +101,23 @@
 	<td>Please enter your current password.</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//a[@id='[object_Object]Cancel']/span</td>
+	<td>waitForElementPresent</td>
+	<td>css=#PasswordCancel &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='[object_Object]Edit']/span</td>
+	<td>css=#PasswordCancel &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#PasswordEdit &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#PasswordEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -115,9 +131,19 @@
 	<td>passwd</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPassword</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=newPassword</td>
 	<td>passwdd</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=confirmPassword</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -135,13 +161,23 @@
 	<td>The new passwords you entered do not match.</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//a[@id='[object_Object]Cancel']/span</td>
+	<td>waitForElementPresent</td>
+	<td>css=#PasswordCancel &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='[object_Object]Edit']/span</td>
+	<td>css=#PasswordCancel &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#PasswordEdit &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#PasswordEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -155,9 +191,19 @@
 	<td>paaaaaa</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPassword</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=newPassword</td>
 	<td>passwdd</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=confirmPassword</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -175,14 +221,29 @@
 	<td>The &quot;Current Password&quot; you entered is incorrect. Please check that Caps Lock is off and try again.</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=currentPassword</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=currentPassword</td>
 	<td>passwd</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPassword</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=newPassword</td>
 	<td>pass</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=confirmPassword</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -200,13 +261,23 @@
 	<td>Your password must contain at least 5 characters.</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//a[@id='[object_Object]Cancel']/span</td>
+	<td>waitForElementPresent</td>
+	<td>css=#PasswordCancel &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='[object_Object]Edit']/span</td>
+	<td>css=#PasswordCancel &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#PasswordEdit &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#PasswordEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -220,9 +291,19 @@
 	<td>passwd</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPassword</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=newPassword</td>
 	<td>passwdd</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=confirmPassword</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -263,12 +344,12 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=loginId</td>
-	<td>test@test.com</td>
+	<td>test2@test.com</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
 	<td>name=loginId</td>
-	<td>test@test.com</td>
+	<td>test2@test.com</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -312,17 +393,23 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@id='[object_Object]Edit']/span</td>
+	<td>css=#PasswordEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='[object_Object]Edit']/span</td>
+	<td>css=#PasswordEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=currentPassword</td>
 	<td></td>
 </tr>
 <tr>
@@ -331,9 +418,19 @@
 	<td>passwd</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPassword</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=newPassword</td>
 	<td>passwdd</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=confirmPassword</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -347,7 +444,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//li[@id='[object_Object]Desc']/span</td>
+	<td>css=#PasswordDesc &gt; span</td>
 	<td>Last updated*</td>
 </tr>
 <tr>
@@ -371,7 +468,12 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
 	<td>id=logout</td>
 	<td></td>
 </tr>
@@ -379,12 +481,12 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=loginId</td>
-	<td>test@test.com</td>
+	<td>test2@test.com</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
 	<td>name=loginId</td>
-	<td>test@test.com</td>
+	<td>test2@test.com</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -407,11 +509,17 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
+	<td>waitForElementPresent</td>
 	<td>css=#accountSettings &gt; span</td>
 	<td></td>
 </tr>
 <tr>
+	<td>click</td>
+	<td>css=#accountSettings &gt; span</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<tr>
 	<td>waitForElementPresent</td>
 	<td>link=Security</td>
 	<td></td>
@@ -423,18 +531,13 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@id='[object_Object]Edit']/span</td>
+	<td>css=#PasswordEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='[object_Object]Edit']/span</td>
+	<td>css=#PasswordEdit &gt; span</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=label.col-sm-5.control-label</td>
-	<td>Current Password</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -447,9 +550,19 @@
 	<td>passwdd</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPassword</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=newPassword</td>
 	<td>passwd</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=confirmPassword</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -463,7 +576,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//li[@id='[object_Object]Desc']/span</td>
+	<td>css=#PasswordDesc &gt; span</td>
 	<td>Last updated*</td>
 </tr>
 <!--Open Access History and Active Sessions Views-->
@@ -522,6 +635,7 @@
 	<td>//body/div[2]/div/div[2]/div/div/div/h4/span</td>
 	<td>Account Settings</td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Security</td>

@@ -104,6 +104,7 @@
 	<td>css=#Desktop_notificationsEdit &gt; span</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForText</td>
 	<td>css=label</td>
@@ -124,6 +125,7 @@
 	<td>id=desktopNotificationMentions</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForChecked</td>
 	<td>id=desktopNotificationMentions</td>
@@ -144,25 +146,27 @@
 	<td>css=#Desktop_notificationsEdit &gt; span</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=desktopNotificationNever</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForValue</td>
+	<td>waitForNotChecked</td>
 	<td>id=desktopNotificationNever</td>
-	<td>off</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>id=desktopNotificationNever</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForChecked</td>
 	<td>id=desktopNotificationNever</td>
-	<td>on</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -179,41 +183,45 @@
 	<td>css=#Desktop_notificationsEdit &gt; span</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=desktopNotificationAllActivity</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForValue</td>
+	<td>waitForNotChecked</td>
 	<td>id=desktopNotificationAllActivity</td>
 	<td>off</td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>click</td>
 	<td>id=desktopNotificationAllActivity</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForChecked</td>
 	<td>id=desktopNotificationAllActivity</td>
 	<td>on</td>
 </tr>
 <tr>
-	<td>waitForValue</td>
-	<td>id=soundDuration3</td>
-	<td>off</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
 	<td>id=soundDuration3</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForNotChecked</td>
+	<td>id=soundDuration3</td>
+	<td>off</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>id=soundDuration3</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForChecked</td>
 	<td>id=soundDuration3</td>
@@ -234,6 +242,7 @@
 	<td>css=#Desktop_notificationsEdit &gt; span</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=soundDuration10</td>
@@ -249,6 +258,7 @@
 	<td>id=soundDuration10</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForValue</td>
 	<td>id=soundDuration10</td>
@@ -269,11 +279,13 @@
 	<td>css=#Desktop_notificationsEdit &gt; span</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=soundDurationUnlimited</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForValue</td>
 	<td>id=soundDurationUnlimited</td>
@@ -284,6 +296,7 @@
 	<td>id=soundDurationUnlimited</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForChecked</td>
 	<td>id=soundDurationUnlimited</td>
@@ -304,6 +317,7 @@
 	<td>css=#Desktop_notificationsEdit &gt; span</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=soundDuration5</td>
@@ -319,6 +333,7 @@
 	<td>id=soundDuration5</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForChecked</td>
 	<td>id=soundDuration5</td>
@@ -334,116 +349,20 @@
 	<td>css=#Desktop_notificationsDesc &gt; span</td>
 	<td>For all activity, shown for 5 seconds</td>
 </tr>
-<!--Email notifications-->
-<tr>
-	<td>waitForText</td>
-	<td>css=#Email_notificationsDesc &gt; span</td>
-	<td>Immediately</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Email_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=emailNotificationImmediately</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyValue</td>
-	<td>id=emailNotificationImmediately</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Email_notificationsCancel &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Email_notificationsDesc &gt; span</td>
-	<td>Immediately</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Email_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=emailNotificationImmediately</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=emailNotificationNever</td>
-	<td>off</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=emailNotificationNever</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=emailNotificationNever</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Email_notificationsDesc &gt; span</td>
-	<td>Never</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Email_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=emailNotificationImmediately</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=emailNotificationImmediately</td>
-	<td>off</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=emailNotificationImmediately</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForChecked</td>
-	<td>id=emailNotificationImmediately</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Email_notificationsDesc &gt; span</td>
-	<td>Immediately</td>
-</tr>
 <!--Mobile push notifications-->
 <tr>
 	<td>waitForText</td>
-	<td>//li[@id='Mobile_push notificationsDesc']/span</td>
+	<td>css=#Mobile_push_notificationsDesc &gt; span</td>
 	<td>Disabled by System Administrator</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=#Mobile_push_notificationsEdit &gt; span</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>//a[@id='Mobile_push notificationsEdit']/span</td>
+	<td>css=#Mobile_push_notificationsEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -452,21 +371,37 @@
 	<td>Push notifications for mobile devices have been disabled by your System Administrator.</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=#Mobile_push_notificationsCancel &gt; span</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>//a[@id='Mobile_push notificationsCancel']/span</td>
+	<td>css=#Mobile_push_notificationsCancel &gt; span</td>
 	<td></td>
 </tr>
 <!--Words that trigger mentions-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=Words_that_trigger_mentionsDesc</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
-	<td>id=Words_that trigger mentionsDesc</td>
+	<td>id=Words_that_trigger_mentionsDesc</td>
 	<td>&quot;@test&quot;, &quot;test&quot;, &quot;@channel&quot;, &quot;@all&quot;</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//a[@id='Words_that trigger mentionsEdit']/span</td>
+	<td>waitForElementPresent</td>
+	<td>css=#Words_that_trigger_mentionsEdit &gt; span</td>
 	<td></td>
 </tr>
+<tr>
+	<td>click</td>
+	<td>css=#Words_that_trigger_mentionsEdit &gt; span</td>
+	<td></td>
+</tr>
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=notificationTriggerUsername</td>
@@ -487,6 +422,7 @@
 	<td>id=notificationTriggerUsername</td>
 	<td>off</td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>click</td>
 	<td>id=saveSetting</td>
@@ -494,12 +430,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Words_that trigger mentionsDesc</td>
+	<td>id=Words_that_trigger_mentionsDesc</td>
 	<td>&quot;@test&quot;, &quot;@channel&quot;, &quot;@all&quot;</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=#Words_that_trigger_mentionsEdit &gt; span</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<tr>
 	<td>click</td>
-	<td>//a[@id='Words_that trigger mentionsEdit']/span</td>
+	<td>css=#Words_that_trigger_mentionsEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -517,6 +459,7 @@
 	<td>id=notificationTriggerShouts</td>
 	<td>on</td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>click</td>
 	<td>id=notificationTriggerShouts</td>
@@ -527,6 +470,7 @@
 	<td>id=notificationTriggerShouts</td>
 	<td>off</td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>click</td>
 	<td>id=saveSetting</td>
@@ -534,14 +478,20 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Words_that trigger mentionsDesc</td>
+	<td>id=Words_that_trigger_mentionsDesc</td>
 	<td>&quot;@test&quot;</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//a[@id='Words_that trigger mentionsEdit']/span</td>
+	<td>waitForElementPresent</td>
+	<td>css=#Words_that_trigger_mentionsEdit &gt; span</td>
 	<td></td>
 </tr>
+<tr>
+	<td>click</td>
+	<td>css=#Words_that_trigger_mentionsEdit &gt; span</td>
+	<td></td>
+</tr>
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=notificationTriggerCustomText</td>
@@ -562,6 +512,7 @@
 	<td>id=notificationTriggerCustom</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForChecked</td>
 	<td>id=notificationTriggerCustom</td>
@@ -584,14 +535,20 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Words_that trigger mentionsDesc</td>
+	<td>id=Words_that_trigger_mentionsDesc</td>
 	<td>&quot;@test&quot;, &quot;custom&quot;</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//a[@id='Words_that trigger mentionsEdit']/span</td>
+	<td>waitForElementPresent</td>
+	<td>css=#Words_that_trigger_mentionsEdit &gt; span</td>
 	<td></td>
 </tr>
+<tr>
+	<td>click</td>
+	<td>css=#Words_that_trigger_mentionsEdit &gt; span</td>
+	<td></td>
+</tr>
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=notificationTriggerCustom</td>
@@ -607,6 +564,7 @@
 	<td>id=notificationTriggerCustom</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForNotChecked</td>
 	<td>id=notificationTriggerCustom</td>
@@ -622,6 +580,7 @@
 	<td>id=notificationTriggerShouts</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForChecked</td>
 	<td>id=notificationTriggerShouts</td>
@@ -637,6 +596,7 @@
 	<td>id=notificationTriggerUsername</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForChecked</td>
 	<td>id=notificationTriggerUsername</td>
@@ -649,7 +609,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Words_that trigger mentionsDesc</td>
+	<td>id=Words_that_trigger_mentionsDesc</td>
 	<td>&quot;@test&quot;, &quot;test&quot;, &quot;@channel&quot;, &quot;@all&quot;</td>
 </tr>
 <!--Reply notification-->
@@ -657,6 +617,11 @@
 	<td>waitForText</td>
 	<td>css=#Reply_notificationsDesc &gt; span</td>
 	<td>Do not trigger notifications on messages in reply threads unless I'm mentioned</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#Reply_notificationsEdit &gt; span</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -673,6 +638,7 @@
 	<td>id=notificationCommentsAny</td>
 	<td>off</td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>click</td>
 	<td>id=notificationCommentsAny</td>
@@ -689,10 +655,16 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=#Reply_notificationsEdit &gt; span</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>css=#Reply_notificationsEdit &gt; span</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=notificationCommentsAny</td>
@@ -708,6 +680,7 @@
 	<td>id=notificationCommentsAny</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForChecked</td>
 	<td>id=notificationCommentsAny</td>
@@ -719,10 +692,16 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=#Reply_notificationsDesc &gt; span</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>css=#Reply_notificationsDesc &gt; span</td>
 	<td>Trigger notifications on messages in reply threads that I start or participate in</td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>click</td>
 	<td>css=#Reply_notificationsEdit &gt; span</td>
@@ -733,6 +712,7 @@
 	<td>id=notificationCommentsRoot</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForValue</td>
 	<td>id=notificationCommentsRoot</td>
@@ -743,6 +723,7 @@
 	<td>id=notificationCommentsRoot</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForChecked</td>
 	<td>id=notificationCommentsRoot</td>
@@ -759,10 +740,16 @@
 	<td>Trigger notifications on messages in threads that I start</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=#Reply_notificationsEdit &gt; span</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>css=#Reply_notificationsEdit &gt; span</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=notificationCommentsNever</td>
@@ -773,6 +760,7 @@
 	<td>id=notificationCommentsNever</td>
 	<td>off</td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>click</td>
 	<td>id=notificationCommentsNever</td>
@@ -788,6 +776,7 @@
 	<td>css=div.setting-list__hint &gt; span &gt; span</td>
 	<td>In addition to notifications for when you're mentioned, select if you would like to receive notifications on reply threads.</td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>click</td>
 	<td>id=saveSetting</td>

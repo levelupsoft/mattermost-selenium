@@ -49,6 +49,11 @@
 </tr>
 <!--General Settings-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettings &gt; span</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>css=#accountSettings &gt; span</td>
 	<td></td>
@@ -60,9 +65,9 @@
 	<td>Account Settings</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#Full_NameDesc &gt; span</td>
-	<td>Click 'Edit' to add your full name</td>
+	<td>storeText</td>
+	<td>id=Full_NameDesc</td>
+	<td>fullNameDesc</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -81,8 +86,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Full_NameDesc &gt; span</td>
-	<td>Click 'Edit' to add your full name</td>
+	<td>id=Full_NameDesc</td>
+	<td>${fullNameDesc}</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -112,7 +117,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=Full_NameDesc</td>
-	<td>Added</td>
+	<td>Added*</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -128,60 +133,6 @@
 	<td>waitForText</td>
 	<td>css=label.col-sm-5.control-label</td>
 	<td>First Name</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=firstName</td>
-	<td></td>
-</tr>
-<!--After export to java, replace these two lines in the java file:-->
-<!--driver.findElement(By.id("firstName")).sendKeys("");-->
-<!--driver.findElement(By.id("firstName")).sendKeys(Keys.BACK_SPACE);-->
-<!--with these two lines:-->
-<!--driver.findElement(By.id("firstName")).sendKeys("h");-->
-<!--driver.findElement(By.id("firstName")).sendKeys("\u0008");-->
-<tr>
-	<td>sendKeys</td>
-	<td>id=firstName</td>
-	<td> ${KEY_BACKSPACE}</td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>type</td>
-	<td>id=lastName</td>
-	<td></td>
-</tr>
-<!--After export to java, replace these two lines in the java file:-->
-<!--driver.findElement(By.id("lastName")).sendKeys("");-->
-<!--driver.findElement(By.id("lastName")).sendKeys(Keys.BACK_SPACE);-->
-<!--with these two lines:-->
-<!--driver.findElement(By.id("lastName")).sendKeys("h");-->
-<!--driver.findElement(By.id("lastName")).sendKeys("\u0008");-->
-<tr>
-	<td>sendKeys</td>
-	<td>id=lastName</td>
-	<td> ${KEY_BACKSPACE}</td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Full_NameDesc &gt; span</td>
-	<td>Click 'Edit' to add your full name</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//a[@id='Full_NameEdit']/span</td>
-	<td> </td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//a[@id='Full_NameEdit']/span</td>
-	<td> </td>
 </tr>
 <tr>
 	<td>type</td>
@@ -215,8 +166,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Full_NameDesc &gt; span</td>
-	<td>Click 'Edit' to add your full name</td>
+	<td>id=Full_NameDesc</td>
+	<td>Added*</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -272,39 +223,6 @@
 	<td>waitForText</td>
 	<td>css=label.col-sm-5.control-label</td>
 	<td>First Name</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=firstName</td>
-	<td></td>
-</tr>
-<!--After export, replace the KEY_BACKSPACE line with two lines:-->
-<!--driver.findElement(By.id("firstName")).sendKeys("h");-->
-<!--driver.findElement(By.id("firstName")).sendKeys("\u0008");-->
-<tr>
-	<td>sendKeys</td>
-	<td>id=firstName</td>
-	<td> ${KEY_BACKSPACE}</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=lastName</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=lastName</td>
-	<td> ${KEY_BACKSPACE}</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Full_NameDesc &gt; span</td>
-	<td>Click 'Edit' to add your full name</td>
 </tr>
 <tr>
 	<td>refreshAndWait</td>
