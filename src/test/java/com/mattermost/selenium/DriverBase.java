@@ -56,6 +56,7 @@ public class DriverBase {
     public void setUp() throws Exception {
         driver = getDriver();
         baseUrl = "http://localhost:8065/";
+        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
