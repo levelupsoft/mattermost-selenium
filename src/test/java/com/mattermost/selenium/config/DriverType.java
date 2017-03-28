@@ -32,7 +32,7 @@ public enum DriverType implements DriverSetup {
         }
 
         public WebDriver getWebDriverObject(DesiredCapabilities capabilities) {
-            return new WaitFirefoxDriver(capabilities);
+            return new FirefoxDriver(capabilities);
         }
     },
     CHROME {
@@ -49,7 +49,7 @@ public enum DriverType implements DriverSetup {
         }
 
         public WebDriver getWebDriverObject(DesiredCapabilities capabilities) {
-            return new WaitChromeDriver(capabilities);
+            return new ChromeDriver(capabilities);
         }
     },
     IE {
