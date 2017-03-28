@@ -71,10 +71,6 @@ public class DriverFactory {
         System.out.println("Current Browser Selection: " + selectedDriverType);
         System.out.println(" ");
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
-        desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
-
         if (useRemoteWebDriver) {
             URL seleniumGridURL = new URL(System.getProperty("gridURL"));
             String desiredBrowserVersion = System.getProperty("desiredBrowserVersion");
