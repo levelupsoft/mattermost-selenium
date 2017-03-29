@@ -17,7 +17,7 @@ public class AccountSettingsDisplayIT extends DriverBase {
 
     @Test
     public void testAccountSettingsDisplayIT() throws Exception {        driver.get(baseUrl + "/login");
-        disableAnimations();
+        // DisableAnimations
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("loginButton"))) break; } catch (Exception e) {}
@@ -70,18 +70,13 @@ public class AccountSettingsDisplayIT extends DriverBase {
 
         // Clock Display
         driver.findElement(By.cssSelector("#Clock_DisplayEdit > span")).click();
-        try {
-            assertEquals("on", driver.findElement(By.id("clockFormat12h")).getAttribute("value"));
-        } catch (Error e) {
-            verificationErrors.append(e.toString());
-        }
-        driver.findElement(By.id("clockFormat24h")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("clockFormat24h")).isSelected()) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("clockFormat24h"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("clockFormat24h")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Select how you prefer time displayed.".equals(driver.findElement(By.xpath("//li/div/div[3]/span")).getText())) break; } catch (Exception e) {}
@@ -96,18 +91,13 @@ public class AccountSettingsDisplayIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#Clock_DisplayEdit > span")).click();
-        try {
-            assertEquals("on", driver.findElement(By.id("clockFormat12h")).getAttribute("value"));
-        } catch (Error e) {
-            verificationErrors.append(e.toString());
-        }
-        driver.findElement(By.id("clockFormat24h")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("clockFormat24h")).isSelected()) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("clockFormat12h"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("clockFormat24h")).click();
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -115,19 +105,20 @@ public class AccountSettingsDisplayIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Clock_DisplayEdit > span")).click();
-        try {
-            assertEquals("off", driver.findElement(By.id("clockFormat12h")).getAttribute("value"));
-        } catch (Error e) {
-            verificationErrors.append(e.toString());
-        }
-        driver.findElement(By.id("clockFormat12h")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("clockFormat12h")).isSelected()) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#Clock_DisplayEdit > span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.cssSelector("#Clock_DisplayEdit > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("clockFormat12h"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("clockFormat12h")).click();
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -158,13 +149,13 @@ public class AccountSettingsDisplayIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        Thread.sleep(1000);
-        Thread.sleep(1000);
-        Thread.sleep(1000);
-        Thread.sleep(1000);
-        Thread.sleep(1000);
-        Thread.sleep(1000);
-        Thread.sleep(1000);
+        // Sleep
+        // Sleep
+        // Sleep
+        // Sleep
+        // Sleep
+        // Sleep
+        // Sleep
         driver.findElement(By.cssSelector("#Teammate_Name_DisplayCancel > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -172,13 +163,6 @@ public class AccountSettingsDisplayIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        Thread.sleep(1000);
-        Thread.sleep(1000);
-        Thread.sleep(1000);
-        Thread.sleep(1000);
-        Thread.sleep(1000);
-        Thread.sleep(1000);
-        Thread.sleep(1000);
         driver.findElement(By.cssSelector("#Teammate_Name_DisplayEdit > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -186,7 +170,6 @@ public class AccountSettingsDisplayIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        assertEquals("on", driver.findElement(By.id("nameFormatUsername")).getAttribute("value"));
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("nameFormatNickname"))) break; } catch (Exception e) {}
@@ -208,9 +191,7 @@ public class AccountSettingsDisplayIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        assertEquals("on", driver.findElement(By.id("nameFormatNickname")).getAttribute("value"));
         driver.findElement(By.id("nameFormatFullName")).click();
-        assertEquals("on", driver.findElement(By.id("nameFormatFullName")).getAttribute("value"));
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -219,9 +200,13 @@ public class AccountSettingsDisplayIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#Teammate_Name_DisplayEdit > span")).click();
-        assertEquals("on", driver.findElement(By.id("nameFormatFullName")).getAttribute("value"));
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("nameFormatUsername"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         driver.findElement(By.id("nameFormatUsername")).click();
-        assertEquals("on", driver.findElement(By.id("nameFormatUsername")).getAttribute("value"));
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -243,14 +228,13 @@ public class AccountSettingsDisplayIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        assertEquals("on", driver.findElement(By.id("collapseFormat")).getAttribute("value"));
-        driver.findElement(By.id("collapseFormatOff")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("collapseFormatOff")).isSelected()) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("collapseFormatOff"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("collapseFormatOff")).click();
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -259,9 +243,13 @@ public class AccountSettingsDisplayIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#Default_appearance_of_image_link_previewsEdit > span")).click();
-        assertEquals("off", driver.findElement(By.id("collapseFormat")).getAttribute("value"));
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("collapseFormat"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         driver.findElement(By.id("collapseFormat")).click();
-        assertEquals("on", driver.findElement(By.id("collapseFormat")).getAttribute("value"));
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -283,31 +271,17 @@ public class AccountSettingsDisplayIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        assertEquals("on", driver.findElement(By.id("messageFormatStandard")).getAttribute("value"));
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("messageFormatCompact"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         driver.findElement(By.id("messageFormatCompact")).click();
-        assertEquals("on", driver.findElement(By.id("messageFormatCompact")).getAttribute("value"));
         driver.findElement(By.cssSelector("#Message_DisplayCancel > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Standard".equals(driver.findElement(By.cssSelector("#Message_DisplayDesc > span")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.cssSelector("#Message_DisplayEdit > span")).click();
-        assertEquals("on", driver.findElement(By.id("messageFormatStandard")).getAttribute("value"));
-        driver.findElement(By.id("messageFormatCompact")).click();
-        assertEquals("on", driver.findElement(By.id("messageFormatCompact")).getAttribute("value"));
-        driver.findElement(By.id("saveSetting")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Expanded".equals(driver.findElement(By.cssSelector("#Default_appearance_of_image_link_previewsDesc > span")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        Thread.sleep(1000);
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Compact".equals(driver.findElement(By.cssSelector("#Message_DisplayDesc > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -318,14 +292,29 @@ public class AccountSettingsDisplayIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        assertEquals("on", driver.findElement(By.id("messageFormatCompact")).getAttribute("value"));
-        driver.findElement(By.id("messageFormatStandard")).click();
+        driver.findElement(By.id("messageFormatCompact")).click();
+        driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("on".equals(driver.findElement(By.id("messageFormatStandard")).getAttribute("value"))) break; } catch (Exception e) {}
+        	try { if ("Expanded".equals(driver.findElement(By.cssSelector("#Default_appearance_of_image_link_previewsDesc > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Compact".equals(driver.findElement(By.cssSelector("#Message_DisplayDesc > span")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("#Message_DisplayEdit > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("messageFormatStandard"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("messageFormatStandard")).click();
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -341,14 +330,13 @@ public class AccountSettingsDisplayIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#Channel_Display_ModeEdit > span")).click();
-        assertEquals("on", driver.findElement(By.id("channelDisplayFormatFullScreen")).getAttribute("value"));
-        driver.findElement(By.id("channelDisplayFormatCentered")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("on".equals(driver.findElement(By.id("channelDisplayFormatCentered")).getAttribute("value"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelDisplayFormatCentered"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("channelDisplayFormatCentered")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Select the width of the center channel.".equals(driver.findElement(By.xpath("//li/div/div[3]/span")).getText())) break; } catch (Exception e) {}
@@ -363,14 +351,13 @@ public class AccountSettingsDisplayIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#Channel_Display_ModeEdit > span")).click();
-        assertEquals("on", driver.findElement(By.id("channelDisplayFormatFullScreen")).getAttribute("value"));
-        driver.findElement(By.id("channelDisplayFormatCentered")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("on".equals(driver.findElement(By.id("channelDisplayFormatCentered")).getAttribute("value"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelDisplayFormatCentered"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("channelDisplayFormatCentered")).click();
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -379,14 +366,13 @@ public class AccountSettingsDisplayIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#Channel_Display_ModeEdit > span")).click();
-        assertEquals("on", driver.findElement(By.id("channelDisplayFormatCentered")).getAttribute("value"));
-        driver.findElement(By.id("channelDisplayFormatFullScreen")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("on".equals(driver.findElement(By.id("channelDisplayFormatFullScreen")).getAttribute("value"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelDisplayFormatFullScreen"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("channelDisplayFormatFullScreen")).click();
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -676,6 +662,5 @@ public class AccountSettingsDisplayIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        // ERROR: Caught exception [unknown command []]
     }
 }

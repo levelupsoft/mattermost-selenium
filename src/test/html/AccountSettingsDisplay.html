@@ -89,19 +89,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyValue</td>
-	<td>id=clockFormat12h</td>
-	<td>on</td>
+	<td>waitForElementPresent</td>
+	<td>id=clockFormat24h</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>id=clockFormat24h</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForChecked</td>
-	<td>id=clockFormat24h</td>
-	<td>on</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -124,19 +119,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyValue</td>
+	<td>waitForElementPresent</td>
 	<td>id=clockFormat12h</td>
-	<td>on</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>id=clockFormat24h</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForChecked</td>
-	<td>id=clockFormat24h</td>
-	<td>on</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -149,24 +139,24 @@
 	<td>24-hour clock (example: 16:00)</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=#Clock_DisplayEdit &gt; span</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>css=#Clock_DisplayEdit &gt; span</td>
 	<td></td>
 </tr>
 <tr>
-	<td>verifyValue</td>
+	<td>waitForElementPresent</td>
 	<td>id=clockFormat12h</td>
-	<td>off</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>id=clockFormat12h</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForChecked</td>
-	<td>id=clockFormat12h</td>
-	<td>on</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -242,11 +232,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>assertValue</td>
-	<td>id=nameFormatUsername</td>
-	<td>on</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
 	<td>id=nameFormatNickname</td>
 	<td></td>
@@ -277,19 +262,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>assertValue</td>
-	<td>id=nameFormatNickname</td>
-	<td>on</td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=nameFormatFullName</td>
 	<td></td>
-</tr>
-<tr>
-	<td>assertValue</td>
-	<td>id=nameFormatFullName</td>
-	<td>on</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -307,19 +282,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>assertValue</td>
-	<td>id=nameFormatFullName</td>
-	<td>on</td>
+	<td>waitForElementPresent</td>
+	<td>id=nameFormatUsername</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>id=nameFormatUsername</td>
 	<td></td>
-</tr>
-<tr>
-	<td>assertValue</td>
-	<td>id=nameFormatUsername</td>
-	<td>on</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -348,17 +318,12 @@
 	<td>Set whether previews of image links show as expanded or collapsed by default. This setting can also be controlled using the slash commands /expand and /collapse.</td>
 </tr>
 <tr>
-	<td>assertValue</td>
-	<td>id=collapseFormat</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>click</td>
+	<td>waitForElementPresent</td>
 	<td>id=collapseFormatOff</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForChecked</td>
+	<td>click</td>
 	<td>id=collapseFormatOff</td>
 	<td></td>
 </tr>
@@ -378,19 +343,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>assertValue</td>
+	<td>waitForElementPresent</td>
 	<td>id=collapseFormat</td>
-	<td>off</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>id=collapseFormat</td>
 	<td></td>
-</tr>
-<tr>
-	<td>assertValue</td>
-	<td>id=collapseFormat</td>
-	<td>on</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -419,19 +379,14 @@
 	<td>Select how messages in a channel should be displayed.</td>
 </tr>
 <tr>
-	<td>assertValue</td>
-	<td>id=messageFormatStandard</td>
-	<td>on</td>
+	<td>waitForElementPresent</td>
+	<td>id=messageFormatCompact</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>id=messageFormatCompact</td>
 	<td></td>
-</tr>
-<tr>
-	<td>assertValue</td>
-	<td>id=messageFormatCompact</td>
-	<td>on</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -449,19 +404,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>assertValue</td>
-	<td>id=messageFormatStandard</td>
-	<td>on</td>
+	<td>waitForElementPresent</td>
+	<td>id=messageFormatCompact</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>id=messageFormatCompact</td>
 	<td></td>
-</tr>
-<tr>
-	<td>assertValue</td>
-	<td>id=messageFormatCompact</td>
-	<td>on</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -486,23 +436,13 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=messageFormatCompact</td>
+	<td>id=messageFormatStandard</td>
 	<td></td>
-</tr>
-<tr>
-	<td>assertValue</td>
-	<td>id=messageFormatCompact</td>
-	<td>on</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>id=messageFormatStandard</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=messageFormatStandard</td>
-	<td>on</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -526,19 +466,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>assertValue</td>
-	<td>id=channelDisplayFormatFullScreen</td>
-	<td>on</td>
+	<td>waitForElementPresent</td>
+	<td>id=channelDisplayFormatCentered</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>id=channelDisplayFormatCentered</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=channelDisplayFormatCentered</td>
-	<td>on</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -561,19 +496,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>assertValue</td>
-	<td>id=channelDisplayFormatFullScreen</td>
-	<td>on</td>
+	<td>waitForElementPresent</td>
+	<td>id=channelDisplayFormatCentered</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>id=channelDisplayFormatCentered</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=channelDisplayFormatCentered</td>
-	<td>on</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -591,19 +521,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>assertValue</td>
-	<td>id=channelDisplayFormatCentered</td>
-	<td>on</td>
+	<td>waitForElementPresent</td>
+	<td>id=channelDisplayFormatFullScreen</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>id=channelDisplayFormatFullScreen</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=channelDisplayFormatFullScreen</td>
-	<td>on</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -1124,11 +1049,6 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=loginId</td>
-	<td></td>
-</tr>
-<tr>
-	<td></td>
-	<td></td>
 	<td></td>
 </tr>
 </tbody>
