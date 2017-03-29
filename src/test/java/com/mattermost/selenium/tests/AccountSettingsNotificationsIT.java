@@ -48,6 +48,12 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         // Desktop notification
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("#Desktop_notificationsEdit > span"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
         	try { if ("For all activity, shown for 5 seconds".equals(driver.findElement(By.cssSelector("#Desktop_notificationsDesc > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
