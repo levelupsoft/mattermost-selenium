@@ -42,7 +42,7 @@ cd ~/mattermost
 ./bin/platform team add ui-automation admin@test.com test@test.com test2@test.com test3@test.com test4@test.com test5@test.com test6@test.com test7@test.com test8@test.com test9@test.com test10@test.com
 
 ./bin/platform team create --name ui-automation2 --display_name "UI Automation 2" --email "test2@test.com" --private=false
-./bin/platform team add ui-automation admin@test.com test4@test.com test5@test.com test6@test.com test7@test.com test8@test.com test9@test.com test10@test.com
+./bin/platform team add ui-automation2 admin@test.com test4@test.com test5@test.com test6@test.com test7@test.com test8@test.com test9@test.com test10@test.com
 
 mysql -u mmuser -ppasswd -h localhost -e "UPDATE Preferences SET Value = '999' WHERE Category = 'tutorial_step';" mattermost
 
