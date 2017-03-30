@@ -22,6 +22,7 @@ mkdir -p ~/mattermost
 tar -C ~/ -xzf mattermost.tar.gz
 
 cp ~/config.json ~/mattermost/config/config.json
+cp ~/mattermost.mattermost-license ~/mattermost.mattermost-license
 
 cd ~/mattermost
 ./bin/platform reset --confirm true
@@ -45,6 +46,7 @@ cd ~/mattermost
 ./bin/platform team add ui-automation2 admin@test.com test4@test.com test5@test.com test6@test.com test7@test.com test8@test.com test9@test.com test10@test.com
 
 mysql -u mmuser -ppasswd -h localhost -e "UPDATE Preferences SET Value = '999' WHERE Category = 'tutorial_step';" mattermost
+mysql -u mmuser -ppasswd -h localhost -e "UPDATE Teams SET AllowOpenInvite = '1' WHERE Name = 'ui-automation2';" mattermost
 
 
 sudo systemctl start mattermost
