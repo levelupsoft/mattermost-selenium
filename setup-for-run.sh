@@ -3,7 +3,7 @@
 sudo systemctl stop mattermost
 
 tar czPf ~/logs/archive-pre-$BUILD_ID.tar.gz ~/mattermost/logs
-cp ~/mattermost/logs/mattermost.log $WORKSPACE/mm-latest.log
+cp -f ~/mattermost/logs/mattermost.log $WORKSPACE/mm-latest.log
 
 rm -f mattermost.tar.gz
 
