@@ -65,6 +65,11 @@
 </tr>
 <!--Desktop notification-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=#Desktop_notificationsEdit &gt; span</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>css=#Desktop_notificationsDesc &gt; span</td>
 	<td>For all activity, shown for 5 seconds</td>
@@ -83,11 +88,6 @@
 	<td>waitForElementPresent</td>
 	<td>id=desktopNotificationAllActivity</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForChecked</td>
-	<td>id=desktopNotificationAllActivity</td>
-	<td>on</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -116,21 +116,11 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForNotChecked</td>
-	<td>id=desktopNotificationMentions</td>
-	<td>off</td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=desktopNotificationMentions</td>
 	<td></td>
 </tr>
 <!--Sleep-->
-<tr>
-	<td>waitForChecked</td>
-	<td>id=desktopNotificationMentions</td>
-	<td>on</td>
-</tr>
 <tr>
 	<td>click</td>
 	<td>id=saveSetting</td>
@@ -189,11 +179,6 @@
 	<td>id=desktopNotificationAllActivity</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForNotChecked</td>
-	<td>id=desktopNotificationAllActivity</td>
-	<td>off</td>
-</tr>
 <!--Sleep-->
 <tr>
 	<td>click</td>
@@ -201,32 +186,17 @@
 	<td></td>
 </tr>
 <!--Sleep-->
-<tr>
-	<td>waitForChecked</td>
-	<td>id=desktopNotificationAllActivity</td>
-	<td>on</td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=soundDuration3</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForNotChecked</td>
-	<td>id=soundDuration3</td>
-	<td>off</td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=soundDuration3</td>
 	<td></td>
 </tr>
 <!--Sleep-->
-<tr>
-	<td>waitForChecked</td>
-	<td>id=soundDuration3</td>
-	<td>on</td>
-</tr>
 <tr>
 	<td>click</td>
 	<td>id=saveSetting</td>
@@ -249,21 +219,11 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForValue</td>
-	<td>id=soundDuration10</td>
-	<td>off</td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=soundDuration10</td>
 	<td></td>
 </tr>
 <!--Sleep-->
-<tr>
-	<td>waitForValue</td>
-	<td>id=soundDuration10</td>
-	<td>on</td>
-</tr>
 <tr>
 	<td>click</td>
 	<td>id=saveSetting</td>
@@ -287,21 +247,11 @@
 </tr>
 <!--Sleep-->
 <tr>
-	<td>waitForValue</td>
-	<td>id=soundDurationUnlimited</td>
-	<td>off</td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=soundDurationUnlimited</td>
 	<td></td>
 </tr>
 <!--Sleep-->
-<tr>
-	<td>waitForChecked</td>
-	<td>id=soundDurationUnlimited</td>
-	<td>on</td>
-</tr>
 <tr>
 	<td>click</td>
 	<td>id=saveSetting</td>
@@ -324,21 +274,11 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForValue</td>
-	<td>id=soundDuration5</td>
-	<td>off</td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=soundDuration5</td>
 	<td></td>
 </tr>
 <!--Sleep-->
-<tr>
-	<td>waitForChecked</td>
-	<td>id=soundDuration5</td>
-	<td>on</td>
-</tr>
 <tr>
 	<td>click</td>
 	<td>id=saveSetting</td>
@@ -408,19 +348,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyValue</td>
-	<td>id=notificationTriggerUsername</td>
-	<td>on</td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=notificationTriggerUsername</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForNotChecked</td>
-	<td>id=notificationTriggerUsername</td>
-	<td>off</td>
 </tr>
 <!--Sleep-->
 <tr>
@@ -454,21 +384,11 @@
 	<td>id=notificationTriggerShouts</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=notificationTriggerShouts</td>
-	<td>on</td>
-</tr>
 <!--Sleep-->
 <tr>
 	<td>click</td>
 	<td>id=notificationTriggerShouts</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForNotChecked</td>
-	<td>id=notificationTriggerShouts</td>
-	<td>off</td>
 </tr>
 <!--Sleep-->
 <tr>
@@ -503,28 +423,18 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyValue</td>
-	<td>id=notificationTriggerCustom</td>
-	<td>off</td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=notificationTriggerCustom</td>
 	<td></td>
 </tr>
 <!--Sleep-->
 <tr>
-	<td>waitForChecked</td>
-	<td>id=notificationTriggerCustom</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
+	<td>waitForElementPresent</td>
 	<td>id=notificationTriggerCustomText</td>
 	<td>custom</td>
 </tr>
 <tr>
-	<td>waitForValue</td>
+	<td>sendKeys</td>
 	<td>id=notificationTriggerCustomText</td>
 	<td>custom</td>
 </tr>
@@ -555,25 +465,15 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForValue</td>
-	<td>id=notificationTriggerCustom</td>
-	<td>on</td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=notificationTriggerCustom</td>
 	<td></td>
 </tr>
 <!--Sleep-->
 <tr>
-	<td>waitForNotChecked</td>
-	<td>id=notificationTriggerCustom</td>
-	<td>off</td>
-</tr>
-<tr>
-	<td>waitForNotChecked</td>
+	<td>waitForElementPresent</td>
 	<td>id=notificationTriggerShouts</td>
-	<td>off</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -582,14 +482,9 @@
 </tr>
 <!--Sleep-->
 <tr>
-	<td>waitForChecked</td>
-	<td>id=notificationTriggerShouts</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForValue</td>
+	<td>waitForElementPresent</td>
 	<td>id=notificationTriggerUsername</td>
-	<td>off</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -597,11 +492,6 @@
 	<td></td>
 </tr>
 <!--Sleep-->
-<tr>
-	<td>waitForChecked</td>
-	<td>id=notificationTriggerUsername</td>
-	<td>on</td>
-</tr>
 <tr>
 	<td>click</td>
 	<td>id=saveSetting</td>
@@ -633,21 +523,11 @@
 	<td>id=notificationCommentsAny</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=notificationCommentsAny</td>
-	<td>off</td>
-</tr>
 <!--Sleep-->
 <tr>
 	<td>click</td>
 	<td>id=notificationCommentsAny</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForChecked</td>
-	<td>id=notificationCommentsAny</td>
-	<td>on</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -671,21 +551,11 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForValue</td>
-	<td>id=notificationCommentsAny</td>
-	<td>off</td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=notificationCommentsAny</td>
 	<td></td>
 </tr>
 <!--Sleep-->
-<tr>
-	<td>waitForChecked</td>
-	<td>id=notificationCommentsAny</td>
-	<td>on</td>
-</tr>
 <tr>
 	<td>click</td>
 	<td>id=saveSetting</td>
@@ -714,21 +584,11 @@
 </tr>
 <!--Sleep-->
 <tr>
-	<td>waitForValue</td>
-	<td>id=notificationCommentsRoot</td>
-	<td>off</td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=notificationCommentsRoot</td>
 	<td></td>
 </tr>
 <!--Sleep-->
-<tr>
-	<td>waitForChecked</td>
-	<td>id=notificationCommentsRoot</td>
-	<td>on</td>
-</tr>
 <tr>
 	<td>click</td>
 	<td>id=saveSetting</td>
@@ -755,22 +615,13 @@
 	<td>id=notificationCommentsNever</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=notificationCommentsNever</td>
-	<td>off</td>
-</tr>
 <!--Sleep-->
 <tr>
 	<td>click</td>
 	<td>id=notificationCommentsNever</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForChecked</td>
-	<td>id=notificationCommentsNever</td>
-	<td>on</td>
-</tr>
+<!--Sleep-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.setting-list__hint &gt; span &gt; span</td>

@@ -17,7 +17,7 @@ public class AccountSettingsNotificationsIT extends DriverBase {
 
     @Test
     public void testAccountSettingsNotificationsIT() throws Exception {        driver.get(baseUrl + "/login");
-        disableAnimations();
+        // DisableAnimations
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("loginButton"))) break; } catch (Exception e) {}
@@ -48,6 +48,12 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         // Desktop notification
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("#Desktop_notificationsEdit > span"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
         	try { if ("For all activity, shown for 5 seconds".equals(driver.findElement(By.cssSelector("#Desktop_notificationsDesc > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
@@ -65,12 +71,6 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("desktopNotificationAllActivity")).isSelected()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         driver.findElement(By.cssSelector("#Desktop_notificationsCancel > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -79,7 +79,7 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#Desktop_notificationsEdit > span")).click();
-        Thread.sleep(1000);
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Send desktop notifications".equals(driver.findElement(By.cssSelector("label")).getText())) break; } catch (Exception e) {}
@@ -92,20 +92,8 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (!driver.findElement(By.id("desktopNotificationMentions")).isSelected()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         driver.findElement(By.id("desktopNotificationMentions")).click();
-        Thread.sleep(1000);
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("desktopNotificationMentions")).isSelected()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        // Sleep
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -114,7 +102,7 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#Desktop_notificationsEdit > span")).click();
-        Thread.sleep(1000);
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("desktopNotificationNever"))) break; } catch (Exception e) {}
@@ -128,7 +116,7 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         }
 
         driver.findElement(By.id("desktopNotificationNever")).click();
-        Thread.sleep(1000);
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (driver.findElement(By.id("desktopNotificationNever")).isSelected()) break; } catch (Exception e) {}
@@ -143,48 +131,24 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#Desktop_notificationsEdit > span")).click();
-        Thread.sleep(1000);
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("desktopNotificationAllActivity"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (!driver.findElement(By.id("desktopNotificationAllActivity")).isSelected()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        Thread.sleep(1000);
+        // Sleep
         driver.findElement(By.id("desktopNotificationAllActivity")).click();
-        Thread.sleep(1000);
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("desktopNotificationAllActivity")).isSelected()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("soundDuration3"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (!driver.findElement(By.id("soundDuration3")).isSelected()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         driver.findElement(By.id("soundDuration3")).click();
-        Thread.sleep(1000);
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("soundDuration3")).isSelected()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        // Sleep
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -193,27 +157,15 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#Desktop_notificationsEdit > span")).click();
-        Thread.sleep(1000);
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("soundDuration10"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("off".equals(driver.findElement(By.id("soundDuration10")).getAttribute("value"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         driver.findElement(By.id("soundDuration10")).click();
-        Thread.sleep(1000);
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("on".equals(driver.findElement(By.id("soundDuration10")).getAttribute("value"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        // Sleep
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -222,28 +174,16 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#Desktop_notificationsEdit > span")).click();
-        Thread.sleep(1000);
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("soundDurationUnlimited"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        Thread.sleep(1000);
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("off".equals(driver.findElement(By.id("soundDurationUnlimited")).getAttribute("value"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        // Sleep
         driver.findElement(By.id("soundDurationUnlimited")).click();
-        Thread.sleep(1000);
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("soundDurationUnlimited")).isSelected()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        // Sleep
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -252,27 +192,15 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#Desktop_notificationsEdit > span")).click();
-        Thread.sleep(1000);
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("soundDuration5"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("off".equals(driver.findElement(By.id("soundDuration5")).getAttribute("value"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         driver.findElement(By.id("soundDuration5")).click();
-        Thread.sleep(1000);
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("soundDuration5")).isSelected()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        // Sleep
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -327,26 +255,15 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#Words_that_trigger_mentionsEdit > span")).click();
-        Thread.sleep(1000);
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("notificationTriggerUsername"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        try {
-            assertEquals("on", driver.findElement(By.id("notificationTriggerUsername")).getAttribute("value"));
-        } catch (Error e) {
-            verificationErrors.append(e.toString());
-        }
         driver.findElement(By.id("notificationTriggerUsername")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (!driver.findElement(By.id("notificationTriggerUsername")).isSelected()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        Thread.sleep(1000);
+        // Sleep
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -360,7 +277,7 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        Thread.sleep(1000);
+        // Sleep
         driver.findElement(By.cssSelector("#Words_that_trigger_mentionsEdit > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -374,21 +291,9 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("on".equals(driver.findElement(By.id("notificationTriggerShouts")).getAttribute("value"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        Thread.sleep(1000);
+        // Sleep
         driver.findElement(By.id("notificationTriggerShouts")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (!driver.findElement(By.id("notificationTriggerShouts")).isSelected()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        Thread.sleep(1000);
+        // Sleep
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -403,7 +308,7 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#Words_that_trigger_mentionsEdit > span")).click();
-        Thread.sleep(1000);
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("notificationTriggerCustomText"))) break; } catch (Exception e) {}
@@ -416,26 +321,15 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        try {
-            assertEquals("off", driver.findElement(By.id("notificationTriggerCustom")).getAttribute("value"));
-        } catch (Error e) {
-            verificationErrors.append(e.toString());
-        }
         driver.findElement(By.id("notificationTriggerCustom")).click();
-        Thread.sleep(1000);
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("notificationTriggerCustom")).isSelected()) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("notificationTriggerCustomText"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         driver.findElement(By.id("notificationTriggerCustomText")).sendKeys("custom");
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("custom".equals(driver.findElement(By.id("notificationTriggerCustomText")).getAttribute("value"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -450,55 +344,31 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#Words_that_trigger_mentionsEdit > span")).click();
-        Thread.sleep(1000);
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("notificationTriggerCustom"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("on".equals(driver.findElement(By.id("notificationTriggerCustom")).getAttribute("value"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         driver.findElement(By.id("notificationTriggerCustom")).click();
-        Thread.sleep(1000);
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (!driver.findElement(By.id("notificationTriggerCustom")).isSelected()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (!driver.findElement(By.id("notificationTriggerShouts")).isSelected()) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("notificationTriggerShouts"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         driver.findElement(By.id("notificationTriggerShouts")).click();
-        Thread.sleep(1000);
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("notificationTriggerShouts")).isSelected()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("off".equals(driver.findElement(By.id("notificationTriggerUsername")).getAttribute("value"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("notificationTriggerUsername"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         driver.findElement(By.id("notificationTriggerUsername")).click();
-        Thread.sleep(1000);
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("notificationTriggerUsername")).isSelected()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        // Sleep
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -526,20 +396,8 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("off".equals(driver.findElement(By.id("notificationCommentsAny")).getAttribute("value"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        Thread.sleep(1000);
+        // Sleep
         driver.findElement(By.id("notificationCommentsAny")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("notificationCommentsAny")).isSelected()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         driver.findElement(By.cssSelector("#Reply_notificationsCancel > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -548,27 +406,15 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#Reply_notificationsEdit > span")).click();
-        Thread.sleep(1000);
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("notificationCommentsAny"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("off".equals(driver.findElement(By.id("notificationCommentsAny")).getAttribute("value"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         driver.findElement(By.id("notificationCommentsAny")).click();
-        Thread.sleep(1000);
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("notificationCommentsAny")).isSelected()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        // Sleep
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -582,7 +428,7 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        Thread.sleep(1000);
+        // Sleep
         driver.findElement(By.cssSelector("#Reply_notificationsEdit > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -590,21 +436,9 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        Thread.sleep(1000);
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("off".equals(driver.findElement(By.id("notificationCommentsRoot")).getAttribute("value"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        // Sleep
         driver.findElement(By.id("notificationCommentsRoot")).click();
-        Thread.sleep(1000);
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("notificationCommentsRoot")).isSelected()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        // Sleep
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -619,34 +453,23 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#Reply_notificationsEdit > span")).click();
-        Thread.sleep(1000);
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("notificationCommentsNever"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("off".equals(driver.findElement(By.id("notificationCommentsNever")).getAttribute("value"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        Thread.sleep(1000);
+        // Sleep
         driver.findElement(By.id("notificationCommentsNever")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("notificationCommentsNever")).isSelected()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("In addition to notifications for when you're mentioned, select if you would like to receive notifications on reply threads.".equals(driver.findElement(By.cssSelector("div.setting-list__hint > span > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        Thread.sleep(1000);
+        // Sleep
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
