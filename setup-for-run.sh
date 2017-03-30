@@ -22,7 +22,7 @@ mkdir -p ~/mattermost
 tar -C ~/ -xzf mattermost.tar.gz
 
 cp ~/config.json ~/mattermost/config/config.json
-cp ~/mattermost.mattermost-license ~/mattermost.mattermost-license
+cp ~/mattermost.mattermost-license ~/mattermost/config/mattermost.mattermost-license
 
 cd ~/mattermost
 ./bin/platform reset --confirm true
