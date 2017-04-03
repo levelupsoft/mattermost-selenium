@@ -17,7 +17,7 @@ public class AccountSettingsFullNameIT extends DriverBase {
 
     @Test
     public void testAccountSettingsFullNameIT() throws Exception {        driver.get(baseUrl + "/login");
-        disableAnimations();
+        // DisableAnimations
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("loginButton"))) break; } catch (Exception e) {}
@@ -47,7 +47,7 @@ public class AccountSettingsFullNameIT extends DriverBase {
         // Full Name
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Account Settings".equals(driver.findElement(By.xpath("//body/div[2]/div/div[2]/div/div/div/h4/span")).getText())) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#Full_NameEdit > span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -98,10 +98,10 @@ public class AccountSettingsFullNameIT extends DriverBase {
 
         driver.findElement(By.id("firstName")).clear();
         driver.findElement(By.id("firstName")).sendKeys("");
-        driver.findElement(By.id("firstName")).sendKeys("This Is a Very Long Name");
+        driver.findElement(By.id("firstName")).sendKeys("This Change");
         driver.findElement(By.id("lastName")).clear();
         driver.findElement(By.id("lastName")).sendKeys("");
-        driver.findElement(By.id("lastName")).sendKeys("That Should Truncate");
+        driver.findElement(By.id("lastName")).sendKeys("Will Be Canceled");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("#Full_NameCancel > span"))) break; } catch (Exception e) {}
@@ -132,19 +132,6 @@ public class AccountSettingsFullNameIT extends DriverBase {
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("This Is a Very Long Name That Should Truncate".equals(driver.findElement(By.id("Full_NameDesc")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//a[@id='Full_NameEdit']/span"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.xpath("//a[@id='Full_NameEdit']/span")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("First Name".equals(driver.findElement(By.cssSelector("label.col-sm-5.control-label")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 

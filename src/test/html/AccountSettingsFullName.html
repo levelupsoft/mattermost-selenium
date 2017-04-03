@@ -60,9 +60,9 @@
 </tr>
 <!--Full Name-->
 <tr>
-	<td>waitForText</td>
-	<td>//body/div[2]/div/div[2]/div/div/div/h4/span</td>
-	<td>Account Settings</td>
+	<td>waitForElementPresent</td>
+	<td>css=#Full_NameEdit &gt; span</td>
+	<td></td>
 </tr>
 <tr>
 	<td>storeText</td>
@@ -142,7 +142,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=firstName</td>
-	<td>This Is a Very Long Name</td>
+	<td>This Change</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -152,7 +152,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=lastName</td>
-	<td>That Should Truncate</td>
+	<td>Will Be Canceled</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -208,21 +208,6 @@
 	<td>waitForText</td>
 	<td>id=Full_NameDesc</td>
 	<td>This Is a Very Long Name That Should Truncate</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//a[@id='Full_NameEdit']/span</td>
-	<td> </td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//a[@id='Full_NameEdit']/span</td>
-	<td> </td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=label.col-sm-5.control-label</td>
-	<td>First Name</td>
 </tr>
 <tr>
 	<td>refreshAndWait</td>
