@@ -45,6 +45,9 @@ cd ~/mattermost
 ./bin/platform team create --name ui-automation2 --display_name "UI Automation 2" --email "test6@test.com" --private=false
 ./bin/platform team add ui-automation2 admin@test.com test5@test.com test6@test.com test7@test.com test8@test.com test9@test.com test10@test.com
 
+./bin/platform user create --email corey@test.com --username corey --password passwd
+./bin/platform team add ui-automation corey@test.com
+
 mysql -u mmuser -ppasswd -h localhost -e "UPDATE Preferences SET Value = '999' WHERE Category = 'tutorial_step';" mattermost
 mysql -u mmuser -ppasswd -h localhost -e "UPDATE Teams SET AllowOpenInvite = '1' WHERE Name = 'ui-automation2';" mattermost
 
