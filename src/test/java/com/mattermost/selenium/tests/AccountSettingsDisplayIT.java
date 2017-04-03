@@ -18,6 +18,7 @@ public class AccountSettingsDisplayIT extends DriverBase {
     @Test
     public void testAccountSettingsDisplayIT() throws Exception {        driver.get(baseUrl + "/login");
         // DisableAnimations
+        // Using test3@test.com to isolate display changes from test@ account in case of failure
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("loginButton"))) break; } catch (Exception e) {}
@@ -25,7 +26,7 @@ public class AccountSettingsDisplayIT extends DriverBase {
         }
 
         driver.findElement(By.name("loginId")).clear();
-        driver.findElement(By.name("loginId")).sendKeys("test@test.com");
+        driver.findElement(By.name("loginId")).sendKeys("test3@test.com");
         driver.findElement(By.name("password")).clear();
         driver.findElement(By.name("password")).sendKeys("passwd");
         driver.findElement(By.id("loginButton")).click();
