@@ -69,9 +69,47 @@
 </tr>
 <!--Desktop notification-->
 <tr>
-	<td>waitForElementPresent</td>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>click</td>
 	<td>css=#Desktop_notificationsEdit &gt; span</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=label</td>
+	<td>Send desktop notifications</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#Desktop_notificationsCancel &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#Desktop_notificationsDesc &gt; span</td>
+	<td>For all activity, shown for 5 seconds</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#Desktop_notificationsEdit &gt; span</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<tr>
+	<td>waitForText</td>
+	<td>css=label</td>
+	<td>Send desktop notifications</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -80,6 +118,17 @@
 </tr>
 <!--Sleep-->
 <!--Sleep-->
+<tr>
+	<td>click</td>
+	<td>id=desktopNotificationMentions</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=#Desktop_notificationsDesc &gt; span</td>
@@ -611,17 +660,6 @@
 <tr>
 	<td>clickAndWait</td>
 	<td>css=#logout &gt; span</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>name=loginId</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>name=loginId</td>
 	<td></td>
 </tr>
 </tbody></table>

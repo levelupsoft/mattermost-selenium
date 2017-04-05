@@ -44,14 +44,35 @@ public class AccountSettingsNotificationsIT extends DriverBase {
 
         driver.findElement(By.linkText("Notifications")).click();
         // Desktop notification
+        // Sleep
+        // Sleep
+        driver.findElement(By.cssSelector("#Desktop_notificationsEdit > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#Desktop_notificationsEdit > span"))) break; } catch (Exception e) {}
+        	try { if ("Send desktop notifications".equals(driver.findElement(By.cssSelector("label")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("#Desktop_notificationsCancel > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("For all activity, shown for 5 seconds".equals(driver.findElement(By.cssSelector("#Desktop_notificationsDesc > span")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("#Desktop_notificationsEdit > span")).click();
+        // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Send desktop notifications".equals(driver.findElement(By.cssSelector("label")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         // Sleep
         // Sleep
+        driver.findElement(By.id("desktopNotificationMentions")).click();
+        // Sleep
+        driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("For mentions and direct messages, shown for 5 seconds".equals(driver.findElement(By.cssSelector("#Desktop_notificationsDesc > span")).getText())) break; } catch (Exception e) {}
@@ -414,18 +435,5 @@ public class AccountSettingsNotificationsIT extends DriverBase {
 
         driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
         driver.findElement(By.cssSelector("#logout > span")).click();
-        // Sleep
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.name("loginId"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.name("loginId"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
     }
 }
