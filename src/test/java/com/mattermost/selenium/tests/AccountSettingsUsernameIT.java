@@ -20,7 +20,7 @@ public class AccountSettingsUsernameIT extends DriverBase {
         disableAnimations();
         for (int second = 0;; second++) {
         	if (second >= 2) fail("timeout");
-        	try { if (isElementPresent(By.id("loginButton"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -29,13 +29,10 @@ public class AccountSettingsUsernameIT extends DriverBase {
         driver.findElement(By.name("password")).clear();
         driver.findElement(By.name("password")).sendKeys("passwd");
         driver.findElement(By.id("loginButton")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
-        	try { if (isElementPresent(By.id("sidebar-header-dropdown"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("sidebar-header-dropdown")).click();
+        Thread.sleep(1000);
+        Thread.sleep(1000);
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
         // General Settings
         for (int second = 0;; second++) {
         	if (second >= 2) fail("timeout");
@@ -104,7 +101,7 @@ public class AccountSettingsUsernameIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("sidebar-header-dropdown")).click();
+        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
         driver.findElement(By.cssSelector("#accountSettings > span")).click();
         driver.findElement(By.cssSelector("#UsernameEdit > span")).click();
         driver.findElement(By.id("username")).clear();
@@ -170,11 +167,17 @@ public class AccountSettingsUsernameIT extends DriverBase {
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 2) fail("timeout");
-        	try { if (isElementPresent(By.id("sidebar-header-dropdown"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.linkText("Town Square"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("sidebar-header-dropdown")).click();
+        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
         driver.findElement(By.cssSelector("#logout > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 2) fail("timeout");
+        	try { if (isElementPresent(By.name("loginId"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
     }
 }
