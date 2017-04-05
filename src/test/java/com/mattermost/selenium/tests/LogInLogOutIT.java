@@ -20,8 +20,8 @@ public class LogInLogOutIT extends DriverBase {
         driver.get(baseUrl + "/login");
         disableAnimations();
         for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("loginButton"))) break; } catch (Exception e) {}
+        	if (second >= 2) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -30,24 +30,21 @@ public class LogInLogOutIT extends DriverBase {
         driver.findElement(By.name("password")).clear();
         driver.findElement(By.name("password")).sendKeys("passwd");
         driver.findElement(By.id("loginButton")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("sidebar-header-dropdown"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        Thread.sleep(1000);
+        Thread.sleep(1000);
+        Thread.sleep(1000);
         // LOG OUT
         driver.navigate().refresh();
         for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("sidebar-header-dropdown"))) break; } catch (Exception e) {}
+        	if (second >= 2) fail("timeout");
+        	try { if (isElementPresent(By.linkText("Town Square"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("sidebar-header-dropdown")).click();
+        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
         driver.findElement(By.cssSelector("#logout > span")).click();
         for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
+        	if (second >= 2) fail("timeout");
         	try { if (isElementPresent(By.name("loginId"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
