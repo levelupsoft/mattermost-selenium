@@ -35,12 +35,9 @@ public class LogInLogOutIT extends DriverBase {
         // Sleep
         // LOG OUT
         driver.navigate().refresh();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Town Square"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        // Sleep
+        // Sleep
+        // Sleep
         driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
         driver.findElement(By.cssSelector("#logout > span")).click();
     }
