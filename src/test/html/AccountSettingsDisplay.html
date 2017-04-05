@@ -11,22 +11,23 @@
 <thead>
 <tr><td rowspan="1" colspan="3">New Test</td></tr>
 </thead><tbody>
+<!--Using test3@test.com to isolate display changes from test@ account in case of failure-->
+<!--LOG IN-->
 <tr>
 	<td>openAndWait</td>
 	<td>/login</td>
 	<td></td>
 </tr>
 <!--DisableAnimations-->
-<!--Using test3@test.com to isolate display changes from test@ account in case of failure-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=loginButton</td>
+	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>name=loginId</td>
-	<td>test3@test.com</td>
+	<td>test@test.com</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -39,13 +40,16 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>css=a.sidebar-header-dropdown__toggle</td>
 	<td></td>
 </tr>
 <tr>
@@ -205,12 +209,6 @@
 	<td>css=#Teammate_Name_DisplayCancel &gt; span</td>
 	<td></td>
 </tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
 <!--Sleep-->
 <tr>
 	<td>click</td>
@@ -565,51 +563,6 @@
 <tr>
 	<td>select</td>
 	<td>id=displayLanguage</td>
-	<td>label=Deutsch</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=p.channel-intro__content &gt; strong</td>
-	<td>Willkommen zu Town Square!</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Anzeige</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Anzeige</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#LanguageEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#LanguageEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
 	<td>label=Español</td>
 </tr>
 <tr>
@@ -620,11 +573,11 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=p.channel-intro__content &gt; strong</td>
-	<td>¡Bienvenido a Town Square!</td>
+	<td>*Bienvenido*</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>css=a.sidebar-header-dropdown__toggle</td>
 	<td></td>
 </tr>
 <tr>
@@ -640,366 +593,6 @@
 <tr>
 	<td>click</td>
 	<td>link=Visualización</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#LanguageEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#LanguageEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>label=Français</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=p.channel-intro__content &gt; strong</td>
-	<td>Bienvenue sur Town Square!</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Affichage</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Affichage</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#LanguageEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#LanguageEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>label=Nederlands (Alpha)</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=p.channel-intro__content &gt; strong</td>
-	<td>Welkom bij Town Square!</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Weergave</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Weergave</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#LanguageEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#LanguageEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>label=Português (Brasil)</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=p.channel-intro__content &gt; strong</td>
-	<td>Bem-vindo a Town Square!</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Exibição</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Exibição</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#LanguageEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#LanguageEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>label=Pусский (Beta)</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=p.channel-intro__content &gt; strong</td>
-	<td>Town Square - добро пожаловать!</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Вид</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Вид</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#LanguageEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#LanguageEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>label=한국어 (Alpha)</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=p.channel-intro__content &gt; strong</td>
-	<td>Town Square에 오신 것을 환영합니다!</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=화면</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=화면</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#LanguageEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#LanguageEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>中文 (简体)</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=p.channel-intro__content &gt; strong</td>
-	<td>欢迎进入Town Square!</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=显示</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=显示</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#LanguageEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#LanguageEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>label=中文 (繁體)</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=p.channel-intro__content &gt; strong</td>
-	<td>歡迎來到Town Square！</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=顯示</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=顯示</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#LanguageEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#LanguageEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>label=日本語</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=p.channel-intro__content &gt; strong</td>
-	<td>Town Squareへようこそ!</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=表示</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=表示</td>
 	<td></td>
 </tr>
 <tr>
@@ -1027,6 +620,7 @@
 	<td>css=p.channel-intro__content &gt; strong</td>
 	<td>Welcome to Town Square!</td>
 </tr>
+<!--LOG OUT-->
 <tr>
 	<td>refreshAndWait</td>
 	<td></td>
@@ -1034,12 +628,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>link=Town Square</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>css=a.sidebar-header-dropdown__toggle</td>
 	<td></td>
 </tr>
 <tr>
@@ -1047,6 +641,7 @@
 	<td>css=#logout &gt; span</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=loginId</td>
