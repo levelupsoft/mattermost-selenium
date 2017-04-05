@@ -17,9 +17,9 @@ public class AccountSettingsPositionIT extends DriverBase {
 
     @Test
     public void testAccountSettingsPositionIT() throws Exception {        driver.get(baseUrl + "/login");
-        disableAnimations();
+        // DisableAnimations
         for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
+        	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("loginButton"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
@@ -29,27 +29,27 @@ public class AccountSettingsPositionIT extends DriverBase {
         driver.findElement(By.name("password")).clear();
         driver.findElement(By.name("password")).sendKeys("passwd");
         driver.findElement(By.id("loginButton")).click();
-        Thread.sleep(1000);
-        Thread.sleep(1000);
-        Thread.sleep(1000);
+        // Sleep
+        // Sleep
+        // Sleep
         driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
         // General Settings
         driver.findElement(By.cssSelector("#accountSettings > span")).click();
         for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
+        	if (second >= 60) fail("timeout");
         	try { if ("Click 'Edit' to add your job title / position".equals(driver.findElement(By.cssSelector("#PositionDesc > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
+        	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("#PositionEdit > span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         driver.findElement(By.cssSelector("#PositionEdit > span")).click();
         for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
+        	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("position"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
@@ -59,7 +59,7 @@ public class AccountSettingsPositionIT extends DriverBase {
         driver.findElement(By.id("position")).sendKeys("Tester");
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
+        	if (second >= 60) fail("timeout");
         	try { if ("Tester".equals(driver.findElement(By.id("PositionDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
@@ -70,14 +70,14 @@ public class AccountSettingsPositionIT extends DriverBase {
         driver.findElement(By.id("position")).sendKeys("Edited Tester");
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
+        	if (second >= 60) fail("timeout");
         	try { if ("Edited Tester".equals(driver.findElement(By.id("PositionDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         driver.findElement(By.cssSelector("#PositionEdit > span")).click();
         for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
+        	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("position"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
@@ -87,7 +87,7 @@ public class AccountSettingsPositionIT extends DriverBase {
         driver.findElement(By.id("position")).sendKeys("Temp");
         driver.findElement(By.cssSelector("#PositionCancel > span")).click();
         for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
+        	if (second >= 60) fail("timeout");
         	try { if ("Edited Tester".equals(driver.findElement(By.id("PositionDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
@@ -98,25 +98,16 @@ public class AccountSettingsPositionIT extends DriverBase {
         driver.findElement(By.id("position")).sendKeys("*" + Keys.BACK_SPACE);
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
+        	if (second >= 60) fail("timeout");
         	try { if ("Click 'Edit' to add your job title / position".equals(driver.findElement(By.cssSelector("#PositionDesc > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         driver.navigate().refresh();
-        for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Town Square"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        // Sleep
+        // Sleep
+        // Sleep
         driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
         driver.findElement(By.cssSelector("#logout > span")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
-        	try { if (isElementPresent(By.name("loginId"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
     }
 }
