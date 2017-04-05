@@ -92,17 +92,14 @@ public class AccountSettingsUsernameIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
-        driver.findElement(By.linkText("@")).click();
-        // Warning: waitForTextPresent may require manual changes
+        driver.findElement(By.linkText("Notifications")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*$")) break; } catch (Exception e) {}
+        	try { if (driver.findElement(By.id("Words_that_trigger_mentionsDesc")).getText().matches("^\"@test-1\"[\\s\\S]*$")) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
-        driver.findElement(By.cssSelector("#accountSettings > span")).click();
+        driver.findElement(By.xpath("(//a[contains(text(),'General')])[2]")).click();
         driver.findElement(By.cssSelector("#UsernameEdit > span")).click();
         driver.findElement(By.id("username")).clear();
         driver.findElement(By.id("username")).sendKeys("");
