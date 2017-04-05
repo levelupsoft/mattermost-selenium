@@ -11,6 +11,7 @@
 <thead>
 <tr><td rowspan="1" colspan="3">AccountSettingsFullName</td></tr>
 </thead><tbody>
+<!--LOG IN-->
 <tr>
 	<td>openAndWait</td>
 	<td>/login</td>
@@ -19,7 +20,7 @@
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=loginButton</td>
+	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
@@ -38,13 +39,16 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>css=a.sidebar-header-dropdown__toggle</td>
 	<td></td>
 </tr>
 <!--General Settings-->
@@ -209,6 +213,7 @@
 	<td>id=Full_NameDesc</td>
 	<td>This Is a Very Long Name That Should Truncate</td>
 </tr>
+<!--LOG OUT-->
 <tr>
 	<td>refreshAndWait</td>
 	<td></td>
@@ -216,19 +221,20 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>link=Town Square</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>css=a.sidebar-header-dropdown__toggle</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
+	<td>clickAndWait</td>
 	<td>css=#logout &gt; span</td>
 	<td></td>
 </tr>
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=loginId</td>
