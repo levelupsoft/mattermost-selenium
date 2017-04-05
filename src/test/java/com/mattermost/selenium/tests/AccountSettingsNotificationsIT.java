@@ -59,7 +59,11 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         // Sleep
         driver.findElement(By.id("desktopNotificationMentions")).click();
         // Sleep
+        // Sleep
+        // Sleep
         driver.findElement(By.id("saveSetting")).click();
+        // Sleep
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("For mentions and direct messages, shown for 5 seconds".equals(driver.findElement(By.cssSelector("#Desktop_notificationsDesc > span")).getText())) break; } catch (Exception e) {}
@@ -154,7 +158,11 @@ public class AccountSettingsNotificationsIT extends DriverBase {
 
         driver.findElement(By.id("soundDuration5")).click();
         // Sleep
+        // Sleep
+        // Sleep
         driver.findElement(By.id("saveSetting")).click();
+        // Sleep
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("For all activity, shown for 5 seconds".equals(driver.findElement(By.cssSelector("#Desktop_notificationsDesc > span")).getText())) break; } catch (Exception e) {}
