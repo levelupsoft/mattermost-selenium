@@ -262,7 +262,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=clientError</td>
-	<td>Your password must contain at least 5 characters.</td>
+	<td>Your password must contain between 5 and 64 characters.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -482,10 +482,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>name=loginId</td>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -683,10 +686,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Town Square</td>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>click</td>
 	<td>css=a.sidebar-header-dropdown__toggle</td>
@@ -695,12 +701,6 @@
 <tr>
 	<td>clickAndWait</td>
 	<td>css=#logout &gt; span</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>name=loginId</td>
 	<td></td>
 </tr>
 </tbody></table>
