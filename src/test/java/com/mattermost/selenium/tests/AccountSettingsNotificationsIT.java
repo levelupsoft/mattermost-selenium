@@ -150,6 +150,7 @@ public class AccountSettingsNotificationsIT extends DriverBase {
 
         driver.findElement(By.cssSelector("#Desktop_notificationsEdit > span")).click();
         // Sleep
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("soundDuration5"))) break; } catch (Exception e) {}
