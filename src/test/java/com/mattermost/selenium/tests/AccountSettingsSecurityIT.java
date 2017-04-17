@@ -185,7 +185,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Your password must contain at least 5 characters.".equals(driver.findElement(By.id("clientError")).getText())) break; } catch (Exception e) {}
+        	try { if ("Your password must contain between 5 and 64 characters.".equals(driver.findElement(By.id("clientError")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -318,12 +318,9 @@ public class AccountSettingsSecurityIT extends DriverBase {
         }
 
         driver.findElement(By.id("logout")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.name("loginId"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        // Sleep
+        // Sleep
+        // Sleep
         // DisableAnimations
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -457,20 +454,10 @@ public class AccountSettingsSecurityIT extends DriverBase {
 
         // LOG OUT
         driver.navigate().refresh();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Town Square"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        // Sleep
+        // Sleep
+        // Sleep
         driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
         driver.findElement(By.cssSelector("#logout > span")).click();
-        // Sleep
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.name("loginId"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
     }
 }
