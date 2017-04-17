@@ -66,7 +66,7 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.cssSelector("#Desktop_notificationsDesc > span")).getText().matches("^[\\s\\S]*For mentions and direct messages, shown for 5 seconds[\\s\\S]*$")) break; } catch (Exception e) {}
+        	try { if ("For mentions and direct messages, shown for 5 seconds".equals(driver.findElement(By.cssSelector("#Desktop_notificationsDesc > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
