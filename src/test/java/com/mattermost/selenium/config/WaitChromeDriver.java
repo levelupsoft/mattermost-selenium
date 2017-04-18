@@ -16,7 +16,7 @@ public class WaitChromeDriver extends ChromeDriver {
     @Override
     public WebElement findElement(By by) {
         for (int second = 0;; second++) {
-            if (second >= 10)
+            if (second >= 15)
                 throw new NoSuchElementException("Mattermost WaitDriver couldn't fine the element");
             
             try {
