@@ -11,16 +11,17 @@
 <thead>
 <tr><td rowspan="1" colspan="3">AccountSettingsPassword</td></tr>
 </thead><tbody>
+<!--Using test2@test.com for Security tests to avoid failure of this test affecting all other tests-->
+<!--LOG IN-->
 <tr>
 	<td>openAndWait</td>
 	<td>/login</td>
 	<td></td>
 </tr>
 <!--DisableAnimations-->
-<!--Using test2@test.com for Security tests to avoid failure of this test affecting all other tests-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=loginButton</td>
+	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
@@ -39,13 +40,16 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>css=a.sidebar-header-dropdown__toggle</td>
 	<td></td>
 </tr>
 <!--Security-->
@@ -258,7 +262,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=clientError</td>
-	<td>Your password must contain at least 5 characters.</td>
+	<td>Your password must contain between 5 and 64 characters.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -321,16 +325,10 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebar-header-dropdown</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>css=a.sidebar-header-dropdown__toggle</td>
 	<td></td>
 </tr>
-<!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=logout</td>
@@ -342,17 +340,25 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--DisableAnimations-->
+<tr>
 	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
 	<td>name=loginId</td>
 	<td>test2@test.com</td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>name=loginId</td>
-	<td>test2@test.com</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>name=password</td>
 	<td>passwd</td>
 </tr>
@@ -362,13 +368,16 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>css=a.sidebar-header-dropdown__toggle</td>
 	<td></td>
 </tr>
 <tr>
@@ -458,13 +467,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebar-header-dropdown</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>css=a.sidebar-header-dropdown__toggle</td>
 	<td></td>
 </tr>
 <tr>
@@ -477,19 +481,27 @@
 	<td>id=logout</td>
 	<td></td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
 	<td>name=loginId</td>
 	<td>test2@test.com</td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>name=loginId</td>
-	<td>test2@test.com</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>name=password</td>
 	<td>passwdd</td>
 </tr>
@@ -499,13 +511,16 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>css=a.sidebar-header-dropdown__toggle</td>
 	<td></td>
 </tr>
 <tr>
@@ -616,13 +631,16 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>css=a.sidebar-header-dropdown__toggle</td>
 	<td></td>
 </tr>
 <tr>
@@ -661,19 +679,28 @@
 	<td>css=p.session-help-text &gt; span</td>
 	<td>Sessions are created when you log in to a new browser on a device. Sessions let you use Mattermost without having to log in again for a time period specified by the System Admin. If you want to log out sooner, use the 'Logout' button below to end a session.</td>
 </tr>
+<!--LOG OUT-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.activity-log__action &gt; button.btn.btn-primary</td>
+	<td>refreshAndWait</td>
+	<td></td>
 	<td></td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>click</td>
-	<td>css=div.activity-log__action &gt; button.btn.btn-primary</td>
+	<td>css=a.sidebar-header-dropdown__toggle</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=loginButton</td>
+	<td>clickAndWait</td>
+	<td>css=#logout &gt; span</td>
 	<td></td>
 </tr>
 </tbody></table>

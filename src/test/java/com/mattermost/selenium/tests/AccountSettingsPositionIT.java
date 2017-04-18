@@ -29,13 +29,10 @@ public class AccountSettingsPositionIT extends DriverBase {
         driver.findElement(By.name("password")).clear();
         driver.findElement(By.name("password")).sendKeys("passwd");
         driver.findElement(By.id("loginButton")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("sidebar-header-dropdown"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("sidebar-header-dropdown")).click();
+        // Sleep
+        // Sleep
+        // Sleep
+        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
         // General Settings
         driver.findElement(By.cssSelector("#accountSettings > span")).click();
         for (int second = 0;; second++) {
@@ -107,19 +104,10 @@ public class AccountSettingsPositionIT extends DriverBase {
         }
 
         driver.navigate().refresh();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("sidebar-header-dropdown"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("sidebar-header-dropdown")).click();
+        // Sleep
+        // Sleep
+        // Sleep
+        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
         driver.findElement(By.cssSelector("#logout > span")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.name("loginId"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
     }
 }

@@ -16,12 +16,13 @@ import java.util.regex.Pattern;
 public class AccountSettingsSecurityIT extends DriverBase {
 
     @Test
-    public void testAccountSettingsSecurityIT() throws Exception {        driver.get(baseUrl + "/login");
-        disableAnimations();
-        // Using test2@test.com for Security tests to avoid failure of this test affecting all other tests
+    public void testAccountSettingsSecurityIT() throws Exception {        // Using test2@test.com for Security tests to avoid failure of this test affecting all other tests
+        // LOG IN
+        driver.get(baseUrl + "/login");
+        // DisableAnimations
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("loginButton"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -30,13 +31,10 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.name("password")).clear();
         driver.findElement(By.name("password")).sendKeys("passwd");
         driver.findElement(By.id("loginButton")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("sidebar-header-dropdown"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("sidebar-header-dropdown")).click();
+        // Sleep
+        // Sleep
+        // Sleep
+        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
         // Security
         driver.findElement(By.cssSelector("#accountSettings > span")).click();
         for (int second = 0;; second++) {
@@ -187,7 +185,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Your password must contain at least 5 characters.".equals(driver.findElement(By.id("clientError")).getText())) break; } catch (Exception e) {}
+        	try { if ("Your password must contain between 5 and 64 characters.".equals(driver.findElement(By.id("clientError")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -228,14 +226,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.id("confirmPassword")).sendKeys("passwdd");
         driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
         driver.navigate().refresh();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("sidebar-header-dropdown"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("sidebar-header-dropdown")).click();
-        disableAnimations();
+        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
@@ -243,22 +234,24 @@ public class AccountSettingsSecurityIT extends DriverBase {
         }
 
         driver.findElement(By.id("logout")).click();
+        // Sleep
+        // Sleep
+        // DisableAnimations
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.name("loginId"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.name("loginId")).clear();
         driver.findElement(By.name("loginId")).sendKeys("test2@test.com");
+        driver.findElement(By.name("password")).clear();
         driver.findElement(By.name("password")).sendKeys("passwd");
         driver.findElement(By.id("loginButton")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("sidebar-header-dropdown"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("sidebar-header-dropdown")).click();
+        // Sleep
+        // Sleep
+        // Sleep
+        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
         driver.findElement(By.cssSelector("#accountSettings > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -286,7 +279,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        Thread.sleep(1000);
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("currentPassword"))) break; } catch (Exception e) {}
@@ -317,13 +310,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
 
         driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
         driver.navigate().refresh();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("sidebar-header-dropdown"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("sidebar-header-dropdown")).click();
+        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
@@ -331,23 +318,25 @@ public class AccountSettingsSecurityIT extends DriverBase {
         }
 
         driver.findElement(By.id("logout")).click();
-        disableAnimations();
+        // Sleep
+        // Sleep
+        // Sleep
+        // DisableAnimations
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.name("loginId"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.name("loginId")).clear();
         driver.findElement(By.name("loginId")).sendKeys("test2@test.com");
+        driver.findElement(By.name("password")).clear();
         driver.findElement(By.name("password")).sendKeys("passwdd");
         driver.findElement(By.id("loginButton")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("sidebar-header-dropdown"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("sidebar-header-dropdown")).click();
+        // Sleep
+        // Sleep
+        // Sleep
+        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("#accountSettings > span"))) break; } catch (Exception e) {}
@@ -355,7 +344,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#accountSettings > span")).click();
-        Thread.sleep(1000);
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.linkText("Security"))) break; } catch (Exception e) {}
@@ -431,13 +420,10 @@ public class AccountSettingsSecurityIT extends DriverBase {
         }
 
         driver.navigate().refresh();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("sidebar-header-dropdown"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("sidebar-header-dropdown")).click();
+        // Sleep
+        // Sleep
+        // Sleep
+        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
         driver.findElement(By.cssSelector("#accountSettings > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -445,7 +431,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        Thread.sleep(1000);
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.linkText("Security"))) break; } catch (Exception e) {}
@@ -466,18 +452,12 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("div.activity-log__action > button.btn.btn-primary"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.cssSelector("div.activity-log__action > button.btn.btn-primary")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("loginButton"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        // LOG OUT
+        driver.navigate().refresh();
+        // Sleep
+        // Sleep
+        // Sleep
+        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
+        driver.findElement(By.cssSelector("#logout > span")).click();
     }
 }

@@ -11,6 +11,7 @@
 <thead>
 <tr><td rowspan="1" colspan="3">AccountSettingsOpen</td></tr>
 </thead><tbody>
+<!--LOG IN-->
 <tr>
 	<td>openAndWait</td>
 	<td>/login</td>
@@ -34,57 +35,39 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
+	<td>id=loginButton</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<!--General Settings-->
-<tr>
-	<td>click</td>
-	<td>//div[@id='sidebar-left']/div/div[2]/ul/li/a/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//body/div[2]/div/div[2]/div/div/div/h4/span</td>
-	<td>Account Settings</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//a[contains(text(),'General')])[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[11]</td>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
 <!--Sleep-->
-<!--Log out-->
+<!--Sleep-->
+<!--Sleep-->
+<!--LOG OUT-->
 <tr>
-	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>refreshAndWait</td>
 	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='sidebar-left']/div/div[2]/ul/li[4]/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>name=loginId</td>
+	<td>link=Town Square</td>
 	<td></td>
 </tr>
+<tr>
+	<td>click</td>
+	<td>css=a.sidebar-header-dropdown__toggle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#logout &gt; span</td>
+	<td></td>
+</tr>
+<!--Sleep-->
 </tbody></table>
 </body>
 </html>

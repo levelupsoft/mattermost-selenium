@@ -11,6 +11,7 @@
 <thead>
 <tr><td rowspan="1" colspan="3">AccountSettingsPosition</td></tr>
 </thead><tbody>
+<!--LOG IN-->
 <tr>
 	<td>openAndWait</td>
 	<td>/login</td>
@@ -19,7 +20,7 @@
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=loginButton</td>
+	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
@@ -38,13 +39,16 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>css=a.sidebar-header-dropdown__toggle</td>
 	<td></td>
 </tr>
 <!--General Settings-->
@@ -65,45 +69,18 @@
 </tr>
 <!--Desktop notification-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Desktop_notificationsEdit &gt; span</td>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Desktop_notificationsDesc &gt; span</td>
-	<td>For all activity, shown for 5 seconds</td>
-</tr>
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>click</td>
 	<td>css=#Desktop_notificationsEdit &gt; span</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=label</td>
-	<td>Send desktop notifications</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=desktopNotificationAllActivity</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Desktop_notificationsCancel &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Desktop_notificationsDesc &gt; span</td>
-	<td>For all activity, shown for 5 seconds</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Desktop_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
+<!--Sleep-->
 <!--Sleep-->
 <tr>
 	<td>waitForText</td>
@@ -111,15 +88,24 @@
 	<td>Send desktop notifications</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=desktopNotificationMentions</td>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>click</td>
 	<td>id=desktopNotificationMentions</td>
 	<td></td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
 <!--Sleep-->
 <tr>
 	<td>click</td>
@@ -127,9 +113,16 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<tr>
 	<td>waitForText</td>
 	<td>css=#Desktop_notificationsDesc &gt; span</td>
-	<td>For mentions and direct messages, shown for 5 seconds</td>
+	<td>For mentions and direct messages, *shown for 5 seconds</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -175,8 +168,8 @@
 </tr>
 <!--Sleep-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=desktopNotificationAllActivity</td>
+	<td>pause</td>
+	<td>1000</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -205,7 +198,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#Desktop_notificationsDesc &gt; span</td>
-	<td>For all activity, shown for 3 seconds</td>
+	<td>For all activity, *shown for 3 seconds</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -232,7 +225,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#Desktop_notificationsDesc &gt; span</td>
-	<td>For all activity, shown for 10 seconds</td>
+	<td>For all activity, *shown for 10 seconds</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -241,8 +234,8 @@
 </tr>
 <!--Sleep-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=soundDurationUnlimited</td>
+	<td>pause</td>
+	<td>1000</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -260,7 +253,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#Desktop_notificationsDesc &gt; span</td>
-	<td>For all activity, shown indefinitely</td>
+	<td>For all activity, *shown indefinitely</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -268,9 +261,15 @@
 	<td></td>
 </tr>
 <!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=soundDuration5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
 <tr>
@@ -278,6 +277,13 @@
 	<td>id=soundDuration5</td>
 	<td></td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
 <!--Sleep-->
 <tr>
 	<td>click</td>
@@ -285,9 +291,16 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<tr>
 	<td>waitForText</td>
 	<td>css=#Desktop_notificationsDesc &gt; span</td>
-	<td>For all activity, shown for 5 seconds</td>
+	<td>For all activity, *shown for 5 seconds</td>
 </tr>
 <!--Mobile push notifications-->
 <tr>
@@ -460,8 +473,8 @@
 </tr>
 <!--Sleep-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=notificationTriggerCustom</td>
+	<td>pause</td>
+	<td>1000</td>
 	<td></td>
 </tr>
 <tr>
@@ -578,8 +591,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=notificationCommentsRoot</td>
+	<td>pause</td>
+	<td>1000</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -611,8 +624,8 @@
 </tr>
 <!--Sleep-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=notificationCommentsNever</td>
+	<td>pause</td>
+	<td>1000</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -638,7 +651,7 @@
 	<td>css=#Reply_notificationsDesc &gt; span</td>
 	<td>Do not trigger notifications on messages in reply threads unless I'm mentioned</td>
 </tr>
-<!--Log out-->
+<!--LOG OUT-->
 <tr>
 	<td>refreshAndWait</td>
 	<td></td>
@@ -646,22 +659,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>link=Town Square</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebar-header-dropdown</td>
+	<td>css=a.sidebar-header-dropdown__toggle</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>css=#logout &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>name=loginId</td>
 	<td></td>
 </tr>
 </tbody></table>
