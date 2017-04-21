@@ -28,5 +28,5 @@ test-firefox: patch-files
 	mvn -Dbrowser=firefox clean verify
 
 test-all: patch-files
-	mvn -Dbrowser=firefox clean verify
+	#mvn -Dbrowser=firefox clean verify
 	mvn -Dbrowser=chrome clean verify
