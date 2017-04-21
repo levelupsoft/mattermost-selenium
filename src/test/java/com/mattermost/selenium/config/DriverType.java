@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
@@ -32,7 +34,15 @@ public enum DriverType implements DriverSetup {
         }
 
         public WebDriver getWebDriverObject(DesiredCapabilities capabilities) {
-            return new WaitFirefoxDriver(capabilities);
+            FirefoxOptions options = new FirefoxOptions();
+            options.addCapabilities(capabilities);
+            FirefoxProfile profile = new FirefoxProfile();
+            profile.setPreference("app.update.auto", false);
+            profile.setPreference("app.update.enabled", false);
+            options.setProfile(profile);
+            WaitFirefoxDriver dr =  new WaitFirefoxDriver(options);
+            dr.manage().window().maximize();
+            return dr;
         }
     },
     CHROME {
@@ -40,6 +50,7 @@ public enum DriverType implements DriverSetup {
             DesiredCapabilities capabilities = DesiredCapabilities.chrome();
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--start-maximized");
+            options.addArguments("start-fullscreen");
             capabilities.setCapability(ChromeOptions.CAPABILITY, options);
             capabilities.setCapability("chrome.switches", Arrays.asList("--no-default-browser-check"));
             HashMap<String, String> chromePreferences = new HashMap<String, String>();

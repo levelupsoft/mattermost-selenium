@@ -1,6 +1,7 @@
 package com.mattermost.selenium.config;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -11,6 +12,10 @@ import static org.junit.Assert.fail;
 public class WaitFirefoxDriver extends FirefoxDriver {
     WaitFirefoxDriver(DesiredCapabilities caps) {
         super(caps);
+    }
+
+    WaitFirefoxDriver(FirefoxOptions ops) {
+        super(ops);
     }
 
     @Override
