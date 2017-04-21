@@ -29,7 +29,7 @@ sudo apt-get -y install libxpm4 libxrender1 libgtk2.0-0 libnss3 libgconf-2-4
 
 sudo apt-get -y install xvfb gtk2-engines-pixbuf
 
-sudo apt-get -y install imagemagick x11-apps
+sudo apt-get -y install imagemagick dbus-x11 x11-apps
 
 sudo apt-get -y install firefox
 
