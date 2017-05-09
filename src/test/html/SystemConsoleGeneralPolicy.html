@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://selenium.mattermost.com/" />
-<title>SystmeConsoleGeneralPolicyIT</title>
+<title>SystmeConsolePolicyIT</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">SystmeConsoleGeneralPolicyIT</td></tr>
+<tr><td rowspan="1" colspan="3">SystmeConsolePolicyIT</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -38,112 +38,6 @@
 	<td>id=loginButton</td>
 	<td></td>
 </tr>
-<!--Give UI Automation Team Manager Role to the test7 Account-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=systemConsole</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=users</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>id=users</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
-	<td>admin</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=input.form-control.filter-textbox</td>
-	<td>test7</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
-	<td>test7</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=memberDropdown</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=manageTeams</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=manageTeams</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=manage-teams-yueo6xgbhpn7987x8g8qtne1th-afu531uwefgcdmjuixmyy8b9oh</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=manage-teams-yueo6xgbhpn7987x8g8qtne1th-afu531uwefgcdmjuixmyy8b9oh</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=makeTeamAdmin</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=makeTeamAdmin</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=adminNavbarDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=adminNavbarDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=swithToui-automation</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=swithToui-automation</td>
-	<td></td>
-</tr>
 <!--Confirm That the Admin Account Email Invitation is Enabled-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -165,7 +59,7 @@
 	<td>id=logout</td>
 	<td></td>
 </tr>
-<!--Confirm That the test7@test.com (Team Admin) Account Email Invitation is Enabled-->
+<!--Confirm That the test2@test.com (Team Admin) Account Email Invitation is Enabled-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=loginId</td>
@@ -174,7 +68,7 @@
 <tr>
 	<td>type</td>
 	<td>name=loginId</td>
-	<td>test7@test.com</td>
+	<td>test2@test.com</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -206,7 +100,7 @@
 	<td>id=logout</td>
 	<td></td>
 </tr>
-<!--Confirm That the test8@test.com (Team Member) Account Email Invitation is Enabled-->
+<!--Confirm That the test3@test.com (Team Member) Account Email Invitation is Enabled-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=loginId</td>
@@ -215,7 +109,7 @@
 <tr>
 	<td>type</td>
 	<td>name=loginId</td>
-	<td>test8@test.com</td>
+	<td>test3@test.com</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -359,11 +253,11 @@
 	<td>name=loginId</td>
 	<td></td>
 </tr>
-<!--Confirm That the test7@test.com (Team Member) Account Email Invitation is Enabled-->
+<!--Confirm That the test2@test.com (Team Member) Account Email Invitation is Enabled-->
 <tr>
 	<td>type</td>
 	<td>name=loginId</td>
-	<td>test7@test.com</td>
+	<td>test2@test.com</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -400,11 +294,11 @@
 	<td>name=loginId</td>
 	<td></td>
 </tr>
-<!--Confirm That the test8@test.com (Team Member) Account Email Invitation is Disabled-->
+<!--Confirm That the test3@test.com (Team Member) Account Email Invitation is Disabled-->
 <tr>
 	<td>type</td>
 	<td>name=loginId</td>
-	<td>test8@test.com</td>
+	<td>test3@test.com</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -543,7 +437,7 @@
 	<td>id=logout</td>
 	<td></td>
 </tr>
-<!--Confirm That the test7@test.com (Team Admin) Account Email Invitation is Disabled-->
+<!--Confirm That the test2@test.com (Team Admin) Account Email Invitation is Disabled-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=loginId</td>
@@ -552,7 +446,7 @@
 <tr>
 	<td>type</td>
 	<td>name=loginId</td>
-	<td>test7@test.com</td>
+	<td>test2@test.com</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -584,7 +478,7 @@
 	<td>id=logout</td>
 	<td></td>
 </tr>
-<!--Confirm That the test8@test.com (Team Member) Account Email Invitation is Disabled-->
+<!--Confirm That the test3@test.com (Team Member) Account Email Invitation is Disabled-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=loginId</td>
@@ -593,7 +487,7 @@
 <tr>
 	<td>type</td>
 	<td>name=loginId</td>
-	<td>test8@test.com</td>
+	<td>test3@test.com</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -693,76 +587,6 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=users</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=users</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.form-control.filter-textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
-	<td>admin</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=input.form-control.filter-textbox</td>
-	<td>test7</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
-	<td>test7</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=memberDropdown</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=manageTeams</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=manageTeams</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=manage-teams-yueo6xgbhpn7987x8g8qtne1th-afu531uwefgcdmjuixmyy8b9oh</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=manage-teams-yueo6xgbhpn7987x8g8qtne1th-afu531uwefgcdmjuixmyy8b9oh</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=makeTeamAdmin</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=makeMember</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
 	<td>id=adminNavbarDropdownButton</td>
 	<td></td>
 </tr>
@@ -781,7 +605,6 @@
 	<td>id=logout</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
