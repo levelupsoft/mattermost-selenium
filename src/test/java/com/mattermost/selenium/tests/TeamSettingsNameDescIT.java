@@ -275,6 +275,7 @@ public class TeamSettingsNameDescIT extends DriverBase {
 
         driver.findElement(By.id("teamName")).clear();
         driver.findElement(By.id("teamName")).sendKeys("");
+        driver.findElement(By.id("teamName")).clear();
         driver.findElement(By.id("teamName")).sendKeys("Testing Team");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -292,7 +293,7 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.cssSelector("#sidebar-left > div.team__header.theme")).getText().matches("^@admin\nTesting Team[\\s\\S]*$")) break; } catch (Exception e) {}
+        	try { if ("TeTesting Team".equals(driver.findElement(By.cssSelector("div.team-btn__initials")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -332,6 +333,7 @@ public class TeamSettingsNameDescIT extends DriverBase {
         // Special characters in team name
         driver.findElement(By.id("teamName")).clear();
         driver.findElement(By.id("teamName")).sendKeys("");
+        driver.findElement(By.id("teamName")).clear();
         driver.findElement(By.id("teamName")).sendKeys("()_+-={}|[]\\:");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -429,6 +431,7 @@ public class TeamSettingsNameDescIT extends DriverBase {
 
         driver.findElement(By.id("teamName")).clear();
         driver.findElement(By.id("teamName")).sendKeys("");
+        driver.findElement(By.id("teamName")).clear();
         driver.findElement(By.id("teamName")).sendKeys("UI Automation");
         // Sleep
         // Sleep
@@ -524,6 +527,7 @@ public class TeamSettingsNameDescIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("teamDescription")).clear();
         driver.findElement(By.id("teamDescription")).sendKeys("Testing the team description.");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -558,6 +562,7 @@ public class TeamSettingsNameDescIT extends DriverBase {
         // Sleep
         driver.findElement(By.id("teamDescription")).clear();
         driver.findElement(By.id("teamDescription")).sendKeys("");
+        driver.findElement(By.id("teamDescription")).clear();
         driver.findElement(By.id("teamDescription")).sendKeys("h" + Keys.BACK_SPACE);
         driver.findElement(By.id("teamDescription")).clear();
         driver.findElement(By.id("teamDescription")).sendKeys("");
