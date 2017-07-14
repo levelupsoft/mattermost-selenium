@@ -235,12 +235,6 @@ public class TeamSettingsNameDescIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("UIUI Automation".equals(driver.findElement(By.cssSelector("div.team-btn__initials")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("sidebarHeaderDropdownButton"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
