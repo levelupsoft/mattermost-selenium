@@ -113,6 +113,9 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("#channelViewInfo > span")).click();
+        Thread.sleep(2000);
+        Thread.sleep(2000);
+        Thread.sleep(2000);
         for (int second = 0;; second++) {
         	if (second >= 2) fail("timeout");
         	try { if ("NoHeader".equals(driver.findElement(By.cssSelector("h4.modal-title > strong")).getText())) break; } catch (Exception e) {}
@@ -125,19 +128,35 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Set a Header"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         try {
             assertThat("Header:", is(not(driver.findElement(By.cssSelector("div.info__label > span")).getText())));
         } catch (Error e) {
             verificationErrors.append(e.toString());
         }
         driver.findElement(By.cssSelector("div.about-modal.modal-dialog > div.modal-content > div.modal-header > button.close")).click();
-        driver.findElement(By.linkText("Set a Header")).click();
+        driver.navigate().refresh();
+        for (int second = 0;; second++) {
+        	if (second >= 2) fail("timeout");
+        	try { if ("Add a channel description".equals(driver.findElement(By.cssSelector("a.channel-header__description.light > span")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 2) fail("timeout");
+        	try { if (isElementPresent(By.linkText("Add a channel description"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.linkText("Add a channel description")).click();
+        Thread.sleep(2000);
+        Thread.sleep(2000);
+        Thread.sleep(2000);
+        for (int second = 0;; second++) {
+        	if (second >= 2) fail("timeout");
+        	try { if ("Edit the text appearing next to the channel name in the channel header.".equals(driver.findElement(By.cssSelector("div.edit-modal-body > p > span")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         Thread.sleep(2000);
         Thread.sleep(2000);
         Thread.sleep(2000);
@@ -177,26 +196,22 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         }
 
         driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Set a Header"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.linkText("Set a Header")).click();
+        Thread.sleep(2000);
+        Thread.sleep(2000);
+        Thread.sleep(2000);
+        driver.navigate().refresh();
+        driver.findElement(By.cssSelector("strong.heading")).click();
+        driver.findElement(By.cssSelector("#channelEditHeader > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 2) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).clear();
-        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("");
         driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("Hello");
         Thread.sleep(2000);
         Thread.sleep(2000);
         Thread.sleep(2000);
-        // ERROR: Caught exception [ERROR: Unsupported command [isEditable | xpath=(//button[@type='button'])[13] | ]]
         driver.findElement(By.xpath("(//button[@type='button'])[13]")).click();
         for (int second = 0;; second++) {
         	if (second >= 2) fail("timeout");
@@ -205,13 +220,7 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         }
 
         driver.navigate().refresh();
-        // Warning: waitForTextPresent may require manual changes
-        for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
-        	try { if (driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*admin updated the channel header[\\s\\S]*$")) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        driver.findElement(By.cssSelector("strong.heading")).click();
         for (int second = 0;; second++) {
         	if (second >= 2) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("#channelViewInfo > span"))) break; } catch (Exception e) {}
@@ -244,7 +253,17 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("div.about-modal.modal-dialog > div.modal-content > div.modal-header > button.close")).click();
+        Thread.sleep(2000);
+        Thread.sleep(2000);
+        Thread.sleep(2000);
+        driver.navigate().refresh();
         driver.findElement(By.cssSelector("strong.heading")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 2) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("#channelEditHeader > span"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         driver.findElement(By.cssSelector("#channelEditHeader > span")).click();
         driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).clear();
         driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("");
@@ -263,19 +282,6 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         }
 
         driver.navigate().refresh();
-        // Warning: waitForTextPresent may require manual changes
-        for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
-        	try { if (driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*admin removed the channel header \\(was: Hello\n\\)[\\s\\S]*$")) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//a[@id='channelHeaderDropdown']/span"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         driver.findElement(By.xpath("//a[@id='channelHeaderDropdown']/span")).click();
         for (int second = 0;; second++) {
         	if (second >= 2) fail("timeout");

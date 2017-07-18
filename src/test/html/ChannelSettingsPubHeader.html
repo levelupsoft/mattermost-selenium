@@ -1,304 +1,501 @@
-package com.mattermost.selenium.tests;
-
-import com.mattermost.selenium.DriverBase;
-
-import org.junit.*;
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
-
-import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.Select;
-
-import org.testng.annotations.Test;
-
-import java.util.regex.Pattern;
-
-public class ChannelSettingsPubHeader extends DriverBase {
-
-    @Test
-    public void testChannelSettingsPubHeader() throws Exception {        // LOG IN
-        driver.get(baseUrl + "/login");
-        // DisableAnimations
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.name("loginId")).clear();
-        driver.findElement(By.name("loginId")).sendKeys("admin@test.com");
-        driver.findElement(By.name("password")).clear();
-        driver.findElement(By.name("password")).sendKeys("passwd");
-        driver.findElement(By.id("loginButton")).click();
-        // Sleep
-        // Sleep
-        // Sleep
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Town Square".equals(driver.findElement(By.linkText("Town Square")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Off-Topic"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        // PUBLIC CHANNEL
-        // Add Public Channel from + icon, header tests
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("+"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.linkText("+")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("div.modal-intro > a > span"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Create a private channel"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        // ERROR: Caught exception [ERROR: Unsupported command [getEval |  | ]]
-        driver.findElement(By.cssSelector("div.col-sm-9 > input.form-control")).clear();
-        driver.findElement(By.cssSelector("div.col-sm-9 > input.form-control")).sendKeys("");
-        driver.findElement(By.cssSelector("div.col-sm-9 > input.form-control")).clear();
-        driver.findElement(By.cssSelector("div.col-sm-9 > input.form-control")).sendKeys("NoHeader-" + 10chrnum);
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("URL: /noheader-" + 10chrnum + " (Edit)".equals(driver.findElement(By.cssSelector("p.input__help.dark")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.cssSelector("form.form-horizontal > div.modal-footer > button.btn.btn-primary")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Beginning of NoHeader-" + 10chrnum.equals(driver.findElement(By.cssSelector("h4.channel-intro__title > span")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.cssSelector("p.channel-intro__content > span > span")).getText().matches("^This is the start of the NoHeader-\\$\\{10chrnum\\} channel, created by admin[\\s\\S]*$")) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Invite others to this channel"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.navigate().refresh();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//a[@id='channelHeaderDropdown']/span"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.xpath("//a[@id='channelHeaderDropdown']/span")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#channelViewInfo > span"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.cssSelector("#channelViewInfo > span")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("NoHeader-" + 10chrnum.equals(driver.findElement(By.cssSelector("h4.modal-title > strong")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("http://selenium.mattermost.com/ui-automation/channels/noheader-" + 10chrnum.equals(driver.findElement(By.cssSelector("div.info__value")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Set a Header"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        try {
-            assertThat("Header:", is(not(driver.findElement(By.cssSelector("div.info__label > span")).getText())));
-        } catch (Error e) {
-            verificationErrors.append(e.toString());
-        }
-        driver.findElement(By.cssSelector("div.about-modal.modal-dialog > div.modal-content > div.modal-header > button.close")).click();
-        driver.findElement(By.linkText("Set a Header")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&");
-        // Sleep
-        // Sleep
-        // Sleep
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&".equals(driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).getAttribute("value"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("(//button[@type='button'])[13]"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.xpath("(//button[@type='button'])[13]")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Invalid header".equals(driver.findElement(By.cssSelector("label.control-label")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("(//button[@type='button'])[11]"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Set a Header"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.linkText("Set a Header")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).clear();
-        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("");
-        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("Hello");
-        // Sleep
-        // Sleep
-        // Sleep
-        // ERROR: Caught exception [ERROR: Unsupported command [isEditable | xpath=(//button[@type='button'])[13] | ]]
-        driver.findElement(By.xpath("(//button[@type='button'])[13]")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Hello".equals(driver.findElement(By.cssSelector("p.markdown__paragraph-inline")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.navigate().refresh();
-        // Warning: waitForTextPresent may require manual changes
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*admin updated the channel header[\\s\\S]*$")) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#channelViewInfo > span"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.cssSelector("#channelViewInfo > span")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("NoHeader-" + 10chrnum.equals(driver.findElement(By.cssSelector("h4.modal-title > strong")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("http://selenium.mattermost.com/ui-automation/channels/noheader-" + 10chrnum.equals(driver.findElement(By.xpath("//div[2]/div[2]/div[2]")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Header:".equals(driver.findElement(By.cssSelector("div.info__label > span")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Hello".equals(driver.findElement(By.cssSelector("div.info__value > p")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.cssSelector("div.about-modal.modal-dialog > div.modal-content > div.modal-header > button.close")).click();
-        driver.findElement(By.cssSelector("strong.heading")).click();
-        driver.findElement(By.cssSelector("#channelEditHeader > span")).click();
-        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).clear();
-        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("");
-        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys(Keys.BACK_SPACE + Keys.BACK_SPACE + Keys.BACK_SPACE + Keys.BACK_SPACE + Keys.BACK_SPACE);
-        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).clear();
-        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("");
-        driver.findElement(By.xpath("(//button[@type='button'])[13]")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Add a channel description".equals(driver.findElement(By.cssSelector("a.channel-header__description.light > span")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.navigate().refresh();
-        // Warning: waitForTextPresent may require manual changes
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*admin removed the channel header \\(was: Hello\n\\)[\\s\\S]*$")) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//a[@id='channelHeaderDropdown']/span"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.xpath("//a[@id='channelHeaderDropdown']/span")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#channelViewInfo > span"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.cssSelector("#channelViewInfo > span")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("NoHeader-" + 10chrnum.equals(driver.findElement(By.cssSelector("h4.modal-title > strong")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("http://selenium.mattermost.com/ui-automation/channels/noheader-" + 10chrnum.equals(driver.findElement(By.cssSelector("div.info__value")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        try {
-            assertThat("Header:", is(not(driver.findElement(By.cssSelector("div.info__label > span")).getText())));
-        } catch (Error e) {
-            verificationErrors.append(e.toString());
-        }
-        driver.findElement(By.cssSelector("div.about-modal.modal-dialog > div.modal-content > div.modal-header > button.close")).click();
-        // LOG OUT
-        driver.navigate().refresh();
-        // Sleep
-        // Sleep
-        // Sleep
-        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
-        driver.findElement(By.cssSelector("#logout > span")).click();
-    }
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://selenium.mattermost.com/" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<!--LOG IN-->
+<tr>
+	<td>openAndWait</td>
+	<td>/login</td>
+	<td></td>
+</tr>
+<!--DisableAnimations-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>admin@test.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForText</td>
+	<td>link=Town Square</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Off-Topic</td>
+	<td></td>
+</tr>
+<!--PUBLIC CHANNEL-->
+<!--Add Public Channel from + icon, header tests-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=+</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=+</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.modal-intro &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Create a private channel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=div.col-sm-9 &gt; input.form-control</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=div.col-sm-9 &gt; input.form-control</td>
+	<td>NoHeader</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.input__help.dark</td>
+	<td>exact:URL: /noheader (Edit)</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h4.channel-intro__title &gt; span</td>
+	<td>Beginning of NoHeader</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.channel-intro__content &gt; span &gt; span</td>
+	<td>This is the start of the NoHeader channel, created by admin*</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Invite others to this channel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#channelViewInfo &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelViewInfo &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForText</td>
+	<td>css=h4.modal-title &gt; strong</td>
+	<td>NoHeader</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.info__value</td>
+	<td>exact:http://selenium.mattermost.com/ui-automation/channels/noheader</td>
+</tr>
+<tr>
+	<td>verifyNotText</td>
+	<td>css=div.info__label &gt; span</td>
+	<td>exact:Header:</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.about-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=a.channel-header__description.light &gt; span</td>
+	<td>Add a channel description</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Add a channel description</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Add a channel description</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.edit-modal-body &gt; p &gt; span</td>
+	<td>Edit the text appearing next to the channel name in the channel header.</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&amp;</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForValue</td>
+	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>exact:https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&amp;</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//button[@type='button'])[13]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[13]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=label.control-label</td>
+	<td>Invalid header</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//button[@type='button'])[11]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[11]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=strong.heading</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelEditHeader &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>Hello</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[13]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.markdown__paragraph-inline</td>
+	<td>Hello</td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=strong.heading</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#channelViewInfo &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelViewInfo &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h4.modal-title &gt; strong</td>
+	<td>NoHeader</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[2]/div[2]/div[2]</td>
+	<td>exact:http://selenium.mattermost.com/ui-automation/channels/noheader</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.info__label &gt; span</td>
+	<td>exact:Header:</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.info__value &gt; p</td>
+	<td>Hello</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.about-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=strong.heading</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#channelEditHeader &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelEditHeader &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[13]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=a.channel-header__description.light &gt; span</td>
+	<td>Add a channel description</td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#channelViewInfo &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelViewInfo &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h4.modal-title &gt; strong</td>
+	<td>NoHeader</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.info__value</td>
+	<td>exact:http://selenium.mattermost.com/ui-automation/channels/noheader</td>
+</tr>
+<tr>
+	<td>verifyNotText</td>
+	<td>css=div.info__label &gt; span</td>
+	<td>exact:Header:</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.about-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
+	<td></td>
+</tr>
+<!--LOG OUT-->
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>click</td>
+	<td>css=a.sidebar-header-dropdown__toggle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#logout &gt; span</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
