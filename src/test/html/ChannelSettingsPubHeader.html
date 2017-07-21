@@ -19,8 +19,16 @@
 </tr>
 <!--DisableAnimations-->
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-primary</td>
+	<td>name=loginId</td>
 	<td></td>
 </tr>
 <tr>
@@ -51,13 +59,8 @@
 	<td>link=Town Square</td>
 	<td>Town Square</td>
 </tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Off-Topic</td>
-	<td></td>
-</tr>
 <!--PUBLIC CHANNEL-->
-<!--Add Public Channel from + icon, header tests-->
+<!--Add Public Channel from + icon, without header-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=+</td>
@@ -86,12 +89,12 @@
 <tr>
 	<td>type</td>
 	<td>css=div.col-sm-9 &gt; input.form-control</td>
-	<td>NoHeader</td>
+	<td>headertest</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=p.input__help.dark</td>
-	<td>exact:URL: /noheader (Edit)</td>
+	<td>exact:URL: /headertest (Edit)</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -101,12 +104,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h4.channel-intro__title &gt; span</td>
-	<td>Beginning of NoHeader</td>
+	<td>Beginning of headertest</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=p.channel-intro__content &gt; span &gt; span</td>
-	<td>This is the start of the NoHeader channel, created by admin*</td>
+	<td>This is the start of the headertest channel, created by admin*</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -136,6 +139,7 @@
 	<td>//a[@id='channelHeaderDropdown']/span</td>
 	<td></td>
 </tr>
+<!--View channel info without header-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#channelViewInfo &gt; span</td>
@@ -157,12 +161,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h4.modal-title &gt; strong</td>
-	<td>NoHeader</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.info__value</td>
-	<td>exact:http://selenium.mattermost.com/ui-automation/channels/noheader</td>
+	<td>headertest</td>
 </tr>
 <tr>
 	<td>verifyNotText</td>
@@ -179,6 +178,7 @@
 	<td></td>
 	<td></td>
 </tr>
+<!--Add header using `Add a channel description` placeholder link-->
 <tr>
 	<td>waitForText</td>
 	<td>css=a.channel-header__description.light &gt; span</td>
@@ -220,6 +220,7 @@
 	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
 	<td></td>
 </tr>
+<!--Verify header 1024 character limit-->
 <tr>
 	<td>sendKeys</td>
 	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
@@ -277,13 +278,19 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
+	<td>waitForText</td>
 	<td>css=strong.heading</td>
+	<td>headertest</td>
+</tr>
+<!--Add header using `Set a Header` link-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Set a Header</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelEditHeader &gt; span</td>
+	<td>link=Set a Header</td>
 	<td></td>
 </tr>
 <tr>
@@ -294,7 +301,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
-	<td>Hello</td>
+	<td>**Header</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -312,7 +319,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=p.markdown__paragraph-inline</td>
-	<td>Hello</td>
+	<td>**Header</td>
 </tr>
 <tr>
 	<td>refreshAndWait</td>
@@ -320,10 +327,16 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=strong.heading</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>css=strong.heading</td>
 	<td></td>
 </tr>
+<!--Verify channel info with header-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#channelViewInfo &gt; span</td>
@@ -337,12 +350,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h4.modal-title &gt; strong</td>
-	<td>NoHeader</td>
+	<td>headertest</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>//div[2]/div[2]/div[2]</td>
-	<td>exact:http://selenium.mattermost.com/ui-automation/channels/noheader</td>
+	<td>exact:http://selenium.mattermost.com/ui-automation/channels/headertest</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -350,26 +363,25 @@
 	<td>exact:Header:</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.info__value &gt; p</td>
-	<td>Hello</td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>css=div.about-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
 	<td>refreshAndWait</td>
 	<td></td>
+	<td></td>
+</tr>
+<!--Edit header, use markdown-->
+<!--Sleep-->
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=strong.heading</td>
 	<td></td>
 </tr>
 <tr>
@@ -388,53 +400,82 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>waitForElementPresent</td>
 	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
 	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
-	<td>${KEY_BACKSPACE}</td>
+	<td>** ${KEY_SHIFT}${KEY_ENTER} </td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
-	<td>${KEY_BACKSPACE}</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
-	<td>${KEY_BACKSPACE}</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
-	<td>${KEY_BACKSPACE}</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
-	<td>${KEY_BACKSPACE}</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>pause</td>
+	<td>1000</td>
 	<td></td>
 </tr>
+<!--Sleep-->
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>- Item 1 ${KEY_SHIFT}${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>- [Item 2 is a link](http://google.com)</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
 <tr>
 	<td>click</td>
 	<td>xpath=(//button[@type='button'])[13]</td>
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<tr>
 	<td>waitForText</td>
-	<td>css=a.channel-header__description.light &gt; span</td>
-	<td>Add a channel description</td>
+	<td>css=p.markdown__paragraph-inline &gt; strong</td>
+	<td>Header</td>
 </tr>
 <tr>
-	<td>refreshAndWait</td>
+	<td>click</td>
+	<td>css=p.markdown__paragraph-inline &gt; strong</td>
+	<td>Header</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.popover-content &gt; div &gt; ul &gt; li</td>
+	<td>Item 1</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//a[contains(text(),'Item 2 is a link')])[3]</td>
+	<td>Item 2 is a link</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Item 2 is a link</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[@id='channelHeaderDropdown']/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -455,17 +496,27 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h4.modal-title &gt; strong</td>
-	<td>NoHeader</td>
+	<td>headertest</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.info__value</td>
-	<td>exact:http://selenium.mattermost.com/ui-automation/channels/noheader</td>
+	<td>//div[2]/div[2]/div[2]</td>
+	<td>exact:http://selenium.mattermost.com/ui-automation/channels/headertest</td>
 </tr>
 <tr>
-	<td>verifyNotText</td>
-	<td>css=div.info__label &gt; span</td>
-	<td>exact:Header:</td>
+	<td>waitForText</td>
+	<td>css=div.info__value &gt; p &gt; strong</td>
+	<td>Header</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.info__value &gt; ul &gt; li</td>
+	<td>Item 1</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//a[contains(text(),'Item 2 is a link')])[3]</td>
+	<td>Item 2 is a link</td>
 </tr>
 <tr>
 	<td>click</td>
