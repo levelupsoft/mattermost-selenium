@@ -39,12 +39,6 @@ public class TeamSettingsNameDescIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Off-Topic"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         // Save team name with no changes
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
