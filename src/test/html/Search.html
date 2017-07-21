@@ -55,22 +55,63 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>/loadtest url test-search.md${KEY_ENTER}</td>
+	<td>/test url test-search.md${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//span[@id='lastPostMessageText']/h4[4]</td>
-	<td>Markdown surrounding a hashtag:</td>
+	<td>css=h1.markdown__heading</td>
+	<td>Search Testing</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>waitForElementPresent</td>
+	<td>css=input.search-bar</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>hello${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.sidebar--right__title &gt; span</td>
+	<td></td>
+</tr>
+<!--Switch channel in center to make sure verifying in search results in RHS-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=strong.heading</td>
+	<td>Off-Topic</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -92,10 +133,46 @@
 	<td>css=code &gt; span.search-highlight</td>
 	<td>Hello</td>
 </tr>
+<!--Switch channel back to post in Town Square-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>town</td>
+</tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#hello</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=strong.heading</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -129,13 +206,18 @@
 	<td>world hello${KEY_ENTER}</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.search-bar</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>hello world${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -155,13 +237,18 @@
 </tr>
 <!--Accents, non-Latin characters-->
 <tr>
-	<td>type</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.search-bar</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>crème fraîche${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -170,13 +257,23 @@
 	<td>Crème</td>
 </tr>
 <tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.search-bar</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>您好*${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -185,14 +282,24 @@
 	<td>您好</td>
 </tr>
 <tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.search-bar</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td></td>
 </tr>
 <!--Wildcard-->
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>hell*${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -201,13 +308,23 @@
 	<td>hell</td>
 </tr>
 <tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.search-bar</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>&quot;hell&quot;*${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -216,13 +333,23 @@
 	<td></td>
 </tr>
 <tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.search-bar</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>hello${KEY_ENTER}</td>
 </tr>
 <!--Jump to permalink view-->
@@ -242,23 +369,23 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#lastPostMessageText &gt; p</td>
-	<td>${jumpmessage}</td>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>${jumpmessage}*Click here to jump</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#archive-link-home &gt; a &gt; span</td>
+	<td>link=Click here to jump to recent messages.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#archive-link-home &gt; a &gt; span</td>
+	<td>link=Click here to jump to recent messages.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
-	<td>css=#archive-link-home &gt; a &gt; span</td>
+	<td>link=Click here to jump to recent messages.</td>
 	<td></td>
 </tr>
 <tr>
@@ -295,13 +422,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#lastPostMessageText &gt; p</td>
-	<td>inchannel</td>
+	<td>waitForElementPresent</td>
+	<td>css=li.active &gt; a.sidebar-item &gt; span.sidebar-item__name</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Town Square</td>
+	<td>css=li.active &gt; a.sidebar-item &gt; span.sidebar-item__name</td>
 	<td></td>
 </tr>
 <tr>
@@ -321,8 +448,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.search-bar</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -333,7 +465,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>in:town</td>
 </tr>
 <!--Sleep-->
@@ -360,7 +492,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td> </td>
 </tr>
 <!--Sleep-->
@@ -371,7 +503,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>inchannel${KEY_ENTER}</td>
 </tr>
 <!--Sleep-->
@@ -471,13 +603,38 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Off-Topic</td>
+	<td>css=button.btn.btn-link</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Off-Topic</td>
+	<td>css=button.btn.btn-link</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=strong.heading</td>
+	<td>Off-Topic</td>
 </tr>
 <!--Sleep-->
 <tr>
@@ -505,16 +662,6 @@
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
 	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#lastPostMessageText &gt; p</td>
-	<td>fromuser</td>
 </tr>
 <!--LOG OUT-->
 <tr>
@@ -607,14 +754,39 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#lastPostMessageText &gt; p</td>
-	<td>fromuser #verify</td>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-link</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Off-Topic</td>
+	<td>css=button.btn.btn-link</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=strong.heading</td>
+	<td>Off-Topic</td>
 </tr>
 <!--Sleep-->
 <tr>
@@ -624,12 +796,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -640,7 +812,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>from:tes</td>
 </tr>
 <!--Sleep-->
@@ -667,7 +839,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>fromuser${KEY_ENTER}</td>
 </tr>
 <!--Sleep-->
@@ -692,8 +864,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.search-bar</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -704,7 +881,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>from:test2</td>
 </tr>
 <!--Sleep-->
@@ -726,7 +903,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <!--Sleep-->
@@ -737,7 +914,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td> in:off-topic</td>
 </tr>
 <!--Sleep-->
@@ -753,7 +930,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>${KEY_TAB}</td>
 </tr>
 <!--Sleep-->
@@ -764,7 +941,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>fromuser${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -782,9 +959,20 @@
 	<td></td>
 	<td></td>
 </tr>
+<!--Sleep-->
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.search-bar</td>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -795,7 +983,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>from:</td>
 </tr>
 <!--Sleep-->
@@ -806,32 +994,32 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>${KEY_DOWN}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>${KEY_DOWN}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>${KEY_DOWN}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>${KEY_UP}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>${KEY_DOWN}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>${KEY_DOWN}</td>
 </tr>
 <tr>
@@ -847,19 +1035,44 @@
 </tr>
 <tr>
 	<td>verifyValue</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>exact:from:</td>
 </tr>
 <!--At-mention search-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Town Square</td>
+	<td>css=button.btn.btn-link</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Town Square</td>
+	<td>css=button.btn.btn-link</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>town</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=strong.heading</td>
+	<td>Town Square</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -899,64 +1112,46 @@
 	<td></td>
 	<td></td>
 </tr>
+<!--Sleep-->
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>test2</td>
+</tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#lastPostMessageText &gt; p</td>
-	<td>@test2 greetings</td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='sidebar-left']/div[4]/ul[3]/li[2]/a/span</td>
-	<td></td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>@test2</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='sidebar-left']/div[4]/ul[3]/li[2]/a/span</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>@test2</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[2]/div/div[4]/div/div[2]</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[2]/div/div[4]/div/div[2]</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[2]/div/div/div[2]/div/div/div/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[2]/div/div/div[2]/div/div/div/button</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=strong.heading</td>
+	<td>test2</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -985,101 +1180,11 @@
 	<td></td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#lastPostMessageText &gt; p</td>
-	<td>@test2 direct</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='sidebar-left']/div[4]/ul[3]/li[3]/a/span</td>
-	<td></td>
-</tr>
 <!--Sleep-->
 <tr>
 	<td>pause</td>
 	<td>1000</td>
 	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='sidebar-left']/div[4]/ul[3]/li[3]/a/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[2]/div/div[4]/div/div</td>
-	<td>test2</td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[2]/div/div[4]/div/div</td>
-	<td>test2</td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__description</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[2]/div/div/div[2]/div/div/div/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=post_textbox</td>
-	<td>@test2 group${KEY_ENTER}</td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#lastPostMessageText &gt; p</td>
-	<td>@test2 group</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1107,21 +1212,22 @@
 	<td>id=post_textbox</td>
 	<td>@channel${KEY_ENTER}${KEY_ENTER}</td>
 </tr>
-<!--Sleep-->
 <tr>
 	<td>pause</td>
 	<td>1000</td>
 	<td></td>
 </tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
+<!--Sleep-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#lastPostMessageText &gt; p</td>
+	<td>css=span.mention--highlight &gt; span &gt; span</td>
 	<td>@channel</td>
+</tr>
+<!--Sleep-->
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
 </tr>
 <!--LOG OUT-->
 <tr>
@@ -1137,6 +1243,11 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=a.sidebar-header-dropdown__toggle</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>css=a.sidebar-header-dropdown__toggle</td>
@@ -1193,18 +1304,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>refreshAndWait</td>
-	<td></td>
+	<td>waitForElementPresent</td>
+	<td>css=span.icon.icon__mentions &gt; svg</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=searchMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td></td>
 </tr>
 <tr>
@@ -1215,23 +1321,18 @@
 <!--Sleep-->
 <tr>
 	<td>click</td>
-	<td>id=searchMentions</td>
+	<td>css=span.icon.icon__mentions &gt; svg</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td></td>
 </tr>
 <tr>
 	<td>pause</td>
 	<td>1000</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.search-channel__name</td>
-	<td>admin, test, test2</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1254,25 +1355,45 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForTextPresent</td>
-	<td>@test2 group</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>xpath=(//a[contains(text(),'@test2')])[3]</td>
-	<td>@test2</td>
-</tr>
-<tr>
 	<td>pause</td>
 	<td>1000</td>
 	<td></td>
 </tr>
 <!--Sleep-->
 <tr>
-	<td>clickAndWait</td>
-	<td>link=Off-Topic</td>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-link</td>
 	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>Off</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=strong.heading</td>
+	<td>Off-Topic</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -1286,18 +1407,48 @@
 	<td>greetings</td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>link=Town Square1</td>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-link</td>
 	<td></td>
 </tr>
 <tr>
-	<td>verifyNotVisible</td>
+	<td>click</td>
+	<td>css=button.btn.btn-link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>Town</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=strong.heading</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
 	<td>direct</td>
 	<td></td>
 </tr>
 <tr>
-	<td>verifyNotVisible</td>
-	<td>link=@channel</td>
+	<td>verifyTextNotPresent</td>
+	<td>@channel</td>
 	<td></td>
 </tr>
 <tr>
@@ -1332,26 +1483,6 @@
 	<td>id=post_textbox</td>
 	<td></td>
 </tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#lastPostMessageText &gt; p</td>
-	<td>test usernametownsquare</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=@test2</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=@test2</td>
-	<td></td>
-</tr>
 <!--Sleep-->
 <tr>
 	<td>pause</td>
@@ -1360,13 +1491,38 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=test1</td>
+	<td>css=button.btn.btn-link</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=test1</td>
+	<td>css=button.btn.btn-link</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>@test - This Is a Very Long Name That Should Truncate</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>@test - This Is a Very Long Name That Should Truncate</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=strong.heading</td>
+	<td>test</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1390,74 +1546,6 @@
 	<td>1000</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#lastPostMessageText &gt; p</td>
-	<td>test usernameDM</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='sidebar-left']/div[4]/ul[3]/li[2]/a</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='sidebar-left']/div[4]/ul[3]/li[2]/a</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=post_textbox</td>
-	<td>test usernameGM${KEY_ENTER}</td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#lastPostMessageText &gt; p</td>
-	<td>test usernameGM</td>
-</tr>
 <!--LOG OUT-->
 <tr>
 	<td>refreshAndWait</td>
@@ -1472,6 +1560,11 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=a.sidebar-header-dropdown__toggle</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>css=a.sidebar-header-dropdown__toggle</td>
@@ -1528,13 +1621,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>id=searchMentions</td>
+	<td>css=span.icon.icon__mentions &gt; svg</td>
 	<td></td>
 </tr>
 <tr>
@@ -1547,7 +1635,7 @@
 <!--Sleep-->
 <tr>
 	<td>click</td>
-	<td>id=searchMentions</td>
+	<td>css=span.icon.icon__mentions &gt; svg</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -1557,9 +1645,39 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>off</td>
+</tr>
+<tr>
 	<td>waitForText</td>
-	<td>css=p</td>
-	<td>test usernameGM</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=strong.heading</td>
+	<td>Off-Topic</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1568,18 +1686,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='search-items-container']/div[2]/div[2]/div[2]/div[2]/div/div/span/p</td>
+	<td>css=p</td>
 	<td>test usernameDM</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='search-items-container']/div[3]/div[2]/div</td>
-	<td>Town Square</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='search-items-container']/div[3]/div[2]/div[2]/div[2]/div/div/span/p</td>
-	<td>test usernametownsquare</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1587,19 +1695,49 @@
 	<td>test</td>
 </tr>
 <tr>
-	<td>verifyNotVisible</td>
-	<td>link=@channel</td>
+	<td>waitForTextPresent</td>
+	<td>test usernametownsquare</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=@test2</td>
+	<td>css=button.btn.btn-link</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=@test2</td>
+	<td>css=button.btn.btn-link</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>Town</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=strong.heading</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=@test2</td>
+	<td>@test2</td>
 </tr>
 <!--Sleep-->
 <tr>
@@ -1608,9 +1746,14 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForValue</td>
+	<td>css=input.search-bar</td>
+	<td>test2</td>
+</tr>
+<tr>
 	<td>waitForText</td>
-	<td>css=span.sidebar--right__title &gt; span</td>
-	<td>Search Results</td>
+	<td>css=div.search-channel__name &gt; span</td>
+	<td>Direct Message (with test2)</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1619,8 +1762,13 @@
 </tr>
 <!--DM search-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.search-bar</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -1631,7 +1779,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>direct${KEY_ENTER}</td>
 </tr>
 <!--Sleep-->
@@ -1650,17 +1798,6 @@
 	<td>css=span.search-highlight</td>
 	<td>direct</td>
 </tr>
-<!--Hashtag search-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Town Square</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Town Square</td>
-	<td></td>
-</tr>
 <!--Sleep-->
 <tr>
 	<td>pause</td>
@@ -1669,184 +1806,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=#hello</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#hello</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#hello</td>
-</tr>
-<tr>
-	<td>waitForNotText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#world</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#world</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#world</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#world</td>
-</tr>
-<tr>
-	<td>waitForNotText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#hello</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=post_textbox</td>
-	<td>hashtag without the hash${KEY_ENTER}</td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#lastPostMessageText &gt; p</td>
-	<td>hashtag without the hash</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#hashtag</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#hashtag</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#hashtag</td>
-</tr>
-<tr>
-	<td>verifyNotText</td>
-	<td>css=span.search-highlight</td>
-	<td>hashtag</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=post_textbox</td>
-	<td>#world #hello${KEY_ENTER}</td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#lastPostMessageText &gt; p</td>
-	<td>#world #hello</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=post_textbox</td>
-	<td>#world #nohello${KEY_ENTER}</td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#lastPostMessageText &gt; p</td>
-	<td>#world #nohello</td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
+	<td>css=input.search-bar</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -1857,606 +1822,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
-	<td>#hello #world${KEY_ENTER}</td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#world</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=p</td>
-	<td>#world #hello</td>
-</tr>
-<tr>
-	<td>verifyNotText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#nohello</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=em &gt; a.mention-link</td>
-	<td>#markdown</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=em &gt; a.mention-link</td>
-	<td>#markdown</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#markdown</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=strong &gt; a.mention-link</td>
-	<td>#markdown</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=strong &gt; a.mention-link</td>
-	<td>#markdown</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#markdown</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=del &gt; a.mention-link</td>
-	<td>#markdown</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=del &gt; a.mention-link</td>
-	<td>#markdown</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#markdown</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=h5 &gt; a.mention-link</td>
-	<td>#markdown</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=h5 &gt; a.mention-link</td>
-	<td>#markdown</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#markdown</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#colon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#colon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#colon</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#slash</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#slash</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#slash</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#backslash</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#backslash</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#backslash</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#percent</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#percent</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#percent</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#dollar</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#dollar</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#dollar</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#semicolon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#semicolon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#semicolon</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#ampersand</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#ampersand</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#ampersand</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#bracket</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#bracket</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#bracket</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#lessthan</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#lessthan</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#lessthan</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#greaterthan</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#greaterthan</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#greaterthan</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#dash</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#dash</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#dash</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#plus</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#plus</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#plus</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#equals</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#equals</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#equals</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#caret</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#caret</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#caret</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#hashtag</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#hashtag</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#hashtag</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#asterisk</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#asterisk</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#asterisk</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#verticalbar</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#verticalbar</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#verticalbar</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#invertedquestion</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#invertedquestion</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#invertedquestion</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#atsign</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#atsign</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#atsign</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#quote</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#quote</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#quote</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#apostrophe</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#apostrophe</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#apostrophe</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#curlybracket</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#curlybracket</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#curlybracket</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=#squarebracket</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=#squarebracket</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#squarebracket</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.sidebar--right__close</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>css=input.form-control.search-bar</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=input.form-control.search-bar</td>
+	<td>css=input.search-bar</td>
 	<td>test3${KEY_ENTER}</td>
 </tr>
 <!--Sleep-->
@@ -2466,9 +1832,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.sidebar--right__title &gt; span</td>
-	<td>Search Results</td>
+	<td>waitForTextPresent</td>
+	<td>No results found. Try again?</td>
+	<td></td>
 </tr>
 <tr>
 	<td>verifyNotText</td>
