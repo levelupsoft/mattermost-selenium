@@ -730,6 +730,13 @@ public class SearchIT extends DriverBase {
         Thread.sleep(2000);
         for (int second = 0;; second++) {
         	if (second >= 2) fail("timeout");
+        	try { if (isElementPresent(By.xpath("(//button[@type='button'])[12]"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.xpath("(//button[@type='button'])[12]")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 2) fail("timeout");
         	try { if ("@channel".equals(driver.findElement(By.cssSelector("span.mention--highlight > span > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
@@ -793,12 +800,6 @@ public class SearchIT extends DriverBase {
         driver.findElement(By.cssSelector("span.icon.icon__mentions > svg")).click();
         for (int second = 0;; second++) {
         	if (second >= 2) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("input.search-bar"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
         	try { if (isElementPresent(By.linkText("@test2"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
@@ -822,6 +823,12 @@ public class SearchIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        // Warning: verifyTextNotPresent may require manual changes
+        try {
+            assertFalse(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*@channel[\\s\\S]*$"));
+        } catch (Error e) {
+            verificationErrors.append(e.toString());
+        }
         Thread.sleep(2000);
         for (int second = 0;; second++) {
         	if (second >= 2) fail("timeout");
