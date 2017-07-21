@@ -1219,6 +1219,16 @@
 </tr>
 <!--Sleep-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//button[@type='button'])[12]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[12]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>css=span.mention--highlight &gt; span &gt; span</td>
 	<td>@channel</td>
@@ -1325,11 +1335,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.search-bar</td>
-	<td></td>
-</tr>
-<tr>
 	<td>pause</td>
 	<td>1000</td>
 	<td></td>
@@ -1352,6 +1357,11 @@
 <tr>
 	<td>waitForTextPresent</td>
 	<td>@test2 direct</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>@channel</td>
 	<td></td>
 </tr>
 <tr>
