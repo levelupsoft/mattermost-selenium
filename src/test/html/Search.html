@@ -222,16 +222,21 @@
 </tr>
 <tr>
 	<td>waitForText</td>
+	<td>css=span.search-highlight</td>
+	<td>world</td>
+</tr>
+<tr>
+	<td>waitForText</td>
 	<td>css=p</td>
 	<td>world hello</td>
 </tr>
 <tr>
-	<td>waitForNotText</td>
+	<td>verifyNotText</td>
 	<td>css=span.search-highlight</td>
 	<td>one</td>
 </tr>
 <tr>
-	<td>waitForNotText</td>
+	<td>verifyNotText</td>
 	<td>css=span.search-highlight</td>
 	<td>two</td>
 </tr>
@@ -398,6 +403,16 @@
 <tr>
 	<td>pause</td>
 	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
@@ -861,6 +876,11 @@
 <tr>
 	<td>verifyElementPresent</td>
 	<td>link=#verify</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -1453,11 +1473,6 @@
 </tr>
 <tr>
 	<td>verifyTextNotPresent</td>
-	<td>direct</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyTextNotPresent</td>
 	<td>@channel</td>
 	<td></td>
 </tr>
@@ -1755,22 +1770,33 @@
 	<td>1000</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForValue</td>
-	<td>css=input.search-bar</td>
-	<td>test2</td>
-</tr>
+<!--at-username link opens profile popover-->
 <tr>
 	<td>waitForText</td>
-	<td>css=div.search-channel__name &gt; span</td>
-	<td>Direct Message (with test2)</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>link=@test2</td>
+	<td>css=h3.popover-title</td>
 	<td>@test2</td>
 </tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=img.user-popover__image</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=test2@test.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Send Message</td>
+	<td></td>
+</tr>
 <!--DM search-->
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=input.search-bar</td>
