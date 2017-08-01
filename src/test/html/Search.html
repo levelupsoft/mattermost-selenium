@@ -125,13 +125,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.post-code__search-highlighting</td>
+	<td>css=code &gt; span.search-highlight</td>
 	<td>Hello</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=code &gt; span.search-highlight</td>
-	<td>Hello</td>
+	<td>verifyElementPresent</td>
+	<td>css=code.hljs</td>
+	<td></td>
 </tr>
 <!--Switch channel back to post in Town Square-->
 <tr>
@@ -1238,16 +1238,6 @@
 	<td></td>
 </tr>
 <!--Sleep-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[12]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[12]</td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=span.mention--highlight &gt; span &gt; span</td>
