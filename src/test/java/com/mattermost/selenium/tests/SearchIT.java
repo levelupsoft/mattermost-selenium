@@ -739,12 +739,6 @@ public class SearchIT extends DriverBase {
 
         driver.findElement(By.id("post_textbox")).sendKeys("@channel" + Keys.ENTER + Keys.ENTER);
         Thread.sleep(2000);
-        for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
-        	try { if ("@channel".equals(driver.findElement(By.cssSelector("span.mention--highlight > span > span")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         Thread.sleep(2000);
         // LOG OUT
         driver.navigate().refresh();
