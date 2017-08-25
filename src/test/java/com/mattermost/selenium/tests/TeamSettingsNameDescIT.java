@@ -449,12 +449,6 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.findElement(By.cssSelector("#Team_DescriptionEdit > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("teamDescription"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
         	try { if ("Team description provides additional information to help users select the right team. Maximum of 50 characters.".equals(driver.findElement(By.cssSelector("div.setting-list__hint > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
