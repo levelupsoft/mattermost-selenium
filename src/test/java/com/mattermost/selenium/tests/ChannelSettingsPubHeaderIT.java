@@ -213,14 +213,14 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("**Header");
+        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("*Header");
         // Sleep
         // Sleep
         // Sleep
         driver.findElement(By.xpath("(//button[@type='button'])[13]")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.cssSelector("p.markdown__paragraph-inline")).getText().matches("^[\\s\\S]*[\\s\\S]*Header$")) break; } catch (Exception e) {}
+        	try { if (driver.findElement(By.cssSelector("p.markdown__paragraph-inline")).getText().matches("^[\\s\\S]*Header$")) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -278,7 +278,7 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("** " + Keys.SHIFT + Keys.ENTER);
+        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("* " + Keys.SHIFT + Keys.ENTER);
         // Sleep
         driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("- Item 1 " + Keys.SHIFT + Keys.ENTER);
         // Sleep
@@ -288,11 +288,17 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Header".equals(driver.findElement(By.cssSelector("p.markdown__paragraph-inline > strong")).getText())) break; } catch (Exception e) {}
+        	try { if ("Header".equals(driver.findElement(By.cssSelector("em")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("p.markdown__paragraph-inline > strong")).click();
+        driver.findElement(By.cssSelector("em")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Header".equals(driver.findElement(By.cssSelector("div.popover-content > div > p > em")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Item 1".equals(driver.findElement(By.cssSelector("div.popover-content > div > ul > li")).getText())) break; } catch (Exception e) {}
@@ -308,6 +314,13 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.linkText("Item 2 is a link"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("em")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (!driver.findElement(By.cssSelector("div.popover-content > div > ul > li")).isDisplayed()) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
