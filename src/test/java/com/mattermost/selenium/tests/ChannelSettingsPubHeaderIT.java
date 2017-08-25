@@ -224,14 +224,16 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.navigate().refresh();
+        // Sleep
+        // Sleep
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("channelHeaderDropdown"))) break; } catch (Exception e) {}
+        	try { if ("headertest".equals(driver.findElement(By.cssSelector("strong.heading")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("channelHeaderDropdown")).click();
+        driver.findElement(By.cssSelector("strong.heading")).click();
         // Verify channel info with header
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
