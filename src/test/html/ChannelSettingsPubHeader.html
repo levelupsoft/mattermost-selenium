@@ -296,7 +296,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
-	<td>**Header</td>
+	<td>*Header</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -314,7 +314,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=p.markdown__paragraph-inline</td>
-	<td>**Header</td>
+	<td>*Header</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -400,7 +400,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>css=div.modal-body &gt; div.edit-modal-body &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
-	<td>** ${KEY_SHIFT}${KEY_ENTER} </td>
+	<td>* ${KEY_SHIFT}${KEY_ENTER} </td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -443,12 +443,17 @@
 <!--Sleep-->
 <tr>
 	<td>waitForText</td>
-	<td>css=p.markdown__paragraph-inline &gt; strong</td>
+	<td>css=em</td>
 	<td>Header</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=p.markdown__paragraph-inline &gt; strong</td>
+	<td>css=em</td>
+	<td>Header</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.popover-content &gt; div &gt; p &gt; em</td>
 	<td>Header</td>
 </tr>
 <tr>
@@ -465,6 +470,16 @@
 	<td>waitForElementPresent</td>
 	<td>link=Item 2 is a link</td>
 	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=em</td>
+	<td>Header</td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=div.popover-content &gt; div &gt; ul &gt; li</td>
+	<td>Item 1</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
