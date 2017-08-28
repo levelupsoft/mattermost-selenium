@@ -229,11 +229,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("headertest".equals(driver.findElement(By.cssSelector("strong.heading")).getText())) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.xpath("//a[@id='channelHeaderDropdown']/span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("strong.heading")).click();
+        driver.findElement(By.xpath("//a[@id='channelHeaderDropdown']/span")).click();
         // Verify channel info with header
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -260,11 +260,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("strong.heading"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.xpath("//a[@id='channelHeaderDropdown']/span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("strong.heading")).click();
+        driver.findElement(By.xpath("//a[@id='channelHeaderDropdown']/span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("#channelEditHeader > span"))) break; } catch (Exception e) {}
@@ -346,7 +346,7 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Header".equals(driver.findElement(By.cssSelector("div.info__value > p > strong")).getText())) break; } catch (Exception e) {}
+        	try { if ("Header".equals(driver.findElement(By.cssSelector("div.info__value > p > em")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
