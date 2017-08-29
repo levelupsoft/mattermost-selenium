@@ -320,12 +320,6 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         driver.findElement(By.cssSelector("em")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (!driver.findElement(By.cssSelector("div.popover-content > div > ul > li")).isDisplayed()) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.xpath("//a[@id='channelHeaderDropdown']/span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
