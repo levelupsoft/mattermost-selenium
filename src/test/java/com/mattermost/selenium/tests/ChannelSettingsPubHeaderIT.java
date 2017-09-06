@@ -145,7 +145,7 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Edit the text appearing next to the channel name in the channel header.".equals(driver.findElement(By.cssSelector("div.edit-modal-body > p > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Edit the text appearing next to the channel name in the channel header.".equals(driver.findElement(By.cssSelector("div.modal-body.edit-modal-body > div > p > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 

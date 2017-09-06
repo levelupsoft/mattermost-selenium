@@ -305,10 +305,17 @@ public class AccountSettingsDisplayIT extends DriverBase {
             verificationErrors.append(e.toString());
         }
         new Select(driver.findElement(By.id("displayLanguage"))).selectByVisibleText("Español");
-        driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Bienvenido a Town Square!".equals(driver.findElement(By.cssSelector("p.channel-intro__content > strong")).getText())) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("saveSetting"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("saveSetting")).click();
+        driver.navigate().refresh();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Agregar una descripción del canal".equals(driver.findElement(By.cssSelector("a.channel-header__description.light > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
