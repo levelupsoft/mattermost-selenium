@@ -308,7 +308,7 @@ public class AccountSettingsDisplayIT extends DriverBase {
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.cssSelector("p.channel-intro__content > strong")).getText().matches("^[\\s\\S]*Bienvenido[\\s\\S]*$")) break; } catch (Exception e) {}
+        	try { if ("Bienvenido a Town Square!".equals(driver.findElement(By.cssSelector("p.channel-intro__content > strong")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
