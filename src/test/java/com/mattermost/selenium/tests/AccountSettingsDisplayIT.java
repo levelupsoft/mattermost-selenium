@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 public class AccountSettingsDisplayIT extends DriverBase {
 
     @Test
-    public void testAccountSettingsDisplayIT() throws Exception {        // Using test3@test.com to isolate display changes from test@ account in case of failure
+    public void testAccountSettingsDisplayIT() throws Exception {        // Using test5@test.com to isolate display changes from test@ account in case of failure
         // LOG IN
         driver.get(baseUrl + "/login");
         // DisableAnimations
@@ -27,7 +27,7 @@ public class AccountSettingsDisplayIT extends DriverBase {
         }
 
         driver.findElement(By.name("loginId")).clear();
-        driver.findElement(By.name("loginId")).sendKeys("test@test.com");
+        driver.findElement(By.name("loginId")).sendKeys("test5@test.com");
         driver.findElement(By.name("password")).clear();
         driver.findElement(By.name("password")).sendKeys("passwd");
         driver.findElement(By.id("loginButton")).click();
