@@ -154,18 +154,18 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("div.modal-body.edit-modal-body > div > div.textarea-wrapper > div > div > #edit_textbox"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         // Verify header 1024 character limit
-        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&");
+        driver.findElement(By.cssSelector("div.modal-body.edit-modal-body > div > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&");
         // Sleep
         // Sleep
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&".equals(driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).getAttribute("value"))) break; } catch (Exception e) {}
+        	try { if ("https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&".equals(driver.findElement(By.cssSelector("div.modal-body.edit-modal-body > div > div.textarea-wrapper > div > div > #edit_textbox")).getAttribute("value"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -209,11 +209,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         driver.findElement(By.linkText("Set a Header")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("div.modal-body.edit-modal-body > div > div.textarea-wrapper > div > div > #edit_textbox"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("*Header");
+        driver.findElement(By.cssSelector("div.modal-body.edit-modal-body > div > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("*Header");
         // Sleep
         // Sleep
         // Sleep
@@ -274,15 +274,15 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         driver.findElement(By.cssSelector("#channelEditHeader > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("div.modal-body.edit-modal-body > div > div.textarea-wrapper > div > div > #edit_textbox"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("* " + Keys.SHIFT + Keys.ENTER);
+        driver.findElement(By.cssSelector("div.modal-body.edit-modal-body > div > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("* " + Keys.SHIFT + Keys.ENTER);
         // Sleep
-        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("- Item 1 " + Keys.SHIFT + Keys.ENTER);
+        driver.findElement(By.cssSelector("div.modal-body.edit-modal-body > div > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("- Item 1 " + Keys.SHIFT + Keys.ENTER);
         // Sleep
-        driver.findElement(By.cssSelector("div.modal-body > div.edit-modal-body > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("- [Item 2 is a link](http://google.com)");
+        driver.findElement(By.cssSelector("div.modal-body.edit-modal-body > div > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("- [Item 2 is a link](http://google.com)");
         // Sleep
         driver.findElement(By.xpath("(//button[@type='button'])[13]")).click();
         // Sleep
