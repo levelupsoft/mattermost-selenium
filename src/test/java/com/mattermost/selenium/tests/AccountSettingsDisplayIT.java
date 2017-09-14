@@ -315,7 +315,7 @@ public class AccountSettingsDisplayIT extends DriverBase {
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Agregar una descripción del canal".equals(driver.findElement(By.cssSelector("a.channel-header__description.light > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("CANALES PÚBLICOS".equals(driver.findElement(By.cssSelector("h4 > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
