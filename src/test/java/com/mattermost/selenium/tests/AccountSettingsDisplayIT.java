@@ -312,6 +312,9 @@ public class AccountSettingsDisplayIT extends DriverBase {
         }
 
         driver.findElement(By.id("saveSetting")).click();
+        // Sleep
+        // Sleep
+        // Sleep
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
