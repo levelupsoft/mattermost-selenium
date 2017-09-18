@@ -285,67 +285,7 @@ public class AccountSettingsDisplayIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        // Language
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("English".equals(driver.findElement(By.id("LanguageDesc")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.cssSelector("#LanguageEdit > span")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.xpath("//li/div/div[2]/span")).getText().matches("^[\\s\\S]*Select which language Mattermost displays in the user interface\\.[\\s\\S]*Would like to help with translations[\\s\\S] Join the Mattermost Translation Server to contribute\\.[\\s\\S]*$")) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        try {
-            assertTrue(isElementPresent(By.linkText("Mattermost Translation Server")));
-        } catch (Error e) {
-            verificationErrors.append(e.toString());
-        }
-        new Select(driver.findElement(By.id("displayLanguage"))).selectByVisibleText("Español");
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("saveSetting"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("saveSetting")).click();
-        // Sleep
-        // Sleep
-        // Sleep
-        driver.navigate().refresh();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("CANALES PÚBLICOS".equals(driver.findElement(By.cssSelector("h4 > span")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
-        driver.findElement(By.cssSelector("#accountSettings > span")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Visualización"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.linkText("Visualización")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#LanguageEdit > span"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.cssSelector("#LanguageEdit > span")).click();
-        new Select(driver.findElement(By.id("displayLanguage"))).selectByVisibleText("English");
-        driver.findElement(By.id("saveSetting")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Welcome to Town Square!".equals(driver.findElement(By.cssSelector("p.channel-intro__content > strong")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        // Language covered in IDE-only test
         // LOG OUT
         driver.navigate().refresh();
         for (int second = 0;; second++) {
