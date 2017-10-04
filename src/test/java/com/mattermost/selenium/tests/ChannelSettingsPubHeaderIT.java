@@ -129,7 +129,7 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Add header using `Add a channel description` placeholder link
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Add a channel description".equals(driver.findElement(By.cssSelector("a.channel-header__description.light > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Add a channel description".equals(driver.findElement(By.cssSelector("div.channel-header__description.light > a > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
