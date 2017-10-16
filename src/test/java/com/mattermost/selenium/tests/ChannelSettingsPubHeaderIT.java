@@ -171,17 +171,17 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Your message is too long. Character count: 1025/1024".equals(driver.findElement(By.cssSelector("label.control-label")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.xpath("(//button[@type='button'])[13]"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         driver.findElement(By.xpath("(//button[@type='button'])[13]")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("This channel header is too long, please enter a shorter one".equals(driver.findElement(By.cssSelector("label.control-label")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.xpath("(//button[@type='button'])[11]"))) break; } catch (Exception e) {}
