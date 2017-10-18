@@ -32,7 +32,7 @@ public class AccountSettingsUsernameIT extends DriverBase {
         // Sleep
         // Sleep
         // Sleep
-        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
+        driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         // General Settings
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -168,7 +168,7 @@ public class AccountSettingsUsernameIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
+        driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         driver.findElement(By.cssSelector("#logout > span")).click();
     }
 }
