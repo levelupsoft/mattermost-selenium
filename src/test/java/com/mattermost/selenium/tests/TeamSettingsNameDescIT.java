@@ -55,11 +55,11 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[7]/a/span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("teamSettings"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[7]/a/span")).click();
+        driver.findElement(By.id("teamSettings")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("UI Automation".equals(driver.findElement(By.id("Team_NameDesc")).getText())) break; } catch (Exception e) {}
@@ -82,19 +82,19 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[7]/a/span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("teamSettings"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[7]/a/span")).click();
+        driver.findElement(By.id("teamSettings")).click();
         // Team name required
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Edit".equals(driver.findElement(By.cssSelector("#Team_NameEdit > span")).getText())) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("Team_NameEdit"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Team_NameEdit > span")).click();
+        driver.findElement(By.id("Team_NameEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("teamName"))) break; } catch (Exception e) {}
@@ -224,11 +224,11 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[7]/a/span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("teamSettings"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[7]/a/span")).click();
+        driver.findElement(By.id("teamSettings")).click();
         // Edit Team Name
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -278,11 +278,11 @@ public class TeamSettingsNameDescIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[7]/a/span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("teamSettings"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[7]/a/span")).click();
+        driver.findElement(By.id("teamSettings")).click();
         // Sleep
         // Sleep
         for (int second = 0;; second++) {
@@ -340,11 +340,11 @@ public class TeamSettingsNameDescIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[7]/a/span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("teamSettings"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[7]/a/span")).click();
+        driver.findElement(By.id("teamSettings")).click();
         // Sleep
         // Sleep
         // Team name field max characters prevents typing
@@ -429,11 +429,11 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[7]/a/span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("teamSettings"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//div[@id='sidebar-left']/div/div[2]/ul/li[7]/a/span")).click();
+        driver.findElement(By.id("teamSettings")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Click 'Edit' to add a team description.".equals(driver.findElement(By.cssSelector("#Team_DescriptionDesc > span")).getText())) break; } catch (Exception e) {}
@@ -552,11 +552,11 @@ public class TeamSettingsNameDescIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("a.sidebar-header-dropdown__toggle"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("sidebarHeaderDropdownButton"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
+        driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         driver.findElement(By.cssSelector("#logout > span")).click();
     }
 }
