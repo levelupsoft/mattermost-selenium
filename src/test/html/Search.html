@@ -205,6 +205,23 @@
 	<td>id=post_textbox</td>
 	<td>world hello${KEY_ENTER}</td>
 </tr>
+<!--Switch channel in center to make sure verifying in search results in RHS-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Off-Topic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Off-Topic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=strong.heading</td>
+	<td>Off-Topic</td>
+</tr>
+<!--Verify search results-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=input.search-bar</td>
@@ -223,22 +240,47 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.search-highlight</td>
-	<td>world</td>
+	<td>Hello</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=p</td>
+	<td>waitForTextPresent</td>
+	<td>Basic word search: Hello world!</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h5:contains('Hello')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=code.hljs:contains('Hello')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=code:contains('Hello')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=a:contains('#hello')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=a:contains('#world')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
 	<td>world hello</td>
+	<td></td>
 </tr>
 <tr>
-	<td>verifyNotText</td>
-	<td>css=span.search-highlight</td>
-	<td>one</td>
-</tr>
-<tr>
-	<td>verifyNotText</td>
-	<td>css=span.search-highlight</td>
-	<td>two</td>
+	<td>verifyElementNotPresent</td>
+	<td>css=span:contains('two')</td>
+	<td></td>
 </tr>
 <!--Accents, non-Latin characters-->
 <tr>
@@ -563,7 +605,7 @@
 <!--Sleep-->
 <tr>
 	<td>click</td>
-	<td>css=a.sidebar-header-dropdown__toggle</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -579,6 +621,14 @@
 </tr>
 <!--DisableAnimations-->
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
 	<td></td>
@@ -592,6 +642,11 @@
 	<td>type</td>
 	<td>name=loginId</td>
 	<td>test2@test.com</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=password</td>
+	<td></td>
 </tr>
 <tr>
 	<td>type</td>
@@ -694,7 +749,7 @@
 <!--Sleep-->
 <tr>
 	<td>click</td>
-	<td>css=a.sidebar-header-dropdown__toggle</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -1260,12 +1315,12 @@
 <!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=a.sidebar-header-dropdown__toggle</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=a.sidebar-header-dropdown__toggle</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -1572,12 +1627,12 @@
 <!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=a.sidebar-header-dropdown__toggle</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=a.sidebar-header-dropdown__toggle</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -1592,6 +1647,14 @@
 	<td></td>
 </tr>
 <!--DisableAnimations-->
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
@@ -1878,7 +1941,7 @@
 <!--Sleep-->
 <tr>
 	<td>click</td>
-	<td>css=a.sidebar-header-dropdown__toggle</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>

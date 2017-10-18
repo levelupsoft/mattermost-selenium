@@ -34,7 +34,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         // Sleep
         // Sleep
         // Sleep
-        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
+        driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         // Security
         driver.findElement(By.cssSelector("#accountSettings > span")).click();
         for (int second = 0;; second++) {
@@ -226,7 +226,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.id("confirmPassword")).sendKeys("passwdd");
         driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
         driver.navigate().refresh();
-        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
+        driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
@@ -251,7 +251,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         // Sleep
         // Sleep
         // Sleep
-        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
+        driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         driver.findElement(By.cssSelector("#accountSettings > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -310,7 +310,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
 
         driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
         driver.navigate().refresh();
-        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
+        driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
@@ -336,7 +336,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         // Sleep
         // Sleep
         // Sleep
-        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
+        driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("#accountSettings > span"))) break; } catch (Exception e) {}
@@ -423,7 +423,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         // Sleep
         // Sleep
         // Sleep
-        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
+        driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         driver.findElement(By.cssSelector("#accountSettings > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -457,7 +457,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         // Sleep
         // Sleep
         // Sleep
-        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
+        driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         driver.findElement(By.cssSelector("#logout > span")).click();
     }
 }

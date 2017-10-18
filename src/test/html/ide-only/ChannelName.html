@@ -132,7 +132,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#sidebarChannelsMore &gt; span</td>
+	<td>id=sidebarChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
@@ -230,12 +230,12 @@
 <!--Rename - Minimum 2 characters (using dropdown)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdown</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdown</td>
 	<td></td>
 </tr>
 <tr>
@@ -318,8 +318,16 @@
 	<td>css=form &gt; div.modal-footer &gt; button.btn.btn-primary</td>
 	<td></td>
 </tr>
-<!--Currently it works to rename to 1 character, but will error soon-->
-<!--After fixed, insert command to verify error message (see at top of test)-->
+<tr>
+	<td>waitForText</td>
+	<td>css=label.control-label</td>
+	<td>Display Name</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//label[2]</td>
+	<td>Channel name must be 2 or more characters</td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
@@ -394,6 +402,11 @@
 	<td>/rename 1${KEY_ENTER}</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('Channel name must be 2 or more characters')</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
 	<td>PublicNameTwentyTwoMax</td>
@@ -403,8 +416,12 @@
 	<td>css=strong.heading</td>
 	<td>1</td>
 </tr>
-<!--Currently works, but soon will show error "Channel name must be 2 or more characters"-->
 <!--Rename - Maximum 22 characters (using slash command)-->
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -415,7 +432,11 @@
 	<td>id=post_textbox</td>
 	<td>/rename Twenty-Three Characters${KEY_ENTER}</td>
 </tr>
-<!--Currently works, but soon will show error "Channel name must be 22 or fewer characters"-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('Channel name must be 22 or fewer characters')</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
@@ -497,12 +518,12 @@
 <!--Rename - Minimum 2 characters (using dropdown)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdown</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdown</td>
 	<td></td>
 </tr>
 <tr>
@@ -585,8 +606,16 @@
 	<td>css=form &gt; div.modal-footer &gt; button.btn.btn-primary</td>
 	<td></td>
 </tr>
-<!--Currently it works to rename to 1 character, but will error soon-->
-<!--After fixed, insert command to verify error message (see at top of test)-->
+<tr>
+	<td>waitForText</td>
+	<td>css=label.control-label</td>
+	<td>Display Name</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//label[2]</td>
+	<td>Channel name must be 2 or more characters</td>
+</tr>
 <!--Rename - Maximum 22 characters (using dropdown)-->
 <tr>
 	<td>type</td>
@@ -646,6 +675,11 @@
 </tr>
 <!--Rename - Minimum 2 characters (using slash command)-->
 <tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
 	<td></td>
@@ -653,20 +687,29 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>/rename X${KEY_ENTER}</td>
+	<td>/rename 1${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
-	<td>PublicNameTwentyTwoMax</td>
+	<td>PrivateName Twenty-Two</td>
 </tr>
 <tr>
 	<td>verifyNotText</td>
 	<td>css=strong.heading</td>
 	<td>1</td>
 </tr>
-<!--Currently works, but soon will show error "Channel name must be 2 or more characters"-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('Channel name must be 2 or more characters')</td>
+	<td></td>
+</tr>
 <!--Rename - Maximum 22 characters (using slash command)-->
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -677,7 +720,11 @@
 	<td>id=post_textbox</td>
 	<td>/rename Twenty-Three Characters${KEY_ENTER}</td>
 </tr>
-<!--Currently works, but soon will show error "Channel name must be 22 or fewer characters"-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('Channel name must be 22 or fewer characters')</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
@@ -702,12 +749,12 @@
 <!--Rename - Minimum 2 characters (using dropdown)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdown</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdown</td>
 	<td></td>
 </tr>
 <tr>
@@ -775,8 +822,16 @@
 	<td>css=form &gt; div.modal-footer &gt; button.btn.btn-primary</td>
 	<td></td>
 </tr>
-<!--Currently it works to rename to 1 character, but will error soon-->
-<!--After fixed, insert command to verify error message (see at top of test)-->
+<tr>
+	<td>waitForText</td>
+	<td>css=label.control-label</td>
+	<td>Display Name</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//label[2]</td>
+	<td>Channel name must be 2 or more characters</td>
+</tr>
 <!--Rename - Maximum 22 characters (using dropdown)-->
 <tr>
 	<td>type</td>
@@ -831,6 +886,11 @@
 </tr>
 <!--Rename - Minimum 2 characters (using slash command)-->
 <tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
 	<td></td>
@@ -846,12 +906,21 @@
 	<td>Town Square Twenty-Two</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('Channel name must be 2 or more characters')</td>
+	<td></td>
+</tr>
+<tr>
 	<td>verifyNotText</td>
 	<td>css=strong.heading</td>
-	<td>1</td>
+	<td>X</td>
 </tr>
-<!--Currently works, but soon will show error "Channel name must be 2 or more characters"-->
 <!--Rename - Maximum 22 characters (using slash command)-->
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -862,7 +931,11 @@
 	<td>id=post_textbox</td>
 	<td>/rename Twenty-Three Characters${KEY_ENTER}</td>
 </tr>
-<!--Currently works, but soon will show error "Channel name must be 22 or fewer characters"-->
+<tr>
+	<td>waitForText</td>
+	<td>css=p:contains('Channel name must be 22 or fewer characters')</td>
+	<td>Channel name must be 22 or fewer characters</td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
@@ -900,7 +973,7 @@
 <!--Sleep-->
 <tr>
 	<td>click</td>
-	<td>css=a.sidebar-header-dropdown__toggle</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>

@@ -32,7 +32,7 @@ public class AccountSettingsPositionIT extends DriverBase {
         // Sleep
         // Sleep
         // Sleep
-        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
+        driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         // General Settings
         driver.findElement(By.cssSelector("#accountSettings > span")).click();
         for (int second = 0;; second++) {
@@ -107,7 +107,7 @@ public class AccountSettingsPositionIT extends DriverBase {
         // Sleep
         // Sleep
         // Sleep
-        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
+        driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         driver.findElement(By.cssSelector("#logout > span")).click();
     }
 }

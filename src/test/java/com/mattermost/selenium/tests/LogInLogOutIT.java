@@ -38,7 +38,7 @@ public class LogInLogOutIT extends DriverBase {
         // Sleep
         // Sleep
         // Sleep
-        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
+        driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         driver.findElement(By.cssSelector("#logout > span")).click();
     }
 }

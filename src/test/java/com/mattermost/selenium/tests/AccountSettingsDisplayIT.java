@@ -34,7 +34,7 @@ public class AccountSettingsDisplayIT extends DriverBase {
         // Sleep
         // Sleep
         // Sleep
-        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
+        driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("#accountSettings > span"))) break; } catch (Exception e) {}
@@ -294,7 +294,7 @@ public class AccountSettingsDisplayIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("a.sidebar-header-dropdown__toggle")).click();
+        driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         driver.findElement(By.cssSelector("#logout > span")).click();
         // Sleep
         for (int second = 0;; second++) {
