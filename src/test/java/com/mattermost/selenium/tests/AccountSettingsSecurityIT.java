@@ -36,20 +36,20 @@ public class AccountSettingsSecurityIT extends DriverBase {
         // Sleep
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         // Security
-        driver.findElement(By.cssSelector("#accountSettings > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Account Settings".equals(driver.findElement(By.xpath("//body/div[2]/div/div[2]/div/div/div/h4/span")).getText())) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("accountSettings"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("accountSettings")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Security"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li[2]/button"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.linkText("Security")).click();
+        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li[2]/button")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Security Settings".equals(driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/h3/span")).getText())) break; } catch (Exception e) {}
@@ -59,11 +59,11 @@ public class AccountSettingsSecurityIT extends DriverBase {
         // Password
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#PasswordEdit > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("PasswordEdit"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#PasswordEdit > span")).click();
+        driver.findElement(By.id("PasswordEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("saveSetting"))) break; } catch (Exception e) {}
@@ -79,24 +79,25 @@ public class AccountSettingsSecurityIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#PasswordCancel > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("PasswordCancel"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#PasswordCancel > span")).click();
+        driver.findElement(By.id("PasswordCancel")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#PasswordEdit > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("PasswordEdit"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#PasswordEdit > span")).click();
+        driver.findElement(By.id("PasswordEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("currentPassword"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("currentPassword")).clear();
         driver.findElement(By.id("currentPassword")).sendKeys("passwd");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -104,6 +105,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("newPassword")).clear();
         driver.findElement(By.id("newPassword")).sendKeys("passwdd");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -111,6 +113,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("confirmPassword")).clear();
         driver.findElement(By.id("confirmPassword")).sendKeys("passwddd");
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
@@ -121,24 +124,25 @@ public class AccountSettingsSecurityIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#PasswordCancel > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("PasswordCancel"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#PasswordCancel > span")).click();
+        driver.findElement(By.id("PasswordCancel")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#PasswordEdit > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("PasswordEdit"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#PasswordEdit > span")).click();
+        driver.findElement(By.id("PasswordEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("currentPassword"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("currentPassword")).clear();
         driver.findElement(By.id("currentPassword")).sendKeys("paaaaaa");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -146,6 +150,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("newPassword")).clear();
         driver.findElement(By.id("newPassword")).sendKeys("passwdd");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -153,6 +158,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("confirmPassword")).clear();
         driver.findElement(By.id("confirmPassword")).sendKeys("passwdd");
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
@@ -167,6 +173,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("currentPassword")).clear();
         driver.findElement(By.id("currentPassword")).sendKeys("passwd");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -174,6 +181,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("newPassword")).clear();
         driver.findElement(By.id("newPassword")).sendKeys("pass");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -181,6 +189,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("confirmPassword")).clear();
         driver.findElement(By.id("confirmPassword")).sendKeys("pass");
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
@@ -191,24 +200,25 @@ public class AccountSettingsSecurityIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#PasswordCancel > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("PasswordCancel"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#PasswordCancel > span")).click();
+        driver.findElement(By.id("PasswordCancel")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#PasswordEdit > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("PasswordEdit"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#PasswordEdit > span")).click();
+        driver.findElement(By.id("PasswordEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("currentPassword"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("currentPassword")).clear();
         driver.findElement(By.id("currentPassword")).sendKeys("passwd");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -216,6 +226,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("newPassword")).clear();
         driver.findElement(By.id("newPassword")).sendKeys("passwdd");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -223,9 +234,16 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("confirmPassword")).clear();
         driver.findElement(By.id("confirmPassword")).sendKeys("passwdd");
         driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
         driver.navigate().refresh();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("sidebarHeaderDropdownButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -252,27 +270,27 @@ public class AccountSettingsSecurityIT extends DriverBase {
         // Sleep
         // Sleep
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
-        driver.findElement(By.cssSelector("#accountSettings > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Account Settings".equals(driver.findElement(By.xpath("//body/div[2]/div/div[2]/div/div/div/h4/span")).getText())) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("accountSettings"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("accountSettings")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Security"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li[2]/button"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.linkText("Security")).click();
+        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li[2]/button")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#PasswordEdit > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("PasswordEdit"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#PasswordEdit > span")).click();
+        driver.findElement(By.id("PasswordEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("saveSetting"))) break; } catch (Exception e) {}
@@ -286,6 +304,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("currentPassword")).clear();
         driver.findElement(By.id("currentPassword")).sendKeys("passwd");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -293,6 +312,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("newPassword")).clear();
         driver.findElement(By.id("newPassword")).sendKeys("passwdd");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -300,6 +320,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("confirmPassword")).clear();
         driver.findElement(By.id("confirmPassword")).sendKeys("passwdd");
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
@@ -310,6 +331,12 @@ public class AccountSettingsSecurityIT extends DriverBase {
 
         driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
         driver.navigate().refresh();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("sidebarHeaderDropdownButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -339,32 +366,33 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#accountSettings > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("accountSettings"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#accountSettings > span")).click();
+        driver.findElement(By.id("accountSettings")).click();
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Security"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li[2]/button"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.linkText("Security")).click();
+        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li[2]/button")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#PasswordEdit > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("PasswordEdit"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#PasswordEdit > span")).click();
+        driver.findElement(By.id("PasswordEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("saveSetting"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("currentPassword")).clear();
         driver.findElement(By.id("currentPassword")).sendKeys("passwdd");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -372,6 +400,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("newPassword")).clear();
         driver.findElement(By.id("newPassword")).sendKeys("passwd");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -379,6 +408,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("confirmPassword")).clear();
         driver.findElement(By.id("confirmPassword")).sendKeys("passwd");
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
@@ -390,11 +420,11 @@ public class AccountSettingsSecurityIT extends DriverBase {
         // Open Access History and Active Sessions Views
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("a.security-links.theme > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.xpath("//div[2]/div/div/div[2]/button"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("a.security-links.theme > span")).click();
+        driver.findElement(By.xpath("//div[2]/div/div/div[2]/button")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Timestamp".equals(driver.findElement(By.cssSelector("th > span")).getText())) break; } catch (Exception e) {}
@@ -424,31 +454,31 @@ public class AccountSettingsSecurityIT extends DriverBase {
         // Sleep
         // Sleep
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
-        driver.findElement(By.cssSelector("#accountSettings > span")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("Account Settings".equals(driver.findElement(By.xpath("//body/div[2]/div/div[2]/div/div/div/h4/span")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        driver.findElement(By.id("accountSettings")).click();
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Security"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li[2]/button"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.linkText("Security")).click();
+        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li[2]/button")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//div[2]/a[2]/span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.xpath("//div[2]/button[2]"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//div[2]/a[2]/span")).click();
+        driver.findElement(By.xpath("//div[2]/button[2]")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Sessions are created when you log in to a new browser on a device. Sessions let you use Mattermost without having to log in again for a time period specified by the System Admin. If you want to log out sooner, use the 'Logout' button below to end a session.".equals(driver.findElement(By.cssSelector("p.session-help-text > span")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("div.activity-log__action > button.btn.btn-primary"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -458,6 +488,12 @@ public class AccountSettingsSecurityIT extends DriverBase {
         // Sleep
         // Sleep
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
-        driver.findElement(By.cssSelector("#logout > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("logout")).click();
     }
 }

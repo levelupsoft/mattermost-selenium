@@ -114,9 +114,9 @@
 	<td>Off-Topic</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight</td>
-	<td>Hello</td>
+	<td>waitForTextPresent</td>
+	<td>Basic word search: Hello world!</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -609,8 +609,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <!--LOG IN-->
@@ -646,7 +651,7 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=password</td>
-	<td></td>
+	<td>passwd</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -753,8 +758,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <!--LOG IN-->
@@ -1250,11 +1260,6 @@
 	<td>1000</td>
 	<td></td>
 </tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
 <!--Sleep-->
 <tr>
 	<td>pause</td>
@@ -1324,8 +1329,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <!--LOG IN-->
@@ -1613,11 +1623,6 @@
 </tr>
 <!--LOG OUT-->
 <tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
 	<td>pause</td>
 	<td>3000</td>
 	<td></td>
@@ -1636,8 +1641,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <!--LOG IN-->
@@ -1945,15 +1955,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=#logout &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
-<!--Sleep-->
-<!--Sleep-->
 <tr>
-	<td>pause</td>
-	<td>1000</td>
+	<td>click</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 </tbody></table>

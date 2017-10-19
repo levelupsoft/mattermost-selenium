@@ -53,17 +53,22 @@
 <!--General Settings-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=UsernameEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#UsernameEdit &gt; span</td>
+	<td>id=UsernameEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -72,7 +77,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=username</td>
 	<td>*${KEY_BACKSPACE}</td>
 </tr>
@@ -92,8 +97,13 @@
 	<td>Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols '.', '-', and '_'.</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=UsernameCancel</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#UsernameCancel &gt; span</td>
+	<td>id=UsernameCancel</td>
 	<td></td>
 </tr>
 <tr>
@@ -103,7 +113,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#UsernameEdit &gt; span</td>
+	<td>id=UsernameEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -112,7 +122,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=username</td>
 	<td>hi</td>
 </tr>
@@ -132,7 +142,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=username</td>
 	<td>test2</td>
 </tr>
@@ -152,7 +162,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=username</td>
 	<td>test-1</td>
 </tr>
@@ -167,8 +177,13 @@
 	<td>test-1</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//div[2]/div/div/div[2]/div/div/div/ul/li[3]/button</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>link=Notifications</td>
+	<td>//div[2]/div/div/div[2]/div/div/div/ul/li[3]/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -177,13 +192,23 @@
 	<td>&quot;@test-1&quot;*</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>xpath=(//a[contains(text(),'General')])[2]</td>
+	<td>waitForElementPresent</td>
+	<td>//div[2]/div/div/div[2]/div/div/div/ul/li/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#UsernameEdit &gt; span</td>
+	<td>//div[2]/div/div/div[2]/div/div/div/ul/li/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=UsernameEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=username</td>
 	<td></td>
 </tr>
 <tr>
@@ -192,7 +217,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=username</td>
 	<td>_test</td>
 </tr>
@@ -212,7 +237,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=username</td>
 	<td>all</td>
 </tr>
@@ -232,7 +257,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=username</td>
 	<td>channel</td>
 </tr>
@@ -252,7 +277,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=username</td>
 	<td>here</td>
 </tr>
@@ -272,7 +297,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=username</td>
 	<td>matterbot</td>
 </tr>
@@ -292,7 +317,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=username</td>
 	<td>test</td>
 </tr>
@@ -322,8 +347,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 </tbody></table>

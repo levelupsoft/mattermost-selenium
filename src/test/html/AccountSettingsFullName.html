@@ -54,18 +54,18 @@
 <!--General Settings-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>id=accountSettings<br /></td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>id=accountSettings<br /></td>
 	<td></td>
 </tr>
 <!--Full Name-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Full_NameEdit &gt; span</td>
+	<td>id=Full_NameEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -75,8 +75,8 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='Full_NameEdit']/span</td>
-	<td> </td>
+	<td>id=Full_NameEdit</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -95,8 +95,8 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='Full_NameEdit']/span</td>
-	<td> </td>
+	<td>id=Full_NameEdit</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -109,7 +109,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=firstName</td>
 	<td>Added</td>
 </tr>
@@ -121,16 +121,16 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=Full_NameDesc</td>
-	<td>Added*</td>
+	<td>Added</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@id='Full_NameEdit']/span</td>
+	<td>id=Full_NameEdit</td>
 	<td> </td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='Full_NameEdit']/span</td>
+	<td>id=Full_NameEdit</td>
 	<td> </td>
 </tr>
 <tr>
@@ -144,7 +144,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=firstName</td>
 	<td>This Change</td>
 </tr>
@@ -154,7 +154,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=lastName</td>
 	<td>Will Be Canceled</td>
 </tr>
@@ -171,16 +171,16 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=Full_NameDesc</td>
-	<td>Added*</td>
+	<td>Added</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@id='Full_NameEdit']/span</td>
+	<td>id=Full_NameEdit</td>
 	<td> </td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='Full_NameEdit']/span</td>
+	<td>id=Full_NameEdit</td>
 	<td> </td>
 </tr>
 <tr>
@@ -189,7 +189,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=firstName</td>
 	<td>This Is a Very Long Name</td>
 </tr>
@@ -199,7 +199,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=lastName</td>
 	<td>That Should Truncate</td>
 </tr>
@@ -230,14 +230,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
-<!--Sleep-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>name=loginId</td>
+	<td>click</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 </tbody></table>
