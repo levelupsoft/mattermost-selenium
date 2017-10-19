@@ -63,38 +63,43 @@
 <!--Add Public Channel from + icon, without header-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=+</td>
+	<td>id=createPublicChannel</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=+</td>
+	<td>id=createPublicChannel</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
+	<td>id=newPublicChannelName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
 	<td>css=div.modal-intro &gt; a &gt; span</td>
-	<td></td>
+	<td>Create a private channel</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Create a private channel</td>
+	<td>type</td>
+	<td>id=newPublicChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=div.col-sm-9 &gt; input.form-control</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>css=div.col-sm-9 &gt; input.form-control</td>
+	<td>id=newPublicChannelName</td>
 	<td>headertest</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=p.input__help.dark</td>
 	<td>exact:URL: /headertest (Edit)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-primary</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -112,9 +117,9 @@
 	<td>This is the start of the headertest channel, created by admin*</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Invite others to this channel</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//div[@id='post-list']/div[2]/div/div/div/button</td>
+	<td>Invite others to this channel</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -137,12 +142,12 @@
 <!--View channel info without header-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelViewInfo &gt; span</td>
+	<td>id=channelViewInfo</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelViewInfo &gt; span</td>
+	<td>id=channelViewInfo</td>
 	<td></td>
 </tr>
 <tr>
@@ -176,18 +181,13 @@
 <!--Add header using `Add a channel description` placeholder link-->
 <tr>
 	<td>waitForText</td>
-	<td>css=div.channel-header__description.light &gt; a &gt; span</td>
+	<td>css=div.channel-header__description.light &gt; button.style--none</td>
 	<td>Add a channel description</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Add a channel description</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>link=Add a channel description</td>
-	<td></td>
+	<td>css=div.channel-header__description.light &gt; button.style--none</td>
+	<td>Add a channel description</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -236,12 +236,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[13]</td>
+	<td>xpath=(//button[@type='button'])[15]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[13]</td>
+	<td>xpath=(//button[@type='button'])[15]</td>
 	<td></td>
 </tr>
 <tr>
@@ -251,12 +251,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[11]</td>
+	<td>xpath=(//button[@type='button'])[14]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[11]</td>
+	<td>xpath=(//button[@type='button'])[14]</td>
 	<td></td>
 </tr>
 <tr>
@@ -280,12 +280,12 @@
 <!--Add header using `Set a Header` link-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Set a Header</td>
+	<td>//div[@id='post-list']/div[2]/div/div/div/button[2]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Set a Header</td>
+	<td>//div[@id='post-list']/div[2]/div/div/div/button[2]</td>
 	<td></td>
 </tr>
 <tr>
@@ -307,8 +307,13 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//button[@type='button'])[15]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[13]</td>
+	<td>xpath=(//button[@type='button'])[15]</td>
 	<td></td>
 </tr>
 <tr>
@@ -337,12 +342,12 @@
 <!--Verify channel info with header-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelViewInfo &gt; span</td>
+	<td>id=channelViewInfo</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelViewInfo &gt; span</td>
+	<td>id=channelViewInfo</td>
 	<td></td>
 </tr>
 <tr>
@@ -384,12 +389,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelEditHeader &gt; span</td>
+	<td>id=channelEditHeader</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelEditHeader &gt; span</td>
+	<td>id=channelEditHeader</td>
 	<td></td>
 </tr>
 <tr>
@@ -431,8 +436,13 @@
 </tr>
 <!--Sleep-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//button[@type='button'])[16]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[13]</td>
+	<td>xpath=(//button[@type='button'])[16]</td>
 	<td></td>
 </tr>
 <tr>
@@ -488,12 +498,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelViewInfo &gt; span</td>
+	<td>id=channelViewInfo</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelViewInfo &gt; span</td>
+	<td>id=channelViewInfo</td>
 	<td></td>
 </tr>
 <tr>
@@ -541,8 +551,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 </tbody></table>
