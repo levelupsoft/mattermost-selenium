@@ -46,30 +46,36 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Add Public Channel from + icon, without header
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("+"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("createPublicChannel"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.linkText("+")).click();
+        driver.findElement(By.id("createPublicChannel")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("div.modal-intro > a > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("newPublicChannelName"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Create a private channel"))) break; } catch (Exception e) {}
+        	try { if ("Create a private channel".equals(driver.findElement(By.cssSelector("div.modal-intro > a > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("div.col-sm-9 > input.form-control")).clear();
-        driver.findElement(By.cssSelector("div.col-sm-9 > input.form-control")).sendKeys("");
-        driver.findElement(By.cssSelector("div.col-sm-9 > input.form-control")).clear();
-        driver.findElement(By.cssSelector("div.col-sm-9 > input.form-control")).sendKeys("headertest");
+        driver.findElement(By.id("newPublicChannelName")).clear();
+        driver.findElement(By.id("newPublicChannelName")).sendKeys("");
+        driver.findElement(By.id("newPublicChannelName")).clear();
+        driver.findElement(By.id("newPublicChannelName")).sendKeys("headertest");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("URL: /headertest (Edit)".equals(driver.findElement(By.cssSelector("p.input__help.dark")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("form.form-horizontal > div.modal-footer > button.btn.btn-primary"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -88,7 +94,7 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Invite others to this channel"))) break; } catch (Exception e) {}
+        	try { if ("Invite others to this channel".equals(driver.findElement(By.xpath("//div[@id='post-list']/div[2]/div/div/div/button")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -105,11 +111,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // View channel info without header
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#channelViewInfo > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelViewInfo"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#channelViewInfo > span")).click();
+        driver.findElement(By.id("channelViewInfo")).click();
         // Sleep
         // Sleep
         // Sleep
@@ -129,17 +135,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Add header using `Add a channel description` placeholder link
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Add a channel description".equals(driver.findElement(By.cssSelector("div.channel-header__description.light > a > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Add a channel description".equals(driver.findElement(By.cssSelector("div.channel-header__description.light > button.style--none")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Add a channel description"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.linkText("Add a channel description")).click();
+        driver.findElement(By.cssSelector("div.channel-header__description.light > button.style--none")).click();
         // Sleep
         // Sleep
         // Sleep
@@ -171,11 +171,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("(//button[@type='button'])[13]"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.xpath("(//button[@type='button'])[15]"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("(//button[@type='button'])[13]")).click();
+        driver.findElement(By.xpath("(//button[@type='button'])[15]")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("This channel header is too long, please enter a shorter one".equals(driver.findElement(By.cssSelector("label.control-label")).getText())) break; } catch (Exception e) {}
@@ -184,11 +184,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("(//button[@type='button'])[11]"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.xpath("(//button[@type='button'])[14]"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
+        driver.findElement(By.xpath("(//button[@type='button'])[14]")).click();
         // Sleep
         // Sleep
         // Sleep
@@ -202,11 +202,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Add header using `Set a Header` link
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Set a Header"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.xpath("//div[@id='post-list']/div[2]/div/div/div/button[2]"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.linkText("Set a Header")).click();
+        driver.findElement(By.xpath("//div[@id='post-list']/div[2]/div/div/div/button[2]")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("div.modal-body.edit-modal-body > div > div.textarea-wrapper > div > div > #edit_textbox"))) break; } catch (Exception e) {}
@@ -217,7 +217,13 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Sleep
         // Sleep
         // Sleep
-        driver.findElement(By.xpath("(//button[@type='button'])[13]")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.xpath("(//button[@type='button'])[15]"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.xpath("(//button[@type='button'])[15]")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (driver.findElement(By.cssSelector("p.markdown__paragraph-inline")).getText().matches("^[\\s\\S]*Header$")) break; } catch (Exception e) {}
@@ -237,11 +243,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Verify channel info with header
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#channelViewInfo > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelViewInfo"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#channelViewInfo > span")).click();
+        driver.findElement(By.id("channelViewInfo")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("headertest".equals(driver.findElement(By.cssSelector("h4.modal-title > strong")).getText())) break; } catch (Exception e) {}
@@ -267,11 +273,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         driver.findElement(By.id("channelHeaderDropdown")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#channelEditHeader > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelEditHeader"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#channelEditHeader > span")).click();
+        driver.findElement(By.id("channelEditHeader")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("div.modal-body.edit-modal-body > div > div.textarea-wrapper > div > div > #edit_textbox"))) break; } catch (Exception e) {}
@@ -284,7 +290,13 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Sleep
         driver.findElement(By.cssSelector("div.modal-body.edit-modal-body > div > div.textarea-wrapper > div > div > #edit_textbox")).sendKeys("- [Item 2 is a link](http://google.com)");
         // Sleep
-        driver.findElement(By.xpath("(//button[@type='button'])[13]")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.xpath("(//button[@type='button'])[16]"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.xpath("(//button[@type='button'])[16]")).click();
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -327,11 +339,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         driver.findElement(By.id("channelHeaderDropdown")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#channelViewInfo > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelViewInfo"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#channelViewInfo > span")).click();
+        driver.findElement(By.id("channelViewInfo")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("headertest".equals(driver.findElement(By.cssSelector("h4.modal-title > strong")).getText())) break; } catch (Exception e) {}
@@ -363,6 +375,12 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Sleep
         // Sleep
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
-        driver.findElement(By.cssSelector("#logout > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("logout")).click();
     }
 }
