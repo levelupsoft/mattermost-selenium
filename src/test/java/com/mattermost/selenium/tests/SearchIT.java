@@ -88,9 +88,10 @@ public class SearchIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        // Warning: waitForTextPresent may require manual changes
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Hello".equals(driver.findElement(By.cssSelector("span.search-highlight")).getText())) break; } catch (Exception e) {}
+        	try { if (driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Basic word search: Hello world![\\s\\S]*$")) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -435,7 +436,13 @@ public class SearchIT extends DriverBase {
         // Sleep
         // Sleep
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
-        driver.findElement(By.cssSelector("#logout > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("logout")).click();
         // LOG IN
         driver.get(baseUrl + "/login");
         // DisableAnimations
@@ -522,7 +529,13 @@ public class SearchIT extends DriverBase {
         // Sleep
         // Sleep
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
-        driver.findElement(By.cssSelector("#logout > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("logout")).click();
         // LOG IN
         driver.get(baseUrl + "/login");
         // DisableAnimations
@@ -778,7 +791,6 @@ public class SearchIT extends DriverBase {
         // Sleep
         driver.findElement(By.id("post_textbox")).sendKeys("@test2 direct" + Keys.ENTER);
         // Sleep
-        driver.navigate().refresh();
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -809,7 +821,13 @@ public class SearchIT extends DriverBase {
         }
 
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
-        driver.findElement(By.cssSelector("#logout > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("logout")).click();
         // LOG IN
         driver.get(baseUrl + "/login");
         // DisableAnimations
@@ -1007,7 +1025,6 @@ public class SearchIT extends DriverBase {
         driver.findElement(By.id("post_textbox")).sendKeys("test usernameDM" + Keys.ENTER);
         // Sleep
         // LOG OUT
-        driver.navigate().refresh();
         // Sleep
         // Sleep
         // Sleep
@@ -1018,7 +1035,13 @@ public class SearchIT extends DriverBase {
         }
 
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
-        driver.findElement(By.cssSelector("#logout > span")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("logout")).click();
         // LOG IN
         driver.get(baseUrl + "/login");
         // DisableAnimations
@@ -1223,8 +1246,12 @@ public class SearchIT extends DriverBase {
         // Sleep
         // Sleep
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
-        driver.findElement(By.cssSelector("#logout > span")).click();
-        // Sleep
-        // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("logout")).click();
     }
 }
