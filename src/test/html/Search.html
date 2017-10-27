@@ -243,29 +243,19 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=h5:contains('Hello')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=h5.markdown__heading &gt; span.search-highlight</td>
+	<td>Hello</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=code.hljs:contains('Hello')</td>
+	<td>css=code.hljs</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=code:contains('Hello')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=a:contains('#hello')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=a:contains('#world')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=code &gt; span.search-highlight</td>
+	<td>Hello</td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
@@ -273,8 +263,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyElementNotPresent</td>
-	<td>css=span:contains('two')</td>
+	<td>verifyTextNotPresent</td>
+	<td>world two</td>
 	<td></td>
 </tr>
 <!--Accents, non-Latin characters-->
@@ -1287,16 +1277,8 @@
 	<td>id=post_textbox</td>
 	<td>@channel${KEY_ENTER}${KEY_ENTER}</td>
 </tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-primary &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary &gt; span</td>
-	<td></td>
-</tr>
+<!--The Java test doesn't like a command here to click the Confirm button, so it's been deleted-->
+<!--May make IDE test fail; click manually if necessary-->
 <tr>
 	<td>pause</td>
 	<td>1000</td>
