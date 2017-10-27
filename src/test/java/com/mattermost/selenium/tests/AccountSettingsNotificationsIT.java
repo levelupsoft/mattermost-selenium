@@ -355,13 +355,6 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         driver.findElement(By.id("Reply_notificationsEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("Reply_notificationsEdit"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("Reply_notificationsEdit")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("notificationCommentsAny"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
