@@ -235,11 +235,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("channelHeaderDropdown"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelHeaderDropdownButton"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("channelHeaderDropdown")).click();
+        driver.findElement(By.id("channelHeaderDropdownButton")).click();
         // Verify channel info with header
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -266,11 +266,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("channelHeaderDropdown"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelHeaderDropdownButton"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("channelHeaderDropdown")).click();
+        driver.findElement(By.id("channelHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("channelEditHeader"))) break; } catch (Exception e) {}
@@ -332,11 +332,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         driver.findElement(By.cssSelector("em")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("channelHeaderDropdown"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelHeaderDropdownButton"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("channelHeaderDropdown")).click();
+        driver.findElement(By.id("channelHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("channelViewInfo"))) break; } catch (Exception e) {}
