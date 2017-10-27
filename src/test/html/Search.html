@@ -238,9 +238,14 @@
 	<td>hello world${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight</td>
-	<td>Hello</td>
+	<td>waitForElementPresent</td>
+	<td>css=span.search-highlight:contains('Hello')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.search-highlight:contains('world')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
@@ -1291,6 +1296,16 @@
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
 	<td>@channel${KEY_ENTER}${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary &gt; span</td>
+	<td></td>
 </tr>
 <tr>
 	<td>pause</td>
