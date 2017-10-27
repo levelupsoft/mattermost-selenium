@@ -189,7 +189,13 @@ public class SearchIT extends DriverBase {
         driver.findElement(By.cssSelector("input.search-bar")).sendKeys("hello world" + Keys.ENTER);
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Hello".equals(driver.findElement(By.cssSelector("span.search-highlight")).getText())) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("span.search-highlight:contains('Hello')"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("span.search-highlight:contains('world')"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -807,6 +813,13 @@ public class SearchIT extends DriverBase {
         }
 
         driver.findElement(By.id("post_textbox")).sendKeys("@channel" + Keys.ENTER + Keys.ENTER);
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary > span"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("button.btn.btn-primary > span")).click();
         // Sleep
         // Sleep
         // LOG OUT

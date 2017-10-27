@@ -45,11 +45,11 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.id("accountSettings")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li[2]/button"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("securityButton"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li[2]/button")).click();
+        driver.findElement(By.id("securityButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Security Settings".equals(driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/h3/span")).getText())) break; } catch (Exception e) {}
@@ -236,7 +236,13 @@ public class AccountSettingsSecurityIT extends DriverBase {
 
         driver.findElement(By.id("confirmPassword")).clear();
         driver.findElement(By.id("confirmPassword")).sendKeys("passwdd");
-        driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("saveSetting"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("saveSetting")).click();
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -279,11 +285,11 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.id("accountSettings")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li[2]/button"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("securityButton"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li[2]/button")).click();
+        driver.findElement(By.id("securityButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("PasswordEdit"))) break; } catch (Exception e) {}
@@ -329,7 +335,6 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -374,11 +379,11 @@ public class AccountSettingsSecurityIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li[2]/button"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("securityButton"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li[2]/button")).click();
+        driver.findElement(By.id("securityButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("PasswordEdit"))) break; } catch (Exception e) {}
@@ -458,11 +463,11 @@ public class AccountSettingsSecurityIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li[2]/button"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("securityButton"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li[2]/button")).click();
+        driver.findElement(By.id("securityButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.xpath("//div[2]/button[2]"))) break; } catch (Exception e) {}
