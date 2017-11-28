@@ -171,24 +171,17 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("(//button[@type='button'])[15]"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary.save-button"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("(//button[@type='button'])[15]")).click();
+        driver.findElement(By.cssSelector("button.btn.btn-primary.save-button")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("This channel header is too long, please enter a shorter one".equals(driver.findElement(By.cssSelector("label.control-label")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("(//button[@type='button'])[14]"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.xpath("(//button[@type='button'])[14]")).click();
         // Sleep
         // Sleep
         // Sleep
@@ -202,11 +195,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Add header using `Set a Header` link
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//div[@id='post-list']/div[2]/div/div/div/button[2]"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.xpath("//div[@id='channelIntro']/button[2]"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//div[@id='post-list']/div[2]/div/div/div/button[2]")).click();
+        driver.findElement(By.xpath("//div[@id='channelIntro']/button[2]")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("div.modal-body.edit-modal-body > div > div.textarea-wrapper > div > div > #edit_textbox"))) break; } catch (Exception e) {}
@@ -219,11 +212,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("(//button[@type='button'])[15]"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary.save-button"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("(//button[@type='button'])[15]")).click();
+        driver.findElement(By.cssSelector("button.btn.btn-primary.save-button")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (driver.findElement(By.cssSelector("p.markdown__paragraph-inline")).getText().matches("^[\\s\\S]*Header$")) break; } catch (Exception e) {}
@@ -292,11 +285,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("(//button[@type='button'])[16]"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary.save-button"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("(//button[@type='button'])[16]")).click();
+        driver.findElement(By.cssSelector("button.btn.btn-primary.save-button")).click();
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
