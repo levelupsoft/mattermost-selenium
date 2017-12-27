@@ -329,7 +329,7 @@ public class TeamSettingsNameDescIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("()_+-={}|[]\\:".equals(driver.findElement(By.cssSelector("div.team__name")).getText())) break; } catch (Exception e) {}
+        	try { if ("()_+-={}|[]\\:".equals(driver.findElement(By.id("headerTeamName")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
