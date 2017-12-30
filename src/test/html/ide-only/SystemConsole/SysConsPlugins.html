@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://selenium.mattermost.com/" />
+<title>SysConsPluginsConfig</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">SysConsPluginsConfig</td></tr>
+</thead><tbody>
+<!--LOG IN-->
+<tr>
+	<td>openAndWait</td>
+	<td>/login</td>
+	<td></td>
+</tr>
+<!--DisableAnimations-->
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>admin@test.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForText</td>
+	<td>link=Town Square</td>
+	<td>Town Square</td>
+</tr>
+<!--Open System Console-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<!--Verify messaging on Management page that plugins are disabled-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p &gt; span</td>
+	<td>Plugins are disabled on your server. To enable them, go to Plugins &gt; Configuration.</td>
+</tr>
+<!--Enable Plugins-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//a[@id='configuration'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='configuration'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h3.admin-console-header</td>
+	<td>Configuration</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=label.control-label.col-sm-4</td>
+	<td>Enable Plugins:</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=enablePluginstrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enablePluginsfalse</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=enableUploadsfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=enableUploadstrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enablePluginstrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=enableUploadsfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=enableUploadstrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--Enable plugin uploads-->
+<tr>
+	<td>click</td>
+	<td>id=enableUploadstrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enableUploadstrue</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--Upload a plugin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=documentation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForAttribute</td>
+	<td>link=documentation@href</td>
+	<td>https://about.mattermost.com/default-plugin-uploads</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<!--*** Manually select plugin (hovercardexample.tar.gz)-->
+<tr>
+	<td>pause</td>
+	<td>7000</td>
+	<td></td>
+</tr>
+<!--These are all changing, with the pre-packaged ones in there now (but not forever)-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=strong &gt; span</td>
+	<td>exact:ID:</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.padding-top &gt; a &gt; span</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span &gt; a &gt; span</td>
+	<td>Settings</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[@id='root']/div/div[2]/div[2]/form/div[2]/div/div/div/div[2]/a[2]/span</td>
+	<td>Remove</td>
+</tr>
+<!--Plugin Settings (verifies they were created as expected by the plugin)-->
+<!--These will fail if a different plugin is uploaded (not helloworld)-->
+<tr>
+	<td>waitForText</td>
+	<td>id=custom/helloworld</td>
+	<td>helloworld</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span &gt; a &gt; span</td>
+	<td>Settings</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h3.admin-console-header</td>
+	<td>helloworld</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h1.markdown__heading</td>
+	<td>Header</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=settinga</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=label.radio-inline</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=settingc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>Regenerate</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<!--Can't upload the same plugin twice-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<!--*** Manually select plugin (helloworld.tar.gz)-->
+<tr>
+	<td>pause</td>
+	<td>7000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
+	<td>Upload</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
+	<td>Upload</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.form-group.has-error.half:contains('Unable to install plugin. A plugin with the same ID is already installed.')</td>
+	<td></td>
+</tr>
+<!--Activate and deactivate plugin-->
+<tr>
+	<td>click</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=strong &gt; span</td>
+	<td>exact:ID:</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.padding-top &gt; a &gt; span</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.padding-top &gt; a &gt; span</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.padding-top &gt; a &gt; span</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.padding-top &gt; a &gt; span</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.padding-top &gt; a &gt; span</td>
+	<td>Activate</td>
+</tr>
+<!--Remove plugin-->
+<tr>
+	<td>waitForText</td>
+	<td>//div[@id='root']/div/div[2]/div[2]/form/div[2]/div/div/div/div[2]/a[2]/span</td>
+	<td>Remove</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='root']/div/div[2]/div[2]/form/div[2]/div/div/div/div[2]/a[2]/span</td>
+	<td>Remove</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.col-sm-8 &gt; span</td>
+	<td>No installed plugins.</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>id=custom/helloworld</td>
+	<td>helloworld</td>
+</tr>
+<!--Disable plugins-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//a[@id='configuration'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='configuration'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=enablePluginsfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enablePluginsfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enablePluginsfalse</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--JIRA plugin UI-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=jira</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=jira</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h3.admin-console-header</td>
+	<td>JIRA (Beta)</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=label.control-label.col-sm-4</td>
+	<td>Enable JIRA:</td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=admin_user_setting_userName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enabledfalse</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=enabledtrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enabledtrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=admin_user_setting_userName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=admin_user_setting_userName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=img.admin-setting-user__image</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img.admin-setting-user__image</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeAttribute</td>
+	<td>css=input#secret.form-control@value</td>
+	<td>jirasecret</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>Regenerate</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td>Regenerate</td>
+</tr>
+<tr>
+	<td>waitForNotAttribute</td>
+	<td>css=input#secret.form-control@value</td>
+	<td>${jirasecret}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p &gt; span</td>
+	<td>Use this webhook URL to set up the JIRA integration. See documentation to learn more.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span &gt; a &gt; span</td>
+	<td>documentation</td>
+</tr>
+<tr>
+	<td>waitForAttribute</td>
+	<td>link=documentation@href</td>
+	<td>https://about.mattermost.com/default-jira-plugin</td>
+</tr>
+<!--LOG OUT-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-body &gt; span</td>
+	<td>You have unsaved changes, are you sure you want to discard them?</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-primary</td>
+	<td>Yes, Discard</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-primary</td>
+	<td>Yes, Discard</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
