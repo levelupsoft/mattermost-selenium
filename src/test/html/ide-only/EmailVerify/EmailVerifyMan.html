@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://selenium.mattermost.com/" />
+<title>EmailVerifyMan</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">EmailVerifyMan</td></tr>
+</thead><tbody>
+<!--EMAIL VERIFICATIONS-->
+<!--*** Test on any server with email enabled and email verification required-->
+<!--*** Replace target "PREFIX" below with your Mattermost email prefix (e.g. "linda")-->
+<!--*** Log in to any server using your Mattermost email address-->
+<!--*** Then run tests and verify as described-->
+<tr>
+	<td>store</td>
+	<td>linda</td>
+	<td>prefix</td>
+</tr>
+<!--1. Change email address-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=EmailEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=EmailEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=primaryEmail</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=primaryEmail</td>
+	<td>${prefix}+verification@mattermost.com</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=confirmEmail</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=confirmEmail</td>
+	<td>${prefix}+verification@mattermost.com</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#EmailDesc &gt; span</td>
+	<td>New Address: ${prefix}+verification@mattermost.com<br />Check your email to verify the above address.</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--2. Change password (doesn't change it; just triggers email)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=securityButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=securityButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=PasswordEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PasswordEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=currentPassword</td>
+	<td></td>
+</tr>
+<!--*** Manually type current password in Current Password field-->
+<tr>
+	<td>pause</td>
+	<td>7000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>id=currentPassword</td>
+	<td>key</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=newPassword</td>
+	<td>${key}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=confirmPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=confirmPassword</td>
+	<td>${key}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--*** Visually verify "Last updated [date and time]"-->
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--VERIFICATIONS-->
+<!--*** Check email, read through subject line and body, verify as described below-->
+<!--1. NEW address: "[Mattermost] Verify new email address", click verification link-->
+<!--1. "Your email has been verified" in green box on login page (may then log you in)-->
+<!--1. OLD address: "[Mattermost] Your email address has changed"-->
+<!--1. New address [prefix]+verification@mattermost.com is displayed-->
+<!--***-->
+<!--2. "[Mattermost] Your password has been updated"-->
+<!--2. Lists correct server name in body of email-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--*** Replace your email address in first command with "EMAILADDRESS"-->
+<!--*** And save, to be ready for next tester-->
+
+</tbody></table>
+</body>
+</html>
