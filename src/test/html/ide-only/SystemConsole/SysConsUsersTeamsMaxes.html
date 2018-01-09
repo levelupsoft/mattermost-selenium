@@ -109,10 +109,10 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>UsersTeamsMaxes</td>
 </tr>
-<!--Add two users to team to allow room for testing-->
+<!--Add two users to new team to allow room for testing-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -136,12 +136,12 @@
 <tr>
 	<td>type</td>
 	<td>//div[@class='Select-input']/input</td>
-	<td>testmax</td>
+	<td>test8</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>@testmax</td>
+	<td>@test8</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -283,6 +283,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForValue</td>
 	<td>id=maxUsersPerTeam</td>
 	<td>${usersCurrentTeam}</td>
@@ -306,6 +311,11 @@
 <tr>
 	<td>click</td>
 	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
 <!--Open invite link URL and verify can't sign up b/c max number users reached-->
@@ -707,6 +717,7 @@
 	<td>link=System Console</td>
 	<td></td>
 </tr>
+<!--Set max users back to 50-->
 <!--Max Channels Per Team-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -755,11 +766,16 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForValue</td>
 	<td>id=maxChannelsPerTeam</td>
 	<td>5</td>
 </tr>
-<!--Verify can create up to 5 teams on UsersTeamsMaxes team-->
+<!--Verify can create up to 5 channels on UsersTeamsMaxes team-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
@@ -801,6 +817,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Third</td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>id=createPublicChannel</td>
 	<td></td>
@@ -821,6 +842,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Fourth</td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>id=createPrivateChannel</td>
 	<td></td>
@@ -835,7 +861,22 @@
 	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-primary</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Fifth</td>
+</tr>
 <!--Verify can't create 6th channel on this team-->
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=createPublicChannel</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>id=createPublicChannel</td>
@@ -859,11 +900,6 @@
 <tr>
 	<td>click</td>
 	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-default</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='root']/div/div[3]/div[4]/div/div[2]/a/div/div</td>
 	<td></td>
 </tr>
 <!--Delete channel, still counts toward max and can't create new-->
@@ -1016,82 +1052,21 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
 	<td>Town Square</td>
 </tr>
-<!--Add one user to team, to verify notification-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//button[@id='addUsersToTeam']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//button[@id='addUsersToTeam']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.Select-placeholder</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>test4</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
-	<td>@test4</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td>@test4</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Off-Topic</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Off-Topic</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Off-Topic</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=member_popover</td>
-	<td>2</td>
-</tr>
 <!--Verify notification and no warning because under 5 users on at-all, at-channel-->
+<tr>
+	<td>waitForText</td>
+	<td>id=channelMemberCountText</td>
+	<td>3</td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -1122,7 +1097,7 @@
 	<td>css=span.mention--highlight &gt; span &gt; span:contains('@channel')</td>
 	<td></td>
 </tr>
-<!--Log out and back in as test4 to verify notifications-->
+<!--Log out and back in as test8 to verify notifications-->
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1158,7 +1133,7 @@
 <tr>
 	<td>type</td>
 	<td>id=loginId</td>
-	<td>test4</td>
+	<td>test8</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1181,6 +1156,7 @@
 	<td></td>
 </tr>
 <!--Verify already tests for number of users = max notifications > mentions fire-->
+<!--Need to rework these tests; I think they're posting in Town Square instead of Off-Topic-->
 <!--Verify notifications-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1212,7 +1188,22 @@
 	<td>css=span.badge</td>
 	<td></td>
 </tr>
-<!--LOG OUT test4-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Town Square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Town Square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<!--LOG OUT test8-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -1281,10 +1272,10 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
+	<td>css=div.team-container.active</td>
+	<td>UsUsersTeamsMaxes</td>
 </tr>
-<!--Add users to team to trigger no notifications and warning-->
+<!--Can't add more users; at max-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -1351,30 +1342,34 @@
 	<td>×test3 <br />×test5 <br />input#undefined::-ms-clear {display: none;}<br />Press backspace to remove @test5</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//body/div[3]/div/div[2]/div/div/div[2]/div/div/div/button</td>
-	<td>Add</td>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//body/div[3]/div/div[2]/div/div/div[2]/div/div/div/button</td>
-	<td>Add</td>
+	<td>id=saveSetting</td>
+	<td></td>
 </tr>
-<!--Only added one of the two users because of the max users limit-->
+<tr>
+	<td>waitForText</td>
+	<td>css=label.control-label.font-weight--normal</td>
+	<td>This team has reached the maximum number of allowed accounts. Contact your systems administrator to set a higher limit.</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@class='Select-input']/input</td>
+	<td>${KEY_ESC}</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=label.control-label.font-weight--normal</td>
+	<td>This team has reached the maximum number of allowed accounts. Contact your systems administrator to set a higher limit.</td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>id=member_popover</td>
 	<td>3</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span:contains('test3 added')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementNotPresent</td>
-	<td>css=span:contains('test5 added')</td>
-	<td></td>
 </tr>
 <!--Change max users back to default 50-->
 <tr>
@@ -1443,7 +1438,7 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
-<!--Back to team to add one more user and test no notification with warning-->
+<!--Back to team to add more users and test no notification with warning-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
@@ -1512,6 +1507,26 @@
 <tr>
 	<td>type</td>
 	<td>//div[@class='Select-input']/input</td>
+	<td>test3</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test3</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test3</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[@class='Select-input']/input</td>
 	<td>test5</td>
 </tr>
 <tr>
@@ -1525,44 +1540,14 @@
 	<td>@test5</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×test6 <br />×test5 <br />input#undefined::-ms-clear {display: none;}<br />Press backspace to remove @test5</td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>2000</td>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>test7</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
-	<td>@test7</td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td>@test7</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×test6 <br />×test5 <br />×test7 <br />input#undefined::-ms-clear {display: none;}<br />Press backspace to remove @test7</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//body/div[3]/div/div[2]/div/div/div[2]/div/div/div/button</td>
-	<td>Add</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//body/div[3]/div/div[2]/div/div/div[2]/div/div/div/button</td>
-	<td>Add</td>
+	<td>id=saveSetting</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1595,20 +1580,21 @@
 	<td>id=post_textbox</td>
 	<td>@channel again, no notify!${KEY_ENTER}</td>
 </tr>
+<!--@-channel posts and prompts warning (but will not trigger notification)-->
 <tr>
 	<td>waitForText</td>
-	<td>//div[2]/div/div/div[2]/span</td>
+	<td>css=div.modal-body &gt; span</td>
 	<td>exact:By using @all or @channel you are about to send notifications to 5 people. Are you sure you want to do this?</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>xpath=(//button[@type='button'])[25]</td>
-	<td>Confirm</td>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[25]</td>
-	<td>Confirm</td>
+	<td>xpath=(//button[@type='button'])[10]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1638,40 +1624,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[2]/div/div/div[2]/span</td>
+	<td>css=div.modal-body &gt; span</td>
 	<td>exact:By using @all or @channel you are about to send notifications to 5 people. Are you sure you want to do this?</td>
 </tr>
-<!--Cancel out of warning, message does not post-->
 <tr>
-	<td>waitForText</td>
-	<td>xpath=(//button[@type='button'])[26]</td>
-	<td>Cancel</td>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[26]</td>
-	<td>Cancel</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=post_textbox</td>
-	<td>@all again, no notify here either!</td>
-</tr>
-<!--Post at-all message-->
-<tr>
-	<td>sendKeys</td>
-	<td>id=post_textbox</td>
-	<td>${KEY_ENTER}</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>xpath=(//button[@type='button'])[27]</td>
-	<td>Confirm</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[27]</td>
-	<td>Confirm</td>
+	<td>xpath=(//button[@type='button'])[10]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1688,7 +1652,7 @@
 	<td>css=span:contains('(Only visible to you)')</td>
 	<td></td>
 </tr>
-<!--Log out and in as test4 to verify no notifications-->
+<!--Log out and in as test8 to verify no notifications-->
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1710,7 +1674,7 @@
 	<td>id=logout</td>
 	<td></td>
 </tr>
-<!--LOG IN test4-->
+<!--LOG IN test8-->
 <tr>
 	<td>pause</td>
 	<td>2000</td>
@@ -1724,7 +1688,7 @@
 <tr>
 	<td>type</td>
 	<td>id=loginId</td>
-	<td>test4</td>
+	<td>test8</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1794,7 +1758,7 @@
 	<td></td>
 </tr>
 <!--Log out and back in as admin to turn off warning for at-all, at-channel-->
-<!--LOG OUT test4-->
+<!--LOG OUT test8-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -1920,6 +1884,11 @@
 <tr>
 	<td>click</td>
 	<td>id=swithTousersteamsmaxes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <tr>

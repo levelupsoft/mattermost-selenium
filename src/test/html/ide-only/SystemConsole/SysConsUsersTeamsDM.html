@@ -548,9 +548,9 @@
 	<td>test8</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.post-message__text &gt; p</td>
-	<td>This should work</td>
+	<td>waitForElementPresent</td>
+	<td>css=span &gt; p:contains('This should work')</td>
+	<td></td>
 </tr>
 <!--Verify cannot use /msg to open DM with user not on team-->
 <tr>
@@ -888,6 +888,16 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
 	<td></td>
 </tr>
 <tr>

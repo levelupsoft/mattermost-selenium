@@ -56,7 +56,7 @@
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
-<!--Create team for this test, system admin created SysAdmCreated-->
+<!--Create team for this test, system admin creates SysAdmCreated-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>xpath=(//a[@id='createTeam']/span)[2]</td>
@@ -159,6 +159,16 @@
 	<td>link=Logout</td>
 	<td></td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
 <!--Open team invite link and create new account nonsysadmin-->
 <tr>
 	<td>pause</td>
@@ -220,7 +230,7 @@
 	<td>css=#tutorialSkipLink &gt; span</td>
 	<td></td>
 </tr>
-<!--Nonsysadmin create team, add system admin as user-->
+<!--Nonsysadmin creates team, add system admin as member-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -281,7 +291,7 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Town Square</td>
 </tr>
-<!--Add system admin as user-->
+<!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -344,9 +354,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.team__name:contains('SysAdmCreated')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=h1#headerTeamName.team__name</td>
+	<td>SysAdmCreated</td>
 </tr>
 <!--Create public channel-->
 <tr>
@@ -384,6 +394,42 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>PubNonAdminCreated</td>
 </tr>
+<!--Add system admin to channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='channelIntro']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='channelIntro']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@admin</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__name</td>
+	<td>@admin</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span:contains('admin added to the channel by nonsysadmin')</td>
+	<td></td>
+</tr>
 <!--Create private channel-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -419,6 +465,42 @@
 	<td>waitForText</td>
 	<td>id=channelHeaderDropdownButton</td>
 	<td>PriNonAdminCreated</td>
+</tr>
+<!--Add system admin to channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='channelIntro']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='channelIntro']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@admin</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__name</td>
+	<td>@admin</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span:contains('admin added to the channel by nonsysadmin')</td>
+	<td></td>
 </tr>
 <!--Log out nonadmin and log in admin to create channels on the team nonadmin created-->
 <!--LOG OUT nonsysadmin-->
@@ -469,19 +551,19 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
+	<td>waitForElementPresent</td>
 	<td>link=NoNonAdminCreated</td>
-	<td>NoNonAdminCreated</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>link=NoNonAdminCreated</td>
-	<td>NoNonAdminCreated</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.team__name:contains('NonAdminCreated')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=h1#headerTeamName.team__name</td>
+	<td>NonAdminCreated</td>
 </tr>
 <!--Create public channel on nonadmin's team-->
 <tr>
@@ -554,6 +636,174 @@
 	<td>waitForText</td>
 	<td>id=channelHeaderDropdownButton</td>
 	<td>PriAdminCreated</td>
+</tr>
+<!--Add other nonadmin user to channels you created-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='channelIntro']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='channelIntro']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@nonsysadmin</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__name</td>
+	<td>@nonsysadmin</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>nonsysadmin added to the channel by admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=PubAdminCreated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=PubAdminCreated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>PubAdminCreated</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='channelIntro']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='channelIntro']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@nonsysadmin</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__name</td>
+	<td>@nonsysadmin</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>nonsysadmin added to the channel by admin</td>
+	<td></td>
+</tr>
+<!--Create private channel (so there is pri channel nonsysadmin is complete non-admin on)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=SySysAdmCreated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=SySysAdmCreated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h1#headerTeamName.team__name</td>
+	<td>SysAdmCreated</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=createPrivateChannel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=createPrivateChannel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPrivateChannelName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=newPrivateChannelName</td>
+	<td>PriAdmCreated</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<!--Add nonsysadmin to private channel where they are not any kind of admin-->
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>PriAdmCreated</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='channelIntro']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='channelIntro']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@nonsysadmin</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__name</td>
+	<td>@nonsysadmin</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
 </tr>
 </tbody></table>
 </body>

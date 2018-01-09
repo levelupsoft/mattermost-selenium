@@ -2136,12 +2136,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[11]</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[11]</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
 <tr>
@@ -2184,7 +2184,12 @@
 	<td>css=div.Select-control</td>
 	<td></td>
 </tr>
-<!--This part isn't working yet; can't figure out how to get it to select a language-->
+<!--This part isn't working yet; can't figure out how to get it to select specific language-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
 <!--Available Languages - Set some, only those set are available in Acct Settings-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -2468,7 +2473,38 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
-<!--Log out-->
+<!--With only one available language set, Language hidden from Settings-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.Select-control</td>
+	<td></td>
+</tr>
+<!--NOTE: Figured out how to specify language in this control; rewrite above-->
+<tr>
+	<td>type</td>
+	<td>//div[@class='Select-input']/input</td>
+	<td>eng</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@class='Select-input']/input</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.Select-control</td>
+	<td>×English <br />input#undefined::-ms-clear {display: none;}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
@@ -2479,6 +2515,62 @@
 	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=swithToui-automation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=swithToui-automation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=displayButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=displayButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#displaySettingsTitle &gt; span</td>
+	<td>Display Settings</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=ThemeEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>id=LanguageEdit</td>
+	<td></td>
+</tr>
+<!--Log out-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#logout &gt; span</td>
