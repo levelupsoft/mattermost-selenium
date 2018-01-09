@@ -349,9 +349,9 @@
 </tr>
 <!--The following will fail if Elasticsearch is not enabled-->
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='search-items-container']/div/span/ul/li[2]</td>
+	<td>waitForTextPresent</td>
 	<td>Two letter searches and common words like &quot;this&quot;, &quot;a&quot; and &quot;is&quot; won't appear in search results due to excessive results returned.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>refreshAndWait</td>
@@ -728,6 +728,11 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <tr>
@@ -1890,6 +1895,16 @@
 	<td></td>
 </tr>
 <tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>css=input.search-bar</td>
 	<td></td>
@@ -2077,8 +2092,8 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
-	<td>click</td>
-	<td>css=a.sidebar-header-dropdown__toggle</td>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; span</td>
 	<td></td>
 </tr>
 <tr>

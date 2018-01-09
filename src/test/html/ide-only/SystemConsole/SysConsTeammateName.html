@@ -249,11 +249,21 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
 	<td>pause</td>
 	<td>2000</td>
 	<td></td>
 </tr>
 <!--Create userb from invite link-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
 <tr>
 	<td>open</td>
 	<td>${namedisplayinvite}</td>
@@ -423,11 +433,21 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
 	<td>pause</td>
 	<td>2000</td>
 	<td></td>
 </tr>
 <!--Create userc from invite link-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
 <tr>
 	<td>open</td>
 	<td>${namedisplayinvite}</td>
@@ -587,8 +607,18 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
 	<td>pause</td>
 	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <!--Create userd from invite link-->
@@ -751,8 +781,18 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
 	<td>pause</td>
 	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <!--Create usere from invite link-->
@@ -960,16 +1000,16 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
 	<td>pause</td>
 	<td>2000</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
-<tr>
-	<td>openAndWait</td>
-	<td>/login</td>
-	<td></td>
-</tr>
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1170,8 +1210,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=a.sidebar-item.has-close &gt; span.sidebar-item__name</td>
-	<td>usere</td>
+	<td>link=usere×</td>
+	<td>usere×</td>
 </tr>
 <!--Set to display nickname (if present, otherwise first-last)-->
 <tr>
@@ -1267,10 +1307,15 @@
 	<td>6</td>
 </tr>
 <!--*** Visually verify in alphabetical order based on what is displayed-->
-<!--Could add a brittle waitForTextPresent, using * to verify alpha orders-->
+<!--Added a brittle waitForTextPresent, using * to verify alpha orders-->
 <tr>
 	<td>pause</td>
 	<td>6000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>admin*Firstb Lastb*Firstd*nicknamec*nicknamee*usera</td>
 	<td></td>
 </tr>
 <tr>
@@ -1302,13 +1347,13 @@
 <!--usere already opened-->
 <tr>
 	<td>waitForText</td>
-	<td>css=a.sidebar-item.has-close &gt; span.sidebar-item__name</td>
-	<td>nicknamee</td>
+	<td>link=nicknamee×</td>
+	<td>nicknamee×</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=a.sidebar-item.has-close &gt; span.sidebar-item__name</td>
-	<td>nicknamee</td>
+	<td>link=nicknamee×</td>
+	<td>nicknamee×</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1353,8 +1398,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=a.sidebar-item.has-close &gt; span.sidebar-item__name</td>
-	<td>Firstd</td>
+	<td>link=Firstd×</td>
+	<td>Firstd×</td>
 </tr>
 <!--userc verify DM channel name, popover name, LHS (open using /msg)-->
 <tr>
@@ -1544,6 +1589,11 @@
 	<td>waitForText</td>
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Town Square</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
 </tr>
 <!--Verify in Town Square member icon drop-down list (first-last)-->
 <tr>
@@ -1902,6 +1952,7 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<!--Add a step to leave the team at the end (after writing the additional tests?)-->
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>

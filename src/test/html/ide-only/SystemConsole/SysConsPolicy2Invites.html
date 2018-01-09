@@ -112,15 +112,10 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
+	<td>css=h1#headerTeamName.team__name</td>
+	<td>NonAdminCreated</td>
 </tr>
 <!--Verify Send Email Invite is hidden for team admin-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.team__name:contains('NonAdminCreated')</td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -206,9 +201,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.team__name:contains('NonAdminCreated')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=h1#headerTeamName.team__name</td>
+	<td>NonAdminCreated</td>
 </tr>
 <!--Verify invite available for system admin-->
 <tr>
@@ -341,11 +336,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
 	<td>link=NoNonAdminCreated</td>
 	<td></td>
@@ -356,9 +346,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.team__name:contains('NonAdminCreated')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=h1#headerTeamName.team__name</td>
+	<td>NonAdminCreated</td>
 </tr>
 <!--Verify team admin can invite-->
 <tr>
@@ -398,9 +388,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.team__name:contains('SysAdmCreated')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=h1#headerTeamName.team__name</td>
+	<td>SysAdmCreated</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -474,11 +464,6 @@
 	<td>click</td>
 	<td>id=loginButton</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
 </tr>
 <!--Set to All team members can invite-->
 <tr>
@@ -578,11 +563,6 @@
 	<td>id=loginButton</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
-</tr>
 <!--Switch to team created by system admin, verify can invite-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -595,9 +575,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.team__name:contains('SysAdmCreated')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=h1#headerTeamName.team__name</td>
+	<td>SysAdmCreated</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
