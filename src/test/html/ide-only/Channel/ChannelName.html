@@ -375,6 +375,7 @@
 	<td>css=strong.heading</td>
 	<td>PublicNameTwentyTwoMax</td>
 </tr>
+<!--Following fails if tests not run in the correct order; rewrite to be less brittle-->
 <tr>
 	<td>verifyLocation</td>
 	<td>http://selenium.mattermost.com/aplus/channels/new-url</td>
@@ -410,6 +411,11 @@
 <tr>
 	<td>refreshAndWait</td>
 	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <tr>
@@ -658,6 +664,7 @@
 	<td>css=strong.heading</td>
 	<td>PrivateName Twenty-Two</td>
 </tr>
+<!--Rewrite following to be less brittle (is dependent on running after a separate test case)-->
 <tr>
 	<td>verifyLocation</td>
 	<td>http://selenium.mattermost.com/aplus/channels/new-url-private</td>
@@ -667,6 +674,11 @@
 <tr>
 	<td>refreshAndWait</td>
 	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <tr>
@@ -702,7 +714,7 @@
 </tr>
 <tr>
 	<td>pause</td>
-	<td>200</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <tr>
@@ -874,6 +886,7 @@
 	<td>css=strong.heading</td>
 	<td>Town Square Twenty-Two</td>
 </tr>
+<!--Rewrite following to not depend on separate test case running first-->
 <tr>
 	<td>verifyLocation</td>
 	<td>http://selenium.mattermost.com/aplus/channels/town-square</td>
@@ -883,6 +896,11 @@
 <tr>
 	<td>refreshAndWait</td>
 	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <tr>
