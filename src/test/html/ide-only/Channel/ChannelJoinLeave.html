@@ -182,7 +182,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>test9 has joined the channel.</td>
+	<td>test9 joined the channel.</td>
 	<td></td>
 </tr>
 <!--Leave channel using slash command-->
@@ -210,7 +210,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>~to-</td>
+	<td>~to-l</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -244,7 +244,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>test9 has joined the channel.</td>
+	<td>test9 joined the channel.</td>
 	<td></td>
 </tr>
 <tr>
@@ -268,6 +268,7 @@
 	<td>id=post_textbox</td>
 	<td>Join from a permalink!${KEY_ENTER}</td>
 </tr>
+<!--This isn't finding the Permalink option anymore; opened manually-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button:contains('Permalink')</td>
@@ -482,6 +483,7 @@
 	<td>xpath=(//button[@type='button'])[6]</td>
 	<td></td>
 </tr>
+<!--Failing; rewrite how it finds the Permalink button-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button:contains('Permalink')</td>
