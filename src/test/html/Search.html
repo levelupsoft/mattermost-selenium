@@ -62,7 +62,24 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>/test url test-search.md${KEY_ENTER}</td>
+	<td>/test url test-search.md</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td>/test url test-search.md</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
