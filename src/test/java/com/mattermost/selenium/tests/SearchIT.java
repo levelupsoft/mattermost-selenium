@@ -42,7 +42,16 @@ public class SearchIT extends DriverBase {
         // Sleep
         // Sleep
         // Search: Basic, markdown
-        driver.findElement(By.id("post_textbox")).sendKeys("/test url test-search.md" + Keys.ENTER);
+        driver.findElement(By.id("post_textbox")).sendKeys("/test url test-search.md");
+        // Sleep
+        // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("/test url test-search.md".equals(driver.findElement(By.id("post_textbox")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("post_textbox")).sendKeys(Keys.ENTER);
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Search Testing".equals(driver.findElement(By.cssSelector("h1.markdown__heading")).getText())) break; } catch (Exception e) {}
