@@ -34,10 +34,16 @@ public class AccountSettingsNicknameIT extends DriverBase {
         // Sleep
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         // General Settings
-        driver.findElement(By.cssSelector("#accountSettings > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#NicknameEdit > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("accountSettings"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("accountSettings")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("NicknameEdit"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -47,7 +53,7 @@ public class AccountSettingsNicknameIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#NicknameEdit > span")).click();
+        driver.findElement(By.id("NicknameEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("nickname"))) break; } catch (Exception e) {}
@@ -56,6 +62,7 @@ public class AccountSettingsNicknameIT extends DriverBase {
 
         driver.findElement(By.id("nickname")).clear();
         driver.findElement(By.id("nickname")).sendKeys("");
+        driver.findElement(By.id("nickname")).clear();
         driver.findElement(By.id("nickname")).sendKeys("Added Nick");
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
@@ -64,9 +71,8 @@ public class AccountSettingsNicknameIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#NicknameEdit > span")).click();
+        driver.findElement(By.id("NicknameEdit")).click();
         driver.findElement(By.id("nickname")).clear();
-        driver.findElement(By.id("nickname")).sendKeys("");
         driver.findElement(By.id("nickname")).sendKeys("Edited Nick");
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
@@ -75,16 +81,13 @@ public class AccountSettingsNicknameIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#NicknameEdit > span")).click();
+        driver.findElement(By.id("NicknameEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("nickname"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("nickname")).clear();
-        driver.findElement(By.id("nickname")).sendKeys("");
-        driver.findElement(By.id("nickname")).sendKeys("*" + Keys.BACK_SPACE);
         driver.findElement(By.id("nickname")).clear();
         driver.findElement(By.id("nickname")).sendKeys("");
         driver.findElement(By.id("saveSetting")).click();
@@ -102,12 +105,12 @@ public class AccountSettingsNicknameIT extends DriverBase {
         }
 
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
-        driver.findElement(By.cssSelector("#logout > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.name("loginId"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("logout")).click();
     }
 }
