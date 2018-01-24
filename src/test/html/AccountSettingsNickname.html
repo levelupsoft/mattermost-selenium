@@ -52,13 +52,18 @@
 </tr>
 <!--General Settings-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#NicknameEdit &gt; span</td>
+	<td>id=NicknameEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -68,7 +73,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#NicknameEdit &gt; span</td>
+	<td>id=NicknameEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -82,7 +87,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=nickname</td>
 	<td>Added Nick</td>
 </tr>
@@ -98,16 +103,11 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#NicknameEdit &gt; span</td>
+	<td>id=NicknameEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=nickname</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
 	<td>id=nickname</td>
 	<td>Edited Nick</td>
 </tr>
@@ -123,23 +123,13 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#NicknameEdit &gt; span</td>
+	<td>id=NicknameEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=nickname</td>
 	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=nickname</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=nickname</td>
-	<td>*${KEY_BACKSPACE}</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -172,13 +162,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>name=loginId</td>
+	<td>click</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 </tbody></table>
