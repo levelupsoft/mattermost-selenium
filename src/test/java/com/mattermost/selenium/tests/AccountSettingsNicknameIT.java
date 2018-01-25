@@ -90,6 +90,7 @@ public class AccountSettingsNicknameIT extends DriverBase {
 
         driver.findElement(By.id("nickname")).clear();
         driver.findElement(By.id("nickname")).sendKeys("");
+        driver.findElement(By.id("nickname")).sendKeys("*{KEY_BACKSPACE}");
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
