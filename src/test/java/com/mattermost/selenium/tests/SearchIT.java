@@ -35,23 +35,12 @@ public class SearchIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        // Sleep
-        // Sleep
         // Search: Basic, markdown
-        driver.findElement(By.id("post_textbox")).sendKeys("/test url test-search.md");
-        // Sleep
-        // Sleep
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("/test url test-search.md".equals(driver.findElement(By.id("post_textbox")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("post_textbox")).sendKeys(Keys.ENTER);
+        driver.findElement(By.id("post_textbox-textarea")).sendKeys("/test url test-search.md" + Keys.ENTER);
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Search Testing".equals(driver.findElement(By.cssSelector("h1.markdown__heading")).getText())) break; } catch (Exception e) {}
@@ -154,26 +143,26 @@ public class SearchIT extends DriverBase {
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         // Multiple terms (not exact phrase)
-        driver.findElement(By.id("post_textbox")).sendKeys("one hello" + Keys.ENTER);
+        driver.findElement(By.id("post_textbox-textarea")).sendKeys("one hello" + Keys.ENTER);
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("post_textbox")).sendKeys("world two" + Keys.ENTER);
+        driver.findElement(By.id("post_textbox-textarea")).sendKeys("world two" + Keys.ENTER);
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("post_textbox")).sendKeys("world hello" + Keys.ENTER);
+        driver.findElement(By.id("post_textbox-textarea")).sendKeys("world hello" + Keys.ENTER);
         // Switch channel in center to make sure verifying in search results in RHS
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -342,7 +331,7 @@ public class SearchIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -351,15 +340,15 @@ public class SearchIT extends DriverBase {
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("post_textbox")).sendKeys("inchannel" + Keys.ENTER);
+        driver.findElement(By.id("post_textbox-textarea")).sendKeys("inchannel" + Keys.ENTER);
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -373,11 +362,11 @@ public class SearchIT extends DriverBase {
         driver.findElement(By.cssSelector("li.active > a.sidebar-item > span.sidebar-item__name")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("post_textbox")).sendKeys("inchannel #verify" + Keys.ENTER);
+        driver.findElement(By.id("post_textbox-textarea")).sendKeys("inchannel #verify" + Keys.ENTER);
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -471,7 +460,7 @@ public class SearchIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -505,15 +494,15 @@ public class SearchIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("post_textbox")).sendKeys("fromuser" + Keys.ENTER);
+        driver.findElement(By.id("post_textbox-textarea")).sendKeys("fromuser" + Keys.ENTER);
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -555,15 +544,15 @@ public class SearchIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("post_textbox")).sendKeys("fromuser #verify" + Keys.ENTER);
+        driver.findElement(By.id("post_textbox-textarea")).sendKeys("fromuser #verify" + Keys.ENTER);
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -738,14 +727,14 @@ public class SearchIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         // Sleep
-        driver.findElement(By.id("post_textbox")).sendKeys("@test2 greetings");
+        driver.findElement(By.id("post_textbox-textarea")).sendKeys("@test2 greetings");
         // Sleep
-        driver.findElement(By.id("post_textbox")).sendKeys(Keys.ENTER);
+        driver.findElement(By.id("post_textbox-textarea")).sendKeys(Keys.ENTER);
         // Sleep
         driver.navigate().refresh();
         // Sleep
@@ -778,12 +767,12 @@ public class SearchIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         // Sleep
-        driver.findElement(By.id("post_textbox")).sendKeys("@test2 direct" + Keys.ENTER);
+        driver.findElement(By.id("post_textbox-textarea")).sendKeys("@test2 direct" + Keys.ENTER);
         // Sleep
         // Sleep
         for (int second = 0;; second++) {
@@ -796,11 +785,11 @@ public class SearchIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("post_textbox")).sendKeys("@channel" + Keys.ENTER + Keys.ENTER);
+        driver.findElement(By.id("post_textbox-textarea")).sendKeys("@channel" + Keys.ENTER + Keys.ENTER);
         // The Java test doesn't like a command here to click the Confirm button, so it's been deleted
         // May make IDE test fail; click manually if necessary
         // Sleep
@@ -849,7 +838,7 @@ public class SearchIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -968,18 +957,18 @@ public class SearchIT extends DriverBase {
         }
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("post_textbox")).clear();
-        driver.findElement(By.id("post_textbox")).sendKeys("");
+        driver.findElement(By.id("post_textbox-textarea")).clear();
+        driver.findElement(By.id("post_textbox-textarea")).sendKeys("");
         // Sleep
-        driver.findElement(By.id("post_textbox")).sendKeys("test usernametownsquare" + Keys.ENTER);
+        driver.findElement(By.id("post_textbox-textarea")).sendKeys("test usernametownsquare" + Keys.ENTER);
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -1013,12 +1002,12 @@ public class SearchIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         // Sleep
-        driver.findElement(By.id("post_textbox")).sendKeys("test usernameDM" + Keys.ENTER);
+        driver.findElement(By.id("post_textbox-textarea")).sendKeys("test usernameDM" + Keys.ENTER);
         // Sleep
         // LOG OUT
         // Sleep
@@ -1066,7 +1055,7 @@ public class SearchIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("post_textbox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("post_textbox-textarea"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
