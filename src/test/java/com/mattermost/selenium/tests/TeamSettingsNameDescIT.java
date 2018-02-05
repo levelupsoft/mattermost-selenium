@@ -42,7 +42,7 @@ public class TeamSettingsNameDescIT extends DriverBase {
         // Save team name with no changes
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("UI Automation".equals(driver.findElement(By.cssSelector("div.team-btn__content")).getText())) break; } catch (Exception e) {}
+        	try { if ("UI Automation".equals(driver.findElement(By.id("headerTeamName")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -71,7 +71,7 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("UI Automation".equals(driver.findElement(By.cssSelector("div.team-btn__content")).getText())) break; } catch (Exception e) {}
+        	try { if ("UI Automation".equals(driver.findElement(By.id("headerTeamName")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -215,7 +215,7 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("UI Automation".equals(driver.findElement(By.cssSelector("div.team-btn__content")).getText())) break; } catch (Exception e) {}
+        	try { if ("UI Automation".equals(driver.findElement(By.id("headerTeamName")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
