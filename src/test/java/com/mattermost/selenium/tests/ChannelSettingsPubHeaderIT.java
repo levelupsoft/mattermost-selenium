@@ -363,10 +363,16 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
 
         driver.findElement(By.cssSelector("div.about-modal.modal-dialog > div.modal-content > div.modal-header > button.close")).click();
         // LOG OUT
-        driver.navigate().refresh();
         // Sleep
         // Sleep
         // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("sidebarHeaderDropdownButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
