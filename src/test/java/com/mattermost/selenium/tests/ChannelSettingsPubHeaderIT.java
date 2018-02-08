@@ -154,18 +154,18 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("edit_textbox-textarea"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("edit_textbox"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         // Verify header 1024 character limit
-        driver.findElement(By.id("edit_textbox-textarea")).sendKeys("https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&");
+        driver.findElement(By.id("edit_textbox")).sendKeys("https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&");
         // Sleep
         // Sleep
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&".equals(driver.findElement(By.id("edit_textbox-textarea")).getAttribute("value"))) break; } catch (Exception e) {}
+        	try { if ("https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&".equals(driver.findElement(By.id("edit_textbox")).getAttribute("value"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -202,11 +202,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         driver.findElement(By.xpath("//div[@id='channelIntro']/button[2]")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("edit_textbox-textarea"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("edit_textbox"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("edit_textbox-textarea")).sendKeys("*Header");
+        driver.findElement(By.id("edit_textbox")).sendKeys("*Header");
         // Sleep
         // Sleep
         // Sleep
@@ -273,15 +273,15 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         driver.findElement(By.id("channelEditHeader")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("edit_textbox-textarea"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("edit_textbox"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("edit_textbox-textarea")).sendKeys("* " + Keys.SHIFT + Keys.ENTER);
+        driver.findElement(By.id("edit_textbox")).sendKeys("* " + Keys.SHIFT + Keys.ENTER);
         // Sleep
-        driver.findElement(By.id("edit_textbox-textarea")).sendKeys("- Item 1 " + Keys.SHIFT + Keys.ENTER);
+        driver.findElement(By.id("edit_textbox")).sendKeys("- Item 1 " + Keys.SHIFT + Keys.ENTER);
         // Sleep
-        driver.findElement(By.id("edit_textbox-textarea")).sendKeys("- [Item 2 is a link](http://google.com)");
+        driver.findElement(By.id("edit_textbox")).sendKeys("- [Item 2 is a link](http://google.com)");
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -367,7 +367,6 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Sleep
         // Sleep
         // Sleep
-        driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
