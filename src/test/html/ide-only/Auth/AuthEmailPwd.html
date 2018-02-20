@@ -33,6 +33,7 @@
 	<td>id=loginButton</td>
 	<td></td>
 </tr>
+<!--This will fail if other login methods are enabled-->
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
@@ -121,7 +122,7 @@
 <!--Sleep-->
 <tr>
 	<td>waitForText</td>
-	<td>css=strong.heading</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td>Town Square</td>
 </tr>
 <!--LOG OUT test6-->
@@ -143,6 +144,11 @@
 <tr>
 	<td>click</td>
 	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <!--Error with unrecognized username-->
