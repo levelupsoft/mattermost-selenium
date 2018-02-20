@@ -592,12 +592,12 @@
 <!--Post a message to display profile pic and access popover-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>Popover${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -1614,12 +1614,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>24-hour${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify a message posted after 1pm displays timestamp in 24-hr format-->
@@ -1709,12 +1709,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>http://www.mattermost.org/wp-content/uploads/2016/04/icon_WS.png${KEY_ENTER}</td>
 </tr>
 <!--Verify image not visible, then expand and verify visible-->
@@ -1828,7 +1828,7 @@
 <!--Previously manually collapsed preview is not expanded-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
@@ -1839,7 +1839,7 @@
 <!--Newly posted message: Preview is expanded-->
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>http://www.mattermost.org/wp-content/uploads/2016/04/icon_WS.png${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -1850,22 +1850,22 @@
 <!--Reply with image: Preview expanded in both RHS and center-->
 <tr>
 	<td>type</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_SHIFT}${KEY_UP}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=reply_textbox-textarea</td>
+	<td>id=reply_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=reply_textbox-textarea</td>
+	<td>id=reply_textbox</td>
 	<td>http://www.mattermost.org/wp-content/uploads/2016/04/icon_WS.png${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify image preview expanded in both RHS and center-->
@@ -2091,32 +2091,32 @@
 <!--Post a message to reply to-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>Testing link previews${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_SHIFT}${KEY_UP}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=reply_textbox-textarea</td>
+	<td>id=reply_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=reply_textbox-textarea</td>
+	<td>id=reply_textbox</td>
 	<td>https://github.com/mattermost/mattermost-server${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify link preview looks the same in RHS and center-->
@@ -2219,17 +2219,17 @@
 <!--Post message using CTRL+ENTER-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>Control and Enter${KEY_CTRL}${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
@@ -2240,17 +2240,17 @@
 <!--Message does not post on Enter-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>Just Enter${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>Just Enter</td>
 </tr>
 <tr>
@@ -2261,7 +2261,7 @@
 <!--Enter in the text box adds new line (add text to above and post)-->
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>Followed by Control and Enter${KEY_CTRL}${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -2590,13 +2590,13 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <!--Leave channel-->
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>/leave${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -2677,7 +2677,7 @@
 <!--Verify no leave message-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
@@ -2864,12 +2864,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>**Bold!** @test10</td>
 </tr>
 <tr>
@@ -2904,12 +2904,12 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>exact:**Bold!** @test10</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
