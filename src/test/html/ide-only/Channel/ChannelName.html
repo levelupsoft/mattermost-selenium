@@ -375,21 +375,20 @@
 	<td>css=strong.heading</td>
 	<td>PublicNameTwentyTwoMax</td>
 </tr>
-<!--Following fails if tests not run in the correct order; rewrite to be less brittle-->
 <tr>
 	<td>verifyLocation</td>
-	<td>http://selenium.mattermost.com/aplus/channels/new-url</td>
+	<td>*/channels/new-url</td>
 	<td></td>
 </tr>
 <!--Rename - Minimum 2 characters (using slash command)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/rename 1${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -414,18 +413,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>2000</td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/rename Twenty-Three Characters${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -664,10 +658,9 @@
 	<td>css=strong.heading</td>
 	<td>PrivateName Twenty-Two</td>
 </tr>
-<!--Rewrite following to be less brittle (is dependent on running after a separate test case)-->
 <tr>
 	<td>verifyLocation</td>
-	<td>http://selenium.mattermost.com/aplus/channels/new-url-private</td>
+	<td>*/channels/new-url-private</td>
 	<td></td>
 </tr>
 <!--Rename - Minimum 2 characters (using slash command)-->
@@ -677,18 +670,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>2000</td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/rename 1${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -714,17 +702,17 @@
 </tr>
 <tr>
 	<td>pause</td>
-	<td>2000</td>
+	<td>200</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/rename Twenty-Three Characters${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -886,10 +874,9 @@
 	<td>css=strong.heading</td>
 	<td>Town Square Twenty-Two</td>
 </tr>
-<!--Rewrite following to not depend on separate test case running first-->
 <tr>
 	<td>verifyLocation</td>
-	<td>http://selenium.mattermost.com/aplus/channels/town-square</td>
+	<td>*/channels/town-square</td>
 	<td></td>
 </tr>
 <!--Rename - Minimum 2 characters (using slash command)-->
@@ -899,18 +886,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>2000</td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/rename X${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -941,12 +923,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/rename Twenty-Three Characters${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -962,12 +944,12 @@
 <!--Rename back to Town Square-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/rename Town Square${KEY_ENTER}</td>
 </tr>
 <tr>
