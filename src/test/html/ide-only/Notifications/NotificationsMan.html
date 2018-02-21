@@ -53,35 +53,125 @@
 	<td>css=strong.heading</td>
 	<td>Town Square</td>
 </tr>
-<!--Should probably create a new channel for these instead of using Off-Topic... we'll see-->
+<!--Create test channel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Off-Topic</td>
+	<td>id=createPublicChannel</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Off-Topic</td>
+	<td>id=createPublicChannel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPublicChannelName</td>
+	<td></td>
+</tr>
+<!--Store timestamp to append to channel name (to make it unique)-->
+<tr>
+	<td>store</td>
+	<td>javascript{(new Date().getFullYear()+&quot;&quot;+(new Date().getMonth()+1)+&quot;&quot;+new Date().getDate())+&quot;-&quot;+(new Date().getHours()+&quot;&quot; + new Date().getMinutes() + &quot;&quot; + new Date().getSeconds())}</td>
+	<td>datetime</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=newPublicChannelName</td>
+	<td></td>
+</tr>
+<!--Create new test channel appending datetime to the name-->
+<tr>
+	<td>type</td>
+	<td>id=newPublicChannelName</td>
+	<td>Notify-${datetime}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Off-Topic</td>
+	<td>css=strong.heading</td>
+	<td>Notify-${datetime}</td>
+</tr>
+<!--Add test7 to new channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='channelIntro']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='channelIntro']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='Select-input']/input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[@class='Select-input']/input</td>
+	<td>test7</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test7</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test7</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.Select-control</td>
+	<td>×test7 <br /><br />Press backspace to remove undefined</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>test7 added to the channel</td>
+	<td></td>
+</tr>
+<!--*** Visually verify in other browser that test7 has mention & unread-->
+<!--***  in new channel, view channel to clear, switch to different channel-->
+<tr>
+	<td>pause</td>
+	<td>8000</td>
+	<td></td>
 </tr>
 <!--Code block using triple ticks and newlines-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>```<br />@here<br />```${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify code block (across center channel, not just the length of the word)-->
-<!--*** Visually verify test7 does not get a mention badge on Off-Topic (just unread)-->
+<!--*** Visually verify test7 does not get a mention badge (just unread)-->
 <tr>
 	<td>pause</td>
 	<td>3000</td>
@@ -90,12 +180,12 @@
 <!--Code block using ~~~   ~~~-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>~~~<br />@here<br />~~~${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify code block (across center channel, not just the length of the word)-->
@@ -108,17 +198,16 @@
 <!--Code block using four spaces-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>&nbsp;&nbsp;&nbsp;&nbsp;@here${KEY_ENTER}</td>
 </tr>
-<!--KNOWN ISSUE FOUR SPACES CAUSES MENTION (TICKET IN)-->
 <!--*** Visually verify code block (across center channel, not just the length of the word)-->
-<!--*** Visually verify test7 does not get a mention badge on Off-Topic (just unread)-->
+<!--*** Visually verify test7 does not get a mention badge (just unread)-->
 <tr>
 	<td>pause</td>
 	<td>3000</td>
@@ -134,12 +223,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>Here's a message for everyone in the channel who is @here!${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify mention badge, click to view and verify only the actual at-here is highlighted-->
@@ -357,12 +446,12 @@
 <!--*** Watch LHS in other browser-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>@here shouldn't trigger a mention this time${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -372,12 +461,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>nor should @channel${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -397,12 +486,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>and, lastly, @all should not trigger a mention either${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -598,12 +687,12 @@
 <!--Set status to away-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/away${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -611,7 +700,7 @@
 	<td>css=path.away--icon</td>
 	<td></td>
 </tr>
-<!--*** Make sure other browser shows test7 away, and not viewing Off-Topic-->
+<!--*** Make sure other browser shows test7 away, and not viewing Notify- channel-->
 <!--LOG OUT test7-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -675,13 +764,18 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Off-Topic</td>
+	<td>link=Notify-${datetime}</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Off-Topic</td>
+	<td>link=Notify-${datetime}</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Notify-${datetime}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -690,12 +784,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>If you're away, you should not receive a mention notification for @here${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify no mention badge appears on other browser (just boldface unread)-->
@@ -779,16 +873,6 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=svg &gt; path.online--icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#accountSettingsHeader &gt; button.close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
 <!--Switch back to test6 to post an at-here in a channel that test7 is not in-->
@@ -891,12 +975,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>@here hihi${KEY_ENTER}</td>
 </tr>
 <!--*** Verify test7 doesn't see any sort of notification or mention or unread-->
@@ -944,7 +1028,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.Select-control</td>
-	<td>×test7 <br />input#undefined::-ms-clear {display: none;}<br />Press backspace to remove undefined</td>
+	<td>×test7 <br /><br />Press backspace to remove undefined</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -972,12 +1056,12 @@
 <!--At-all in channel header does not trigger a mention-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/header Here's an @here in a header${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -994,12 +1078,12 @@
 <!--test6 updates the channel header including at-channel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/header ${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -1009,12 +1093,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td>, and also an @channel${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify in other browser test7 did not get a mention-->
@@ -1026,12 +1110,12 @@
 <!--test6 updates the channel header including at-all-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/header All in @all this is a header${KEY_ENTER}</td>
 </tr>
 <tr>
