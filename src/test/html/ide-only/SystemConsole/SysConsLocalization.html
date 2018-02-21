@@ -2184,12 +2184,7 @@
 	<td>css=div.Select-control</td>
 	<td></td>
 </tr>
-<!--This part isn't working yet; can't figure out how to get it to select specific language-->
-<tr>
-	<td>pause</td>
-	<td>6000</td>
-	<td></td>
-</tr>
+<!--This part isn't working yet; can't figure out how to get it to select a language-->
 <!--Available Languages - Set some, only those set are available in Acct Settings-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -2209,9 +2204,9 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.Select-control</td>
-	<td>×Deutsch <br />input#undefined::-ms-clear {display: none;}</td>
+	<td>×Deutsch</td>
 </tr>
-<!--The next steps should select Espanol; it selected English once-->
+<!--The next steps should select Espanol; added `es` to see if that helps-->
 <tr>
 	<td>sendKeys</td>
 	<td>css=div.Select-control</td>
@@ -2220,12 +2215,12 @@
 <tr>
 	<td>sendKeys</td>
 	<td>css=div.Select-control</td>
-	<td>${KEY_ENTER}</td>
+	<td>es${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.Select-control</td>
-	<td>×Deutsch <br />×Español <br />input#undefined::-ms-clear {display: none;}</td>
+	<td>×Deutsch <br />×Español</td>
 </tr>
 <!--Verify error if default language is not included in available languages-->
 <tr>
@@ -2267,7 +2262,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.Select-control</td>
-	<td>×Deutsch <br />×Español <br />×English <br />input#undefined::-ms-clear {display: none;}</td>
+	<td>×Deutsch <br />×Español <br />×English</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -2282,7 +2277,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.Select-control</td>
-	<td>×Deutsch <br />×Español <br />×English <br />input#undefined::-ms-clear {display: none;}</td>
+	<td>×Deutsch <br />×Español <br />×English</td>
 </tr>
 <!--Verify only available languages appear in Account Settings options-->
 <tr>
@@ -2426,7 +2421,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.Select-control</td>
-	<td>×Deutsch <br />×Español <br />×English <br />input#undefined::-ms-clear {display: none;}</td>
+	<td>×Deutsch <br />×Español <br />×English</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -2436,7 +2431,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.Select-control</td>
-	<td>×Deutsch <br />×Español <br />input#undefined::-ms-clear {display: none;}</td>
+	<td>×Deutsch <br />×Español</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -2446,7 +2441,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.Select-control</td>
-	<td>×Deutsch <br />input#undefined::-ms-clear {display: none;}</td>
+	<td>×Deutsch</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -2473,104 +2468,17 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
-<!--With only one available language set, Language hidden from Settings-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.Select-control</td>
-	<td></td>
-</tr>
-<!--NOTE: Figured out how to specify language in this control; rewrite above-->
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>eng</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>${KEY_ENTER}</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×English <br />input#undefined::-ms-clear {display: none;}</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=swithToui-automation</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=swithToui-automation</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=accountSettings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=displayButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=displayButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#displaySettingsTitle &gt; span</td>
-	<td>Display Settings</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=ThemeEdit</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementNotPresent</td>
-	<td>id=LanguageEdit</td>
-	<td></td>
-</tr>
 <!--Log out-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#logout &gt; span</td>

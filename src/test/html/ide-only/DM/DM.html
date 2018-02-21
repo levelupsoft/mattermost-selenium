@@ -101,18 +101,18 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <!--Post a message-->
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>Here's where you click the popover${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <!--LOG OUT test4-->
@@ -130,6 +130,11 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
 <tr>
@@ -168,7 +173,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team__name</td>
+	<td>css=h1#headerTeamName.team__name</td>
 	<td>UI Automation</td>
 </tr>
 <tr>
@@ -219,17 +224,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>${KEY_SHIFT}${KEY_UP}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=reply_textbox</td>
+	<td>id=reply_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
@@ -317,17 +322,17 @@
 <!--Send DM-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>How about a message of salutations?${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <!--Post message for other user to click profile picture and open DM channel-->
@@ -348,12 +353,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>Check-check-1-2-1-2${KEY_ENTER}</td>
 </tr>
 <!--LOG OUT test6-->
@@ -519,9 +524,9 @@
 	<td>test6</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.post-message__text &gt; p</td>
-	<td>exact:How about a message of salutations?</td>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('How about a message of salutations?')</td>
+	<td></td>
 </tr>
 <!--Open DM via URL constructed with username-->
 <tr>
@@ -705,9 +710,9 @@
 	<td>test6</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.post-message__text &gt; p</td>
-	<td>exact:How about a message of salutations?</td>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('How about a message of salutations?')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>refreshAndWait</td>
@@ -720,9 +725,9 @@
 	<td>test6</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.post-message__text &gt; p</td>
-	<td>exact:How about a message of salutations?</td>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('How about a message of salutations?')</td>
+	<td></td>
 </tr>
 <!--DM LHS displays properly after refresh-->
 <tr>

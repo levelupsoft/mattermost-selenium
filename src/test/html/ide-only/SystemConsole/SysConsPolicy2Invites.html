@@ -112,10 +112,15 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h1#headerTeamName.team__name</td>
-	<td>NonAdminCreated</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
 </tr>
 <!--Verify Send Email Invite is hidden for team admin-->
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>NonAdminCreated</td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -202,7 +207,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h1#headerTeamName.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>NonAdminCreated</td>
 </tr>
 <!--Verify invite available for system admin-->
@@ -336,6 +341,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>link=NoNonAdminCreated</td>
 	<td></td>
@@ -347,7 +357,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h1#headerTeamName.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>NonAdminCreated</td>
 </tr>
 <!--Verify team admin can invite-->
@@ -378,18 +388,13 @@
 </tr>
 <!--Verify non– team or system admin cannot send invite-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=SySysAdmCreated</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=SySysAdmCreated</td>
+	<td>open</td>
+	<td>/sysadmcreated</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h1#headerTeamName.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>SysAdmCreated</td>
 </tr>
 <tr>
@@ -424,7 +429,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>~off-topic asdasdasdasdasdasdasdasdasdasdasdasdasd</td>
 </tr>
 <!--Log out nonsysadmin and log in system admin-->
@@ -464,6 +469,11 @@
 	<td>click</td>
 	<td>id=loginButton</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
 </tr>
 <!--Set to All team members can invite-->
 <tr>
@@ -563,20 +573,20 @@
 	<td>id=loginButton</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
 <!--Switch to team created by system admin, verify can invite-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=SySysAdmCreated</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=SySysAdmCreated</td>
+	<td>open</td>
+	<td>/sysadmcreated</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h1#headerTeamName.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>SysAdmCreated</td>
 </tr>
 <tr>

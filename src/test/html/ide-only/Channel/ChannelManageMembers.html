@@ -51,6 +51,16 @@
 	<td>link=Town Square</td>
 	<td>Town Square</td>
 </tr>
+<tr>
+	<td>open</td>
+	<td>/ui-automation/channels/town-square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation</td>
+</tr>
 <!--PUBLIC CHANNEL-->
 <!--Create Public Channel through More... modal-->
 <tr>
@@ -125,15 +135,15 @@
 	<td>id=channelAddMembers</td>
 	<td></td>
 </tr>
-<!--Try searching on `* ` (shouldn't display blank results)-->
-<tr>
-	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
-	<td>@corey</td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--Try searching on `* ` (shouldn't display blank results)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.more-modal__name</td>
 	<td></td>
 </tr>
 <tr>
@@ -142,9 +152,9 @@
 	<td>* </td>
 </tr>
 <tr>
-	<td>waitForNotText</td>
+	<td>waitForElementNotPresent</td>
 	<td>css=div.more-modal__name</td>
-	<td>@corey</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -158,14 +168,14 @@
 </tr>
 <!--Filter user list-->
 <tr>
-	<td>waitForText</td>
+	<td>waitForElementPresent</td>
 	<td>css=div.more-modal__name</td>
-	<td>@corey</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
+	<td>storeText</td>
+	<td>css=div.more-modal__name</td>
+	<td>topname</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -175,17 +185,48 @@
 <tr>
 	<td>waitForNotText</td>
 	<td>css=div.more-modal__name</td>
-	<td>@corey</td>
+	<td>${topname}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[@class='Select-input']/input</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>@test8</td>
+	<td>${topname}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[@class='Select-input']/input</td>
+	<td>test8</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=div.more-modal__name</td>
+	<td>${topname}</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=div.more-modal__name</td>
-	<td>@test8</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>${topname}</td>
+</tr>
+<!--Filtering by user already added to the box shows no items found-->
+<tr>
+	<td>type</td>
+	<td>//div[@class='Select-input']/input</td>
+	<td>test8</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.primary-message &gt; span</td>
+	<td>No items found</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -204,14 +245,14 @@
 </tr>
 <!--Manage Members-->
 <tr>
-	<td>waitForElementPresent</td>
+	<td>waitForText</td>
 	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
+	<td>To Manage</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
+	<td>To Manage</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -230,33 +271,23 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=showInviteModal</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelMemberDropdown</td>
+	<td>css=#showInviteModal &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=channelMemberDropdown</td>
+	<td>css=#channelMemberDropdown &gt; span &gt; span</td>
 	<td>Channel Member</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div:contains('@admin')</td>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
 	<td>@admin</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=input.form-control.filter-textbox</td>
 	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=input.form-control.filter-textbox</td>
-	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -266,12 +297,27 @@
 <tr>
 	<td>waitForNotText</td>
 	<td>css=div.more-modal__name</td>
-	<td>@admin</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input.form-control.filter-textbox</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
 	<td>css=input.form-control.filter-textbox</td>
-	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+	<td>h${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input.form-control.filter-textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@admin</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -310,7 +356,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>css=input.form-control.filter-textbox</td>
 	<td></td>
 </tr>
 <tr>
@@ -329,14 +375,19 @@
 	<td>@test7</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
+	<td>waitForNotText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test7</td>
+</tr>
+<tr>
+	<td>waitForText</td>
 	<td>id=saveSetting</td>
-	<td></td>
+	<td>Add</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>id=saveSetting</td>
-	<td></td>
+	<td>Add</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -344,28 +395,13 @@
 	<td>3</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelMemberIcon</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>id=channelMemberIcon</td>
-	<td></td>
+	<td>id=member_popover</td>
+	<td>3</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.more-modal__row &gt; div.more-modal__details &gt; div.more-modal__name:contains('test7')</td>
-	<td>@test7</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=logout</td>
+	<td>css=div.more-modal__name:contains('test7')</td>
 	<td></td>
 </tr>
 </tbody></table>

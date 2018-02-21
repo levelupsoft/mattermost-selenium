@@ -91,17 +91,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>This is the text that will be edited to test the timestamp${KEY_ENTER}</td>
 </tr>
 <!--Grab timestamp on the first post, to use in later test-->
@@ -112,7 +112,7 @@
 </tr>
 <tr>
 	<td>waitForNotValue</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>This is the text that will be edited</td>
 </tr>
 <tr>
@@ -141,12 +141,12 @@
 <!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>Up arrow is useful${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -156,42 +156,37 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>${KEY_UP}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td>Up arrow is useful</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=edit_textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td>Cancel this edit.</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td>Up arrow is usefulCancel this edit.</td>
 </tr>
 <tr>
@@ -229,12 +224,12 @@
 <!--Up arrow, successful edit-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>${KEY_UP}</td>
 </tr>
 <tr>
@@ -246,7 +241,7 @@
 <!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
@@ -258,17 +253,17 @@
 <!--Sleep-->
 <tr>
 	<td>waitForValue</td>
-	<td>id=edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td>Up arrow is useful</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td>. It opens the edit modal.</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td>Up arrow is useful. It opens the edit modal.</td>
 </tr>
 <tr>
@@ -299,7 +294,7 @@
 <!--Timestamp shows time of original post, not of edit-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
@@ -347,7 +342,7 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td>This is the text that will be edited to test the timestamp</td>
 </tr>
 <tr>
@@ -359,7 +354,7 @@
 <!--Sleep-->
 <tr>
 	<td>sendKeys</td>
-	<td>id=edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td>. And then we'll check that the timestamp still shows post time, not edited time.${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -452,11 +447,6 @@
 <!--Sleep-->
 <!--LOG OUT-->
 <tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
 	<td>pause</td>
 	<td>3000</td>
 	<td></td>
@@ -464,11 +454,6 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
-<tr>
-	<td>click</td>
-	<td>css=a.sidebar-header-dropdown__toggle</td>
-	<td></td>
-</tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>css=#logout &gt; span</td>

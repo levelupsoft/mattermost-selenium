@@ -90,11 +90,11 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h3.admin-console-header &gt; span</td>
-	<td>Message Export (Beta)</td>
+	<td>Compliance Export (Beta)</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enableMessageExportfalse</td>
+	<td>id=enableComplianceExportfalse</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -124,12 +124,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableMessageExporttrue</td>
+	<td>id=enableComplianceExporttrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableMessageExporttrue</td>
+	<td>id=enableComplianceExporttrue</td>
 	<td></td>
 </tr>
 <tr>
@@ -140,11 +140,6 @@
 <tr>
 	<td>waitForEditable</td>
 	<td>id=exportFormat</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=exportLocation</td>
 	<td></td>
 </tr>
 <tr>
@@ -233,57 +228,16 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
-	<td>Message export job DailyRuntime must be a 24-hour time stamp in the form HH:MM.</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=exportJobStartTime</td>
-	<td>03:00</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
-	<td>Message export job FileLocation must be a sub-directory of FileSettings.Directory</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=exportLocation</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=exportLocation</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
-	<td>Message export job FileLocation must be a sub-directory of FileSettings.Directory</td>
-</tr>
-<!--Can't save valid location or verify export until SSH access-->
 <!--Run now populates job table-->
 <tr>
 	<td>waitForText</td>
 	<td>css=button.btn.btn-default</td>
-	<td>Run Message Export job now</td>
+	<td>Run Compliance Export Job Now</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=button.btn.btn-default</td>
-	<td>Run Message Export job now</td>
+	<td>Run Compliance Export Job Now</td>
 </tr>
 <tr>
 	<td>waitForText</td>

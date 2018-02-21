@@ -188,12 +188,12 @@
 <!--Leave channel using slash command-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/leave lala${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -204,12 +204,12 @@
 <!--Join channel from link-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>~to-l</td>
 </tr>
 <tr>
@@ -224,12 +224,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>~to-leave</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -260,15 +260,15 @@
 <!--Post permalink for another user to click and join-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>Join from a permalink!${KEY_ENTER}</td>
 </tr>
-<!--This isn't finding the Permalink option anymore; opened manually-->
+<!--It's no longer locating the Permalink button-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button:contains('Permalink')</td>
@@ -306,12 +306,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>${permalinktoleave}${KEY_ENTER}</td>
 </tr>
 <!--LOG OUT test9-->
@@ -460,12 +460,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>Try to join this private channel from a link....${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -483,7 +483,6 @@
 	<td>xpath=(//button[@type='button'])[6]</td>
 	<td></td>
 </tr>
-<!--Failing; rewrite how it finds the Permalink button-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button:contains('Permalink')</td>
@@ -668,7 +667,7 @@
 <!--Try to join private channel from link (expected not to join)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>

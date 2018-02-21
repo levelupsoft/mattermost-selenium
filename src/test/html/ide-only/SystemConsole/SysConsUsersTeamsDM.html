@@ -350,7 +350,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.Select-control</td>
-	<td>×test8 <br />input#undefined::-ms-clear {display: none;}<br />Press backspace to remove @test8</td>
+	<td>×test8 <br /><br />Press backspace to remove @test8</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -534,12 +534,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/msg @test8 This should work${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -548,9 +548,9 @@
 	<td>test8</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span &gt; p:contains('This should work')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=span.post-message__text &gt; p</td>
+	<td>This should work</td>
 </tr>
 <!--Verify cannot use /msg to open DM with user not on team-->
 <tr>
@@ -888,16 +888,6 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>2000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>name=loginId</td>
 	<td></td>
 </tr>
 <tr>

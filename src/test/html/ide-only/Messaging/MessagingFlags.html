@@ -11,6 +11,7 @@
 <thead>
 <tr><td rowspan="1" colspan="3">MessagingFlags</td></tr>
 </thead><tbody>
+<!--NOTE: THESE TESTS not working. Moved to MessagingMan.html-->
 <!--LOG IN-->
 <tr>
 	<td>openAndWait</td>
@@ -123,13 +124,13 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.style--none.flag-icon__container &gt; span.icon</td>
+	<td>css=button.style--none.flag-icon__container</td>
 	<td></td>
 </tr>
 <!--Hover tooltip (when not yet flagged)-->
 <tr>
 	<td>mouseOver</td>
-	<td>css=button.style--none.flag-icon__container &gt; span.icon</td>
+	<td>css=button.style--none.flag-icon__container</td>
 	<td></td>
 </tr>
 <tr>
@@ -138,6 +139,11 @@
 	<td>Flag for follow up</td>
 </tr>
 <!--Verify visible when active-->
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.flag-icon__container </td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>css=button.style--none.flag-icon__container &gt; span.icon</td>

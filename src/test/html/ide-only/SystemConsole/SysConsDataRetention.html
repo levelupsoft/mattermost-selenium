@@ -111,29 +111,33 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>css=h4.modal-title &gt; span</td>
+	<td>Confirm data retention policy</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=li &gt; span</td>
+	<td>All messages will be permanently deleted after 365 days.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//li[2]/span</td>
+	<td>All files will be permanently deleted after 365 days.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-primary</td>
+	<td>Confirm Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-primary</td>
+	<td>Confirm Settings</td>
+</tr>
+<tr>
 	<td>refreshAndWait</td>
 	<td></td>
-	<td></td>
-</tr>
-<!--Set to indefinitely, the time period settings are hidden-->
-<tr>
-	<td>waitForText</td>
-	<td>id=enableMessageDeletion</td>
-	<td>Keep all messages indefinitelyKeep messages for a set amount of time</td>
-</tr>
-<tr>
-	<td>waitForElementNotPresent</td>
-	<td>id=messageRetentionDays</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=enableFileDeletion</td>
-	<td>Keep all files indefinitelyKeep files for a set amount of time</td>
-</tr>
-<tr>
-	<td>waitForElementNotPresent</td>
-	<td>id=fileRetentionDays</td>
 	<td></td>
 </tr>
 <!--Disable, save-->
@@ -160,6 +164,47 @@
 <tr>
 	<td>click</td>
 	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=li &gt; span</td>
+	<td>All messages will be retained indefinitely.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//li[2]/span</td>
+	<td>All files will be retained indefinitely.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-primary</td>
+	<td>Confirm Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-primary</td>
+	<td>Confirm Settings</td>
+</tr>
+<!--Set to indefinitely, the time period settings are hidden-->
+<tr>
+	<td>waitForText</td>
+	<td>id=enableMessageDeletion</td>
+	<td>Keep all messages indefinitelyKeep messages for a set amount of time</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>id=messageRetentionDays</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=enableFileDeletion</td>
+	<td>Keep all files indefinitelyKeep files for a set amount of time</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>id=fileRetentionDays</td>
 	<td></td>
 </tr>
 <!--Enable, save-->
@@ -210,6 +255,16 @@
 </tr>
 <tr>
 	<td>waitForText</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-primary</td>
+	<td>Confirm Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-primary</td>
+	<td>Confirm Settings</td>
+</tr>
+<tr>
+	<td>waitForText</td>
 	<td>id=enableMessageDeletion</td>
 	<td>Keep all messages indefinitelyKeep messages for a set amount of time</td>
 </tr>
@@ -255,6 +310,16 @@
 	<td>click</td>
 	<td>id=saveSetting</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-primary</td>
+	<td>Confirm Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-primary</td>
+	<td>Confirm Settings</td>
 </tr>
 <!--LOG OUT admin-->
 <tr>

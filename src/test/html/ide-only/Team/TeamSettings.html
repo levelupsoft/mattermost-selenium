@@ -289,7 +289,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>Testing Team</td>
 </tr>
 <tr>
@@ -369,7 +369,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>()_+-={}|[]\:</td>
 </tr>
 <tr>
@@ -765,7 +765,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[2]/div/div/div[2]/span</td>
+	<td>css=div.modal-body &gt; span</td>
 	<td>exact:You will be removed from all public and private channels. If the team is private you will not be able to rejoin the team. Are you sure?</td>
 </tr>
 <tr>
@@ -780,7 +780,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>UI Automation</td>
 </tr>
 <tr>
@@ -805,7 +805,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[2]/div/div/div[2]/span</td>
+	<td>css=div.modal-body &gt; span</td>
 	<td>exact:You will be removed from all public and private channels. If the team is private you will not be able to rejoin the team. Are you sure?</td>
 </tr>
 <tr>
@@ -830,7 +830,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.signup-team-dir__name</td>
+	<td>css=#UI_Automation &gt; span.signup-team-dir__name</td>
 	<td>UI Automation</td>
 </tr>
 <tr>
@@ -849,23 +849,18 @@
 	<td>Testing the team description.</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.signup-team-dir__name</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>css=span.signup-team-dir__name</td>
-	<td></td>
+	<td>css=#UI_Automation &gt; span.signup-team-dir__name</td>
+	<td>UI Automation</td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>test4 has joined the channel.</td>
+	<td>test4 joined the team.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>UI Automation</td>
 </tr>
 <!--LOG OUT test4-->
@@ -1170,7 +1165,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[2]/div/div/div[2]/span</td>
+	<td>css=div.modal-body &gt; span</td>
 	<td>exact:You will be removed from all public and private channels. If the team is private you will not be able to rejoin the team. Are you sure?</td>
 </tr>
 <tr>
@@ -1659,7 +1654,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>UI Automation</td>
 </tr>
 <!--Member can search in Main Menu > View Members-->
@@ -1711,12 +1706,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>Posting this for later test (after this user is removed from team).${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -1771,12 +1766,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>Posting this DM for later test (after this user is removed from team).${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -1862,7 +1857,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.Select-control</td>
-	<td>×admin <br />input#undefined::-ms-clear {display: none;}<br />Press backspace to remove undefined</td>
+	<td>×admin <br /><br />Press backspace to remove undefined</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1876,12 +1871,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>Posting this to private channel for later test.${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -1906,23 +1901,23 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.signup-team-dir__name</td>
+	<td>css=#UI_Automation_2 &gt; span.signup-team-dir__name</td>
 	<td>UI Automation 2</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.signup-team-dir__name</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>css=span.signup-team-dir__name</td>
-	<td></td>
+	<td>css=#UI_Automation_2 &gt; span.signup-team-dir__name</td>
+	<td>UI Automation 2</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-container.active &gt; a &gt; div.team-btn. &gt; div.team-btn__initials</td>
+	<td>css=div.team-container.active &gt; a &gt; div.team-btn.</td>
 	<td>UIUI Automation 2</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation 2</td>
 </tr>
 <!--LOG OUT test4-->
 <tr>
@@ -2916,7 +2911,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>UI Automation 2</td>
 </tr>
 <tr>
@@ -2943,10 +2938,9 @@
 	<td>Posting this for later test (after this user is removed from team).</td>
 	<td></td>
 </tr>
-<!--The following will fail after PLT-6217 (change channel to team)-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>test4 has joined the channel</td>
+	<td>test4 joined the team.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3066,9 +3060,6 @@
 	<td>css=button.dropdown-toggle.theme.color--link.style--none &gt; span &gt; span</td>
 	<td>Member</td>
 </tr>
-<!--Verify system message-->
-<!--Note: Will say `channel` until https://mattermost.atlassian.net/browse/PLT-6217-->
-<!--and then it will say `team`-->
 <!--LOG OUT-->
 <tr>
 	<td>pause</td>
@@ -3078,16 +3069,6 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=logout</td>

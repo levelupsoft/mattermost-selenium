@@ -56,6 +56,11 @@
 	<td>link=Town Square</td>
 	<td>Town Square</td>
 </tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Off-Topic</td>
+	<td></td>
+</tr>
 <!--PRIVATE CHANNEL-->
 <!--Add Private Channel from + icon, no header-->
 <tr>
@@ -133,11 +138,10 @@
 	<td>css=h4.modal-title &gt; strong</td>
 	<td>PrivateNoHeader</td>
 </tr>
-<!--Rewrite to not be dependent on separate test case running first-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.info__value</td>
-	<td>exact:http://selenium.mattermost.com/aplus/channels/privatenoheader</td>
+	<td>*/channels/privatenoheader</td>
 </tr>
 <tr>
 	<td>verifyNotText</td>
@@ -165,15 +169,15 @@
 	<td>css=div.modal-body.edit-modal-body &gt; div &gt; p &gt; span</td>
 	<td>Edit the text appearing next to the channel name in the channel header.</td>
 </tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
-	<td></td>
-</tr>
 <!--Verify header 1024 character limit-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=edit_textbox-textarea</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td>https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&amp;</td>
 </tr>
 <tr>
@@ -186,7 +190,7 @@
 <!--Sleep-->
 <tr>
 	<td>waitForValue</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td>exact:https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&amp;</td>
 </tr>
 <tr>
@@ -233,12 +237,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td>*Header</td>
 </tr>
 <tr>
@@ -337,12 +341,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td>* ${KEY_SHIFT}${KEY_ENTER} </td>
 </tr>
 <tr>
@@ -353,7 +357,7 @@
 <!--Sleep-->
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td>- Item 1 ${KEY_SHIFT}${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -364,7 +368,7 @@
 <!--Sleep-->
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td>- [Item 2 is a link](http://google.com)</td>
 </tr>
 <tr>
@@ -477,12 +481,12 @@
 <!--Edit header using slash command, confirm character limits-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/hea</td>
 </tr>
 <tr>
@@ -503,12 +507,12 @@
 <!--/header without text opens Edit Header modal (cancel out)-->
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
@@ -523,13 +527,13 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <!--Max characters-->
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/hea</td>
 </tr>
 <tr>
@@ -539,17 +543,17 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>${KEY_TAB}</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/header</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td> https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&amp;${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -567,7 +571,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <!--Update header using /header-->
@@ -578,12 +582,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/hea</td>
 </tr>
 <tr>
@@ -593,17 +597,17 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>${KEY_TAB}</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/header</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td> Updated using slash command${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -655,17 +659,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td>New header for Town Square</td>
 </tr>
 <tr>
@@ -706,12 +710,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox-textarea</td>
 	<td>, edited</td>
 </tr>
 <tr>
