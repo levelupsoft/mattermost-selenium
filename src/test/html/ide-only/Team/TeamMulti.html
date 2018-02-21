@@ -104,7 +104,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>Six</td>
 </tr>
 <!--Open team to other users on server-->
@@ -176,6 +176,11 @@
 </tr>
 <!--LOG IN admin-->
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
 	<td></td>
@@ -203,11 +208,6 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
 <!--Leave UI2 team (to ensure multiple open teams on Join page)-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -221,7 +221,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>UI Automation 2</td>
 </tr>
 <tr>
@@ -266,12 +266,12 @@
 </tr>
 <tr>
 	<td>waitForNotText</td>
-	<td>css=div.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>UI Automation 2</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>UI Automation</td>
 </tr>
 <!--Open page to join open teams-->
@@ -487,7 +487,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>Six</td>
 </tr>
 <!--Join team from `+` in team sidebar-->
@@ -518,7 +518,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>UI Automation 2</td>
 </tr>
 <!--Create team from `+` in team sidebar when no more open teams are available-->
@@ -579,7 +579,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>APlus</td>
 </tr>
 <tr>
@@ -590,12 +590,12 @@
 <!--Post on team APlus and flag the post-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>This is a post on team APlus, which I will flag.${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -636,7 +636,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>Six</td>
 </tr>
 <tr>
@@ -691,12 +691,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>Here's a DM that will be flagged as well, which will show up in flagged posts list across teams.${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -845,12 +845,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/leave${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -911,12 +911,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>/leave${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -1087,7 +1087,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>Six</td>
 </tr>
 <tr>
@@ -1113,7 +1113,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>APlus</td>
 </tr>
 <tr>

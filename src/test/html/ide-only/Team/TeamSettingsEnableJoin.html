@@ -61,6 +61,7 @@
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
+<!--Ensure team not open-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=teamSettings</td>
@@ -83,15 +84,50 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=teamOpenInvite</td>
+	<td>id=teamOpenInviteNo</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=teamOpenInvite</td>
+	<td>id=teamOpenInviteNo</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamDesc</td>
+	<td>No</td>
 </tr>
 <!--Cancel out of changes-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=teamOpenInvite</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=teamOpenInvite</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#Allow_any_user_with_an_account_on_this_server_to_join_this_teamCancel &gt; span</td>
@@ -203,14 +239,14 @@
 	<td>exact:You will be removed from all public and private channels. If the team is private you will not be able to rejoin the team. Are you sure?</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[11]</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>No</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[11]</td>
-	<td></td>
+	<td>css=button.btn.btn-default</td>
+	<td>No</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -458,12 +494,12 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>test4 has joined the channel.</td>
+	<td>test4 joined the team.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#sidebar-left &gt; div.team__header.theme &gt; div.header__info &gt; div.team__name</td>
+	<td>css=h1#headerTeamName.team__name</td>
 	<td>UI Automation</td>
 </tr>
 <!--LOG OUT test4-->
@@ -495,7 +531,7 @@
 	<td>css=#logout &gt; span</td>
 	<td></td>
 </tr>
-<!--LOG IN admin, set back to disable joining the team-->
+<!--LOG IN admin, set back to disallow joining the team-->
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
