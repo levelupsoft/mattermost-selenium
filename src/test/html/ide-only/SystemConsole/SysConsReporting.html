@@ -321,9 +321,9 @@
 	<td>12</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div[2]/div[2]/div/div/span</td>
-	<td>Public Channels</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.title span:contains('Public Channels')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -331,9 +331,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div[2]/div[3]/div/div/span</td>
-	<td>Private Channels</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.title span:contains('Private Channels')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -341,9 +341,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div[2]/div[4]/div/div/span</td>
-	<td>Total Posts</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.title span:contains('Total Posts')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -356,9 +356,9 @@
 	<td>Total Posts</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div[4]/div/div/div/span</td>
-	<td>Active Users With Posts</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.title span:contains('Active Users With Posts')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -366,9 +366,9 @@
 	<td>Recent Active Users</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div[5]/div[2]/div/div/span</td>
-	<td>Newly Created Users</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.title span:contains('Newly Created Users')</td>
+	<td></td>
 </tr>
 <!--Logs (Users is in its own test)-->
 <tr>
@@ -479,9 +479,10 @@
 </tr>
 <!--Don't know why these selectWindow s are failing-->
 <!--Can click through these tests manually and they work-->
+<!--Do note that the window title changes each release-->
 <tr>
 	<td>selectWindow</td>
-	<td>Administrator’s Guide — Mattermost 4.4 documentation</td>
+	<td>Administrator’s Guide — Mattermost 4.5 documentation</td>
 	<td></td>
 </tr>
 <tr>
@@ -524,6 +525,7 @@
 	<td></td>
 	<td></td>
 </tr>
+<!--Se was popping up an extra window, thus the `close` before the verifications-->
 <tr>
 	<td>close</td>
 	<td></td>

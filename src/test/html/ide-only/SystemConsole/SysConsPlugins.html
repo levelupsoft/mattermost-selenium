@@ -178,6 +178,11 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
 <!--Upload a plugin-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -228,6 +233,11 @@
 </tr>
 <tr>
 	<td>click</td>
+	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
 	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
 	<td></td>
 </tr>
@@ -442,7 +452,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h3.admin-console-header</td>
-	<td>JIRA (Beta)</td>
+	<td>JIRA</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -454,6 +464,7 @@
 	<td>id=admin_user_setting_userName</td>
 	<td></td>
 </tr>
+<!--No longer disabled, intentionally?-->
 <tr>
 	<td>waitForNotEditable</td>
 	<td>css=button.btn.btn-default</td>

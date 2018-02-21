@@ -381,21 +381,15 @@
 	<td></td>
 	<td></td>
 </tr>
-<!--Error bar displays with trailing slash in Site URL-->
-<tr>
-	<td>waitForText</td>
-	<td>css=span &gt; span</td>
-	<td>Please configure your Site URL in the System Console.</td>
-</tr>
 <!--Link to other channel still works with trailing slash-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
+	<td>id=post_textbox-textarea</td>
 	<td>http://selenium.mattermost.com/ui-automation/channels/off-topic${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -422,6 +416,16 @@
 <tr>
 	<td>click</td>
 	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=configuration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=configuration</td>
 	<td></td>
 </tr>
 <tr>
