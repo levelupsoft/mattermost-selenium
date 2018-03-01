@@ -42,6 +42,32 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        // Dismiss APIv3 deprecation banner
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.linkText("Learn how to migrate to APIv4"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("API version 3 is deprecated and scheduled for removal. Learn how to migrate to APIv4.".equals(driver.findElement(By.cssSelector("span > span")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.linkText("×"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.linkText("×")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (!isElementPresent(By.linkText("Learn how to migrate to APIv4"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         // PUBLIC CHANNEL
         // Add Public Channel from + icon, without header
         for (int second = 0;; second++) {
