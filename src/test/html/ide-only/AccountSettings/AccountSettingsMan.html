@@ -165,6 +165,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>name=loginId</td>
 	<td>test9@test.com</td>
@@ -400,6 +405,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>name=loginId</td>
 	<td>test10@test.com</td>
@@ -457,7 +467,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=position</td>
 	<td>A Job with a Very Long Title A Job with a Very Long Title A Job with a Very Long Title A Job with a Very Long Title 012345678901</td>
 </tr>
@@ -726,6 +736,11 @@
 	<td>link=Save</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=div.profile-img-preview</td>
+	<td></td>
+</tr>
 <!--*** Visually verify other user sees profile picture update on post in other browser-->
 <!--Verify other user sees updates in popover-->
 <!--LOG OUT test10-->
@@ -821,9 +836,9 @@
 	<td>Edit Account Settings</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='user-profile-popover']/div[2]/div[3]/a/span</td>
-	<td>Send Message</td>
+	<td>waitForElementPresent</td>
+	<td>link=Send Message</td>
+	<td></td>
 </tr>
 <!--LOG OUT test9-->
 <tr>
@@ -1425,6 +1440,12 @@
 	<td>css=div.col-sm-12 &gt; textarea.form-control</td>
 	<td></td>
 </tr>
+<!--Apply to all teams-->
+<tr>
+	<td>waitForValue</td>
+	<td>id=applyThemeToAllTeams</td>
+	<td>on</td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=saveSetting</td>
@@ -1435,45 +1456,83 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
-<!--*** Visually verify Organization theme-->
+<!--*** Visually verify Organization theme on both teams-->
 <tr>
 	<td>pause</td>
 	<td>4000</td>
 	<td></td>
 </tr>
-<!--Paste previous vector in as custom theme-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=ThemeEdit</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=ThemeEdit</td>
+	<td>waitForElementNotPresent</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=customThemes</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=customThemes</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>css=div.col-sm-12 &gt; textarea.form-control</td>
+	<td>waitForElementPresent</td>
+	<td>link=UIUI Automation 2</td>
 	<td></td>
 </tr>
-<!--Apply to all teams-->
 <tr>
+	<td>click</td>
+	<td>link=UIUI Automation 2</td>
 	<td></td>
-	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
 	<td></td>
 </tr>
 <!--Use Slack theme-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=displayButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=displayButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=ThemeEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ThemeEdit</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#slackImportTheme &gt; span</td>
@@ -2500,6 +2559,7 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<!--4.8 possible bug; waiting for redux update fix to confirm-->
 <tr>
 	<td>waitForElementNotPresent</td>
 	<td>css=span:contains('added to the channel by test10')</td>
@@ -2570,8 +2630,6 @@
 	<td>link=Join1</td>
 	<td></td>
 </tr>
-<!--Why did this fail? Should still have the 1 there until after it's clicked-->
-<!--This is actually a current bug-->
 <tr>
 	<td>click</td>
 	<td>link=Join1</td>
