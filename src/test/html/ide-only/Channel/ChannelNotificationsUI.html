@@ -288,7 +288,7 @@
 	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
 	<td></td>
 </tr>
-<!--Rewrite to reflect global default = mention (and add steps to test all activity)-->
+<!--Rewrote to reflect global default = mention-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=channelNotificationGlobalDefault</td>
@@ -453,7 +453,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (Only for mentions)</td>
+	<td>Global default (mention)</td>
 </tr>
 <!--Set global default back to For all activity-->
 <tr>
@@ -585,12 +585,12 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelUnreadMentions</td>
+	<td>id=channelNotificationMentions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=channelUnreadMentions</td>
+	<td>id=channelNotificationMentions</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -980,6 +980,7 @@
 	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
 	<td>Global default (For all activity)</td>
 </tr>
+<!--These need to be reversed to change to all first, then back to mention-->
 <!--Change global default in Account Settings and verify reflected in channel-->
 <tr>
 	<td>refreshAndWait</td>
@@ -1079,7 +1080,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (Only for mentions)</td>
+	<td>Global default (mention)</td>
 </tr>
 <!--Set global default back to For all activity-->
 <tr>
@@ -1246,12 +1247,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelUnreadMentions</td>
+	<td>id=channelNotificationMentions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelUnreadMentions</td>
+	<td>id=channelNotificationMentions</td>
 	<td></td>
 </tr>
 <tr>
@@ -1350,7 +1351,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (For all activity)</td>
+	<td>Global default (all)</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1421,7 +1422,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (For all activity)</td>
+	<td>Global default (all)</td>
 </tr>
 <!--Town Square - Desktop Notifications - Save each option and verify-->
 <tr>
@@ -1683,7 +1684,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (Only for mentions)</td>
+	<td>Global default (mention)</td>
 </tr>
 <!--Set global default back to For all activity-->
 <tr>
@@ -2000,7 +2001,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (For all activity)</td>
+	<td>Global default (mention)</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2071,7 +2072,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (For all activity)</td>
+	<td>Global default (mention)</td>
 </tr>
 <!--GM - Desktop Notifications - Save each option and verify-->
 <tr>
@@ -2333,7 +2334,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (Only for mentions)</td>
+	<td>Global default (mention)</td>
 </tr>
 <!--Set global default back to For all activity-->
 <tr>
@@ -2464,12 +2465,12 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelUnreadMentions</td>
+	<td>id=channelNotificationMentions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=channelUnreadMentions</td>
+	<td>id=channelNotificationMentions</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -2558,58 +2559,7 @@
 	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
 	<td>For all unread messages</td>
 </tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
 <!--DM DIRECT MESSAGE-->
-<!--Create new DM with any user (first in the list)-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#moreDirectMessage &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#moreDirectMessage &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.Select-value-icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.multi-select__help &gt; span</td>
-	<td>Use ↑↓ to browse, ↵ to select. You can add 6 more people.</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=p.channel-intro-text &gt; span</td>
-	<td>This is the start of your direct message history with admin.<br />Direct messages and files shared here are not shown to people outside this area.</td>
-</tr>
 <!--(No tests for DMs; no notification preferences on DM channels)-->
 <!--LOG OUT-->
 <tr>

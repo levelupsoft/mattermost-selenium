@@ -172,12 +172,12 @@
 <!--Verify header 1024 character limit-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=edit_textbox-textarea</td>
+	<td>id=edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=edit_textbox-textarea</td>
+	<td>id=edit_textbox</td>
 	<td>https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&amp;</td>
 </tr>
 <tr>
@@ -190,7 +190,7 @@
 <!--Sleep-->
 <tr>
 	<td>waitForValue</td>
-	<td>id=edit_textbox-textarea</td>
+	<td>id=edit_textbox</td>
 	<td>exact:https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&amp;</td>
 </tr>
 <tr>
@@ -237,12 +237,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=edit_textbox-textarea</td>
+	<td>id=edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=edit_textbox-textarea</td>
+	<td>id=edit_textbox</td>
 	<td>*Header</td>
 </tr>
 <tr>
@@ -341,13 +341,13 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=edit_textbox-textarea</td>
+	<td>id=edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=edit_textbox-textarea</td>
-	<td>* ${KEY_SHIFT}${KEY_ENTER} </td>
+	<td>id=edit_textbox</td>
+	<td>* ${KEY_SHIFT}${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -357,7 +357,7 @@
 <!--Sleep-->
 <tr>
 	<td>sendKeys</td>
-	<td>id=edit_textbox-textarea</td>
+	<td>id=edit_textbox</td>
 	<td>- Item 1 ${KEY_SHIFT}${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -368,8 +368,19 @@
 <!--Sleep-->
 <tr>
 	<td>sendKeys</td>
-	<td>id=edit_textbox-textarea</td>
-	<td>- [Item 2 is a link](http://google.com)</td>
+	<td>id=edit_textbox</td>
+	<td>- [Item 2 is a link](http://google.com)${KEY_SHIFT}${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<tr>
+	<td>sendKeys</td>
+	<td>id=edit_textbox</td>
+	<td>- Item 3 links to ~town-square</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -421,6 +432,11 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Item 2 is a link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=~Town Square</td>
 	<td></td>
 </tr>
 <tr>
@@ -481,12 +497,12 @@
 <!--Edit header using slash command, confirm character limits-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>/hea</td>
 </tr>
 <tr>
@@ -507,12 +523,12 @@
 <!--/header without text opens Edit Header modal (cancel out)-->
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=edit_textbox-textarea</td>
+	<td>id=edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
@@ -527,13 +543,13 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <!--Max characters-->
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>/hea</td>
 </tr>
 <tr>
@@ -543,17 +559,17 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_TAB}</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>/header</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td> https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&amp;${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -571,7 +587,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <!--Update header using /header-->
@@ -582,12 +598,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>/hea</td>
 </tr>
 <tr>
@@ -597,17 +613,17 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_TAB}</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>/header</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td> Updated using slash command${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -659,17 +675,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=edit_textbox-textarea</td>
+	<td>id=edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=edit_textbox-textarea</td>
+	<td>id=edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=edit_textbox-textarea</td>
+	<td>id=edit_textbox</td>
 	<td>New header for Town Square</td>
 </tr>
 <tr>
@@ -710,12 +726,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=edit_textbox-textarea</td>
+	<td>id=edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=edit_textbox-textarea</td>
+	<td>id=edit_textbox</td>
 	<td>, edited</td>
 </tr>
 <tr>

@@ -42,32 +42,6 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        // Dismiss APIv3 deprecation banner
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Learn how to migrate to APIv4"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("API version 3 is deprecated and scheduled for removal. Learn how to migrate to APIv4.".equals(driver.findElement(By.cssSelector("span > span")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("×"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.linkText("×")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (!isElementPresent(By.linkText("Learn how to migrate to APIv4"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         // PUBLIC CHANNEL
         // Add Public Channel from + icon, without header
         for (int second = 0;; second++) {
@@ -127,32 +101,6 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Sleep
         // Sleep
         // Sleep
-        // Dismiss APIv3 deprecation banner
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Learn how to migrate to APIv4"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("API version 3 is deprecated and scheduled for removal. Learn how to migrate to APIv4.".equals(driver.findElement(By.cssSelector("span > span")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("×"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.linkText("×")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (!isElementPresent(By.linkText("Learn how to migrate to APIv4"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("headertest".equals(driver.findElement(By.cssSelector("strong.heading")).getText())) break; } catch (Exception e) {}
@@ -244,32 +192,6 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        // Dismiss APIv3 deprecation banner
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Learn how to migrate to APIv4"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("API version 3 is deprecated and scheduled for removal. Learn how to migrate to APIv4.".equals(driver.findElement(By.cssSelector("span > span")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("×"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.linkText("×")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (!isElementPresent(By.linkText("Learn how to migrate to APIv4"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         // Add header using `Set a Header` link
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -335,32 +257,6 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         driver.navigate().refresh();
         // Edit header, use markdown
         // Sleep
-        // Dismiss APIv3 deprecation banner
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("Learn how to migrate to APIv4"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("API version 3 is deprecated and scheduled for removal. Learn how to migrate to APIv4.".equals(driver.findElement(By.cssSelector("span > span")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.linkText("×"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.linkText("×")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (!isElementPresent(By.linkText("Learn how to migrate to APIv4"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("channelHeaderDropdownButton"))) break; } catch (Exception e) {}
