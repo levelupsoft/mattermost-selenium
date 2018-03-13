@@ -1719,8 +1719,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=a.sidebar-item.has-close &gt; span.sidebar-item__name</td>
-	<td>usere</td>
+	<td>link=usere×</td>
+	<td>usere×</td>
 </tr>
 <!--Set to display nickname (if present, otherwise first-last)-->
 <tr>
@@ -2161,6 +2161,17 @@
 <!--Verify teammate name display on posts is first-last (if exists, otherwise username)-->
 <tr>
 	<td>waitForElementPresent</td>
+	<td>//div[@id='postListContent']/button</td>
+	<td></td>
+</tr>
+<!--Load more messages to make all posts visible-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='postListContent']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
 	<td>css=div.user-popover:contains('usera')</td>
 	<td></td>
 </tr>
@@ -2478,6 +2489,367 @@
 	<td>link=Logout</td>
 	<td></td>
 </tr>
+<!--LOG IN usera-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>usera</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<!--Verify no email (except own) in member icon > View Members-->
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=member_popover</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=member_popover</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__button &gt; button.btn.btn-link</td>
+	<td>View Members</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__button &gt; button.btn.btn-link</td>
+	<td>View Members</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__description</td>
+	<td>usera@test.com</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.light</td>
+	<td>Firstb Lastb</td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>userb@test.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>@userc - (nicknamec)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>userc@test.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>@userd - Firstd</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>userd@test.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>@usere - Firste Laste (nicknamee)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>usere@test.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>admin@test.com</td>
+	<td></td>
+</tr>
+<!--View no email (except own) in profile popovers (in DMs)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/msg @userb Hi B!${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.channel-intro-profile</td>
+	<td>Firstb Lastb</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=img.more-modal__image</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img.more-modal__image</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=@userb</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>link=userb@test.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/msg @admin Meep meep${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.channel-intro-profile</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=img.more-modal__image</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img.more-modal__image</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=@admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>link=admin@test.com</td>
+	<td></td>
+</tr>
+<!--Verify no email (except own) in main menu (team) > View Members-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=manageMembers</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=manageMembers</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; h4.modal-title &gt; span</td>
+	<td>NameDisplay Members</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>usera@test.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.light</td>
+	<td>Firstb Lastb</td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>userb@test.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>@userc - (nicknamec)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>userc@test.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>@userd - Firstd</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>userd@test.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>@usere - Firste Laste (nicknamee)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>usere@test.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>admin@test.com</td>
+	<td></td>
+</tr>
+<!--LOG OUT usera-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<!--LOG IN admin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>admin@test.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<!--Hide first/last names-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=privacy</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=privacy</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=showFullNamefalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=showFullNamefalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=showFullNamefalse</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--Verify admin can see all-->
+<!--Show email addresses-->
+<!--LOG IN usera-->
+<!--Verify can see email and cannot see first/last-->
+<!--Canot search by first/last (from: and @-autocomplete)-->
+<!--Reset-->
 </tbody></table>
 </body>
 </html>

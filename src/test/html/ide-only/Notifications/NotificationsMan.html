@@ -162,12 +162,12 @@
 <!--Code block using triple ticks and newlines-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>```<br />@here<br />```${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify code block (across center channel, not just the length of the word)-->
@@ -180,12 +180,12 @@
 <!--Code block using ~~~   ~~~-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>~~~<br />@here<br />~~~${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify code block (across center channel, not just the length of the word)-->
@@ -198,12 +198,12 @@
 <!--Code block using four spaces-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>&nbsp;&nbsp;&nbsp;&nbsp;@here${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify code block (across center channel, not just the length of the word)-->
@@ -223,12 +223,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>Here's a message for everyone in the channel who is @here!${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify mention badge, click to view and verify only the actual at-here is highlighted-->
@@ -446,12 +446,12 @@
 <!--*** Watch LHS in other browser-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>@here shouldn't trigger a mention this time${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -461,12 +461,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>nor should @channel${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -486,12 +486,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>and, lastly, @all should not trigger a mention either${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -687,12 +687,12 @@
 <!--Set status to away-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>/away${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -784,12 +784,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>If you're away, you should not receive a mention notification for @here${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify no mention badge appears on other browser (just boldface unread)-->
@@ -975,12 +975,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>@here hihi${KEY_ENTER}</td>
 </tr>
 <!--*** Verify test7 doesn't see any sort of notification or mention or unread-->
@@ -1056,12 +1056,12 @@
 <!--At-all in channel header does not trigger a mention-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>/header Here's an @here in a header${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -1078,12 +1078,12 @@
 <!--test6 updates the channel header including at-channel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>/header ${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -1093,12 +1093,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=edit_textbox-textarea</td>
+	<td>id=edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=edit_textbox-textarea</td>
+	<td>id=edit_textbox</td>
 	<td>, and also an @channel${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify in other browser test7 did not get a mention-->
@@ -1110,12 +1110,12 @@
 <!--test6 updates the channel header including at-all-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>/header All in @all this is a header${KEY_ENTER}</td>
 </tr>
 <tr>
