@@ -103,18 +103,18 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <!--YouTube links-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>https://www.youtube.com/watch?v=m0nYHPue5RU&amp;feature=youtu.be&amp;t=196${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -195,12 +195,12 @@
 <!--Can collapse video while playing (keep empty search results RHS open just to observe that)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>https://www.youtube.com/watch?v=gLNmtUEvI5A${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -294,12 +294,12 @@
 </tr>
 <tr>
 	<td>waitForEditable</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -309,12 +309,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.file__image &gt; img</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=a.file__download &gt; span &gt; svg</td>
+	<td>css=div.image-preload</td>
 	<td></td>
 </tr>
 <!--*** Visually verify thumbnail in post (cropped, centered, filename)-->
@@ -323,12 +318,19 @@
 	<td>2000</td>
 	<td></td>
 </tr>
+<!--*** Visually verify image preview displays-->
+<!--Open image preview by clicking filename-->
 <tr>
-	<td>click</td>
-	<td>css=div.file__image &gt; img</td>
+	<td>waitForElementPresent</td>
+	<td>css=span.file-details__name</td>
 	<td></td>
 </tr>
-<!--*** Visually verify image preview displays-->
+<tr>
+	<td>click</td>
+	<td>css=span.file-details__name</td>
+	<td></td>
+</tr>
+<!--Mouseover, verify elements-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=a &gt; img</td>
@@ -400,17 +402,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.file-preview &gt; div.post-image.normal</td>
+	<td>css=div.post-image__details</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForEditable</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>Add some text here${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -418,20 +420,15 @@
 	<td>Image Pasted at</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=a.post-image__name:contains('Image Pasted at')</td>
-	<td></td>
-</tr>
 <!--*** Visually verify image thumbnail looks correct in RHS-->
 <tr>
 	<td>waitForEditable</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_SHIFT}${KEY_UP}</td>
 </tr>
 <tr>
@@ -483,12 +480,12 @@
 </tr>
 <tr>
 	<td>waitForEditable</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>Space${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify message posts and file name displays correctly-->
@@ -500,27 +497,27 @@
 <!--Edit message that has an attachment-->
 <tr>
 	<td>waitForEditable</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_UP}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=edit_textbox-textarea</td>
+	<td>id=edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=edit_textbox-textarea</td>
+	<td>id=edit_textbox</td>
 	<td> Songs</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=edit_textbox-textarea</td>
+	<td>id=edit_textbox</td>
 	<td>Space Songs</td>
 </tr>
 <tr>
@@ -554,15 +551,58 @@
 	<td>4000</td>
 	<td></td>
 </tr>
-<!--Public Link-->
+<!--Remove all text from a message that has an attachment-->
+<tr>
+	<td>waitForEditable</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_UP}</td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.post-image.normal</td>
+	<td>id=edit_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=edit_textbox</td>
+	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=edit_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.edit-modal.modal-dialog &gt; div.modal-content &gt; div.modal-footer &gt; button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.post-image.normal</td>
+	<td>css=div.edit-modal.modal-dialog &gt; div.modal-content &gt; div.modal-footer &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=p:contains('Space Songs')</td>
+	<td></td>
+</tr>
+<!--*** Visually verify attachment is still there after removing text from post-->
+<!--Public Link-->
+<!--Open image preview, mouseover-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.file-details__name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.file-details__name</td>
 	<td></td>
 </tr>
 <tr>
@@ -602,12 +642,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${publiclink}${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -678,12 +718,12 @@
 <!--Attach file to DM-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>Here's a file for you!</td>
 </tr>
 <tr>
@@ -709,12 +749,12 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.post-image__details</td>
+	<td>css=span.file-details__name</td>
 	<td></td>
 </tr>
 <!--Log out then log in as other user to view file-->
@@ -779,7 +819,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team__name</td>
+	<td>css=h1.team__name</td>
 	<td>UI Automation</td>
 </tr>
 <tr>
@@ -799,17 +839,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.post-image__details</td>
+	<td>css=div.image-preload</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=a.post-image__thumbnail</td>
+	<td>//img[contains(@src,'http://selenium.mattermost.com/api/v4/files')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=a.post-image__thumbnail</td>
+	<td>//img[contains(@src,'http://selenium.mattermost.com/api/v4/files')]</td>
 	<td></td>
 </tr>
 <!--*** Visually verify that file preview displays as expected-->
@@ -925,12 +965,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>https://about.mattermost.com/wp-content/uploads/2016/01/logo.png?foo${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -1017,12 +1057,12 @@
 <!--Attachment with no preview does not show expand/collapse control-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>https://example.com/not-exist.png${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -1038,12 +1078,12 @@
 <!--Thumbnail crop-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>https://about.mattermost.com/wp-content/uploads/2016/01/logo.png?foo${KEY_ENTER}</td>
 </tr>
 <!--*** Manually copy the image and paste in message box-->
@@ -1056,7 +1096,7 @@
 <!--Post and verify-->
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify thumbnail zoomed and cropped: logo no text, no white space below-->
@@ -1100,7 +1140,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
@@ -1121,13 +1161,13 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>attachment oneone${KEY_ENTER}</td>
 </tr>
 <!--Post twotwo-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
@@ -1148,7 +1188,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>attachment twotwo${KEY_ENTER}</td>
 </tr>
 <!--Search for `attachment`-->
@@ -1205,12 +1245,12 @@
 <!--*** Then cycle through the multiple images on that post, w arrows and mouse-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>/test url test-attachments${KEY_ENTER}</td>
 </tr>
 <tr>
