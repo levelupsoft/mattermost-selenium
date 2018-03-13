@@ -1341,11 +1341,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[13]</td>
-	<td></td>
-</tr>
-<tr>
 	<td>storeValue</td>
 	<td>//div[2]/textarea</td>
 	<td>teaminvitelinkold</td>
@@ -1356,8 +1351,18 @@
 	<td>exact:${teaminvitelinkold}</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=linkModalCloseButton</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[12]</td>
+	<td>id=linkModalCloseButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
 	<td></td>
 </tr>
 <!--Regenerate team invite link-->
@@ -1527,11 +1532,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[13]</td>
-	<td></td>
-</tr>
-<tr>
 	<td>storeValue</td>
 	<td>//div[2]/textarea</td>
 	<td>teaminvitelinknew</td>
@@ -1540,11 +1540,6 @@
 	<td>verifyValue</td>
 	<td>//div[2]/textarea</td>
 	<td>exact:${teaminvitelinknew}</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[12]</td>
-	<td></td>
 </tr>
 <!--LOG OUT admin-->
 <tr>
@@ -1706,12 +1701,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>Posting this for later test (after this user is removed from team).${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -1766,12 +1761,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>Posting this DM for later test (after this user is removed from team).${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -1871,12 +1866,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>Posting this to private channel for later test.${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -1958,18 +1953,23 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresents</td>
-	<td>name=loginId</td>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>name=loginId</td>
-	<td>admin@test.com</td>
+	<td>id=loginId</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>name=password</td>
+	<td>id=loginPassword</td>
 	<td>passwd</td>
 </tr>
 <tr>

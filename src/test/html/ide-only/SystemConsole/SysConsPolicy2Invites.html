@@ -197,12 +197,12 @@
 <!--Switch to team created by nonsysadmin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=NoNonAdminCreated</td>
+	<td>link=2NoNonAdminCreated</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=NoNonAdminCreated</td>
+	<td>link=2NoNonAdminCreated</td>
 	<td></td>
 </tr>
 <tr>
@@ -429,7 +429,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>~off-topic asdasdasdasdasdasdasdasdasdasdasdasdasd</td>
 </tr>
 <!--Log out nonsysadmin and log in system admin-->
@@ -454,6 +454,11 @@
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td>admin</td>
 </tr>
 <tr>
 	<td>type</td>
