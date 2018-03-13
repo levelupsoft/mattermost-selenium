@@ -48,7 +48,7 @@
 <!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <!--Open Custom Emoji page-->
@@ -250,13 +250,13 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <!--Verify autocomplete-->
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>:custom</td>
 </tr>
 <tr>
@@ -271,7 +271,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>larg</td>
 </tr>
 <!--Select from autocomplete-->
@@ -287,12 +287,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>exact::customlarge:</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify emoji posted-->
@@ -458,12 +458,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>Hello :customanigif: !${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify other user sees animated gif emoji-->
@@ -540,6 +540,7 @@
 	<td></td>
 </tr>
 <!--Use custom emoji in reaction (emoji picker)-->
+<!--*** This is failing to find reaction emoji picker; it's finding message one-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=span.icon.icon--emoji</td>
@@ -607,12 +608,12 @@
 <!--Add custom emoji reaction by typing `+`-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>+:customanigif:${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -775,7 +776,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <!--In post, displays as text-->
@@ -854,12 +855,12 @@
 <!--*** Verify populates message box-->
 <tr>
 	<td>waitForNotText</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -988,12 +989,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>text after emoji${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify the emoji display properly in the message-->
@@ -1005,12 +1006,12 @@
 <!--Post a message-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>Reactionary${KEY_ENTER}</td>
 </tr>
 <!--React using emoji picker in center-->
@@ -1040,17 +1041,17 @@
 <!--Open reply RHS for message that has reactions-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_SHIFT}${KEY_UP}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=reply_textbox-textarea</td>
+	<td>id=reply_textbox</td>
 	<td></td>
 </tr>
 <tr>
@@ -1166,12 +1167,12 @@
 <!--Emoji autocomplete using all caps-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>:TAC</td>
 </tr>
 <tr>
@@ -1191,12 +1192,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>exact::taco:</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -1213,12 +1214,12 @@
 <!--Punctuation emoticon does not open autocomplete-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>:P</td>
 </tr>
 <tr>
@@ -1228,7 +1229,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify tongue-out emoji displays-->
@@ -1335,12 +1336,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>:test10</td>
 </tr>
 <tr>
@@ -1355,22 +1356,22 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>exact::test10:</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>:customla</td>
 </tr>
 <tr>
@@ -1385,12 +1386,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>exact::customlarge:</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify the emoji posts are the same image-->
@@ -1440,19 +1441,19 @@
 <!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <!--*** Visually verify no mention, same emoji with name and alias-->
 <!--Emoji test files-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>/test url test-emoticons1${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify all emoji load as expected-->
@@ -1464,12 +1465,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>/test url test-emoticons2${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify all emoji load as expected-->
@@ -1480,12 +1481,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>/test url test-emoticons3${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify all emoji load as expected-->
@@ -1496,12 +1497,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>/test url test-emoticons4${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify all emoji load as expected-->
@@ -1512,12 +1513,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>/test url test-emoticons5${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify all emoji load as expected-->
@@ -1528,12 +1529,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox-textarea</td>
+	<td>id=post_textbox</td>
 	<td>/test url test-emoticons6${KEY_ENTER}</td>
 </tr>
 <!--*** Visually verify all emoji load as expected-->
