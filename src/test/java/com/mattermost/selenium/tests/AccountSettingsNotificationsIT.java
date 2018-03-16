@@ -192,7 +192,7 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         driver.findElement(By.id("Mobile_push_notificationsEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Push notifications for mobile devices have been disabled by your System Administrator.".equals(driver.findElement(By.cssSelector("div.padding-top > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Push Notifications are not enabled. Contact your System Administrator.".equals(driver.findElement(By.cssSelector("div.padding-top > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
