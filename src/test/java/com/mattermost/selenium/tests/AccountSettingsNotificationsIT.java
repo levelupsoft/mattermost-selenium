@@ -67,6 +67,16 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         // Sleep
         // Sleep
         // Sleep
+        driver.findElement(By.id("soundDuration5")).click();
+        // Sleep
+        // Sleep
+        // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("on".equals(driver.findElement(By.id("soundDuration5")).getAttribute("value"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         driver.findElement(By.id("saveSetting")).click();
         // Sleep
         // Sleep

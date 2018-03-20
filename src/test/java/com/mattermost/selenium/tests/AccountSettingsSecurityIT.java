@@ -64,6 +64,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         }
 
         driver.findElement(By.id("passwordEdit")).click();
+        // Current password required
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("saveSetting"))) break; } catch (Exception e) {}
@@ -91,6 +92,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         }
 
         driver.findElement(By.id("passwordEdit")).click();
+        // New passwords must match
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("currentPassword"))) break; } catch (Exception e) {}
@@ -129,6 +131,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         }
 
         driver.findElement(By.id("cancelSetting")).click();
+        // Incorrect current password, matching new passwords, error
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("passwordEdit"))) break; } catch (Exception e) {}
@@ -167,6 +170,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        // Incorrect length new password, error
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("currentPassword"))) break; } catch (Exception e) {}
@@ -205,6 +209,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         }
 
         driver.findElement(By.id("cancelSetting")).click();
+        // Cancel out of changing password w/ valid entries
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("passwordEdit"))) break; } catch (Exception e) {}
@@ -261,6 +266,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         // Sleep
         // Sleep
         // DisableAnimations
+        // Verify still old password (canceled out of changes)
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary"))) break; } catch (Exception e) {}
@@ -304,6 +310,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         }
 
         // Sleep
+        // Successfully change password, store timestamp helper text
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("currentPassword"))) break; } catch (Exception e) {}
@@ -335,6 +342,7 @@ public class AccountSettingsSecurityIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        String updated1 = driver.findElement(By.id("passwordDesc")).getText();
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -416,9 +424,16 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.id("confirmPassword")).clear();
         driver.findElement(By.id("confirmPassword")).sendKeys("passwd");
         driver.findElement(By.id("saveSetting")).click();
+        // Verify updated timestamp has changed from previous change
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.cssSelector("#PasswordDesc > span")).getText().matches("^Last updated[\\s\\S]*$")) break; } catch (Exception e) {}
+        	try { if (driver.findElement(By.id("passwordDesc")).getText().matches("^Last updated[\\s\\S]*$")) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (!updated1.equals(driver.findElement(By.id("passwordDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
