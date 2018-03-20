@@ -64,7 +64,7 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.findElement(By.id("teamSettings")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("UI Automation".equals(driver.findElement(By.id("Team_NameDesc")).getText())) break; } catch (Exception e) {}
+        	try { if ("UI Automation".equals(driver.findElement(By.id("nameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -94,11 +94,11 @@ public class TeamSettingsNameDescIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("Team_NameEdit"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("nameEdit"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("Team_NameEdit")).click();
+        driver.findElement(By.id("nameEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("teamName"))) break; } catch (Exception e) {}
@@ -120,17 +120,17 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("UI Automation".equals(driver.findElement(By.id("Team_NameDesc")).getText())) break; } catch (Exception e) {}
+        	try { if ("UI Automation".equals(driver.findElement(By.id("nameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Edit".equals(driver.findElement(By.cssSelector("#Team_NameEdit > span")).getText())) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("nameEdit"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Team_NameEdit > span")).click();
+        driver.findElement(By.id("nameEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("teamName"))) break; } catch (Exception e) {}
@@ -163,25 +163,25 @@ public class TeamSettingsNameDescIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#Team_NameCancel > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("cancelSetting"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Team_NameCancel > span")).click();
+        driver.findElement(By.id("cancelSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("UI Automation".equals(driver.findElement(By.id("Team_NameDesc")).getText())) break; } catch (Exception e) {}
+        	try { if ("UI Automation".equals(driver.findElement(By.id("nameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         // Cancel out of team name changes
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Edit".equals(driver.findElement(By.cssSelector("#Team_NameEdit > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Edit".equals(driver.findElement(By.id("nameEdit")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Team_NameEdit > span")).click();
+        driver.findElement(By.id("nameEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("teamName"))) break; } catch (Exception e) {}
@@ -201,14 +201,14 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.findElement(By.id("teamName")).sendKeys("");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#Team_NameCancel > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("cancelSetting"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Team_NameCancel > span")).click();
+        driver.findElement(By.id("cancelSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("UI Automation".equals(driver.findElement(By.id("Team_NameDesc")).getText())) break; } catch (Exception e) {}
+        	try { if ("UI Automation".equals(driver.findElement(By.id("nameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -236,11 +236,11 @@ public class TeamSettingsNameDescIT extends DriverBase {
         // Edit Team Name
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Edit".equals(driver.findElement(By.cssSelector("#Team_NameEdit > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Edit".equals(driver.findElement(By.id("nameEdit")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Team_NameEdit > span")).click();
+        driver.findElement(By.id("nameEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("teamName"))) break; } catch (Exception e) {}
@@ -266,7 +266,7 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Testing Team".equals(driver.findElement(By.id("Team_NameDesc")).getText())) break; } catch (Exception e) {}
+        	try { if ("Testing Team".equals(driver.findElement(By.id("nameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -291,11 +291,11 @@ public class TeamSettingsNameDescIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Edit".equals(driver.findElement(By.cssSelector("#Team_NameEdit > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Edit".equals(driver.findElement(By.id("nameEdit")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Team_NameEdit > span")).click();
+        driver.findElement(By.id("nameEdit")).click();
         // Sleep
         // Sleep
         for (int second = 0;; second++) {
@@ -318,7 +318,7 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("()_+-={}|[]\\:".equals(driver.findElement(By.id("Team_NameDesc")).getText())) break; } catch (Exception e) {}
+        	try { if ("()_+-={}|[]\\:".equals(driver.findElement(By.id("nameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -354,11 +354,11 @@ public class TeamSettingsNameDescIT extends DriverBase {
         // Team name field max characters prevents typing
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Edit".equals(driver.findElement(By.cssSelector("#Team_NameEdit > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Edit".equals(driver.findElement(By.id("nameEdit")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Team_NameEdit > span")).click();
+        driver.findElement(By.id("nameEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("teamName"))) break; } catch (Exception e) {}
@@ -380,21 +380,21 @@ public class TeamSettingsNameDescIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#Team_NameCancel > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("cancelSetting"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Team_NameCancel > span")).click();
+        driver.findElement(By.id("cancelSetting")).click();
         // Sleep
         // Sleep
         // Set team name back to UI Automation
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Edit".equals(driver.findElement(By.cssSelector("#Team_NameEdit > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Edit".equals(driver.findElement(By.id("nameEdit")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Team_NameEdit > span")).click();
+        driver.findElement(By.id("nameEdit")).click();
         // Sleep
         // Sleep
         for (int second = 0;; second++) {
@@ -418,7 +418,7 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("UI Automation".equals(driver.findElement(By.id("Team_NameDesc")).getText())) break; } catch (Exception e) {}
+        	try { if ("UI Automation".equals(driver.findElement(By.id("nameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -440,17 +440,17 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.findElement(By.id("teamSettings")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Click 'Edit' to add a team description.".equals(driver.findElement(By.cssSelector("#Team_DescriptionDesc > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Click 'Edit' to add a team description.".equals(driver.findElement(By.id("descriptionDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#Team_DescriptionEdit > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("descriptionEdit"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Team_DescriptionEdit > span")).click();
+        driver.findElement(By.id("descriptionEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Team description provides additional information to help users select the right team. Maximum of 50 characters.".equals(driver.findElement(By.cssSelector("div.setting-list__hint > span")).getText())) break; } catch (Exception e) {}
@@ -470,24 +470,24 @@ public class TeamSettingsNameDescIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#Team_DescriptionCancel > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("cancelSetting"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Team_DescriptionCancel > span")).click();
+        driver.findElement(By.id("cancelSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Click 'Edit' to add a team description.".equals(driver.findElement(By.cssSelector("#Team_DescriptionDesc > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Click 'Edit' to add a team description.".equals(driver.findElement(By.id("descriptionDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#Team_DescriptionEdit > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("descriptionEdit"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Team_DescriptionEdit > span")).click();
+        driver.findElement(By.id("descriptionEdit")).click();
         // Add team description
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -506,20 +506,20 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Testing the team description.".equals(driver.findElement(By.id("Team_DescriptionDesc")).getText())) break; } catch (Exception e) {}
+        	try { if ("Testing the team description.".equals(driver.findElement(By.id("descriptionDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         // Remove team description
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#Team_DescriptionEdit > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("descriptionEdit"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        driver.findElement(By.id("descriptionEdit")).click();
         // Sleep
         // Sleep
-        driver.findElement(By.cssSelector("#Team_DescriptionEdit > span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("teamDescription"))) break; } catch (Exception e) {}
@@ -545,7 +545,7 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Click 'Edit' to add a team description.".equals(driver.findElement(By.cssSelector("#Team_DescriptionDesc > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Click 'Edit' to add a team description.".equals(driver.findElement(By.id("descriptionDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 

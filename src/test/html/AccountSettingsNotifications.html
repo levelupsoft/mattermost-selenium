@@ -59,12 +59,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[2]/div/div/div[2]/div/div/div/ul/li[3]/button</td>
+	<td>id=notificationsButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[2]/div/div/div[2]/div/div/div/ul/li[3]/button</td>
+	<td>id=notificationsButton</td>
 	<td></td>
 </tr>
 <!--Desktop notification-->
@@ -77,12 +77,12 @@
 <!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Desktop_notificationsEdit</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Desktop_notificationsEdit</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -126,12 +126,12 @@
 <!--Sleep-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#Desktop_notificationsDesc &gt; span</td>
-	<td>For mentions and direct messages, *shown for 5 seconds</td>
+	<td>id=desktopDesc</td>
+	<td>For mentions and direct messages, shown for 5 seconds</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Desktop_notificationsEdit</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -163,12 +163,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Desktop_notificationsDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Off</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Desktop_notificationsEdit</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -202,12 +202,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Desktop_notificationsDesc &gt; span</td>
-	<td>For all activity, *shown for 3 seconds</td>
+	<td>id=desktopDesc</td>
+	<td>For all activity, shown for 3 seconds</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Desktop_notificationsEdit</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -229,12 +229,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Desktop_notificationsDesc &gt; span</td>
-	<td>For all activity, *shown for 10 seconds</td>
+	<td>id=desktopDesc</td>
+	<td>For all activity, shown for 10 seconds</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Desktop_notificationsEdit</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -257,12 +257,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Desktop_notificationsDesc &gt; span</td>
-	<td>For all activity, *shown indefinitely</td>
+	<td>id=desktopDesc</td>
+	<td>For all activity, shown indefinitely</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Desktop_notificationsEdit</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -304,23 +304,23 @@
 <!--Sleep-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#Desktop_notificationsDesc &gt; span</td>
-	<td>For all activity, *shown for 5 seconds</td>
+	<td>id=desktopDesc</td>
+	<td>For all activity, shown for 5 seconds</td>
 </tr>
 <!--Mobile push notifications-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#Mobile_push_notificationsDesc &gt; span</td>
+	<td>id=pushDesc</td>
 	<td>Disabled by System Administrator</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Mobile_push_notificationsEdit</td>
+	<td>id=pushEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Mobile_push_notificationsEdit</td>
+	<td>id=pushEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -330,33 +330,38 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Mobile_push_notificationsCancel</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Mobile_push_notificationsCancel</td>
-	<td></td>
-</tr>
-<!--Words that trigger mentions-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=Words_that_trigger_mentionsDesc</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Words_that_trigger_mentionsDesc</td>
+	<td>id=pushDesc</td>
+	<td>Disabled by System Administrator</td>
+</tr>
+<!--Words that trigger mentions-->
+<tr>
+	<td>waitForText</td>
+	<td>id=keysTitle</td>
+	<td>Words that trigger mentions</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=keysDesc</td>
 	<td>&quot;@test&quot;, &quot;test&quot;, &quot;@channel&quot;, &quot;@all&quot;, &quot;@here&quot;</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Words_that_trigger_mentionsEdit</td>
+	<td>id=keysEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Words_that_trigger_mentionsEdit</td>
+	<td>id=keysEdit</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -378,18 +383,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Words_that_trigger_mentionsDesc</td>
+	<td>id=keysDesc</td>
 	<td>&quot;@test&quot;, &quot;@channel&quot;, &quot;@all&quot;, &quot;@here&quot;</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Words_that_trigger_mentionsEdit</td>
+	<td>id=keysEdit</td>
 	<td></td>
 </tr>
 <!--Sleep-->
 <tr>
 	<td>click</td>
-	<td>id=Words_that_trigger_mentionsEdit</td>
+	<td>id=keysEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -416,17 +421,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Words_that_trigger_mentionsDesc</td>
+	<td>id=keysDesc</td>
 	<td>&quot;@test&quot;</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Words_that_trigger_mentionsEdit</td>
+	<td>id=keysEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Words_that_trigger_mentionsEdit</td>
+	<td>id=keysEdit</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -463,17 +468,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Words_that_trigger_mentionsDesc</td>
+	<td>id=keysDesc</td>
 	<td>&quot;@test&quot;, &quot;custom&quot;</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Words_that_trigger_mentionsEdit</td>
+	<td>id=keysEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Words_that_trigger_mentionsEdit</td>
+	<td>id=keysEdit</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -517,23 +522,23 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Words_that_trigger_mentionsDesc</td>
+	<td>id=keysDesc</td>
 	<td>&quot;@test&quot;, &quot;test&quot;, &quot;@channel&quot;, &quot;@all&quot;, &quot;@here&quot;</td>
 </tr>
 <!--Reply notification-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#Reply_notificationsDesc &gt; span</td>
+	<td>id=commentsDesc</td>
 	<td>Do not trigger notifications on messages in reply threads unless I'm mentioned</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Reply_notificationsEdit</td>
+	<td>id=commentsEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Reply_notificationsEdit</td>
+	<td>id=commentsEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -549,27 +554,27 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Reply_notificationsCancel</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Reply_notificationsCancel</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Reply_notificationsDesc &gt; span</td>
+	<td>id=commentsDesc</td>
 	<td>Do not trigger notifications on messages in reply threads unless I'm mentioned</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Reply_notificationsEdit</td>
+	<td>id=commentsEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Reply_notificationsEdit</td>
+	<td>id=commentsEdit</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -590,19 +595,19 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Reply_notificationsDesc &gt; span</td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForText</td>
-	<td>css=#Reply_notificationsDesc &gt; span</td>
+	<td>id=commentsDesc</td>
 	<td>Trigger notifications on messages in reply threads that I start or participate in</td>
 </tr>
 <!--Sleep-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=commentsEdit</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>id=Reply_notificationsEdit</td>
+	<td>id=commentsEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -624,17 +629,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Reply_notificationsDesc &gt; span</td>
+	<td>id=commentsDesc</td>
 	<td>Trigger notifications on messages in threads that I start</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Reply_notificationsEdit</td>
+	<td>id=commentsEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Reply_notificationsEdit</td>
+	<td>id=commentsEdit</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -663,7 +668,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Reply_notificationsDesc &gt; span</td>
+	<td>id=commentsDesc</td>
 	<td>Do not trigger notifications on messages in reply threads unless I'm mentioned</td>
 </tr>
 <!--LOG OUT-->

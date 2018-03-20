@@ -43,11 +43,11 @@ public class AccountSettingsUsernameIT extends DriverBase {
         driver.findElement(By.id("accountSettings")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("UsernameEdit"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("usernameEdit"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("UsernameEdit")).click();
+        driver.findElement(By.id("usernameEdit")).click();
         driver.findElement(By.id("username")).clear();
         driver.findElement(By.id("username")).sendKeys("");
         driver.findElement(By.id("username")).clear();
@@ -63,18 +63,18 @@ public class AccountSettingsUsernameIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("UsernameCancel"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("cancelSetting"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("UsernameCancel")).click();
+        driver.findElement(By.id("cancelSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("test".equals(driver.findElement(By.id("UsernameDesc")).getText())) break; } catch (Exception e) {}
+        	try { if ("test".equals(driver.findElement(By.id("usernameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("UsernameEdit")).click();
+        driver.findElement(By.id("usernameEdit")).click();
         driver.findElement(By.id("username")).clear();
         driver.findElement(By.id("username")).sendKeys("");
         driver.findElement(By.id("username")).clear();
@@ -104,31 +104,37 @@ public class AccountSettingsUsernameIT extends DriverBase {
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("test-1".equals(driver.findElement(By.id("UsernameDesc")).getText())) break; } catch (Exception e) {}
+        	try { if ("test-1".equals(driver.findElement(By.id("usernameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li[3]/button"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("notificationsButton"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li[3]/button")).click();
+        driver.findElement(By.id("notificationsButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("Words_that_trigger_mentionsDesc")).getText().matches("^\"@test-1\"[\\s\\S]*$")) break; } catch (Exception e) {}
+        	try { if (driver.findElement(By.id("keysDesc")).getText().matches("^\"@test-1\", \"test-1\"[\\s\\S]*$")) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li/button"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("generalButton"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("//div[2]/div/div/div[2]/div/div/div/ul/li/button")).click();
-        driver.findElement(By.id("UsernameEdit")).click();
+        driver.findElement(By.id("generalButton")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("usernameEdit"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("usernameEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("username"))) break; } catch (Exception e) {}
@@ -197,7 +203,7 @@ public class AccountSettingsUsernameIT extends DriverBase {
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("test".equals(driver.findElement(By.id("UsernameDesc")).getText())) break; } catch (Exception e) {}
+        	try { if ("test".equals(driver.findElement(By.id("usernameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 

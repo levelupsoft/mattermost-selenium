@@ -511,6 +511,12 @@ public class SearchIT extends DriverBase {
         // Sleep
         // Sleep
         // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("sidebarHeaderDropdownButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -520,7 +526,6 @@ public class SearchIT extends DriverBase {
 
         driver.findElement(By.id("logout")).click();
         // LOG IN
-        driver.get(baseUrl + "/login");
         // DisableAnimations
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -556,7 +561,6 @@ public class SearchIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("button.btn.btn-link"))) break; } catch (Exception e) {}
@@ -854,6 +858,7 @@ public class SearchIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        driver.navigate().refresh();
         // Sleep
         driver.findElement(By.cssSelector("span.icon.icon__mentions > svg")).click();
         for (int second = 0;; second++) {
@@ -1028,7 +1033,6 @@ public class SearchIT extends DriverBase {
 
         driver.findElement(By.id("logout")).click();
         // LOG IN
-        driver.get(baseUrl + "/login");
         // DisableAnimations
         // Sleep
         // Sleep
