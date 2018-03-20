@@ -46,29 +46,39 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <!--General Settings-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#PositionDesc &gt; span</td>
+	<td>id=positionDesc</td>
 	<td>Click 'Edit' to add your job title / position</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#PositionEdit &gt; span</td>
+	<td>id=positionEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#PositionEdit &gt; span</td>
+	<td>id=positionEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -79,11 +89,6 @@
 <tr>
 	<td>type</td>
 	<td>id=position</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=position</td>
 	<td>Tester</td>
 </tr>
 <tr>
@@ -93,22 +98,22 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=PositionDesc</td>
+	<td>id=positionDesc</td>
 	<td>Tester</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=positionEdit</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#PositionEdit &gt; span</td>
+	<td>id=positionEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=position</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=position</td>
 	<td>Edited Tester</td>
 </tr>
 <tr>
@@ -118,12 +123,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=PositionDesc</td>
+	<td>id=positionDesc</td>
 	<td>Edited Tester</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=positionEdit</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#PositionEdit &gt; span</td>
+	<td>id=positionEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -133,27 +143,27 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=position</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
 	<td>id=position</td>
 	<td>Temp</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#PositionCancel &gt; span</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=PositionDesc</td>
+	<td>id=positionDesc</td>
 	<td>Edited Tester</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=positionEdit</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#PositionEdit &gt; span</td>
+	<td>id=positionEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -162,18 +172,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>id=position</td>
-	<td>*${KEY_BACKSPACE}</td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#PositionDesc &gt; span</td>
+	<td>id=positionDesc</td>
 	<td>Click 'Edit' to add your job title / position</td>
 </tr>
 <tr>

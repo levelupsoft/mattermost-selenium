@@ -54,28 +54,38 @@
 <!--General Settings-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings<br /></td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings<br /></td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <!--Full Name-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Full_NameEdit</td>
+	<td>id=nameEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=nameEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=nameDesc</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeText</td>
-	<td>id=Full_NameDesc</td>
+	<td>id=nameDesc</td>
 	<td>fullNameDesc</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Full_NameEdit</td>
+	<td>id=nameEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -90,12 +100,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Full_NameDesc</td>
+	<td>id=nameDesc</td>
 	<td>${fullNameDesc}</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Full_NameEdit</td>
+	<td>id=nameEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -120,17 +130,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Full_NameDesc</td>
+	<td>id=nameDesc</td>
 	<td>Added</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Full_NameEdit</td>
+	<td>id=nameEdit</td>
 	<td> </td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Full_NameEdit</td>
+	<td>id=nameEdit</td>
 	<td> </td>
 </tr>
 <tr>
@@ -160,27 +170,27 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Full_NameCancel &gt; span</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Full_NameCancel &gt; span</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Full_NameDesc</td>
+	<td>id=nameDesc</td>
 	<td>Added</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Full_NameEdit</td>
+	<td>id=nameEdit</td>
 	<td> </td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Full_NameEdit</td>
+	<td>id=nameEdit</td>
 	<td> </td>
 </tr>
 <tr>
@@ -210,7 +220,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Full_NameDesc</td>
+	<td>id=nameDesc</td>
 	<td>This Is a Very Long Name That Should Truncate</td>
 </tr>
 <!--LOG OUT-->

@@ -48,6 +48,11 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
@@ -74,18 +79,43 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#ThemeDesc &gt; span</td>
+	<td>id=themeDesc</td>
 	<td>Open to manage your theme</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Clock_DisplayDesc &gt; span</td>
+	<td>id=clockDesc</td>
 	<td>12-hour clock (example: 4:00 PM)</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=collapseDesc</td>
+	<td>Expanded</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=message_displayDesc</td>
+	<td>Standard</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channel_display_modeDesc</td>
+	<td>Full width</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=languagesDesc</td>
+	<td>English</td>
 </tr>
 <!--Clock Display-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=clockEdit</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#Clock_DisplayEdit &gt; span</td>
+	<td>id=clockEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -109,18 +139,28 @@
 	<td>Select how you prefer time displayed.</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=cancelSetting</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#Clock_DisplayCancel &gt; span</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Clock_DisplayDesc &gt; span</td>
+	<td>id=clockDesc</td>
 	<td>12-hour clock (example: 4:00 PM)</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=clockEdit</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#Clock_DisplayEdit &gt; span</td>
+	<td>id=clockEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -145,17 +185,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Clock_DisplayDesc &gt; span</td>
+	<td>id=clockDesc</td>
 	<td>24-hour clock (example: 16:00)</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Clock_DisplayEdit &gt; span</td>
+	<td>id=clockEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Clock_DisplayEdit &gt; span</td>
+	<td>id=clockEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -180,18 +220,23 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Clock_DisplayDesc &gt; span</td>
+	<td>id=clockDesc</td>
 	<td>12-hour clock (example: 4:00 PM)</td>
 </tr>
 <!--Default appearance of image link previews-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#Default_appearance_of_image_link_previewsDesc &gt; span</td>
+	<td>id=collapseDesc</td>
 	<td>Expanded</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=collapseEdit</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#Default_appearance_of_image_link_previewsEdit &gt; span</td>
+	<td>id=collapseEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -221,12 +266,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Default_appearance_of_image_link_previewsDesc &gt; span</td>
+	<td>id=collapseDesc</td>
 	<td>Collapsed</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=collapseEdit</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#Default_appearance_of_image_link_previewsEdit &gt; span</td>
+	<td>id=collapseEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -246,18 +296,23 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Default_appearance_of_image_link_previewsDesc &gt; span</td>
+	<td>id=collapseDesc</td>
 	<td>Expanded</td>
 </tr>
 <!--Message Display-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#Message_DisplayDesc &gt; span</td>
+	<td>id=message_displayDesc</td>
 	<td>Standard</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=message_displayEdit</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#Message_DisplayEdit &gt; span</td>
+	<td>id=message_displayEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -277,17 +332,22 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Message_DisplayCancel &gt; span</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Message_DisplayDesc &gt; span</td>
+	<td>id=message_displayDesc</td>
 	<td>Standard</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=message_displayEdit</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#Message_DisplayEdit &gt; span</td>
+	<td>id=message_displayEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -305,20 +365,20 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Default_appearance_of_image_link_previewsDesc &gt; span</td>
-	<td>Expanded</td>
-</tr>
 <!--Sleep-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#Message_DisplayDesc &gt; span</td>
+	<td>id=message_displayDesc</td>
 	<td>Compact</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=message_displayEdit</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#Message_DisplayEdit &gt; span</td>
+	<td>id=message_displayEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -338,18 +398,23 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Message_DisplayDesc &gt; span</td>
+	<td>id=message_displayDesc</td>
 	<td>Standard</td>
 </tr>
 <!--Channel Display Mode-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#Channel_Display_ModeDesc &gt; span</td>
+	<td>id=channel_display_modeDesc</td>
 	<td>Full width</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=channel_display_modeEdit</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#Channel_Display_ModeEdit &gt; span</td>
+	<td>id=channel_display_modeEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -369,17 +434,22 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Channel_Display_ModeCancel &gt; span</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Channel_Display_ModeDesc &gt; span</td>
+	<td>id=channel_display_modeDesc</td>
 	<td>Full width</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=channel_display_modeEdit</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#Channel_Display_ModeEdit &gt; span</td>
+	<td>id=channel_display_modeEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -399,12 +469,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Channel_Display_ModeDesc &gt; span</td>
+	<td>id=channel_display_modeDesc</td>
 	<td>Fixed width, centered</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=channel_display_modeEdit</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#Channel_Display_ModeEdit &gt; span</td>
+	<td>id=channel_display_modeEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -424,7 +499,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Channel_Display_ModeDesc &gt; span</td>
+	<td>id=channel_display_modeDesc</td>
 	<td>Full width</td>
 </tr>
 <!--Language covered in IDE-only test-->

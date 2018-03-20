@@ -45,12 +45,24 @@ public class AccountSettingsFullNameIT extends DriverBase {
         // Full Name
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("Full_NameEdit"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("nameEdit"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        String fullNameDesc = driver.findElement(By.id("Full_NameDesc")).getText();
-        driver.findElement(By.id("Full_NameEdit")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("nameEdit"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("nameDesc"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        String fullNameDesc = driver.findElement(By.id("nameDesc")).getText();
+        driver.findElement(By.id("nameEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("First Name".equals(driver.findElement(By.cssSelector("label.col-sm-5.control-label")).getText())) break; } catch (Exception e) {}
@@ -60,11 +72,11 @@ public class AccountSettingsFullNameIT extends DriverBase {
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (fullNameDesc.equals(driver.findElement(By.id("Full_NameDesc")).getText())) break; } catch (Exception e) {}
+        	try { if (fullNameDesc.equals(driver.findElement(By.id("nameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("Full_NameEdit")).click();
+        driver.findElement(By.id("nameEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("First Name".equals(driver.findElement(By.cssSelector("label.col-sm-5.control-label")).getText())) break; } catch (Exception e) {}
@@ -78,17 +90,17 @@ public class AccountSettingsFullNameIT extends DriverBase {
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Added".equals(driver.findElement(By.id("Full_NameDesc")).getText())) break; } catch (Exception e) {}
+        	try { if ("Added".equals(driver.findElement(By.id("nameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("Full_NameEdit"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("nameEdit"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("Full_NameEdit")).click();
+        driver.findElement(By.id("nameEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("First Name".equals(driver.findElement(By.cssSelector("label.col-sm-5.control-label")).getText())) break; } catch (Exception e) {}
@@ -105,24 +117,24 @@ public class AccountSettingsFullNameIT extends DriverBase {
         driver.findElement(By.id("lastName")).sendKeys("Will Be Canceled");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#Full_NameCancel > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("cancelSetting"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#Full_NameCancel > span")).click();
+        driver.findElement(By.id("cancelSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Added".equals(driver.findElement(By.id("Full_NameDesc")).getText())) break; } catch (Exception e) {}
+        	try { if ("Added".equals(driver.findElement(By.id("nameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("Full_NameEdit"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("nameEdit"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("Full_NameEdit")).click();
+        driver.findElement(By.id("nameEdit")).click();
         driver.findElement(By.id("firstName")).clear();
         driver.findElement(By.id("firstName")).sendKeys("");
         driver.findElement(By.id("firstName")).clear();
@@ -134,7 +146,7 @@ public class AccountSettingsFullNameIT extends DriverBase {
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("This Is a Very Long Name That Should Truncate".equals(driver.findElement(By.id("Full_NameDesc")).getText())) break; } catch (Exception e) {}
+        	try { if ("This Is a Very Long Name That Should Truncate".equals(driver.findElement(By.id("nameDesc")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
