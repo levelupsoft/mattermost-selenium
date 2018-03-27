@@ -26,7 +26,7 @@
 <tr>
 	<td>type</td>
 	<td>name=loginId</td>
-	<td>admin@test.com</td>
+	<td>admin</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -291,7 +291,7 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Town Square</td>
 </tr>
-<!--LOG OUT admin-->
+<!--Add admin to team-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -326,6 +326,83 @@
 	<td>click</td>
 	<td>css=div.more-modal__name</td>
 	<td>@admin</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=member_popover</td>
+	<td>2</td>
+</tr>
+<!--Nonadmin creates private channel on team created by nonadmin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=createPrivateChannel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=createPrivateChannel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPrivateChannelName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=newPrivateChannelName</td>
+	<td>NonAdminCreated</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>NonAdminCreated</td>
+</tr>
+<!--Add system admin to channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='channelIntro']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='channelIntro']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@admin</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__name</td>
+	<td>@admin</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.primary-message &gt; span</td>
+	<td>No items found</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -552,12 +629,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=NoNonAdminCreated</td>
+	<td>link=3NoNonAdminCreated</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=NoNonAdminCreated</td>
+	<td>link=3NoNonAdminCreated</td>
 	<td></td>
 </tr>
 <tr>
@@ -726,12 +803,12 @@
 <!--Create private channel (so there is pri channel nonsysadmin is complete non-admin on)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=SySysAdmCreated</td>
+	<td>link=2SySysAdmCreated</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=SySysAdmCreated</td>
+	<td>link=2SySysAdmCreated</td>
 	<td></td>
 </tr>
 <tr>

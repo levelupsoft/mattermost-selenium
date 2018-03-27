@@ -196,13 +196,18 @@
 </tr>
 <!--Switch to team created by nonsysadmin-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=2NoNonAdminCreated</td>
+	<td>storeLocation</td>
+	<td>urlwhole</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>link=2NoNonAdminCreated</td>
+	<td>storeEval</td>
+	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[0]</td>
+	<td>urlbase</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${urlbase}/nonadmincreated</td>
 	<td></td>
 </tr>
 <tr>
@@ -388,8 +393,18 @@
 </tr>
 <!--Verify non– team or system admin cannot send invite-->
 <tr>
+	<td>storeLocation</td>
+	<td>urlwhole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[0]</td>
+	<td>urlbase</td>
+</tr>
+<tr>
 	<td>open</td>
-	<td>/sysadmcreated</td>
+	<td>${urlbase}/sysadmcreated</td>
 	<td></td>
 </tr>
 <tr>
@@ -426,11 +441,6 @@
 	<td>waitForNotText</td>
 	<td>//button[@id='addUsersToTeam']</td>
 	<td>Add Members to Team</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=post_textbox</td>
-	<td>~off-topic asdasdasdasdasdasdasdasdasdasdasdasdasd</td>
 </tr>
 <!--Log out nonsysadmin and log in system admin-->
 <!--LOG OUT nonsysadmin-->
@@ -585,8 +595,18 @@
 </tr>
 <!--Switch to team created by system admin, verify can invite-->
 <tr>
+	<td>storeLocation</td>
+	<td>urlwhole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[0]</td>
+	<td>urlbase</td>
+</tr>
+<tr>
 	<td>open</td>
-	<td>/sysadmcreated</td>
+	<td>${urlbase}/sysadmcreated</td>
 	<td></td>
 </tr>
 <tr>
