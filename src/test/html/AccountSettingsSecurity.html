@@ -475,7 +475,7 @@
 </tr>
 <tr>
 	<td>storeText</td>
-	<td>id=passwordDesc</td>
+	<td>css=#passwordDesc &gt; span</td>
 	<td>updated1</td>
 </tr>
 <tr>
@@ -619,7 +619,7 @@
 </tr>
 <tr>
 	<td>waitForNotText</td>
-	<td>id=passwordDesc</td>
+	<td>css=#passwordDesc &gt; span</td>
 	<td>${updated1}</td>
 </tr>
 <!--Open Access History and Active Sessions Views-->
@@ -645,6 +645,16 @@
 </tr>
 <tr>
 	<td>waitForText</td>
+	<td>//td[2]</td>
+	<td>Password completed</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//tr[2]/td[2]</td>
+	<td>Password attempted</td>
+</tr>
+<tr>
+	<td>waitForText</td>
 	<td>//th[3]/span</td>
 	<td>IP Address</td>
 </tr>
@@ -666,6 +676,11 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>id=sidebarHeaderDropdownButton</td>
