@@ -515,11 +515,5 @@ public class AccountSettingsSecurityIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("div.activity-log__action > button.btn.btn-primary")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("loginButton"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
     }
 }
