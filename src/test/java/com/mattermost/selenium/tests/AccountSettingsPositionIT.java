@@ -128,12 +128,9 @@ public class AccountSettingsPositionIT extends DriverBase {
 
         driver.findElement(By.id("position")).clear();
         driver.findElement(By.id("position")).sendKeys("");
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("".equals(driver.findElement(By.id("position")).getText())) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
+        driver.findElement(By.id("position")).sendKeys("*" + Keys.BACK_SPACE);
+        driver.findElement(By.id("position")).clear();
+        driver.findElement(By.id("position")).sendKeys("");
         driver.findElement(By.id("saveSetting")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
