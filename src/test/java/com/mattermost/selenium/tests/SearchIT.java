@@ -875,7 +875,7 @@ public class SearchIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("@test2".equals(driver.findElement(By.cssSelector("span.search-highlight > span.search-highlight")).getText())) break; } catch (Exception e) {}
+        	try { if ("@test2".equals(driver.findElement(By.cssSelector("a.mention-link.mention--highlight")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 

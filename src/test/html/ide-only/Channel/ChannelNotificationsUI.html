@@ -115,31 +115,178 @@
 	<td>id=channelNotificationsGroup</td>
 	<td></td>
 </tr>
-<!--Object_object? Verified visually for now-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
+	<td>css=#desktopDesc &gt; span</td>
 	<td>Global default (mention)</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>For all unread messages</td>
+	<td>id=markUnreadDesc</td>
+	<td>Off</td>
 </tr>
-<!--Public - Desktop Notifications - Verify modal options, cancel out of edit-->
+<!--Public - Mute channel - Verify modal options, cancel out of edit-->
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadEdit</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=markUnreadEdit</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=channelNotificationMute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationUnmute</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=channelNotificationUnmute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationUnmute</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=cancelSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=cancelSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadDesc</td>
+	<td>Off</td>
+</tr>
+<!--Public - Mute channel - Change setting, verify, then change back-->
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadEdit</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=markUnreadEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelNotificationGlobalDefault</td>
+	<td>id=channelNotificationMute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationUnmute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationUnmute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationUnmute</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadDesc</td>
+	<td>On</td>
+</tr>
+<!--Desktop notification section hidden when Mute is on-->
+<tr>
+	<td>waitForNotText</td>
+	<td>css=#desktopTitle &gt; span</td>
+	<td>Send desktop notifications</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadEdit</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=markUnreadEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationMute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationUnmute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationMute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationMute</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadDesc</td>
+	<td>Off</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopTitle &gt; span</td>
+	<td>Send desktop notifications</td>
+</tr>
+<!--Public - Desktop Notifications - Verify modal options, cancel out of edit-->
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (mention)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -179,34 +326,49 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsCancel &gt; span</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsCancel &gt; span</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
+	<td>css=#desktopDesc &gt; span</td>
 	<td>Global default (mention)</td>
 </tr>
 <!--Public - Desktop Notifications - Save each option and verify-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationGlobalDefault</td>
-	<td></td>
+	<td>waitForValue</td>
+	<td>id=channelNotificationAllActivity</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationMentions</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationNever</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.setting-list__hint &gt; span &gt; span</td>
+	<td>Selecting an option other than &quot;Default&quot; will override the global notification settings. Desktop notifications are available on Firefox, Safari, and Chrome.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -235,22 +397,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Only for mentions</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationGlobalDefault</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -262,6 +419,11 @@
 	<td>click</td>
 	<td>id=channelNotificationNever</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationNever</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -275,23 +437,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Never</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<!--Rewrote to reflect global default = mention-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationGlobalDefault</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -303,6 +459,11 @@
 	<td>click</td>
 	<td>id=channelNotificationAllActivity</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationAllActivity</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -316,17 +477,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>For all activity</td>
 </tr>
+<!--Set back to global default-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -338,6 +500,11 @@
 	<td>click</td>
 	<td>id=channelNotificationGlobalDefault</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationGlobalDefault</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -351,8 +518,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (For all activity)</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (mention)</td>
 </tr>
 <!--Change global default in Account Settings and verify reflected in channel-->
 <tr>
@@ -390,25 +557,31 @@
 	<td>id=notificationsButton</td>
 	<td></td>
 </tr>
+<!--Set global default to All activity-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=desktopNotificationMentions</td>
+	<td>id=desktopNotificationAllActivity</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=desktopNotificationMentions</td>
+	<td>id=desktopNotificationAllActivity</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=desktopNotificationAllActivity</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -422,262 +595,235 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Desktop_notificationsDesc &gt; span</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>For all activity, shown for 5 seconds</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationsGroup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationsGroup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (all)</td>
+</tr>
+<!--Set global default to Never-->
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Account Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Account Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=notificationsButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=notificationsButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopNotificationNever</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopNotificationNever</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=desktopNotificationNever</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=desktopDesc</td>
+	<td>Off</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationsGroup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationsGroup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (none)</td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Set global default back to mentions-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Account Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Account Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=notificationsButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=notificationsButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopNotificationMentions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopNotificationMentions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=desktopNotificationMentions</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopDesc &gt; span</td>
 	<td>For mentions and direct messages, shown for 5 seconds</td>
 </tr>
 <tr>
 	<td>refreshAndWait</td>
 	<td></td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationsGroup</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelNotificationsGroup</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (mention)</td>
-</tr>
-<!--Set global default back to For all activity-->
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Account Settings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Account Settings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=notificationsButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=notificationsButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Desktop_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Desktop_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=desktopNotificationAllActivity</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=desktopNotificationAllActivity</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Desktop_notificationsDesc &gt; span</td>
-	<td>For all activity, shown for 5 seconds</td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<!--Public - Mark Channel Unread - Verify modal options, cancel out of edit-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationsGroup</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelNotificationsGroup</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>For all unread messages</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=channelUnreadAll</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelUnreadMentions</td>
-	<td></td>
-</tr>
-<!--Did we get rid of this on purpose? https://mattermost.atlassian.net/browse/PLT-8694-->
-<tr>
-	<td>waitForText</td>
-	<td>css=div.setting-list__hint &gt; span &gt; span</td>
-	<td>The channel name is bolded in the sidebar when there are unread messages. Selecting &quot;Only for mentions&quot; will bold the channel only when you are mentioned.</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelNotificationMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=channelNotificationMentions</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadCancel &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Mark_Channel_UnreadCancel &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>For all unread messages</td>
-</tr>
-<!--Public - Mark Channel Unread - Change setting, verify, then change back-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelUnreadMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelUnreadMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>Only for mentions</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelUnreadAll</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelUnreadAll</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>For all unread messages</td>
 </tr>
 <!--PRIVATE CHANNEL-->
 <tr>
@@ -745,28 +891,176 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
+	<td>css=#desktopDesc &gt; span</td>
 	<td>Global default (mention)</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>For all unread messages</td>
+	<td>id=markUnreadDesc</td>
+	<td>Off</td>
 </tr>
-<!--Private - Desktop Notifications - Verify modal options, cancel out of edit-->
+<!--Private - Mute channel - Verify modal options, cancel out of edit-->
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadEdit</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=markUnreadEdit</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=channelNotificationMute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationUnmute</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=channelNotificationUnmute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationUnmute</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=cancelSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=cancelSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadDesc</td>
+	<td>Off</td>
+</tr>
+<!--Private - Mute channel - Change setting, verify, then change back-->
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadEdit</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=markUnreadEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelNotificationGlobalDefault</td>
+	<td>id=channelNotificationMute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationUnmute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationUnmute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationUnmute</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadDesc</td>
+	<td>On</td>
+</tr>
+<!--Desktop notification section hidden when Mute is on-->
+<tr>
+	<td>waitForNotText</td>
+	<td>css=#desktopTitle &gt; span</td>
+	<td>Send desktop notifications</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadEdit</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=markUnreadEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationMute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationUnmute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationMute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationMute</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadDesc</td>
+	<td>Off</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopTitle &gt; span</td>
+	<td>Send desktop notifications</td>
+</tr>
+<!--Private - Desktop Notifications - Verify modal options, cancel out of edit-->
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (mention)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -806,34 +1100,49 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsCancel &gt; span</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsCancel &gt; span</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (For all activity)</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (mention)</td>
 </tr>
 <!--Private - Desktop Notifications - Save each option and verify-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationGlobalDefault</td>
-	<td></td>
+	<td>waitForValue</td>
+	<td>id=channelNotificationAllActivity</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationMentions</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationNever</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.setting-list__hint &gt; span &gt; span</td>
+	<td>Selecting an option other than &quot;Default&quot; will override the global notification settings. Desktop notifications are available on Firefox, Safari, and Chrome.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -862,22 +1171,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Only for mentions</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationGlobalDefault</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -889,6 +1193,11 @@
 	<td>click</td>
 	<td>id=channelNotificationNever</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationNever</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -902,22 +1211,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Never</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationGlobalDefault</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -929,6 +1233,11 @@
 	<td>click</td>
 	<td>id=channelNotificationAllActivity</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationAllActivity</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -942,17 +1251,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>For all activity</td>
 </tr>
+<!--Set back to global default-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -964,6 +1274,11 @@
 	<td>click</td>
 	<td>id=channelNotificationGlobalDefault</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationGlobalDefault</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -977,10 +1292,9 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (For all activity)</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (mention)</td>
 </tr>
-<!--These need to be reversed to change to all first, then back to mention-->
 <!--Change global default in Account Settings and verify reflected in channel-->
 <tr>
 	<td>refreshAndWait</td>
@@ -1017,25 +1331,31 @@
 	<td>id=notificationsButton</td>
 	<td></td>
 </tr>
+<!--Set global default to All activity-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=desktopNotificationMentions</td>
+	<td>id=desktopNotificationAllActivity</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=desktopNotificationMentions</td>
+	<td>id=desktopNotificationAllActivity</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=desktopNotificationAllActivity</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1049,7 +1369,229 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Desktop_notificationsDesc &gt; span</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>For all activity, shown for 5 seconds</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationsGroup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationsGroup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (all)</td>
+</tr>
+<!--Set global default to Never-->
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Account Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Account Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=notificationsButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=notificationsButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopNotificationNever</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopNotificationNever</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=desktopNotificationNever</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=desktopDesc</td>
+	<td>Off</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationsGroup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationsGroup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (none)</td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Set global default back to mentions-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Account Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Account Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=notificationsButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=notificationsButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopNotificationMentions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopNotificationMentions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=desktopNotificationMentions</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopDesc &gt; span</td>
 	<td>For mentions and direct messages, shown for 5 seconds</td>
 </tr>
 <tr>
@@ -1057,260 +1599,7 @@
 	<td></td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationsGroup</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelNotificationsGroup</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (mention)</td>
-</tr>
-<!--Set global default back to For all activity-->
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Account Settings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Account Settings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=notificationsButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=notificationsButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Desktop_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Desktop_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=desktopNotificationAllActivity</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=desktopNotificationAllActivity</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Desktop_notificationsDesc &gt; span</td>
-	<td>For all activity, shown for 5 seconds</td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<!--Private - Mark Channel Unread - Verify modal options, cancel out of edit-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationsGroup</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelNotificationsGroup</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>For all unread messages</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=channelUnreadAll</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelUnreadMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.setting-list__hint &gt; span &gt; span</td>
-	<td>The channel name is bolded in the sidebar when there are unread messages. Selecting &quot;Only for mentions&quot; will bold the channel only when you are mentioned.</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelUnreadMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=channelUnreadMentions</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadCancel &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Mark_Channel_UnreadCancel &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>For all unread messages</td>
-</tr>
-<!--Private - Mark Channel Unread - Change setting, verify, then change back-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelNotificationMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>Only for mentions</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelUnreadAll</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelUnreadAll</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>For all unread messages</td>
-</tr>
 <!--TOWN SQUARE-->
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Town Square</td>
@@ -1350,28 +1639,176 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (all)</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (mention)</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>For all unread messages</td>
+	<td>id=markUnreadDesc</td>
+	<td>Off</td>
 </tr>
-<!--Town Square - Desktop Notifications - Verify modal options, cancel out of edit-->
+<!--Town Square - Mute channel - Verify modal options, cancel out of edit-->
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadEdit</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=markUnreadEdit</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=channelNotificationMute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationUnmute</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=channelNotificationUnmute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationUnmute</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=cancelSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=cancelSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadDesc</td>
+	<td>Off</td>
+</tr>
+<!--Town Square - Mute channel - Change setting, verify, then change back-->
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadEdit</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=markUnreadEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelNotificationGlobalDefault</td>
+	<td>id=channelNotificationMute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationUnmute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationUnmute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationUnmute</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadDesc</td>
+	<td>On</td>
+</tr>
+<!--Desktop notification section hidden when Mute is on-->
+<tr>
+	<td>waitForNotText</td>
+	<td>css=#desktopTitle &gt; span</td>
+	<td>Send desktop notifications</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadEdit</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=markUnreadEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationMute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationUnmute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationMute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationMute</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadDesc</td>
+	<td>Off</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopTitle &gt; span</td>
+	<td>Send desktop notifications</td>
+</tr>
+<!--Town Square - Desktop Notifications - Verify modal options, cancel out of edit-->
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (mention)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -1411,34 +1848,49 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsCancel &gt; span</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsCancel &gt; span</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (all)</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (mention)</td>
 </tr>
 <!--Town Square - Desktop Notifications - Save each option and verify-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationGlobalDefault</td>
-	<td></td>
+	<td>waitForValue</td>
+	<td>id=channelNotificationAllActivity</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationMentions</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationNever</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.setting-list__hint &gt; span &gt; span</td>
+	<td>Selecting an option other than &quot;Default&quot; will override the global notification settings. Desktop notifications are available on Firefox, Safari, and Chrome.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1467,22 +1919,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Only for mentions</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationGlobalDefault</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -1494,6 +1941,11 @@
 	<td>click</td>
 	<td>id=channelNotificationNever</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationNever</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1507,22 +1959,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Never</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationGlobalDefault</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -1534,6 +1981,11 @@
 	<td>click</td>
 	<td>id=channelNotificationAllActivity</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationAllActivity</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1547,17 +1999,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>For all activity</td>
 </tr>
+<!--Set back to global default-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -1569,6 +2022,11 @@
 	<td>click</td>
 	<td>id=channelNotificationGlobalDefault</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationGlobalDefault</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1582,8 +2040,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (For all activity)</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (mention)</td>
 </tr>
 <!--Change global default in Account Settings and verify reflected in channel-->
 <tr>
@@ -1621,115 +2079,15 @@
 	<td>id=notificationsButton</td>
 	<td></td>
 </tr>
+<!--Set global default to All activity-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Desktop_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=desktopNotificationMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=desktopNotificationMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Desktop_notificationsDesc &gt; span</td>
-	<td>For mentions and direct messages, shown for 5 seconds</td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationsGroup</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelNotificationsGroup</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (mention)</td>
-</tr>
-<!--Set global default back to For all activity-->
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Account Settings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Account Settings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=notificationsButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=notificationsButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Desktop_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -1743,6 +2101,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForValue</td>
+	<td>id=desktopNotificationAllActivity</td>
+	<td>on</td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>id=saveSetting</td>
 	<td></td>
@@ -1754,15 +2117,130 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Desktop_notificationsDesc &gt; span</td>
+	<td>css=#desktopDesc &gt; span</td>
 	<td>For all activity, shown for 5 seconds</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationsGroup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationsGroup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (all)</td>
+</tr>
+<!--Set global default to Never-->
+<tr>
 	<td>refreshAndWait</td>
 	<td></td>
 	<td></td>
 </tr>
-<!--Town Square - Mark Channel Unread - Verify modal options, cancel out of edit-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Account Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Account Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=notificationsButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=notificationsButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopNotificationNever</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopNotificationNever</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=desktopNotificationNever</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=desktopDesc</td>
+	<td>Off</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=channelHeaderDropdownButton</td>
@@ -1785,82 +2263,72 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>For all unread messages</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (none)</td>
 </tr>
 <tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Set global default back to mentions-->
+<tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
+	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
+	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Account Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Account Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=notificationsButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=notificationsButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopNotificationMentions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopNotificationMentions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=channelUnreadAll</td>
+	<td>id=desktopNotificationMentions</td>
 	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelUnreadMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.setting-list__hint &gt; span &gt; span</td>
-	<td>The channel name is bolded in the sidebar when there are unread messages. Selecting &quot;Only for mentions&quot; will bold the channel only when you are mentioned.</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelUnreadMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=channelUnreadMentions</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadCancel &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Mark_Channel_UnreadCancel &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>For all unread messages</td>
-</tr>
-<!--Town Square - Mark Channel Unread - Change setting, verify, then change back-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelUnreadMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelUnreadMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
@@ -1871,43 +2339,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>Only for mentions</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelUnreadAll</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelUnreadAll</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>For all unread messages</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>For mentions and direct messages, shown for 5 seconds</td>
 </tr>
 <tr>
 	<td>refreshAndWait</td>
@@ -2000,28 +2433,176 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
+	<td>css=#desktopDesc &gt; span</td>
 	<td>Global default (mention)</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>For all unread messages</td>
+	<td>id=markUnreadDesc</td>
+	<td>Off</td>
 </tr>
-<!--GM - Desktop Notifications - Verify modal options, cancel out of edit-->
+<!--GM - Mute channel - Verify modal options, cancel out of edit-->
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadEdit</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=markUnreadEdit</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=channelNotificationMute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationUnmute</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=channelNotificationUnmute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationUnmute</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=cancelSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=cancelSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadDesc</td>
+	<td>Off</td>
+</tr>
+<!--GM - Mute channel - Change setting, verify, then change back-->
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadEdit</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=markUnreadEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelNotificationGlobalDefault</td>
+	<td>id=channelNotificationMute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationUnmute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationUnmute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationUnmute</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadDesc</td>
+	<td>On</td>
+</tr>
+<!--Desktop notification section hidden when Mute is on-->
+<tr>
+	<td>waitForNotText</td>
+	<td>css=#desktopTitle &gt; span</td>
+	<td>Send desktop notifications</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadEdit</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=markUnreadEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationMute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationUnmute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationMute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationMute</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=markUnreadDesc</td>
+	<td>Off</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopTitle &gt; span</td>
+	<td>Send desktop notifications</td>
+</tr>
+<!--GM - Desktop Notifications - Verify modal options, cancel out of edit-->
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (mention)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -2061,34 +2642,49 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsCancel &gt; span</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsCancel &gt; span</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
+	<td>css=#desktopDesc &gt; span</td>
 	<td>Global default (mention)</td>
 </tr>
 <!--GM - Desktop Notifications - Save each option and verify-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationGlobalDefault</td>
-	<td></td>
+	<td>waitForValue</td>
+	<td>id=channelNotificationAllActivity</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationMentions</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationNever</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.setting-list__hint &gt; span &gt; span</td>
+	<td>Selecting an option other than &quot;Default&quot; will override the global notification settings. Desktop notifications are available on Firefox, Safari, and Chrome.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2117,22 +2713,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Only for mentions</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationGlobalDefault</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -2144,6 +2735,11 @@
 	<td>click</td>
 	<td>id=channelNotificationNever</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationNever</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2157,22 +2753,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Never</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationGlobalDefault</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -2184,6 +2775,11 @@
 	<td>click</td>
 	<td>id=channelNotificationAllActivity</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationAllActivity</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2197,17 +2793,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>For all activity</td>
 </tr>
+<!--Set back to global default-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Send_desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -2219,6 +2816,11 @@
 	<td>click</td>
 	<td>id=channelNotificationGlobalDefault</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationGlobalDefault</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2232,8 +2834,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (For all activity)</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (mention)</td>
 </tr>
 <!--Change global default in Account Settings and verify reflected in channel-->
 <tr>
@@ -2271,115 +2873,15 @@
 	<td>id=notificationsButton</td>
 	<td></td>
 </tr>
+<!--Set global default to All activity-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Desktop_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=desktopNotificationMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=desktopNotificationMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Desktop_notificationsDesc &gt; span</td>
-	<td>For mentions and direct messages, shown for 5 seconds</td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotificationsGroup</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelNotificationsGroup</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (mention)</td>
-</tr>
-<!--Set global default back to For all activity-->
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Account Settings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Account Settings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=notificationsButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=notificationsButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Desktop_notificationsEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Desktop_notificationsEdit &gt; span</td>
+	<td>id=desktopEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -2393,6 +2895,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForValue</td>
+	<td>id=desktopNotificationAllActivity</td>
+	<td>on</td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>id=saveSetting</td>
 	<td></td>
@@ -2404,15 +2911,130 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Desktop_notificationsDesc &gt; span</td>
+	<td>css=#desktopDesc &gt; span</td>
 	<td>For all activity, shown for 5 seconds</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationsGroup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationsGroup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (all)</td>
+</tr>
+<!--Set global default to Never-->
+<tr>
 	<td>refreshAndWait</td>
 	<td></td>
 	<td></td>
 </tr>
-<!--GM - Mark Channel Unread - Verify modal options, cancel out of edit-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Account Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Account Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=notificationsButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=notificationsButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopNotificationNever</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopNotificationNever</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=desktopNotificationNever</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=desktopDesc</td>
+	<td>Off</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=channelHeaderDropdownButton</td>
@@ -2435,82 +3057,72 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>For all unread messages</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (none)</td>
 </tr>
 <tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Set global default back to mentions-->
+<tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
+	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
+	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Account Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Account Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=notificationsButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=notificationsButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopNotificationMentions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopNotificationMentions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=channelUnreadAll</td>
+	<td>id=desktopNotificationMentions</td>
 	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelUnreadMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.setting-list__hint &gt; span &gt; span</td>
-	<td>The channel name is bolded in the sidebar when there are unread messages. Selecting &quot;Only for mentions&quot; will bold the channel only when you are mentioned.</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelNotificationMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=channelNotificationMentions</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadCancel &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Mark_Channel_UnreadCancel &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>For all unread messages</td>
-</tr>
-<!--GM - Mark Channel Unread - Change setting, verify, then change back-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelUnreadMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelUnreadMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
@@ -2521,45 +3133,9 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>Only for mentions</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>For mentions and direct messages, shown for 5 seconds</td>
 </tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelUnreadAll</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelUnreadAll</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>For all unread messages</td>
-</tr>
-<!--DM DIRECT MESSAGE-->
 <!--(No tests for DMs; no notification preferences on DM channels)-->
 <!--LOG OUT-->
 <tr>

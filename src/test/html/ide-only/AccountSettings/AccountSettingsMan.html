@@ -2237,12 +2237,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Send_messages_on_CTRL+ENTEREdit</td>
+	<td>id=advancedCtrlSendEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Send_messages_on_CTRL+ENTEREdit</td>
+	<td>id=advancedCtrlSendEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -2266,6 +2266,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>css=#advancedCtrlSendDesc &gt; span</td>
+	<td>On</td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
@@ -2275,7 +2280,7 @@
 	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
-<!--Post message using CTRL+ENTER-->
+<!--Post message using CTRL+ENTER: Center-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -2296,7 +2301,7 @@
 	<td>css=span:contains('Control and Enter')</td>
 	<td></td>
 </tr>
-<!--Message does not post on Enter-->
+<!--Message does not post on Enter: Center-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -2326,6 +2331,64 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=span:contains('Just Enter<br />Followed by Control and Enter')</td>
+	<td></td>
+</tr>
+<!--Post message using CTRL+ENTER: RHS-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_SHIFT}${KEY_UP}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=reply_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=reply_textbox</td>
+	<td>Reply Control and Enter${KEY_CTRL}${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('Reply Control and Enter')</td>
+	<td></td>
+</tr>
+<!--Message does not post on Enter: RHS-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=reply_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=reply_textbox</td>
+	<td>Reply just Enter${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=reply_textbox</td>
+	<td>Reply just Enter</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=p:contains('Reply just Enter')</td>
+	<td></td>
+</tr>
+<!--Enter in the text box adds new line (add text to above and post)-->
+<tr>
+	<td>sendKeys</td>
+	<td>id=reply_textbox</td>
+	<td>Followed by Control and Enter${KEY_CTRL}${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('Reply just Enter<br />Followed by Control and Enter')</td>
 	<td></td>
 </tr>
 <!--Set back to sending message on Enter-->
@@ -2361,12 +2424,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Send_messages_on_CTRL+ENTEREdit</td>
+	<td>id=advancedCtrlSendEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Send_messages_on_CTRL+ENTEREdit</td>
+	<td>id=advancedCtrlSendEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -2388,6 +2451,11 @@
 	<td>click</td>
 	<td>id=saveSetting</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=advancedCtrlSendDesc</td>
+	<td>Off</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
