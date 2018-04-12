@@ -250,6 +250,42 @@
 	<td>link=@test7</td>
 	<td></td>
 </tr>
+<!--Switch to Town Square so won't be on this channel on logging back in-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>town</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
 <!--LOG OUT test7-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -347,6 +383,11 @@
 	<td>css=p:contains('#@test7')</td>
 	<td></td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
 <!--Dollar sign preceding mention-->
 <tr>
 	<td>sendKeys</td>
@@ -361,6 +402,11 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=p:contains('$@test7')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <!--Ampersand preceding mention-->
@@ -379,6 +425,11 @@
 	<td>css=p:contains('&amp;@test7')</td>
 	<td></td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
 <!--User mention doesn't fire in a code block-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -394,6 +445,11 @@
 	<td>waitForText</td>
 	<td>css=code.hljs</td>
 	<td>@test7</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
 </tr>
 <!--Mention in italic markdown-->
 <tr>
@@ -416,6 +472,11 @@
 	<td>css=em &gt; span &gt; span &gt; a.mention-link</td>
 	<td>@test7</td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
 <!--Mention in strikethrough markdown-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -436,6 +497,11 @@
 	<td>waitForText</td>
 	<td>css=del &gt; span &gt; span &gt; a.mention-link</td>
 	<td>@test7</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
 </tr>
 <!--LOG OUT test6-->
 <tr>

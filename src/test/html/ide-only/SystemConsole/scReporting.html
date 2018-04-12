@@ -105,9 +105,14 @@
 	<td>12</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div/div/div[2]/div/div/span</td>
-	<td>Total Teams</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.total-count &gt; div.title &gt; span:contains('Total Teams')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>Total Users*12*Total Teams*2*Total Channels*Total Posts*Total Sessions*Total Commands*Incoming Webhooks*Outgoing Webhooks*Daily Active Users*Monthly Active Users*WebSocket Conns*Master DB Conns*Replica DB Conns</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -115,34 +120,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div/div/div[2]/div/div[2]</td>
-	<td>2</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div/div/div[3]/div/div/span</td>
-	<td>Total Channels</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
 	<td>css=i.fa.fa-globe</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div/div/div[4]/div/div/span</td>
-	<td>Total Posts</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
 	<td>css=i.fa.fa-comment</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div/div[2]/div/div/div/span</td>
-	<td>Total Sessions</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -151,18 +136,8 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div/div[2]/div[2]/div/div/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
 	<td>css=i.fa.fa-terminal</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div/div[2]/div[3]/div/div/span</td>
-	<td>Incoming Webhooks</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -170,63 +145,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div/div[2]/div[4]/div/div/span</td>
-	<td>Outgoing Webhooks</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
 	<td>css=i.fa.fa-arrow-up</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div/div[3]/div/div/div/span</td>
-	<td>Daily Active Users</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div/div[3]/div/div/div/i</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div/div[3]/div[2]/div/div/span</td>
-	<td>Monthly Active Users</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div/div[3]/div[2]/div/div/i</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div/div[4]/div/div/div/span</td>
-	<td>WebSocket Conns</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div/div[4]/div/div/div/i</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div/div[4]/div[2]/div/div/span</td>
-	<td>Master DB Conns</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div/div[4]/div[2]/div/div/i</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div/div[4]/div[3]/div/div/span</td>
-	<td>Replica DB Conns</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div/div[4]/div[3]/div/div/i</td>
 	<td></td>
 </tr>
 <tr>
@@ -241,7 +161,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div[2]/div[2]/div/div/span</td>
+	<td>//div[@id='root']/div/div[3]/div/div[2]/div[2]/div/div/span</td>
 	<td>Posts, Files and Hashtags</td>
 </tr>
 <tr>
@@ -251,7 +171,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/div[4]/div/div/div/span</td>
+	<td>//div[@id='root']/div/div[3]/div/div[4]/div/div/div/span</td>
 	<td>Active Users With Posts</td>
 </tr>
 <!--Team Statistics-->
@@ -468,23 +388,11 @@
 	<td></td>
 </tr>
 <tr>
-	<td>close</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
 	<td>pause</td>
 	<td>3000</td>
 	<td></td>
 </tr>
-<!--Don't know why these selectWindow s are failing-->
-<!--Can click through these tests manually and they work-->
 <!--Do note that the window title changes each release-->
-<tr>
-	<td>selectWindow</td>
-	<td>Administrator’s Guide — Mattermost 4.5 documentation</td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForLocation</td>
 	<td>https://docs.mattermost.com/guides/administrator.html</td>
@@ -525,20 +433,9 @@
 	<td></td>
 	<td></td>
 </tr>
-<!--Se was popping up an extra window, thus the `close` before the verifications-->
-<tr>
-	<td>close</td>
-	<td></td>
-	<td></td>
-</tr>
 <tr>
 	<td>pause</td>
 	<td>3000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>selectWindow</td>
-	<td>How to use the Troubleshooting Forum - Trouble Shooting - Mattermost Peer-to-Peer Forum</td>
 	<td></td>
 </tr>
 <tr>
@@ -582,18 +479,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>close</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
 	<td>pause</td>
 	<td>3000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>selectWindow</td>
-	<td>Support - Mattermost</td>
 	<td></td>
 </tr>
 <tr>
@@ -638,14 +525,79 @@
 </tr>
 <!--The following two are failing; verify visually for now-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div:contains('Database: mysql')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.form-group.less &gt; div &gt; span</td>
+	<td>Mattermost Version:</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div[2]</td>
-	<td>Licensed to: Mattermost Selenium</td>
+	<td>//div[2]/span</td>
+	<td>Database Schema Version:</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[3]/span</td>
+	<td>exact:Database:</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.form-group &gt; span</td>
+	<td>Licensed to:</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>link=about.mattermost.com</td>
+	<td>about.mattermost.com</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>link=platform</td>
+	<td>platform</td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>link=platform@href</td>
+	<td>https://about.mattermost.com/platform-notice-txt/</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>link=desktop</td>
+	<td>desktop</td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>link=desktop@href</td>
+	<td>https://about.mattermost.com/desktop-notice-txt/</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>link=mobile</td>
+	<td>mobile</td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>link=mobile@href</td>
+	<td>https://about.mattermost.com/mobile-notice-txt/</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.about-modal__hash &gt; p &gt; span</td>
+	<td>Build Hash:</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//p/span[2]</td>
+	<td>EE Build Hash:</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//span[3]</td>
+	<td>Webapp Build Hash:</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//p[2]/span</td>
+	<td>Build Date:</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

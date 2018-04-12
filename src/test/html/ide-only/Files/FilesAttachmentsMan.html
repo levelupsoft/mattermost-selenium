@@ -370,7 +370,7 @@
 <!--*** paste in message box, press Enter-->
 <tr>
 	<td>pause</td>
-	<td>4000</td>
+	<td>6000</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -668,11 +668,21 @@
 	<td>8000</td>
 	<td></td>
 </tr>
-<!--*** Make sure test10 is viewing UI Automation 2 team (add step to switch if not)-->
+<!--Switch to UI Automation 2 team-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>link=UIUI Automation 2</td>
 	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=UIUI Automation 2</td>
 	<td></td>
-	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
 </tr>
 <!--DM outside current team can see attachment-->
 <tr>
@@ -1019,6 +1029,7 @@
 	<td></td>
 </tr>
 <!--Delete post to clear for next test-->
+<!--*** This part is failing; delete post manually-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.dropdown-toggle.post__dropdown.color--link.style--none</td>
@@ -1086,7 +1097,7 @@
 	<td>id=post_textbox</td>
 	<td>https://about.mattermost.com/wp-content/uploads/2016/01/logo.png?foo${KEY_ENTER}</td>
 </tr>
-<!--*** Manually copy the image and paste in message box-->
+<!--*** Manually right-click and copy the posted image and paste in message box-->
 <!--*** Visually verify thumbnail zoomed and cropped: logo no text, no white space below-->
 <tr>
 	<td>pause</td>
@@ -1094,6 +1105,16 @@
 	<td></td>
 </tr>
 <!--Post and verify-->
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Pasted at</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=i.fa.fa-remove</td>
+	<td></td>
+</tr>
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
@@ -1106,6 +1127,7 @@
 	<td></td>
 </tr>
 <!--*** Visually verify image preview shows whole (small) image not zoomed or cropped-->
+<!--*** Have to manually click pasted image for now-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=div.post-image.normal</td>
@@ -1239,9 +1261,10 @@
 	<td></td>
 </tr>
 <!--/test url test-attachments-->
-<!--*** Last item in test: Read the post and follow test instructions-->
+<!--*** Read the post and follow test instructions-->
 <!--*** Be sure to upload 5 attachments to one message-->
-<!--*** Verify after 5 icon looks disabled and clicking it shows error-->
+<!--*** Verify after 5 trying to upload again shows error: "Uploads limited to 5 -->
+<!--*** files maximum. Please use additional posts for more files."-->
 <!--*** Then cycle through the multiple images on that post, w arrows and mouse-->
 <tr>
 	<td>waitForElementPresent</td>

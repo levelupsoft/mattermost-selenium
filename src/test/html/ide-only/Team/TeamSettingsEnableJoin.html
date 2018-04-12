@@ -74,12 +74,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamEdit</td>
+	<td>id=open_inviteEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamEdit</td>
+	<td>id=open_inviteEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -104,18 +104,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamDesc</td>
+	<td>id=open_inviteDesc</td>
 	<td>No</td>
 </tr>
 <!--Cancel out of changes-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamEdit</td>
+	<td>id=open_inviteEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamEdit</td>
+	<td>id=open_inviteEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -130,17 +130,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Allow_any_user_with_an_account_on_this_server_to_join_this_teamCancel &gt; span</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Allow_any_user_with_an_account_on_this_server_to_join_this_teamCancel &gt; span</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamDesc</td>
+	<td>id=open_inviteDesc</td>
 	<td>No</td>
 </tr>
 <!--LOG OUT admin-->
@@ -173,11 +173,6 @@
 	<td></td>
 </tr>
 <!--LOG IN as test4, leave team, can't rejoin team-->
-<tr>
-	<td>openAndWait</td>
-	<td>/login</td>
-	<td></td>
-</tr>
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -266,12 +261,12 @@
 <!--Leave team isn't working in IDE; can change to slash command-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Leave Team</td>
+	<td>//button[@id='leaveTeam']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Leave Team</td>
+	<td>//button[@id='leaveTeam']</td>
 	<td></td>
 </tr>
 <tr>
@@ -280,9 +275,9 @@
 	<td>exact:You will be removed from all public and private channels. If the team is private you will not be able to rejoin the team. Are you sure?</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
+	<td>waitForText</td>
 	<td>css=button.btn.btn-danger</td>
-	<td></td>
+	<td>Yes</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -374,12 +369,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamEdit</td>
+	<td>id=open_inviteEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamEdit</td>
+	<td>id=open_inviteEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -404,7 +399,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamDesc</td>
+	<td>id=open_inviteDesc</td>
 	<td>Yes</td>
 </tr>
 <!--LOG OUT admin-->
@@ -437,11 +432,6 @@
 	<td></td>
 </tr>
 <!--LOG IN as test4, join team-->
-<tr>
-	<td>openAndWait</td>
-	<td>/login</td>
-	<td></td>
-</tr>
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -484,12 +474,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.signup-team-dir__name</td>
+	<td>css=#UI_Automation &gt; span.signup-team-dir__name</td>
 	<td>UI Automation</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.signup-team-dir__name</td>
+	<td>css=#UI_Automation &gt; span.signup-team-dir__name</td>
 	<td>UI Automation</td>
 </tr>
 <tr>
@@ -580,22 +570,27 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Team Settings</td>
+	<td>id=teamSettings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Team Settings</td>
+	<td>id=teamSettings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamDesc</td>
+	<td>id=open_inviteDesc</td>
 	<td>Yes</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=open_inviteEdit</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamEdit</td>
+	<td>id=open_inviteEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -620,7 +615,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamDesc</td>
+	<td>id=open_inviteDesc</td>
 	<td>No</td>
 </tr>
 <!--LOG OUT admin-->

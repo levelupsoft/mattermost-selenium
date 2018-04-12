@@ -18,9 +18,9 @@ public class LogInLogOutIT extends DriverBase {
     @Test
     public void testLogInLogOutIT() throws Exception {        // LOG IN
         driver.get(baseUrl + "/login");
-        // DisableAnimations
+        disableAnimations();
         for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
+        	if (second >= 2) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
@@ -30,14 +30,14 @@ public class LogInLogOutIT extends DriverBase {
         driver.findElement(By.name("password")).clear();
         driver.findElement(By.name("password")).sendKeys("passwd");
         driver.findElement(By.id("loginButton")).click();
-        // Sleep
-        // Sleep
-        // Sleep
+        Thread.sleep(2000);
+        Thread.sleep(2000);
+        Thread.sleep(2000);
         // LOG OUT
         driver.navigate().refresh();
-        // Sleep
-        // Sleep
-        // Sleep
+        Thread.sleep(2000);
+        Thread.sleep(2000);
+        Thread.sleep(2000);
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         driver.findElement(By.cssSelector("#logout > span")).click();
     }

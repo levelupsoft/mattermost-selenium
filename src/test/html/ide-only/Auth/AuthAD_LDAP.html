@@ -1,10 +1,5 @@
 <!--*** Ensure LDAP is set up on the server you're running this on-->
 <!--LOG IN admin-->
-<tr>
-	<td>openAndWait</td>
-	<td>/login</td>
-	<td></td>
-</tr>
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -48,28 +43,23 @@
 <!--Get team invite link-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Get Team Invite Link</td>
+	<td>id=getTeamInviteLink</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Get Team Invite Link</td>
+	<td>id=getTeamInviteLink</td>
 	<td></td>
 </tr>
 <tr>
-	<td>selectWindow</td>
-	<td>null</td>
-	<td></td>
+	<td>storeText</td>
+	<td>id=linkModalTextArea</td>
+	<td>teaminvite</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>//div[2]/div/div/div[2]/p</td>
 	<td>Send teammates the link below for them to sign-up to this team site. The Team Invite Link can be shared with multiple teammates as it does not change unless it's regenerated in Team Settings by a Team Admin.</td>
-</tr>
-<tr>
-	<td>storeValue</td>
-	<td>//div[2]/textarea</td>
-	<td>teaminvite</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -213,17 +203,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Sign-in_MethodDesc &gt; span</td>
+	<td>id=signinDesc</td>
 	<td>AD/LDAP</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Sign-in_MethodEdit &gt; span</td>
+	<td>id=signinEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Sign-in_MethodEdit &gt; span</td>
+	<td>id=signinEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -430,17 +420,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Sign-in_MethodDesc &gt; span</td>
+	<td>id=signinDesc</td>
 	<td>Email and Password</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Sign-in_MethodEdit &gt; span</td>
+	<td>id=signinEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Sign-in_MethodEdit &gt; span</td>
+	<td>id=signinEdit</td>
 	<td></td>
 </tr>
 <tr>

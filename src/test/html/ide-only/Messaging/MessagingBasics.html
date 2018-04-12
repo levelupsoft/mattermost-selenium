@@ -1105,12 +1105,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Full_NameEdit &gt; span</td>
+	<td>id=nameEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Full_NameEdit &gt; span</td>
+	<td>id=nameEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -1145,17 +1145,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Full_NameDesc</td>
+	<td>id=nameDesc</td>
 	<td>H Jenkins</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#NicknameEdit &gt; span</td>
+	<td>id=nicknameEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#NicknameEdit &gt; span</td>
+	<td>id=nicknameEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -1180,17 +1180,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=NicknameDesc</td>
+	<td>id=nicknameDesc</td>
 	<td>asparagus</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#EmailEdit &gt; span</td>
+	<td>id=emailEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#EmailEdit &gt; span</td>
+	<td>id=emailEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -1225,7 +1225,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=EmailDesc</td>
+	<td>id=emailDesc</td>
 	<td>changed@test.com</td>
 </tr>
 <!--Log out test2-->
@@ -1274,10 +1274,16 @@
 	<td></td>
 </tr>
 <!--@-autocomplete does not return users not on that team-->
+<!--Did test7 get added to the other team at some point? Should be in UI2 (but didn't used to have to choose it)-->
 <tr>
-	<td>waitForText</td>
-	<td>css=div.team-container.active &gt; a &gt; div.team-btn. &gt; div.team-btn__initials &gt; div.team-btn__content</td>
-	<td>UI Automation 2</td>
+	<td>waitForElementPresent</td>
+	<td>link=UIUI Automation 2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=UIUI Automation 2</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2010,11 +2016,17 @@
 	<td>id=edit_textbox</td>
 	<td>~town-square then a space and some more text</td>
 </tr>
-<!--Oddly, this ENTER is causing a DELETE. Manually it saves edit as expected.-->
+<!--Oddly, ENTER on the same line caused a DELETE in Se. Manually it saved edit as expected.-->
+<!--So I split it onto two lines-->
 <tr>
 	<td>sendKeys</td>
 	<td>id=edit_textbox</td>
-	<td>, and then edited${KEY_ENTER}</td>
+	<td>, and then edited</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=edit_textbox</td>
+	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2202,12 +2214,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#EmailEdit &gt; span</td>
+	<td>id=emailEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#EmailEdit &gt; span</td>
+	<td>id=emailEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -2242,7 +2254,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=EmailDesc</td>
+	<td>id=emailDesc</td>
 	<td>test2@test.com</td>
 </tr>
 <tr>
@@ -2852,8 +2864,6 @@
 	<td>id=loginButton</td>
 	<td></td>
 </tr>
-<!--*** This is failing here; FF is appending something to URL?-->
-<!--*** Passed test manually in 4.8.0-rc3-->
 <!--After logging back in, opens to permalink-->
 <tr>
 	<td>waitForText</td>

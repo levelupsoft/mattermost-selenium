@@ -171,7 +171,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>GM with deactivated user and another user stays in LHS.${KEY_ENTER}</td>
+	<td>GM with deactivated user and another user remains active.${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -359,11 +359,6 @@
 	<td></td>
 </tr>
 <!--LOG IN admin-->
-<tr>
-	<td>openAndWait</td>
-	<td>/login</td>
-	<td></td>
-</tr>
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -584,53 +579,15 @@
 	<td>css=strong.heading</td>
 	<td>Town Square</td>
 </tr>
-<!--Verify can still access DM with deactivated user-->
-<!--(Spec said DM removed from LHS but right now just changing icon)-->
-<!--DM appears in LHS with archive icon-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.icon.icon__archive &gt; svg &gt; path</td>
-	<td></td>
-</tr>
+<!--GM still in LHS and write-able-->
 <tr>
 	<td>waitForText</td>
-	<td>link=test2×</td>
-	<td>test2×</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=test2×</td>
-	<td>test2×</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span &gt; p</td>
-	<td>DM with deactivated user is still accessible.</td>
-</tr>
-<tr>
-	<td>waitForElementNotPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.post-create-message &gt; span</td>
-	<td>You are viewing an archived channel with a deactivated user.</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>test2</td>
-</tr>
-<!--GM still write-able-->
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='sidebarChannelContainer']/ul[3]/li[3]/a</td>
+	<td>css=a.sidebar-item.has-close</td>
 	<td>2<br />test2, test3×</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='sidebarChannelContainer']/ul[3]/li[3]/a</td>
+	<td>css=a.sidebar-item.has-close</td>
 	<td>2<br />test2, test3×</td>
 </tr>
 <tr>
@@ -648,32 +605,13 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>test2, test3</td>
 </tr>
-<!--Deactivated user DM searchable-->
+<!--DM has been removed from LHS-->
 <tr>
-	<td>click</td>
+	<td>waitForElementNotPresent</td>
 	<td>link=test2×</td>
 	<td>test2×</td>
 </tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>test2</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.btn-close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.btn-close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
-</tr>
+<!--Verify can still access DM with deactivated user-->
 <!--Searchable in channel switcher-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -697,7 +635,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[2]/div[2]/div/div/div[4]</td>
+	<td>//div[2]/div[2]/div/div/div[3]</td>
 	<td>@test2 - Deactivated</td>
 </tr>
 <tr>
@@ -706,51 +644,62 @@
 	<td>G<br />test2, test3</td>
 </tr>
 <tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>${KEY_ESC}</td>
+</tr>
+<!--Can search in DM More... list, selecting active user hides deactivated from the list-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=moreDirectMessage</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>//div[2]/div[2]/div/div/div[4]</td>
+	<td>id=moreDirectMessage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[@class='Select-input']/input</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[12]/div/div/span</td>
 	<td>@test2 - Deactivated</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span &gt; p</td>
-	<td>DM with deactivated user is still accessible.</td>
+	<td>type</td>
+	<td>//div[@class='Select-input']/input</td>
+	<td>test3</td>
 </tr>
 <tr>
-	<td>waitForElementNotPresent</td>
-	<td>id=post_textbox</td>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test3</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__name</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.post-create-message &gt; span</td>
-	<td>You are viewing an archived channel with a deactivated user.</td>
+	<td>css=div.multi-select__help &gt; span</td>
+	<td>Use ↑↓ to browse, ↵ to select. You can add 6 more people.</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>test2</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.icon.icon__archive &gt; svg &gt; path</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.btn-close</td>
+	<td>waitForTextNotPresent</td>
+	<td>Deactivated</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.btn-close</td>
+	<td>id=moreDirectMessage</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
-</tr>
-<!--Searchable in DM More... list-->
+<!--Can search and reopen in DM More... list-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=moreDirectMessage</td>
@@ -781,6 +730,7 @@
 	<td>css=div.more-modal__name</td>
 	<td></td>
 </tr>
+<!--Opens DM immediately so new GM can't be created that includes deactivated user-->
 <tr>
 	<td>waitForElementNotPresent</td>
 	<td>id=saveSetting</td>
@@ -791,6 +741,7 @@
 	<td>css=span &gt; p</td>
 	<td>DM with deactivated user is still accessible.</td>
 </tr>
+<!--Archived DM is read-only-->
 <tr>
 	<td>waitForElementNotPresent</td>
 	<td>id=post_textbox</td>
@@ -806,6 +757,7 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>test2</td>
 </tr>
+<!--Archive icon on channel in LHS-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=span.icon.icon__archive &gt; svg &gt; path</td>
@@ -825,6 +777,125 @@
 	<td>waitForText</td>
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Town Square</td>
+</tr>
+<!--Log out and back in, DM is still present in LHS-->
+<!--LOG OUT admin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<!--LOG IN admin-->
+<!--DisableAnimations-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>admin@test.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=strong.heading</td>
+	<td>Town Square</td>
+</tr>
+<!--DM with deactivated user is still present in LHS, with archive icon-->
+<tr>
+	<td>waitForText</td>
+	<td>css=a.sidebar-item.has-close &gt; span.sidebar-item__name</td>
+	<td>test2</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.icon.icon__archive &gt; svg &gt; path</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=test2×</td>
+	<td>test2×</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>test2</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.post-create-message &gt; span</td>
+	<td>You are viewing an archived channel with a deactivated user.</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.btn-close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.btn-close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<!--Messages in archived DM still returned in Search-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=searchBox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchBox</td>
+	<td>accessible${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.search-channel__name &gt; span</td>
+	<td>Direct Message (with test2)</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p</td>
+	<td>DM with deactivated user is still accessible.</td>
 </tr>
 <!--Open System Console-->
 <tr>
@@ -849,12 +920,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#users &gt; span.sidebar-section-title__text &gt; span</td>
+	<td>id=users</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#users &gt; span.sidebar-section-title__text &gt; span</td>
+	<td>id=users</td>
 	<td></td>
 </tr>
 <!--Filter user list to just test2-->
@@ -932,12 +1003,6 @@
 </tr>
 <!--LOG IN test2 to verify reactivated-->
 <tr>
-	<td>openAndWait</td>
-	<td>/login</td>
-	<td></td>
-</tr>
-<!--DisableAnimations-->
-<tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
 	<td></td>
@@ -1000,11 +1065,6 @@
 	<td></td>
 </tr>
 <!--LOG IN admin-->
-<tr>
-	<td>openAndWait</td>
-	<td>/login</td>
-	<td></td>
-</tr>
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>

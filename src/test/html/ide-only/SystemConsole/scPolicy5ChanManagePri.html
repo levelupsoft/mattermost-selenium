@@ -63,6 +63,11 @@
 	<td>css=h1#headerTeamName.team__name</td>
 	<td>NonAdminCreated</td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
 <!--Verify system admin can see Add and Manage Members on private channel:-->
 <!--Drop-down: Add, Manage Members; Member icon: Manage Members-->
 <tr>
@@ -207,6 +212,11 @@
 	<td>waitForText</td>
 	<td>css=h1#headerTeamName.team__name</td>
 	<td>NonAdminCreated</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
 </tr>
 <!--Verify team admin cannot see Add or Manage Members on private channel-->
 <!--Drop-down-->
@@ -736,6 +746,11 @@
 	<td>css=h1#headerTeamName.team__name</td>
 	<td>NonAdminCreated</td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
 <!--Verify team admin can see Add or Manage Members on private channel-->
 <!--Drop-down: Add, Manage Members; Member icon: Manage Members-->
 <tr>
@@ -808,7 +823,6 @@
 	<td>id=member_popover</td>
 	<td></td>
 </tr>
-<!--Current issue on permissions spinmint 26 Mar 18-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__button &gt; button.btn.btn-link</td>
@@ -1294,6 +1308,11 @@
 	<td>waitForText</td>
 	<td>css=h1#headerTeamName.team__name</td>
 	<td>NonAdminCreated</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
 </tr>
 <!--Verify team admin can see Add or Manage Members on private channel-->
 <!--Drop-down: Add, Manage Members; Member icon: Manage Members-->
@@ -1816,6 +1835,11 @@
 	<td>css=h1#headerTeamName.team__name</td>
 	<td>NonAdminCreated</td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
 <!--Verify team admin can see Add or Manage Members on private channel-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -2163,9 +2187,10 @@
 	<td>id=showInviteModal</td>
 	<td></td>
 </tr>
+<!--Remove button (can't demote admins but can remove from channel)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelMemberDropdown</td>
+	<td>id=removeMember</td>
 	<td></td>
 </tr>
 <!--Link to Invite others to channel is present-->
