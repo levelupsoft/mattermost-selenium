@@ -79,23 +79,23 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Full_NameDesc &gt; span</td>
+	<td>css=#nameDesc &gt; span</td>
 	<td>Click 'Edit' to add your full name</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#NicknameDesc &gt; span</td>
+	<td>css=#nicknameDesc &gt; span</td>
 	<td>Click 'Edit' to add a nickname</td>
 </tr>
 <!--Add nickname-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=NicknameEdit</td>
+	<td>id=nicknameEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=NicknameEdit</td>
+	<td>id=nicknameEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -125,7 +125,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=NicknameDesc</td>
+	<td>id=nicknameDesc</td>
 	<td>eggplant</td>
 </tr>
 <tr>
@@ -452,12 +452,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=PositionEdit</td>
+	<td>id=positionEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=PositionEdit</td>
+	<td>id=positionEdit</td>
 	<td></td>
 </tr>
 <!--Position accepts 128 characters-->
@@ -483,19 +483,19 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=PositionDesc</td>
+	<td>id=positionDesc</td>
 	<td>A Job with a Very Long Title A Job with a Very Long Title A Job with a Very Long Title A Job with a Very Long Title 012345678901</td>
 </tr>
 <!--Cannot type more than 128 characters-->
 <!--Can verify manually; Se replaces last character rather than prevent typing-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=PositionEdit</td>
+	<td>id=positionEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=PositionEdit</td>
+	<td>id=positionEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -515,12 +515,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=PositionCancel</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=PositionCancel</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <!--Full name - long name truncates in popover-->
@@ -546,12 +546,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Full_NameEdit</td>
+	<td>id=nameEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Full_NameEdit</td>
+	<td>id=nameEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -586,7 +586,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Full_NameDesc</td>
+	<td>id=nameDesc</td>
 	<td>This is a Long Name That Should Truncate</td>
 </tr>
 <tr>
@@ -655,12 +655,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=UsernameEdit</td>
+	<td>id=usernameEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=UsernameEdit</td>
+	<td>id=usernameEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -685,7 +685,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=UsernameDesc</td>
+	<td>id=usernameDesc</td>
 	<td>test10edited</td>
 </tr>
 <!--*** Make sure image available for upload as profile pic (profile-sloth.png)-->
@@ -697,12 +697,12 @@
 <!--Upload profile picture for other user to verify in popover-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Profile_PictureEdit</td>
+	<td>id=pictureEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Profile_PictureEdit</td>
+	<td>id=pictureEdit</td>
 	<td></td>
 </tr>
 <!--*** Manually select image-->
@@ -929,12 +929,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Profile_PictureEdit</td>
+	<td>id=pictureEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Profile_PictureEdit</td>
+	<td>id=pictureEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -973,7 +973,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Profile_PictureEdit</td>
+	<td>id=pictureEdit</td>
 	<td></td>
 </tr>
 <!--*** Visually verify profile pic (behind modal, top left) appears like thumbnail did-->
@@ -987,12 +987,12 @@
 <!--not-an-image-file.jpg-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Profile_PictureEdit</td>
+	<td>id=pictureEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Profile_PictureEdit</td>
+	<td>id=pictureEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -1041,12 +1041,12 @@
 <!--Cleanup: Change test10 name and username back to null and test10-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Full_NameEdit</td>
+	<td>id=nameEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Full_NameEdit</td>
+	<td>id=nameEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -1081,17 +1081,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Full_NameDesc &gt; span</td>
+	<td>css=#nameDesc &gt; span</td>
 	<td>Click 'Edit' to add your full name</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=UsernameEdit</td>
+	<td>id=usernameEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=UsernameEdit</td>
+	<td>id=usernameEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -1116,7 +1116,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=UsernameDesc</td>
+	<td>id=usernameDesc</td>
 	<td>test10</td>
 </tr>
 <!--Display: Theme-->
@@ -1132,12 +1132,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=ThemeEdit</td>
+	<td>id=themeEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=ThemeEdit</td>
+	<td>id=themeEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -1227,12 +1227,12 @@
 <!--Cancel out of theme change-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=ThemeEdit</td>
+	<td>id=themeEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=ThemeEdit</td>
+	<td>id=themeEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -1258,12 +1258,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=unknownTitleCancel</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=unknownTitleCancel</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <!--Clicking `Cancel` with unsaved changes prompts for confirmation-->
@@ -1291,12 +1291,12 @@
 <!--Custom theme (vector copied from one of the default themes)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=ThemeEdit</td>
+	<td>id=themeEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=ThemeEdit</td>
+	<td>id=themeEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -1349,12 +1349,12 @@
 <!--Use copied Organization theme vector as custom theme-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=ThemeEdit</td>
+	<td>id=themeEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=ThemeEdit</td>
+	<td>id=themeEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -1525,12 +1525,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=ThemeEdit</td>
+	<td>id=themeEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=ThemeEdit</td>
+	<td>id=themeEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -1628,12 +1628,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Clock_DisplayEdit</td>
+	<td>id=clockEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Clock_DisplayEdit</td>
+	<td>id=clockEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -1658,7 +1658,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Clock_DisplayDesc &gt; span</td>
+	<td>css=#clockDesc &gt; span</td>
 	<td>24-hour clock (example: 16:00)</td>
 </tr>
 <tr>
@@ -1722,12 +1722,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Default_appearance_of_image_link_previewsEdit</td>
+	<td>id=collapseEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Default_appearance_of_image_link_previewsEdit</td>
+	<td>id=collapseEdit</td>
 	<td></td>
 </tr>
 <!--Change to collapsed-->
@@ -1753,7 +1753,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Default_appearance_of_image_link_previewsDesc &gt; span</td>
+	<td>css=#collapseDesc &gt; span</td>
 	<td>Collapsed</td>
 </tr>
 <tr>
@@ -1841,12 +1841,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Default_appearance_of_image_link_previewsEdit</td>
+	<td>id=collapseEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Default_appearance_of_image_link_previewsEdit</td>
+	<td>id=collapseEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -1871,7 +1871,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Default_appearance_of_image_link_previewsDesc &gt; span</td>
+	<td>css=#collapseDesc &gt; span</td>
 	<td>Expanded</td>
 </tr>
 <tr>
@@ -2108,6 +2108,16 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
@@ -2134,7 +2144,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Website_Link_PreviewsDesc</td>
+	<td>id=linkpreviewDesc</td>
 	<td>On</td>
 </tr>
 <tr>
@@ -2500,12 +2510,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Enable_Join/Leave_MessagesEdit</td>
+	<td>id=join_leaveEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Enable_Join/Leave_MessagesEdit</td>
+	<td>id=join_leaveEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -2580,6 +2590,10 @@
 	<td>css=h4.channel-intro__title &gt; span</td>
 	<td>Beginning of Join</td>
 </tr>
+<!--These all need updating; it is expected for message to show if -->
+<!--current user adds or removes other user. It is only if others join or leave-->
+<!--themselves that the message shouldn't show. Tested manually 4.9 - -->
+<!--overall join/leave message behavior is about to change, likely in next release-->
 <!--Add another user-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -2844,12 +2858,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Enable_Join/Leave_MessagesEdit</td>
+	<td>id=join_leaveEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Enable_Join/Leave_MessagesEdit</td>
+	<td>id=join_leaveEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -2874,7 +2888,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//li[@id='Enable_Join/Leave_MessagesDesc']/span</td>
+	<td>css=#join_leaveDesc &gt; span</td>
 	<td>On</td>
 </tr>
 <tr>
@@ -2935,12 +2949,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Preview_pre-release_featuresEdit</td>
+	<td>id=advancedPreviewFeaturesEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Preview_pre-release_featuresEdit</td>
+	<td>id=advancedPreviewFeaturesEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -2970,7 +2984,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Preview_pre-release_featuresDesc &gt; span</td>
+	<td>css=#advancedPreviewFeaturesDesc &gt; span</td>
 	<td>1 Feature Enabled</td>
 </tr>
 <tr>

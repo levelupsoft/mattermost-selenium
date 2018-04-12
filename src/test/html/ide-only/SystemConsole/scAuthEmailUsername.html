@@ -104,39 +104,39 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enableSignUpWithEmailtrue</td>
+	<td>id=EnableSignUpWithEmailtrue</td>
 	<td>on</td>
 </tr>
 <!--Verify sign-in with email set to true-->
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/form/div/div[2]/label</td>
+	<td>//div[@id='root']/div/div[3]/div/form/div/div[2]/label</td>
 	<td>Enable sign-in with email:</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/form/div/div[2]/div/div/span</td>
+	<td>//div[@id='root']/div/div[3]/div/form/div/div[2]/div/div/span</td>
 	<td>When true, Mattermost allows users to sign in using their email and password.</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enableSignInWithEmailtrue</td>
+	<td>id=EnableSignInWithEmailtrue</td>
 	<td>on</td>
 </tr>
 <!--Verify sign-in with username set to true-->
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/form/div/div[3]/label</td>
+	<td>//div[@id='root']/div/div[3]/div/form/div/div[3]/label</td>
 	<td>Enable sign-in with username:</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/form/div/div[3]/div/div/span</td>
+	<td>//div[@id='root']/div/div[3]/div/form/div/div[3]/div/div/span</td>
 	<td>When true, users with email login can sign in using their username and password. This setting does not affect AD/LDAP login.</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enableSignInWithUsernametrue</td>
+	<td>id=EnableSignInWithUsernametrue</td>
 	<td>on</td>
 </tr>
 <!--Get team invite link-->
@@ -357,23 +357,23 @@
 <!--Set account creation with email to false-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableSignUpWithEmailfalse</td>
+	<td>id=EnableSignUpWithEmailfalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableSignUpWithEmailfalse</td>
+	<td>id=EnableSignUpWithEmailfalse</td>
 	<td></td>
 </tr>
 <!--Set signin with email to false (leave signin with username true)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableSignInWithEmailfalse</td>
+	<td>id=EnableSignInWithEmailfalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableSignInWithEmailfalse</td>
+	<td>id=EnableSignInWithEmailfalse</td>
 	<td></td>
 </tr>
 <tr>
@@ -392,11 +392,6 @@
 	<td></td>
 </tr>
 <!--LOG OUT admin-->
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=logout</td>
@@ -534,39 +529,39 @@
 <!--Set account creation with email back to true-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableSignUpWithEmailtrue</td>
+	<td>id=EnableSignUpWithEmailtrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableSignUpWithEmailtrue</td>
+	<td>id=EnableSignUpWithEmailtrue</td>
 	<td></td>
 </tr>
 <!--Set signin with email back to true-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableSignInWithEmailtrue</td>
+	<td>id=EnableSignInWithEmailtrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableSignInWithEmailtrue</td>
+	<td>id=EnableSignInWithEmailtrue</td>
 	<td></td>
 </tr>
 <!--Set signin with username to false-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableSignInWithUsernamefalse</td>
+	<td>id=EnableSignInWithUsernamefalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableSignInWithUsernamefalse</td>
+	<td>id=EnableSignInWithUsernamefalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enableSignInWithUsernamefalse</td>
+	<td>id=EnableSignInWithUsernamefalse</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -720,6 +715,83 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=authentication_email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=authentication_email</td>
+	<td></td>
+</tr>
+<!--Set signin with username back to to true-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=EnableSignInWithUsernamefalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=EnableSignInWithUsernamefalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=EnableSignInWithUsernamefalse</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=EnableSignInWithUsernametrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=EnableSignInWithUsernametrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=EnableSignInWithUsernametrue</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--LOG OUT admin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
 	<td>id=logout</td>
 	<td></td>
 </tr>
@@ -728,10 +800,21 @@
 	<td>id=logout</td>
 	<td></td>
 </tr>
-<!--REMOVED TEST: Set signin with email to false - No signin methods enabled-->
-<!--No easy way to get back in after setting it that way :/-->
-<!--This server doesn't have other methods enabled-->
-
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForAttribute</td>
+	<td>css=div.form-group input#loginId.form-control@placeholder</td>
+	<td>Email or Username</td>
+</tr>
 </tbody></table>
 </body>
 </html>

@@ -196,6 +196,16 @@
 </tr>
 <!--Verify users test8 and test9 on team-->
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Town Square</td>
@@ -348,9 +358,9 @@
 	<td>@test8</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×test8 <br /><br />Press backspace to remove @test8</td>
+	<td>waitForNotText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test8</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -578,13 +588,9 @@
 	<td>id=post_textbox</td>
 	<td>/msg @test2 This should not work${KEY_ENTER}</td>
 </tr>
-<!--This isn't working as expected; might be known. Asked in-channel-->
+<!--This isn't restricted yet:-->
 <!--Ticket in to restrict: https://mattermost.atlassian.net/browse/PLT-8096-->
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
+<!--After fixed, add verification that DM did not open-->
 <!--Allow opening DM with any user on server-->
 <!--Log out ui2-only and log in admin-->
 <tr>
@@ -737,6 +743,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>link=Off-Topic</td>
 	<td></td>
@@ -747,6 +758,11 @@
 	<td></td>
 </tr>
 <!--Verify can create DM with user not on any same team, from More...-->
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=moreDirectMessage</td>

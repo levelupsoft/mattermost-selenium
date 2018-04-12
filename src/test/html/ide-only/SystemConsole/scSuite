@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>Test Suite</title>
+</head>
+<body>
+<table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
+<tr><td><b>Test Suite</b></td></tr>
+<tr><td><a href="scReporting.html">scReporting</a></td></tr>
+<tr><td><a href="scUsersMgmt.html">scUsersMgmt</a></td></tr>
+<tr><td><a href="scUsersPassword.html">scUsersPassword</a></td></tr>
+<tr><td><a href="scUsersDeactivate.html">scUsersDeactivate</a></td></tr>
+<tr><td><a href="scConfiguration.html">scConfiguration</a></td></tr>
+<tr><td><a href="scLocalization.html">scLocalization</a></td></tr>
+<tr><td><a href="scUsersTeamsCreation.html">scUsersTeamsCreation</a></td></tr>
+<tr><td><a href="scUsersTeamsMaxes.html">scUsersTeamsMaxes</a></td></tr>
+<tr><td><a href="scRestrictAcctDomain.html">scRestrictAcctDomain</a></td></tr>
+<tr><td><a href="scUsersTeamsDM.html">scUsersTeamsDM</a></td></tr>
+<tr><td><a href="scTeammateName.html">scTeammateName</a></td></tr>
+<tr><td><a href="scPrivacy.html">scPrivacy</a></td></tr>
+<tr><td><a href="scAnnouncement.html">scAnnouncement</a></td></tr>
+<tr><td><a href="scComplianceLogging.html">scComplianceLogging</a></td></tr>
+<tr><td><a href="scAuthEmailUsername.html">scAuthEmailUsername</a></td></tr>
+<tr><td><a href="scAuthMFA.html">scAuthMFA</a></td></tr>
+<tr><td><a href="scSecSignup.html">scSecSignup</a></td></tr>
+<tr><td><a href="scPassword.html">scPassword</a></td></tr>
+<tr><td><a href="scSecurity.html">scSecurity</a></td></tr>
+<tr><td><a href="scNotificationSettings.html">scNotificationSettings</a></td></tr>
+<tr><td><a href="scPlugins.html">scPlugins</a></td></tr>
+<tr><td><a href="scDataRetention.html">scDataRetention</a></td></tr>
+<tr><td><a href="scExport.html">scExport</a></td></tr>
+<tr><td><a href="scNotificationsMan.html">scNotificationsMan</a></td></tr>
+<tr><td><a href="scCustomLinks.html">scCustomLinks</a></td></tr>
+</tbody></table>
+</body>
+</html>

@@ -75,11 +75,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/form/div/div[9]/div/div[3]/label</td>
-	<td>System Admins</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
 	<td>xpath=(//input[@name='restrictPostDelete'])[3]</td>
 	<td></td>
@@ -134,6 +129,11 @@
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
 	<td>NonAdminCreated</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
 </tr>
 <!--admin creates channel on nonsysadmin-created team-->
 <!--Store timestamp to append to channel name (to make it unique)-->
@@ -246,9 +246,8 @@
 </tr>
 <!--System admin deletes own post (where also channel admin)-->
 <!--As usual, tricky to get to [...]-->
-<!--Also, bug on master showing "(message deleted)" for deleter-->
-<!--Coming back to this later-->
-
+<!--Need to come back to these once we figure out a good way -->
+<!--to get to the Delete option-->
 </tbody></table>
 </body>
 </html>

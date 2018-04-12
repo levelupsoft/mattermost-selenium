@@ -13,12 +13,13 @@
 </thead><tbody>
 <!--EMAIL VERIFICATIONS-->
 <!--*** Test on any server with email enabled and email verification required-->
-<!--*** Replace target "PREFIX" below with your Mattermost email prefix (e.g. "linda")-->
-<!--*** Log in to any server using your Mattermost email address-->
+<!--*** Replace target "**REPLACE-PREFIX**" below with your Mattermost -->
+<!--*** email prefix (e.g. `linda` or `linda+test`)-->
+<!--*** Log in to any server using that Mattermost email address-->
 <!--*** Then run tests and verify as described-->
 <tr>
 	<td>store</td>
-	<td>PREFIX</td>
+	<td>linda+email</td>
 	<td>prefix</td>
 </tr>
 <!--1. Change email address-->
@@ -44,12 +45,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=EmailEdit</td>
+	<td>id=emailEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=EmailEdit</td>
+	<td>id=emailEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -84,8 +85,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#EmailDesc &gt; span</td>
-	<td>New Address: ${prefix}+verification@mattermost.com<br />Check your email to verify the above address.</td>
+	<td>css=#emailDesc &gt; span</td>
+	<td>New Address: linda+email+verification@mattermost.com<br />Check your email to verify the above address.</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -105,12 +106,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=PasswordEdit</td>
+	<td>id=passwordEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=PasswordEdit</td>
+	<td>id=passwordEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -165,27 +166,18 @@
 	<td>5000</td>
 	<td></td>
 </tr>
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
 <!--VERIFICATIONS-->
 <!--*** Check email, read through subject line and body, verify as described below-->
 <!--1. NEW address: "[Mattermost] Verify new email address", click verification link-->
-<!--1. "Your email has been verified" in green box on login page (may then log you in)-->
-<!--1. OLD address: "[Mattermost] Your email address has changed"-->
+<!--1. "Your email has been verified" in green box on login page (you can then log in)-->
+<!--1. OLD address: "[Mattermost] Your email address has been changed to"-->
 <!--1. New address [prefix]+verification@mattermost.com is displayed-->
 <!--***-->
 <!--2. "[Mattermost] Your password has been updated"-->
 <!--2. Lists correct server name in body of email-->
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
 <!--*** Replace your email address in first command with "PREFIX"-->
-<!--*** And save, to be ready for next tester-->
+<!--*** And save, to be ready for next tester (or just don't save the change at all)-->
+<!--*** If you like, go back in and re-change your email address to what it had been-->
 </tbody></table>
 </body>
 </html>

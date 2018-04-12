@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://selenium.mattermost.com/" />
+<title>scSecurity</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">scSecurity</td></tr>
+</thead><tbody>
+<!--LOG IN admin-->
+<tr>
+	<td>openAndWait</td>
+	<td>/login</td>
+	<td></td>
+</tr>
+<!--DisableAnimations-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>admin@test.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForText</td>
+	<td>css=strong.heading</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<!--PUBLIC LINKS-->
+<!--Public Links - true-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=public_links</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=public_links</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h3.admin-console-header &gt; span</td>
+	<td>Public Links</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enablePublicLinktrue</td>
+	<td>on</td>
+</tr>
+<!--Regenerate public link salt-->
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>Regenerate</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeAttribute</td>
+	<td>//*[@id=&quot;publicLinkSalt&quot;]@value</td>
+	<td>publiclinksalt</td>
+</tr>
+<tr>
+	<td>waitForAttribute</td>
+	<td>//*[@id=&quot;publicLinkSalt&quot;]@value</td>
+	<td>${publiclinksalt}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotAttribute</td>
+	<td>//*[@id=&quot;publicLinkSalt&quot;]@value</td>
+	<td>${publiclinksalt}</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--SESSIONS-->
+<!--Change settings, log out, log back in, verify still what they changed to-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sessions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sessions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h3.admin-console-header &gt; span</td>
+	<td>Sessions</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sessionLengthWebInDays</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sessionLengthWebInDays</td>
+	<td>15</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sessionLengthMobileInDays</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sessionLengthMobileInDays</td>
+	<td>15</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sessionLengthSSOInDays</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sessionLengthSSOInDays</td>
+	<td>15</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sessionCacheInMinutes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sessionCacheInMinutes</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sessionIdleTimeoutInMinutes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sessionIdleTimeoutInMinutes</td>
+	<td>300</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<!--LOG IN admin-->
+<!--DisableAnimations-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>admin@test.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForText</td>
+	<td>css=strong.heading</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<!--Verify edited settings persisted-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sessions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sessions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h3.admin-console-header &gt; span</td>
+	<td>Sessions</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=sessionLengthWebInDays</td>
+	<td>15</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=sessionLengthMobileInDays</td>
+	<td>15</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=sessionLengthSSOInDays</td>
+	<td>15</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=sessionCacheInMinutes</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=sessionIdleTimeoutInMinutes</td>
+	<td>300</td>
+</tr>
+<!--Set back to defaults (by entering non-numeric values and saving)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sessionLengthWebInDays</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sessionLengthWebInDays</td>
+	<td>ten</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sessionLengthMobileInDays</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sessionLengthMobileInDays</td>
+	<td>hello</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sessionLengthSSOInDays</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sessionLengthSSOInDays</td>
+	<td>na</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sessionCacheInMinutes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sessionCacheInMinutes</td>
+	<td>hm</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sessionIdleTimeoutInMinutes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sessionIdleTimeoutInMinutes</td>
+	<td>ok</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=sessionLengthWebInDays</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=sessionLengthMobileInDays</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=sessionLengthSSOInDays</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=sessionCacheInMinutes</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=sessionIdleTimeoutInMinutes</td>
+	<td>0</td>
+</tr>
+<!--Set back to original settings-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sessionLengthWebInDays</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sessionLengthWebInDays</td>
+	<td>30</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sessionLengthMobileInDays</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sessionLengthMobileInDays</td>
+	<td>30</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sessionLengthSSOInDays</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sessionLengthSSOInDays</td>
+	<td>30</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sessionCacheInMinutes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sessionCacheInMinutes</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sessionIdleTimeoutInMinutes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sessionIdleTimeoutInMinutes</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--CONNECTIONS-->
+<!--Changes are saved-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=connections</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=connections</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h3.admin-console-header &gt; span</td>
+	<td>Connections</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=allowCorsFrom</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=allowCorsFrom</td>
+	<td>http://example.com</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=allowCorsFrom</td>
+	<td>exact:http://example.com</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=allowCorsFrom</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=allowCorsFrom</td>
+	<td>*</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=allowCorsFrom</td>
+	<td>*</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=allowCorsFrom</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=allowCorsFrom</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=enableInsecureOutgoingConnectionstrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enableInsecureOutgoingConnectionstrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enableInsecureOutgoingConnectionstrue</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enableInsecureOutgoingConnectionstrue</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=enableInsecureOutgoingConnectionsfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enableInsecureOutgoingConnectionsfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enableInsecureOutgoingConnectionsfalse</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enableInsecureOutgoingConnectionsfalse</td>
+	<td>on</td>
+</tr>
+<!--LOG OUT admin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

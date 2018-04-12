@@ -95,17 +95,17 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=siteURL</td>
+	<td>id=SiteURL</td>
 	<td>exact:https://selenium.mattermost.com</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=siteURL</td>
+	<td>id=SiteURL</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=siteURL</td>
+	<td>id=SiteURL</td>
 	<td>h${KEY_BACKSPACE}</td>
 </tr>
 <tr>
@@ -166,17 +166,17 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=siteURL</td>
+	<td>id=SiteURL</td>
 	<td>exact:https://selenium.mattermost.com</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=siteURL</td>
+	<td>id=SiteURL</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=siteURL</td>
+	<td>id=SiteURL</td>
 	<td>h${KEY_BACKSPACE}</td>
 </tr>
 <tr>
@@ -202,7 +202,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=siteURL</td>
+	<td>id=SiteURL</td>
 	<td></td>
 </tr>
 <!--Clear Site URL, error displays-->
@@ -213,6 +213,11 @@
 </tr>
 <tr>
 	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
@@ -333,17 +338,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=siteURL</td>
+	<td>id=SiteURL</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=siteURL</td>
+	<td>id=SiteURL</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=siteURL</td>
+	<td>id=SiteURL</td>
 	<td>https://selenium.mattermost.com/</td>
 </tr>
 <tr>
@@ -353,6 +358,11 @@
 </tr>
 <tr>
 	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
@@ -430,17 +440,17 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=siteURL</td>
+	<td>id=SiteURL</td>
 	<td>exact:https://selenium.mattermost.com/</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=siteURL</td>
+	<td>id=SiteURL</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=siteURL</td>
+	<td>id=SiteURL</td>
 	<td>https://selenium.mattermost.com</td>
 </tr>
 <tr>
@@ -450,6 +460,11 @@
 </tr>
 <tr>
 	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
@@ -484,7 +499,7 @@
 	<td>css=span &gt; span</td>
 	<td>Please configure your Site URL in the System Console.</td>
 </tr>
-<!--Webserver setting tested manually-->
+<!--Purge All Caches doesn't cause an error-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -495,7 +510,6 @@
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
-<!--Purge All Caches doesn't cause an error-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=System Console</td>
@@ -523,18 +537,23 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/form/div/div[15]/div/div[2]/span</td>
+	<td>//div[@id='root']/div/div[3]/div/form/div/div[15]/div/div[2]/span</td>
 	<td>This will purge all the in-memory caches for things like sessions, accounts, channels, etc. Deployments using High Availability will attempt to purge all the servers in the cluster. Purging the caches may adversly impact performance.</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/form/div/div[15]/div/div/button</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//div[@id='root']/div/div[3]/div/form/div/div[15]/div/div/button</td>
+	<td>Purge All Caches</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div[2]/div[2]/form/div/div[15]/div/div/button</td>
+	<td>//div[@id='root']/div/div[3]/div/form/div/div[15]/div/div/button</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>//div[@id='root']/div/div[3]/div/form/div/div[15]/div/div/button</td>
+	<td>Loading...</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

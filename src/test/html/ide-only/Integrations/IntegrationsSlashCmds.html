@@ -15,7 +15,7 @@
 <!--*** Can open DM with admin and watch indicator in LHS or center-->
 <!--*** Although statuses change too quickly to watch in real time-->
 <!--*** So run very slowly and/or pause frequently to test that-->
-<!--LOG IN-->
+<!--LOG IN admin-->
 <tr>
 	<td>openAndWait</td>
 	<td>/login</td>
@@ -909,6 +909,18 @@
 	<td>p${KEY_ENTER}</td>
 </tr>
 <!--This part fails; it won't find and close the tab then return to original tab-->
+<!--For some reason, we include version number in browser tab, which means-->
+<!--to find the correct tab we'll have to update it every release-->
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>title=Mattermost User’s Guide — Mattermost 4.8 documentation</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=p</td>
@@ -917,6 +929,16 @@
 <tr>
 	<td>verifyLocation</td>
 	<td>https://docs.mattermost.com/guides/user.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>close</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
 	<td></td>
 </tr>
 <!--/invite_people error message (success is verified manually in another test)-->
@@ -2975,25 +2997,383 @@
 	<td>command=/test-ephemeral</td>
 </tr>
 <!--Regenerate token-->
-<!--Add test for editing to invalid URL in form (also add a character at the end and test in-channel)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Integrations</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Integrations</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Slash Commands</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Slash Commands</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=span.item-details__token &gt; span</td>
+	<td>slashtoken</td>
+</tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.pull-left.has-error &gt; label.control-label</td>
-	<td>Invalid URL. Must be a valid URL and start with http:// or https://</td>
+	<td>css=button.style--none.color--link</td>
+	<td>Regenerate Token</td>
 </tr>
-<!--Add test for running slash command in GM and DM, including with yourself-->
-<!--Add tests for /dnd in status tests-->
 <tr>
-	<td></td>
-	<td></td>
+	<td>click</td>
+	<td>css=button.style--none.color--link</td>
+	<td>Regenerate Token</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=span.item-details__token &gt; span</td>
+	<td>${slashtoken}</td>
+</tr>
+<!--Slash command still works-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span &gt; span</td>
 	<td></td>
 </tr>
-<!--LOG OUT-->
+<tr>
+	<td>click</td>
+	<td>css=span &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
 <tr>
 	<td>refreshAndWait</td>
 	<td></td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/badger${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.bot-indicator</td>
+	<td>BOT</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.post__visibility &gt; span</td>
+	<td>(Only visible to you)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('command=/badger')</td>
+	<td></td>
+</tr>
+<!--Add test for editing to invalid URL in form (also add a character at the end and test in-channel)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Integrations</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Integrations</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Slash Commands</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Slash Commands</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.item-actions &gt; a &gt; span</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.item-actions &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=url</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=url</td>
+	<td>example.com</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Update</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-body &gt; span</td>
+	<td>exact:Your changes may break the existing slash command. Are you sure you would like to update it?</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-primary</td>
+	<td>Update</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.pull-left.has-error &gt; label.control-label</td>
+	<td>Invalid URL. Must be a valid URL and start with http:// or https://</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=a.btn.btn-sm &gt; span</td>
+	<td>Cancel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.btn.btn-sm &gt; span</td>
+	<td>Cancel</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=div.pull-left.has-error &gt; label.control-label</td>
+	<td>Invalid URL. Must be a valid URL and start with http:// or https://</td>
+</tr>
+<!--Run slash command in GM and DM, including with yourself-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<!--GM-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/groupmsg @test6, @test7 /hello${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>test6, test7</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/badger${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.bot-indicator</td>
+	<td>BOT</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.post__visibility &gt; span</td>
+	<td>(Only visible to you)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('command=/badger')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<!--DM with another user-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>test8</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>@test8</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>test8</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/badger${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.bot-indicator</td>
+	<td>BOT</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.post__visibility &gt; span</td>
+	<td>(Only visible to you)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('command=/badger')</td>
+	<td></td>
+</tr>
+<!--DM with self-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>@admin</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>admin (you)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/badger${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.bot-indicator</td>
+	<td>BOT</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.post__visibility &gt; span</td>
+	<td>(Only visible to you)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('command=/badger')</td>
+	<td></td>
+</tr>
+<!--LOG OUT-->
 <tr>
 	<td>pause</td>
 	<td>3000</td>

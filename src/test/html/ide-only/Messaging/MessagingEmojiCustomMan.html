@@ -80,7 +80,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=p &gt; span</td>
-	<td>Custom emoji are available to everyone on your server. Type ':' in a message box to bring up the emoji selection menu. Other users may need to refresh the page before new emojis appear.</td>
+	<td>Custom emoji are available to everyone on your server. Type ':' followed by two characters in a message box to bring up the emoji selection menu.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -190,7 +190,7 @@
 	<td>css=input[type=&quot;file&quot;]</td>
 	<td></td>
 </tr>
-<!--*** Manually select a large image file: JPG.jpg-->
+<!--*** Manually select this large image file: JPG.jpg-->
 <tr>
 	<td>pause</td>
 	<td>4000</td>
@@ -541,6 +541,12 @@
 </tr>
 <!--Use custom emoji in reaction (emoji picker)-->
 <!--*** This is failing to find reaction emoji picker; it's finding message one-->
+<!--*** Same as [...] it can't find the hover menu (have tried many hover approaches)-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=span.icon.icon--emoji</td>
@@ -1238,7 +1244,7 @@
 	<td>12000</td>
 	<td></td>
 </tr>
-<!--*** Change this to make alias match a username-->
+<!--*** Changed this to make alias match a username-->
 <!--Verify :username: does not trigger a mention-->
 <!--Create alias for existing emoji (created earlier)-->
 <tr>
@@ -1314,7 +1320,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=td.emoji-list__name</td>
+	<td>//div[@id='root']/div/div[3]/div[2]/div/div/div[2]/table/tbody/tr[2]/td</td>
 	<td>exact::test10:</td>
 </tr>
 <tr>
