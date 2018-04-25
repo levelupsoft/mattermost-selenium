@@ -133,9 +133,9 @@
 	<td>@test7</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×test7 <br /><br />Press backspace to remove undefined</td>
+	<td>waitForNotText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test7</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -153,13 +153,14 @@
 	<td></td>
 </tr>
 <!--*** Visually verify in other browser that test7 has mention & unread-->
-<!--***  in new channel, view channel to clear, switch to different channel-->
+<!--***  in test7 browser, view channel to clear, switch to different channel-->
+<!--*** Click back to Se browser-->
 <tr>
 	<td>pause</td>
 	<td>8000</td>
 	<td></td>
 </tr>
-<!--Code block using triple ticks and newlines-->
+<!--Code block using triple ticks (there are also newlines in the value)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>

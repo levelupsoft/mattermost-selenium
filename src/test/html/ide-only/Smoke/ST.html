@@ -24,7 +24,7 @@
 	<td></td>
 </tr>
 <!--Next will fail if additional signup methods enabled-->
-<!--If so, click Email and Password button-->
+<!--***If so, manually click Email and Password button-->
 <tr>
 	<td>pause</td>
 	<td>3000</td>
@@ -274,11 +274,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.mention--highlight</td>
-	<td>testst</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
 	<td>css=span:contains('testst joined the channel.')</td>
 	<td></td>
@@ -408,22 +403,28 @@
 	<td></td>
 </tr>
 <!--Cancel out of a delete (use postid to find [...] > Delete)-->
-<!--Ugh, this method worked as I wrote it, but not when I tried to run it fresh-->
+<!--Finds [...] in RHS search results (still open)-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='center_dropdown${postid}']/div/ul/li[4]/button</td>
+	<td>click</td>
+	<td>css=div#searchpost_dropdown${postid} &gt; button.dropdown-toggle.post__dropdown.color--link.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='center_dropdown${postid}']/div/ul/li[4]/button</td>
+	<td>//div[@id='searchpost_dropdown${postid}']/div/ul/li[3]/button</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[@id='searchpost_dropdown${postid}']/div/ul/li[3]/button</td>
+	<td>Delete</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='center_dropdown${postid}']/div/ul/li[4]/button</td>
-	<td></td>
+	<td>//div[@id='searchpost_dropdown${postid}']/div/ul/li[3]/button</td>
+	<td>Delete</td>
 </tr>
+<!--Confirmation modal warns the message has a reply-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.modal-body &gt; span</td>
@@ -442,7 +443,7 @@
 <tr>
 	<td>click</td>
 	<td>css=button.btn.btn-default</td>
-	<td>Cancel</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForNotText</td>
@@ -470,26 +471,21 @@
 	<td>css=p</td>
 	<td>Greetings</td>
 </tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//input[@value='Add Comment']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=reply_textbox</td>
-	<td></td>
-</tr>
 <!--Add Comment button disabled until text in reply box-->
 <tr>
-	<td>verifyElementPresent</td>
-	<td>//input[@class='btn btn-primary comment-btn pull-right disabled']</td>
+	<td>waitForElementPresent</td>
+	<td>css=input.btn.btn-primary.comment-btn.pull-right.disabled</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
 	<td>id=reply_textbox</td>
 	<td>Reply</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=input.btn.btn-primary.comment-btn.pull-right.disabled</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -511,7 +507,7 @@
 	<td>css=span.comment-count</td>
 	<td>2</td>
 </tr>
-<!--Find reply's message ID-->
+<!--Find reply's message ID (searches text string in:channel)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=searchBox</td>
@@ -655,125 +651,15 @@
 	<td>css=button.sidebar--right__close</td>
 	<td></td>
 </tr>
-<!--This one also worked as I wrote it but not when running it fresh-->
 <tr>
-	<td>waitForText</td>
-	<td>css=#${postid}_message &gt; div &gt; span.post-message__text &gt; p</td>
+	<td>waitForTextPresent</td>
 	<td>Reply, after editing</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=span.post-edited__indicator &gt; span</td>
 	<td>(edited)</td>
-</tr>
-<!--First find post ID of the reply by searching for that message and capturing postid-->
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=post_textbox</td>
-	<td>Not numbered${KEY_ENTER}</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=p:contains('Not numbered')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
-	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
-	<td>numbered${KEY_ENTER}</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight</td>
-	<td>numbered</td>
-</tr>
-<!--Get post ID after a search returns one desired result-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=a.search-item__jump &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=a.search-item__jump &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Click here to jump to recent messages.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>storeLocation</td>
-	<td>urlwhole</td>
-	<td></td>
-</tr>
-<tr>
-	<td>storeEval</td>
-	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[5]</td>
-	<td>editid</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Click here to jump to recent messages.</td>
-	<td></td>
-</tr>
-<!--Edit in center, non-ordered post to be an ordered list-->
-<!--Also not working anymore :(-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div#center_dropdown${editid}.open &gt; div.dropdown-menu__content &gt; ul.dropdown-menu.bottom &gt; li &gt; button.style--none &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='center_dropdown${editid}']/div/ul/li[5]/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=edit_textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=edit_textbox</td>
-	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=edit_textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=edit_textbox</td>
-	<td>1. One<br /><br />2. Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two&nbsp;&nbsp;Two Two Two Two Two Two Two Two${KEY_ENTER}</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=li[value=&quot;1&quot;]</td>
-	<td>One</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=ol:contains('Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two Two&nbsp;&nbsp;Two Two Two Two Two Two Two Two')</td>
-	<td></td>
 </tr>
 <!--Reply in RHS with different channel open in center-->
 <tr>
@@ -815,7 +701,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=reply_textbox</td>
-	<td>Ok!${KEY_ENTER}</td>
+	<td>Ok thanks!${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -834,7 +720,6 @@
 	<td></td>
 </tr>
 <!--Delete parent post also deletes comment-->
-<!--Need to figure these out, still (below uses the old method; neither works)-->
 <!--Search to get post ID-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -844,7 +729,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=searchBox</td>
-	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -857,59 +742,61 @@
 	<td>Open reply RHS, then switch channel, then post reply</td>
 </tr>
 <tr>
-	<td>storeAttribute</td>
-	<td>//button[@data-message='Open reply RHS, then switch channel, then post reply']@data-postid</td>
-	<td>parentpost</td>
+	<td>waitForElementPresent</td>
+	<td>css=a.search-item__jump &gt; span</td>
+	<td></td>
 </tr>
-<!--Switch RHS from search results to reply thread-->
+<tr>
+	<td>click</td>
+	<td>css=a.search-item__jump &gt; span</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=searchCommentIcon_</td>
+	<td>link=Click here to jump to recent messages.</td>
 	<td></td>
+</tr>
+<tr>
+	<td>storeLocation</td>
+	<td>urlwhole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[5]</td>
+	<td>deleteid</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=searchCommentIcon_</td>
+	<td>link=Click here to jump to recent messages.</td>
 	<td></td>
 </tr>
+<!--Delete from search RHS-->
 <tr>
-	<td>waitForText</td>
-	<td>css=span.sidebar--right__title &gt; span</td>
-	<td>Message Details</td>
+	<td>click</td>
+	<td>css=div#searchpost_dropdown${deleteid} &gt; button.dropdown-toggle.post__dropdown.color--link.style--none</td>
+	<td></td>
 </tr>
-<!--Switch back to same channel in center-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Test-${datetime}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Test-${datetime}</td>
+	<td>//div[@id='searchpost_dropdown${deleteid}']/div/ul/li[3]/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Test-${datetime}</td>
-</tr>
-<!--Open [...] menu on that postid and click Delete-->
-<tr>
-	<td>click</td>
-	<td>css=div.dropdown div#center_dropdown${parentpost} &gt; button.dropdown-toggle.post__dropdown.color--link.style--none</td>
-	<td></td>
+	<td>//div[@id='searchpost_dropdown${deleteid}']/div/ul/li[3]/button</td>
+	<td>Delete</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='center_dropdown${parentpost}']/div/ul/li[4]/button</td>
-	<td></td>
+	<td>//div[@id='searchpost_dropdown${deleteid}']/div/ul/li[3]/button</td>
+	<td>Delete</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[2]/div/div/div[2]/span</td>
+	<td>css=div.modal-body &gt; span</td>
 	<td>exact:Are you sure you want to delete this Post?</td>
 </tr>
-<!--Verify comment count in confirmation modal-->
 <tr>
 	<td>waitForText</td>
 	<td>//div[2]/div/div/div[2]/span[2]</td>
@@ -925,18 +812,28 @@
 	<td>css=button.btn.btn-danger</td>
 	<td>Delete</td>
 </tr>
-<!--Verify message and reply are gone, verify RHS closed-->
+<!--Search for comment, verify was also deleted-->
 <tr>
-	<td></td>
-	<td></td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>id=searchBox</td>
+	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
 </tr>
 <tr>
-	<td></td>
-	<td></td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>id=searchBox</td>
+	<td>thanks${KEY_ENTER}</td>
 </tr>
-<!--Delete comment from RHS-->
+<tr>
+	<td>waitForText</td>
+	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>Search Results</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h4 &gt; span</td>
+	<td>exact:No results found. Try again?</td>
+</tr>
+<!--Edit a search result in RHS-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -946,6 +843,11 @@
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
 	<td>Is it sunny today?${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -968,68 +870,31 @@
 	<td>exact:Is it sunny today?</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=p:contains('The clouds should clear later.')</td>
-	<td></td>
-</tr>
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<!--Permalink option in [...] and Jump in search results get same URL-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>id=searchBox</td>
+	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
-	<td>This message will be permalinked.${KEY_ENTER}</td>
-</tr>
-<!--Search (and capture post ID)-->
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
+	<td>id=searchBox</td>
+	<td>clouds${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.sidebar-item__name</td>
-	<td>Off-Topic</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.sidebar-item__name</td>
-	<td>Off-Topic</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.search-bar</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
-	<td>permalinked${KEY_ENTER}</td>
+	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>Search Results</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=span.search-highlight</td>
-	<td>permalinked</td>
+	<td>clouds</td>
 </tr>
 <tr>
-	<td>storeAttribute</td>
-	<td>//button[@data-target='#edit_post']@data-postid</td>
-	<td>idpermalink</td>
+	<td>waitForText</td>
+	<td>css=p</td>
+	<td>The clouds should clear later.</td>
 </tr>
-<tr>
-	<td>echo</td>
-	<td>${idpermalink}</td>
-	<td></td>
-</tr>
-<!--Jump from search results-->
+<!--Get post ID from permalink URL-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=a.search-item__jump &gt; span</td>
@@ -1042,75 +907,538 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#${idpermalink}_message &gt; div &gt; span.post-message__text &gt; p</td>
+	<td>link=Click here to jump to recent messages.</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#${idpermalink}_message &gt; div &gt; span.post-message__text &gt; p</td>
-	<td>This message will be permalinked.</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#archive-link-home &gt; a &gt; span</td>
-	<td>Click here to jump to recent messages.</td>
 </tr>
 <tr>
 	<td>storeLocation</td>
-	<td>permaurl</td>
+	<td>urlwhole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[5]</td>
+	<td>editid</td>
+</tr>
+<!--Edit comment in RHS while permalink view is also open in center-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//button[@type='button'])[3]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#archive-link-home &gt; a &gt; span</td>
-	<td>Click here to jump to recent messages.</td>
-</tr>
-<tr>
-	<td>waitForNotText</td>
-	<td>css=#archive-link-home &gt; a &gt; span</td>
-	<td>Click here to jump to recent messages.</td>
+	<td>xpath=(//button[@type='button'])[3]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[12]</td>
+	<td>//div[@id='searchpost_dropdown${editid}']/div/ul/li[4]/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[12]</td>
+	<td>//div[@id='searchpost_dropdown${editid}']/div/ul/li[4]/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='center_dropdown${idpermalink}']/div/ul/li[2]/button</td>
-	<td>Permalink</td>
+	<td>id=edit_textbox</td>
+	<td>The clouds should clear later.</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=edit_textbox</td>
+	<td>${KEY_BACKSPACE}, hopefully.</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=edit_textbox</td>
+	<td>The clouds should clear later, hopefully.</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.edit-modal.modal-dialog &gt; div.modal-content &gt; div.modal-footer &gt; button.btn.btn-primary</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='center_dropdown${idpermalink}']/div/ul/li[2]/button</td>
-	<td>Permalink</td>
+	<td>css=div.edit-modal.modal-dialog &gt; div.modal-content &gt; div.modal-footer &gt; button.btn.btn-primary</td>
+	<td></td>
 </tr>
-<!--Se can't click the Copy Link button for some reason (at least it-->
-<!--doesn't show the success message), so just stores value of the field-->
 <tr>
-	<td>storeValue</td>
-	<td>//div[2]/textarea</td>
-	<td>permaurl2</td>
+	<td>waitForText</td>
+	<td>css=p</td>
+	<td>The clouds should clear later, hopefully.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#${editid}_message &gt; div &gt; span.post-message__text &gt; p</td>
+	<td>The clouds should clear later, hopefully.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.post-edited__indicator &gt; span</td>
+	<td>(edited)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.sidebar--right__close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.sidebar--right__close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>hopefully.*(edited)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#archive-link-home &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#archive-link-home &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<!--Delete comment from RHS-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_SHIFT}${KEY_UP}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>Message Details</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('The clouds should clear later, hopefully.')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//button[@type='button'])[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='rhs_dropdown${editid}']/div/ul/li[3]/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-body &gt; span</td>
+	<td>exact:Are you sure you want to delete this Comment?</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-danger</td>
+	<td>Delete</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>The clouds should clear</td>
+	<td></td>
 </tr>
 <tr>
 	<td>refreshAndWait</td>
 	<td></td>
 	<td></td>
 </tr>
+<!--Message draft persists after channel switching-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>I'll come back to this later...</td>
+</tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.sidebar-item__name</td>
+	<td>id=post_textbox</td>
+	<td>I'll come back to this later...</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>off-t</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
 	<td>Off-Topic</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-item__name</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>test-${datetime}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Test-${datetime}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Test-${datetime}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td>I'll come back to this later...</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<!--Flag a message - this is working as of 12 Apr 2018-->
+<!--Flag doesn't appear until hover... Sounds like Se can't do pseudo class hover :|-->
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=button.style--none.flag-icon__container </td>
+	<td></td>
+</tr>
+<!--Leaving to a manual hover for now-->
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--*** Manually hover over message you want to flag-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none.flag-icon__container </td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>css=button.style--none.flag-icon__container </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Flag for follow up</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.flag-icon__container </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.post__header--info &gt; div.col &gt; button.style--none.flag-icon__container.visible</td>
+	<td></td>
+</tr>
+<!--View flagged posts RHS-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelHeaderFlagButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderFlagButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>Flagged Posts</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p</td>
+	<td>I'll come back to this later...</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='search-items-container']/div/div[2]/div[2]/div[2]/div/div[2]/button</td>
+	<td></td>
+</tr>
+<!--Switch channel in center, RHS doesn't change-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>off-t</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>Flagged Posts</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p</td>
+	<td>I'll come back to this later...</td>
+</tr>
+<!--Unflag in RHS, empty flagged posts list and flag gone from center-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>test-${datetime}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Test-${datetime}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Test-${datetime}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='search-items-container']/div/div[2]/div[2]/div[2]/div/div[2]/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='search-items-container']/div/div[2]/div[2]/div[2]/div/div[2]/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.sidebar--right__subheader &gt; ul &gt; li &gt; span</td>
+	<td>You haven't flagged any messages yet.</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=div.post__header--info &gt; div.col &gt; button.style--none.flag-icon__container.visible</td>
+	<td></td>
+</tr>
+<!--Flag icon toggles RHS closed and is no longer active style-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button#channelHeaderFlagButton.channel-header__icon.style--none.active span.icon.icon__flag</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button#channelHeaderFlagButton.channel-header__icon.style--none.active span.icon.icon__flag</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=button#channelHeaderFlagButton.channel-header__icon.style--none.active span.icon.icon__flag</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button#channelHeaderFlagButton.channel-header__icon.style--none span.icon.icon__flag</td>
+	<td></td>
+</tr>
+<!--Pin a message in Test- channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>This is an important message that should be pinned.${KEY_ENTER}</td>
+</tr>
+<!--Search to get the post ID-->
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchBox</td>
+	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchBox</td>
+	<td>important${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>Search Results</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.search-highlight</td>
+	<td>important</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p</td>
+	<td>This is an important message that should be pinned.</td>
+</tr>
+<!--Get post ID from permalink URL-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=a.search-item__jump &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.search-item__jump &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Click here to jump to recent messages.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeLocation</td>
+	<td>urlwhole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[5]</td>
+	<td>pinnedid</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Click here to jump to recent messages.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Use keyboard command for Edit to open RHS (still can't get to [...] in center-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1120,11 +1448,345 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>${permaurl2}${KEY_ENTER}</td>
+	<td>${KEY_SHIFT}${KEY_UP}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>Message Details</td>
+</tr>
+<!--Pin in RHS, pinned badge in RHS and center-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#rhsrootDotMenuPin &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#rhsrootDotMenuPin &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.post__pinned-badge &gt; span</td>
+	<td>Pinned</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.post__header--info &gt; div.col &gt; span.post__pinned-badge &gt; span</td>
+	<td>Pinned</td>
+</tr>
+<!--View pinned posts RHS-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelHeaderPinButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderPinButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>Pinned posts in Test-${datetime}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.search-channel__name</td>
+	<td>Test-${datetime}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p</td>
+	<td>This is an important message that should be pinned.</td>
+</tr>
+<!--Switch channel in center, RHS doesn't change-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=${permaurl2}</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>off-t</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>Pinned posts in Test-${datetime}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.search-channel__name</td>
+	<td>Test-${datetime}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p</td>
+	<td>This is an important message that should be pinned.</td>
+</tr>
+<!--Pin a post in other channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Different channel, different pinned posts list.${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<!--Can't pin in center; can't get to [...] in center-->
+<tr>
+	<td>pause</td>
+	<td>8000</td>
+	<td></td>
+</tr>
+<!--*** Manually click [...] and Pin to channel on the post in center you want to pin-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.post__header--info &gt; div.col &gt; span.post__pinned-badge</td>
+	<td>Pinned</td>
+</tr>
+<!--RHS did not change-->
+<tr>
+	<td>waitForText</td>
+	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>Pinned posts in Test-${datetime}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p</td>
+	<td>This is an important message that should be pinned.</td>
+</tr>
+<!--Pinned post in different channel in center was not added to RHS-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>town sq</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>different</td>
+	<td></td>
+</tr>
+<!--Switch back to Off-Topic and view pinned posts-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>off-t</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td></td>
+</tr>
+<!--Toggle off pinned posts to close RHS then toggle back on-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button#channelHeaderPinButton.style--none.channel-header__icon.active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button#channelHeaderPinButton.style--none.channel-header__icon.active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>Pinned posts in Test-${datetime}</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=button.sidebar--right__close</td>
+	<td></td>
+</tr>
+<!--Pin icon is not active style when toggled off-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button#channelHeaderPinButton.style--none.channel-header__icon</td>
+	<td></td>
+</tr>
+<!--Pinned posts RHS for current channel opens-->
+<tr>
+	<td>click</td>
+	<td>css=button#channelHeaderPinButton.style--none.channel-header__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>Pinned posts in Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.post__pinned-badge &gt; span</td>
+	<td>Pinned</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p</td>
+	<td>Different channel, different pinned posts list.</td>
+</tr>
+<!--Other channel's pinned post does not display-->
+<tr>
+	<td>waitForNotText</td>
+	<td>css=p</td>
+	<td>This is an important message that should be pinned.</td>
+</tr>
+<!--Un-pin in RHS, pinned badge removed from center as well-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.post__header--info &gt; div.col &gt; span.post__pinned-badge &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.post__pinned-badge &gt; span</td>
+	<td></td>
+</tr>
+<!--Get post ID to help find [...] in RHS-->
+<!--Get post ID from permalink URL-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=a.search-item__jump &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.search-item__jump &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Click here to jump to recent messages.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeLocation</td>
+	<td>urlwhole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[5]</td>
+	<td>pinned2id</td>
+</tr>
+<!--Un-pin in RHS-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='searchpost_dropdown${pinned2id}']/div/ul/li[2]/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='searchpost_dropdown${pinned2id}']/div/ul/li[2]/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.sidebar--right__subheader &gt; ul &gt; li &gt; span</td>
+	<td>There are no pinned messages yet.</td>
+</tr>
+<!--These could fail if testing on an old server with previously pinned posts-->
+<!--(Could re-vamp to add another new channel)-->
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=div.post__header--info &gt; div.col &gt; span.post__pinned-badge &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=span.post__pinned-badge &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
 	<td></td>
 </tr>
 <!--Get team invite link-->
@@ -1337,11 +1999,6 @@
 	<td>sendKeys</td>
 	<td>id=searchChannelsTextbox</td>
 	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}te</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=p.more-modal__name</td>
-	<td>${testchannel}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2033,6 +2690,16 @@
 	<td>css=div.more-modal__name</td>
 	<td>@st2</td>
 </tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.filter-textbox</td>
+	<td>${KEY_ESC}</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@st2</td>
+</tr>
 <!--Open Add Members modal for channel, from Manage Members modal-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -2104,11 +2771,6 @@
 	<td>click</td>
 	<td>id=saveSetting</td>
 	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=input.form-control.filter-textbox</td>
-	<td>${KEY_ESC}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2364,17 +3026,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Team_NameDesc</td>
+	<td>id=nameDesc</td>
 	<td>ST2Team</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Team_NameEdit</td>
+	<td>id=nameEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Team_NameEdit</td>
+	<td>id=nameEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -2400,17 +3062,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Team_NameDesc</td>
+	<td>id=nameDesc</td>
 	<td>ST2Team</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Team_NameEdit</td>
+	<td>id=nameEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Team_NameEdit</td>
+	<td>id=nameEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -2446,18 +3108,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Team_NameDesc</td>
+	<td>id=nameDesc</td>
 	<td>Core Test Team</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.close</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>id=nameDesc</td>
+	<td>${KEY_ESC}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2492,17 +3149,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Team_DescriptionDesc</td>
+	<td>css=#descriptionDesc &gt; span</td>
 	<td>Click 'Edit' to add a team description.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Team_DescriptionEdit</td>
+	<td>id=descriptionEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Team_DescriptionEdit</td>
+	<td>id=descriptionEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -2532,27 +3189,27 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Team_DescriptionCancel</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Team_DescriptionCancel</td>
+	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Team_DescriptionDesc &gt; span</td>
+	<td>css=#descriptionDesc &gt; span</td>
 	<td>Click 'Edit' to add a team description.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Team_DescriptionEdit</td>
+	<td>id=descriptionEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Team_DescriptionEdit</td>
+	<td>id=descriptionEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -2577,8 +3234,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Team_DescriptionDesc</td>
+	<td>id=descriptionDesc</td>
 	<td>Testing the team description.</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=descriptionDesc</td>
+	<td>${KEY_ESC}</td>
 </tr>
 <!--Verify set to not allow other users to join the team-->
 <tr>
@@ -2603,18 +3265,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamDesc</td>
+	<td>id=open_inviteDesc</td>
 	<td>No</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.close</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>id=open_inviteDesc</td>
+	<td>${KEY_ESC}</td>
 </tr>
 <!--Open and post direct message (while viewing team other user isn't on)-->
 <tr>
@@ -2643,19 +3300,9 @@
 	<td>@testst</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.multi-select__help &gt; span</td>
-	<td>Use ↑↓ to browse, ↵ to select. You can add 7 more people.</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=input[value=&quot;testst&quot;]</td>
-	<td>${KEY_ENTER}</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×testst <br />input#undefined::-ms-clear {display: none;}<br />Press backspace to remove @testst</td>
+	<td>click</td>
+	<td>css=div.more-modal__name</td>
+	<td>@testst</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2782,6 +3429,7 @@
 	<td>css=span.sidebar-item__name</td>
 	<td>Off-Topic</td>
 </tr>
+<!--I think the prep steps for this got deleted-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=${permaurl}</td>
@@ -2957,7 +3605,6 @@
 	<td>css=a:contains('123')</td>
 	<td></td>
 </tr>
-<!--This contradicts next part of the test? Should leave closed?-->
 <tr>
 	<td>pause</td>
 	<td>4000</td>
@@ -2986,12 +3633,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamDesc</td>
+	<td>id=open_inviteDesc</td>
 	<td>No</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=open_inviteEdit</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#Allow_any_user_with_an_account_on_this_server_to_join_this_teamEdit &gt; span</td>
+	<td>id=open_inviteEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -3021,18 +3673,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamDesc</td>
+	<td>id=open_inviteDesc</td>
 	<td>Yes</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.close</td>
-	<td></td>
 </tr>
 <!--LOGOUT ST2-->
 <tr>
@@ -3087,7 +3729,7 @@
 	<td>link=Town Square</td>
 	<td>Town Square</td>
 </tr>
-<!--Verify can't join closed team from Join Another Team-->
+<!--Verify can join open team from Join Another Team-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -3108,17 +3750,12 @@
 	<td>link=Join Another Team</td>
 	<td></td>
 </tr>
-<!--This part contradicts above/below. Should the team be open or not?-->
 <tr>
 	<td>waitForText</td>
 	<td>css=#Plus &gt; span.signup-team-dir__name</td>
 	<td>Plus</td>
 </tr>
-<tr>
-	<td>click</td>
-	<td>css=#Plus &gt; span.signup-team-dir__name</td>
-	<td>Plus</td>
-</tr>
+<!--Closed team is not listed-->
 <tr>
 	<td>verifyTextNotPresent</td>
 	<td>Core Team</td>
@@ -3130,20 +3767,17 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Back</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>link=Back</td>
-	<td></td>
+	<td>css=#Plus &gt; span.signup-team-dir__name</td>
+	<td>Plus</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
 	<td>Town Square</td>
 </tr>
+<!--This also seems to be leftover from some earlier prep that's deleted-->
+<!--Ah, it needs to switch to STTeam-->
 <!--Verify can't join closed team via URL after being removed-->
 <tr>
 	<td>waitForText</td>
@@ -3170,6 +3804,7 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Town Square</td>
 </tr>
+<!--Also failing, because it redirects to Town Square of the first team listed in sidebar-->
 <tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
@@ -3349,12 +3984,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamEdit</td>
+	<td>id=open_inviteEdit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamEdit</td>
+	<td>id=open_inviteEdit</td>
 	<td></td>
 </tr>
 <tr>
@@ -3379,7 +4014,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=Allow_any_user_with_an_account_on_this_server_to_join_this_teamDesc</td>
+	<td>id=open_inviteDesc</td>
 	<td>Yes</td>
 </tr>
 <!--LOG OUT ST2, then in as testst, to verify can join open team-->
@@ -3563,6 +4198,7 @@
 	<td>Core Test Team</td>
 </tr>
 <!--Add user to private channel using link in-channel-->
+<!--Deleted the part where this got stored?-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=${privatechannel}</td>
@@ -3982,6 +4618,7 @@
 	<td>link=Item 2 is a link</td>
 	<td></td>
 </tr>
+<!--Add whichever way is best to close header popover-->
 <!--Leave private channel-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -4032,12 +4669,12 @@
 <!--from member icon > Manage Members-->
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div[4]/div/div[2]/a/div/div</td>
+	<td>link=STSTTeam</td>
 	<td>STSTTeam</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div[3]/div[4]/div/div[2]/a/div/div</td>
+	<td>link=STSTTeam</td>
 	<td>STSTTeam</td>
 </tr>
 <tr>
@@ -4109,59 +4746,6 @@
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
 	<td>@testst</td>
-</tr>
-<!--Showing drop-down, not button-->
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=removeMember</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>1 - 2 members of 2 total</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.form-control.filter-textbox</td>
-	<td></td>
-</tr>
-<!--I think this got switched around. Should it be ST2 removing testst?-->
-<tr>
-	<td>sendKeys</td>
-	<td>css=input.form-control.filter-textbox</td>
-	<td>st</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>1 member of 2 total</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
-	<td>@st2</td>
-</tr>
-<!--Ah I see, it was filtering first, then showing zero after removing-->
-<tr>
-	<td>waitForNotText</td>
-	<td>//div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div</td>
-	<td>testst</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=removeMember</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.more-modal__placeholder-row &gt; p &gt; span</td>
-	<td>No users found</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4249,6 +4833,23 @@
 	<td>waitForText</td>
 	<td>link=Town Square</td>
 	<td>Town Square</td>
+</tr>
+<!--This part got mixed up as well  :/ Changed to STTeam but not sure-->
+<!--Oh, maybe this is supposed to be testst verifying st2 removed?-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=STSTTeam</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=STSTTeam</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h1#headerTeamName.team__name</td>
+	<td>STTeam</td>
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>

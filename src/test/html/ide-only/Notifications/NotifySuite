@@ -8,9 +8,8 @@
 <body>
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
-<tr><td><a href="Notifications.html">Notifications</a></td></tr>
-<tr><td><a href="NotifPunctuation.html">NotifPunctuation</a></td></tr>
-<tr><td><a href="NotifMan.html">NotifMan</a></td></tr>
+<tr><td><a href="NotifyMentions.html">NotifyMentions</a></td></tr>
+<tr><td><a href="NotifyMan.html">NotifyMan</a></td></tr>
 </tbody></table>
 </body>
 </html>
