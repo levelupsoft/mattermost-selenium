@@ -3136,7 +3136,368 @@
 	<td>css=#desktopDesc &gt; span</td>
 	<td>For mentions and direct messages, shown for 5 seconds</td>
 </tr>
-<!--(No tests for DMs; no notification preferences on DM channels)-->
+<!--(No notification preferences to test on DM channels)-->
+<!--Changing prefs on one Town Square doesn't change other team's Town Square-->
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Town Square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Town Square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<!--Set team 1 to Never-->
+<tr>
+	<td>waitForText</td>
+	<td>id=channelNotificationsGroup</td>
+	<td>Notification Preferences</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationsGroup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (mention)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationNever</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationNever</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationNever</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=desktopDesc</td>
+	<td>Never</td>
+</tr>
+<!--Switch teams and set team 2 to Only for mentions (explicitly)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=UIUI Automation 2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=UIUI Automation 2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation 2</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Town Square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Town Square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelNotificationsGroup</td>
+	<td>Notification Preferences</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationsGroup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=desktopDesc</td>
+	<td>Global default (mention)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationMentions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationMentions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationMentions</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Only for mentions</td>
+</tr>
+<!--Switch back to team 1 and verify setting is as it was before-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=UIUI Automation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=UIUI Automation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Town Square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Town Square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelNotificationsGroup</td>
+	<td>Notification Preferences</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationsGroup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=desktopDesc</td>
+	<td>Never</td>
+</tr>
+<!--Cleanup: Switch team 1 Town Square back to global default-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationGlobalDefault</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationGlobalDefault</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationGlobalDefault</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (mention)</td>
+</tr>
+<!--Cleanup: Switch team 2 Town Square back to global default-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=UIUI Automation 2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=UIUI Automation 2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation 2</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Town Square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Town Square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelNotificationsGroup</td>
+	<td>Notification Preferences</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationsGroup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=desktopDesc</td>
+	<td>Only for mentions</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=desktopEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelNotificationGlobalDefault</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelNotificationGlobalDefault</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=channelNotificationGlobalDefault</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#desktopDesc &gt; span</td>
+	<td>Global default (mention)</td>
+</tr>
 <!--LOG OUT-->
 <tr>
 	<td>pause</td>
