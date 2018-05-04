@@ -238,24 +238,39 @@
 	<td>hello world${KEY_ENTER}</td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>css=span.search-highlight</td>
+	<td>Hello</td>
+</tr>
+<tr>
 	<td>waitForTextPresent</td>
 	<td>Basic word search: Hello world!</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=h5.markdown__heading &gt; span.search-highlight</td>
-	<td>Hello</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>css=code.hljs</td>
+	<td>css=h5:contains('Hello')</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=code &gt; span.search-highlight</td>
-	<td>Hello</td>
+	<td>waitForElementPresent</td>
+	<td>css=code.hljs:contains('Hello')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=code:contains('Hello')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=a:contains('#hello')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=a:contains('#world')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
@@ -263,8 +278,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyTextNotPresent</td>
-	<td>world two</td>
+	<td>verifyElementNotPresent</td>
+	<td>css=span:contains('two')</td>
 	<td></td>
 </tr>
 <!--Accents, non-Latin characters-->
@@ -603,19 +618,22 @@
 	<td>id=logout</td>
 	<td></td>
 </tr>
-<!--LOG IN-->
+<!--LOG IN test2-->
 <!--DisableAnimations-->
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
 <tr>
@@ -733,11 +751,6 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
@@ -753,15 +766,15 @@
 	<td></td>
 </tr>
 <!--LOG IN-->
+<tr>
+	<td>openAndWait</td>
+	<td>/login</td>
+	<td></td>
+</tr>
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
 	<td></td>
 </tr>
 <tr>
@@ -811,6 +824,11 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -1272,8 +1290,6 @@
 	<td>id=post_textbox</td>
 	<td>@channel${KEY_ENTER}${KEY_ENTER}</td>
 </tr>
-<!--The Java test doesn't like a command here to click the Confirm button, so it's been deleted-->
-<!--May make IDE test fail; click manually if necessary-->
 <tr>
 	<td>pause</td>
 	<td>1000</td>
@@ -1286,12 +1302,7 @@
 	<td>1000</td>
 	<td></td>
 </tr>
-<!--LOG OUT-->
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
+<!--LOG OUT test-->
 <tr>
 	<td>pause</td>
 	<td>3000</td>
@@ -1320,18 +1331,29 @@
 	<td>id=logout</td>
 	<td></td>
 </tr>
-<!--LOG IN-->
+<!--LOG IN test2-->
 <tr>
-	<td>openAndWait</td>
-	<td>/login</td>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=loginId</td>
@@ -1373,11 +1395,6 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=input.search-bar</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -1574,12 +1591,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.mentions__name.suggestion--selected</td>
-	<td>@test - This Is a Very Long Name That Should Truncate</td>
+	<td>@test - This Is a Very Long Name That Should Truncate1</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=div.mentions__name.suggestion--selected</td>
-	<td>@test - This Is a Very Long Name That Should Truncate</td>
+	<td>@test - This Is a Very Long Name That Should Truncate1</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1608,7 +1625,7 @@
 	<td>1000</td>
 	<td></td>
 </tr>
-<!--LOG OUT-->
+<!--LOG OUT test2-->
 <tr>
 	<td>pause</td>
 	<td>3000</td>
@@ -1637,7 +1654,7 @@
 	<td>id=logout</td>
 	<td></td>
 </tr>
-<!--LOG IN-->
+<!--LOG IN test-->
 <!--DisableAnimations-->
 <tr>
 	<td>pause</td>
@@ -1652,6 +1669,14 @@
 	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=loginId</td>
@@ -1918,11 +1943,6 @@
 	<td>test3 has joined the channel</td>
 </tr>
 <!--LOG OUT-->
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
 <tr>
 	<td>pause</td>
 	<td>3000</td>
