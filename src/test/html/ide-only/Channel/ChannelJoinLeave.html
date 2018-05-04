@@ -268,15 +268,31 @@
 	<td>id=post_textbox</td>
 	<td>Join from a permalink!${KEY_ENTER}</td>
 </tr>
-<!--*** It's no longer locating the Permalink button-->
+<!--It's no longer locating the Permalink button in center-->
+<!--Changed to open reply RHS because it can find the Permalink button there-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button:contains('Permalink')</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_SHIFT}${KEY_UP}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#rhsrootDotMenuPermalink &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button:contains('Permalink')</td>
+	<td>css=#rhsrootDotMenuPermalink &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=linkModalCopyLink</td>
 	<td></td>
 </tr>
 <tr>
@@ -473,24 +489,30 @@
 	<td>css=p:contains('Try to join this private channel from a link...')</td>
 	<td></td>
 </tr>
+<!--Open RHS so Se can find Permalink button-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[6]</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_SHIFT}${KEY_UP}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#rhsrootDotMenuPermalink &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[6]</td>
+	<td>css=#rhsrootDotMenuPermalink &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button:contains('Permalink')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button:contains('Permalink')</td>
+	<td>id=linkModalCopyLink</td>
 	<td></td>
 </tr>
 <tr>
@@ -666,6 +688,11 @@
 </tr>
 <!--Try to join private channel from link (expected not to join)-->
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
 	<td></td>
@@ -679,6 +706,25 @@
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
 	<td>Town Square</td>
+</tr>
+<!--LOG OUT -->
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#logout &gt; span</td>
+	<td></td>
 </tr>
 </tbody></table>
 </body>
