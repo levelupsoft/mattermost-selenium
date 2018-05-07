@@ -222,6 +222,8 @@
 	<td>Off-Topic</td>
 </tr>
 <!--Verify search results-->
+<!--Should probaby split this out into separate posts, since the highlight verification isn't really working right-->
+<!--Otherwise it's not independently verifying that various results are returned-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=input.search-bar</td>
@@ -240,7 +242,7 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=span.search-highlight:contains('Hello')</td>
-	<td>Hello</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
