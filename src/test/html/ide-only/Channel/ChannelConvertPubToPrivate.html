@@ -11,6 +11,10 @@
 <thead>
 <tr><td rowspan="1" colspan="3">ChannelConvertPubToPrivate</td></tr>
 </thead><tbody>
+<!--***********-->
+<!--If feasible, rebuild the server AFTER running this test; -->
+<!--could cause problems in other tests if Off-Topic is private-->
+<!--***********-->
 <!--LOG IN test-->
 <tr>
 	<td>openAndWait</td>
@@ -1708,7 +1712,6 @@
 	<td>css=#logout &gt; span</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
