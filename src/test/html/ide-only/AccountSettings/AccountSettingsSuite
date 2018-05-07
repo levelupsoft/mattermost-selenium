@@ -8,8 +8,8 @@
 <body>
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
-<tr><td><a href="../Se-IDE/AccountSettingsDisplayLanguage.html">AccountSettingsDisplayLanguage</a></td></tr>
-<tr><td><a href="../Se-IDE/AccountSettingsMan.html">AccountSettingsMan</a></td></tr>
+<tr><td><a href="AccountSettingsDisplayLanguage.html">AccountSettingsDisplayLanguage</a></td></tr>
+<tr><td><a href="AccountSettingsMan.html">AccountSettingsMan</a></td></tr>
 </tbody></table>
 </body>
 </html>
