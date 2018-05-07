@@ -238,8 +238,8 @@
 	<td>hello world${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight</td>
+	<td>waitForElementPresent</td>
+	<td>css=span.search-highlight:contains('Hello')</td>
 	<td>Hello</td>
 </tr>
 <tr>
@@ -766,17 +766,20 @@
 	<td></td>
 </tr>
 <!--LOG IN-->
-<tr>
-	<td>openAndWait</td>
-	<td>/login</td>
-	<td></td>
-</tr>
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=loginId</td>
