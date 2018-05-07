@@ -178,6 +178,8 @@ public class SearchIT extends DriverBase {
         }
 
         // Verify search results
+        // Should probaby split this out into separate posts, since the highlight verification isn't really working right
+        // Otherwise it's not independently verifying that various results are returned
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("input.search-bar"))) break; } catch (Exception e) {}
