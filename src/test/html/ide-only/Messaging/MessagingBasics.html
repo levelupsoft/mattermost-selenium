@@ -2026,7 +2026,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=edit_textbox</td>
-	<td>${KEY_ENTER}</td>
+	<td> ${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2421,6 +2421,11 @@
 </tr>
 <!--This doesn't work anymore either, to try to get to [...] options-->
 <tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
 	<td>storeAttribute</td>
 	<td>//button[@data-message='Permalinkpost']@data-postid</td>
 	<td>permapostid</td>
@@ -2767,6 +2772,12 @@
 	<td>id=post_textbox</td>
 	<td></td>
 </tr>
+<!--*** Fails to find [...] etc.; open permalink modal manually-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td>storeAttribute</td>
 	<td>//button[@data-message='Log out and permalink']@data-postid</td>
@@ -2780,6 +2791,11 @@
 <tr>
 	<td>click</td>
 	<td>//div[@id='center_dropdown${logoutpostid}']/div/ul/li[2]/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>

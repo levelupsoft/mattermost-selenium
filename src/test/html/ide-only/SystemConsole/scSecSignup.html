@@ -89,12 +89,12 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=requireEmailVerificationfalse</td>
+	<td>id=EmailSettings.RequireEmailVerificationfalse</td>
 	<td>on</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enableOpenServertrue</td>
+	<td>id=TeamSettings.EnableOpenServertrue</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -328,17 +328,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableOpenServerfalse</td>
+	<td>id=TeamSettings.EnableOpenServerfalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableOpenServerfalse</td>
+	<td>id=TeamSettings.EnableOpenServerfalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enableOpenServerfalse</td>
+	<td>id=TeamSettings.EnableOpenServerfalse</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -481,17 +481,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableOpenServertrue</td>
+	<td>id=TeamSettings.EnableOpenServertrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableOpenServertrue</td>
+	<td>id=TeamSettings.EnableOpenServertrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enableOpenServertrue</td>
+	<td>id=TeamSettings.EnableOpenServertrue</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -522,22 +522,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=EnableSignUpWithEmailfalse</td>
+	<td>id=EmailSettings.EnableSignUpWithEmailfalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=EnableSignUpWithEmailfalse</td>
+	<td>id=EmailSettings.EnableSignUpWithEmailfalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=EnableSignInWithEmailfalse</td>
+	<td>id=EmailSettings.EnableSignInWithEmailfalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=EnableSignInWithEmailfalse</td>
+	<td>id=EmailSettings.EnableSignInWithEmailfalse</td>
 	<td></td>
 </tr>
 <tr>
@@ -604,11 +604,6 @@
 	<td>type</td>
 	<td>id=gitlabUrl</td>
 	<td>http://gitlab.com</td>
-</tr>
-<tr>
-	<td>selectWindow</td>
-	<td>name=fbPanelBar1-browser</td>
-	<td></td>
 </tr>
 <!--Endpoints autofill based on URL that was entered-->
 <tr>
@@ -806,22 +801,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=EnableSignUpWithEmailtrue</td>
+	<td>id=EmailSettings.EnableSignUpWithEmailtrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=EnableSignUpWithEmailtrue</td>
+	<td>id=EmailSettings.EnableSignUpWithEmailtrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=EnableSignInWithEmailtrue</td>
+	<td>id=EmailSettings.EnableSignInWithEmailtrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=EnableSignInWithEmailtrue</td>
+	<td>id=EmailSettings.EnableSignInWithEmailtrue</td>
 	<td></td>
 </tr>
 <tr>
@@ -884,10 +879,30 @@
 	<td>id=id</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
 <!--Regenerate invite salt-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=inviteSalt</td>
+	<td>id=sign_up</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sign_up</td>
 	<td></td>
 </tr>
 <tr>
@@ -901,13 +916,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>storeAttribute</td>
-	<td>//*[@id=&quot;inviteSalt&quot;]@value</td>
+	<td>storeValue</td>
+	<td>id=EmailSettings.InviteSalt</td>
 	<td>invitesalt</td>
 </tr>
 <tr>
-	<td>waitForAttribute</td>
-	<td>//*[@id=&quot;inviteSalt&quot;]@value</td>
+	<td>waitForValue</td>
+	<td>id=EmailSettings.InviteSalt</td>
 	<td>${invitesalt}</td>
 </tr>
 <tr>
@@ -916,8 +931,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForNotAttribute</td>
-	<td>//*[@id=&quot;inviteSalt&quot;]@value</td>
+	<td>waitForNotValue</td>
+	<td>id=EmailSettings.InviteSalt</td>
 	<td>${invitesalt}</td>
 </tr>
 <tr>
@@ -956,7 +971,6 @@
 	<td>id=logout</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

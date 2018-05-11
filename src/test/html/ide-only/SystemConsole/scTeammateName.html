@@ -2176,7 +2176,23 @@
 	<td>6</td>
 </tr>
 <!--Verify in system messages-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<!--Seems to take a few seconds sometimes to reflect the change-->
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
 <!--Load more messages to make all posts visible-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='postListContent']/button</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>//div[@id='postListContent']/button</td>

@@ -81,12 +81,12 @@
 <!--Show Email - False (show full name - true)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=ShowEmailAddressfalse</td>
+	<td>id=PrivacySettings.ShowEmailAddressfalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=ShowEmailAddressfalse</td>
+	<td>id=PrivacySettings.ShowEmailAddressfalse</td>
 	<td></td>
 </tr>
 <tr>
@@ -116,6 +116,14 @@
 	<td></td>
 </tr>
 <!--LOG IN usera-->
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=loginId</td>
@@ -498,6 +506,19 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td>admin@test.com</td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>name=loginId</td>
 	<td>admin@test.com</td>
@@ -553,17 +574,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=ShowFullNamefalse</td>
+	<td>id=PrivacySettings.ShowFullNamefalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=ShowFullNamefalse</td>
+	<td>id=PrivacySettings.ShowFullNamefalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=ShowFullNamefalse</td>
+	<td>id=PrivacySettings.ShowFullNamefalse</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -863,8 +884,18 @@
 </tr>
 <!--LOG IN userb-->
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
 <tr>
@@ -1035,6 +1066,16 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
 	<td></td>
@@ -1074,6 +1115,21 @@
 	<td>waitForText</td>
 	<td>css=div.channel-intro-profile</td>
 	<td>userb</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1305,6 +1361,16 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>name=loginId</td>
 	<td>admin@test.com</td>
@@ -1360,17 +1426,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=ShowEmailAddresstrue</td>
+	<td>id=PrivacySettings.ShowEmailAddresstrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=ShowEmailAddresstrue</td>
+	<td>id=PrivacySettings.ShowEmailAddresstrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=ShowEmailAddresstrue</td>
+	<td>id=PrivacySettings.ShowEmailAddresstrue</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -1669,6 +1735,16 @@
 	<td></td>
 </tr>
 <!--LOG IN userb-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=loginId</td>
@@ -2107,6 +2183,16 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>name=loginId</td>
 	<td>admin@test.com</td>
@@ -2162,17 +2248,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=ShowFullNametrue</td>
+	<td>id=PrivacySettings.ShowFullNametrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=ShowFullNametrue</td>
+	<td>id=PrivacySettings.ShowFullNametrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=ShowFullNametrue</td>
+	<td>id=PrivacySettings.ShowFullNametrue</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -2474,6 +2560,11 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <tr>

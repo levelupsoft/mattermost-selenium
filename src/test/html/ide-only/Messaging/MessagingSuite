@@ -9,7 +9,6 @@
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
 <tr><td><a href="MessagingEdit.html">MessagingEdit</a></td></tr>
-<tr><td><a href="MessagingFlagsNoIDs.html">MessagingFlagsNoIDs</a></td></tr>
 <tr><td><a href="MessagingPin.html">MessagingPin</a></td></tr>
 <tr><td><a href="MessagingMan.html">MessagingMan</a></td></tr>
 <tr><td><a href="MessagingBasics.html">MessagingBasics</a></td></tr>

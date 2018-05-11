@@ -90,7 +90,7 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enablePublicLinktrue</td>
+	<td>id=FileSettings.EnablePublicLinktrue</td>
 	<td>on</td>
 </tr>
 <!--Regenerate public link salt-->
@@ -110,13 +110,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>storeAttribute</td>
-	<td>//*[@id=&quot;publicLinkSalt&quot;]@value</td>
+	<td>storeValue</td>
+	<td>id=FileSettings.PublicLinkSalt</td>
 	<td>publiclinksalt</td>
 </tr>
 <tr>
-	<td>waitForAttribute</td>
-	<td>//*[@id=&quot;publicLinkSalt&quot;]@value</td>
+	<td>waitForValue</td>
+	<td>id=FileSettings.PublicLinkSalt</td>
 	<td>${publiclinksalt}</td>
 </tr>
 <tr>
@@ -125,8 +125,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForNotAttribute</td>
-	<td>//*[@id=&quot;publicLinkSalt&quot;]@value</td>
+	<td>waitForNotValue</td>
+	<td>id=FileSettings.PublicLinkSalt</td>
 	<td>${publiclinksalt}</td>
 </tr>
 <tr>
@@ -252,6 +252,19 @@
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
 	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td>admin@test.com</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -518,12 +531,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=allowCorsFrom</td>
+	<td>id=ServiceSettings.AllowCorsFrom</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=allowCorsFrom</td>
+	<td>id=ServiceSettings.AllowCorsFrom</td>
 	<td>http://example.com</td>
 </tr>
 <tr>
@@ -548,17 +561,17 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=allowCorsFrom</td>
+	<td>id=ServiceSettings.AllowCorsFrom</td>
 	<td>exact:http://example.com</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=allowCorsFrom</td>
+	<td>id=ServiceSettings.AllowCorsFrom</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=allowCorsFrom</td>
+	<td>id=ServiceSettings.AllowCorsFrom</td>
 	<td>*</td>
 </tr>
 <tr>
@@ -583,12 +596,12 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=allowCorsFrom</td>
+	<td>id=ServiceSettings.AllowCorsFrom</td>
 	<td>*</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=allowCorsFrom</td>
+	<td>id=ServiceSettings.AllowCorsFrom</td>
 	<td></td>
 </tr>
 <tr>
@@ -608,33 +621,23 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=allowCorsFrom</td>
+	<td>id=ServiceSettings.AllowCorsFrom</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableInsecureOutgoingConnectionstrue</td>
+	<td>id=ServiceSettings.EnableInsecureOutgoingConnectionstrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableInsecureOutgoingConnectionstrue</td>
+	<td>id=ServiceSettings.EnableInsecureOutgoingConnectionstrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enableInsecureOutgoingConnectionstrue</td>
+	<td>id=ServiceSettings.EnableInsecureOutgoingConnectionstrue</td>
 	<td>on</td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
 </tr>
 <tr>
 	<td>waitForNotEditable</td>
@@ -648,33 +651,23 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enableInsecureOutgoingConnectionstrue</td>
+	<td>id=ServiceSettings.EnableInsecureOutgoingConnectionstrue</td>
 	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableInsecureOutgoingConnectionsfalse</td>
+	<td>id=ServiceSettings.EnableInsecureOutgoingConnectionstrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableInsecureOutgoingConnectionsfalse</td>
+	<td>id=ServiceSettings.EnableInsecureOutgoingConnectionstrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enableInsecureOutgoingConnectionsfalse</td>
+	<td>id=ServiceSettings.EnableInsecureOutgoingConnectionstrue</td>
 	<td>on</td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
 </tr>
 <tr>
 	<td>waitForNotEditable</td>
@@ -688,7 +681,7 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enableInsecureOutgoingConnectionsfalse</td>
+	<td>id=ServiceSettings.EnableInsecureOutgoingConnectionstrue</td>
 	<td>on</td>
 </tr>
 <!--LOG OUT admin-->
@@ -712,7 +705,6 @@
 	<td>link=Logout</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

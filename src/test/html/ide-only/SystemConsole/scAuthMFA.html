@@ -113,19 +113,20 @@
 	<td>https://docs.mattermost.com/deployment/auth.html</td>
 </tr>
 <!--Enable MFA-->
+<!--I think this is already set to on, so skip this part? Or just verify?-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=EnableMultifactorAuthenticationtrue</td>
+	<td>id=ServiceSettings.EnableMultifactorAuthenticationtrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=EnableMultifactorAuthenticationtrue</td>
+	<td>id=ServiceSettings.EnableMultifactorAuthenticationtrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=EnforceMultifactorAuthenticationfalse</td>
+	<td>id=ServiceSettings.EnableMultifactorAuthenticationtrue</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -272,17 +273,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=EnableMultifactorAuthenticationfalse</td>
+	<td>id=ServiceSettings.EnableMultifactorAuthenticationfalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=EnableMultifactorAuthenticationfalse</td>
+	<td>id=ServiceSettings.EnableMultifactorAuthenticationfalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=EnforceMultifactorAuthenticationfalse</td>
+	<td>id=ServiceSettings.EnableMultifactorAuthenticationfalse</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -381,6 +382,7 @@
 	<td>id=mfaEdit</td>
 	<td></td>
 </tr>
+<!--MFA enforcement is tested manually-->
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -402,7 +404,6 @@
 	<td>id=logout</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

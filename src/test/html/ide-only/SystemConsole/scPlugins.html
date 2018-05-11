@@ -11,6 +11,12 @@
 <thead>
 <tr><td rowspan="1" colspan="3">SysConsPluginsConfig</td></tr>
 </thead><tbody>
+<!--*** Need to use sample Hello World plugin for testing? Existing test-->
+<!--*** plugins didn't cover issues in https://mattermost.atlassian.net/browse/MM-10492-->
+<!---->
+<!--*** Unless plugin upload has been uploaded on selenium server, -->
+<!--*** log in to ci-linux-postgres as a system admin and skip down to-->
+<!--*** the Open System Console step-->
 <!--LOG IN-->
 <tr>
 	<td>openAndWait</td>
@@ -92,6 +98,12 @@
 	<td></td>
 </tr>
 <tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!---->
+<tr>
 	<td>waitForText</td>
 	<td>css=p &gt; span</td>
 	<td>Plugins are disabled on your server. To enable them, go to Plugins &gt; Configuration.</td>
@@ -135,6 +147,11 @@
 <!--4.8: Removed setting for enabling plugin uploads on Configuration page-->
 <!--Upload is enabled directly in config.json - need to update in selenium server-->
 <!--And set up to allow testing both ways, if not switching servers or something-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <!--Upload a plugin-->
 <tr>
 	<td>waitForElementPresent</td>

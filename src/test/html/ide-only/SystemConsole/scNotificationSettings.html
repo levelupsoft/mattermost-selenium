@@ -128,13 +128,39 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForEditable</td>
+	<td>waitForNotEditable</td>
 	<td>id=skipServerCertificateVerificationtrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForEditable</td>
 	<td>id=enableSecurityFixAlertfalse</td>
+	<td></td>
+</tr>
+<!--Connection Security on = Certificate Verification editable-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=connectionSecurity</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=connectionSecurity</td>
+	<td>TLS</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=skipServerCertificateVerificationtrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=connectionSecurity</td>
+	<td>None</td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=skipServerCertificateVerificationtrue</td>
 	<td></td>
 </tr>
 <!--Turn email notifications off; verify fields not editable-->
@@ -148,7 +174,6 @@
 	<td>id=sendEmailNotificationsfalse</td>
 	<td></td>
 </tr>
-<!--Three of these fields currently not disabling as expected: MM-10110-->
 <tr>
 	<td>waitForNotEditable</td>
 	<td>id=emailNotificationContentsType</td>
@@ -317,7 +342,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForEditable</td>
+	<td>waitForNotEditable</td>
 	<td>id=skipServerCertificateVerificationtrue</td>
 	<td></td>
 </tr>
@@ -441,12 +466,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=SiteURL</td>
+	<td>id=ServiceSettings.SiteURL</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=SiteURL</td>
+	<td>id=ServiceSettings.SiteURL</td>
 	<td></td>
 </tr>
 <tr>
@@ -649,17 +674,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=SiteURL</td>
+	<td>id=ServiceSettings.SiteURL</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>id=SiteURL</td>
+	<td>id=ServiceSettings.SiteURL</td>
 	<td>siteurl</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=SiteURL</td>
+	<td>id=ServiceSettings.SiteURL</td>
 	<td></td>
 </tr>
 <tr>
@@ -716,17 +741,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=SiteURL</td>
+	<td>id=ServiceSettings.SiteURL</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=SiteURL</td>
+	<td>id=ServiceSettings.SiteURL</td>
 	<td>${siteurl}</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=SiteURL</td>
+	<td>id=ServiceSettings.SiteURL</td>
 	<td>${siteurl}</td>
 </tr>
 <tr>
@@ -743,107 +768,6 @@
 	<td>waitForNotEditable</td>
 	<td>id=saveSetting</td>
 	<td></td>
-</tr>
-<!--Settings at bottom of page can be changed and saved-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=skipServerCertificateVerificationtrue</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=skipServerCertificateVerificationtrue</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=enableSecurityFixAlertfalse</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=enableSecurityFixAlertfalse</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=skipServerCertificateVerificationtrue</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=enableSecurityFixAlertfalse</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=skipServerCertificateVerificationfalse</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=skipServerCertificateVerificationfalse</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=enableSecurityFixAlerttrue</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=enableSecurityFixAlerttrue</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=skipServerCertificateVerificationfalse</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=enableSecurityFixAlerttrue</td>
-	<td>on</td>
 </tr>
 <!--MOBILE PUSH NOTIFICATION SETTINGS-->
 <tr>
@@ -910,16 +834,6 @@
 <tr>
 	<td>waitForNotEditable</td>
 	<td>id=pushNotificationContents</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
@@ -1269,7 +1183,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#pushDesc &gt; span</td>
-	<td>Disabled by System Administrator</td>
+	<td>Push notifications are not enabled</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1284,7 +1198,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.padding-top &gt; span</td>
-	<td>Push Notifications are not enabled. Contact your System Administrator.</td>
+	<td>Push notifications have not been enabled by your System Administrator.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1296,7 +1210,17 @@
 	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
-
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<!--Test leaves off here-->
 </tbody></table>
 </body>
 </html>
