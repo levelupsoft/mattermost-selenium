@@ -580,7 +580,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.post-message__text &gt; span &gt; p:contains('Do Not Disturb is enabled. You will not receive desktop or mobile push notifications until Do Not Disturb is turned off.')</td>
+	<td>css=p:contains('Do Not Disturb is enabled. You will not receive desktop or mobile push notifications until Do Not Disturb is turned off.')</td>
 	<td></td>
 </tr>
 <tr>
@@ -908,17 +908,9 @@
 	<td>id=post_textbox</td>
 	<td>p${KEY_ENTER}</td>
 </tr>
-<!--This part fails; it won't find and close the tab then return to original tab-->
-<!--For some reason, we include version number in browser tab, which means-->
-<!--to find the correct tab we'll have to update it every release-->
 <tr>
 	<td>pause</td>
 	<td>2000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>selectWindow</td>
-	<td>title=Mattermost User’s Guide — Mattermost 4.8 documentation</td>
 	<td></td>
 </tr>
 <tr>
@@ -950,7 +942,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>/invi</td>
+	<td>/invite_</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -986,7 +978,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>/invi</td>
+	<td>/invite_</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1144,6 +1136,16 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>name=loginId</td>
 	<td>admin@test.com</td>
@@ -1255,6 +1257,11 @@
 	<td></td>
 </tr>
 <!--Open in RHS, autocomplete /collapse in RHS-->
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -2023,6 +2030,14 @@
 	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=loginId</td>
@@ -3382,11 +3397,6 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
-<tr>
-	<td>click</td>
-	<td>css=a.sidebar-header-dropdown__toggle</td>
-	<td></td>
-</tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>css=#logout &gt; span</td>

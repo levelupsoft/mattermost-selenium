@@ -103,27 +103,32 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[2]/label</td>
+	<td>css=label.control-label.col-sm-4</td>
+	<td>Enable Compliance Reporting:</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[@id='root']/div/div[4]/div/form/div/div[2]/label</td>
 	<td>Compliance Report Directory:</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[2]/div/div/span</td>
+	<td>//div[@id='root']/div/div[4]/div/form/div/div[2]/div/div/span</td>
 	<td>Directory to which compliance reports are written. If blank, will be set to ./data/.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[3]/label</td>
+	<td>//div[@id='root']/div/div[4]/div/form/div/div[3]/label</td>
 	<td>Enable Daily Report:</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[3]/div/div/span</td>
+	<td>//div[@id='root']/div/div[4]/div/form/div/div[3]/div/div/span</td>
 	<td>When true, Mattermost will generate a daily compliance report.</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=Enablefalse</td>
+	<td>id=ComplianceSettings.EnableDailyfalse</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -133,17 +138,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Enabletrue</td>
+	<td>id=ComplianceSettings.Enabletrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Enabletrue</td>
+	<td>id=ComplianceSettings.Enabletrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForEditable</td>
-	<td>id=Directory</td>
+	<td>id=ComplianceSettings.Directory</td>
 	<td></td>
 </tr>
 <tr>
@@ -153,12 +158,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=EnableDailytrue</td>
+	<td>id=ComplianceSettings.EnableDailytrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=EnableDailytrue</td>
+	<td>id=ComplianceSettings.EnableDailytrue</td>
 	<td></td>
 </tr>
 <tr>
@@ -243,23 +248,18 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/div/div[5]/div/table/tbody/tr/td[8]/span/span[4]/span</td>
-	<td>May 31, 2017</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.compliance-panel__table div table.table tbody tr td span span span:contains('May 31, 2017')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/div/div[5]/div/table/tbody/tr/td[7]</td>
-	<td>admin@test.com</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/div/div[5]/div/table/tbody/tr/td[6]</td>
+	<td>//div[@id='root']/div/div[4]/div/div/div[5]/div/table/tbody/tr/td[6]</td>
 	<td>Se Test 1</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/div/div[5]/div/table/tbody/tr/td[5]</td>
+	<td>//div[@id='root']/div/div[4]/div/div/div[5]/div/table/tbody/tr/td[5]</td>
 	<td>adhoc</td>
 </tr>
 <tr>
@@ -287,7 +287,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/div/div[5]/div/table/tbody/tr/td[3]/span</td>
+	<td>//div[@id='root']/div/div[4]/div/div/div[5]/div/table/tbody/tr/td[3]/span</td>
 	<td>finished</td>
 </tr>
 <!--Run a second report to verify newest displays at top-->
@@ -373,12 +373,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/div/div[5]/div/table/tbody/tr/td[3]/span</td>
+	<td>//div[@id='root']/div/div[4]/div/div/div[5]/div/table/tbody/tr/td[3]/span</td>
 	<td>finished</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/div/div[5]/div/table/tbody/tr/td[6]</td>
+	<td>//div[@id='root']/div/div[4]/div/div/div[5]/div/table/tbody/tr/td[6]</td>
 	<td>Se Test 2</td>
 </tr>
 <tr>
@@ -405,98 +405,184 @@
 <!--Console level-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=ConsoleLevel</td>
+	<td>id=LogSettings.ConsoleLevel</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForEditable</td>
-	<td>id=ConsoleLevel</td>
+	<td>id=LogSettings.ConsoleLevel</td>
 	<td></td>
 </tr>
 <tr>
+	<td>waitForValue</td>
+	<td>id=LogSettings.ConsoleJsontrue</td>
+	<td>on</td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
-	<td>id=EnableConsolefalse</td>
+	<td>id=LogSettings.EnableConsolefalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=EnableConsolefalse</td>
+	<td>id=LogSettings.EnableConsolefalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForNotEditable</td>
-	<td>id=ConsoleLevel</td>
+	<td>id=LogSettings.ConsoleLevel</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=EnableConsoletrue</td>
-	<td></td>
+	<td>waitForValue</td>
+	<td>id=LogSettings.ConsoleJsontrue</td>
+	<td>off</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=EnableConsoletrue</td>
+	<td>id=LogSettings.EnableConsoletrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForEditable</td>
-	<td>id=ConsoleLevel</td>
+	<td>id=LogSettings.ConsoleLevel</td>
 	<td></td>
 </tr>
 <!--File level-->
 <tr>
 	<td>waitForEditable</td>
-	<td>id=FileLevel</td>
+	<td>id=LogSettings.FileLevel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=LogSettings.FileJsontrue</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=LogSettings.FileLocation</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=EnableFilefalse</td>
+	<td>id=LogSettings.EnableFilefalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=EnableFilefalse</td>
+	<td>id=LogSettings.EnableFilefalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForNotEditable</td>
-	<td>id=FileLevel</td>
+	<td>id=LogSettings.FileLevel</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForNotEditable</td>
-	<td>id=FileLocation</td>
-	<td></td>
+	<td>waitForNotValue</td>
+	<td>id=LogSettings.FileJsontrue</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>waitForNotEditable</td>
-	<td>id=FileFormat</td>
+	<td>id=LogSettings.FileLocation</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=EnableFiletrue</td>
+	<td>id=LogSettings.EnableFiletrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=EnableFiletrue</td>
+	<td>id=LogSettings.EnableFiletrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForEditable</td>
-	<td>id=FileLevel</td>
+	<td>id=LogSettings.FileLevel</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForEditable</td>
-	<td>id=FileLocation</td>
+	<td>id=LogSettings.FileLocation</td>
+	<td></td>
+</tr>
+<!--Webhook debugging and diagnostics-->
+<tr>
+	<td>waitForValue</td>
+	<td>id=LogSettings.EnableWebhookDebuggingtrue</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=LogSettings.EnableWebhookDebuggingfalse</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForEditable</td>
-	<td>id=FileFormat</td>
+	<td>waitForElementPresent</td>
+	<td>id=LogSettings.EnableDiagnosticstrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=LogSettings.EnableDiagnosticsfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=privacy policy</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=LogSettings.EnableWebhookDebuggingfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=LogSettings.EnableWebhookDebuggingfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=LogSettings.EnableDiagnosticsfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=LogSettings.EnableWebhookDebuggingfalse</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=LogSettings.EnableDiagnosticsfalse</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=LogSettings.EnableWebhookDebuggingtrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=LogSettings.EnableDiagnosticstrue</td>
 	<td></td>
 </tr>
 <!--LOG OUT admin-->

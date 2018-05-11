@@ -84,7 +84,7 @@
 <!--Restrict to mattermost.com-->
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[7]/label</td>
+	<td>//div[@id='root']/div/div[4]/div/form/div/div[7]/label</td>
 	<td>Restrict account creation to specified email domains:</td>
 </tr>
 <tr>
@@ -129,6 +129,19 @@
 	<td></td>
 </tr>
 <!--Acct creation from link on signin page fails with wrong domain-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#signup &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#signup &gt; span</td>
@@ -368,6 +381,19 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#signup &gt; span</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>css=#signup &gt; span</td>
 	<td></td>
@@ -423,14 +449,14 @@
 	<td>All team communication in one place, searchable and accessible anywhere</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.signup-team-dir__name</td>
-	<td>UI Automation 2</td>
+	<td>waitForElementPresent</td>
+	<td>id=UI_Automation_2</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.signup-team-dir__name</td>
-	<td>UI Automation 2</td>
+	<td>id=UI_Automation_2</td>
+	<td></td>
 </tr>
 <!--Cannot change email address to domain not in allowed list-->
 <tr>

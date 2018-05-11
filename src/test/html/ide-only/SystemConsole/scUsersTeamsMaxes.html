@@ -689,6 +689,21 @@
 </tr>
 <!--Set max users per team to current number, open team for others to join-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>link=UsUsersTeamsMaxes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=UsUsersTeamsMaxes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>testokay joined the team</td>
+	<td></td>
+</tr>
+<tr>
 	<td>storeText</td>
 	<td>css=span.icon__text</td>
 	<td>usersCurrentTeam2</td>
@@ -838,6 +853,19 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td>test10</td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>name=loginId</td>
 	<td>test10</td>
@@ -902,6 +930,14 @@
 	<td>This team has reached the maximum number of allowed accounts. Contact your systems administrator to set a higher limit.</td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
 	<td>waitForElementPresent</td>
 	<td>css=span.fa.fa-chevron-left</td>
 	<td></td>
@@ -919,16 +955,6 @@
 <!--LOG OUT test1-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
 	<td>link=Logout</td>
 	<td></td>
 </tr>
@@ -942,6 +968,19 @@
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
 	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td>admin@test.com</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -1801,6 +1840,7 @@
 	<td>@all again, no notify here either!</td>
 </tr>
 <!--Post at-all message-->
+<!--Hard to reliably find the Confirm button; if off by one it hits Cancel-->
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
@@ -1812,13 +1852,13 @@
 	<td>exact:By using @all or @channel you are about to send notifications to 5 people. Are you sure you want to do this?</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[8]</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>xpath=(//button[@type='button'])[9]</td>
+	<td>Confirm</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[8]</td>
+	<td>xpath=(//button[@type='button'])[9]</td>
 	<td></td>
 </tr>
 <tr>

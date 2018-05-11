@@ -54,18 +54,23 @@
 </tr>
 <!--Open system console-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
-	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=custom</td>
+	<td>id=systemConsole</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=enableOAuthServiceProvidertrue</td>
+	<td>click</td>
+	<td>id=systemConsole</td>
 	<td></td>
 </tr>
 <tr>
@@ -89,6 +94,11 @@
 	<td>click</td>
 	<td>id=enableOAuthServiceProvidertrue</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enableOAuthServiceProvidertrue</td>
+	<td>on</td>
 </tr>
 <!--Restrict to admins - true-->
 <tr>
@@ -116,6 +126,8 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<!--This is set up for a particular team. Instead set it up to store team name-->
+<!--first, then use that to switch back to the right team-->
 <!--System admin can see, create, edit, and delete OAuth 2.0 integrations-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -168,24 +180,19 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div[2]/div[3]/a[4]/div</td>
-	<td>OAuth 2.0 Applications</td>
+	<td>waitForElementPresent</td>
+	<td>link=OAuth 2.0 Applications</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div[3]/div[2]/div[3]/a[4]/div</td>
+	<td>link=OAuth 2.0 Applications</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=span &gt; a &gt; span</td>
 	<td>OAuth 2.0 applications</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div[2]/span/span/a[2]/span</td>
-	<td>App Directory</td>
 </tr>
 <!--System Admin creates on Team Admin's team-->
 <tr>
@@ -280,7 +287,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div[2]/div[2]/p[2]/span[2]/b</td>
+	<td>//div[@id='root']/div/div[4]/div[2]/div[2]/p[2]/span[2]/b</td>
 	<td>Client Secret</td>
 </tr>
 <tr>
@@ -303,6 +310,7 @@
 	<td>css=span.item-details__name</td>
 	<td>OAuth Adm on Nonadm Team</td>
 </tr>
+<!--Also set to a particular team; update with stored team-->
 <!--Switch to System Admin's team-->
 <tr>
 	<td>waitForText</td>
@@ -345,24 +353,19 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div[2]/div[3]/a[4]/div</td>
-	<td>OAuth 2.0 Applications</td>
+	<td>waitForElementPresent</td>
+	<td>link=OAuth 2.0 Applications</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div[3]/div[2]/div[3]/a[4]/div</td>
+	<td>link=OAuth 2.0 Applications</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=span &gt; a &gt; span</td>
 	<td>OAuth 2.0 applications</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div[2]/span/span/a[2]/span</td>
-	<td>App Directory</td>
 </tr>
 <!--System Admin creates on System Admin's team-->
 <tr>

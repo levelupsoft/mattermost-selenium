@@ -95,63 +95,63 @@
 <!--Store current values to replace at end-->
 <tr>
 	<td>storeValue</td>
-	<td>id=termsOfServiceLink</td>
+	<td>id=SupportSettings.TermsOfServiceLink</td>
 	<td>toslink</td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>id=privacyPolicyLink</td>
+	<td>id=SupportSettings.PrivacyPolicyLink</td>
 	<td>privacylink</td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>id=aboutLink</td>
+	<td>id=SupportSettings.AboutLink</td>
 	<td>aboutlink</td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>id=helpLink</td>
+	<td>id=SupportSettings.HelpLink</td>
 	<td>helplink</td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>id=reportAProblemLink</td>
+	<td>id=SupportSettings.ReportAProblemLink</td>
 	<td>reportlink</td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>id=supportEmail</td>
+	<td>id=SupportSettings.SupportEmail</td>
 	<td>supportemail</td>
 </tr>
 <!--Edit links for TOS, Privacy, About, Help, Report a Problem-->
 <tr>
 	<td>type</td>
-	<td>id=termsOfServiceLink</td>
+	<td>id=SupportSettings.TermsOfServiceLink</td>
 	<td>https://about.mattermost.com/</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=privacyPolicyLink</td>
+	<td>id=SupportSettings.PrivacyPolicyLink</td>
 	<td>https://github.com/mattermost</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=aboutLink</td>
+	<td>id=SupportSettings.AboutLink</td>
 	<td>https://api.mattermost.com/</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=helpLink</td>
+	<td>id=SupportSettings.HelpLink</td>
 	<td>https://about.mattermost.com/features/</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=reportAProblemLink</td>
+	<td>id=SupportSettings.ReportAProblemLink</td>
 	<td>https://about.mattermost.com/community-applications/</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=reportAProblemLink</td>
+	<td>id=SupportSettings.ReportAProblemLink</td>
 	<td>https://about.mattermost.com/community-applications/</td>
 </tr>
 <tr>
@@ -217,8 +217,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>selectWindow</td>
-	<td>title=Mattermost API Reference</td>
+	<td>selectPopUp</td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -252,8 +252,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>selectWindow</td>
-	<td>title=Mattermost · GitHub</td>
+	<td>selectPopUp</td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -267,6 +267,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>selectWindow</td>
 	<td>null</td>
 	<td></td>
@@ -287,8 +292,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>selectWindow</td>
-	<td>title=Mattermost Private Cloud Messaging</td>
+	<td>selectPopUp</td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -302,6 +307,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>selectWindow</td>
 	<td>null</td>
 	<td></td>
@@ -322,8 +332,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>selectWindow</td>
-	<td>title=Features – Mattermost</td>
+	<td>selectPopUp</td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -334,6 +344,11 @@
 <tr>
 	<td>close</td>
 	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <tr>
@@ -498,22 +513,22 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=termsOfServiceLink</td>
+	<td>id=SupportSettings.TermsOfServiceLink</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=helpLink</td>
+	<td>id=SupportSettings.HelpLink</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=reportAProblemLink</td>
+	<td>id=SupportSettings.ReportAProblemLink</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=reportAProblemLink</td>
+	<td>id=SupportSettings.ReportAProblemLink</td>
 	<td></td>
 </tr>
 <tr>
@@ -579,8 +594,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>selectWindow</td>
-	<td>title=Terms of Service – Mattermost</td>
+	<td>selectPopUp</td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -600,6 +615,11 @@
 </tr>
 <!--Blank Help and Report a Problem hidden from main menu-->
 <!--LOG IN admin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
 	<td>name=loginId</td>
@@ -650,7 +670,7 @@
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
-	<td>id=helpLink</td>
+	<td>id=SupportSettings.HelpLink</td>
 	<td></td>
 </tr>
 <!--Edit Support email link-->
@@ -681,17 +701,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=supportEmail</td>
+	<td>id=SupportSettings.SupportEmail</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=supportEmail</td>
+	<td>id=SupportSettings.SupportEmail</td>
 	<td>feedback-edit@mattermost.com</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=supportEmail</td>
+	<td>id=SupportSettings.SupportEmail</td>
 	<td>feedback-edit@mattermost.com</td>
 </tr>
 <tr>
@@ -728,28 +748,33 @@
 <!--Edit Download Page link-->
 <tr>
 	<td>storeValue</td>
-	<td>id=appDownloadLink</td>
+	<td>id=NativeAppSettings.AppDownloadLink</td>
+	<td>downloadpagelink</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>id=NativeAppSettings.AppDownloadLink</td>
 	<td>downloadpagelink</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=appDownloadLink</td>
+	<td>id=NativeAppSettings.AppDownloadLink</td>
 	<td>https://about.mattermost.com</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=appDownloadLink</td>
+	<td>id=NativeAppSettings.AppDownloadLink</td>
 	<td>https://about.mattermost.com</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=androidAppDownloadLink</td>
-	<td>exact:https://about.mattermost.com/mattermost-android-app/</td>
+	<td>id=NativeAppSettings.AndroidAppDownloadLink</td>
+	<td>https://about.mattermost.com/mattermost-android-app/</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=iosAppDownloadLink</td>
-	<td>exact:https://about.mattermost.com/mattermost-ios-app/</td>
+	<td>id=NativeAppSettings.IosAppDownloadLink</td>
+	<td>https://about.mattermost.com/mattermost-ios-app/</td>
 </tr>
 <tr>
 	<td>waitForEditable</td>
@@ -789,9 +814,19 @@
 </tr>
 <!--Create new account to see tutorial (requires open server, with email verification OFF)-->
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>css=#signup &gt; span</td>
 	<td>Create one now</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -925,8 +960,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>selectWindow</td>
-	<td>title=Mattermost Private Cloud Messaging</td>
+	<td>selectPopUp</td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -937,6 +972,11 @@
 <tr>
 	<td>close</td>
 	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <tr>
@@ -985,7 +1025,17 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=loginId</td>
-	<td>admin@test.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td></td>
 </tr>
 <tr>
 	<td>type</td>
@@ -1084,17 +1134,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=appDownloadLink</td>
+	<td>id=NativeAppSettings.AppDownloadLink</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=appDownloadLink</td>
+	<td>id=NativeAppSettings.AppDownloadLink</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=appDownloadLink</td>
+	<td>id=NativeAppSettings.AppDownloadLink</td>
 	<td></td>
 </tr>
 <tr>
@@ -1175,6 +1225,16 @@
 	<td></td>
 </tr>
 <!--LOG IN tutorialtest-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=loginId</td>
@@ -1333,42 +1393,42 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=termsOfServiceLink</td>
+	<td>id=SupportSettings.TermsOfServiceLink</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=termsOfServiceLink</td>
+	<td>id=SupportSettings.TermsOfServiceLink</td>
 	<td>${toslink}</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=privacyPolicyLink</td>
+	<td>id=SupportSettings.PrivacyPolicyLink</td>
 	<td>${privacylink}</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=aboutLink</td>
+	<td>id=SupportSettings.AboutLink</td>
 	<td>${aboutlink}</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=helpLink</td>
+	<td>id=SupportSettings.HelpLink</td>
 	<td>${helplink}</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=reportAProblemLink</td>
+	<td>id=SupportSettings.ReportAProblemLink</td>
 	<td>${reportlink}</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=supportEmail</td>
+	<td>id=SupportSettings.SupportEmail</td>
 	<td>${supportemail}</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=supportEmail</td>
+	<td>id=SupportSettings.SupportEmail</td>
 	<td>${supportemail}</td>
 </tr>
 <tr>
@@ -1404,17 +1464,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=appDownloadLink</td>
+	<td>id=NativeAppSettings.AppDownloadLink</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=appDownloadLink</td>
+	<td>id=NativeAppSettings.AppDownloadLink</td>
 	<td>${downloadpagelink}</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=appDownloadLink</td>
+	<td>id=NativeAppSettings.AppDownloadLink</td>
 	<td>${downloadpagelink}</td>
 </tr>
 <tr>
@@ -1432,6 +1492,67 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<!--Cleanup: Deactivate tutorialtest-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=users</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=users</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=searchUsers</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchUsers</td>
+	<td>tutorialtest</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@tutorialtest</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=deactivate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=deactivate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-danger</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>Inactive</td>
+</tr>
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1443,7 +1564,6 @@
 	<td>id=logout</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

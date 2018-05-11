@@ -9,6 +9,8 @@
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
 <tr><td><a href="TeamMulti.html">TeamMulti</a></td></tr>
+<tr><td><a href="TeamSettings.html">TeamSettings</a></td></tr>
+<tr><td><a href="TeamSettingsEnableJoin.html">TeamSettingsEnableJoin</a></td></tr>
 </tbody></table>
 </body>
 </html>

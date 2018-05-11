@@ -92,7 +92,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.title &gt; span</td>
-	<td>Total Users</td>
+	<td>Total Active Users</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -160,9 +160,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/div[2]/div[2]/div/div/span</td>
-	<td>Posts, Files and Hashtags</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.total-count div.title span:contains('Posts, Files and Hashtags')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -170,9 +170,9 @@
 	<td>Total Posts</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/div[4]/div/div/div/span</td>
-	<td>Active Users With Posts</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.total-count.by-day div.title span:contains('Active Users With Posts')</td>
+	<td></td>
 </tr>
 <!--Team Statistics-->
 <tr>
@@ -228,7 +228,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.title &gt; span</td>
-	<td>Total Users</td>
+	<td>Total Active Users</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -530,19 +530,29 @@
 	<td>Mattermost Version:</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[2]/span</td>
-	<td>Database Schema Version:</td>
+	<td>storeText</td>
+	<td>id=dbversionString</td>
+	<td>dbversionString</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Database Schema Version: ${dbversionString}</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[3]/span</td>
-	<td>exact:Database:</td>
+	<td>//div[2]/div/div[3]</td>
+	<td>Database: mysql</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.form-group &gt; span</td>
 	<td>Licensed to:</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[2]/div/div[2]/div[2]</td>
+	<td>Licensed to: Mattermost Selenium</td>
 </tr>
 <tr>
 	<td>waitForText</td>

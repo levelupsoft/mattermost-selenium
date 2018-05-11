@@ -12,6 +12,9 @@
 <tr><td rowspan="1" colspan="3">New Test</td></tr>
 </thead><tbody>
 <!--Max message length 4000 char (posts in severa chunks to help Se handle it)-->
+<!--*** This is changing soon. Part of the work is done already. -->
+<!--*** For some reason, the selenium server is already allowing >4k-->
+<!--*** Verified manually that other servers on the RC are still showing the limit-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -46,6 +49,11 @@
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
 	<td> twenty six letters - no forcing a jumbled quiz! Crazy Fredericka bought many very exquisite opal jewels. Sixty zippers were quickly picked from the woven jute bag. A quick movement of the enemy will jeopardize six gunboats. All questions asked by five watch experts amazed the judge. Jack quietly moved up front and seized the big ball of wax. The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Hello and delete</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_ENTER</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -758,7 +766,7 @@
 	<td>xpath=(//button[@type='button'])[9]</td>
 	<td></td>
 </tr>
-<!--*** Manually click Delete-->
+<!--*** Manually click Delete in center on This is important too-->
 <tr>
 	<td>pause</td>
 	<td>3000</td>
@@ -1053,6 +1061,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementNotPresent</td>
 	<td>css=span:contains('now online')</td>
 	<td></td>
@@ -1179,11 +1192,6 @@
 	<td>waitForElementPresent</td>
 	<td>css=strong:contains('Bold')</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='aj4m41as13napcyta6s3d9hikh_message']/div/span/p[2]/strong[3]/em</td>
-	<td>Bold-italics</td>
 </tr>
 <!--*** Not sure possible to verify original post * vs. _ or two styles at once-->
 <tr>
@@ -1318,12 +1326,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableLinkPreviewstrue</td>
+	<td>id=ServiceSettings.EnableLinkPreviewstrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableLinkPreviewstrue</td>
+	<td>id=ServiceSettings.EnableLinkPreviewstrue</td>
 	<td></td>
 </tr>
 <tr>
@@ -1338,7 +1346,7 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enableLinkPreviewstrue</td>
+	<td>id=ServiceSettings.EnableLinkPreviewstrue</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -1433,6 +1441,7 @@
 	<td></td>
 </tr>
 <!--*** Make sure channel switch happens in center-->
+<!--Need to update to change channel-->
 <!--Post in RHS reply thread (different channel in center), no preview RHS-->
 <tr>
 	<td>sendKeys</td>
@@ -1498,11 +1507,6 @@
 <tr>
 	<td>click</td>
 	<td>css=#helpTextLink &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>selectWindow</td>
-	<td>Mattermost</td>
 	<td></td>
 </tr>
 <tr>

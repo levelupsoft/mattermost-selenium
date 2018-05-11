@@ -201,6 +201,9 @@
 	<td>id=searchUsers</td>
 	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
 </tr>
+<!--This now fails because other tests add and then deactivate users-->
+<!--May not be able to meaningfully verify non-filtered number-->
+<!--Unless we store the value somewhere else and compare it here-->
 <tr>
 	<td>waitForText</td>
 	<td>css=span.member-count.pull-left &gt; span</td>
@@ -817,6 +820,19 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
 	<td></td>
 </tr>
 <tr>

@@ -209,7 +209,6 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Leave UI2 team (to ensure multiple open teams on Join page)-->
-<!--Not on that team? Did admin leave UI2 in SysConsUsersTeams?-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=UIUI Automation 2</td>
@@ -1065,7 +1064,7 @@
 	<td>link=test6×</td>
 	<td>test6×</td>
 </tr>
-<!--Switch to team Sixes and verify DMs appearing in LHS-->
+<!--Switch to team Six and verify DMs appearing in LHS-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=SiSix</td>
@@ -1117,7 +1116,188 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Off-Topic</td>
 </tr>
+<!--Cleanup: Leave both teams-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//button[@id='leaveTeam']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@id='leaveTeam']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=SiSix</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=SiSix</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>Six</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//button[@id='leaveTeam']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@id='leaveTeam']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>id=headerTeamName</td>
+	<td>Six</td>
+</tr>
 <!--LOG OUT admin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<!--Cleanup: test6 leave team Six-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>test6@test.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=SiSix</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=SiSix</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>Six</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//button[@id='leaveTeam']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@id='leaveTeam']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>id=headerTeamName</td>
+	<td>Six</td>
+</tr>
+<!--LOG OUT test6-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Logout</td>

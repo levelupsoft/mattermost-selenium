@@ -104,39 +104,39 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=EnableSignUpWithEmailtrue</td>
+	<td>id=EmailSettings.EnableSignInWithEmailtrue</td>
 	<td>on</td>
 </tr>
 <!--Verify sign-in with email set to true-->
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[2]/label</td>
+	<td>//div[@id='root']/div/div[4]/div/form/div/div[2]/label</td>
 	<td>Enable sign-in with email:</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[2]/div/div/span</td>
+	<td>//div[@id='root']/div/div[4]/div/form/div/div[2]/div/div/span</td>
 	<td>When true, Mattermost allows users to sign in using their email and password.</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=EnableSignInWithEmailtrue</td>
+	<td>id=EmailSettings.EnableSignInWithEmailtrue</td>
 	<td>on</td>
 </tr>
 <!--Verify sign-in with username set to true-->
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[3]/label</td>
+	<td>//div[@id='root']/div/div[4]/div/form/div/div[3]/label</td>
 	<td>Enable sign-in with username:</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[3]/div/div/span</td>
+	<td>//div[@id='root']/div/div[4]/div/form/div/div[3]/div/div/span</td>
 	<td>When true, users with email login can sign in using their username and password. This setting does not affect AD/LDAP login.</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=EnableSignInWithUsernametrue</td>
+	<td>id=EmailSettings.EnableSignInWithUsernametrue</td>
 	<td>on</td>
 </tr>
 <!--Get team invite link-->
@@ -150,6 +150,9 @@
 	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
 	<td></td>
 </tr>
+<!--Check teammate name display test; I think it leaves UI2-->
+<!--instead of the test team created for that test (actually-->
+<!--have admin leave the team after Privacy test-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=swithToui-automation2</td>
@@ -357,23 +360,23 @@
 <!--Set account creation with email to false-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=EnableSignUpWithEmailfalse</td>
+	<td>id=EmailSettings.EnableSignUpWithEmailfalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=EnableSignUpWithEmailfalse</td>
+	<td>id=EmailSettings.EnableSignUpWithEmailfalse</td>
 	<td></td>
 </tr>
 <!--Set signin with email to false (leave signin with username true)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=EnableSignInWithEmailfalse</td>
+	<td>id=EmailSettings.EnableSignInWithEmailfalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=EnableSignInWithEmailfalse</td>
+	<td>id=EmailSettings.EnableSignInWithEmailfalse</td>
 	<td></td>
 </tr>
 <tr>
@@ -529,39 +532,39 @@
 <!--Set account creation with email back to true-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=EnableSignUpWithEmailtrue</td>
+	<td>id=EmailSettings.EnableSignUpWithEmailtrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=EnableSignUpWithEmailtrue</td>
+	<td>id=EmailSettings.EnableSignUpWithEmailtrue</td>
 	<td></td>
 </tr>
 <!--Set signin with email back to true-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=EnableSignInWithEmailtrue</td>
+	<td>id=EmailSettings.EnableSignInWithEmailtrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=EnableSignInWithEmailtrue</td>
+	<td>id=EmailSettings.EnableSignInWithEmailtrue</td>
 	<td></td>
 </tr>
 <!--Set signin with username to false-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=EnableSignInWithUsernamefalse</td>
+	<td>id=EmailSettings.EnableSignInWithUsernamefalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=EnableSignInWithUsernamefalse</td>
+	<td>id=EmailSettings.EnableSignInWithUsernamefalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=EnableSignInWithUsernamefalse</td>
+	<td>id=EmailSettings.EnableSignInWithUsernamefalse</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -736,32 +739,22 @@
 <!--Set signin with username back to to true-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=EnableSignInWithUsernamefalse</td>
+	<td>id=EmailSettings.EnableSignInWithUsernamefalse</td>
 	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=EnableSignInWithUsernamefalse</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=EnableSignInWithUsernamefalse</td>
-	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=EnableSignInWithUsernametrue</td>
+	<td>id=EmailSettings.EnableSignInWithUsernametrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=EnableSignInWithUsernametrue</td>
+	<td>id=EmailSettings.EnableSignInWithUsernametrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=EnableSignInWithUsernametrue</td>
+	<td>id=EmailSettings.EnableSignInWithUsernametrue</td>
 	<td>on</td>
 </tr>
 <tr>

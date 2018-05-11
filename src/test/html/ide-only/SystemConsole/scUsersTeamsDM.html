@@ -120,6 +120,27 @@
 </tr>
 <!--Create new user ui2-only, only on UI Automation 2 team-->
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#signup &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
 	<td>waitForElementPresent</td>
 	<td>css=#signup &gt; span</td>
 	<td></td>
@@ -170,14 +191,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.signup-team-dir__name</td>
-	<td>UI Automation 2</td>
+	<td>waitForElementPresent</td>
+	<td>id=UI_Automation_2</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.signup-team-dir__name</td>
-	<td>UI Automation 2</td>
+	<td>id=UI_Automation_2</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -904,6 +925,16 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
 	<td></td>
 </tr>
 <tr>
