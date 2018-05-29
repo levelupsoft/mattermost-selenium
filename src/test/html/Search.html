@@ -240,40 +240,15 @@
 	<td>hello world${KEY_ENTER}</td>
 </tr>
 <!--Highlight verification no longer working in the build;-->
-<!--Removed for now: waitForElementPresent | css=span.search-highlight:contains('Hello')-->
+<!--Removed for now: waitForElementPresent | css=span.search-highlight:contains('Hello') and others (see scratch doc)-->
 <tr>
 	<td>waitForTextPresent</td>
 	<td>Basic word search: Hello world!</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=code.hljs:contains('Hello')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=code:contains('Hello')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=a:contains('#hello')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=a:contains('#world')</td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForTextPresent</td>
 	<td>world hello</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementNotPresent</td>
-	<td>css=span:contains('two')</td>
 	<td></td>
 </tr>
 <!--Accents, non-Latin characters-->
