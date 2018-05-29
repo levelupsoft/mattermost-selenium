@@ -67,16 +67,6 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         // Sleep
         // Sleep
         // Sleep
-        driver.findElement(By.id("soundDuration5")).click();
-        // Sleep
-        // Sleep
-        // Sleep
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("on".equals(driver.findElement(By.id("soundDuration5")).getAttribute("value"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         driver.findElement(By.id("saveSetting")).click();
         // Sleep
         // Sleep
@@ -119,63 +109,6 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         // Sleep
         // Sleep
         driver.findElement(By.id("desktopNotificationAllActivity")).click();
-        // Sleep
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("soundDuration3"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("soundDuration3")).click();
-        // Sleep
-        driver.findElement(By.id("saveSetting")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("desktopDesc")).getText().matches("^For all activity, [\\s\\S]*shown for 3 seconds$")) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("desktopEdit")).click();
-        // Sleep
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("soundDuration10"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("soundDuration10")).click();
-        // Sleep
-        driver.findElement(By.id("saveSetting")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("desktopDesc")).getText().matches("^For all activity, [\\s\\S]*shown for 10 seconds$")) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("desktopEdit")).click();
-        // Sleep
-        // Sleep
-        driver.findElement(By.id("soundDurationUnlimited")).click();
-        // Sleep
-        driver.findElement(By.id("saveSetting")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("desktopDesc")).getText().matches("^For all activity, [\\s\\S]*shown indefinitely$")) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("desktopEdit")).click();
-        // Sleep
-        // Sleep
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("soundDuration5"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("soundDuration5")).click();
-        // Sleep
-        // Sleep
         // Sleep
         driver.findElement(By.id("saveSetting")).click();
         // Sleep
