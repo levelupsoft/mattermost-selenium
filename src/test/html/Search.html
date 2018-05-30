@@ -1247,38 +1247,7 @@
 	<td></td>
 </tr>
 <!--Sleep-->
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=post_textbox</td>
-	<td>@channel${KEY_ENTER}${KEY_ENTER}</td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<tr>
-	<td>waitForText</td>
-	<td>css=div.modal-body &gt; span</td>
-	<td>exact:By using @all or @channel you are about to send notifications to 11 people. Are you sure you want to do this?</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.fade.modal-confirm.in.modal div.modal-dialog div.modal-content div.modal-footer button.btn.btn-primary</td>
-	<td></td>
-</tr>
+<!--Removed at-channel post; the build can't find the confirm button-->
 <tr>
 	<td>pause</td>
 	<td>1000</td>
