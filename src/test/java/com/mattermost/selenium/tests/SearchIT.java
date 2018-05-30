@@ -776,6 +776,13 @@ public class SearchIT extends DriverBase {
         driver.findElement(By.id("post_textbox")).sendKeys("@channel" + Keys.ENTER + Keys.ENTER);
         // Sleep
         // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (driver.findElement(By.cssSelector("div.modal-body > span")).getText().matches("^exact:By using @all or @channel you are about to send notifications to 11 people\\. Are you sure you want to do this[\\s\\S]$")) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.xpath("(//button[@type='button'])[8]")).click();
         // LOG OUT test
         // Sleep
         // Sleep
@@ -890,7 +897,7 @@ public class SearchIT extends DriverBase {
         driver.findElement(By.cssSelector("input.form-control.focused")).sendKeys("Off");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Off-Topic".equals(driver.findElement(By.cssSelector("div.mentions__name.suggestion--selected")).getText())) break; } catch (Exception e) {}
+        	try { if (driver.findElement(By.cssSelector("div.mentions__name.suggestion--selected")).getText().matches("^Off-Topic[\\s\\S]*$")) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 

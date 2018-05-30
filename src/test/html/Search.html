@@ -1270,6 +1270,16 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
+	<td>waitForText</td>
+	<td>css=div.modal-body &gt; span</td>
+	<td>exact:By using @all or @channel you are about to send notifications to 11 people. Are you sure you want to do this?</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[8]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>pause</td>
 	<td>1000</td>
 	<td></td>
@@ -1439,12 +1449,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.mentions__name.suggestion--selected</td>
-	<td>Off-Topic</td>
+	<td>Off-Topic*</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=div.mentions__name.suggestion--selected</td>
-	<td>Off-Topic</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
