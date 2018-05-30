@@ -782,7 +782,7 @@ public class SearchIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("(//button[@type='button'])[8]")).click();
+        driver.findElement(By.cssSelector("div.fade.modal-confirm.in.modal div.modal-dialog div.modal-content div.modal-footer button.btn.btn-primary")).click();
         // LOG OUT test
         // Sleep
         // Sleep
