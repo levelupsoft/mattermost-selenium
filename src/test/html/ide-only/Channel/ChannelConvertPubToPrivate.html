@@ -146,7 +146,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>@admin</td>
+	<td>@admin*</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -156,7 +156,7 @@
 <tr>
 	<td>waitForNotText</td>
 	<td>css=div.more-modal__name</td>
-	<td>@admin</td>
+	<td>@admin*</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1177,9 +1177,10 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<!--May fail if teammate name display is set to first/last, for example-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>test added to the channel by admin.</td>
+	<td>test added to the channel by you.</td>
 	<td></td>
 </tr>
 <!--LOG OUT admin-->
@@ -1654,6 +1655,8 @@
 	<td>id=createAccountButton</td>
 	<td></td>
 </tr>
+<!--This will fail if not the top team in list (working on how to make it less brittle)-->
+<!--In the meantime, click UI Automation 2 team manually-->
 <tr>
 	<td>waitForText</td>
 	<td>css=span.signup-team-dir__name</td>
@@ -1684,6 +1687,7 @@
 	<td>link=Off-Topic</td>
 	<td></td>
 </tr>
+<!--Need to add a step to leave the team just joined, in the event the server is not immediately rebuilt-->
 <!--***********-->
 <!--If feasible, rebuild the server after running this test; -->
 <!--could cause problems in other tests if Off-Topic is private-->
