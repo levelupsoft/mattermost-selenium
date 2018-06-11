@@ -1690,6 +1690,17 @@
 	<td>id=post_textbox</td>
 	<td>Thanks for asking, @notify.${datetime}!${KEY_ENTER}</td>
 </tr>
+<!--Mention user, with colon point immediately following-->
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Hey @notify.${datetime}: See you tomorrow!${KEY_ENTER}</td>
+</tr>
 <!--LOG OUT test6-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1755,21 +1766,21 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.badge</td>
-	<td>2</td>
+	<td>3</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Mentions-${datetime}2</td>
+	<td>link=Mentions-${datetime}3</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Mentions-${datetime}2</td>
+	<td>link=Mentions-${datetime}3</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
-	<td>link=Mentions-${datetime}2</td>
+	<td>link=Mentions-${datetime}3</td>
 	<td></td>
 </tr>
 <tr>
@@ -1785,6 +1796,11 @@
 <tr>
 	<td>waitForTextPresent</td>
 	<td>Thanks for asking, @notify.${datetime}!</td>
+	<td></td>
+</tr>
+<tr>
+	<td>WaitForTextPresent</td>
+	<td>Hey @notify.${datetime}: See you tomorrow!</td>
 	<td></td>
 </tr>
 <!--LOG OUT notify.${datetime}-->
