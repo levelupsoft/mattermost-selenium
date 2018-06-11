@@ -12,7 +12,7 @@
 <tr><td rowspan="1" colspan="3">AccountSettingsMan</td></tr>
 </thead><tbody>
 <!--*** Test on selenium.mattermost.com, on slow speed-->
-<!--*** Open incognito browser and log in user test9-->
+<!--*** Also open a separate browser and log in user test9-->
 <!--*** Watch a portion of that browser to see changes in real time-->
 <!--*** Watch here for visual verification instructions-->
 <!--LOG IN test10-->
@@ -318,18 +318,18 @@
 <!--Verify in Add Members to Team list-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=UIUI Automation 2</td>
+	<td>//a[@href='/ui-automation2']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=UIUI Automation 2</td>
+	<td>//a[@href='/ui-automation2']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-container.active</td>
-	<td>UIUI Automation 2</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation 2</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1191,18 +1191,18 @@
 <!--*** Visually verify other team not on Mattermost Dark theme-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=UIUI Automation 2</td>
+	<td>//a[@href='/ui-automation2']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=UIUI Automation 2</td>
+	<td>//a[@href='/ui-automation2']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-container.active</td>
-	<td>UIUI Automation 2</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation 2</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -1211,18 +1211,18 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=UIUI Automation</td>
+	<td>//a[@href='/ui-automation']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=UIUI Automation</td>
+	<td>//a[@href='/ui-automation']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-container.active</td>
-	<td>UIUI Automation</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation</td>
 </tr>
 <!--Cancel out of theme change-->
 <tr>
@@ -1479,13 +1479,18 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=UIUI Automation 2</td>
+	<td>//a[@href='/ui-automation2']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=UIUI Automation 2</td>
+	<td>//a[@href='/ui-automation2']</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation 2</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -2012,12 +2017,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=link_previews</td>
+	<td>id=posts</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=link_previews</td>
+	<td>id=posts</td>
 	<td></td>
 </tr>
 <tr>
@@ -2308,7 +2313,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('Control and Enter')</td>
+	<td>css=p:contains('Control and Enter')</td>
 	<td></td>
 </tr>
 <!--Message does not post on Enter: Center-->
@@ -2340,7 +2345,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('Just Enter<br />Followed by Control and Enter')</td>
+	<td>css=p:contains('Just Enter<br />Followed by Control and Enter')</td>
 	<td></td>
 </tr>
 <!--Post message using CTRL+ENTER: RHS-->
@@ -2718,6 +2723,7 @@
 	<td></td>
 </tr>
 <!--Verify this user sees join messages-->
+<!--*** These need updating; verify visually for now-->
 <tr>
 	<td>waitForText</td>
 	<td>css=span.post-message__text &gt; div &gt; span</td>

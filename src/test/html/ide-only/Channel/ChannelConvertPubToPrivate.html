@@ -573,6 +573,17 @@
 	<td>id=systemConsole</td>
 	<td></td>
 </tr>
+<!--Need to update for new permissions (but also preserve Policy for ESR testing?)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=schemes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=schemes</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=policy</td>
@@ -1393,6 +1404,7 @@
 	<td>id=systemConsole</td>
 	<td></td>
 </tr>
+<!--Need to update for new permissions (but also preserve Policy for ESR testing?)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=policy</td>
@@ -1501,13 +1513,13 @@
 </tr>
 <!--Convert Off-Topic (on the open team) to private channel-->
 <tr>
-	<td>waitForText</td>
-	<td>link=UIUI Automation 2</td>
-	<td>UIUI Automation 2</td>
+	<td>waitForElementPresent</td>
+	<td>//a[@href='/ui-automation2']</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=UIUI Automation 2</td>
+	<td>//a[@href='/ui-automation2']</td>
 	<td></td>
 </tr>
 <tr>
