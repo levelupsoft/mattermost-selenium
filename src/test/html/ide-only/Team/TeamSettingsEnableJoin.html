@@ -218,6 +218,16 @@
 	<td>Town Square</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//a[@href='/ui-automation2']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@href='/ui-automation2']</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
 	<td>UI Automation 2</td>
@@ -268,7 +278,7 @@
 	<td>id=headerTeamName</td>
 	<td>UI Automation 2</td>
 </tr>
-<!--Leave team (*** If leave team isn't working in IDE, leave manually)-->
+<!--Leave teams (*** If leave team isn't working in IDE, leave manually)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -308,6 +318,46 @@
 	<td>waitForNotText</td>
 	<td>id=headerTeamName</td>
 	<td>UI Automation 2</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//button[@id='leaveTeam']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@id='leaveTeam']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-body &gt; span</td>
+	<td>exact:You will be removed from all public and private channels. If the team is private you will not be able to rejoin the team. Are you sure?</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-danger</td>
+	<td>Yes</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -529,12 +579,12 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>test4 joined the team.</td>
+	<td>You joined the team.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h1#headerTeamName.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>UI Automation</td>
 </tr>
 <!--LOG OUT test4-->

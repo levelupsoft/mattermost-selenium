@@ -364,15 +364,51 @@
 	<td>id=enableUserCreationtrue</td>
 	<td></td>
 </tr>
-<!--Team Creation - disable-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableTeamCreationfalse</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableTeamCreationfalse</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--Team Creation - disable-->
+<!--This is now in the new Permissions Schemes-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=schemes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=schemes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Edit Scheme</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Edit Scheme</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div#all_users.permissions-block div.permissions-tree div.permissions-tree--body div.permission-group-permissions.open div.permission-group div.permission-group-row div.permission-check.checked</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div#all_users.permissions-block div.permissions-tree div.permissions-tree--body div.permission-group-permissions.open div.permission-group div.permission-group-row div.permission-check.checked</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
 <tr>
@@ -465,8 +501,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-container.active &gt; a &gt; div.team-btn. &gt; div.team-btn__initials</td>
-	<td>UIUI Automation 2</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation 2</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -504,9 +540,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementNotPresent</td>
-	<td>css=div.team-container.active &gt; a &gt; div.team-btn. &gt; div.team-btn__initials</td>
-	<td>UIUI Automation 2</td>
+	<td>waitForNotText</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation 2</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -761,24 +797,40 @@
 	<td>link=System Console</td>
 	<td></td>
 </tr>
+<!--This is now in the new Permissions Schemes-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Users and Teams</td>
+	<td>id=schemes</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Users and Teams</td>
+	<td>id=schemes</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableTeamCreationtrue</td>
+	<td>link=Edit Scheme</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableTeamCreationtrue</td>
+	<td>link=Edit Scheme</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.permission-check.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.permission-check.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
 <tr>
@@ -930,11 +982,6 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.team-container.active &gt; a &gt; div.team-btn. &gt; div.team-btn__initials &gt; div.team-btn__content</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
 	<td>css=div.team-btn.team-btn__add</td>
 	<td></td>
 </tr>
@@ -1067,8 +1114,8 @@
 <!--Leave UI 2 team to return to original state-->
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-container.active &gt; a &gt; div.team-btn.</td>
-	<td>UIUI Automation 2</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation 2</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1106,9 +1153,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementNotPresent</td>
-	<td>css=div.team-container.active &gt; a &gt; div.team-btn.</td>
-	<td>UIUI Automation 2</td>
+	<td>waitForNotText</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation 2</td>
 </tr>
 <!--LOG OUT test2-->
 <tr>

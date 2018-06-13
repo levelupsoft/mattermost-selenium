@@ -580,7 +580,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.post-message__text &gt; p</td>
+	<td>css=div.post-message__text &gt; p</td>
 	<td>This should work</td>
 </tr>
 <!--Verify cannot use /msg to open DM with user not on team-->
@@ -807,12 +807,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>@test2</td>
+	<td>@test2*</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=div.more-modal__name</td>
-	<td>@test2</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -841,7 +841,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('Here's a DM, test2')</td>
+	<td>css=p:contains('Here's a DM, test2')</td>
 	<td></td>
 </tr>
 <!--Verify can create DM with user not on any same team, from channel switcher-->
@@ -873,12 +873,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.mentions__name.suggestion--selected</td>
-	<td>@test3</td>
+	<td>@test3*</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=div.mentions__name.suggestion--selected</td>
-	<td>@test3</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -897,7 +897,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('Here's a DM, test3')</td>
+	<td>css=p:contains('Here's a DM, test3')</td>
 	<td></td>
 </tr>
 <!--LOG OUT ui2-only-->

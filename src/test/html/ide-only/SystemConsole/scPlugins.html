@@ -14,9 +14,9 @@
 <!--*** Need to use sample Hello World plugin for testing? Existing test-->
 <!--*** plugins didn't cover issues in https://mattermost.atlassian.net/browse/MM-10492-->
 <!---->
-<!--*** Unless plugin upload has been uploaded on selenium server, -->
+<!--*** Unless plugin upload has been enabled on selenium server, -->
 <!--*** log in to ci-linux-postgres as a system admin and skip down to-->
-<!--*** the Open System Console step-->
+<!--*** the Open System Console step ( <--not exactly accurate :/  )-->
 <!--LOG IN-->
 <tr>
 	<td>openAndWait</td>
@@ -131,12 +131,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enablePluginstrue</td>
+	<td>id=PluginSettings.Enabletrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enablePluginsfalse</td>
+	<td>id=PluginSettings.Enabletrue</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=PluginSettings.Enablefalse</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -152,7 +157,7 @@
 	<td></td>
 	<td></td>
 </tr>
-<!--Upload a plugin-->
+<!--Upload a plugin -- This is where to start on a server with plugins enabled-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=management</td>
@@ -188,7 +193,7 @@
 	<td>css=input[type=&quot;file&quot;]</td>
 	<td></td>
 </tr>
-<!--*** Manually select plugin (hovercardexample.tar.gz)-->
+<!--*** Manually select plugin (menuitem.tar.gz)-->
 <tr>
 	<td>pause</td>
 	<td>7000</td>
@@ -303,7 +308,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label.col-sm-4</td>
-	<td>Enable JIRA:</td>
+	<td>Enable JIRA</td>
 </tr>
 <tr>
 	<td>waitForNotEditable</td>
@@ -418,17 +423,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enablePluginsfalse</td>
+	<td>id=PluginSettings.Enablefalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enablePluginsfalse</td>
+	<td>id=PluginSettings.Enablefalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enablePluginsfalse</td>
+	<td>id=PluginSettings.Enablefalse</td>
 	<td>on</td>
 </tr>
 <tr>

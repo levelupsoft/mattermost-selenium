@@ -320,15 +320,15 @@
 	<td></td>
 </tr>
 <!--*** Visually verify image preview displays-->
-<!--Open image preview by clicking filename-->
+<!--*** Manually click filename to open image preview-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.file-details__name</td>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=span.file-details__name</td>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <!--Mouseover, verify elements-->
@@ -371,7 +371,7 @@
 <!--*** paste in message box, press Enter-->
 <tr>
 	<td>pause</td>
-	<td>6000</td>
+	<td>8000</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -595,22 +595,13 @@
 </tr>
 <!--*** Visually verify attachment is still there after removing text from post-->
 <!--Public Link-->
-<!--Open image preview, mouseover-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.file-details__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.file-details__name</td>
-	<td></td>
-</tr>
+<!--*** Manually click thumbnail to open image preview-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=a &gt; img</td>
 	<td></td>
 </tr>
+<!--Mouseover shows options-->
 <tr>
 	<td>mouseOver</td>
 	<td>css=a &gt; img</td>
@@ -672,18 +663,18 @@
 <!--Switch to UI Automation 2 team-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=UIUI Automation 2</td>
+	<td>//a[@href='/ui-automation2']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=UIUI Automation 2</td>
+	<td>//a[@href='/ui-automation2']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation 2</td>
 </tr>
 <!--DM outside current team can see attachment-->
 <tr>
@@ -759,13 +750,18 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForEditable</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.file-details__name</td>
+	<td>css=div.image-name</td>
 	<td></td>
 </tr>
 <!--Log out then log in as other user to view file-->
@@ -1130,16 +1126,6 @@
 <!--*** Visually verify image preview shows whole (small) image not zoomed or cropped-->
 <!--*** Have to manually click pasted image for now-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.post-image.normal</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.post-image.normal</td>
-	<td></td>
-</tr>
-<tr>
 	<td>pause</td>
 	<td>4000</td>
 	<td></td>
@@ -1228,7 +1214,7 @@
 <!--*** Manually verify thumbnail in RHS, click it to preview, click it to download (view)-->
 <tr>
 	<td>pause</td>
-	<td>6000</td>
+	<td>10000</td>
 	<td></td>
 </tr>
 <!--Search for `oneone`-->
@@ -1253,6 +1239,11 @@
 	<td>oneone${KEY_ENTER}</td>
 </tr>
 <!--*** Manually verify thumbnail in RHS, click it to preview, click it to download (view)-->
+<tr>
+	<td>pause</td>
+	<td>15000</td>
+	<td></td>
+</tr>
 <!--Can't post until file finishes uploading-->
 <!--*** Manually attach a large file and try to press enter while it's uploading-->
 <!--*** Verify upload continues, can't post until it's done, then can post after it's done-->
@@ -1262,11 +1253,6 @@
 	<td></td>
 </tr>
 <!--/test url test-attachments-->
-<!--*** Read the post and follow test instructions-->
-<!--*** Be sure to upload 5 attachments to one message-->
-<!--*** Verify after 5 trying to upload again shows error: "Uploads limited to 5 -->
-<!--*** files maximum. Please use additional posts for more files."-->
-<!--*** Then cycle through the multiple images on that post, w arrows and mouse-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -1277,6 +1263,11 @@
 	<td>id=post_textbox</td>
 	<td>/test url test-attachments${KEY_ENTER}</td>
 </tr>
+<!--*** Read the post and follow test instructions-->
+<!--*** Be sure to upload 5 attachments to one message-->
+<!--*** Verify after 5 trying to upload again shows error: "Uploads limited to 5 -->
+<!--*** files maximum. Please use additional posts for more files."-->
+<!--*** Then cycle through the multiple images on that post, w arrows and mouse-->
 <tr>
 	<td>waitForTextPresent</td>
 	<td>Loaded data</td>

@@ -53,12 +53,23 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>${KEY_ENTER</td>
+	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>waitForText</td>
+	<td>waitForNotText</td>
 	<td>css=label.post-error</td>
 	<td>Your message is too long. Character count: 4003/4000</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.post-collapse__show-more-button</td>
+	<td></td>
+</tr>
+<!--Need to figure out how to verify not-visible (Se can see the text even when collapsed)-->
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=p:contains('Hello and delete')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -1002,7 +1013,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('now online')</td>
+	<td>css=p:contains('now online')</td>
 	<td></td>
 </tr>
 <tr>
@@ -1023,7 +1034,7 @@
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
-	<td>css=span:contains('now online')</td>
+	<td>css=p:contains('now online')</td>
 	<td></td>
 </tr>
 <!--Create ephemeral message-->
@@ -1039,7 +1050,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('now online')</td>
+	<td>css=p:contains('now online')</td>
 	<td></td>
 </tr>
 <tr>
@@ -1129,7 +1140,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('now online')</td>
+	<td>css=p:contains('now online')</td>
 	<td></td>
 </tr>
 <!--Verify comment count not increased by ephemeral message-->
@@ -1316,12 +1327,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#link_previews &gt; span.sidebar-section.sidebar-subsection-title__text &gt; span</td>
+	<td>id=posts</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#link_previews &gt; span.sidebar-section.sidebar-subsection-title__text &gt; span</td>
+	<td>id=posts</td>
 	<td></td>
 </tr>
 <tr>

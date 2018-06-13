@@ -2360,13 +2360,13 @@
 <!--usere already opened-->
 <tr>
 	<td>waitForText</td>
-	<td>css=a.sidebar-item.has-close &gt; span.sidebar-item__name</td>
-	<td>nicknamee</td>
+	<td>link=nicknamee×</td>
+	<td>nicknamee×</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=a.sidebar-item.has-close &gt; span.sidebar-item__name</td>
-	<td>nicknamee</td>
+	<td>link=nicknamee×</td>
+	<td>nicknamee×</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2411,8 +2411,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=a.sidebar-item.has-close &gt; span.sidebar-item__name</td>
-	<td>Firstd</td>
+	<td>link=Firstd×</td>
+	<td>Firstd×</td>
 </tr>
 <!--userc verify DM channel name, popover name, LHS (open using /msg)-->
 <tr>
@@ -2525,8 +2525,8 @@
 <!--Verify order in LHS list (brittle test using waitForTextPresent and wildcards)-->
 <tr>
 	<td>waitForText</td>
-	<td>css=a.sidebar-item.has-close &gt; span.sidebar-item__name</td>
-	<td>Firstb Lastb</td>
+	<td>link=Firstb Lastb×</td>
+	<td>Firstb Lastb×</td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
@@ -3292,6 +3292,8 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<!--DO NOT add cleanup steps to remove the test users or team-->
+<!--They are used in the next test, scPrivacy.html-->
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
