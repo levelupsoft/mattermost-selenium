@@ -967,7 +967,7 @@ public class SearchIT extends DriverBase {
         driver.findElement(By.cssSelector("input.form-control.focused")).sendKeys("test");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("@test - This Is a Very Long Name That Should Truncate1".equals(driver.findElement(By.cssSelector("div.mentions__name.suggestion--selected")).getText())) break; } catch (Exception e) {}
+        	try { if (driver.findElement(By.cssSelector("div.mentions__name.suggestion--selected")).getText().matches("^@test - This Is a Very Long Name That Should Truncate[\\s\\S]*$")) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 

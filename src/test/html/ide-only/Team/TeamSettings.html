@@ -279,11 +279,6 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-btn__initials</td>
-	<td>TeTesting Team</td>
-</tr>
-<tr>
-	<td>waitForText</td>
 	<td>id=headerTeamName</td>
 	<td>Testing Team</td>
 </tr>
@@ -356,11 +351,6 @@
 	<td>click</td>
 	<td>css=button.close</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.team-btn__initials</td>
-	<td>()()_+-={}|[]\:</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -855,7 +845,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>test4 joined the team.</td>
+	<td>You joined the team.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1580,6 +1570,11 @@
 <!--Sleep-->
 <!--Open team invite link, log in test4 to join-->
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>openAndWait</td>
 	<td>${teaminvitelinkold}</td>
 	<td></td>
@@ -1903,11 +1898,6 @@
 	<td>click</td>
 	<td>css=#UI_Automation_2 &gt; span.signup-team-dir__name</td>
 	<td>UI Automation 2</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.team-container.active &gt; a &gt; div.team-btn.</td>
-	<td>UIUI Automation 2</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2941,13 +2931,13 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>test4 joined the team.</td>
+	<td>You joined the team.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-btn__initials</td>
-	<td>UIUI Automation</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation</td>
 </tr>
 <!--Team Admin who was removed and rejoined is added back as Member-->
 <!--LOG OUT test4-->

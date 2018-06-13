@@ -1394,6 +1394,7 @@
 	<td>@test2 direct</td>
 	<td></td>
 </tr>
+<!--Fails b/c it's in center channel, not in recent mentions-->
 <tr>
 	<td>verifyTextNotPresent</td>
 	<td>@channel</td>
@@ -1553,12 +1554,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.mentions__name.suggestion--selected</td>
-	<td>@test - This Is a Very Long Name That Should Truncate</td>
+	<td>@test - *</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=div.mentions__name.suggestion--selected</td>
-	<td>@test - This Is a Very Long Name That Should Truncate</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>

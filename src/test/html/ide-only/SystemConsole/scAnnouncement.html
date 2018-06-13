@@ -74,63 +74,63 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Policy</td>
+	<td>id=announcement</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Policy</td>
+	<td>id=announcement</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=h3.admin-console-header &gt; span</td>
-	<td>Policy</td>
+	<td>Announcement Banner</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enableBannertrue</td>
-	<td>off</td>
+	<td>id=AnnouncementSettings.EnableBannerfalse</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>waitForNotEditable</td>
-	<td>id=bannerText</td>
+	<td>id=AnnouncementSettings.BannerText</td>
 	<td></td>
 </tr>
 <!--Turn banner on, text is long and contains link-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableBannertrue</td>
+	<td>id=AnnouncementSettings.EnableBannertrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableBannertrue</td>
+	<td>id=AnnouncementSettings.EnableBannertrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForEditable</td>
-	<td>id=bannerText</td>
+	<td>id=AnnouncementSettings.BannerText</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=bannerText</td>
+	<td>id=AnnouncementSettings.BannerText</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=bannerText</td>
+	<td>id=AnnouncementSettings.BannerText</td>
 	<td>Here's an announcement! It has a link: http://example.com. It's a really long announcement, because we have a lot to say. Be sure to read it all, click the link, then dismiss the banner, and then you can go on to the next test, which will have a shorter announcement. Thank you for reading and have a nice day!</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=allowBannerDismissaltrue</td>
+	<td>id=AnnouncementSettings.AllowBannerDismissaltrue</td>
 	<td></td>
 </tr>
 <tr>
-	<td>verifyValue</td>
-	<td>id=allowBannerDismissaltrue</td>
+	<td>waitForValue</td>
+	<td>id=AnnouncementSettings.AllowBannerDismissaltrue</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -142,6 +142,11 @@
 	<td>click</td>
 	<td>id=saveSetting</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.markdown__paragraph-inline</td>
+	<td>Here's an announcement! It has a link: http://example.com. It's a really long announcement, because we have a lot to say. Be sure to read it all, click the link, then dismiss the banner, and then you can go on to the next test, which will have a shorter announcement. Thank you for reading and have a nice day!</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -326,22 +331,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=policy</td>
+	<td>id=announcement</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=policy</td>
+	<td>id=announcement</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=bannerText</td>
+	<td>id=AnnouncementSettings.BannerText</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=bannerText</td>
+	<td>id=AnnouncementSettings.BannerText</td>
 	<td></td>
 </tr>
 <tr>
@@ -356,12 +361,12 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=bannerText</td>
+	<td>id=AnnouncementSettings.BannerText</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enableBannertrue</td>
+	<td>id=AnnouncementSettings.EnableBannertrue</td>
 	<td>on</td>
 </tr>
 <!--Verify on team that banner disappears-->
@@ -418,32 +423,32 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=policy</td>
+	<td>id=announcement</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=policy</td>
+	<td>id=announcement</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=bannerText</td>
+	<td>id=AnnouncementSettings.BannerText</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=bannerText</td>
+	<td>id=AnnouncementSettings.BannerText</td>
 	<td>Here's an announcement! It's a really long announcement, because we have a lot to say. Be sure to read it all, then dismiss it, and then you can go on to the next test, which will have a shorter announcement. Thank you for reading and have a nice day!</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=allowBannerDismissalfalse</td>
+	<td>id=AnnouncementSettings.AllowBannerDismissalfalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=allowBannerDismissalfalse</td>
+	<td>id=AnnouncementSettings.AllowBannerDismissalfalse</td>
 	<td></td>
 </tr>
 <tr>
@@ -505,27 +510,27 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=policy</td>
+	<td>id=announcement</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=policy</td>
+	<td>id=announcement</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=bannerText</td>
+	<td>id=AnnouncementSettings.BannerText</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableBannerfalse</td>
+	<td>id=AnnouncementSettings.EnableBannerfalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableBannerfalse</td>
+	<td>id=AnnouncementSettings.EnableBannerfalse</td>
 	<td></td>
 </tr>
 <tr>

@@ -689,14 +689,14 @@
 </tr>
 <!--Set max users per team to current number, open team for others to join-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=UsUsersTeamsMaxes</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.team-container.unread &gt; a &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>Us</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=UsUsersTeamsMaxes</td>
-	<td></td>
+	<td>css=div.team-container.unread &gt; a &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>Us</td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
@@ -1083,7 +1083,7 @@
 	<td>id=maxChannelsPerTeam</td>
 	<td>5</td>
 </tr>
-<!--Verify can create up to 5 teams on UsersTeamsMaxes team-->
+<!--Verify can create up to 5 channels on UsersTeamsMaxes team-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
@@ -1168,6 +1168,11 @@
 <tr>
 	<td>click</td>
 	<td>id=createPublicChannel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPublicChannelName</td>
 	<td></td>
 </tr>
 <tr>
@@ -1377,7 +1382,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.mention--highlight &gt; span &gt; span</td>
+	<td>css=span.mention--highlight &gt; span</td>
 	<td>@all</td>
 </tr>
 <tr>
@@ -1392,7 +1397,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.mention--highlight &gt; span &gt; span:contains('@channel')</td>
+	<td>css=span.mention--highlight &gt; span:contains('@channel')</td>
 	<td></td>
 </tr>
 <!--Log out and back in as testokay to verify mention notifications-->
@@ -1549,13 +1554,18 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=UsUsersTeamsMaxes</td>
+	<td>//a[@href='/usersteamsmaxes']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=UsUsersTeamsMaxes</td>
+	<td>//a[@href='/usersteamsmaxes']</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>UsersTeamsMaxes</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2133,12 +2143,12 @@
 <!--Message posts with no confirmation required (but notifications still disabled)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('One last time, @channel, with no confirmation prompt')</td>
+	<td>css=p:contains('One last time, @channel, with no confirmation prompt')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('@channel has been disabled because the channel has more than 3 users.')</td>
+	<td>css=p:contains('@channel has been disabled because the channel has more than 3 users.')</td>
 	<td></td>
 </tr>
 <tr>
@@ -2154,12 +2164,12 @@
 <!--Message posts with no confirmation required (but notifications still disabled)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('One last time, @all, with no confirmation prompt')</td>
+	<td>css=p:contains('One last time, @all, with no confirmation prompt')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('@all has been disabled because the channel has more than 3 users.')</td>
+	<td>css=p:contains('@all has been disabled because the channel has more than 3 users.')</td>
 	<td></td>
 </tr>
 <!--Return maximum settings to defaults-->
@@ -2489,6 +2499,23 @@
 	<td>css=span.member-count.pull-left &gt; span</td>
 	<td>1 - 6 members of 6 total</td>
 </tr>
+<!--This is doing a weird thing here, trying to demote system admin-->
+<!--Filed https://mattermost.atlassian.net/browse/MM-10890-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.filter-textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.filter-textbox</td>
+	<td>@test</td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=ul.dropdown-menu.member-menu &gt; li &gt; a &gt; span</td>
@@ -2590,9 +2617,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementNotPresent</td>
-	<td>link=UsUsersTeamsMaxes</td>
-	<td></td>
+	<td>waitForNotText</td>
+	<td>id=headerTeamName</td>
+	<td>UsersTeamsMaxes</td>
 </tr>
 <!--LOG OUT admin-->
 <tr>

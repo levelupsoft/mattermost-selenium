@@ -168,16 +168,6 @@
 <!--Join channel test4 just created-->
 <tr>
 	<td>waitForText</td>
-	<td>link=UIUI Automation</td>
-	<td>UIUI Automation</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=UIUI Automation</td>
-	<td>UIUI Automation</td>
-</tr>
-<tr>
-	<td>waitForText</td>
 	<td>css=h1#headerTeamName.team__name</td>
 	<td>UI Automation</td>
 </tr>
@@ -987,6 +977,48 @@
 	<td>waitForText</td>
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Town Square</td>
+</tr>
+<!--Cleanup: Leave channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=DM-${datetime}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=DM-${datetime}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>DM-${datetime}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/leave${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<!--LOG OUT test4-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
 </tr>
 </tbody></table>
 </body>

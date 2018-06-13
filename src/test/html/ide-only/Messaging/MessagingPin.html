@@ -120,6 +120,9 @@
 	<td></td>
 </tr>
 <!--Pin a message in center, badge appears-->
+<!--This isn't clicking the post menu anymore-->
+<!--Click or hover [...] menu to make Pin to channel visible-->
+<!--Hm. May have to manually click to pin it as well, even if visible-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>xpath=(//button[@type='button'])[6]</td>
@@ -418,6 +421,7 @@
 	<td></td>
 </tr>
 <!--This button can change number each time-->
+<!--Manually pin the post-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>xpath=(//button[@type='button'])[7]</td>
@@ -1491,6 +1495,7 @@
 	<td>css=p:contains('For both flagging and pinning!')</td>
 	<td></td>
 </tr>
+<!--Cleanup: Leave both channels (need to write these steps)-->
 </tbody></table>
 </body>
 </html>

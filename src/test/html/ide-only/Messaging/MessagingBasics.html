@@ -639,7 +639,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('Catch me if you can')</td>
+	<td>css=p:contains('Catch me if you can')</td>
 	<td></td>
 </tr>
 <!--Need to write new tests if possible for search icon on narrower screen-->
@@ -747,7 +747,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('Catch me if you can, and good luck!')</td>
+	<td>css=p:contains('Catch me if you can, and good luck!')</td>
 	<td></td>
 </tr>
 <tr>
@@ -856,12 +856,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('were mentioned but they are not in the channel. Would you like to')</td>
+	<td>css=p:contains('were mentioned but they are not in the channel. Would you like to')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('? They will have access to all message history.')</td>
+	<td>css=p:contains('? They will have access to all message history.')</td>
 	<td></td>
 </tr>
 <tr>
@@ -887,23 +887,28 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('test7 added to the channel by test2')</td>
+	<td>css=p:contains('@test7 and @test8')</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span:contains('test8 added to the channel by test2')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=span &gt; b</td>
+	<td>added to the channel</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.post-message__text &gt; div &gt; span &gt; span</td>
+	<td>@test7 and @test8 added to the channel by you.</td>
 </tr>
 <!--Ephemeral message with add-users link disappears-->
 <tr>
 	<td>waitForElementNotPresent</td>
-	<td>css=span:contains('were mentioned but they are not in the channel. Would you like to')</td>
+	<td>css=p:contains('were mentioned but they are not in the channel. Would you like to')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
-	<td>css=span:contains('? They will have access to all message history.')</td>
+	<td>css=p:contains('? They will have access to all message history.')</td>
 	<td></td>
 </tr>
 <!--Just `@` returns all on the team (except self)-->
@@ -1277,13 +1282,18 @@
 <!--Did test7 get added to the other team at some point? Should be in UI2 (but didn't used to have to choose it)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=UIUI Automation 2</td>
+	<td>//a[@href='/ui-automation2']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=UIUI Automation 2</td>
+	<td>//a[@href='/ui-automation2']</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation 2</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1333,8 +1343,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-container.active</td>
-	<td>UIUI Automation</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2420,6 +2430,7 @@
 	<td>Permalinkpost${KEY_ENTER}</td>
 </tr>
 <!--This doesn't work anymore either, to try to get to [...] options-->
+<!--Point is to open permalink modal-->
 <tr>
 	<td></td>
 	<td></td>
@@ -2504,8 +2515,8 @@
 	<td>Click here to jump to recent messages.</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span:contains('test2 joined the channel.')</td>
+	<td>waitForTextPresent</td>
+	<td>You joined the channel.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2651,7 +2662,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('private channel permalink')</td>
+	<td>css=p:contains('private channel permalink')</td>
 	<td></td>
 </tr>
 <!--Also failing to find [...] - open Permalink modal manually-->

@@ -211,12 +211,12 @@
 <!--Leave UI2 team (to ensure multiple open teams on Join page)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=UIUI Automation 2</td>
+	<td>//a[@href='/ui-automation2']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=UIUI Automation 2</td>
+	<td>//a[@href='/ui-automation2']</td>
 	<td></td>
 </tr>
 <tr>
@@ -261,7 +261,7 @@
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
-	<td>link=UIUI Automation 2</td>
+	<td>//a[@href='/ui-automation2']</td>
 	<td></td>
 </tr>
 <tr>
@@ -595,9 +595,10 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.post-message__text &gt; p</td>
+	<td>css=div.post-message__text &gt; p</td>
 	<td>This is a post on team APlus, which I will flag.</td>
 </tr>
+<!--*** Manually hover over last post to make flag clickable-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.style--none.flag-icon__container </td>
@@ -621,12 +622,12 @@
 <!--Switch teams, then send a DM and flag the DM-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=SiSix</td>
+	<td>//a[@href='/six']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=SiSix</td>
+	<td>//a[@href='/six']</td>
 	<td></td>
 </tr>
 <tr>
@@ -696,9 +697,10 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.post-message__text &gt; p</td>
+	<td>css=div.post-message__text &gt; p</td>
 	<td>Here's a DM that will be flagged as well, which will show up in flagged posts list across teams.</td>
 </tr>
+<!--*** Manually hover over last message to make flag clickable-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.style--none.flag-icon__container </td>
@@ -748,12 +750,12 @@
 <!--Switch to team APlus, view flagged posts, verify DM and post both display-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=APAPlus</td>
+	<td>//a[@href='/aplus']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=APAPlus</td>
+	<td>//a[@href='/aplus']</td>
 	<td></td>
 </tr>
 <tr>
@@ -856,18 +858,18 @@
 <!--New public channel on team Six, /leave-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=SiSix</td>
+	<td>//a[@href='/six']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=SiSix</td>
+	<td>//a[@href='/six']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-container.active</td>
-	<td>SiSix</td>
+	<td>id=headerTeamName</td>
+	<td>Six</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -948,18 +950,18 @@
 <!--Switch teams, verify channel available in More...-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=APAPlus</td>
+	<td>//a[@href='/aplus']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=APAPlus</td>
+	<td>//a[@href='/aplus']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-container.active</td>
-	<td>APAPlus</td>
+	<td>id=headerTeamName</td>
+	<td>APlus</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1067,18 +1069,18 @@
 <!--Switch to team Six and verify DMs appearing in LHS-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=SiSix</td>
+	<td>//a[@href='/six']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=SiSix</td>
+	<td>//a[@href='/six']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-container.active &gt; a &gt; div.team-btn.</td>
-	<td>SiSix</td>
+	<td>id=headerTeamName</td>
+	<td>Six</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1098,12 +1100,12 @@
 <!--Switch back to APlus and verify channel you had been viewing displays-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=APAPlus</td>
+	<td>//a[@href='/aplus']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=APAPlus</td>
+	<td>//a[@href='/aplus']</td>
 	<td></td>
 </tr>
 <tr>
@@ -1149,12 +1151,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=SiSix</td>
+	<td>//a[@href='/six']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=SiSix</td>
+	<td>//a[@href='/six']</td>
 	<td></td>
 </tr>
 <tr>
@@ -1249,12 +1251,12 @@
 <!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=SiSix</td>
+	<td>//a[@href='/six']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=SiSix</td>
+	<td>//a[@href='/six']</td>
 	<td></td>
 </tr>
 <tr>
