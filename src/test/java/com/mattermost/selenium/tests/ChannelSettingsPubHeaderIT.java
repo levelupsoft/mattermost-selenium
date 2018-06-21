@@ -300,7 +300,7 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         driver.findElement(By.cssSelector("em")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Header".equals(driver.findElement(By.cssSelector("div.popover-content > p.markdown__paragraph-inline > em")).getText())) break; } catch (Exception e) {}
+        	try { if ("Header".equals(driver.findElement(By.cssSelector("div.popover-content > p > em")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
