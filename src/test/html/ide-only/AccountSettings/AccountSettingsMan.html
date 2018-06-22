@@ -13,6 +13,7 @@
 </thead><tbody>
 <!--*** Test on selenium.mattermost.com, on slow speed-->
 <!--*** Also open a separate browser and log in user test9-->
+<!--*** Files for profile pic etc. available in Resources folder-->
 <!--*** Watch a portion of that browser to see changes in real time-->
 <!--*** Watch here for visual verification instructions-->
 <!--LOG IN test10-->
@@ -55,8 +56,8 @@
 	<td>css=strong.heading</td>
 	<td>Town Square</td>
 </tr>
-<!--Verify username, name, nickname display in member lists-->
-<!--First verify test10 has no name set and add a nickname, then log out-->
+<!--Verifies username, name, nickname display in member lists-->
+<!--First verifes test10 has no name set and add a nickname, then log out-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -741,7 +742,8 @@
 	<td>css=div.profile-img-preview</td>
 	<td></td>
 </tr>
-<!--*** Visually verify other user sees profile picture update on post in other browser-->
+<!--*** Can visually verify in other browser that profile picture updated on post-->
+<!--*** Or wait for the test to log in as test9 (below) and visually verify there-->
 <!--Verify other user sees updates in popover-->
 <!--LOG OUT test10-->
 <tr>
@@ -2595,10 +2597,26 @@
 	<td>css=h4.channel-intro__title &gt; span</td>
 	<td>Beginning of Join</td>
 </tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <!--These all need updating; it is expected for message to show if -->
 <!--current user adds or removes other user. It is only if others join or leave-->
 <!--themselves that the message shouldn't show. Tested manually 4.9 and 4.10 - -->
 <!--overall join/leave message behavior is about to change, likely in next release-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--*** 5.0 and on: Need updated tests for combined join/leave messages!-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <!--Add another user-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -2724,6 +2742,11 @@
 </tr>
 <!--Verify this user sees join messages-->
 <!--*** These need updating; verify visually for now-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=span.post-message__text &gt; div &gt; span</td>
@@ -2909,7 +2932,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('admin added to the channel by test10')</td>
+	<td>css=span:contains('admin added to the channel by you')</td>
 	<td></td>
 </tr>
 <tr>

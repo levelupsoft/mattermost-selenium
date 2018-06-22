@@ -275,7 +275,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('testst joined the channel.')</td>
+	<td>css=span:contains('You joined the channel.')</td>
 	<td></td>
 </tr>
 <!--Post a message, just text-->
@@ -357,7 +357,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('And hello to you!')</td>
+	<td>css=p:contains('And hello to you!')</td>
 	<td></td>
 </tr>
 <!--Find message ID from search and permalink-->
@@ -973,7 +973,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#${editid}_message &gt; div &gt; span.post-message__text &gt; p</td>
+	<td>css=#${editid}_message &gt; div.post-message.post-message--collapsed &gt; div.post-message__text-container &gt; div.post-message__text &gt; p</td>
 	<td>The clouds should clear later, hopefully.</td>
 </tr>
 <tr>
@@ -2141,7 +2141,7 @@
 <!--*** Visually verify `@channel` highlighted until we figure out why this is now failing-->
 <tr>
 	<td>waitForText</td>
-	<td>css=span.mention--highlight &gt; span &gt; span</td>
+	<td>css=span.mention--highlight &gt; span</td>
 	<td>@channel</td>
 </tr>
 <!--Verify Main Menu options for non team admin (minimum; can vary)-->
@@ -2217,10 +2217,10 @@
 	<td>css=div.more-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; h4.modal-title &gt; span</td>
 	<td>STTeam Members</td>
 </tr>
-<!--Strange; showing my user first now. I think sorting changed in this modal-->
+<!--Strange; showing my user first now. Switched it, but it's prob brittle now-->
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>//div[2]/div/div[2]/div/div[2]/div/div</td>
 	<td>@testst</td>
 </tr>
 <tr>
@@ -2321,13 +2321,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-container.active</td>
-	<td>STST2Team</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=i.fa.fa-plus</td>
-	<td></td>
+	<td>id=headerTeamName</td>
+	<td>ST2Team</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2438,7 +2433,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('testst added to the team by st2')</td>
+	<td>css=span:contains('testst added to the team by you.')</td>
 	<td></td>
 </tr>
 <tr>
@@ -2776,12 +2771,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('st2 joined the channel')</td>
+	<td>css=span:contains('You joined the channel.')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('testst added to the channel by st2')</td>
+	<td>css=span:contains('testst added to the channel by you.')</td>
 	<td></td>
 </tr>
 <!--Member count icon increments up 1-->
@@ -2940,18 +2935,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>link=STSTTeam</td>
-	<td>STSTTeam</td>
+	<td>css=div.team-container.unread &gt; a &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>ST</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=STSTTeam</td>
-	<td>STSTTeam</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.team-container.active &gt; a &gt; div.team-btn.</td>
-	<td>STSTTeam</td>
+	<td>css=div.team-container.unread &gt; a &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>ST</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2992,18 +2982,18 @@
 <!--Back to ST2Team-->
 <tr>
 	<td>waitForText</td>
-	<td>link=STST2Team</td>
-	<td>STST2Team</td>
+	<td>css=div.team-btn__initials</td>
+	<td>ST</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=STST2Team</td>
-	<td>STST2Team</td>
+	<td>css=div.team-btn__initials</td>
+	<td>ST</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-container.active</td>
-	<td>STST2Team</td>
+	<td>id=headerTeamName</td>
+	<td>ST2Team</td>
 </tr>
 <!--Team name and description-->
 <tr>
@@ -3121,7 +3111,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.team-btn__initials</td>
-	<td>CoCore Test Team</td>
+	<td>Co</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3413,13 +3403,18 @@
 <!--Get permalink for a message, then leave channel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=STSTTeam</td>
+	<td>//a[@href='/stteam']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=STSTTeam</td>
+	<td>//a[@href='/stteam']</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>STTeam</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3593,13 +3588,13 @@
 </tr>
 <!--Create new team from `+` in team sidebar-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=i.fa.fa-plus</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.team-btn.team-btn__add &gt; div.team-btn__content</td>
+	<td>+</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=i.fa.fa-plus</td>
+	<td>css=div.team-btn.team-btn__add &gt; div.team-btn__content</td>
 	<td></td>
 </tr>
 <!--This is set up with a team available to join; skip the next step if no teams available to join-->
@@ -3870,12 +3865,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=a:contains('STTeam')</td>
+	<td>//a[@href='/stteam']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=a:contains('stteam')</td>
+	<td>//a[@href='/stteam']</td>
 	<td></td>
 </tr>
 <tr>
@@ -3883,7 +3878,6 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Town Square</td>
 </tr>
-<!--Also failing, because it redirects to Town Square of the first team listed in sidebar-->
 <tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
@@ -4038,7 +4032,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-btn__content</td>
+	<td>id=headerTeamName</td>
 	<td>Core Test Team</td>
 </tr>
 <tr>
@@ -4210,7 +4204,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.team-container.active</td>
-	<td>CoCore Test Team</td>
+	<td>Co</td>
 </tr>
 <!--LOG OUT testst, then in as ST2, to add testst to private channel-->
 <tr>
@@ -4273,7 +4267,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-btn__content</td>
+	<td>id=headerTeamName</td>
 	<td>Core Test Team</td>
 </tr>
 <!--Add user to private channel using link in-channel-->
@@ -4395,7 +4389,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.team-container.active</td>
-	<td>CoCore Test Team</td>
+	<td>Co</td>
 </tr>
 <!--Private channel settings-->
 <tr>
@@ -4623,12 +4617,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.popover-content &gt; div &gt; p &gt; em</td>
+	<td>css=div.popover-content &gt; p.markdown__paragraph-inline &gt; em</td>
 	<td>Header</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.popover-content &gt; div &gt; ul &gt; li</td>
+	<td>css=div.popover-content &gt; ul &gt; li</td>
 	<td>Item 1</td>
 </tr>
 <tr>
@@ -4697,7 +4691,16 @@
 	<td>link=Item 2 is a link</td>
 	<td></td>
 </tr>
-<!--Add whichever way is best to close header popover-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.about-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
+	<td>×Close</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.about-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
+	<td>×Close</td>
+</tr>
 <!--Leave private channel-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -4747,14 +4750,19 @@
 <!--Remove other user from public channel using Remove Member button-->
 <!--from member icon > Manage Members-->
 <tr>
-	<td>waitForText</td>
-	<td>link=STSTTeam</td>
+	<td>waitForElementPresent</td>
+	<td>//a[@href='/stteam']</td>
 	<td>STSTTeam</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=STSTTeam</td>
+	<td>//a[@href='/stteam']</td>
 	<td>STSTTeam</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>STTeam</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4917,17 +4925,17 @@
 <!--Oh, maybe this is supposed to be testst verifying st2 removed?-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=STSTTeam</td>
+	<td>//a[@href='/stteam']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=STSTTeam</td>
+	<td>//a[@href='/stteam']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h1#headerTeamName.team__name</td>
+	<td>id=headerTeamName</td>
 	<td>STTeam</td>
 </tr>
 <tr>
@@ -4937,12 +4945,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=${privatechannel}1</td>
+	<td>link=${privatechannel}*</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=${privatechannel}1</td>
+	<td>link=${privatechannel}*</td>
 	<td></td>
 </tr>
 <tr>
