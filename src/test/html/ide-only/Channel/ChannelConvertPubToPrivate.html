@@ -552,7 +552,7 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Town Square</td>
 </tr>
-<!--Restrict member management for private channels-->
+<!--Restrict member management for private channels to system admin-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -573,6 +573,12 @@
 	<td>id=systemConsole</td>
 	<td></td>
 </tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--NEEDS UPDATE FOR PERMISSIONS-->
 <!--Need to update for new permissions (but also preserve Policy for ESR testing?)-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -582,6 +588,21 @@
 <tr>
 	<td>click</td>
 	<td>id=schemes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=a.btn.btn-primary &gt; span</td>
+	<td>Edit Scheme</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.btn.btn-primary &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -617,6 +638,11 @@
 <tr>
 	<td>waitForNotEditable</td>
 	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -1460,7 +1486,7 @@
 	<td>id=swithToui-automation</td>
 	<td>Switch to UI Automation</td>
 </tr>
-<!--Cleanup: Delete test channel-->
+<!--Cleanup: Archive test channel-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Public_to_Private</td>
@@ -1494,12 +1520,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.alert.alert-danger &gt; span</td>
-	<td>This will delete the channel from the team and make its contents inaccessible for all users. <br /><br />Are you sure you wish to delete the Public_to_Private channel?</td>
+	<td>This will archive the channel from the team and make its contents inaccessible for all users. <br /><br />Are you sure you wish to archive the Public_to_Private channel?</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=button.btn.btn-danger</td>
-	<td>Delete</td>
+	<td>Archive</td>
 </tr>
 <tr>
 	<td>click</td>
