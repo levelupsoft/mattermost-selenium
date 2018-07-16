@@ -1219,7 +1219,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.alert.alert-danger &gt; span</td>
-	<td>This will delete the channel from the team and make its contents inaccessible for all users. <br /><br />Are you sure you wish to delete the Fifth channel?</td>
+	<td>This will archive the channel from the team and make its contents inaccessible for all users. <br /><br />Are you sure you wish to archive the Fifth channel?</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -2499,13 +2499,6 @@
 	<td>css=span.member-count.pull-left &gt; span</td>
 	<td>1 - 6 members of 6 total</td>
 </tr>
-<!--This is doing a weird thing here, trying to demote system admin-->
-<!--Filed https://mattermost.atlassian.net/browse/MM-10890-->
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=input.form-control.filter-textbox</td>
@@ -2514,7 +2507,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>css=input.form-control.filter-textbox</td>
-	<td>@test</td>
+	<td>test</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2529,7 +2522,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>1 - 5 members of 5 total</td>
+	<td>5 members of 5 total</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -2539,7 +2532,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>1 - 4 members of 4 total</td>
+	<td>4 members of 4 total</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -2549,7 +2542,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>1 - 3 members of 3 total</td>
+	<td>3 members of 3 total</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -2559,7 +2552,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>1 - 2 members of 2 total</td>
+	<td>2 members of 2 total</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -2569,7 +2562,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>1 - 1 member of 1 total</td>
+	<td>1 member of 1 total</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

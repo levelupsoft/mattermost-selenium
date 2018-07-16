@@ -332,7 +332,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.post-message__text &gt; p:contains('And hello to you!')</td>
+	<td>css=div.post-message__text &gt; p:contains('And hello to you!')</td>
 	<td></td>
 </tr>
 <tr>
@@ -1181,7 +1181,7 @@
 	<td>3000</td>
 	<td></td>
 </tr>
-<!--*** Manually hover over message you want to flag-->
+<!--*** Manually hover over the flag on "I'll come back to this later"-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.style--none.flag-icon__container </td>
@@ -3588,13 +3588,13 @@
 </tr>
 <!--Create new team from `+` in team sidebar-->
 <tr>
-	<td>waitForText</td>
-	<td>css=div.team-btn.team-btn__add &gt; div.team-btn__content</td>
-	<td>+</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.team-btn.team-btn__add</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.team-btn.team-btn__add &gt; div.team-btn__content</td>
+	<td>css=div.team-btn.team-btn__add</td>
 	<td></td>
 </tr>
 <!--This is set up with a team available to join; skip the next step if no teams available to join-->
@@ -4497,12 +4497,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Edit Channel Purpose</td>
+	<td>id=channelEditPurpose</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Edit Channel Purpose</td>
+	<td>id=channelEditPurpose</td>
 	<td></td>
 </tr>
 <tr>
@@ -4617,7 +4617,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.popover-content &gt; p.markdown__paragraph-inline &gt; em</td>
+	<td>css=div.popover-content &gt; p &gt; em</td>
 	<td>Header</td>
 </tr>
 <tr>
@@ -4714,12 +4714,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Leave Channel</td>
+	<td>id=channelLeave</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Leave Channel</td>
+	<td>id=channelLeave</td>
 	<td></td>
 </tr>
 <tr>
@@ -4943,6 +4943,7 @@
 	<td>link=${testchannel}</td>
 	<td></td>
 </tr>
+<!--This channel appears to actually be on Core Test Team?-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=${privatechannel}*</td>
@@ -5201,6 +5202,81 @@
 	<td>css=span:contains('Two letter searches and common words like &quot;this&quot;, &quot;a&quot; and &quot;is&quot; won't appear in search results due to excessive results returned.')</td>
 	<td>exact:If you're searching a partial phrase (ex. searching &quot;rea&quot;, looking for &quot;reach&quot; or &quot;reaction&quot;), append a * to your search term.</td>
 </tr>
+<!--~ Channel linking - Autocomplete-->
+<!--Switch to STTeam-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[@href='/stteam']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@href='/stteam']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>STTeam</td>
+</tr>
+<!--Find public channel in autocomplete-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>~test-</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mention__align &gt; span</td>
+	<td>Test-${datetime}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mention__align &gt; span</td>
+	<td>Test-${datetime}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td>~test-${datetime}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<!--Join public channel from channel shortlink-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=~Test-${datetime}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=~Test-${datetime}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Test-${datetime}</td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--*** The rest of these are WIP; end here for now-->
 <tr>
 	<td></td>
 	<td></td>
