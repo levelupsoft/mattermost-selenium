@@ -101,6 +101,16 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>Run Deletion Job Now</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>id=saveSetting</td>
 	<td></td>
@@ -140,7 +150,73 @@
 	<td></td>
 	<td></td>
 </tr>
+<!--Do a search with no results (on any team), verify data retention messaging-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=ul.dropdown-menu li a#* span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=ul.dropdown-menu li a#* span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=searchBox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchBox</td>
+	<td>noresultsnilnadanever${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[@id='search-items-container']/div/ul/li[3]/span</td>
+	<td>Only messages posted in the last 365 days are returned. Contact your System Administrator for more detail.</td>
+</tr>
 <!--Disable, save-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Data Retention Policy (Beta)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Data Retention Policy (Beta)</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=enableMessageDeletion</td>
@@ -191,7 +267,7 @@
 	<td>css=div.modal-footer &gt; button.btn.btn-primary</td>
 	<td>Confirm Settings</td>
 </tr>
-<!--Set to indefinitely, the time period settings are hidden-->
+<!--Set to indefinitely, the time period settings are hidden, Run Job disabled-->
 <tr>
 	<td>waitForText</td>
 	<td>id=enableMessageDeletion</td>
@@ -210,6 +286,11 @@
 <tr>
 	<td>waitForElementNotPresent</td>
 	<td>id=fileRetentionDays</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>css=button.btn.btn-default</td>
 	<td></td>
 </tr>
 <!--Enable, save-->

@@ -542,19 +542,10 @@
 <!--Use custom emoji in reaction (emoji picker)-->
 <!--*** This is failing to find reaction emoji picker; it's finding message one-->
 <!--*** Same as [...] it can't find the hover menu (have tried many hover approaches)-->
+<!--*** Manually hover over last message, click emoji reaction icon-->
 <tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.icon.icon--emoji</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.icon.icon--emoji</td>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
 <!--Filter emoji picker list-->
@@ -792,7 +783,8 @@
 	<td></td>
 </tr>
 <!--Reaction disappears-->
-<!--This fails because rhino is still there-->
+<!--*** This fails because rhino is still there-->
+<!--*** Visually verify customanigif is gone (might need refresh on other browser)-->
 <tr>
 	<td>waitForElementNotPresent</td>
 	<td>css=span.post-reaction__emoji.emoticon</td>
@@ -858,7 +850,7 @@
 </tr>
 <!--*** Visually verify Foods section at top-->
 <!--*** Manually click a food emoji-->
-<!--*** Verify populates message box-->
+<!--*** Verify populates message box (then posts)-->
 <tr>
 	<td>waitForNotText</td>
 	<td>id=post_textbox</td>
@@ -1028,8 +1020,14 @@
 	<td>emojipostid</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='post_${emojipostid}']/div/div[2]/div/div[2]/div/div[2]/span/button</td>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<!--*** Hover over `Reactionary` post and click emoji picker-->
+<tr>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <tr>
@@ -1082,9 +1080,39 @@
 	<td>Recently Used</td>
 </tr>
 <!--*** Click any emoji to add reaction in RHS-->
+<!--*** Visually verify reaction was added-->
 <tr>
 	<td>pause</td>
 	<td>6000</td>
+	<td></td>
+</tr>
+<!--Expand RHS, can still add reaction using emoji picker-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.sidebar--right__expand</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.sidebar--right__expand</td>
+	<td></td>
+</tr>
+<!--*** Visually verify sidebar expanded, LHS has overlay-->
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.reacticon__container.reaction.color--link.style--none &gt; span.icon.icon--emoji</td>
+	<td></td>
+</tr>
+<!--*** Click any emoji to add reaction in RHS-->
+<!--*** Visually verify reaction was added-->
+<tr>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <!--*** Visually verify Recently Used matches what you recently used-->

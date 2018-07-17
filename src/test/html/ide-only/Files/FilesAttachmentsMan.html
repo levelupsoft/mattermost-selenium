@@ -367,17 +367,27 @@
 	<td>css=a &gt; img</td>
 	<td></td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>8000</td>
+	<td></td>
+</tr>
 <!--*** Manually right-click image, Copy Image Location, close image,-->
 <!--*** paste in message box, press Enter-->
 <tr>
 	<td>pause</td>
-	<td>8000</td>
+	<td>4000</td>
 	<td></td>
 </tr>
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
 <!--*** Visually verify link posted (not the image, and no download starts)-->
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>http://selenium.mattermost.com/api/v4/files/*/preview</td>
@@ -1252,6 +1262,90 @@
 	<td>8000</td>
 	<td></td>
 </tr>
+<!--File with long filename and no spaces does not break RHS-->
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<!--*** Manually select PNGwithaAVeryLongNameNoSpaces...-->
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=i.fa.fa-remove</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<!--*** Visually verify image preview and truncated filename in center-->
+<!--Now post in RHS-->
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_SHIFT}${KEY_UP}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=reply_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<!--*** Manually select PNGwithaAVeryLongNameNoSpaces...-->
+<!--*** Make sure attaching in RHS-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@value='Add Comment']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Add Comment']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<!--*** Visually verify displays image preview and truncated filename in RHS-->
+<!--*** NOTE: This is stuck in endless loading for some reason. Investigating-->
+<!--*** (only on Se server)-->
 <!--/test url test-attachments-->
 <tr>
 	<td>waitForElementPresent</td>

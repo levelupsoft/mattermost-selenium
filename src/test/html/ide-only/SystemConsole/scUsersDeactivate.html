@@ -594,14 +594,14 @@
 </tr>
 <!--GM still in LHS and write-able-->
 <tr>
-	<td>waitForText</td>
-	<td>css=a.sidebar-item.has-close</td>
-	<td>2<br />test2, test3×</td>
+	<td>waitForElementPresent</td>
+	<td>css=span.sidebar-item__name:contains('test2, test3')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=a.sidebar-item.has-close</td>
-	<td>2<br />test2, test3×</td>
+	<td>css=span.sidebar-item__name:contains('test2, test3')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -622,7 +622,7 @@
 <tr>
 	<td>waitForElementNotPresent</td>
 	<td>link=test2×</td>
-	<td>test2×</td>
+	<td></td>
 </tr>
 <!--Verify can still access DM with deactivated user-->
 <!--Searchable in channel switcher-->
@@ -835,9 +835,9 @@
 </tr>
 <!--DM with deactivated user is still present in LHS, with archive icon-->
 <tr>
-	<td>waitForText</td>
-	<td>css=a.sidebar-item.has-close &gt; span.sidebar-item__name</td>
-	<td>test2</td>
+	<td>waitForElementPresent</td>
+	<td>link=test2×</td>
+	<td>test2×</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -940,7 +940,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>1 user of 11 total</td>
+	<td>1 user of 12 total</td>
 </tr>
 <tr>
 	<td>waitForText</td>

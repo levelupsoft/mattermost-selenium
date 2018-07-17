@@ -11,7 +11,7 @@
 <thead>
 <tr><td rowspan="1" colspan="3">scNotificationsMan</td></tr>
 </thead><tbody>
-<!--*** LOG IN as a system admin account that has a real email address you can check-->
+<!--*** LOG IN as a system admin that has a real email address you can check-->
 <tr>
 	<td>waitForText</td>
 	<td>link=Town Square</td>
@@ -115,7 +115,7 @@
 	<td>You are now offline</td>
 	<td></td>
 </tr>
-<!--Verify current email STMP connection is successful-->
+<!--SMTP settings - Connection failures-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=systemConsole</td>
@@ -134,6 +134,52 @@
 <tr>
 	<td>click</td>
 	<td>id=notifications_email</td>
+	<td></td>
+</tr>
+<!--Remove SMTP username-->
+<tr>
+	<td>storeValue</td>
+	<td>id=smtpUsername</td>
+	<td>smtpusername</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=smtpUsername</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>Test Connection</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.alert.alert-warning</td>
+	<td>The SMTP server, port, or username has changed. Please re-enter the SMTP password to test connection.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=smtpUsername</td>
+	<td>${smtpusername}</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
@@ -150,6 +196,73 @@
 	<td>waitForText</td>
 	<td>css=div.alert.alert-success &gt; span</td>
 	<td>No errors were reported while sending an email. Please check your inbox to make sure.</td>
+</tr>
+<!--SMTP authentication disabled-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=enableSMTPAuthfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enableSMTPAuthfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>Test Connection</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.alert.alert-warning</td>
+	<td>Connection unsuccessful: SendMail: Error setting &quot;From Address&quot;, 530 Authentication required</td>
+</tr>
+<!--Reenable, verify email STMP connection is successful-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=enableSMTPAuthtrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enableSMTPAuthtrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>Test Connection</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.alert.alert-success &gt; span</td>
+	<td>No errors were reported while sending an email. Please check your inbox to make sure.</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
 </tr>
 <!--Set to disable batching, send full message contents-->
 <tr>
@@ -347,14 +460,70 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=moreDirectMessage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=moreDirectMessage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--*** Manually select a third user to include in the GM, manually click Go-->
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>//div[2]/div/div/div/h4/span</td>
+	<td>Direct Messages</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=img.more-modal__image</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img.more-modal__image</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>link=@linda-changed</td>
+	<td>thirduser</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>/groupmsg ${currentusername}, @system_admin_bot This is a GM with no mention, so you shouldn't get an email notification about it at all.${KEY_ENTER}</td>
+	<td>/groupmsg ${currentusername}, ${thirduser} This is a GM with no mention, so you shouldn't get an email notification about it at all.${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>id=post_textbox</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>${thirduser}</td>
 </tr>
 <!--LOG OUT other user-->
 <tr>
@@ -385,8 +554,13 @@
 <!--*** LOG IN MANUALLY as the system admin you logged in as earlier-->
 <tr>
 	<td>waitForText</td>
-	<td>link=Town Square</td>
-	<td>Town Square</td>
+	<td>css=button.btn.btn-default</td>
+	<td>No, keep it as &quot;Offline&quot;</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
 </tr>
 <!--Set to disable batching, send generic description-->
 <tr>
@@ -550,6 +724,11 @@
 </tr>
 <!--Send a GM that does *not* have a mention (should not trigger a notification)-->
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>id=post_textbox</td>
 	<td></td>
@@ -557,7 +736,12 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>/groupmsg ${currentusername}, @system_admin_bot This is a GM with no mention, so you shouldn't get an email notification about it at all.${KEY_ENTER}</td>
+	<td>/groupmsg ${currentusername}, ${thirduser} This is a GM with no mention, so you shouldn't get an email notification about it at all.${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -593,8 +777,13 @@
 <!--*** LOG IN MANUALLY as the system admin you logged in as earlier-->
 <tr>
 	<td>waitForText</td>
-	<td>link=Town Square</td>
-	<td>Town Square</td>
+	<td>css=button.btn.btn-default</td>
+	<td>No, keep it as &quot;Offline&quot;</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
 </tr>
 <!--Set to enable batching, send generic description-->
 <tr>
@@ -693,8 +882,13 @@
 <!--*** LOG IN MANUALLY as the system admin you logged in as earlier-->
 <tr>
 	<td>waitForText</td>
-	<td>link=Town Square</td>
-	<td>Town Square</td>
+	<td>css=button.btn.btn-default</td>
+	<td>No, keep it as &quot;Offline&quot;</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -878,9 +1072,19 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>/groupmsg ${currentusername}, @system_admin_bot This is a GM with no mention, so you shouldn't get an email notification about it at all.${KEY_ENTER}</td>
+	<td>/groupmsg ${currentusername}, ${thirduser} This is a GM with no mention, so you shouldn't get an email notification about it at all.${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -924,6 +1128,16 @@
 <!--*** After batched email notification is received, continue:-->
 <!--*** LOG IN MANUALLY as the system admin you logged in as earlier-->
 <!--Set to enable batching, send full contents-->
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>No, keep it as &quot;Offline&quot;</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -1085,6 +1299,11 @@
 </tr>
 <!--Send a GM that does *not* have a mention (should not trigger a notification)-->
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>id=post_textbox</td>
 	<td></td>
@@ -1092,7 +1311,12 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>/groupmsg ${currentusername}, @system_admin_bot This is a GM with no mention, so you shouldn't get an email notification about it at all.${KEY_ENTER}</td>
+	<td>/groupmsg ${currentusername}, ${thirduser} This is a GM with no mention, so you shouldn't get an email notification about it at all.${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
