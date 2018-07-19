@@ -3006,6 +3006,22 @@
 	<td></td>
 	<td></td>
 </tr>
+<!--Autolink when non-letter character follows a period in the URL-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>https://test.somedomain.com/display/SomeStuff/123.+Pagetitle${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=exact:https://test.somedomain.com/display/SomeStuff/123.+Pagetitle</td>
+	<td></td>
+</tr>
 <tr>
 	<td></td>
 	<td></td>
