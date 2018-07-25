@@ -6,10 +6,12 @@ tar czPf ~/logs/archive-pre-$BUILD_ID.tar.gz ~/mattermost/logs
 cp -f ~/mattermost/logs/mattermost.log $WORKSPACE/mm-latest.log
 
 rm -f mattermost.tar.gz
+rm -f mattermost-webapp.tar.gz
 
 # Regular daily
 wget https://releases.mattermost.com/mattermost-platform/master/mattermost-enterprise-linux-amd64.tar.gz
 mv mattermost-enterprise-linux-amd64.tar.gz mattermost.tar.gz
+wget https://releases.mattermost.com/mattermost-webapp/mm-10616-dot-menu-refactor/mattermost-webapp.tar.gz
 
 # Use this to lock to specific version
 # wget https://releases.mattermost.com/5.1.0-rc4/mattermost-5.1.0-rc4-linux-amd64.tar.gz
@@ -21,6 +23,9 @@ rm -rf ~/mattermost
 mkdir -p ~/mattermost
 
 tar -C ~/ -xzf mattermost.tar.gz
+tar -C ~/ -xzf mattermost-webapp.tar.gz
+rm -r ~/mattermost/client
+mv ~/client ~/mattermost/client
 
 cp ~/config.json ~/mattermost/config/config.json
 cp ~/mattermost.mattermost-license ~/mattermost/config/mattermost.mattermost-license
