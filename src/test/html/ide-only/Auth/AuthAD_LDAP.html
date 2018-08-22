@@ -133,28 +133,23 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div/div/div[2]/div/h4[2]/span</td>
-	<td>Let's create your account</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>name=ldapId</td>
+	<td>id=loginId</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>name=ldapId</td>
+	<td>id=loginId</td>
 	<td>test.two</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>name=password</td>
+	<td>id=loginPassword</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>name=password</td>
+	<td>id=loginPassword</td>
 	<td>Password1</td>
 </tr>
 <tr>
@@ -165,6 +160,11 @@
 <tr>
 	<td>click</td>
 	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
 	<td></td>
 </tr>
 <!--*** May have to 1) choose a team and 2) skip tutorial, depending on the server-->

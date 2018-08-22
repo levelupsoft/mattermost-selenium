@@ -129,9 +129,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//li/div/div[2]/span</td>
-	<td>*Select which language Mattermost displays in the user interface.*Would like to help with translations? Join the Mattermost Translation Server to contribute.*</td>
+	<td>waitForElementPresent</td>
+	<td>link=Mattermost Translation Server</td>
+	<td></td>
 </tr>
 <!--Switch to ES-->
 <tr>
@@ -700,6 +700,68 @@
 	<td>id=languagesEdit</td>
 	<td></td>
 </tr>
+<!--Switch to RO-->
+<tr>
+	<td>select</td>
+	<td>id=displayLanguage</td>
+	<td>Română (Beta)</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#publicChannel &gt; span</td>
+	<td>CANALE PUBLICE</td>
+</tr>
+<!--Verify system message is translated-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span:contains('s-au alăturat echipei')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span:contains('actualizat antetul canalului')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#channelHeaderDescription &gt; button.style--none</td>
+	<td>Adăugați o descriere a canalului</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettings &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=displayButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=displayButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=languagesEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=languagesEdit</td>
+	<td></td>
+</tr>
 <!--Switch to TR-->
 <tr>
 	<td>select</td>
@@ -776,7 +838,7 @@
 <!--Verify system message is translated-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('изменил заголовок канала')</td>
+	<td>css=span:contains('изменил(а) заголовок канала на')</td>
 	<td></td>
 </tr>
 <tr>
@@ -936,8 +998,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=p.channel-intro__content &gt; strong</td>
-	<td>歡迎來到Town Square！</td>
+	<td>css=h4.channel-intro__title &gt; span</td>
+	<td>Town Square的開頭</td>
 </tr>
 <!--Verify system message is translated-->
 <tr>
@@ -993,8 +1055,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=p.channel-intro__content &gt; strong</td>
-	<td>Town Squareへようこそ!</td>
+	<td>css=h4.channel-intro__title &gt; span</td>
+	<td>Town Squareのはじまり</td>
 </tr>
 <!--Verify system message is translated-->
 <tr>
@@ -1049,7 +1111,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=p.channel-intro__content &gt; strong</td>
+	<td>css=span &gt; strong</td>
 	<td>Welcome to Town Square!</td>
 </tr>
 <tr>

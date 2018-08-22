@@ -54,3 +54,4 @@ mysql -u mmuser -ppasswd -h localhost -e "UPDATE Teams SET AllowOpenInvite = '1'
 
 sleep 120
 sudo systemctl start mattermost
+
