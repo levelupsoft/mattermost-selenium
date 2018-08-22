@@ -12,9 +12,9 @@
 <tr><td rowspan="1" colspan="3">AccountSettingsMan</td></tr>
 </thead><tbody>
 <!--*** Test on selenium.mattermost.com, on slow speed-->
-<!--*** Also open a separate, Private FF browser and log in user test9-->
+<!--*** Also open a separate browser and log in user test9-->
 <!--*** Files for profile pic etc. available in Resources folder-->
-<!--*** Watch a portion of the Private browser to see changes in real time-->
+<!--*** Watch a portion of that browser to see changes in real time-->
 <!--*** Watch here for visual verification instructions-->
 <!--LOG IN test10-->
 <tr>
@@ -621,7 +621,7 @@
 	<td>css=div.user-popover:contains('test10')</td>
 	<td></td>
 </tr>
-<!--*** Visually Verify truncated, e.g. "This is a Long Name That Should Tr..."-->
+<!--*** Visually Verify "This is a Long Name That Should Tr..."-->
 <tr>
 	<td>pause</td>
 	<td>5000</td>
@@ -689,8 +689,7 @@
 	<td>id=usernameDesc</td>
 	<td>test10edited</td>
 </tr>
-<!--*** Image is available in Resources folder for upload as profile pic-->
-<!--profile-sloth.png-->
+<!--*** Make sure image available for upload as profile pic (profile-sloth.png)-->
 <tr>
 	<td>pause</td>
 	<td>3000</td>
@@ -707,7 +706,7 @@
 	<td>id=pictureEdit</td>
 	<td></td>
 </tr>
-<!--*** Manually select image profile-sloth.png in Resources folder-->
+<!--*** Manually select image-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>xpath=(//input[@type='file'])[2]</td>
@@ -924,7 +923,6 @@
 	<td></td>
 </tr>
 <!--Upload a picture that is not square (wider than tall, or taller than wide), can use:-->
-<!--MmlogoHorizontal.png in Resources folder (also at the following URL:)-->
 <!--https://www.mattermost.org/wp-content/uploads/2016/03/logoHorizontal.png-->
 <tr>
 	<td>pause</td>
@@ -951,7 +949,7 @@
 	<td>xpath=(//input[@type='file'])[2]</td>
 	<td></td>
 </tr>
-<!--*** Manually select MmlogoHorizontal.png (non-square image)-->
+<!--*** Manually select non-square image-->
 <tr>
 	<td>pause</td>
 	<td>2000</td>
@@ -959,6 +957,7 @@
 </tr>
 <!--*** Verify preview thumbnail cropped not stretched (sample shows partial "tte")-->
 <!--*** Visually verify before saving that orientation appears correct-->
+<!--*** Visually verify preview thumbnail cropped to show center, not stretched-->
 <tr>
 	<td>pause</td>
 	<td>6000</td>
@@ -980,14 +979,14 @@
 	<td></td>
 </tr>
 <!--*** Visually verify profile pic (behind modal, top left) appears like thumbnail did-->
-<!--*** Picture is cropped to show center of the image, and image is not stretched-->
+<!--*** Picture is cropped to show the center of the image, and image is not stretched-->
 <tr>
 	<td>pause</td>
 	<td>2000</td>
 	<td></td>
 </tr>
-<!--Non-image file (with errant image-type file extension) shows error-->
-<!--not-an-image-file.jpg in Resources folder-->
+<!--Non-image file (with wrong file extension) shows error-->
+<!--not-an-image-file.jpg-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=pictureEdit</td>
@@ -1010,10 +1009,10 @@
 </tr>
 <tr>
 	<td>pause</td>
-	<td>6000</td>
+	<td>4000</td>
 	<td></td>
 </tr>
-<!--*** Manually select not-an-image-file.jpg (has been given incorrect image file extension)-->
+<!--*** Select non-image file, that has been given incorrect image file extension-->
 <!--*** Visually verify thumbnail area is blank-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1041,101 +1040,6 @@
 	<td>link=Cancel</td>
 	<td></td>
 </tr>
-<!--Other valid file types: BMP, JPG-->
-<!--BMP-->
-<!--BMP.bmp in Resources folder-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=pictureEdit</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=pictureEdit</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//input[@type='file'])[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//input[@type='file'])[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>6000</td>
-	<td></td>
-</tr>
-<!--*** Manually select BMP.bmp in Resources folder-->
-<!--*** Visually verify thumbnail shows BMP on penguin's belly-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Save</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Save</td>
-	<td></td>
-</tr>
-<!--*** Visually verify (through overlay) that profile pic in top left shows BMP penguin-->
-<tr>
-	<td>pause</td>
-	<td>6000</td>
-	<td></td>
-</tr>
-<!--JPG-->
-<!--JPG.jpg in Resources folder-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=pictureEdit</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=pictureEdit</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//input[@type='file'])[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//input[@type='file'])[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>6000</td>
-	<td></td>
-</tr>
-<!--*** Manually select JPG.jpg in Resources folder-->
-<!--*** Visually verify thumbnail shows JPG on penguin's belly-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Save</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Save</td>
-	<td></td>
-</tr>
-<!--*** Visually verify (through overlay) that profile pic in top left shows JPG penguin-->
-<tr>
-	<td>pause</td>
-	<td>8000</td>
-	<td></td>
-</tr>
-<!--INVALID FILE TYPES (in FF at least, just visually verify disabled in file dialog)-->
-<!--*** NOTE: If browser dialog disallows clicking invalid file types, just verify -->
-<!--*** that all file types in Resources folder other than PNG, BMP, JPG-->
-<!--*** are not clickable. Check other image types, video, doc, etc.-->
 <!--Cleanup: Change test10 name and username back to null and test10-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -2648,11 +2552,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#join_leaveDesc &gt; span</td>
-	<td>Off</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
 	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
@@ -2699,7 +2598,15 @@
 	<td>Beginning of Join</td>
 </tr>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+>>>>>>> parent of 2239628... Updating AccountSettingsMan and adding test files to Resources
 <!--These all need updating; it is expected for message to show if -->
 <!--current user adds or removes other user. It is only if others join or leave-->
 <!--themselves that the message shouldn't show. Tested manually 4.9 and 4.10 - -->
@@ -2715,7 +2622,10 @@
 	<td></td>
 	<td></td>
 </tr>
+<<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> parent of 2239628... Updating AccountSettingsMan and adding test files to Resources
 <!--Add another user-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -2763,6 +2673,7 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<!--4.8 possible bug; waiting for redux update fix to confirm-->
 <tr>
 	<td>waitForElementNotPresent</td>
 	<td>css=span:contains('added to the channel by test10')</td>
@@ -2830,17 +2741,6 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<!--View Team UI Automation-->
-<tr>
-	<td>open</td>
-	<td>/ui-automation/channels/town-square</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
 	<td>link=Join1</td>
 	<td></td>
 </tr>
@@ -2850,7 +2750,9 @@
 	<td></td>
 </tr>
 <!--Verify this user sees join messages-->
+<!--*** These need updating; verify visually for now-->
 <tr>
+<<<<<<< HEAD
 <<<<<<< HEAD
 	<td>waitForText</td>
 	<td>css=div.post-message__text &gt; div</td>
@@ -2869,24 +2771,23 @@
 <tr>
 	<td>click</td>
 	<td>link=@test10</td>
+=======
+	<td></td>
+	<td></td>
+>>>>>>> parent of 2239628... Updating AccountSettingsMan and adding test files to Resources
 	<td></td>
 </tr>
 <tr>
 =======
 >>>>>>> master
 	<td>waitForText</td>
-	<td>link=test10@test.com</td>
-	<td>test10@test.com</td>
+	<td>css=span.post-message__text &gt; div &gt; span</td>
+	<td>test10 joined the channel.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.popover-title &gt; a</td>
-	<td>@test10</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Send Message</td>
-	<td></td>
+	<td>css=span.mention--highlight</td>
+	<td>admin</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2974,7 +2875,7 @@
 	<td>link=Join</td>
 	<td></td>
 </tr>
-<!--Verify no leave message for other user-->
+<!--Verify no leave message-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -2982,14 +2883,8 @@
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
-	<td>css=div:contains('@admin left the channel.')</td>
+	<td>css=span:contains('admin has left the channel.')</td>
 	<td></td>
-</tr>
-<!--Join/leave messages involving you still display-->
-<tr>
-	<td>waitForText</td>
-	<td>css=div.post-message__text &gt; div</td>
-	<td>You joined the channel.<br /><br />@admin added to the channel by you.</td>
 </tr>
 <!--Turn join / leave messages back on-->
 <tr>
@@ -3067,11 +2962,15 @@
 	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
-<!--Admin's leave message now displays (at end of Value below; verifies whole string)-->
 <tr>
-	<td>waitForText</td>
-	<td>css=div.post-message__text &gt; div</td>
-	<td>You joined the channel.<br /><br />@admin added to the channel by you.<br /><br />@admin left the channel.</td>
+	<td>waitForElementPresent</td>
+	<td>css=span:contains('admin added to the channel by you')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span:contains('admin left the channel.')</td>
+	<td></td>
 </tr>
 <!--Advanced - Markdown Preview (the only one available on selenium server)-->
 <tr>
