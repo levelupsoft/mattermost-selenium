@@ -12,6 +12,7 @@
 <tr><td rowspan="1" colspan="3">scNotificationsMan</td></tr>
 </thead><tbody>
 <!--*** LOG IN as a system admin that has a real email address you can check-->
+<!--*** ON A SERVER that has email notifications set up (such as ci-linux-postgres)-->
 <tr>
 	<td>waitForText</td>
 	<td>link=Town Square</td>
@@ -497,7 +498,7 @@
 </tr>
 <tr>
 	<td>storeText</td>
-	<td>link=@linda-changed</td>
+	<td>css=h3.popover-title</td>
 	<td>thirduser</td>
 </tr>
 <tr>
@@ -1361,12 +1362,25 @@
 <!--*** Check your email and verify the following:-->
 <!--*** Note that your email client may organize / display by thread rather than by -->
 <!--*** order received, so you might see both at-mentions together, both DMs together-->
-<!--1. Non-batched at-mention, full contents-->
-<!--2. Non-batched DM, full contents-->
-<!--3. Non-batched at-mention, generic (sender name only)-->
-<!--4. Non-batched DM, generic (sender name only)-->
-<!--5. Batched at-mention plus DM, generic (sender name only)-->
-<!--5. Batched at-mention plus DM, full contents-->
+<!--1. Non-batched at-mention, full contents (subj "Notification in AA-Sorting-Test on <date>"):-->
+<!--   "Channel: Off-Topic" / "@<username>" / time (UTC), date-->
+<!--   "Hey <user> you should see the full contents of this message. It should not be batched."-->
+<!--2. Non-batched DM, full contents (body title "You have a new Direct Message."):-->
+<!--   "And here's a DM. You should also see the full contents of this message. It should not be batched."-->
+<!--3. Non-batched at-mention, generic (sender name only) (subj "Notification in AA-Sorting-Test on <date>"):-->
+<!--   "You have a new notification from @<username>"-->
+<!--4. Non-batched DM, generic (sender name only) (subj "New Direct Message from @linda.qa on <date>"):-->
+<!--   "You have a new Direct Message from @<username>"-->
+<!--5. Batched at-mention plus DM, generic (sender name only); one message contains both:-->
+<!--   "You have 2 new notifications."-->
+<!--   "Notification from  @<username>" / time (UTC), date-->
+<!--   "Direct Message from  @<username>" / time (UTC), date-->
+<!--6. Batched at-mention plus DM, full contents; one message contains both:-->
+<!--   "You have 2 new notifications."-->
+<!--   "Off-Topic" / "@<username" / time (UTC), date-->
+<!--      "Batched, full contents! @<username>, this notification should be batched with the DM that follows, and you should see this sentence."-->
+<!--   "Direct Message from" / "@<username>" / time (UTC), date-->
+<!--      "Batched DM! You should see this sentence as well, batched with the previous at-mention."-->
 <tr>
 	<td>pause</td>
 	<td>6000</td>
