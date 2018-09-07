@@ -81,6 +81,47 @@
 	<td>id=systemConsole</td>
 	<td></td>
 </tr>
+<!--Disable plugins-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//a[@id='configuration'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[@id='configuration'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=PluginSettings.Enablefalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PluginSettings.Enablefalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=PluginSettings.Enablefalse</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
 <!--Verify messaging that plugins are disabled (uploads disabled in config.json)-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -189,6 +230,25 @@
 	<td>id=management</td>
 	<td></td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>8000</td>
+	<td></td>
+</tr>
+<!--*** Upload is enabled now on Se server; switching this for now to use -->
+<!--*** https://ci-linux-mysql.mattermost.com-->
+<!--*** Manually log in to ci-linux-mysql as a system admin-->
+<!--*** Ensure Plugins Configuration = true-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
 <!--Choose file button is not clickable (upload disabled in config)-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -218,14 +278,14 @@
 <!--Verify pre-packaged plugins - JIRA and Zoom-->
 <!--JIRA plugin UI-->
 <tr>
-	<td>waitForText</td>
-	<td>css=div &gt; strong</td>
+	<td>waitForTextPresent</td>
 	<td>JIRA</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.padding-top</td>
-	<td>Receives webhook events from JIRA and makes Mattermost posts for them.</td>
+	<td>waitForTextPresent</td>
+	<td>Receives webhook events from JIRA and makes Mattermost posts for them</td>
+	<td></td>
 </tr>
 <!--Enable and disable JIRA-->
 <tr>
@@ -236,7 +296,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.alert.alert-info &gt; span</td>
-	<td>This plugin is not activated.</td>
+	<td>This plugin is not enabled.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -271,7 +331,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.alert.alert-info &gt; span</td>
-	<td>This plugin is not activated.</td>
+	<td>This plugin is not enabled.</td>
 </tr>
 <!--Remove JIRA (Note: This is likely to change; these aren't really removable)-->
 <tr>
@@ -335,7 +395,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.alert.alert-info &gt; span</td>
-	<td>This plugin is not activated.</td>
+	<td>This plugin is not enabled.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -370,7 +430,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.alert.alert-info &gt; span</td>
-	<td>This plugin is not activated.</td>
+	<td>This plugin is not enabled.</td>
 </tr>
 <!--Remove Zoom (Note: This is likely to change; these aren't really removable)-->
 <tr>
@@ -429,7 +489,7 @@
 	<td>3000</td>
 	<td></td>
 </tr>
-<!--*** Switch to a server such as ci-linux-postgres that has uploads enabled-->
+<!--*** Switch back to the Selenium server, which has uploads enabled-->
 <tr>
 	<td>pause</td>
 	<td>4000</td>
@@ -437,33 +497,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>https://ci-linux-postgres.mattermost.com/login</td>
-	<td></td>
-</tr>
-<!--*** Manually log in as system admin, have demo plugin handy (in Resources)-->
-<tr>
-	<td>pause</td>
-	<td>8000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>http://selenium.mattermost.com/admin_console/plugins/management</td>
 	<td></td>
 </tr>
 <!--Verify can upload the demo plugin-->
@@ -596,7 +630,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.alert.alert-info &gt; span</td>
-	<td>This plugin is not activated.</td>
+	<td>This plugin is not enabled.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -606,11 +640,6 @@
 <tr>
 	<td>click</td>
 	<td>css=div.padding-top &gt; a &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span:contains('Enabling')</td>
 	<td></td>
 </tr>
 <tr>
@@ -649,11 +678,15 @@
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
-<!--This is failing right now on ci-linux-postgres for some reason-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.sidebar--left__icons &gt; div</td>
 	<td>Demo Plugin: Enabled</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>7000</td>
+	<td></td>
 </tr>
 <!--Demo plugin channel created - fails unless first in list (could create new team first)-->
 <tr>

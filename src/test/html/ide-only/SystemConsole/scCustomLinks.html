@@ -127,7 +127,7 @@
 <tr>
 	<td>type</td>
 	<td>id=SupportSettings.TermsOfServiceLink</td>
-	<td>https://about.mattermost.com/</td>
+	<td>https://mattermost.com/</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -216,6 +216,7 @@
 	<td>2000</td>
 	<td></td>
 </tr>
+<!--This part can be brittle (popup vs. new tab, not switching to new tab)-->
 <tr>
 	<td>selectPopUp</td>
 	<td></td>
@@ -237,9 +238,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
+	<td>waitForText</td>
 	<td>css=#privacy_link &gt; span</td>
-	<td></td>
+	<td>Privacy</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -298,7 +299,7 @@
 </tr>
 <tr>
 	<td>waitForLocation</td>
-	<td>https://about.mattermost.com/</td>
+	<td>https://mattermost.com/</td>
 	<td></td>
 </tr>
 <tr>
@@ -759,22 +760,22 @@
 <tr>
 	<td>type</td>
 	<td>id=NativeAppSettings.AppDownloadLink</td>
-	<td>https://about.mattermost.com</td>
+	<td>https://mattermost.com</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
 	<td>id=NativeAppSettings.AppDownloadLink</td>
-	<td>https://about.mattermost.com</td>
+	<td>https://mattermost.com</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
 	<td>id=NativeAppSettings.AndroidAppDownloadLink</td>
-	<td>https://about.mattermost.com/mattermost-android-app/</td>
+	<td>https://mattermost.com</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
 	<td>id=NativeAppSettings.IosAppDownloadLink</td>
-	<td>https://about.mattermost.com/mattermost-ios-app/</td>
+	<td>https://mattermost.com</td>
 </tr>
 <tr>
 	<td>waitForEditable</td>
@@ -966,7 +967,7 @@
 </tr>
 <tr>
 	<td>waitForLocation</td>
-	<td>https://about.mattermost.com/</td>
+	<td>https://mattermost.com/</td>
 	<td></td>
 </tr>
 <tr>
@@ -1098,7 +1099,7 @@
 </tr>
 <tr>
 	<td>waitForLocation</td>
-	<td>https://about.mattermost.com/</td>
+	<td>https://mattermost.com/</td>
 	<td></td>
 </tr>
 <tr>

@@ -1,36 +1,13 @@
 <!--*** Ensure LDAP is set up on the server you're running this on-->
 <!--*** And doesn't already have test.one as a user-->
-<!--LOG IN admin-->
-<!--DisableAnimations-->
+<!--*** Can use test instance setup for Jumpcloud (from private repo)-->
+<!--*** Ensure logged in as system admin, viewing System Console-->
+<!--Add tests here for LDAP page settings-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-primary</td>
+	<td></td>
+	<td></td>
 	<td></td>
 </tr>
-<tr>
-	<td>type</td>
-	<td>name=loginId</td>
-	<td>admin@test.com</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=password</td>
-	<td>passwd</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=loginButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<!--*** Can skip ahead to here if you log in to any server and have access to team invite-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>

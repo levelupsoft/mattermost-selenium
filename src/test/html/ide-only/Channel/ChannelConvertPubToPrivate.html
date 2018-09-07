@@ -237,13 +237,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#rhsrootDotMenuPermalink &gt; button.style--none</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=li &gt; button.style--none</td>
+	<td>Permalink</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#rhsrootDotMenuPermalink &gt; button.style--none</td>
+	<td>css=li &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -574,13 +574,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<!--NEEDS UPDATE FOR PERMISSIONS-->
-<!--Need to update for new permissions (but also preserve Policy for ESR testing?)-->
-<tr>
 	<td>waitForElementPresent</td>
 	<td>id=schemes</td>
 	<td></td>
@@ -591,42 +584,27 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=a.btn.btn-primary &gt; span</td>
-	<td>Edit Scheme</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=a.btn.btn-primary &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>id=policy</td>
+	<td>link=Edit Scheme</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=policy</td>
+	<td>link=Edit Scheme</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=restrictPrivateChannelManageMembers</td>
+	<td>css=#all_users-private_channel-manage_private_channel_members &gt; div.permission-check.</td>
 	<td></td>
 </tr>
 <tr>
-	<td>select</td>
-	<td>id=restrictPrivateChannelManageMembers</td>
-	<td>label=System Admins</td>
+	<td>click</td>
+	<td>css=#all_users-private_channel-manage_private_channel_members &gt; div.permission-check.</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
+	<td>waitForEditable</td>
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
@@ -638,11 +616,6 @@
 <tr>
 	<td>waitForNotEditable</td>
 	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td></td>
-	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -1004,7 +977,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
+	<td>Off-Topic</td>
 </tr>
 <!--Private channel does not appear in channel switcher-->
 <tr>
@@ -1430,29 +1403,38 @@
 	<td>id=systemConsole</td>
 	<td></td>
 </tr>
-<!--Need to update for new permissions (but also preserve Policy for ESR testing?)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=policy</td>
+	<td>id=schemes</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=policy</td>
+	<td>id=schemes</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=restrictPrivateChannelManageMembers</td>
+	<td>link=Edit Scheme</td>
 	<td></td>
 </tr>
 <tr>
-	<td>select</td>
-	<td>id=restrictPrivateChannelManageMembers</td>
-	<td>label=All channel members</td>
+	<td>click</td>
+	<td>link=Edit Scheme</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
+	<td>css=#all_users-private_channel-manage_private_channel_members &gt; div.permission-check.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#all_users-private_channel-manage_private_channel_members &gt; div.permission-check.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
