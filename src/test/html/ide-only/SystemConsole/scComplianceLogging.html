@@ -108,23 +108,23 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[2]/label</td>
+	<td>//div[@id='root']/div/div[3]/div/form/div/div[3]/label</td>
 	<td>Compliance Report Directory:</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[2]/div/div/span</td>
-	<td>Directory to which compliance reports are written. If blank, will be set to ./data/.</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[3]/label</td>
+	<td>//div[@id='root']/div/div[3]/div/form/div/div[4]/label</td>
 	<td>Enable Daily Report:</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[3]/div/div/span</td>
-	<td>When true, Mattermost will generate a daily compliance report.</td>
+	<td>verifyElementPresent</td>
+	<td>id=ComplianceSettings.Enabletrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ComplianceSettings.Enabletrue</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
@@ -598,12 +598,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <tr>
