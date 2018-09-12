@@ -107,12 +107,12 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <!--LOG IN usera-->
@@ -491,12 +491,12 @@
 <!--LOG OUT usera-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -874,12 +874,12 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <!--LOG IN userb-->
@@ -1346,12 +1346,12 @@
 <!--LOG OUT userb-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -1726,12 +1726,12 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <!--LOG IN userb-->
@@ -2168,12 +2168,12 @@
 <!--LOG OUT userb-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -2548,12 +2548,12 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <!--LOG IN usera-->
@@ -2936,15 +2936,213 @@
 	<td>id=post_textbox</td>
 	<td></td>
 </tr>
-<!--LOG OUT userb-->
+<!--Account Settings > Teammate name display set to NICKNAME-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Logout</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=displayButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=displayButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=name_formatEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=name_formatEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=name_formatFormatB</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=name_formatFormatB</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#name_formatDesc &gt; span</td>
+	<td>Show nickname if one exists, otherwise show first and last name</td>
+</tr>
+<!--DM name display in LHS = nickname (or first/last if no nickname exists)-->
+<tr>
+	<td>waitForText</td>
+	<td>link=Firstb Lastb×</td>
+	<td>Firstb Lastb×</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>usere</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>@usere - Firste Laste (nicknamee)</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>nicknamee</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>link=nicknamee×</td>
+	<td>nicknamee×</td>
+</tr>
+<!--Account Settings > Teammate name display set to FIRST/LAST-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=displayButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=displayButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=name_formatEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=name_formatEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=name_formatFormatC</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=name_formatFormatC</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=name_formatDesc</td>
+	<td>Show first and last name</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>link=Firste Laste×</td>
+	<td>Firste Laste×</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>link=Firstb Lastb×</td>
+	<td>Firstb Lastb×</td>
+</tr>
+<!--LOG OUT usera-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 </tbody></table>

@@ -372,7 +372,7 @@
 	<td>8000</td>
 	<td></td>
 </tr>
-<!--*** Manually right-click image, Copy Image Location, close image,-->
+<!--*** Manually right-click the image preview, Copy Image Location, close image,-->
 <!--*** paste in message box, press Enter-->
 <tr>
 	<td>pause</td>
@@ -393,14 +393,14 @@
 	<td>http://selenium.mattermost.com/api/v4/files/*/preview</td>
 	<td></td>
 </tr>
-<!--Copy image, paste in message box, post-->
+<!--Copy image, paste in message box, post:-->
 <tr>
 	<td>open</td>
 	<td>https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png</td>
 	<td></td>
 </tr>
 <!--*** Manually right-click, Copy Image, go Back-->
-<!--*** Paste in message box (CTRL/CMD-V)-->
+<!--*** Paste in message box (CTRL/CMD-V) (don't post it yet)-->
 <tr>
 	<td>pause</td>
 	<td>4000</td>
@@ -1356,6 +1356,11 @@
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
 	<td>/test url test-attachments${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
 </tr>
 <!--*** Read the post and follow test instructions-->
 <!--*** Be sure to upload 5 attachments to one message-->

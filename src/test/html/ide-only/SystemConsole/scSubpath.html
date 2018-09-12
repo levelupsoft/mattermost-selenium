@@ -118,6 +118,11 @@
 </tr>
 <!--Still opens /mattermost (there hasn't been a server restart)-->
 <tr>
+	<td>openAndWait</td>
+	<td>http://test-proxy.test.spinmint.com/mattermost</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>id=channelHeaderTitle</td>
 	<td></td>
@@ -364,6 +369,11 @@
 	<td></td>
 </tr>
 <!--Flag from permalink view-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
 <!--*** Manually hover over permalink message-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -763,6 +773,12 @@
 	<td>@admin! You're the best.</td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<!--*** This highlight verification isn't working anymore; verify visually-->
+<tr>
 	<td>waitForElementPresent</td>
 	<td>css=div#postListContent.post-list__content div#post_${mentionid}.post.post--highlight.other--root.current--user div.post__content div div div#${mentionid}_message.post__body div.post-message.post-message--collapsed div.post-message__text-container div.post-message__text p</td>
 	<td></td>
@@ -850,9 +866,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//body/div[2]/div[2]/div/div/div/h4</td>
-	<td>Copy Permalink</td>
+	<td>waitForElementPresent</td>
+	<td>id=linkModalTextArea</td>
+	<td></td>
 </tr>
 <tr>
 	<td>storeText</td>
@@ -996,6 +1012,27 @@
 	<td>waitForText</td>
 	<td>css=#archive-link-home &gt; a &gt; span</td>
 	<td>Click here to jump to recent messages.</td>
+</tr>
+<!--LOG OUT admin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
 </tr>
 </tbody></table>
 </body>

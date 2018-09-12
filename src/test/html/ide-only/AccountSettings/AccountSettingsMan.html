@@ -5658,20 +5658,11 @@
 	<td>css=h4.channel-intro__title &gt; span</td>
 	<td>Beginning of Join</td>
 </tr>
-<!--These all need updating; it is expected for message to show if -->
-<!--current user adds or removes other user. It is only if others join or leave-->
-<!--themselves that the message shouldn't show. Tested manually 4.9 and 4.10 - -->
-<!--overall join/leave message behavior is about to change, likely in next release-->
+<!--Off: User's own join message still displays-->
 <tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<!--*** 5.0 and on: Need updated tests for combined join/leave messages!-->
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.post-message__text &gt; div</td>
+	<td>You joined the channel.</td>
 </tr>
 <!--Add another user-->
 <tr>
@@ -5685,14 +5676,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.Select-placeholder</td>
-	<td></td>
+	<td>type</td>
+	<td>//div[@class='Select-input']/input</td>
+	<td>admin</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
+	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td></td>
+	<td>@admin</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -5714,17 +5705,16 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
-<!--Verify no join message-->
+<!--Off: Added to the channel by you still displays-->
 <tr>
-	<td>waitForElementNotPresent</td>
-	<td>id=saveSetting</td>
+	<td>waitForElementPresent</td>
+	<td>css=div:contains('added to the channel by you')</td>
 	<td></td>
 </tr>
-<!--4.8 possible bug; waiting for redux update fix to confirm-->
 <tr>
-	<td>waitForElementNotPresent</td>
-	<td>css=span:contains('added to the channel by test10')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.post-message__text &gt; div</td>
+	<td>You joined the channel.<br /><br />@admin added to the channel by you.</td>
 </tr>
 <!--Log in as user who joined and leave channel-->
 <!--LOG OUT test10-->
@@ -5787,6 +5777,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>open</td>
+	<td>/ui-automation</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>link=Join1</td>
 	<td></td>
@@ -5797,21 +5792,61 @@
 	<td></td>
 </tr>
 <!--Verify this user sees join messages-->
-<!--*** These need updating; verify visually for now-->
 <tr>
 	<td>waitForText</td>
-	<td>css=span.post-message__text &gt; div &gt; span</td>
-	<td>test10 joined the channel.</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.mention--highlight</td>
-	<td>admin</td>
+	<td>css=div.post-message__text &gt; div</td>
+	<td>@test10 joined the channel.<br /><br />You were added to the channel by @test10.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
 	<td></td>
+</tr>
+<!--Add another user to the channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='channelIntro']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='channelIntro']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[@class='Select-input']/input</td>
+	<td>test8</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test8</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.post-message__text &gt; div</td>
+	<td>@test10 joined the channel.<br /><br />@test8 added to the channel by you.<br /><br />You were added to the channel by @test10.</td>
 </tr>
 <!--Leave channel-->
 <tr>
@@ -5824,7 +5859,6 @@
 	<td>link=Join</td>
 	<td></td>
 </tr>
-<!--Log back in as test10 to verify no leave message-->
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -5885,6 +5919,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>open</td>
+	<td>/ui-automation</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>link=Join</td>
 	<td></td>
@@ -5894,16 +5933,22 @@
 	<td>link=Join</td>
 	<td></td>
 </tr>
-<!--Verify no leave message-->
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Join</td>
+</tr>
+<!--Off: Other user's leave message does not display-->
+<!--Off: Other user adding another user does not display-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementNotPresent</td>
-	<td>css=span:contains('admin has left the channel.')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.post-message__text &gt; div</td>
+	<td>You joined the channel.<br /><br />@admin added to the channel by you.</td>
 </tr>
 <!--Turn join / leave messages back on-->
 <tr>
@@ -5981,15 +6026,11 @@
 	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
+<!--On: Other user's join/leave messages now display-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span:contains('admin added to the channel by you')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span:contains('admin left the channel.')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.post-message__text &gt; div</td>
+	<td>You and @admin joined the channel.<br /><br />@test8 added to the channel by @admin.<br /><br />@admin added to the channel by you.<br /><br />@admin left the channel.</td>
 </tr>
 <!--Advanced - Markdown Preview (the only one available on selenium server)-->
 <tr>
