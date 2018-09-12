@@ -14,6 +14,46 @@
 <!--For now, just tests UI-->
 <!--Won't be meaningful to test functionality on selenium server-->
 <!--But could just test UI like we do other sections (not sure CI will work well either)-->
+<!--LOG IN admin-->
+<tr>
+	<td>openAndWait</td>
+	<td>/login</td>
+	<td></td>
+</tr>
+<!--DisableAnimations-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>admin@test.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<tr>
+	<td>waitForText</td>
+	<td>css=strong.heading</td>
+	<td>Town Square</td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=span.sidebar-header-dropdown__icon</td>
@@ -420,12 +460,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 </tbody></table>

@@ -745,12 +745,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Leave Team</td>
+	<td>xpath=(//button[@id='leaveTeam'])[2]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Leave Team</td>
+	<td>xpath=(//button[@id='leaveTeam'])[2]</td>
 	<td></td>
 </tr>
 <tr>
@@ -785,12 +785,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Leave Team</td>
+	<td>xpath=(//button[@id='leaveTeam'])[2]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Leave Team</td>
+	<td>xpath=(//button[@id='leaveTeam'])[2]</td>
 	<td></td>
 </tr>
 <tr>
@@ -1155,12 +1155,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Leave Team</td>
+	<td>xpath=(//button[@id='leaveTeam'])[2]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Leave Team</td>
+	<td>xpath=(//button[@id='leaveTeam'])[2]</td>
 	<td></td>
 </tr>
 <tr>
@@ -1847,7 +1847,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.Select-control</td>
-	<td>×admin <br /><br />Press backspace to remove undefined</td>
+	<td>×admin <br /><br /><br />Press backspace to remove undefined</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2532,6 +2532,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>xpath=(//button[@type='button'])[8]</td>
+	<td>Team Admin</td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>css=div.more-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
 	<td></td>
@@ -2890,15 +2895,34 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
+<!--*** In 5.3, UI Automation team was set to open, so this part didn't work-->
+<!--*** Fixed it manually to continue this test, but we need to make sure-->
+<!--*** the test isn't inadvertently setting that team to be open somewhere-->
 <tr>
 	<td>waitForText</td>
 	<td>link=Town Square</td>
 	<td>Town Square</td>
 </tr>
+<!--Try to open URL for closed team you're not on-->
 <tr>
 	<td>open</td>
 	<td>http://selenium.mattermost.com/ui-automation/channels/town-square</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p &gt; span</td>
+	<td>The team you're requesting is private or does not exist. Please contact your Administrator for an invitation.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=a &gt; span</td>
+	<td>Back to Mattermost</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a &gt; span</td>
+	<td>Back to Mattermost</td>
 </tr>
 <tr>
 	<td>waitForText</td>

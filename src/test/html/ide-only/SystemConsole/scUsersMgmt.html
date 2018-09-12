@@ -184,12 +184,12 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=searchUsers</td>
-	<td>cor</td>
+	<td>corey</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>1 user of 12 total</td>
+	<td>waitForTextPresent</td>
+	<td>1 user of * total</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -895,9 +895,9 @@
 	<td>@corey</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=p.primary-message &gt; span</td>
-	<td>No items found</td>
+	<td>waitForNotText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@corey</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

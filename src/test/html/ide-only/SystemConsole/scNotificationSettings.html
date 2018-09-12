@@ -288,6 +288,16 @@
 <!--Turn banner off, leave email notifications turned off-->
 <tr>
 	<td>waitForElementPresent</td>
+	<td>id=notifications_email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=notifications_email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
 	<td>id=enablePreviewModeBannerfalse</td>
 	<td></td>
 </tr>
@@ -1314,7 +1324,17 @@
 	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
-<!--Test leaves off here-->
+<!--LOG OUT admin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>

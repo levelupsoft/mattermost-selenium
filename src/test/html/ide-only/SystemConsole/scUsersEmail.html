@@ -192,7 +192,7 @@
 	<td>css=div.more-modal__name</td>
 	<td>@test2*</td>
 </tr>
-<!--Open Email Reset modal-->
+<!--Open Email Update modal-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#memberDropdown &gt; span &gt; span</td>
@@ -216,7 +216,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h4.modal-title &gt; span</td>
-	<td>Reset Email</td>
+	<td>Update Email</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -277,7 +277,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h4.modal-title &gt; span</td>
-	<td>Reset Email</td>
+	<td>Update Email</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -396,17 +396,22 @@
 <!--LOG OUT test2-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <!--Verify old email address does not work to log in test2-->
@@ -566,17 +571,22 @@
 <!--LOG OUT test2-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -676,7 +686,7 @@
 	<td>css=div.more-modal__name</td>
 	<td>@test2*</td>
 </tr>
-<!--Open Email Reset modal-->
+<!--Open Email Update modal-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#memberDropdown &gt; span &gt; span</td>
@@ -700,7 +710,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h4.modal-title &gt; span</td>
-	<td>Reset Email</td>
+	<td>Update Email</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -730,20 +740,14 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
-	<td></td>
-</tr>
-
 </tbody></table>
 </body>
 </html>
