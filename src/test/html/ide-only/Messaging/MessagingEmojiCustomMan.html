@@ -159,6 +159,83 @@
 	<td>css=td &gt; span</td>
 	<td>No Custom Emoji Found</td>
 </tr>
+<!--Try to use too-large file (30k-too-big-for-custom-emoji.gif)-->
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Add Custom Emoji</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Add Custom Emoji</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.backstage-form__footer &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=a.btn.btn-sm &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>too-large</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<!--*** Manually select file 30k-too-big-for-custom-emoji.gif from Resources-->
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.add-emoji__filename</td>
+	<td>30k-too-big-for-custom-emoji.gif</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.backstage-form__footer &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.backstage-form__footer &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.pull-left.has-error &gt; label.control-label</td>
+	<td>Unable to create emoji. Image must be smaller than 1028 by 1028.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=a.btn.btn-sm &gt; span</td>
+	<td>Cancel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.btn.btn-sm &gt; span</td>
+	<td></td>
+</tr>
 <!--Create new custom emoji-->
 <tr>
 	<td>waitForText</td>
