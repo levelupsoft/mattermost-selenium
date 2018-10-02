@@ -12,6 +12,7 @@
 <tr><td rowspan="1" colspan="3">ST</td></tr>
 </thead><tbody>
 <!--*** Make sure server is open, email verification is off, open login page-->
+<!--*** This is true on Se server if no changes have been made-->
 <!--Account creation from signin page, using email / password-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -126,7 +127,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span &gt; h1</td>
+	<td>css=h1 &gt; span</td>
 	<td>Mattermost</td>
 </tr>
 <!--Click through tutorial, then opt out of tooltips-->
@@ -403,7 +404,6 @@
 	<td></td>
 </tr>
 <!--Cancel out of a delete (use postid to find [...] > Delete)-->
-<!--*** No longer finding [...] in RHS search results (still open)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=SEARCH_dropdown_${postid}</td>
@@ -419,12 +419,12 @@
 	<td>id=SEARCH_dropdown_${postid}</td>
 	<td></td>
 </tr>
-<!--*** Manually click the [...] menu on Greetings post in RHS search results-->
 <tr>
 	<td>pause</td>
-	<td>4000</td>
+	<td>2000</td>
 	<td></td>
 </tr>
+<!--*** If needed, manually click the [...] menu on Greetings post in RHS search results-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//div[@id='SEARCH_dropdown_${postid}']/div/ul/li[3]/button</td>
@@ -462,6 +462,11 @@
 	<td>This post has 1 comment on it.</td>
 </tr>
 <!--Reply from reply arrow with comment number-->
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=span.comment-count</td>
@@ -610,13 +615,6 @@
 	<td>waitForText</td>
 	<td>xpath=//div[@id='${replyid}_message']</td>
 	<td>Reply</td>
-</tr>
-<!--*** No longer finding [...] in RHS -->
-<!--*** Manually click the [...] menu on Reply post in RHS-->
-<tr>
-	<td>pause</td>
-	<td>4000</td>
-	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -845,8 +843,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4 &gt; span</td>
-	<td>exact:No results found. Try again?</td>
+	<td>css=div.sidebar--right__subheader &gt; h4 &gt; span</td>
+	<td>No results found. Try again?</td>
 </tr>
 <!--Edit a search result in RHS-->
 <tr>
@@ -1477,7 +1475,8 @@
 	<td>Message Details</td>
 </tr>
 <!--Pin in RHS, pinned badge in RHS and center-->
-<!--*** No longer finding [...] in RHS; click [...] and Pin to channel manually-->
+<!--*** No longer finding [...] in RHS-->
+<!--*** In RHS on "This is an important..." click [...] and Pin to channel manually-->
 <tr>
 	<td>pause</td>
 	<td>5000</td>
@@ -1592,7 +1591,7 @@
 	<td>8000</td>
 	<td></td>
 </tr>
-<!--*** Manually click [...] and Pin to channel on the post in center you want to pin-->
+<!--*** Manually click [...] and Pin to channel on last center post-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.post__header--info &gt; div.col &gt; span.post__pinned-badge</td>
@@ -1774,12 +1773,6 @@
 	<td>pinned2id</td>
 </tr>
 <!--Un-pin in RHS-->
-<!--*** Manually click [...] in RHS-->
-<tr>
-	<td>pause</td>
-	<td>4000</td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//div[@id='SEARCH_dropdown_${pinned2id}']/div/ul/li[2]/button</td>
@@ -2644,8 +2637,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='post-list']/div[2]/div/div/div/p/span[3]/span</td>
-	<td>This private channel's purpose is: ST2's purpose.</td>
+	<td>//div[@id='channelIntro']/p/span[3]/span</td>
+	<td>This private channel's purpose is: ST2's purpose</td>
 </tr>
 <!--Add user to private channel - member icon > manage > add-->
 <tr>
@@ -2977,14 +2970,19 @@
 </tr>
 <!--Post URL in Off-Topic on the team removed user is still part of-->
 <tr>
-	<td>waitForText</td>
-	<td>css=span.sidebar-item__name</td>
-	<td>Off-Topic</td>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Off-Topic</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-item__name</td>
-	<td>Off-Topic</td>
+	<td>link=Off-Topic</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3879,8 +3877,6 @@
 	<td>css=strong.heading</td>
 	<td>Town Square</td>
 </tr>
-<!--This also seems to be leftover from some earlier prep that's deleted-->
-<!--Ah, it needs to switch to STTeam-->
 <!--Verify can't join closed team via URL after being removed-->
 <tr>
 	<td>waitForText</td>
@@ -4793,6 +4789,16 @@
 	<td>STTeam</td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=${testchannel}</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>link=${testchannel}</td>
 	<td></td>
@@ -4949,6 +4955,7 @@
 	<td>link=Town Square</td>
 	<td>Town Square</td>
 </tr>
+<!--LM: I think this part isn't messed up anymore, but could use better notes-->
 <!--This part got mixed up as well  :/ Changed to STTeam but not sure-->
 <!--Oh, maybe this is supposed to be testst verifying st2 removed?-->
 <tr>
@@ -5232,8 +5239,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4 &gt; span</td>
-	<td>exact:No results found. Try again?</td>
+	<td>css=div.sidebar--right__subheader &gt; h4 &gt; span</td>
+	<td>No results found. Try again?</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
