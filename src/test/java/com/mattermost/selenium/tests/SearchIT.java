@@ -738,7 +738,7 @@ public class SearchIT extends DriverBase {
         driver.findElement(By.cssSelector("input.form-control.focused")).sendKeys("test2");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("@test2".equals(driver.findElement(By.cssSelector("div.mentions__name.suggestion--selected")).getText())) break; } catch (Exception e) {}
+        	try { if (driver.findElement(By.cssSelector("div.mentions__name.suggestion--selected")).getText().matches("^@test2[\\s\\S]*$")) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -916,7 +916,7 @@ public class SearchIT extends DriverBase {
         driver.findElement(By.cssSelector("input.form-control.focused")).sendKeys("Town");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Town Square".equals(driver.findElement(By.cssSelector("div.mentions__name.suggestion--selected")).getText())) break; } catch (Exception e) {}
+        	try { if (driver.findElement(By.cssSelector("div.mentions__name.suggestion--selected")).getText().matches("^Town Square[\\s\\S]*$")) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -1118,7 +1118,7 @@ public class SearchIT extends DriverBase {
         driver.findElement(By.cssSelector("input.form-control.focused")).sendKeys("Town");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Town Square".equals(driver.findElement(By.cssSelector("div.mentions__name.suggestion--selected")).getText())) break; } catch (Exception e) {}
+        	try { if (driver.findElement(By.cssSelector("div.mentions__name.suggestion--selected")).getText().matches("^Town Square[\\s\\S]*$")) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
