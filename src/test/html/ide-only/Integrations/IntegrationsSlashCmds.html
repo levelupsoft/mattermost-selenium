@@ -1816,6 +1816,7 @@
 	<td>id=enableOnlyAdminIntegrationsfalse</td>
 	<td></td>
 </tr>
+<!--^^This setting no lonmger exists it was replaced w\ Advanced Permissions - for now I disabeled it manually^^^-->
 <tr>
 	<td>pause</td>
 	<td>3000</td>
@@ -2397,22 +2398,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enablePostUsernameOverridetrue</td>
+	<td>id=ServiceSettings.EnablePostUsernameOverridetrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enablePostUsernameOverridetrue</td>
+	<td>id=ServiceSettings.EnablePostUsernameOverridetrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enablePostIconOverridetrue</td>
+	<td>id=ServiceSettings.EnablePostIconOverridetrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enablePostIconOverridetrue</td>
+	<td>id=ServiceSettings.EnablePostIconOverridetrue</td>
 	<td></td>
 </tr>
 <tr>
@@ -2427,12 +2428,12 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enablePostUsernameOverridetrue</td>
+	<td>id=ServiceSettings.EnablePostUsernameOverridetrue</td>
 	<td>on</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enablePostIconOverridetrue</td>
+	<td>id=ServiceSettings.EnablePostIconOverridetrue</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -2768,6 +2769,12 @@
 	<td>id=post_textbox</td>
 	<td>/</td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Place focus into main input box-->
 <tr>
 	<td>waitForText</td>
 	<td>//form[@id='create_post']/div/div/div/div/div/div[2]/div/div[2]/div/string</td>
