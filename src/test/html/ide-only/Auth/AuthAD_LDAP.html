@@ -1,13 +1,7 @@
 <!--*** Ensure LDAP is set up on the server you're running this on-->
-<!--*** And doesn't already have test.one as a user-->
-<!--*** Can use test instance setup for Jumpcloud (from private repo)-->
-<!--*** Ensure logged in as system admin, viewing System Console-->
-<!--Add tests here for LDAP page settings-->
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
+<!--*** And doesn't already have test.one as a user (such as rctesting)-->
+<!--*** Or, can use test instance setup for Jumpcloud (from private repo)-->
+<!--*** MANUALLY log in as a system admin-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -18,35 +12,664 @@
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
-<!--Get team invite link-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=getTeamInviteLink</td>
+	<td>id=systemConsole</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=getTeamInviteLink</td>
+	<td>id=systemConsole</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=ldap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ldap</td>
+	<td></td>
+</tr>
+<!--Disable LDAP login-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=LdapSettings.Enablefalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=LdapSettings.Enablefalse</td>
+	<td></td>
+</tr>
+<!--Store login placeholder text to put it back later-->
 <tr>
 	<td>storeText</td>
-	<td>id=linkModalTextArea</td>
-	<td>teaminvite</td>
+	<td>id=LdapSettings.LoginFieldName</td>
+	<td>ldapfield</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.LoginFieldName</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[2]/div/div/div[2]/p</td>
-	<td>Send teammates the link below for them to sign-up to this team site. The Team Invite Link can be shared with multiple teammates as it does not change unless it's regenerated in Team Settings by a Team Admin.</td>
+	<td>id=LdapSettings.LoginFieldName</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=linkModalCloseButton</td>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=linkModalCloseButton</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--LDAP connection test can still be successful with login disabled-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.alert.alert-success &gt; span</td>
+	<td>AD/LDAP Test Successful</td>
+</tr>
+<!--LOG OUT-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<!--LDAP placeholder text does not display-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotAttribute</td>
+	<td>css=div.form-group input#loginId.form-control@placeholder</td>
+	<td>*LDAP*</td>
+</tr>
+<!--*** Manually log back in as a system admin-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=ldap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ldap</td>
+	<td></td>
+</tr>
+<!--Re-enable LDAP login-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=LdapSettings.Enabletrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=LdapSettings.Enabletrue</td>
+	<td></td>
+</tr>
+<!--Change placeholder text-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=LdapSettings.LoginFieldName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.LoginFieldName</td>
+	<td>Test LDAP Text</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--LOG OUT-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<!--Custom placeholder text displays-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForAttribute</td>
+	<td>css=div.form-group input#loginId.form-control@placeholder</td>
+	<td>*Test LDAP Text*</td>
+</tr>
+<!--*** Manually log back in as a system admin-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=ldap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ldap</td>
+	<td></td>
+</tr>
+<!--Put original custom placeholder text back in-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=LdapSettings.LoginFieldName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.LoginFieldName</td>
+	<td>${ldapfield}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=LdapSettings.LoginFieldName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--Invalid LDAP server error-->
+<tr>
+	<td>storeValue</td>
+	<td>id=LdapSettings.LdapServer</td>
+	<td>ldapserver</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.LdapServer</td>
+	<td>invalid.co</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>AD/LDAP Test</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.alert.alert-warning &gt; span</td>
+	<td>AD/LDAP Test Failure: Unable to connect to AD/LDAP server - undefined</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.LdapServer</td>
+	<td>${ldapserver}</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>AD/LDAP Test</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.alert.alert-success &gt; span</td>
+	<td>AD/LDAP Test Successful</td>
+</tr>
+<!--Error on invalid user filter (first store the existing one to set it back)-->
+<tr>
+	<td>storeText</td>
+	<td>id=LdapSettings.UserFilter</td>
+	<td>userfilter</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.UserFilter</td>
+	<td>(&amp;(invalid-objectCategory=Person)(!(UserAccountControl:)</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
+	<td>Invalid AD/LDAP Filter</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.UserFilter</td>
+	<td>${userfilter}</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
+	<td>Invalid AD/LDAP Filter</td>
+</tr>
+<!--Connection Security - Change setting, test unsuccessful-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=LdapSettings.ConnectionSecurity</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=LdapSettings.ConnectionSecurity</td>
+	<td>TLS</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>AD/LDAP Test</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.alert.alert-warning &gt; span</td>
+	<td>AD/LDAP Test Failure: Unable to connect to AD/LDAP server - undefined</td>
+</tr>
+<!--Connection Security - Change setting back, test successful-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=LdapSettings.ConnectionSecurity</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=LdapSettings.ConnectionSecurity</td>
+	<td>None</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>AD/LDAP Test</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.alert.alert-success &gt; span</td>
+	<td>AD/LDAP Test Successful</td>
+</tr>
+<!--Username field required-->
+<tr>
+	<td>storeValue</td>
+	<td>id=LdapSettings.UsernameAttribute</td>
+	<td>ldapusername</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.UsernameAttribute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
+	<td>AD/LDAP field &quot;Username Attribute&quot; is required.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.UsernameAttribute</td>
+	<td>${ldapusername}</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
+	<td>AD/LDAP field &quot;Username Attribute&quot; is required.</td>
+</tr>
+<!--Login ID Attribute field required-->
+<tr>
+	<td>storeValue</td>
+	<td>id=LdapSettings.LoginIdAttribute</td>
+	<td>idattribute</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.LoginIdAttribute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
+	<td>AD/LDAP field &quot;Login ID Attribute&quot; is required.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.LoginIdAttribute</td>
+	<td>${idattribute}</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
+	<td>AD/LDAP field &quot;Login ID Attribute&quot; is required.</td>
+</tr>
+<!--Sync interval value can be changed and saved-->
+<tr>
+	<td>storeValue</td>
+	<td>id=LdapSettings.SyncIntervalMinutes</td>
+	<td>syncinterval</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.SyncIntervalMinutes</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=LdapSettings.SyncIntervalMinutes</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.SyncIntervalMinutes</td>
+	<td>${syncinterval}</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--Incorrect Login ID Attribute - New account creation using LDAP fails-->
+<tr>
+	<td>storeValue</td>
+	<td>id=LdapSettings.LoginIdAttribute</td>
+	<td>loginidatt</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.LoginIdAttribute</td>
+	<td>domain\username</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <!--LOG OUT admin-->
@@ -55,60 +678,156 @@
 	<td>3000</td>
 	<td></td>
 </tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
 	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<!--Attempt to create new account using LDAP (should fail)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>test.two</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>Password1</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=label.control-label</td>
+	<td>We couldn't find an account matching your login credentials.</td>
 </tr>
 <tr>
 	<td>pause</td>
 	<td>3000</td>
 	<td></td>
 </tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<!--Open team invite, create new account using LDAP-->
+<!--*** Manually log back in as a system admin-->
 <tr>
-	<td>open</td>
-	<td>${teaminvite}</td>
+	<td>pause</td>
+	<td>6000</td>
 	<td></td>
-</tr>
-<!--*** This no longer works this way. It loops back to the login page. Should work to just-->
-<!--*** Enter credentials there to create new account-->
-<tr>
-	<td>waitForText</td>
-	<td>css=h4.color--light &gt; span</td>
-	<td>All team communication in one place, searchable and accessible anywhere</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.color--light &gt; a &gt; span</td>
-	<td>Click here to sign in.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=AD/LDAP Credentials</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=AD/LDAP Credentials</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=ldap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ldap</td>
+	<td></td>
+</tr>
+<!--Set Login ID Attribute back to original value-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=LdapSettings.LoginIdAttribute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.LoginIdAttribute</td>
+	<td>${loginidatt}</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--LOG OUT admin-->
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<!--Create new account using LDAP-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=loginId</td>
@@ -144,7 +863,12 @@
 	<td>4000</td>
 	<td></td>
 </tr>
-<!--*** May have to 1) choose a team and 2) skip tutorial, depending on the server-->
+<!--*** Manually click through 1) TOS 2) team select and 3) tutorial as needed-->
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
@@ -483,7 +1207,7 @@
 	<td>css=label.control-label</td>
 	<td>Login failed because of invalid password</td>
 </tr>
-<!--Switch email to LDAP login - wrong password-->
+<!--Switch email to LDAP login successfully-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=emailPassword</td>
@@ -543,4 +1267,602 @@
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
 	<td>Town Square</td>
+</tr>
+<!--First/last names not editable for LDAP account-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>id=nameDesc</td>
+	<td>firstlastldap</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=nameEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=nameEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.setting-list__hint &gt; span &gt; span</td>
+	<td>This field is handled through your login provider. If you want to change it, you need to do so through your login provider.</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=cancelSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=cancelSetting</td>
+	<td></td>
+</tr>
+<!--Nickname not editable for LDAP account (w/attribute set in LDAP)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=nicknameEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=nicknameEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.setting-list__hint &gt; span &gt; span</td>
+	<td>This field is handled through your login provider. If you want to change it, you need to do so through your login provider.</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=cancelSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=cancelSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<!--Admin removes first/last names from LDAP settings-->
+<!--LOG OUT LDAP user-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<!--*** MANUALLY log in as a system admin-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=ldap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ldap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>id=LdapSettings.FirstNameAttribute</td>
+	<td>givennameldap</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.FirstNameAttribute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>id=LdapSettings.LastNameAttribute</td>
+	<td>lastnameldap</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.LastNameAttribute</td>
+	<td></td>
+</tr>
+<!--Admin removes nickname attribute as well-->
+<tr>
+	<td>storeValue</td>
+	<td>id=LdapSettings.NicknameAttribute</td>
+	<td>nicknameldap</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.NicknameAttribute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--LOG OUT-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<!--Log LDAP user back in-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>test.two</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>Password1</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<!--First and last name editable for LDAP user now-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=nameDesc</td>
+	<td>${firstlastldap}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=nameEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=nameEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=firstName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=firstName</td>
+	<td>Edited</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=lastName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=lastName</td>
+	<td>EditedTwo</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=nameDesc</td>
+	<td>Edited EditedTwo</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>id=nameDesc</td>
+	<td>${firstlastldap}</td>
+</tr>
+<!--Nickname is editable now-->
+<tr>
+	<td>storeText</td>
+	<td>css=#nicknameDesc &gt; span</td>
+	<td>test2nickname</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=nicknameEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=nicknameEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=nickname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=nickname</td>
+	<td>Edited Nick</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=nicknameDesc</td>
+	<td>Edited Nick</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>id=nicknameDesc</td>
+	<td>${test2nickname}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<!--Admin resets first/last name attributes and syncs LDAP-->
+<!--LOG OUT LDAP user-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<!--*** MANUALLY log in as a system admin-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=ldap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ldap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=LdapSettings.FirstNameAttribute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.FirstNameAttribute</td>
+	<td>${givennameldap}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.LastNameAttribute</td>
+	<td>${lastnameldap}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=LdapSettings.NicknameAttribute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.NicknameAttribute</td>
+	<td>${nicknameldap}</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--Sync LDAP-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.job-table__create-button &gt; div &gt; button.btn.btn-default</td>
+	<td>AD/LDAP Synchronize Now</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.job-table__create-button &gt; div &gt; button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>Pending</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>Pending</td>
+</tr>
+<!--LOG OUT-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<!--Log LDAP user back in-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>test.two</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>Password1</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<!--First / last name and nickname have reset to LDAP values-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=nameDesc</td>
+	<td>${firstlastldap}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#nicknameDesc &gt; span</td>
+	<td>${test2nickname}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--LOG OUT-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
 </tr>
