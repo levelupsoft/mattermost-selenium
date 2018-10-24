@@ -99,11 +99,12 @@
 	<td>id=post_textbox</td>
 	<td></td>
 </tr>
+<!--*** REMOVE this post deletion from the test? Skipped ahead to Post a message-->
 <!--Delete system message (gets it out of the way for next tests)-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span:contains('joined the channel')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=p.markdown__paragraph-inline &gt; strong</td>
+	<td>joined the channel</td>
 </tr>
 <tr>
 	<td></td>
@@ -116,11 +117,6 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=a.search-item__jump &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td></td>
-	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -163,6 +159,11 @@
 	<td>css=span:contains('has joined the channel')</td>
 	<td></td>
 </tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <!--Post a message-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -186,6 +187,11 @@
 </tr>
 <!--Will need to investigate why can no longer find [...] menu. Works manually-->
 <!--Reply using [...] menu - reply posts in RHS and center-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>css=button.dropdown-toggle.post__dropdown.color--link.style--none</td>
@@ -891,14 +897,19 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span &gt; b</td>
-	<td>added to the channel</td>
+	<td>waitForTextPresent</td>
+	<td>@test8 and @test7 added to the channel by you.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.post-message__text &gt; div &gt; span &gt; span</td>
-	<td>@test8 and @test7 added to the channel by you.</td>
+	<td>link=@test8</td>
+	<td>@test8</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>link=@test7</td>
+	<td>@test7</td>
 </tr>
 <!--Ephemeral message with add-users link disappears-->
 <tr>
@@ -976,7 +987,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.pull-left.mention--align &gt; span</td>
+	<td>css=span.mention--align</td>
 	<td>@admin</td>
 </tr>
 <tr>
@@ -1445,13 +1456,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.pull-left.mention--align &gt; span</td>
+	<td>css=span.mention--align</td>
 	<td>@test2</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.pull-left.mention--align &gt; span</td>
-	<td>@test2</td>
+	<td>css=span.mention--align</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
@@ -1486,8 +1497,8 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.pull-left.mention--align &gt; span</td>
-	<td>@test2</td>
+	<td>css=span.mention--align</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
@@ -1498,7 +1509,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -1558,7 +1569,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.pull-left.mention--align &gt; span</td>
+	<td>css=span.mention--align</td>
 	<td>@admin</td>
 </tr>
 <tr>
@@ -2431,24 +2442,15 @@
 </tr>
 <!--This doesn't work anymore either, to try to get to [...] options-->
 <!--Point is to open permalink modal-->
+<!--*** Manually click ... and Permalink on "Permalinkpost" for now-->
 <tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>storeAttribute</td>
-	<td>//button[@data-message='Permalinkpost']@data-postid</td>
-	<td>permapostid</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.dropdown div#center_dropdown${permapostid} &gt; button.dropdown-toggle.post__dropdown.color--link.style--none</td>
+	<td>pause</td>
+	<td>6000</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='center_dropdown${permapostid}']/div/ul/li[2]/button</td>
+	<td>waitForElementPresent</td>
+	<td>id=linkModalTextArea</td>
 	<td></td>
 </tr>
 <tr>
@@ -2524,26 +2526,17 @@
 	<td>link=Test-${datetime}</td>
 	<td></td>
 </tr>
-<!--Delete permalink post-->
+<!--Delete permalink post from permalink view-->
+<!--*** Manually click ... and Delete on "Permalinkpost" for now-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.dropdown div#center_dropdown${permapostid} &gt; button.dropdown-toggle.post__dropdown.color--link.style--none</td>
+	<td>pause</td>
+	<td>6000</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.dropdown div#center_dropdown${permapostid} &gt; button.dropdown-toggle.post__dropdown.color--link.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='center_dropdown${permapostid}']/div/ul/li[4]/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='center_dropdown${permapostid}']/div/ul/li[4]/button</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.modal-body &gt; span</td>
+	<td>Are you sure you want to delete this Post?</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2598,9 +2591,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
 </tr>
 <!--Can't rejoin private channel from permalink-->
 <tr>
@@ -2624,10 +2617,12 @@
 	<td>id=newPrivateChannelName</td>
 	<td>Private-${datetime}</td>
 </tr>
+<!--Can't get the following to work anymore. Verify URL shows as /private-${datetime}-->
+<!--Ah, it may have just lost track of the variable's value. If this works in future, set back to full text verify-->
 <tr>
-	<td>waitForText</td>
-	<td>css=p.input__help.dark</td>
-	<td>exact:URL: /private-${datetime} (Edit)</td>
+	<td>waitForTextPresent</td>
+	<td>URL: /private-${datetime} (</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2665,10 +2660,15 @@
 	<td>css=p:contains('private channel permalink')</td>
 	<td></td>
 </tr>
-<!--Also failing to find [...] - open Permalink modal manually-->
+<!--Also failing to find [...] - open Permalink modal manually on "private channel permalink"-->
 <tr>
+	<td>pause</td>
+	<td>6000</td>
 	<td></td>
-	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=linkModalTextArea</td>
 	<td></td>
 </tr>
 <tr>
@@ -2699,7 +2699,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>//div[2]/div/div/div[2]/span</td>
-	<td>exact:Are you sure you wish to leave the private channel Private-${datetime}? You must be re-invited in order to re-join this channel in the future.</td>
+	<td>Are you sure you wish to leave the private channel Private-*</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2783,30 +2783,15 @@
 	<td>id=post_textbox</td>
 	<td></td>
 </tr>
-<!--*** Fails to find [...] etc.; open permalink modal manually-->
+<!--*** Fails to find [...] etc.; open permalink modal manually on "Log out and permalink"-->
 <tr>
-	<td></td>
-	<td></td>
+	<td>pause</td>
+	<td>6000</td>
 	<td></td>
 </tr>
 <tr>
-	<td>storeAttribute</td>
-	<td>//button[@data-message='Log out and permalink']@data-postid</td>
-	<td>logoutpostid</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.dropdown div#center_dropdown${logoutpostid} &gt; button.dropdown-toggle.post__dropdown.color--link.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='center_dropdown${logoutpostid}']/div/ul/li[2]/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td></td>
-	<td></td>
+	<td>waitForElementPresent</td>
+	<td>id=linkModalTextArea</td>
 	<td></td>
 </tr>
 <tr>
@@ -2848,6 +2833,7 @@
 	<td>name=loginId</td>
 	<td></td>
 </tr>
+<!--*** v5.4: START TEST HERE AGAIN ON RC3 AFTER CHANNEL REDIRECT IS FIXED-->
 <tr>
 	<td>open</td>
 	<td>${logoutpermalink}</td>

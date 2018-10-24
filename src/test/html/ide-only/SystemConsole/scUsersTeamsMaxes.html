@@ -264,17 +264,17 @@
 <!--Set max users to number of users on team (stored at beginning of test)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=maxUsersPerTeam</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=maxUsersPerTeam</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=maxUsersPerTeam</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td>${usersCurrentTeam}</td>
 </tr>
 <tr>
@@ -284,7 +284,7 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=maxUsersPerTeam</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td>${usersCurrentTeam}</td>
 </tr>
 <!--LOG OUT admin-->
@@ -690,12 +690,12 @@
 <!--Set max users per team to current number, open team for others to join-->
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-container.unread &gt; a &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>css=div.team-container.active &gt; a &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
 	<td>Us</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.team-container.unread &gt; a &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>css=div.team-container.active &gt; a &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
 	<td>Us</td>
 </tr>
 <tr>
@@ -797,17 +797,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=maxUsersPerTeam</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=maxUsersPerTeam</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=maxUsersPerTeam</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td>${usersCurrentTeam2}</td>
 </tr>
 <tr>
@@ -822,7 +822,7 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=maxUsersPerTeam</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td>${usersCurrentTeam2}</td>
 </tr>
 <!--LOG OUT admin-->
@@ -943,6 +943,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>css=span.fa.fa-chevron-left</td>
 	<td></td>
@@ -1050,22 +1055,22 @@
 <!--Set max channels per team to 5-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=maxChannelsPerTeam</td>
+	<td>id=TeamSettings.MaxChannelsPerTeam</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=maxChannelsPerTeam</td>
+	<td>id=TeamSettings.MaxChannelsPerTeam</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=maxChannelsPerTeam</td>
+	<td>id=TeamSettings.MaxChannelsPerTeam</td>
 	<td>5</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=maxChannelsPerTeam</td>
+	<td>id=TeamSettings.MaxChannelsPerTeam</td>
 	<td>5</td>
 </tr>
 <tr>
@@ -1080,7 +1085,7 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=maxChannelsPerTeam</td>
+	<td>id=TeamSettings.MaxChannelsPerTeam</td>
 	<td>5</td>
 </tr>
 <!--Verify can create up to 5 channels on UsersTeamsMaxes team-->
@@ -1188,7 +1193,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=p.input__help.error</td>
-	<td>Cannot create more than 5 channels for current team</td>
+	<td>Unable to create more than 5 channels for current team</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -1219,7 +1224,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.alert.alert-danger &gt; span</td>
-	<td>This will archive the channel from the team and make its contents inaccessible for all users. <br /><br />Are you sure you wish to archive the Fifth channel?</td>
+	<td>This will archive the channel from the team and make its contents inaccessible for all users.<br /><br />Are you sure you wish to archive the Fifth channel?</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -1249,7 +1254,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=p.input__help.error</td>
-	<td>Cannot create more than 5 channels for current team</td>
+	<td>Unable to create more than 5 channels for current team</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -1295,17 +1300,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=maxNotificationsPerChannel</td>
+	<td>id=TeamSettings.MaxNotificationsPerChannel</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=maxNotificationsPerChannel</td>
+	<td>id=TeamSettings.MaxNotificationsPerChannel</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=maxNotificationsPerChannel</td>
+	<td>id=TeamSettings.MaxNotificationsPerChannel</td>
 	<td>3</td>
 </tr>
 <tr>
@@ -1321,7 +1326,7 @@
 <!--@-channel posts and triggers mention for other user-->
 <tr>
 	<td>waitForValue</td>
-	<td>id=enableConfirmNotificationsToChanneltrue</td>
+	<td>id=TeamSettings.EnableConfirmNotificationsToChanneltrue</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -1569,6 +1574,16 @@
 </tr>
 <tr>
 	<td>waitForText</td>
+	<td>//div[@id='sidebarChannelContainer']/ul/li[5]/a/span[2]/span</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='sidebarChannelContainer']/ul/li[5]/a/span[2]/span</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>waitForText</td>
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Town Square</td>
 </tr>
@@ -1605,18 +1620,18 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=maxUsersPerTeam</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td>3</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=maxUsersPerTeam</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td></td>
 </tr>
 <!--Invalid number resets to default on saving-->
 <tr>
 	<td>type</td>
-	<td>id=maxUsersPerTeam</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td>ten</td>
 </tr>
 <tr>
@@ -1631,7 +1646,7 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=maxUsersPerTeam</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td>50</td>
 </tr>
 <tr>
@@ -2072,12 +2087,12 @@
 <!--Disable warning for at-channel, at-all-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableConfirmNotificationsToChannelfalse</td>
+	<td>id=TeamSettings.EnableConfirmNotificationsToChannelfalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableConfirmNotificationsToChannelfalse</td>
+	<td>id=TeamSettings.EnableConfirmNotificationsToChannelfalse</td>
 	<td></td>
 </tr>
 <tr>
@@ -2212,22 +2227,23 @@
 <!--Max users "ten" (alpha characters) resets to default-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=maxUsersPerTeam</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=maxUsersPerTeam</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td></td>
 </tr>
+<!--It's failing to type "ten" but I can type it manually-->
 <tr>
 	<td>type</td>
-	<td>id=maxUsersPerTeam</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td>ten</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=maxUsersPerTeam</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td>ten</td>
 </tr>
 <tr>
@@ -2241,29 +2257,40 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForValue</td>
-	<td>id=maxUsersPerTeam</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td>50</td>
 </tr>
 <!--Max channels "ten" (alpha characters) resets to default-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=maxChannelsPerTeam</td>
+	<td>id=TeamSettings.MaxChannelsPerTeam</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=maxChannelsPerTeam</td>
+	<td>id=TeamSettings.MaxChannelsPerTeam</td>
 	<td></td>
 </tr>
+<!--It's failing to type "ten" but I can type it manually-->
 <tr>
 	<td>type</td>
-	<td>id=maxChannelsPerTeam</td>
+	<td>id=TeamSettings.MaxChannelsPerTeam</td>
 	<td>ten</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=maxChannelsPerTeam</td>
+	<td>id=TeamSettings.MaxChannelsPerTeam</td>
 	<td>ten</td>
 </tr>
 <tr>
@@ -2277,24 +2304,35 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForValue</td>
-	<td>id=maxChannelsPerTeam</td>
+	<td>id=TeamSettings.MaxChannelsPerTeam</td>
 	<td>2000</td>
 </tr>
 <!--Max notifications "ten" (alpha characters) resets to default-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=maxNotificationsPerChannel</td>
+	<td>id=TeamSettings.MaxNotificationsPerChannel</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=maxNotificationsPerChannel</td>
+	<td>id=TeamSettings.MaxNotificationsPerChannel</td>
 	<td></td>
 </tr>
+<!--It's failing to type "ten" but I can type it manually-->
 <tr>
 	<td>type</td>
-	<td>id=maxNotificationsPerChannel</td>
+	<td>id=TeamSettings.MaxNotificationsPerChannel</td>
 	<td>ten</td>
 </tr>
 <tr>
@@ -2308,18 +2346,28 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForValue</td>
-	<td>id=maxNotificationsPerChannel</td>
+	<td>id=TeamSettings.MaxNotificationsPerChannel</td>
 	<td>1000</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableConfirmNotificationsToChanneltrue</td>
+	<td>id=TeamSettings.EnableConfirmNotificationsToChanneltrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableConfirmNotificationsToChanneltrue</td>
+	<td>id=TeamSettings.EnableConfirmNotificationsToChanneltrue</td>
 	<td></td>
 </tr>
 <tr>

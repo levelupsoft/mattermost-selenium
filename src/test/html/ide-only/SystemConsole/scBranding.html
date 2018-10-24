@@ -93,32 +93,32 @@
 <!--Can change site name and description with custom branding disabled-->
 <tr>
 	<td>waitForValue</td>
-	<td>id=enableCustomBrandfalse</td>
+	<td>id=TeamSettings.EnableCustomBrandfalse</td>
 	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=siteName</td>
+	<td>id=TeamSettings.SiteName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=siteName</td>
+	<td>id=TeamSettings.SiteName</td>
 	<td>Custom Site Name</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=customDescriptionText</td>
+	<td>id=TeamSettings.CustomDescriptionText</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=customDescriptionText</td>
+	<td>id=TeamSettings.CustomDescriptionText</td>
 	<td>Here's some custom text that an organization might want to use to display a little info about themselves.</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=customDescriptionText</td>
+	<td>id=TeamSettings.CustomDescriptionText</td>
 	<td>Here's some custom text that an organization might want to use to display a little info about themselves.</td>
 </tr>
 <tr>
@@ -128,6 +128,11 @@
 </tr>
 <tr>
 	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
@@ -231,17 +236,17 @@
 <!--30-character limit in Site Name-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=siteName</td>
+	<td>id=TeamSettings.SiteName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=siteName</td>
+	<td>id=TeamSettings.SiteName</td>
 	<td>30-character maximum ends here, even if you try to type more</td>
 </tr>
 <tr>
 	<td>verifyValue</td>
-	<td>id=siteName</td>
+	<td>id=TeamSettings.SiteName</td>
 	<td>30-character maximum ends here</td>
 </tr>
 <!--Image upload disabled with custom branding = false-->
@@ -252,7 +257,7 @@
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enableCustomBrandfalse</td>
+	<td>id=TeamSettings.EnableCustomBrandfalse</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -263,12 +268,12 @@
 <!--Enable custom branding, upload image, add custom brand text-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableCustomBrandtrue</td>
+	<td>id=TeamSettings.EnableCustomBrandtrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableCustomBrandtrue</td>
+	<td>id=TeamSettings.EnableCustomBrandtrue</td>
 	<td></td>
 </tr>
 <tr>
@@ -309,13 +314,13 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=customBrandText</td>
+	<td>id=TeamSettings.CustomBrandText</td>
 	<td></td>
 </tr>
 <!--Leaving out verification of 500-character limit; it's not enforced: MM-11662-->
 <tr>
 	<td>type</td>
-	<td>id=customBrandText</td>
+	<td>id=TeamSettings.CustomBrandText</td>
 	<td>Here is another block of text that can be customized. This appears below the custom image. **Markdown** *is* accepted.</td>
 </tr>
 <tr>
@@ -449,32 +454,32 @@
 <!--Remove customized site name and description, disable custom branding-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=siteName</td>
+	<td>id=TeamSettings.SiteName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=siteName</td>
+	<td>id=TeamSettings.SiteName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=customDescriptionText</td>
+	<td>id=TeamSettings.CustomDescriptionText</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=customDescriptionText</td>
+	<td>id=TeamSettings.CustomDescriptionText</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableCustomBrandfalse</td>
+	<td>id=TeamSettings.EnableCustomBrandfalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableCustomBrandfalse</td>
+	<td>id=TeamSettings.EnableCustomBrandfalse</td>
 	<td></td>
 </tr>
 <tr>
@@ -545,7 +550,6 @@
 	<td>css=p</td>
 	<td>Here is another block of text that can be customized. This appears below the custom image. Markdown is accepted.</td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

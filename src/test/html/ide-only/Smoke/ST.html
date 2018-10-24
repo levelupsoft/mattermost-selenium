@@ -1518,7 +1518,7 @@
 	<td>css=p</td>
 	<td>This is an important message that should be pinned.</td>
 </tr>
-<!--Switch channel in center, RHS doesn't change-->
+<!--Switch channel in center, RHS changes (this behavior updated in 5.4)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarSwitcherButton</td>
@@ -1557,17 +1557,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title &gt; span</td>
-	<td>Pinned posts in Test-${datetime}</td>
+	<td>Pinned posts in Off-Topic</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.search-channel__name</td>
-	<td>Test-${datetime}</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=p</td>
-	<td>This is an important message that should be pinned.</td>
+	<td>css=li &gt; span</td>
+	<td>There are no pinned messages yet.</td>
 </tr>
 <!--Pin a post in other channel-->
 <tr>
@@ -1597,16 +1592,21 @@
 	<td>css=div.post__header--info &gt; div.col &gt; span.post__pinned-badge</td>
 	<td>Pinned</td>
 </tr>
-<!--RHS did not change-->
-<tr>
-	<td>waitForText</td>
-	<td>css=span.sidebar--right__title &gt; span</td>
-	<td>Pinned posts in Test-${datetime}</td>
-</tr>
+<!--RHS updates-->
 <tr>
 	<td>waitForText</td>
 	<td>css=p</td>
-	<td>This is an important message that should be pinned.</td>
+	<td>Different channel, different pinned posts list.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.search-channel__name</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>Pinned posts in Off-Topic</td>
 </tr>
 <!--Pinned post in different channel in center was not added to RHS-->
 <tr>
@@ -2090,7 +2090,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.pull-left.mention--align &gt; span</td>
+	<td>css=span.mention--align</td>
 	<td>@testst</td>
 </tr>
 <tr>
@@ -2126,7 +2126,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.pull-left.mention--align &gt; span</td>
+	<td>css=span.mention--align</td>
 	<td>@channel</td>
 </tr>
 <tr>
@@ -2141,7 +2141,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.pull-left.mention--align &gt; span</td>
+	<td>css=span.mention--align</td>
 	<td>@channel</td>
 </tr>
 <tr>
@@ -3657,14 +3657,29 @@
 </tr>
 <!--Different URL from team name-->
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForValue</td>
 	<td>css=input.form-control</td>
 	<td>plus</td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>css=input.form-control</td>
 	<td>123</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
 </tr>
 <tr>
 	<td>verifyValue</td>
@@ -3900,11 +3915,6 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
-</tr>
-<tr>
-	<td>waitForText</td>
 	<td>id=headerTeamName</td>
 	<td>STTeam</td>
 </tr>
@@ -4054,6 +4064,16 @@
 	<td>click</td>
 	<td>id=loginButton</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.team-btn__initials</td>
+	<td>Co</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.team-btn__initials</td>
+	<td>Co</td>
 </tr>
 <tr>
 	<td>waitForText</td>

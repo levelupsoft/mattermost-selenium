@@ -1361,9 +1361,39 @@
 	<td></td>
 </tr>
 <!--*** After batched email notification is received, continue:-->
-<!--*** Check your email and verify the following:-->
+<!--*** Check your email and verify as described below:-->
 <!--*** Note that your email client may organize / display by thread rather than by -->
 <!--*** order received, so you might see both at-mentions together, both DMs together-->
+<!--***************************************************-->
+<!--HOW THE EMAILS LOOK WHEN THREADED IN GMAIL:-->
+<!--***************************************************-->
+<!--1. Batched message thread (2):-->
+<!--FROM: Selenium Test Edit / SUBJ: [server] New Notifications for [date]-->
+<!----- First message says: You have 2 new notifications.-->
+<!------- Notification from @username [there is no channel name or message snippet]-->
+<!------- Direct Message from @username [there is no channel name or message snippet]-->
+<!------Second message says: You have 2 new notifications.-->
+<!------- Off-Topic / @username / [message body]-->
+<!------- Direct Message from / @username / [message body]-->
+<!--2. Non-batched DM thread (2 DMs)-->
+<!--FROM: Selenium Test Edit / SUBJ: New Direct Message from @username on [date]-->
+<!----- First DM: -->
+<!------- You have a new Direct Message. / @username / timestamp / [message body]-->
+<!----- Second DM: -->
+<!------- You have a new Direct Message from @username [no channel / snippet]-->
+<!--3. Non-batched mentions thread (2 messages)-->
+<!--FROM: Selenium Test Edit / SUBJ: Notification in [channel] on [date]-->
+<!----- First message:-->
+<!------- You have a new notification. / Channel: [channelname]-->
+<!------- @username - [timestamp] / message body-->
+<!----- Second message:-->
+<!------- You have a new notification from @username-->
+<!--***************************************************-->
+<!--***************************************************-->
+<!--***************************************************-->
+<!--OR CAN VERIFY FROM THE-->
+<!--FULL LIST OF EMAILS (IF NOT THREADED LIKE IN GMAIL):-->
+<!--*** Full list of emails that should have been received (not organized in Gmail threads):-->
 <!--1. Non-batched at-mention, full contents (subj "Notification in AA-Sorting-Test on <date>"):-->
 <!--   "Channel: Off-Topic" / "@<username>" / time (UTC), date-->
 <!--   "Hey <user> you should see the full contents of this message. It should not be batched."-->
@@ -1383,14 +1413,18 @@
 <!--      "Batched, full contents! @<username>, this notification should be batched with the DM that follows, and you should see this sentence."-->
 <!--   "Direct Message from" / "@<username>" / time (UTC), date-->
 <!--      "Batched DM! You should see this sentence as well, batched with the previous at-mention."-->
+<!--***************************************************-->
+<!--***************************************************-->
+<!--***************************************************-->
 <tr>
 	<td>pause</td>
 	<td>6000</td>
 	<td></td>
 </tr>
 <!--*** Also verify came from Selenium Test Edit, address 398 Testing Blvd, Paradise-->
-<!--*** After verifying, run the rest of the test to set back to original settings-->
+<!--*** After verifying, run the rest of the test below to reset settings-->
 <!--*** LOG IN MANUALLY as the system admin you logged in as earlier-->
+<!--*** (can set back to Online if desired)-->
 <!--Set to disable batching, send full contents-->
 <tr>
 	<td>waitForElementPresent</td>

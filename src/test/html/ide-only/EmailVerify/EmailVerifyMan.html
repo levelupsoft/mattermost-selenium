@@ -13,6 +13,7 @@
 </thead><tbody>
 <!--EMAIL VERIFICATIONS-->
 <!--*** Test on any server with email enabled and email verification required-->
+<!--*** Such as ci-linux-postgres-->
 <!--*** Replace target "**REPLACE-PREFIX**" below with your Mattermost -->
 <!--*** email prefix (e.g. `linda` or `linda+test`)-->
 <!--*** Log in to any server using that Mattermost email address-->
@@ -86,14 +87,85 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#emailDesc &gt; span</td>
-	<td>New Address: ${prefix}+verification@mattermost.com<br />Check your email to verify the above address.</td>
+	<td>Check your email to verify ${prefix}+verification@mattermost.com</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span &gt; span</td>
+	<td>Check your email at ${prefix}+verification@mattermost.com to verify the address. Cannot find the email?</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=a &gt; span</td>
+	<td>Send again</td>
+</tr>
+<!--Switch channels, message bar persists-->
+<tr>
+	<td>storeText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>currentchannel</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_ALT}${KEY_UP}</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>${currentchannel}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.announcement-bar</td>
+	<td>Check your email at ${prefix}+verification@mattermost.com to verify the address. Cannot find the email?Send again×</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_ALT}${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>${currentchannel}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.announcement-bar</td>
+	<td>Check your email at ${prefix}+verification@mattermost.com to verify the address. Cannot find the email?Send again×</td>
 </tr>
 <tr>
 	<td>pause</td>
-	<td></td>
+	<td>8000</td>
 	<td></td>
 </tr>
 <!--2. Change password (doesn't change it; just triggers email)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=securityButton</td>
@@ -126,7 +198,7 @@
 </tr>
 <!--*** Manually type current password in Current Password field-->
 <tr>
-	<td>waitForNotText</td>
+	<td>waitForNotValue</td>
 	<td>id=currentPassword</td>
 	<td></td>
 </tr>
@@ -177,11 +249,6 @@
 	<td></td>
 </tr>
 <!--Log in and out to show can't log in with new email until verified-->
-<tr>
-	<td>waitForText</td>
-	<td>css=span</td>
-	<td>Check your email at ${prefix}+verification@mattermost.com to verify the address.</td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#accountSettingsHeader &gt; button.close</td>
@@ -265,14 +332,20 @@
 </tr>
 <!--VERIFICATIONS-->
 <!--*** Check email, read through subject line and body, verify as described below-->
-<!--1. NEW address: "[Mattermost] Verify new email address", click verification link-->
-<!--1. "Your email has been verified" in green box on login page (you can then log in)-->
-<!--1. New address [prefix]+verification@mattermost.com is pre-populated-->
-<!--1. Also received re-sent verification email-->
-<!--1. OLD address: "[Mattermost] Your email address has been changed to"-->
+<!--1a. NEW address: "[server name] Verify new email address"-->
+<!--1a. "You updated your email"-->
+<!--1a. "To finish updating your email address for [server], please click the link...."-->
+<!--1a. ** Manually click the Verify Email button-->
+<!--1a. "Your email has been verified" in green box on login page (you can then log in)-->
+<!--1a. New address [prefix]+verification@mattermost.com is pre-populated-->
+<!--1b. Also received RE-SENT verification email (same as above)-->
+<!--1c. OLD address: "[server name] Your email address has changed"-->
+<!--1c. "You updated your email"-->
+<!--1c. "Your email address for [server] has been changed to [new email]"-->
 <!--***-->
-<!--2. "[Mattermost] Your password has been updated"-->
+<!--2. "[server name] Your password has been updated"-->
 <!--2. Lists correct server name in body of email-->
+<!--*** MANUALLY CLEAN UP:-->
 <!--*** Replace your email address in first command in this test with **REPLACE-PREFIX**-->
 <!--*** And save, to be ready for next tester (or just don't save the change at all if other changes weren't made)-->
 <!--*** If you like, go back in and re-change your email address to what it had been-->
