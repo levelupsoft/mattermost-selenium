@@ -1,6 +1,7 @@
 <!--*** Ensure LDAP is set up on the server you're running this on-->
 <!--*** And doesn't already have test.one as a user (such as rctesting)-->
-<!--*** Or, can use test instance setup for Jumpcloud (from private repo)-->
+<!--*** Can use test instance config for Jumpcloud (from private repo)-->
+<!--*** ALSO make sure Signup > Open Server is TRUE-->
 <!--*** MANUALLY log in as a system admin-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -216,7 +217,7 @@
 	<td>id=logout</td>
 	<td></td>
 </tr>
-<!--Custom placeholder text displays-->
+<!--Custom placeholder text displays in login field-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=loginId</td>
@@ -226,6 +227,37 @@
 	<td>waitForAttribute</td>
 	<td>css=div.form-group input#loginId.form-control@placeholder</td>
 	<td>*Test LDAP Text*</td>
+</tr>
+<!--Custom placeholder text displays on account creation page-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#signup &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#signup &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>link=Test LDAP Text</td>
+	<td>Test LDAP Text</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Test LDAP Text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.color--light &gt; a &gt; span</td>
+	<td>Click here to sign in.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.color--light &gt; a &gt; span</td>
+	<td>Click here to sign in.</td>
 </tr>
 <!--*** Manually log back in as a system admin-->
 <tr>
