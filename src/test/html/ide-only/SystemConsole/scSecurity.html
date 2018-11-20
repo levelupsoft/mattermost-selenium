@@ -462,10 +462,38 @@
 	<td>id=configuration</td>
 	<td></td>
 </tr>
+<!--Looks like we build this with https when it should be http-->
+<!--For now, adding step to fix the site URL so changing CORS setting -->
+<!--doesn't break the server. Looking into getting it setup correctly to begin with-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=ServiceSettings.SiteURL</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ServiceSettings.SiteURL</td>
+	<td>http://selenium.mattermost.com</td>
+</tr>
 <tr>
 	<td>waitForValue</td>
 	<td>id=ServiceSettings.SiteURL</td>
 	<td>http://selenium.mattermost.com</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

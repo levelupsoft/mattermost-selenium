@@ -276,7 +276,7 @@
 	<td>css=button.sidebar--right__expand</td>
 	<td></td>
 </tr>
-<!--Switch center to different channel, no change in RHS-->
+<!--Switch center to different channel, also changes in RHS-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Off-Topic</td>
@@ -295,27 +295,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title &gt; span</td>
-	<td>Pinned posts in Pin-${datetime}</td>
+	<td>Pinned posts in Off-Topic</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=p</td>
-	<td>Pin the tail</td>
-</tr>
-<tr>
-	<td>verifyNotText</td>
-	<td>//div[@id='sidebar-right']/div[2]/div/div[3]/div[2]/div/div/div[3]/div/div/div/div[2]/div/div/div/span/p</td>
-	<td>on the donkey.</td>
-</tr>
-<tr>
-	<td>verifyNotText</td>
-	<td>css=p</td>
-	<td>on the donkey.</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
-	<td></td>
+	<td>css=li &gt; span</td>
+	<td>There are no pinned messages yet.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -421,7 +406,7 @@
 	<td></td>
 </tr>
 <!--This button can change number each time-->
-<!--Manually pin the post-->
+<!--*** Manually hover over ... post menu-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>xpath=(//button[@type='button'])[7]</td>
@@ -647,40 +632,11 @@
 	<td>To pin a message: Go to the message that you want to pin and click [...] &gt; &quot;Pin to channel&quot;.</td>
 </tr>
 <!--Pin in center while empty pinned RHS is open-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span:contains('Pin to channel')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.style--none &gt; span:contains('Pin to channel')</td>
-	<td></td>
-</tr>
+<!--*** Manually pin the Pin the tail... post-->
 <tr>
 	<td>waitForNotText</td>
 	<td>css=div.sidebar--right__subheader &gt; ul &gt; li &gt; span</td>
 	<td>There are no pinned messages yet.</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Town Square</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Town Square</td>
-	<td></td>
 </tr>
 <!--Verify pinned post appears in RHS-->
 <tr>
@@ -799,6 +755,7 @@
 	<td></td>
 </tr>
 <!--Pin the message-->
+<!--*** Manually hover-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>xpath=(//button[@type='button'])[6]</td>
@@ -826,6 +783,7 @@
 </tr>
 <!--Flag the same message-->
 <!--No longer finding the flag to click-->
+<!--*** Manually hover-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.style--none.flag-icon__container </td>
@@ -847,6 +805,7 @@
 	<td>Unflag</td>
 </tr>
 <!--Get permalink-->
+<!--*** Manually hover-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>xpath=(//button[@type='button'])[6]</td>
@@ -920,6 +879,7 @@
 	<td>Pinned</td>
 </tr>
 <!--Un-pin in center in permalink view-->
+<!--*** Manually hover-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>xpath=(//button[@type='button'])[9]</td>
@@ -1051,6 +1011,7 @@
 	<td></td>
 </tr>
 <!--Pin message-->
+<!--*** Manually hover-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>xpath=(//button[@type='button'])[6]</td>
@@ -1077,6 +1038,7 @@
 	<td>Pinned</td>
 </tr>
 <!--Open reply RHS-->
+<!--*** Manually open ... post menu-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>xpath=(//button[@type='button'])[6]</td>
@@ -1113,16 +1075,7 @@
 	<td>xpath=(//button[@type='button'])[3]</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#rhsrootDotMenuPin &gt; button.style--none</td>
-	<td>Un-pin from channel</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#rhsrootDotMenuPin &gt; button.style--none</td>
-	<td>Un-pin from channel</td>
-</tr>
+<!--*** Manually click Un-pin-->
 <!--Verify Pinned badge does not appear in center or RHS-->
 <tr>
 	<td>waitForNotText</td>
@@ -1243,6 +1196,12 @@
 	<td>css=span:contains('Pin to channel')</td>
 	<td></td>
 </tr>
+<!--*** Manually hover-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none &gt; span:contains('Pin to channel')</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>css=button.style--none &gt; span:contains('Pin to channel')</td>
@@ -1257,22 +1216,6 @@
 	<td>waitForText</td>
 	<td>css=div.search-channel__name &gt; span</td>
 	<td>Direct Message (with corey)</td>
-</tr>
-<!--Change channel in center to verify displayed as expected in RHS-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Town Square</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Town Square</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1294,105 +1237,6 @@
 	<td>Pinned*A direct message!</td>
 	<td></td>
 </tr>
-<!--Pin post while viewing a different channel's empty pinned posts RHS-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderPinButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderPinButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotText</td>
-	<td>css=span.sidebar--right__title &gt; span</td>
-	<td>Pinned posts in Direct Message</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderPinButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderPinButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.sidebar--right__title &gt; span</td>
-	<td>Pinned posts in Town Square</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.sidebar--right__subheader &gt; ul &gt; li &gt; span</td>
-	<td>There are no pinned messages yet.</td>
-</tr>
-<!--Open different channel in center -->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Pin2-${datetime}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Pin2-${datetime}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Pin2-${datetime}</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.sidebar--right__title &gt; span</td>
-	<td>Pinned posts in Town Square</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.sidebar--right__subheader &gt; ul &gt; li &gt; span</td>
-	<td>There are no pinned messages yet.</td>
-</tr>
-<!--Pin a message in center-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[8]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[8]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span:contains('Pin to channel')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.style--none &gt; span:contains('Pin to channel')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
-	<td>Pinned</td>
-</tr>
-<!--Verify RHS did not change and other channel's pinned posts does not appear-->
-<tr>
-	<td>waitForText</td>
-	<td>css=div.sidebar--right__subheader &gt; ul &gt; li &gt; span</td>
-	<td>There are no pinned messages yet.</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.sidebar--right__title &gt; span</td>
-	<td>Pinned posts in Town Square</td>
-</tr>
 <!--Delete pinned post from center removes it from pinned posts RHS-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1410,6 +1254,27 @@
 	<td>Pinned posts in Town Square</td>
 </tr>
 <!--Open pinned posts RHS for center channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Pin2-${datetime}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Pin2-${datetime}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Pin2-${datetime}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>8000</td>
+	<td></td>
+</tr>
+<!--*** Manually pin "For both flagging..."-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=channelHeaderPinButton</td>
@@ -1440,6 +1305,7 @@
 	<td>css=span.post__pinned-badge &gt; span</td>
 	<td>Pinned</td>
 </tr>
+<!--*** Manually hover over center channel post-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>xpath=(//button[@type='button'])[9]</td>
