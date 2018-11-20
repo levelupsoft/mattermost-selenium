@@ -12,8 +12,12 @@ wget https://releases.mattermost.com/mattermost-platform/master/mattermost-enter
 mv mattermost-enterprise-linux-amd64.tar.gz mattermost.tar.gz
 
 # Use this to lock to specific version
-# wget https://releases.mattermost.com/5.4.0-rc4/mattermost-5.4.0-rc4-linux-amd64.tar.gz
-# mv mattermost-5.4.0-rc4-linux-amd64.tar.gz mattermost.tar.gz
+# wget https://releases.mattermost.com/5.5.0-rc3/mattermost-5.5.0-rc3-linux-amd64.tar.gz
+# mv mattermost-5.5.0-rc3-linux-amd64.tar.gz mattermost.tar.gz
+
+# Regular daily from release-5.5
+# wget https://releases.mattermost.com/mattermost-platform/release-5.5/mattermost-enterprise-linux-amd64.tar.gz
+# mv mattermost-enterprise-linux-amd64.tar.gz mattermost.tar.gz
 
 
 rm -rf ~/mattermost

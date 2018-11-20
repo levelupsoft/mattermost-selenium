@@ -831,7 +831,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=code.hljs</td>
-	<td>exact:1. Not a list item, **not bolded**, http://notalink.com,</td>
+	<td>exact:1. Not a list item, **not bolded**, http://notalink.com, ~off-topic is not a link to the channel.</td>
 </tr>
 <tr>
 	<td>verifyElementNotPresent</td>
@@ -1816,7 +1816,7 @@
 	<td>id=enableOnlyAdminIntegrationsfalse</td>
 	<td></td>
 </tr>
-<!--^^This setting no lonmger exists it was replaced w\ Advanced Permissions - for now I disabeled it manually^^^-->
+<!--^^This setting no longer exists it was replaced w\ Advanced Permissions - for now I disabled it manually^^^-->
 <tr>
 	<td>pause</td>
 	<td>3000</td>
@@ -1921,6 +1921,7 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
+<!--The steps for "test" user to access Integrations below now fails because Integrations options is not present in Main Menu if disabled in Permissions.-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -2001,6 +2002,7 @@
 	<td>link=Back to Mattermost</td>
 	<td></td>
 </tr>
+<!--^^Steps above with "test" user fail (see comment at start of this section)-->
 <!--LOG OUT as test-->
 <tr>
 	<td>refreshAndWait</td>
