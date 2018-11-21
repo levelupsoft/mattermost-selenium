@@ -237,7 +237,17 @@
 <!--Verify on server without plugin uploads enabled in config.json-->
 <!--*** Upload is enabled now on Se server; switching this for now to use -->
 <!--*** https://ci-linux-mysql.mattermost.com-->
+<tr>
+	<td>open</td>
+	<td>https://ci-linux-mysql.mattermost.com</td>
+	<td></td>
+</tr>
 <!--*** Manually log in to ci-linux-mysql as a system admin-->
+<tr>
+	<td>pause</td>
+	<td>8000</td>
+	<td></td>
+</tr>
 <!--*** Ensure Plugins Configuration = true-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -418,7 +428,7 @@
 	<td>3000</td>
 	<td></td>
 </tr>
-<!--*** Switch back to the Selenium server, which has uploads enabled-->
+<!--Switches back to the Selenium server, which has uploads enabled-->
 <tr>
 	<td>pause</td>
 	<td>4000</td>
@@ -486,6 +496,7 @@
 	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
 	<td></td>
 </tr>
+<!--This step usually takes a while to finish uploading-->
 <tr>
 	<td>waitForNotEditable</td>
 	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
@@ -539,6 +550,7 @@
 	<td>//label[@class='control-label']</td>
 	<td></td>
 </tr>
+<!--This step usually takes a while to finish uploading-->
 <tr>
 	<td>waitForText</td>
 	<td>//label[@class='control-label']</td>
@@ -897,10 +909,16 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
+	<td>waitForElementPresent</td>
 	<td>id=admin_user_setting_username</td>
 	<td></td>
 </tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=admin_user_setting_username</td>
+	<td>a</td>
+</tr>
+<!--*** Main Firefox window has to be in front of Se window to verify this-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=img.admin-setting-user__image</td>
@@ -1007,6 +1025,7 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<!--*** Add steps to cleanup demo plugin channels and demo_plugin user?-->
 <!--LOG OUT-->
 <tr>
 	<td>waitForElementPresent</td>
