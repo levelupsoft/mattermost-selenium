@@ -16,7 +16,7 @@ rm -f mattermost.tar.gz
 # mv mattermost-5.5.0-rc3-linux-amd64.tar.gz mattermost.tar.gz
 
 # Regular daily from release-5.5
-wget https://releases.mattermost.com/mattermost-platform/release-5.5/mattermost-enterprise-linux-amd64.tar.gz
+wget https://releases.mattermost.com/mattermost-platform/release-5.6/mattermost-enterprise-linux-amd64.tar.gz
 mv mattermost-enterprise-linux-amd64.tar.gz mattermost.tar.gz
 
 
