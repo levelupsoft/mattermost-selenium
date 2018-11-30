@@ -80,30 +80,30 @@
 	<td>id=systemConsole</td>
 	<td></td>
 </tr>
-<!--Disable plugins-->
+<!--Disable plugin upload-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='configuration'])[2]</td>
+	<td>id=management</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='configuration'])[2]</td>
+	<td>id=management</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=PluginSettings.Enablefalse</td>
+	<td>id=enablefalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=PluginSettings.Enablefalse</td>
+	<td>id=enablefalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=PluginSettings.Enablefalse</td>
+	<td>id=enablefalse</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -121,32 +121,11 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
-<!--Verify messaging that plugins are disabled-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=management</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=management</td>
-	<td></td>
-</tr>
+<!--Verify messaging that plugins are disabled, upload button disabled-->
 <tr>
 	<td>waitForText</td>
-	<td>css=p &gt; span</td>
-	<td>Plugins are disabled on your server. To enable them, go to Plugins &gt; Configuration.</td>
-</tr>
-<!--Verify messaging on Configuration page, link to docs-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='configuration'])[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//a[@id='configuration'])[2]</td>
-	<td></td>
+	<td>css=p.help-text &gt; span</td>
+	<td>To enable plugins, set Enable Plugins to true. See documentation to learn more.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -158,22 +137,23 @@
 	<td>link=documentation@href</td>
 	<td>https://about.mattermost.com/default-plugins</td>
 </tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<!--Pre-packaged plugins do not appear-->
+<tr>
+	<td>waitForNotText</td>
+	<td>css=strong</td>
+	<td>JIRA</td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>Zoom</td>
+	<td></td>
+</tr>
 <!--Enable Plugins-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='configuration'])[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//a[@id='configuration'])[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=h3.admin-console-header</td>
-	<td>Configuration</td>
-</tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label.col-sm-4</td>
@@ -181,27 +161,27 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=PluginSettings.Enabletrue</td>
+	<td>id=enabletrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=PluginSettings.Enabletrue</td>
+	<td>id=enabletrue</td>
 	<td>off</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=PluginSettings.Enablefalse</td>
+	<td>id=enablefalse</td>
 	<td>on</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=PluginSettings.Enabletrue</td>
+	<td>id=enabletrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=PluginSettings.Enabletrue</td>
+	<td>id=enabletrue</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -219,14 +199,21 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<!--File upload button is enabled-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=management</td>
+	<td>waitForEditable</td>
+	<td>css=input[type=&quot;file&quot;]</td>
 	<td></td>
 </tr>
+<!--Pre-packaged plugins appear-->
 <tr>
-	<td>click</td>
-	<td>id=management</td>
+	<td>waitForText</td>
+	<td>css=strong</td>
+	<td>JIRA</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Zoom</td>
 	<td></td>
 </tr>
 <tr>
@@ -234,21 +221,41 @@
 	<td>8000</td>
 	<td></td>
 </tr>
-<!--Verify on server without plugin uploads enabled in config.json-->
+<!--Verify on server without plugins enabled in config.json-->
 <!--*** Upload is enabled now on Se server; switching this for now to use -->
-<!--*** https://ci-linux-mysql.mattermost.com-->
+<!--*** https://ci-windows-mysql.mattermost.com-->
 <tr>
 	<td>open</td>
-	<td>https://ci-linux-mysql.mattermost.com</td>
+	<td>https://ci-windows-mysql.mattermost.com</td>
 	<td></td>
 </tr>
-<!--*** Manually log in to ci-linux-mysql as a system admin-->
+<!--*** Manually log in to ci-windows-mysql as a system admin-->
 <tr>
 	<td>pause</td>
 	<td>8000</td>
 	<td></td>
 </tr>
 <!--*** Ensure Plugins Configuration = true-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=management</td>
@@ -260,6 +267,11 @@
 	<td></td>
 </tr>
 <!--Choose file button is not clickable (upload disabled in config)-->
+<tr>
+	<td>waitForValue</td>
+	<td>id=enabletrue</td>
+	<td>on</td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=input[type=&quot;file&quot;]</td>
@@ -273,17 +285,17 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=p.help-text &gt; span</td>
-	<td>To enable plugin uploads, go to Plugins &gt; Configuration. See documentation to learn more.</td>
+	<td>Enable plugin uploads in config.json. See documentation to learn more.</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=documentation</td>
-	<td></td>
+	<td>waitForAttribute</td>
+	<td>css=p.help-text &gt; span &gt; a@href</td>
+	<td>https://about.mattermost.com/default-plugin-uploads</td>
 </tr>
 <tr>
 	<td>waitForAttribute</td>
 	<td>link=documentation@href</td>
-	<td>https://about.mattermost.com/default-plugin-uploads</td>
+	<td>https://about.mattermost.com/default-plugins</td>
 </tr>
 <!--Verify pre-packaged plugins - JIRA and Zoom-->
 <!--JIRA plugin UI-->
@@ -319,6 +331,7 @@
 	<td></td>
 </tr>
 <!--JIRA plugin fails to start on ci-linux-mysql so this verifies error ("This plugin is running" is verified elsewhere)-->
+<!--JIRA plugin starts successfully on ci-windows-mysql so might have to verify error elsewhere (Se server?)-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.alert.alert-warning &gt; span</td>
@@ -344,19 +357,90 @@
 	<td>css=div.alert.alert-info &gt; span</td>
 	<td>This plugin is not enabled.</td>
 </tr>
-<!--This fails if there are unexpected plugins in the list-->
+<!--Open JIRA settings page-->
+<tr>
+	<td>waitForText</td>
+	<td>css=span &gt; a &gt; span</td>
+	<td>Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h3.admin-console-header</td>
+	<td>JIRA</td>
+</tr>
+<!--*** Expects JIRA plugin to be off; change manually if needed-->
+<tr>
+	<td>waitForValue</td>
+	<td>id=enabledtrue</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enabledtrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enabledtrue</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--Note: These two `Enable` settings have nothing to do with each other apparently... -->
+<!--Just tests UI for now; these are outdated plugin structures so it's not important to test settings pages in depth-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<!--This fails if there are unexpected plugins in the list or if other differences on the test server-->
+<!--*** Can manually verify text is present-->
 <!--Zoom plugin UI-->
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div[2]/div/div/div[2]/div/strong</td>
+	<td>//div[@id='root']/div/div[2]/div/form/div/div/div[3]/div/div/div[2]/div/strong</td>
 	<td>Zoom</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Zoom</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>//div[@id='root']/div/div[3]/div/form/div[2]/div/div/div[2]/div[2]</td>
 	<td>Zoom audio and video conferencing plugin for Mattermost 5.2+.</td>
 </tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Zoom audio and video conferencing plugin for Mattermost 5.2+.</td>
+	<td></td>
+</tr>
 <!--Enable and disable Zoom-->
+<!--This fails if there are unexpected plugins in the list or if other differences on the test server-->
 <tr>
 	<td>waitForText</td>
 	<td>//div[@id='root']/div/div[3]/div/form/div[2]/div/div/div[2]/div[4]/div/span</td>
@@ -454,11 +538,6 @@
 	<td>waitForElementPresent</td>
 	<td>link=documentation</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForAttribute</td>
-	<td>link=documentation@href</td>
-	<td>https://about.mattermost.com/default-plugin-uploads</td>
 </tr>
 <tr>
 	<td>waitForNotEditable</td>
@@ -825,6 +904,148 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=p:contains('MessageHasBeenPosted in ~Off-Topic by')</td>
+	<td></td>
+</tr>
+<!--Leaving channel posts in plugin channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input.form-control.focused</td>
+	<td>plugint</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>PluginTestChannel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>PluginTestChannel</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/leave${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.sidebar-item__name &gt; span</td>
+	<td>Demo Plugin</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.badge</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.badge</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Demo Plugin</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>UserHasLeftChannel: @admin, ~PluginTestChannel</td>
+	<td></td>
+</tr>
+<!--Joining channel posts in demo plugin channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input.form-control.focused</td>
+	<td>off-topic</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/join ~plugintestchannel${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>PluginTestChannel</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Demo Plugin2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Demo Plugin2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>UserHasJoinedChannel: @admin, ~PluginTestChannel</td>
 	<td></td>
 </tr>
 <!--Left off test-writing here for now-->
