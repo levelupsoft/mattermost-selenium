@@ -59,7 +59,13 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Create a private channel".equals(driver.findElement(By.cssSelector("div.modal-intro > button.style--none.color--link")).getText())) break; } catch (Exception e) {}
+        	try { if ("off".equals(driver.findElement(By.id("private")).getAttribute("value"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("on".equals(driver.findElement(By.id("public")).getAttribute("value"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
