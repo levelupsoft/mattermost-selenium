@@ -57,18 +57,6 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("off".equals(driver.findElement(By.id("private")).getAttribute("value"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if ("on".equals(driver.findElement(By.id("public")).getAttribute("value"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
         driver.findElement(By.id("newPublicChannelName")).clear();
         driver.findElement(By.id("newPublicChannelName")).sendKeys("");
         driver.findElement(By.id("newPublicChannelName")).clear();

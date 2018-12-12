@@ -1776,6 +1776,28 @@
 	<td>Town Square</td>
 </tr>
 <tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--at-username link opens profile popover-->
+<!--Open in RHS so Se can find clean link-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=searchBox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchBox</td>
+	<td>greetings${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=@test2</td>
+	<td>@test2</td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>link=@test2</td>
 	<td>@test2</td>
@@ -1786,10 +1808,9 @@
 	<td>1000</td>
 	<td></td>
 </tr>
-<!--at-username link opens profile popover-->
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.popover-title</td>
+	<td>css=span.user-popover__username &gt; a</td>
 	<td>@test2</td>
 </tr>
 <tr>
@@ -1806,6 +1827,11 @@
 	<td>waitForElementPresent</td>
 	<td>link=Send Message</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.user-popover__role</td>
+	<td>Team Admin</td>
 </tr>
 <!--DM search-->
 <tr>
