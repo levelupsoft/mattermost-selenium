@@ -105,11 +105,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // View channel info without header
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("channelViewInfo"))) break; } catch (Exception e) {}
+        	try { if ("View Info".equals(driver.findElement(By.cssSelector("#channelHeaderDropdownMenu > li > #channelViewInfo")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("channelViewInfo")).click();
+        driver.findElement(By.cssSelector("#channelHeaderDropdownMenu > li > #channelViewInfo")).click();
         // Sleep
         // Sleep
         // Sleep
