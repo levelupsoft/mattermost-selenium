@@ -1129,12 +1129,27 @@ public class SearchIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.linkText("@test2")).click();
-        // Sleep
+        driver.navigate().refresh();
         // at-username link opens profile popover
+        // Open in RHS so Se can find clean link
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("@test2".equals(driver.findElement(By.cssSelector("h3.popover-title")).getText())) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("searchBox"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("searchBox")).sendKeys("greetings" + Keys.ENTER);
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.linkText("@test2"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.linkText("@test2")).click();
+        // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("@test2".equals(driver.findElement(By.cssSelector("span.user-popover__username > a")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -1153,6 +1168,12 @@ public class SearchIT extends DriverBase {
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.linkText("Send Message"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Team Admin".equals(driver.findElement(By.cssSelector("span.user-popover__role")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
