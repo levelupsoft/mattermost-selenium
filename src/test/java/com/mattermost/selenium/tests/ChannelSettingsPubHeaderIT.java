@@ -260,11 +260,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         driver.findElement(By.id("channelHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("channelEditHeader"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.xpath("(//button[@id='channelEditHeader'])[2]"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("channelEditHeader")).click();
+        driver.findElement(By.xpath("(//button[@id='channelEditHeader'])[2]")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("edit_textbox"))) break; } catch (Exception e) {}
