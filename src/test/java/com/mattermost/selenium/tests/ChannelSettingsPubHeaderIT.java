@@ -230,11 +230,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Verify channel info with header
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("channelViewInfo"))) break; } catch (Exception e) {}
+        	try { if ("View Info".equals(driver.findElement(By.cssSelector("#channelHeaderDropdownMenu > li > #channelViewInfo")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("channelViewInfo")).click();
+        driver.findElement(By.cssSelector("#channelHeaderDropdownMenu > li > #channelViewInfo")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("headertest".equals(driver.findElement(By.cssSelector("h4.modal-title > strong")).getText())) break; } catch (Exception e) {}
@@ -326,11 +326,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         driver.findElement(By.id("channelHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("channelViewInfo"))) break; } catch (Exception e) {}
+        	try { if ("View Info".equals(driver.findElement(By.cssSelector("#channelHeaderDropdownMenu > li > #channelViewInfo")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("channelViewInfo")).click();
+        driver.findElement(By.cssSelector("#channelHeaderDropdownMenu > li > #channelViewInfo")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("headertest".equals(driver.findElement(By.cssSelector("h4.modal-title > strong")).getText())) break; } catch (Exception e) {}
