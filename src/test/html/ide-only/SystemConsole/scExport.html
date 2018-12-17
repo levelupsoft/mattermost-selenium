@@ -250,6 +250,37 @@
 	<td>Success</td>
 </tr>
 <!--Job completion details are tested manually-->
+<!--Start and Cancel a job-->
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>Run Compliance Export Job Now</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td>Run Compliance Export Job Now</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>Pending</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//span[@title='Cancel']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span[@title='Cancel']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//span[text()='Canceled']</td>
+	<td></td>
+</tr>
 <!--Cleanup: Disable Export-->
 <tr>
 	<td>waitForElementPresent</td>

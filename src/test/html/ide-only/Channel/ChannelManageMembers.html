@@ -137,7 +137,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <!--Try searching on `* ` (shouldn't display blank results)-->
@@ -148,7 +148,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>* </td>
 </tr>
 <tr>
@@ -163,7 +163,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td></td>
 </tr>
 <!--Filter user list-->
@@ -179,7 +179,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test8</td>
 </tr>
 <tr>
@@ -189,7 +189,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td></td>
 </tr>
 <tr>
@@ -199,7 +199,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test8</td>
 </tr>
 <tr>
@@ -220,7 +220,7 @@
 <!--Filtering by user already added to the box shows no items found-->
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test8</td>
 </tr>
 <tr>
@@ -230,12 +230,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -358,12 +358,12 @@
 <!--Filter a specific user and add to channel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=input.form-control.filter-textbox</td>
+	<td>css=div.filtered-user-list</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test7</td>
 </tr>
 <tr>
@@ -383,12 +383,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td>Add</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td>Add</td>
 </tr>
 <tr>
@@ -586,18 +586,13 @@
 	<td>To Manage</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.Select-placeholder</td>
-	<td>Search and add members</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test3</td>
 </tr>
 <tr>
@@ -622,7 +617,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test5</td>
 </tr>
 <tr>
@@ -642,12 +637,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -708,10 +703,11 @@
 	<td>Remove from Favorites</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#favoriteChannel &gt; span</td>
-	<td>FAVORITE CHANNELS</td>
+	<td>waitForElementPresent</td>
+	<td>//*[@id='favoriteChannel']/span[contains(text(),'FAVORITE CHANNELS')] </td>
+	<td></td>
 </tr>
+<!--^^Had to replace CCS because of what looked like a bug in sidebar CSS. - UNREADS sections has same id?-->
 <tr>
 	<td>waitForText</td>
 	<td>link=test3×</td>
@@ -792,7 +788,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <!--Try searching on `* ` (shouldn't display blank results)-->
@@ -803,7 +799,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>* </td>
 </tr>
 <tr>
@@ -818,7 +814,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td></td>
 </tr>
 <!--Filter user list-->
@@ -834,7 +830,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test8</td>
 </tr>
 <tr>
@@ -844,7 +840,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td></td>
 </tr>
 <tr>
@@ -854,7 +850,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test8</td>
 </tr>
 <tr>
@@ -875,7 +871,7 @@
 <!--Filtering by user already added to the box shows no items found-->
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test8</td>
 </tr>
 <tr>
@@ -885,12 +881,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -1012,13 +1008,13 @@
 </tr>
 <!--Filter a specific user and add to channel-->
 <tr>
-	<td>waitForText</td>
-	<td>css=div.Select-placeholder</td>
-	<td>Search and add members</td>
+	<td>waitForElementPresent</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
+	<td>test7</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test7</td>
 </tr>
 <tr>
@@ -1038,12 +1034,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td>Add</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td>Add</td>
 </tr>
 <tr>
@@ -1241,18 +1237,18 @@
 	<td>Manage Private</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.Select-placeholder</td>
-	<td>Search and add members</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.filtered-user-list</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test3</td>
 </tr>
 <tr>
@@ -1277,7 +1273,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//*[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test5</td>
 </tr>
 <tr>
@@ -1297,12 +1293,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -1388,6 +1384,7 @@
 	<td>css=div.alert.alert-danger &gt; span</td>
 	<td>This will archive the channel from the team and make its contents inaccessible for all users. <br /><br />Are you sure you wish to archive the To Manage channel?</td>
 </tr>
+<!--^^ Locator looks perfect to me. It finds the span but won't match on the text^^-->
 <tr>
 	<td>waitForText</td>
 	<td>css=button.btn.btn-danger</td>
@@ -1443,6 +1440,7 @@
 	<td>css=div.alert.alert-danger &gt; span</td>
 	<td>This will archive the channel from the team and make its contents inaccessible for all users. <br /><br />Are you sure you wish to archive the Manage Private channel?</td>
 </tr>
+<!--^^ Locator looks perfect to me. It finds the span but won't match on the text^^-->
 <tr>
 	<td>waitForText</td>
 	<td>css=button.btn.btn-danger</td>

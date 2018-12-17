@@ -12,6 +12,11 @@
 <tr><td rowspan="1" colspan="3">AccountSettingsDisplayLanguage</td></tr>
 </thead><tbody>
 <!--Using test5@test.com to isolate display changes from test@ account in case of failure-->
+<tr>
+	<td>setSpeed</td>
+	<td>700</td>
+	<td></td>
+</tr>
 <!--LOG IN-->
 <tr>
 	<td>openAndWait</td>
@@ -164,7 +169,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4 &gt; span</td>
+	<td>css=#publicChannel &gt; Span</td>
 	<td>CANALES PÚBLICOS</td>
 </tr>
 <tr>
@@ -241,7 +246,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4 &gt; span</td>
+	<td>css=#publicChannel &gt; span</td>
 	<td>ÖFFENTLICHE KANÄLE</td>
 </tr>
 <tr>
@@ -353,8 +358,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4</td>
-	<td>CANAUX PUBLICS+</td>
+	<td>css=#publicChannel &gt; Span</td>
+	<td>CANAUX PUBLICS</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -451,7 +456,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4 &gt; span</td>
+	<td>css=#publicChannel &gt; Span</td>
 	<td>CANALI PUBBLICI</td>
 </tr>
 <!--Verify system message is translated-->
@@ -656,7 +661,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4 &gt; span</td>
+	<td>css=#publicChannel &gt; Span</td>
 	<td>CANAIS PÚBLICOS</td>
 </tr>
 <!--Verify system message is translated-->
@@ -704,7 +709,7 @@
 <tr>
 	<td>select</td>
 	<td>id=displayLanguage</td>
-	<td>Română (Beta)</td>
+	<td>Română</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -775,7 +780,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4 &gt; span</td>
+	<td>css=#publicChannel &gt; Span</td>
 	<td>HERKESE AÇIK KANALLAR</td>
 </tr>
 <!--Verify system message is translated-->
@@ -832,7 +837,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4 &gt; span</td>
+	<td>css=#publicChannel &gt; Span</td>
 	<td>ПУБЛИЧНЫЕ КАНАЛЫ</td>
 </tr>
 <!--Verify system message is translated-->
