@@ -201,14 +201,9 @@
 <!--*** Visually verify Show More button, with gradient effect where the post is truncated-->
 <!--*** Visually verify website link preview displays-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//img[contains(@src,'https://s.yimg.com/uu/api/res/1.2/vMOoyp6Egb9WTFWnG3kTsA--~B/aD0xMDU2O3c9MTkyMTtzbT0xO2FwcGlkPXl0YWNoeW9u/http://media.zenfs.com/en-US/homerun/the_drive_165/40b739e19c79c89b66b7ab3c0cea7a92')])[3]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//a[contains(text(),'Panasonic Unveils Solar Roof That May Appear on the Tesla Model 3')])[3]</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>link=Panasonic Unveils Solar Roof That May Appear on the Tesla Model 3</td>
+	<td>Panasonic Unveils Solar Roof That May Appear on the Tesla Model 3</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -228,16 +223,6 @@
 <!--*** Visually verify full expanded post displays-->
 <!--*** Visually verify Show Less button-->
 <!--*** Visually verify link preview still displays-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//img[contains(@src,'https://s.yimg.com/uu/api/res/1.2/vMOoyp6Egb9WTFWnG3kTsA--~B/aD0xMDU2O3c9MTkyMTtzbT0xO2FwcGlkPXl0YWNoeW9u/http://media.zenfs.com/en-US/homerun/the_drive_165/40b739e19c79c89b66b7ab3c0cea7a92')])[3]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//a[contains(text(),'Panasonic Unveils Solar Roof That May Appear on the Tesla Model 3')])[3]</td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.post-collapse__show-more-button</td>
@@ -446,6 +431,26 @@
 	<td>8000</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.post-collapse__show-more-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.post-collapse__show-more-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.sidebar--right__close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.sidebar--right__close</td>
+	<td></td>
+</tr>
 <!--Cancel out of Delete-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -457,20 +462,10 @@
 	<td>id=post_textbox</td>
 	<td>Retain${KEY_ENTER}</td>
 </tr>
-<!--Postid method isn't working anymore-->
+<!--*** Manually click ... post menu and select Delete on the "Retain" post-->
 <tr>
-	<td>storeAttribute</td>
-	<td>//button[@data-message='Retain']@data-postid</td>
-	<td>postid</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.dropdown div#center_dropdown${postid} &gt; button.dropdown-toggle.post__dropdown.color--link.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='center_dropdown${postid}']/div/ul/li[4]/button</td>
+	<td>pause</td>
+	<td>8000</td>
 	<td></td>
 </tr>
 <tr>
@@ -682,6 +677,7 @@
 	<td></td>
 </tr>
 <!--Flag a message-->
+<!--*** Manually hover over the message-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.style--none.flag-icon__container &gt; span.icon</td>
@@ -745,7 +741,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='search-items-container']/div[2]/div[2]/div[2]/div[2]/div[2]/div/div/span/p</td>
+	<td>//div[@id='search-items-container']/div[2]/div[2]/div[2]/div[2]/div[2]</td>
 	<td>Quick brown fox.</td>
 </tr>
 <tr>
@@ -762,7 +758,7 @@
 <!--*** Manually verify tooltip "Unflag" on hover-->
 <tr>
 	<td>pause</td>
-	<td>3000</td>
+	<td>5000</td>
 	<td></td>
 </tr>
 <!--Unflag `Quick brown fox` from RHS-->
@@ -799,14 +795,14 @@
 </tr>
 <!--Flag removed from post in center (viewing different channel when unflagged)-->
 <tr>
-	<td>waitForText</td>
-	<td>css=span.sidebar-item__name</td>
-	<td>${flagchannel}</td>
+	<td>waitForElementPresent</td>
+	<td>link=${flagchannel}</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-item__name</td>
-	<td>${flagchannel}</td>
+	<td>link=${flagchannel}</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -890,15 +886,11 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='search-items-container']/div/ul/li[2]/span</td>
-	<td>You can add a flag to messages and comments by clicking the</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='search-items-container']/div/ul/li[3]/span</td>
-	<td>Flags are a way to mark messages for follow up. Your flags are personal, and cannot be seen by other users.</td>
+	<td>css=div.sidebar--right__subheader</td>
+	<td>You haven't flagged any messages yet.You can add a flag to messages and comments by clicking the icon next to the timestamp.Flags are a way to mark messages for follow up. Your flags are personal, and cannot be seen by other users.</td>
 </tr>
 <!--Flag post in center and verify added to RHS-->
+<!--*** Manually hover over post This is important too.-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.style--none.flag-icon__container </td>
@@ -946,14 +938,14 @@
 </tr>
 <!--Change channel in center-->
 <tr>
-	<td>waitForText</td>
-	<td>css=span.sidebar-item__name</td>
-	<td>${flagchannel}</td>
+	<td>waitForElementPresent</td>
+	<td>link=${flagchannel}</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-item__name</td>
-	<td>${flagchannel}</td>
+	<td>link=${flagchannel}</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -982,8 +974,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='sidebar-right']/div[2]/div/div[3]/div[2]/div/div/div[3]/div/div/div/div[2]/div[2]/div/div/span/p</td>
+	<td>id=reply_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
 	<td>It is indeed!</td>
+	<td></td>
 </tr>
 <!--*** Visually verify reply is not posted in center-->
 <tr>
@@ -1076,21 +1073,10 @@
 	<td>css=p</td>
 	<td>This is important too.</td>
 </tr>
-<!--*** Make sure this is deleting "This is important too."-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
-	<td></td>
-</tr>
 <!--*** Manually click Delete in center on This is important too-->
 <tr>
 	<td>pause</td>
-	<td>3000</td>
+	<td>4000</td>
 	<td></td>
 </tr>
 <!--Delete parent post that is also flagged-->
@@ -1185,7 +1171,7 @@
 <!--This caught a bug: Not linked if popover opened from at-mention link in post-->
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.popover-title &gt; a</td>
+	<td>css=span.user-popover__username &gt; a</td>
 	<td>@corey</td>
 </tr>
 <tr>
@@ -1256,7 +1242,6 @@
 	<td>8000</td>
 	<td></td>
 </tr>
-<!--*** Scroll up to find another user posts, open reply thread RHS-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Off-Topic</td>
@@ -1267,6 +1252,7 @@
 	<td>link=Off-Topic</td>
 	<td></td>
 </tr>
+<!--*** Scroll up to find another user's post, manually open reply thread RHS-->
 <!--*** Verify profile popover in RHS:-->
 <!--*** @username, other elements-->
 <tr>
@@ -1304,7 +1290,7 @@
 <!--*** Not available: emoji reaction, flag, pin-->
 <!--*** Delete is available (at least for own system message; depends on permissions)-->
 <!--*** Timestamp is a link, opens permalink view-->
-<!--*** Click to jump to recent messages-->
+<!--*** Manually click to jump to recent messages-->
 <tr>
 	<td>pause</td>
 	<td>10000</td>
@@ -1422,15 +1408,11 @@
 	<td>id=reply_textbox</td>
 	<td>/online${KEY_ENTER}</td>
 </tr>
+<!--*** Visually verify "You are now online" in RHS-->
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='sidebar-right']/div[2]/div/div[3]/div[2]/div/div/div[3]/div/div/div/div[2]/div[2]/div/div/span/p</td>
-	<td>You are now online</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.post__visibility &gt; span</td>
-	<td>(Only visible to you)</td>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
 </tr>
 <!--Close RHS, verify ephemeral message in center-->
 <tr>
@@ -1468,7 +1450,7 @@
 <!--*** Visually verify ephemeral message is not in RHS-->
 <tr>
 	<td>pause</td>
-	<td>2000</td>
+	<td>4000</td>
 	<td></td>
 </tr>
 <!--Markdown test files-->
@@ -1478,6 +1460,8 @@
 	<td></td>
 </tr>
 <!--Markdown basics-->
+<!--*** NOTE: 4 images are broken (at the source); adding new samples-->
+<!--*** https://github.com/mattermost/mattermost-server/pull/9802-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -1488,7 +1472,7 @@
 	<td>id=post_textbox</td>
 	<td>/test url test-markdown-basics.md${KEY_ENTER}</td>
 </tr>
-<!--*** Visually verify as described in post (also verifies below but not airtight)-->
+<!--*** Visually verify as described in post-->
 <tr>
 	<td>pause</td>
 	<td>6000</td>
@@ -1517,7 +1501,7 @@
 <!--*** Not sure possible to verify original post * vs. _ or two styles at once-->
 <tr>
 	<td>pause</td>
-	<td>6000</td>
+	<td>16000</td>
 	<td></td>
 </tr>
 <!--Markdown lists-->
@@ -1567,6 +1551,7 @@
 	<td>/test url test-syntax-highlighting${KEY_ENTER}</td>
 </tr>
 <!--*** Read post and verify as described (write regular verifys for these later)-->
+<!--*** Verify code blocks on hover show tag in top right corner of code block-->
 <tr>
 	<td>pause</td>
 	<td>16000</td>
@@ -1763,7 +1748,7 @@
 </tr>
 <!--*** Make sure channel switch happens in center-->
 <!--Need to update to change channel-->
-<!--Post in RHS reply thread (different channel in center), no preview RHS-->
+<!--Post in RHS reply thread (different channel in center), preview in RHS-->
 <tr>
 	<td>sendKeys</td>
 	<td>id=reply_textbox</td>
@@ -1858,8 +1843,10 @@
 <!--2. Type a post and press Enter-->
 <!--3. Click Retry a few times-->
 <!--4. Hover over timestamp and verify it's not a link-->
-<!--5. Turn Internet connection back on-->
-<!--6. Click Retry several times in quick succession as internet is reconnecting-->
+<!--5. Wait (could be several minutes) to see blue banner:Turn Internet connection back on-->
+<!--    "Please check connection, Mattermost unreachable. If issue persists, ask administrator to check WebSocket port"-->
+<!--6. Turn internet connection back on-->
+<!--7. Click Retry several times in quick succession as internet is reconnecting-->
 <!--No action when Retry is clicked with Internet connection still off-->
 <!--Message ultimately only posts once-->
 </tbody></table>

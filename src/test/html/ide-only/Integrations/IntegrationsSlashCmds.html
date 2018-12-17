@@ -12,7 +12,7 @@
 <tr><td rowspan="1" colspan="3">New Test</td></tr>
 </thead><tbody>
 <!--*** To verify what other user sees, log test3 in on a different browser-->
-<!--*** Can open DM with admin and watch indicator in LHS or center-->
+<!--*** test3 can open DM with admin and watch indicator in LHS or center-->
 <!--*** Although statuses change too quickly to watch in real time-->
 <!--*** So run very slowly and/or pause frequently to test that-->
 <!--LOG IN admin-->
@@ -89,7 +89,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/away</td>
 </tr>
 <tr>
@@ -99,7 +99,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/away</td>
 </tr>
 <tr>
@@ -177,7 +177,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/offline</td>
 </tr>
 <tr>
@@ -187,7 +187,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/offline</td>
 </tr>
 <tr>
@@ -310,7 +310,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/online</td>
 </tr>
 <tr>
@@ -320,7 +320,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/online</td>
 </tr>
 <tr>
@@ -386,12 +386,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/offline</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/offline</td>
 </tr>
 <tr>
@@ -427,12 +427,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/online</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/online</td>
 </tr>
 <tr>
@@ -498,12 +498,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/online</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/online</td>
 </tr>
 <tr>
@@ -549,7 +549,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/dnd</td>
 </tr>
 <tr>
@@ -601,12 +601,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>admin</td>
 </tr>
 <tr>
@@ -770,7 +770,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/code [text]</td>
 </tr>
 <tr>
@@ -780,7 +780,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/code [text]</td>
 </tr>
 <tr>
@@ -805,7 +805,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/code [text]</td>
 </tr>
 <tr>
@@ -815,7 +815,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/code [text]</td>
 </tr>
 <tr>
@@ -831,7 +831,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=code.hljs</td>
-	<td>exact:1. Not a list item, **not bolded**, http://notalink.com,</td>
+	<td>exact:1. Not a list item, **not bolded**, http://notalink.com, ~off-topic is not a link to the channel.</td>
 </tr>
 <tr>
 	<td>verifyElementNotPresent</td>
@@ -895,7 +895,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/help</td>
 </tr>
 <tr>
@@ -913,6 +913,7 @@
 	<td>2000</td>
 	<td></td>
 </tr>
+<!--Fails to find the other tab most of the time; just verify visually and skip ahead-->
 <tr>
 	<td>waitForText</td>
 	<td>css=p</td>
@@ -946,7 +947,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/invite_people [name@domain.com ...]</td>
 </tr>
 <tr>
@@ -956,7 +957,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/invite_people [name@domain.com ...]</td>
 </tr>
 <!--Error with no text following command-->
@@ -982,7 +983,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/invite_people [name@domain.com ...]</td>
 </tr>
 <tr>
@@ -992,7 +993,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/invite_people [name@domain.com ...]</td>
 </tr>
 <!--Error with text that is not an email address-->
@@ -1233,12 +1234,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/expand</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/expand</td>
 </tr>
 <tr>
@@ -1284,7 +1285,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/collapse</td>
 </tr>
 <tr>
@@ -1319,12 +1320,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/expand</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/expand</td>
 </tr>
 <tr>
@@ -1735,13 +1736,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=b</td>
+	<td>css=strong</td>
 	<td>Token</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span &gt; span</td>
-	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1780,7 +1776,10 @@
 	<td></td>
 </tr>
 <!--Grant access to Integrations for non-admins-->
-<!--This was moved to Permission Schemes-->
+<!--This was moved to Permission Schemes except in TE-->
+<!--*** Could manually remove license and run the steps-->
+<!--*** Then put the license back on-->
+<!--*** But can't seem to remove license from Se server?-->
 <tr>
 	<td>click</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -1816,7 +1815,7 @@
 	<td>id=enableOnlyAdminIntegrationsfalse</td>
 	<td></td>
 </tr>
-<!--^^This setting no lonmger exists it was replaced w\ Advanced Permissions - for now I disabeled it manually^^^-->
+<!--^^This setting no longer exists it was replaced w\ Advanced Permissions - for now I disabled it manually^^^-->
 <tr>
 	<td>pause</td>
 	<td>3000</td>
@@ -1921,6 +1920,7 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
+<!--The steps for "test" user to access Integrations below now fails because Integrations options is not present in Main Menu if disabled in Permissions.-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -2001,6 +2001,7 @@
 	<td>link=Back to Mattermost</td>
 	<td></td>
 </tr>
+<!--^^Steps above with "test" user fail (see comment at start of this section)-->
 <!--LOG OUT as test-->
 <tr>
 	<td>refreshAndWait</td>
@@ -2179,6 +2180,7 @@
 	<td>link=Back to Mattermost</td>
 	<td></td>
 </tr>
+<!--Invalid slash command offers link to post as message (center channel)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -2192,7 +2194,27 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
-	<td>Command with a trigger of 'special' not found. To send a message beginning with &quot;/&quot;, try adding an empty space at the beginning of the message.</td>
+	<td>Command with a trigger of '/special' not found. Click here to send as a message.</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Click here to send as a message.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Click here to send as a message.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.post-message__text p:contains('/special')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2767,7 +2789,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>/</td>
+	<td>/bad</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -2777,12 +2799,12 @@
 <!--Place focus into main input box-->
 <tr>
 	<td>waitForText</td>
-	<td>//form[@id='create_post']/div/div/div/div/div/div[2]/div/div[2]/div/string</td>
+	<td>css=div.command__title</td>
 	<td>/badger test-hint</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//form[@id='create_post']/div/div/div/div/div/div[2]/div/div[2]/div[2]</td>
+	<td>css=div.command__desc</td>
 	<td>Auto description</td>
 </tr>
 <!--Don't show custom slash command in autocomplete-->
@@ -2878,7 +2900,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/away</td>
 </tr>
 <tr>

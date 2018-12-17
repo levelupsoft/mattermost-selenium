@@ -77,11 +77,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.modal-intro &gt; button.style--none.color--link</td>
-	<td>Create a private channel</td>
-</tr>
-<tr>
 	<td>type</td>
 	<td>id=newPublicChannelName</td>
 	<td></td>
@@ -141,13 +136,13 @@
 </tr>
 <!--View channel info without header-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=#channelHeaderDropdownMenu &gt; li &gt; #channelViewInfo</td>
+	<td>View Info</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelViewInfo</td>
+	<td>css=#channelHeaderDropdownMenu &gt; li &gt; #channelViewInfo</td>
 	<td></td>
 </tr>
 <tr>
@@ -331,13 +326,13 @@
 </tr>
 <!--Verify channel info with header-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=#channelHeaderDropdownMenu &gt; li &gt; #channelViewInfo</td>
+	<td>View Info</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelViewInfo</td>
+	<td>css=#channelHeaderDropdownMenu &gt; li &gt; #channelViewInfo</td>
 	<td></td>
 </tr>
 <tr>
@@ -379,12 +374,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelEditHeader</td>
+	<td>xpath=(//button[@id='channelEditHeader'])[2]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelEditHeader</td>
+	<td>xpath=(//button[@id='channelEditHeader'])[2]</td>
 	<td></td>
 </tr>
 <tr>
@@ -487,13 +482,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=#channelHeaderDropdownMenu &gt; li &gt; #channelViewInfo</td>
+	<td>View Info</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelViewInfo</td>
+	<td>css=#channelHeaderDropdownMenu &gt; li &gt; #channelViewInfo</td>
 	<td></td>
 </tr>
 <tr>

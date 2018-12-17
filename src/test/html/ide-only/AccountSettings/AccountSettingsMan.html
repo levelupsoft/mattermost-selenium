@@ -289,12 +289,12 @@
 <!--Verify `@` appears before username who has no first or last name-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test10</td>
 </tr>
 <tr>
@@ -362,12 +362,12 @@
 <!--Verify `@` appears before username who has no first or last name-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>corey</td>
 </tr>
 <tr>
@@ -1253,7 +1253,7 @@
 	<td>css=div.theme-label:contains('Organization')</td>
 	<td></td>
 </tr>
-<!--*** Visually verify changed to Organization before cancelling theme change-->
+<!--*** Visually verify changed to Organization before canceling theme change-->
 <tr>
 	<td>pause</td>
 	<td>3000</td>
@@ -2199,7 +2199,7 @@
 <!--*** Visually verify link preview looks the same in RHS and center-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=img.attachment__image.attachment__image--openraph</td>
+	<td>css=img.attachment__image.attachment__image--opengraph</td>
 	<td></td>
 </tr>
 <tr>
@@ -2222,7 +2222,7 @@
 	<td>css=button.sidebar--right__close</td>
 	<td></td>
 </tr>
-<!--Advanced: Ctrl+Enter-->
+<!--Advanced: `Send code block ... on CTRL+ENTER` is ON by default-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -2253,6 +2253,12 @@
 	<td>id=advancedButton</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#codeBlockOnCtrlEnterDesc &gt; span</td>
+	<td>On</td>
+</tr>
+<!--Advanced: Send messages on Ctrl+Enter-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=advancedCtrlSendEdit</td>
@@ -2440,6 +2446,17 @@
 	<td>id=advancedButton</td>
 	<td></td>
 </tr>
+<!--`Send code block messages on CTRL + ENTER` not available when ON-->
+<tr>
+	<td>waitForNotText</td>
+	<td>css=#codeBlockOnCtrlEnterTitle &gt; span</td>
+	<td>Send code block messages on CTRL + ENTER</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>id=codeBlockOnCtrlEnterEdit</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=advancedCtrlSendEdit</td>
@@ -2475,6 +2492,477 @@
 	<td>id=advancedCtrlSendDesc</td>
 	<td>Off</td>
 </tr>
+<!--Advanced: Send code block messages on CTRL + ENTER-->
+<!--Available when `Send messages on CTRL + ENTER` is OFF (already on)-->
+<tr>
+	<td>waitForText</td>
+	<td>css=#codeBlockOnCtrlEnterTitle &gt; span</td>
+	<td>Send code block messages on CTRL + ENTER</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#codeBlockOnCtrlEnterDesc &gt; span</td>
+	<td>On</td>
+</tr>
+<!--Post without code block sends normally on ENTER-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Any text, without three back ticks${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Any text, without three back ticks</td>
+	<td></td>
+</tr>
+<!--Reply without code block sends normally on ENTER-->
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_SHIFT}${KEY_UP}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=reply_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=reply_textbox</td>
+	<td>A reply, without three back ticks${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=reply_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>A reply, without three back ticks</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.sidebar--right__close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.sidebar--right__close</td>
+	<td></td>
+</tr>
+<!--After code block is opened, Enter moves to new line-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>First, some text.${KEY_SHIFT}${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td>First, some text.</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>```${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td>First, some text. ```</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Code block text, followed by ENTER${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td>First, some text. ``` Code block text, followed by ENTER</td>
+</tr>
+<!--After a code block is closed, Enter sends the post-->
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>```${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=code.hljs</td>
+	<td>Code block text, followed by ENTER</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>First, some text.</td>
+	<td></td>
+</tr>
+<!--CTRL/CMD+ENTER closes multi-line code block and posts message-->
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Again, plain text first.${KEY_SHIFT}${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>```${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>code1${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>code2, then CTRL+ENTER closes the code block and sends the post${KEY_CTRL}${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<!--Search for code2 to verify code block in search results (easier to verify there)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=searchBox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchBox</td>
+	<td>code2${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=code.hljs</td>
+	<td>code1 code2, then CTRL+ENTER closes the code block and sends the post <br />code1 code2, then CTRL+ENTER closes the code block and sends the post</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchBox</td>
+	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.sidebar--right__close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.sidebar--right__close</td>
+	<td></td>
+</tr>
+<!--Can add more lines to post after closing code block -->
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>One plain text line at the top.${KEY_SHIFT}${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>```${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>codeA${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>codeB, then close the code block with a line of backticks and SHIFT+ENTER${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>```${KEY_SHIFT}${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>And follow with another line of plain text after the code block.${KEY_ENTER}</td>
+</tr>
+<!--Search for codeb to verify code block / plain text in search results (easier to verify there)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=searchBox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchBox</td>
+	<td>codeb${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p</td>
+	<td>One plain text line at the top.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=code.hljs</td>
+	<td>codeA codeB, then close the code block with a line of backticks and SHIFT+ENTER <br />codeA codeB, then close the code block with a line of backticks and SHIFT+ENTER</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[@id='search-items-container']/div/div[2]/div[2]/div[2]/div[2]/div/div/div/div/p[2]</td>
+	<td>And follow with another line of plain text after the code block.</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchBox</td>
+	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.sidebar--right__close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.sidebar--right__close</td>
+	<td></td>
+</tr>
+<!--Multiple code blocks within a post-->
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>```${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>codeblock1${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>```${KEY_SHIFT}${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>```${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>codeblock2${KEY_SHIFT}${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>```${KEY_ENTER}</td>
+</tr>
+<!--Search for codeblock2 to verify code block / plain text in search results (easier to verify there)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=searchBox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchBox</td>
+	<td>codeblock2${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=code.hljs</td>
+	<td>codeblock1</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[@id='search-items-container']/div/div[2]/div[2]/div[2]/div[2]/div/div/div/div/div[2]/code</td>
+	<td>codeblock2 <br />codeblock2</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.post-code.post-code--wrap</td>
+	<td>codeblock1</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchBox</td>
+	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.sidebar--right__close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.sidebar--right__close</td>
+	<td></td>
+</tr>
+<!--CTRL/CMD+ENTER sends even if only the syntax is defined and there is nothing on the next line-->
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Send this text. ``` when there is no text on the next line</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Send this text. ``` when there is no text on the next line</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_CTRL}${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Send this text. ``` when there is no text on the next line</td>
+	<td></td>
+</tr>
+<!--Code block Ctrl+Enter in RHS reply thread-->
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_SHIFT}${KEY_UP}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=reply_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=reply_textbox</td>
+	<td>Reply beginning${KEY_SHIFT}${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=reply_textbox</td>
+	<td>```${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=reply_textbox</td>
+	<td>How about a codeblockreply?</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=reply_textbox</td>
+	<td>```${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=code.hljs</td>
+	<td>How about a codeblockreply?</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=reply_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Turn ON code block w/ CTRL+ENTER-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=codeBlockOnCtrlEnterEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=codeBlockOnCtrlEnterEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=codeBlockOnCtrlEnterOn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=codeBlockOnCtrlEnterOn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#codeBlockOnCtrlEnterDesc &gt; span</td>
+	<td>On</td>
+</tr>
+<!---->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#accountSettingsHeader &gt; button.close</td>

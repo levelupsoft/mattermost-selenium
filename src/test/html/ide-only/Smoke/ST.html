@@ -2799,7 +2799,7 @@
 	<td>link=@testst</td>
 	<td>@testst</td>
 </tr>
-<!--Member count icon increments up 1-->
+<!--Member count icon increments up +1-->
 <tr>
 	<td>waitForText</td>
 	<td>css=span.icon__text</td>
@@ -2817,14 +2817,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=button.style--none &gt; span</td>
-	<td>Manage Members</td>
+	<td>waitForElementPresent</td>
+	<td>id=manageMembers</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none &gt; span</td>
-	<td>Manage Members</td>
+	<td>id=manageMembers</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2932,20 +2932,40 @@
 	<td>css=div.more-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
 	<td></td>
 </tr>
-<!--Get URL from team testst was just removed from-->
+<!--Get URL from public channel on ST2Team that testst was just removed from-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>off-</td>
+</tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.sidebar-item__name</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
 	<td>Off-Topic</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-item__name</td>
-	<td>Off-Topic</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=strong.heading</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td>Off-Topic</td>
 </tr>
 <tr>
@@ -2953,6 +2973,12 @@
 	<td>closedteamurl</td>
 	<td></td>
 </tr>
+<!--Post URL in Off-Topic on the team removed user is still part of-->
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.team-container.unread &gt; a &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
@@ -2961,18 +2987,12 @@
 <tr>
 	<td>click</td>
 	<td>css=div.team-container.unread &gt; a &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
-	<td>ST</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
 	<td>STTeam</td>
-</tr>
-<!--Post URL in Off-Topic on the team removed user is still part of-->
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3894,18 +3914,13 @@
 </tr>
 <!--Verify can't join closed team via URL after being removed-->
 <tr>
-	<td>waitForText</td>
-	<td>css=span.sidebar-item__name</td>
-	<td>Off-Topic</td>
+	<td>waitForElementPresent</td>
+	<td>link=Off-Topic*</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-item__name</td>
-	<td>Off-Topic</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//a[@href='/stteam']</td>
+	<td>link=Off-Topic*</td>
 	<td></td>
 </tr>
 <tr>
@@ -3924,42 +3939,6 @@
 	<td>ST2Team</td>
 </tr>
 <!--Verify mention badges - 2 on private channel, 1 on DM-->
-<tr>
-	<td>waitForText</td>
-	<td>css=span.badge</td>
-	<td>2</td>
-</tr>
-<!--Open channels, verify message, verify badge disappears-->
-<tr>
-	<td>click</td>
-	<td>css=span.badge</td>
-	<td>2</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=strong.heading:contains('Test-')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>link=@testst</td>
-	<td>@testst</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=p:contains('Hello @testst')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=p:contains('@channel ! Whole channel.')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotText</td>
-	<td>css=span.badge</td>
-	<td>2</td>
-</tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=span.badge</td>
@@ -4005,6 +3984,42 @@
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
 	<td>Town Square</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.badge</td>
+	<td>2</td>
+</tr>
+<!--Open channels, verify message, verify badge disappears-->
+<tr>
+	<td>click</td>
+	<td>css=span.badge</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=strong.heading:contains('Test-')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>link=@testst</td>
+	<td>@testst</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('Hello @testst')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('@channel ! Whole channel.')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=span.badge</td>
+	<td>2</td>
 </tr>
 <!--LOG OUT testst, then in as ST2, to set team to be open to any user on the server-->
 <tr>
@@ -4236,6 +4251,7 @@
 	<td>css=div.tooltip-inner</td>
 	<td>Testing the team description.</td>
 </tr>
+<!--*** Fails if not first in open teams list-->
 <tr>
 	<td>waitForText</td>
 	<td>css=span.signup-team-dir__name</td>
@@ -4464,7 +4480,7 @@
 </tr>
 <tr>
 	<td>verifyElementPresent</td>
-	<td>id=channelNotificationsGroup</td>
+	<td>id=channelNotifications</td>
 	<td></td>
 </tr>
 <tr>

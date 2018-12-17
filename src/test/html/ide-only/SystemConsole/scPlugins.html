@@ -80,30 +80,30 @@
 	<td>id=systemConsole</td>
 	<td></td>
 </tr>
-<!--Disable plugins-->
+<!--Disable plugin upload-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='configuration'])[2]</td>
+	<td>id=management</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='configuration'])[2]</td>
+	<td>id=management</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=PluginSettings.Enablefalse</td>
+	<td>id=enablefalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=PluginSettings.Enablefalse</td>
+	<td>id=enablefalse</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=PluginSettings.Enablefalse</td>
+	<td>id=enablefalse</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -121,32 +121,11 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
-<!--Verify messaging that plugins are disabled-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=management</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=management</td>
-	<td></td>
-</tr>
+<!--Verify messaging that plugins are disabled, upload button disabled-->
 <tr>
 	<td>waitForText</td>
-	<td>css=p &gt; span</td>
-	<td>Plugins are disabled on your server. To enable them, go to Plugins &gt; Configuration.</td>
-</tr>
-<!--Verify messaging on Configuration page, link to docs-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='configuration'])[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//a[@id='configuration'])[2]</td>
-	<td></td>
+	<td>css=p.help-text &gt; span</td>
+	<td>To enable plugins, set Enable Plugins to true. See documentation to learn more.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -158,22 +137,23 @@
 	<td>link=documentation@href</td>
 	<td>https://about.mattermost.com/default-plugins</td>
 </tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<!--Pre-packaged plugins do not appear-->
+<tr>
+	<td>waitForNotText</td>
+	<td>css=strong</td>
+	<td>JIRA</td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>Zoom</td>
+	<td></td>
+</tr>
 <!--Enable Plugins-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='configuration'])[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//a[@id='configuration'])[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=h3.admin-console-header</td>
-	<td>Configuration</td>
-</tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label.col-sm-4</td>
@@ -181,27 +161,27 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=PluginSettings.Enabletrue</td>
+	<td>id=enabletrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=PluginSettings.Enabletrue</td>
+	<td>id=enabletrue</td>
 	<td>off</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=PluginSettings.Enablefalse</td>
+	<td>id=enablefalse</td>
 	<td>on</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=PluginSettings.Enabletrue</td>
+	<td>id=enabletrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=PluginSettings.Enabletrue</td>
+	<td>id=enabletrue</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -219,14 +199,21 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<!--File upload button is enabled-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=management</td>
+	<td>waitForEditable</td>
+	<td>css=input[type=&quot;file&quot;]</td>
 	<td></td>
 </tr>
+<!--Pre-packaged plugins appear-->
 <tr>
-	<td>click</td>
-	<td>id=management</td>
+	<td>waitForText</td>
+	<td>css=strong</td>
+	<td>JIRA</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Zoom</td>
 	<td></td>
 </tr>
 <tr>
@@ -234,11 +221,41 @@
 	<td>8000</td>
 	<td></td>
 </tr>
-<!--Verify on server without plugin uploads enabled in config.json-->
+<!--Verify on server without plugins enabled in config.json-->
 <!--*** Upload is enabled now on Se server; switching this for now to use -->
-<!--*** https://ci-linux-mysql.mattermost.com-->
-<!--*** Manually log in to ci-linux-mysql as a system admin-->
+<!--*** https://ci-windows-mysql.mattermost.com-->
+<tr>
+	<td>open</td>
+	<td>https://ci-windows-mysql.mattermost.com</td>
+	<td></td>
+</tr>
+<!--*** MANUALLY LOG IN to ci-windows-mysql as a system admin-->
+<tr>
+	<td>pause</td>
+	<td>8000</td>
+	<td></td>
+</tr>
 <!--*** Ensure Plugins Configuration = true-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=management</td>
@@ -250,6 +267,11 @@
 	<td></td>
 </tr>
 <!--Choose file button is not clickable (upload disabled in config)-->
+<tr>
+	<td>waitForValue</td>
+	<td>id=enabletrue</td>
+	<td>on</td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=input[type=&quot;file&quot;]</td>
@@ -263,17 +285,17 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=p.help-text &gt; span</td>
-	<td>To enable plugin uploads, go to Plugins &gt; Configuration. See documentation to learn more.</td>
+	<td>Enable plugin uploads in config.json. See documentation to learn more.</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=documentation</td>
-	<td></td>
+	<td>waitForAttribute</td>
+	<td>css=p.help-text &gt; span &gt; a@href</td>
+	<td>https://about.mattermost.com/default-plugin-uploads</td>
 </tr>
 <tr>
 	<td>waitForAttribute</td>
 	<td>link=documentation@href</td>
-	<td>https://about.mattermost.com/default-plugin-uploads</td>
+	<td>https://about.mattermost.com/default-plugins</td>
 </tr>
 <!--Verify pre-packaged plugins - JIRA and Zoom-->
 <!--JIRA plugin UI-->
@@ -309,10 +331,17 @@
 	<td></td>
 </tr>
 <!--JIRA plugin fails to start on ci-linux-mysql so this verifies error ("This plugin is running" is verified elsewhere)-->
+<!--JIRA plugin starts successfully on ci-windows-mysql so might have to verify error elsewhere (Se server?)-->
+<!--One or the other of the below should appear :)-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.alert.alert-warning &gt; span</td>
 	<td>This plugin failed to start. Check your system logs for errors.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.alert.alert-success &gt; span</td>
+	<td>This plugin is running.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -334,19 +363,86 @@
 	<td>css=div.alert.alert-info &gt; span</td>
 	<td>This plugin is not enabled.</td>
 </tr>
-<!--This fails if there are unexpected plugins in the list-->
+<!--Open JIRA settings page-->
+<tr>
+	<td>waitForText</td>
+	<td>css=span &gt; a &gt; span</td>
+	<td>Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h3.admin-console-header</td>
+	<td>JIRA</td>
+</tr>
+<!--*** Expects JIRA plugin to be off; change manually if needed-->
+<tr>
+	<td>waitForValue</td>
+	<td>id=enabledtrue</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enabledtrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enabledtrue</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--Note: These two `Enable` settings have nothing to do with each other apparently... -->
+<!--Just tests UI for now; these are outdated plugin structures so it's not important to test settings pages in depth-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<!--This fails if there are unexpected plugins in the list or if other differences on the test server-->
+<!--*** Can manually verify text is present-->
 <!--Zoom plugin UI-->
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div[2]/div/div/div[2]/div/strong</td>
+	<td>//div[@id='root']/div/div[2]/div/form/div/div/div[3]/div/div/div[2]/div/strong</td>
 	<td>Zoom</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div[2]/div/div/div[2]/div[2]</td>
+	<td>waitForTextPresent</td>
+	<td>Zoom</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
 	<td>Zoom audio and video conferencing plugin for Mattermost 5.2+.</td>
+	<td></td>
 </tr>
 <!--Enable and disable Zoom-->
+<!--This fails if there are unexpected plugins in the list or if other differences on the test server-->
+<!--Can just enable and disable manually if necessary-->
 <tr>
 	<td>waitForText</td>
 	<td>//div[@id='root']/div/div[3]/div/form/div[2]/div/div/div[2]/div[4]/div/span</td>
@@ -418,7 +514,7 @@
 	<td>3000</td>
 	<td></td>
 </tr>
-<!--*** Switch back to the Selenium server, which has uploads enabled-->
+<!--Switches back to the Selenium server, which has uploads enabled-->
 <tr>
 	<td>pause</td>
 	<td>4000</td>
@@ -444,11 +540,6 @@
 	<td>waitForElementPresent</td>
 	<td>link=documentation</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForAttribute</td>
-	<td>link=documentation@href</td>
-	<td>https://about.mattermost.com/default-plugin-uploads</td>
 </tr>
 <tr>
 	<td>waitForNotEditable</td>
@@ -486,6 +577,7 @@
 	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
 	<td></td>
 </tr>
+<!--This step usually takes a while to finish uploading-->
 <tr>
 	<td>waitForNotEditable</td>
 	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
@@ -539,6 +631,7 @@
 	<td>//label[@class='control-label']</td>
 	<td></td>
 </tr>
+<!--This step usually takes a while to finish uploading-->
 <tr>
 	<td>waitForText</td>
 	<td>//label[@class='control-label']</td>
@@ -815,198 +908,1021 @@
 	<td>css=p:contains('MessageHasBeenPosted in ~Off-Topic by')</td>
 	<td></td>
 </tr>
-<!--Left off test-writing here for now-->
-<!--If still need to do manual demo plugin tests, don't deactivate/remove it yet-->
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<!--*** Manually click Disable-->
-<!--*** Visually verify link changes to Disabling... then Enable-->
-<tr>
-	<td>pause</td>
-	<td>7000</td>
-	<td></td>
-</tr>
-<!--*** Manually click Remove, verify plugin is removed from list-->
-<tr>
-	<td>pause</td>
-	<td>14000</td>
-	<td></td>
-</tr>
-<!--JIRA plugin UI-->
+<!--Leaving channel posts in plugin channel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=custom/jira</td>
+	<td>id=sidebarSwitcherButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=custom/jira</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input.form-control.focused</td>
+	<td>plugint</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>PluginTestChannel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>PluginTestChannel</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/leave${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.sidebar-item__name &gt; span</td>
+	<td>Demo Plugin</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.badge</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.badge</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Demo Plugin</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>UserHasLeftChannel: @admin, ~PluginTestChannel</td>
+	<td></td>
+</tr>
+<!--Joining channel posts in demo plugin channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input.form-control.focused</td>
+	<td>off-topic</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/join ~plugintestchannel${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>PluginTestChannel</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Demo Plugin2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Demo Plugin2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>UserHasJoinedChannel: @admin, ~PluginTestChannel</td>
+	<td></td>
+</tr>
+<!--/demo_plugin command-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/demo_p</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.command__title</td>
+	<td>/demo_plugin (true|false)</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.command__desc</td>
+	<td>Enables or disables the demo plugin hooks.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.command__desc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
+	<td>/demo_plugin </td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>true${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>The demo plugin hooks are already enabled.</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/demo_plugin false${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>Disabled demo plugin hooks.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.sidebar--left__icons &gt; div</td>
+	<td>Demo Plugin: Disabled</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/demo_plugin true${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>Enabled demo plugin hooks.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.sidebar--left__icons &gt; div</td>
+	<td>Demo Plugin: Enabled</td>
+</tr>
+<!--Still in Demo Plugin channel, can't post message there-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Hello friendly plugin!${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>Posting is not allowed in this channel.</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=a.post-cancel &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.post-cancel &gt; span</td>
+	<td></td>
+</tr>
+<!--Editing a message posts in Demo Plugin channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Off-Topic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Off-Topic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Here's a post to edit${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_UP}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=edit_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=edit_textbox</td>
+	<td>!${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>id=edit_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input.form-control.focused</td>
+	<td>demo plugin</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Demo Plugin*</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Demo Plugin*</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Demo Plugin</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>MessageHasBeenUpdated in ~Off-Topic by @admin</td>
+</tr>
+<!--User joining team posts in Demo Plugin channel-->
+<!--Switch to UI2 team (everyone is already on UI1)-->
+<tr>
+	<td>open</td>
+	<td>http://selenium.mattermost.com/ui-automation2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation 2</td>
+</tr>
+<!--Join Demo Plugin channel for this team-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarChannelsMore</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarChannelsMore</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.more-modal__name</td>
+	<td>Demo Plugin</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__actions &gt; button.btn.btn-primary</td>
+	<td>Join</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__actions &gt; button.btn.btn-primary</td>
+	<td>Join</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//button[@id='addUsersToTeam']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@id='addUsersToTeam']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.more-modal__description</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__description</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.multi-select__help &gt; span</td>
+	<td>Use ↑↓ to browse, ↵ to select. You can add 19 more people.</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>UserHasJoinedTeam: @</td>
+</tr>
+<!--User leaving team posts in Demo Plugin channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=manageMembers</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=manageMembers</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.filter-textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.filter-textbox</td>
+	<td>corey</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@corey</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[7]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=ul.dropdown-menu.member-menu &gt; li &gt; a &gt; span</td>
+	<td>Remove From Team</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=ul.dropdown-menu.member-menu &gt; li &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__placeholder-row &gt; p &gt; span</td>
+	<td>No users found</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>UserHasLeftTeam: @corey</td>
+</tr>
+<!--LOG OUT admin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<!--demo_plugin user not allowed to log in-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>demo_plugin</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=label.control-label</td>
+	<td>Login rejected by plugin: the demo user is not allowed to login</td>
+</tr>
+<!--LOG IN admin-->
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<!--User logging in posts in Demo Plugin channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://selenium.mattermost.com/ui-automation/channels/demo_plugin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Demo Plugin</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>User @admin has logged in</td>
+</tr>
+<!--Action button in profile popover-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=img.more-modal__image</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img.more-modal__image</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Demo Plugin: Action</td>
+	<td></td>
+</tr>
+<!--Finding by div; may need to click Action button manually if it stops finding it-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='user-profile-popover']/div[2]/div[7]/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>You have triggered the root component of the demo plugin.<br /><br />Click anywhere to close.</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='channel_view']/div/div[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='channel_view']/div/div[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>Click anywhere to close</td>
+	<td></td>
+</tr>
+<!--Plugin icon displays at bottom of team sidebar-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.team-sidebar-bottom-plugin</td>
+	<td></td>
+</tr>
+<!--Top nav plugin action button-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=i.icon.fa.fa-plug</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.icon.fa.fa-plug</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>You have triggered the root component of the demo plugin.<br /><br />Click anywhere to close.</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='channel_view']/div/div[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='channel_view']/div/div[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>Click anywhere to close</td>
+	<td></td>
+</tr>
+<!--Main menu plugin action option-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Demo Plugin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Demo Plugin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>You have triggered the root component of the demo plugin.<br /><br />Click anywhere to close.</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='channel_view']/div/div[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='channel_view']/div/div[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>Click anywhere to close</td>
+	<td></td>
+</tr>
+<!--demo_plugin settings page in System Console-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=custom/com.mattermost.demo-plugin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=custom/com.mattermost.demo-plugin</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=h3.admin-console-header</td>
-	<td>JIRA</td>
+	<td>Demo Plugin</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=label.control-label.col-sm-4</td>
-	<td>Enable JIRA</td>
+	<td>css=div.help-text &gt; span</td>
+	<td>The channel to use as part of the demo plugin, created for each team automatically if it does not exist.</td>
 </tr>
+<!--Disable demo_plugin in System Console-->
+<!--*** Finding the right one relies on demo_plugin being first in list-->
 <tr>
-	<td>waitForNotEditable</td>
-	<td>id=admin_user_setting_userName</td>
+	<td>waitForElementPresent</td>
+	<td>id=management</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForNotEditable</td>
-	<td>id=saveSetting</td>
+	<td>click</td>
+	<td>id=management</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=strong</td>
+	<td>Demo Plugin</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.padding-top &gt; a &gt; span</td>
+	<td>Disable</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.padding-top &gt; a &gt; span</td>
+	<td>Disable</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.alert.alert-info &gt; span</td>
+	<td>This plugin is not enabled.</td>
+</tr>
+<!--Verify disabled on team (elements no longer visible)-->
+<tr>
+	<td>waitForText</td>
+	<td>id=swithToui-automation</td>
+	<td>Switch to UI Automation</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=swithToui-automation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=i.icon.fa.fa-plug</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>css=div.sidebar--left__icons &gt; div</td>
+	<td>Demo Plugin: Disabled</td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>css=div.sidebar--left__icons &gt; div</td>
+	<td>Demo Plugin: Enabled</td>
+</tr>
+<!--/plugin_demo command no longer found-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/demo_p</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=enabledfalse</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=enabledtrue</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=enabledtrue</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=admin_user_setting_username</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>css=button.btn.btn-default</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=admin_user_setting_username</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=img.admin-setting-user__image</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=button.btn.btn-default</td>
-	<td>Regenerate</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-default</td>
-	<td>Regenerate</td>
-</tr>
-<tr>
-	<td>storeText</td>
-	<td>id=secret</td>
-	<td>jirasecret</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=button.btn.btn-default</td>
-	<td>Regenerate</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-default</td>
-	<td>Regenerate</td>
+	<td>id=post_textbox</td>
+	<td>/demo_p</td>
 </tr>
 <tr>
 	<td>waitForNotText</td>
-	<td>id=secret</td>
-	<td>jirasecret</td>
+	<td>css=div.command__title</td>
+	<td>/demo_plugin (true|false)</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>lugin${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.help-text</td>
-	<td>When true, you can configure JIRA webhooks to post message in Mattermost. To help combat phishing attacks, all posts are labelled by a BOT tag.</td>
+	<td>css=label.control-label</td>
+	<td>Command with a trigger of '/demo_plugin' not found. Click here to send as a message.</td>
 </tr>
-<tr>
-	<td>waitForText</td>
-	<td>link=documentation</td>
-	<td>documentation</td>
-</tr>
-<tr>
-	<td>waitForAttribute</td>
-	<td>link=documentation@href</td>
-	<td>https://about.mattermost.com/default-jira-plugin</td>
-</tr>
-<!--Disable plugins-->
+<!--Briefly re-enable and verify to prepare for verifying removal-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='configuration'])[2]</td>
+	<td>id=systemConsole</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='configuration'])[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.modal-body &gt; span</td>
-	<td>exact:You have unsaved changes, are you sure you want to discard them?</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.modal-footer &gt; button.btn.btn-primary</td>
-	<td>Yes, Discard</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.modal-footer &gt; button.btn.btn-primary</td>
+	<td>id=systemConsole</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=PluginSettings.Enablefalse</td>
+	<td>id=management</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=PluginSettings.Enablefalse</td>
+	<td>id=management</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.padding-top &gt; a &gt; span</td>
+	<td>Enable</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.padding-top &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.alert.alert-success &gt; span</td>
+	<td>This plugin is running.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=swithToui-automation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=i.icon.fa.fa-plug</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>8000</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--*** Plugin is removed in tests below; if you still have manual -->
+<!--*** tests to do, Don't run the below test to remove the plugin-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Remove demo-plugin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span &gt; a &gt; span</td>
+	<td>Remove</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Remove</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=strong:contains('Demo Plugin')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=div.padding-top:contains('This plugin demonstrates the capabilities of a Mattermost plugin.')</td>
+	<td></td>
+</tr>
+<!--Verify removed from team (elements no longer visible)-->
+<tr>
+	<td>waitForText</td>
+	<td>id=swithToui-automation</td>
+	<td>Switch to UI Automation</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=swithToui-automation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=i.icon.fa.fa-plug</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>css=div.sidebar--left__icons &gt; div</td>
+	<td>Demo Plugin: Disabled</td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>css=div.sidebar--left__icons &gt; div</td>
+	<td>Demo Plugin: Enabled</td>
+</tr>
+<!--/plugin_demo command no longer found-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/demo_p</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=PluginSettings.Enablefalse</td>
-	<td>on</td>
+	<td>id=post_textbox</td>
+	<td>/demo_p</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
+	<td>waitForNotText</td>
+	<td>css=div.command__title</td>
+	<td>/demo_plugin (true|false)</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>lugin${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>waitForNotEditable</td>
-	<td>id=saveSetting</td>
+	<td>waitForText</td>
+	<td>css=label.control-label</td>
+	<td>Command with a trigger of '/demo_plugin' not found. Click here to send as a message.</td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
 	<td></td>
 </tr>
+<!--*** Add steps to cleanup demo plugin channels and demo_plugin user?-->
 <!--LOG OUT-->
 <tr>
 	<td>waitForElementPresent</td>

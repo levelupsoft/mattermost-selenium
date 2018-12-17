@@ -99,6 +99,17 @@
 	<td>css=a &gt; span</td>
 	<td>Send again</td>
 </tr>
+<!--Refresh, message bar persists-->
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.announcement-bar</td>
+	<td>Check your email at ${prefix}+verification@mattermost.com to verify the address. Cannot find the email?Send again</td>
+</tr>
 <!--Switch channels, message bar persists-->
 <tr>
 	<td>storeText</td>
@@ -123,7 +134,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.announcement-bar</td>
-	<td>Check your email at ${prefix}+verification@mattermost.com to verify the address. Cannot find the email?Send again×</td>
+	<td>Check your email at ${prefix}+verification@mattermost.com to verify the address. Cannot find the email?Send again</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -138,7 +149,18 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.announcement-bar</td>
-	<td>Check your email at ${prefix}+verification@mattermost.com to verify the address. Cannot find the email?Send again×</td>
+	<td>Check your email at ${prefix}+verification@mattermost.com to verify the address. Cannot find the email?Send again</td>
+</tr>
+<!--Click the Send again link-->
+<tr>
+	<td>waitForText</td>
+	<td>css=a &gt; span</td>
+	<td>Send again</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a &gt; span</td>
+	<td>Send again</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -332,16 +354,19 @@
 </tr>
 <!--VERIFICATIONS-->
 <!--*** Check email, read through subject line and body, verify as described below-->
-<!--1a. NEW address: "[server name] Verify new email address"-->
-<!--1a. "You updated your email"-->
-<!--1a. "To finish updating your email address for [server], please click the link...."-->
-<!--1a. ** Manually click the Verify Email button-->
-<!--1a. "Your email has been verified" in green box on login page (you can then log in)-->
-<!--1a. New address [prefix]+verification@mattermost.com is pre-populated-->
+<!--1a. NEW address: "[server name] Verify new email address" (2 copies if resent)-->
+<!--  1a. "You updated your email"-->
+<!--  1a. "To finish updating your email address for [server], please click the link...."-->
+<!--  1a. ** Manually click the Verify Email button-->
+<!--  1a. IF still logged in, success message bar at the top "Email verified"-->
+<!--  1a. OR if not logged in, "Email Verified" in green box on login page-->
+<!--  1a. New address [prefix]+verification@mattermost.com is pre-populated-->
+<!--  1a. You can then log in-->
 <!--1b. Also received RE-SENT verification email (same as above)-->
 <!--1c. OLD address: "[server name] Your email address has changed"-->
-<!--1c. "You updated your email"-->
-<!--1c. "Your email address for [server] has been changed to [new email]"-->
+<!--  1c. "You updated your email"-->
+<!--  1c. "Your email address for [server] has been changed to [new email]"-->
+<!--*** Refresh app and make sure blue banner does not return at the top-->
 <!--***-->
 <!--2. "[server name] Your password has been updated"-->
 <!--2. Lists correct server name in body of email-->
