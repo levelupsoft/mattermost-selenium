@@ -254,12 +254,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test7</td>
 </tr>
 <tr>
@@ -279,12 +279,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -808,21 +808,21 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.badge</td>
-	<td>6</td>
+	<td>5</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>link=Mentions-${datetime}6</td>
-	<td>Mentions-${datetime}6</td>
+	<td>link=Mentions-${datetime}5</td>
+	<td>Mentions-${datetime}5</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Mentions-${datetime}6</td>
+	<td>link=Mentions-${datetime}5</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Mentions-${datetime}6</td>
+	<td>link=Mentions-${datetime}5</td>
 	<td></td>
 </tr>
 <tr>
@@ -1696,7 +1696,7 @@
 	<td>id=post_textbox</td>
 	<td>Thanks for asking, @notify.${datetime}!${KEY_ENTER}</td>
 </tr>
-<!--Mention user, with colon point immediately following-->
+<!--Mention user, with colon immediately following-->
 <tr>
 	<td>waitForText</td>
 	<td>id=post_textbox</td>
@@ -1773,7 +1773,7 @@
 	<td>css=strong.heading</td>
 	<td>Town Square</td>
 </tr>
-<!--Verify (2) mention badge-->
+<!--Verify (3) mention badge-->
 <tr>
 	<td>waitForText</td>
 	<td>css=span.badge</td>
@@ -2031,12 +2031,12 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Logout</td>
+	<td>id=logout</td>
 	<td></td>
 </tr>
 </tbody></table>

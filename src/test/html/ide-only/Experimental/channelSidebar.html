@@ -12,7 +12,7 @@
 <tr><td rowspan="1" colspan="3">channelSidebar</td></tr>
 </thead><tbody>
 <!--*** Test on a server with sysadmin user `admin` `passwd`-->
-<!--*** Manually open to server login page-->
+<!--*** And experimental sidebar reorg enabled-->
 <!--LOG IN admin-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -428,69 +428,33 @@
 <!--Add users papa and papa-2-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='channelIntro']/button</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='channelIntro']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa</td>
 	<td>@papa</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa-2${KEY_ENTER}</td>
 </tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
-</tr>
-<!--This step fails (in every repeated instance) until MM-11843 is fixed-->
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa-2</td>
 	<td>@papa-2</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×papa <br />×papa-2</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
 </tr>
 <!--Post a message-->
 <tr>
@@ -572,68 +536,33 @@
 <!--Add users papa and papa-2-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='channelIntro']/button</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='channelIntro']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa</td>
 	<td>@papa</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa-2${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa-2</td>
 	<td>@papa-2</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×papa <br />×papa-2</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
 </tr>
 <!--Post a message-->
 <tr>
@@ -700,68 +629,33 @@
 <!--Add users papa and papa-2-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='channelIntro']/button</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='channelIntro']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa</td>
 	<td>@papa</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa-2${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa-2</td>
 	<td>@papa-2</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×papa <br />×papa-2</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
 </tr>
 <!--Post a message-->
 <tr>
@@ -843,68 +737,33 @@
 <!--Add users papa and papa-2-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='channelIntro']/button</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='channelIntro']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa</td>
 	<td>@papa</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa-2${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa-2</td>
 	<td>@papa-2</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×papa <br />×papa-2</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
 </tr>
 <!--Post a message-->
 <tr>
@@ -971,68 +830,33 @@
 <!--Add users papa and papa-2-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='channelIntro']/button</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='channelIntro']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa</td>
 	<td>@papa</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa-2${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa-2</td>
 	<td>@papa-2</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×papa <br />×papa-2</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
 </tr>
 <!--Post a message-->
 <tr>
@@ -1099,68 +923,33 @@
 <!--Add users papa and papa-2-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='channelIntro']/button</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='channelIntro']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa</td>
 	<td>@papa</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa-2${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa-2</td>
 	<td>@papa-2</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×papa <br />×papa-2</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
 </tr>
 <!--Post a message-->
 <tr>
@@ -1262,68 +1051,33 @@
 <!--Add users papa and papa-2-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='channelIntro']/button</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='channelIntro']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa</td>
 	<td>@papa</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa-2${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa-2</td>
 	<td>@papa-2</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×papa <br />×papa-2</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
 </tr>
 <!--Post a message-->
 <tr>
@@ -1405,68 +1159,33 @@
 <!--Add users papa and papa-2-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='channelIntro']/button</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='channelIntro']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa</td>
 	<td>@papa</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa-2${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa-2</td>
 	<td>@papa-2</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×papa <br />×papa-2</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
 </tr>
 <!--Post a message-->
 <tr>
@@ -1543,68 +1262,33 @@
 <!--Add users papa and papa-2-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='channelIntro']/button</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='channelIntro']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa</td>
 	<td>@papa</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa-2${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa-2</td>
 	<td>@papa-2</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×papa <br />×papa-2</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
 </tr>
 <!--Post a message-->
 <tr>
@@ -1666,68 +1350,33 @@
 <!--Add users papa and papa-2-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='channelIntro']/button</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='channelIntro']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa</td>
 	<td>@papa</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa-2${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa-2</td>
 	<td>@papa-2</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×papa <br />×papa-2</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
 </tr>
 <!--Post a message-->
 <tr>
@@ -1804,68 +1453,33 @@
 <!--Add users papa and papa-2-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='channelIntro']/button</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='channelIntro']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa</td>
 	<td>@papa</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa-2${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa-2</td>
 	<td>@papa-2</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×papa <br />×papa-2</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
 </tr>
 <!--Post a message-->
 <tr>
@@ -1927,68 +1541,33 @@
 <!--Add users papa and papa-2-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='channelIntro']/button</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='channelIntro']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa</td>
 	<td>@papa</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa-2${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa-2</td>
 	<td>@papa-2</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×papa <br />×papa-2</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
 </tr>
 <!--Post a message-->
 <tr>
@@ -2070,68 +1649,33 @@
 <!--Add users papa and papa-2-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='channelIntro']/button</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='channelIntro']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa</td>
 	<td>@papa</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/invite @papa-2${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>link=@papa-2</td>
 	<td>@papa-2</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×papa <br />×papa-2</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
 </tr>
 <!--Post a message-->
 <tr>
@@ -2152,48 +1696,13 @@
 <!--Create a DM w/ papa-2 (admin Favorite)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//h4[@id='directChannel']/button</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//h4[@id='directChannel']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa-2</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
-	<td>@papa-2</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.multi-select__help &gt; span</td>
-	<td>Use ↑↓ to browse, ↵ to select. You can add 6 more people.</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/msg @papa-2${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2228,73 +1737,13 @@
 <!--Create a GM w/ papa-2 and papa (admin Favorite)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//h4[@id='directChannel']/button</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//h4[@id='directChannel']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa-2</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
-	<td>@papa-2</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.multi-select__help &gt; span</td>
-	<td>Use ↑↓ to browse, ↵ to select. You can add 6 more people.</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
-	<td>papa</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
-	<td>@papa</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.multi-select__help &gt; span</td>
-	<td>Use ↑↓ to browse, ↵ to select. You can add 5 more people.</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/groupmsg @papa,@papa-2 ${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2373,11 +1822,88 @@
 	<td>id=loginButton</td>
 	<td></td>
 </tr>
-<!--Default Sidebar: Grouped by type, sorted alpha (no favorites yet)-->
+<!--Default Sidebar: Grouped by type, sorted alpha, favorites, unreads (mentions at top)-->
 <!--Using waitForTextPresent and * to verify display order-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>PUBLIC CHANNELS*[symbol]*5number*AAA*BBB*Off-Topic*Quick*Quick-test*rename*Town Square*PRIVATE CHANNELS*alpha*CCC*Channel*channel test*NNN*DIRECT MESSAGES*admin*admin, papa</td>
+	<td>UNREADS*5number*AAA*admin*alpha*BBB*Channel*channel test*NNN*Quick*Quick-test*rename*ZZZ*admin, papa*PUBLIC CHANNELS*Off-Topic*Town Square*PRIVATE CHANNELS*DIRECT MESSAGES*More...</td>
+	<td></td>
+</tr>
+<!--Turn Unreads off: Grouped by type, sorted alpha, favorites, no unreads (mentions not at top)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=groupChannelsEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=groupChannelsEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=unreadAtTopOption</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=unreadAtTopOption</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=unreadAtTopOption</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=groupChannelsDesc</td>
+	<td>Group by channel type, sorted alphabetically<br />Favorites grouped separately</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<!--Grouped by type, sorted alpha, favorites, no unreads (mentions not at top)-->
+<tr>
+	<td>waitForTextPresent</td>
+	<td>PUBLIC CHANNELS*[symbol]*5number*AAA*BBB*Off-Topic*Quick*Quick-test*rename*Town Square*ZZZ*PRIVATE CHANNELS*alpha*CCC*Channel*channel test*NNN*DIRECT MESSAGES*admin*admin, papa</td>
 	<td></td>
 </tr>
 <!--More Unreads indicator (below)-->
@@ -2386,7 +1912,7 @@
 	<td>id=unreadIndicatorBottom</td>
 	<td></td>
 </tr>
-<!--Change to sort by Recency (still grouped by channel type)-->
+<!--Change to sort by Recency (still grouped by channel type, favorites on, unreads off)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -2472,10 +1998,10 @@
 	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
-<!--Verify channel list still grouped by channel type, but sorted by Recency-->
+<!--Verify channel list still grouped by channel type, but sorted by Recency, unreads off-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>PUBLIC CHANNELS*rename*[symbol]*Quick-test*Quick*5number*BBB*AAA*Off-Topic*Town Square*PRIVATE CHANNELS*NNN*channel test*Channel*CCC*alpha*DIRECT MESSAGES*admin, papa*admin</td>
+	<td>PUBLIC CHANNELS*ZZZ*rename*[symbol]*Quick-test*Quick*5number*BBB*AAA*Off-Topic*Town Square*PRIVATE CHANNELS*NNN*channel test*Channel*CCC*alpha*DIRECT MESSAGES*admin, papa*admin</td>
 	<td></td>
 </tr>
 <!--Change to combine all channel types (still sorted by Recency)-->
@@ -2556,18 +2082,18 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <!--Verify channels all grouped together, sorted by Recency-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>RECENT ACTIVITY*admin, papa*admin*NNN*channel test*Channel*CCC*alpha*rename*[symbol]*Quick-test*Quick*5number*BBB*AAA*Off-Topic*Town Square</td>
+	<td>RECENT ACTIVITY*admin, papa*admin*ZZZ*NNN*channel test*Channel*CCC*alpha*rename*[symbol]*Quick-test*Quick*5number*BBB*AAA*Off-Topic*Town Square</td>
 	<td></td>
 </tr>
 <!--Set to combine all channel types , sorted alphabetically-->
@@ -2654,7 +2180,7 @@
 <!--Verify channels all grouped together, sorted alphabetically-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>CHANNELS*[symbol]*5number*AAA*admin*admin, papa*alpha*BBB*CCC*Channel*channel test*NNN*Off-Topic*Quick*Quick-test*rename*Town Square</td>
+	<td>CHANNELS*[symbol]*5number*AAA*admin*admin, papa*alpha*BBB*CCC*Channel*channel test*NNN*Off-Topic*Quick*Quick-test*rename*Town Square*ZZZ</td>
 	<td></td>
 </tr>
 <!--Set to group Unreads separately, un-check Favorites being grouped-->
@@ -2753,13 +2279,14 @@
 	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
+<!--Verify No grouping, sorted alphabetically, Unreads on-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*[symbol]*5number*AAA*admin*admin, papa*alpha*BBB*CCC*Channel*channel test*NNN*Quick*Quick-test*rename*ZZZ*CHANNELS*Off-Topic*Town Square</td>
+	<td>UNREADS*[symbol]*5number*AAA*admin*alpha*BBB*CCC*Channel*channel test*NNN*Quick*Quick-test*rename*ZZZ*admin, papa*CHANNELS*Off-Topic*Town Square</td>
 	<td></td>
 </tr>
 <!--papa-2 reads each channel, verifies LHS as it reorders-->
-<!--papa-2 also posts messages (out of alpha order) so admin can test -->
+<!--papa-2 also posts messages (out of alpha order) so admin can test recency-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=[symbol]*</td>
@@ -2771,9 +2298,10 @@
 	<td>link=[symbol]*</td>
 	<td></td>
 </tr>
+<!--Note: With Unreads on, mentions all sort to top-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*[symbol]*5number*AAA*admin*admin, papa*alpha*BBB*CCC*Channel*channel test*NNN*Quick*Quick-test*rename*ZZZ*CHANNELS*Off-Topic*Town Square</td>
+	<td>UNREADS*[symbol]*5number*AAA*admin*alpha*BBB*CCC*Channel*channel test*NNN*Quick*Quick-test*rename*ZZZ*admin, papa*CHANNELS*Off-Topic*Town Square</td>
 	<td></td>
 </tr>
 <tr>
@@ -2807,9 +2335,10 @@
 	<td>link=rename*</td>
 	<td></td>
 </tr>
+<!--Note: With Unreads on, mentions sort to top-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*5number*AAA*admin*admin, papa*alpha*BBB*CCC*Channel*channel test*NNN*Quick*Quick-test*rename*ZZZ*CHANNELS*[symbol]*Off-Topic*Town Square</td>
+	<td>UNREADS*5number*AAA*admin*alpha*BBB*CCC*Channel*channel test*NNN*Quick*Quick-test*rename*ZZZ*admin, papa*CHANNELS*[symbol]*Off-Topic*Town Square</td>
 	<td></td>
 </tr>
 <tr>
@@ -2838,9 +2367,10 @@
 	<td>link=CCC*</td>
 	<td></td>
 </tr>
+<!--Note: With Unreads on, mentions sort to top-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*5number*AAA*admin*admin, papa*alpha*BBB*CCC*Channel*channel test*NNN*Quick*Quick-test*ZZZ*CHANNELS*[symbol]*Off-Topic*rename*Town Square</td>
+	<td>UNREADS*5number*AAA*admin*alpha*BBB*CCC*Channel*channel test*NNN*Quick*Quick-test*ZZZ*admin, papa*CHANNELS*[symbol]*Off-Topic*rename*Town Square</td>
 	<td></td>
 </tr>
 <tr>
@@ -2869,9 +2399,10 @@
 	<td>link=admin1</td>
 	<td></td>
 </tr>
+<!--Note: With Unreads on, mentions sort to top-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*5number*AAA*admin*admin, papa*alpha*BBB*Channel*channel test*NNN*Quick*Quick-test*ZZZ*CHANNELS*[symbol]*CCC*Off-Topic*rename*Town Square</td>
+	<td>UNREADS*5number*AAA*admin*alpha*BBB*Channel*channel test*NNN*Quick*Quick-test*ZZZ*admin, papa*CHANNELS*[symbol]*CCC*Off-Topic*rename*Town Square</td>
 	<td></td>
 </tr>
 <tr>
@@ -2902,7 +2433,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*5number*AAA*admin, papa*alpha*BBB*Channel*channel test*NNN*Quick*Quick-test*ZZZ*CHANNELS*[symbol]*admin*CCC*Off-Topic*rename*Town Square</td>
+	<td>UNREADS*5number*AAA*alpha*BBB*Channel*channel test*NNN*Quick*Quick-test*ZZZ*admin, papa*CHANNELS*[symbol]*admin*CCC*Off-Topic*rename*Town Square</td>
 	<td></td>
 </tr>
 <tr>
@@ -2997,8 +2528,14 @@
 	<td></td>
 </tr>
 <tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Refresh sorts the now-read Quick-test channel down to Public section-->
+<tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*5number*AAA*admin, papa*alpha*BBB*Channel*channel test*NNN*Quick*Quick-test*ZZZ*PUBLIC CHANNELS*[symbol]*Off-Topic*rename*Town Square*PRIVATE CHANNELS*CCC*DIRECT MESSAGES*admin*More...</td>
+	<td>UNREADS*5number*AAA*alpha*BBB*Channel*channel test*NNN*Quick*ZZZ*admin, papa*PUBLIC CHANNELS*[symbol]*Off-Topic*Quick-test*rename*Town Square*PRIVATE CHANNELS*CCC*DIRECT MESSAGES*admin*More...</td>
 	<td></td>
 </tr>
 <!--channel test (private)-->
@@ -3014,7 +2551,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*5number*AAA*admin, papa*alpha*BBB*Channel*channel test*NNN*Quick*ZZZ*PUBLIC CHANNELS*[symbol]*Off-Topic*Quick-test*rename*Town Square*PRIVATE CHANNELS*CCC*DIRECT MESSAGES*admin*More...</td>
+	<td>UNREADS*5number*AAA*alpha*BBB*Channel*channel test*NNN*Quick*ZZZ*admin, papa*PUBLIC CHANNELS*[symbol]*Off-Topic*Quick-test*rename*Town Square*PRIVATE CHANNELS*CCC*DIRECT MESSAGES*admin*More...</td>
 	<td></td>
 </tr>
 <tr>
@@ -3045,7 +2582,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*5number*AAA*admin, papa*alpha*BBB*Channel*NNN*Quick*ZZZ*PUBLIC CHANNELS*[symbol]*Off-Topic*Quick-test*rename*Town Square*PRIVATE CHANNELS*CCC*channel test*DIRECT MESSAGES*admin*More...</td>
+	<td>UNREADS*5number*AAA*alpha*BBB*Channel*NNN*Quick*ZZZ*admin, papa*PUBLIC CHANNELS*[symbol]*Off-Topic*Quick-test*rename*Town Square*PRIVATE CHANNELS*CCC*channel test*DIRECT MESSAGES*admin*More...</td>
 	<td></td>
 </tr>
 <tr>
@@ -3076,7 +2613,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*5number*AAA*admin, papa*alpha*BBB*NNN*Quick*ZZZ*PUBLIC CHANNELS*[symbol]*Off-Topic*Quick-test*rename*Town Square*PRIVATE CHANNELS*CCC*Channel*channel test*DIRECT MESSAGES*admin*More...</td>
+	<td>UNREADS*5number*AAA*alpha*BBB*NNN*Quick*ZZZ*admin, papa*PUBLIC CHANNELS*[symbol]*Off-Topic*Quick-test*rename*Town Square*PRIVATE CHANNELS*CCC*Channel*channel test*DIRECT MESSAGES*admin*More...</td>
 	<td></td>
 </tr>
 <tr>
@@ -3107,7 +2644,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*5number*admin, papa*alpha*BBB*NNN*Quick*ZZZ*PUBLIC CHANNELS*[symbol]*AAA*Off-Topic*Quick-test*rename*Town Square*PRIVATE CHANNELS*CCC*Channel*channel test*DIRECT MESSAGES*admin*More...</td>
+	<td>UNREADS*5number*alpha*BBB*NNN*Quick*ZZZ*admin, papa*PUBLIC CHANNELS*[symbol]*AAA*Off-Topic*Quick-test*rename*Town Square*PRIVATE CHANNELS*CCC*Channel*channel test*DIRECT MESSAGES*admin*More...</td>
 	<td></td>
 </tr>
 <tr>
@@ -3348,6 +2885,12 @@
 	<td></td>
 </tr>
 <!--LOG IN admin-->
+<!--Open to Town Square in test-team in case re-opens to unexpected channel-->
+<tr>
+	<td>open</td>
+	<td>http://selenium.mattermost.com/side-${monthdaytime}/channels/town-square</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
@@ -3378,33 +2921,157 @@
 <!--Sleep-->
 <tr>
 	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
+	<td>id=headerTeamName</td>
+	<td>Side-${monthdaytime}</td>
 </tr>
-<!--Switch to the test team-->
+<!--Grouped by type, alpha, Favorites, Unreads (default)-->
+<!--Note: With Unreads on, mentions sort to top-->
+<tr>
+	<td>waitForTextPresent</td>
+	<td>UNREADS*AAA*alpha*Channel*NNN*papa-2*[symbol]*5number*BBB*CCC*channel test*papa, papa-2*Quick-test*rename*ZZZ*PUBLIC CHANNELS*Off-Topic*Town Square*PRIVATE CHANNELS*DIRECT MESSAGES</td>
+	<td></td>
+</tr>
+<!--Favorites section does not appear if all are in Unreads-->
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>FAVORITE CHANNELS</td>
+	<td></td>
+</tr>
+<!--Mark Favorite channel ZZZ read-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@href='/side-${monthdaytime}']</td>
+	<td>link=ZZZ*</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@href='/side-${monthdaytime}']</td>
+	<td>link=ZZZ*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>UNREADS*AAA*alpha*Channel*NNN*papa-2*[symbol]*5number*BBB*CCC*channel test*papa, papa-2*Quick-test*rename*ZZZ*PUBLIC CHANNELS*Off-Topic*Town Square*PRIVATE CHANNELS*DIRECT MESSAGES</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=headerTeamName</td>
-	<td>Side-${monthdaytime}</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>ZZZ</td>
 </tr>
-<!--Verify LHS grouped by type, alpha, with Favorites, not Unreads-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Town Square*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Town Square*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<!--Favorites section appears when there are channels to display there-->
+<tr>
+	<td>waitForTextPresent</td>
+	<td>UNREADS*AAA*alpha*Channel*NNN*papa-2*Quick*[symbol]*5number*BBB*CCC*channel test*papa, papa-2*Quick-test*rename*FAVORITE CHANNELS*ZZZ*PUBLIC CHANNELS*Off-Topic*Town Square*PRIVATE CHANNELS*DIRECT MESSAGES</td>
+	<td></td>
+</tr>
+<!--Switch to grouped by type, alpha, with Favorites, not Unreads-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=groupChannelsDesc</td>
+	<td>Group by channel type, sorted alphabetically<br />Unreads and favorites grouped separately</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=groupChannelsEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=groupChannelsEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=unreadAtTopOption</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=unreadAtTopOption</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=unreadAtTopOption</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=groupChannelsDesc</td>
+	<td>Group by channel type, sorted alphabetically<br />Favorites grouped separately</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<!--Verify group by type, alpha, favorites (no unreads)-->
 <tr>
 	<td>waitForTextPresent</td>
 	<td>FAVORITE CHANNELS*CCC*papa-2*papa, papa-2*Quick*ZZZ*PUBLIC CHANNELS*[symbol*5number*AAA*BBB*Off-Topic*Quick-test*rename*Town Square*PRIVATE CHANNELS*alpha*Channel*channel test*NNN*DIRECT MESSAGES</td>
 	<td></td>
 </tr>
-<!--Grouped by type, alpha, Favorites, Unreads-->
-<!--Enable Unreads section-->
+<!--Group by type, recency, Favorites, Unreads-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -3452,156 +3119,32 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=unreadAtTopOption</td>
+	<td>id=recentSectionEnabled</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=unreadAtTopOption</td>
+	<td>id=recentSectionEnabled</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=unreadAtTopOption</td>
+	<td>id=recentSectionEnabled</td>
 	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=unreadAtTopOption</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=groupChannelsDesc</td>
-	<td>Group by channel type, sorted alphabetically<br />Unreads and favorites grouped separately</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#accountSettingsHeader &gt; button.close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#accountSettingsHeader &gt; button.close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>UNREADS*[symbol]*5number*AAA*alpha*BBB*CCC*Channel*channel test*NNN*papa-2*papa, papa-2*Quick*Quick-test*rename*ZZZ*PUBLIC CHANNELS*Off-Topic*Town Square*PRIVATE CHANNELS*DIRECT MESSAGES</td>
-	<td></td>
-</tr>
-<!--Favorites section does not appear if all are in Unreads-->
-<tr>
-	<td>verifyTextNotPresent</td>
-	<td>FAVORITE CHANNELS</td>
-	<td></td>
-</tr>
-<!--Mark Favorite channel ZZZ read-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=ZZZ*</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=ZZZ*</td>
-	<td></td>
-</tr>
-<!--(No change in LHS until switch to another channel)-->
-<tr>
-	<td>waitForTextPresent</td>
-	<td>UNREADS*[symbol]*5number*AAA*alpha*BBB*CCC*Channel*channel test*NNN*papa-2*papa, papa-2*Quick*Quick-test*rename*ZZZ*PUBLIC CHANNELS*Off-Topic*Town Square*PRIVATE CHANNELS*DIRECT MESSAGES</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>ZZZ</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Town Square*</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Town Square*</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>UNREADS*[symbol]*5number*AAA*alpha*BBB*CCC*Channel*channel test*NNN*papa-2*papa, papa-2*Quick*Quick-test*rename*FAVORITE CHANNELS*ZZZ*PUBLIC CHANNELS*Off-Topic*Town Square*PRIVATE CHANNELS*DIRECT MESSAGES</td>
-	<td></td>
-</tr>
-<!--Grouped by type, recency, Favorites, Unreads-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=accountSettings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=groupChannelsDesc</td>
-	<td>Group by channel type, sorted alphabetically<br />Unreads and favorites grouped separately</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=groupChannelsEdit</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=groupChannelsEdit</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=recentSectionEnabled</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=recentSectionEnabled</td>
+	<td>id=unreadAtTopOption</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=recentSectionEnabled</td>
+	<td>id=unreadAtTopOption</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -3629,9 +3172,10 @@
 	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
+<!--Verify type, recency, favorites, unreads-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*5number*NNN*BBB*Quick*alpha*papa, papa-2*AAA*Channel*channel test*Quick-test*papa-2*CCC*rename*[symbol]*FAVORITE CHANNELS*ZZZ*PUBLIC CHANNELS*Off-Topic*Town Square*PRIVATE CHANNELS*DIRECT MESSAGES</td>
+	<td>UNREADS*NNN*Quick*alpha*AAA*Channel*papa-2*5number*BBB*papa, papa-2*channel test*Quick-test*CCC*rename*[symbol]*FAVORITE CHANNELS*ZZZ*PUBLIC CHANNELS*Off-Topic*Town Square*PRIVATE CHANNELS*DIRECT MESSAGES</td>
 	<td></td>
 </tr>
 <!--Grouped by type, recency, Favorites (disable Unreads)-->
@@ -3710,6 +3254,7 @@
 	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
+<!--Verify type, recency, favorites (no Unreads)-->
 <tr>
 	<td>waitForTextPresent</td>
 	<td>FAVORITE CHANNELS*Quick*ZZZ*papa, papa-2*papa-2*CCC*PUBLIC CHANNELS*5number*BBB*AAA*Quick-test*rename*[symbol]*Off-Topic*Town Square*PRIVATE CHANNELS*NNN*alpha*Channel*channel test*DIRECT MESSAGES</td>
@@ -3791,12 +3336,13 @@
 	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
+<!--Verify type, alpha, favorites (no Unreads)-->
 <tr>
 	<td>waitForTextPresent</td>
 	<td>FAVORITE CHANNELS*CCC*papa-2*papa, papa-2*Quick*ZZZ*PUBLIC CHANNELS*[symbol]*5number*AAA*BBB*Off-Topic*Quick-test*rename*Town Square*PRIVATE CHANNELS*alpha*Channel*channel test*NNN*DIRECT MESSAGES</td>
 	<td></td>
 </tr>
-<!--Un-favorite GM-->
+<!--Un-favorite GM, moves to DM section-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=*papa, papa-2</td>
@@ -3913,7 +3459,7 @@
 	<td>FAVORITE CHANNELS</td>
 	<td></td>
 </tr>
-<!--Group by type, recency, Unreads (no Favorites)-->
+<!--Make changes, cancel-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=accountSettings</td>
@@ -4006,6 +3552,7 @@
 	<td></td>
 </tr>
 <!--Actually make change to show Unreads and sort by Recency-->
+<!--Group by type, recency, Unreads (no Favorites)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=accountSettings</td>
@@ -4096,9 +3643,10 @@
 	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
+<!--Verify type, recency, unreads (mentions at top), no favorites-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*5number*NNN*BBB*Quick*alpha*papa, papa-2*AAA*Channel*channel test*Quick-test*papa-2*CCC*rename*symbol*PUBLIC CHANNELS*ZZZ*Off-Topic*Town Square*PRIVATE CHANNELS*DIRECT MESSAGES</td>
+	<td>UNREADS*NNN*Quick*alpha*AAA*Channel*papa-2*5number*BBB*papa, papa-2*channel test*Quick-test*CCC*rename*[symbol]*PUBLIC CHANNELS*ZZZ*Off-Topic*Town Square*PRIVATE CHANNELS*DIRECT MESSAGES</td>
 	<td></td>
 </tr>
 <!--Read private channels NNN, channel test-->
@@ -4164,8 +3712,23 @@
 	<td>AAA</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>link=Town Square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Town Square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
+</tr>
+<tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*5number*BBB*Quick*alpha*AAA*Channel*papa-2*CCC*rename*[symbol]*PUBLIC CHANNELS*ZZZ*Quick-test*Off-Topic*Town Square*PRIVATE CHANNELS*NNN*channel test*DIRECT MESSAGES*papa, papa-2</td>
+	<td>UNREADS*Quick*alpha*Channel*papa-2*5number*BBB*CCC*rename*[symbol]*PUBLIC CHANNELS*ZZZ*AAA*Quick-test*Off-Topic*Town Square*PRIVATE CHANNELS*NNN*channel test*DIRECT MESSAGES*papa, papa-2</td>
 	<td></td>
 </tr>
 <!--Convert ZZZ to private channel-->
@@ -4206,13 +3769,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
+	<td>css=button.btn.btn-primary</td>
 	<td>Yes, convert to private channel</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
-	<td></td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Yes, convert to private channel</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -4221,7 +3784,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*5number*BBB*Quick*alpha*Channel*papa-2*CCC*rename*[symbol]*PUBLIC CHANNELS*AAA*Quick-test*Off-Topic*Town Square*PRIVATE CHANNELS*ZZZ*NNN*channel test*DIRECT MESSAGES*papa, papa-2</td>
+	<td>UNREADS*Quick*alpha*Channel*papa-2*5number*BBB*CCC*rename*[symbol]*PUBLIC CHANNELS*AAA*Quick-test*Off-Topic*Town Square*PRIVATE CHANNELS*ZZZ*NNN*channel test*DIRECT MESSAGES*papa, papa-2</td>
 	<td></td>
 </tr>
 <!--Group by channel type, sort recency, no favorites or unreads -->
@@ -4487,9 +4050,10 @@
 	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
+<!--Verify combined, recency, unreads (no favorites)-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*5number*BBB*Quick*alpha*Channel*papa-2*CCC*rename*[symbol]*RECENT ACTIVITY*ZZZ*NNN*papa, papa-2*AAA*channel test*Quick-test*Off-Topic*Town Square</td>
+	<td>UNREADS*Quick*alpha*Channel*papa-2*ZZZ*5number*BBB*CCC*rename*[symbol]*RECENT ACTIVITY*NNN*papa, papa-2*AAA*channel test*Quick-test*Off-Topic*Town Square*More...</td>
 	<td></td>
 </tr>
 <!--Group types, alpha, with unreads (not favorites)-->
@@ -4578,9 +4142,10 @@
 	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
+<!--Verify by type, alpha, unreads (no favorites)-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*[symbol]*5number*alpha*BBB*CCC*Channel*papa-2*Quick*rename*PUBLIC CHANNELS*AAA*Off-Topic*Quick-test*Town Square*PRIVATE CHANNELS*channel test*NNN*ZZZ*DIRECT MESSAGES*papa, papa-2</td>
+	<td>UNREADS*alpha*Channel*papa-2*Quick*[symbol]*5number*BBB*CCC*rename*PUBLIC CHANNELS*AAA*Off-Topic*Quick-test*Town Square*More...*PRIVATE CHANNELS*channel test*NNN*ZZZ*DIRECT MESSAGES*papa, papa-2</td>
 	<td></td>
 </tr>
 <!--Group types, alpha, with unreads, with favorites-->
@@ -4661,7 +4226,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*[symbol]*5number*alpha*BBB*CCC*Channel*papa-2*Quick*rename*FAVORITE CHANNELS*ZZZ*PUBLIC CHANNELS*AAA*Off-Topic*Quick-test*Town Square*PRIVATE CHANNELS*channel test*NNN*DIRECT MESSAGES*papa, papa-2</td>
+	<td>UNREADS*alpha*Channel*papa-2*Quick*[symbol]*5number*BBB*CCC*rename*FAVORITE CHANNELS*ZZZ*PUBLIC CHANNELS*AAA*Off-Topic*Quick-test*Town Square*More...*PRIVATE CHANNELS*channel test*NNN*DIRECT MESSAGES*papa, papa-2</td>
 	<td></td>
 </tr>
 <!--Mark an unread channel as a favorite-->
@@ -4693,7 +4258,7 @@
 <!--Channel doesn't move until channel is navigated away from-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*[symbol]*5number*alpha*BBB*CCC*Channel*papa-2*Quick*rename*FAVORITE CHANNELS*ZZZ*PUBLIC CHANNELS*AAA*Off-Topic*Quick-test*Town Square*PRIVATE CHANNELS*channel test*NNN*DIRECT MESSAGES*papa, papa-2</td>
+	<td>UNREADS*alpha*Channel*papa-2*Quick*[symbol]*5number*BBB*CCC*rename*FAVORITE CHANNELS*ZZZ*PUBLIC CHANNELS*AAA*Off-Topic*Quick-test*Town Square*More...*PRIVATE CHANNELS*channel test*NNN*DIRECT MESSAGES*papa, papa-2</td>
 	<td></td>
 </tr>
 <tr>
@@ -4711,9 +4276,10 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Off-Topic</td>
 </tr>
+<!--Then moves to Favorites-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*5number*alpha*BBB*CCC*Channel*papa-2*Quick*rename*FAVORITE CHANNELS*[symbol]*ZZZ*PUBLIC CHANNELS*AAA*Off-Topic*Quick-test*Town Square*PRIVATE CHANNELS*channel test*NNN*DIRECT MESSAGES*papa, papa-2</td>
+	<td>UNREADS*alpha*Channel*papa-2*Quick*5number*BBB*CCC*rename*FAVORITE CHANNELS*[symbol]*ZZZ*PUBLIC CHANNELS*AAA*Off-Topic*Quick-test*Town Square*More...*PRIVATE CHANNELS*channel test*NNN*DIRECT MESSAGES*papa, papa-2</td>
 	<td></td>
 </tr>
 <!--Combine types, alpha, with unreads, not favorites-->
@@ -4802,9 +4368,10 @@
 	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
+<!--Verify combined, alpha, unreads (no favorites)-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*5number*alpha*BBB*CCC*Channel*papa-2*Quick*rename*CHANNELS*[symbol]*AAA*channel test*NNN*Off-Topic*papa, papa-2*Quick-test*Town Square*ZZZ*More...</td>
+	<td>UNREADS*alpha*Channel*papa-2*Quick*5number*BBB*CCC*rename*CHANNELS*[symbol]*AAA*channel test*NNN*Off-Topic*papa, papa-2*Quick-test*Town Square*ZZZ*More...</td>
 	<td></td>
 </tr>
 <!--Group by type, recency, with unreads, with favorites-->
@@ -4903,12 +4470,93 @@
 	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
+<!--Verify by type, recency, unreads, favorites-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*5number*BBB*Quick*alpha*Channel*papa-2*CCC*rename*FAVORITE CHANNELS*ZZZ*[symbol]*PUBLIC CHANNELS*AAA*Quick-test*Off-Topic*Town Square*PRIVATE CHANNELS*NNN*channel test*DIRECT MESSAGES*papa, papa-2*More...</td>
+	<td>UNREADS*Quick*alpha*Channel*papa-2*5number*BBB*CCC*rename*FAVORITE CHANNELS*ZZZ*[symbol]*PUBLIC CHANNELS*AAA*Quick-test*Off-Topic*Town Square*More...*PRIVATE CHANNELS*NNN*channel test*DIRECT MESSAGES*papa, papa-2*More...</td>
 	<td></td>
 </tr>
-<!--Set back to group by type, alpha, Favorites, no Unreads (as with feature disabled)-->
+<!--EDITING a post counts as activity when sorting by Recency-->
+<!--Read a channel not currently at the top by Recency-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=papa-2*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=papa-2*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>papa-2</td>
+</tr>
+<!--Switch to Off-Topic to show where this channel falls in now-read recency-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Off-Topic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Off-Topic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Off-Topic</td>
+</tr>
+<!--Right now papa-2 is in middle of Favorites section, then edit a post in it-->
+<tr>
+	<td>waitForTextPresent</td>
+	<td>UNREADS*Quick*alpha*Channel*5number*BBB*CCC*rename*FAVORITE CHANNELS*ZZZ*papa-2*[symbol]*PUBLIC CHANNELS*AAA*Quick-test*Off-Topic*Town Square*More...*PRIVATE CHANNELS*NNN*channel test*DIRECT MESSAGES*papa, papa-2*More...</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=papa-2*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=papa-2*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>papa-2</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_UP}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=edit_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=edit_textbox</td>
+	<td> Editing counts as recent activity!${KEY_ENTER}</td>
+</tr>
+<!--papa-2 goes to top of Favorites section as most recent in that section-->
+<tr>
+	<td>waitForTextPresent</td>
+	<td>UNREADS*Quick*alpha*Channel*5number*BBB*CCC*rename*FAVORITE CHANNELS*papa-2*ZZZ*[symbol]*PUBLIC CHANNELS*AAA*Quick-test*Off-Topic*Town Square*More...*PRIVATE CHANNELS*NNN*channel test*DIRECT MESSAGES*papa, papa-2*More...</td>
+	<td></td>
+</tr>
+<!--Combine all channel types, recency, remove Unreads and Favorites-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=accountSettings</td>
@@ -4930,6 +4578,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>id=groupChannelsDesc</td>
+	<td>Group by channel type, sorted by recency<br />Unreads and favorites grouped separately</td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>id=groupChannelsEdit</td>
 	<td></td>
@@ -4941,22 +4594,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=byTypeOption</td>
+	<td>id=noneOption</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=byTypeOption</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=alphaSectionEnabled</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=alphaSectionEnabled</td>
+	<td>id=noneOption</td>
 	<td></td>
 </tr>
 <tr>
@@ -4976,6 +4619,21 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
+	<td>id=favoriteAtTopOption</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=favoriteAtTopOption</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=favoriteAtTopOption</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
@@ -4987,7 +4645,634 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=groupChannelsDesc</td>
-	<td>Group by channel type, sorted alphabetically<br />Favorites grouped separately</td>
+	<td>No grouping, sorted by recency</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Off-Topic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Off-Topic</td>
+	<td></td>
+</tr>
+<!--Verify combined, recency (no favorites or unreads)-->
+<tr>
+	<td>waitForTextPresent</td>
+	<td>RECENT ACTIVITY*papa-2*ZZZ*5number*NNN*BBB*Quick*alpha*papa, papa-2*AAA*Channel*channel test*Quick-test*CCC*rename*[symbol]*Off-Topic*Town Square*More...</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--*** IS THIS STILL TRUE?? Skip for now-->
+<!--FAVORITING a channel counts as activity for recency-->
+<!--Favorite Quick-test-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Quick-test</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Quick-test</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Quick-test</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=toggleFavorite</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=toggleFavorite</td>
+	<td></td>
+</tr>
+<!--Doesn't move in LHS until switch to different channel-->
+<tr>
+	<td>waitForTextPresent</td>
+	<td>RECENT ACTIVITY*papa-2*ZZZ*5number*NNN*BBB*Quick*alpha*papa, papa-2*AAA*Channel*channel test*Quick-test*CCC*rename*[symbol]*Off-Topic*Town Square*More...</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Off-Topic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Off-Topic</td>
+	<td></td>
+</tr>
+<!--*** Hm, not seeing a change on recency sorting after favoriting Quick-test-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--*** Tested manually v5.6; add tests-->
+<!--MUTED channels with unreads, muted channels with mentions-->
+<!--Admin posts some mentions for papa-2 and some regular unreads-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--*** UI tests for modals; could split out into separate Se test, and even try exporting?-->
+<!--UI for Channel join and create modals based on sidebar settings-->
+<!--COMBINED CHANNEL TYPES, RECENCY - no favorites or unreads (but same either way)-->
+<!--(but same with or without favorites and unreads; could add more tests to verify those)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=groupChannelsEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=groupChannelsEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=noneOption</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=noneOption</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=recentSectionEnabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=recentSectionEnabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=unreadAtTopOption</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=favoriteAtTopOption</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<!--Click RECENT ACTIVITY opens modal to open / join channels or DMs-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.public_direct_name &gt; span</td>
+	<td>RECENT ACTIVITY</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.public_direct_name &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-header</td>
+	<td>×CloseChannels and Direct Messages</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=morePublicDirectChannelTabs-tab-channels</td>
+	<td>Channels</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=createNewChannel</td>
+	<td>Create New Channel</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=morePublicDirectChannelTabs-tab-dm</td>
+	<td>Direct Messages</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=morePublicDirectChannelTabs-tab-dm</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.multi-select__help &gt; span</td>
+	<td>Use ↑↓ to browse, ↵ to select. You can add 7 more people.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=saveItems</td>
+	<td>Go</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.close</td>
+	<td>×Close</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<!--Click + next to Recent Activity opens channel creation modal-->
+<tr>
+	<td>waitForText</td>
+	<td>//h4[@id='recentChannel']/button</td>
+	<td>+</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//h4[@id='recentChannel']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=public</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=private</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPublicChannelName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPublicChannelPurpose</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPublicChannelHeader</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Create New Channel</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>Cancel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<!--More... below combined channel list-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=morePublicDirectChannels</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=morePublicDirectChannels</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-header</td>
+	<td>×CloseChannels and Direct Messages</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=morePublicDirectChannelTabs-tab-channels</td>
+	<td>Channels</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=createNewChannel</td>
+	<td>Create New Channel</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=morePublicDirectChannelTabs-tab-dm</td>
+	<td>Direct Messages</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=morePublicDirectChannelTabs-tab-dm</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.multi-select__help &gt; span</td>
+	<td>Use ↑↓ to browse, ↵ to select. You can add 7 more people.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=saveItems</td>
+	<td>Go</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.close</td>
+	<td>×Close</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<!--COMBINED CHANNEL TYPES, ALPHA - no favorites or unreads-->
+<!--*** Verified manually enabling favorites / unreads makes no difference; write tests?-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=groupChannelsEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=groupChannelsEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=noneOption</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=noneOption</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=alphaSectionEnabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=alphaSectionEnabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=unreadAtTopOption</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=favoriteAtTopOption</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<!--Click + next to Channels opens channel creation modal-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//h4[@id='alphaChannel']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//h4[@id='alphaChannel']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=public</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=private</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPublicChannelName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPublicChannelPurpose</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=newPublicChannelHeader</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Create New Channel</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>Cancel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<!--More... below combined channel list-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=morePublicDirectChannels</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=morePublicDirectChannels</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-header</td>
+	<td>×CloseChannels and Direct Messages</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=morePublicDirectChannelTabs-tab-channels</td>
+	<td>Channels</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=createNewChannel</td>
+	<td>Create New Channel</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=morePublicDirectChannelTabs-tab-dm</td>
+	<td>Direct Messages</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=morePublicDirectChannelTabs-tab-dm</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.multi-select__help &gt; span</td>
+	<td>Use ↑↓ to browse, ↵ to select. You can add 7 more people.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=saveItems</td>
+	<td>Go</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.close</td>
+	<td>×Close</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--CLEAN-UP-->
+<!--Set back to group by type, alpha, Favorites, Unreads (as with feature disabled)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=groupChannelsEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=groupChannelsEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=byTypeOption</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=byTypeOption</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=alphaSectionEnabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=alphaSectionEnabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=unreadAtTopOption</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=groupChannelsDesc</td>
+	<td>Group by channel type, sorted alphabetically<br />Unreads and favorites grouped separately</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

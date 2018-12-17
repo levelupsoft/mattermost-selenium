@@ -133,6 +133,7 @@
 	<td>//button[@id='addUsersToTeam']</td>
 	<td></td>
 </tr>
+<!--Failing to find this field now; did this part manually until we can figure it out-->
 <tr>
 	<td>type</td>
 	<td>//div[@class='Select-input']/input</td>
@@ -939,7 +940,7 @@
 <!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.fa.fa-chevron-left</td>
+	<td>link=Back</td>
 	<td></td>
 </tr>
 <tr>
@@ -949,7 +950,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.fa.fa-chevron-left</td>
+	<td>link=Back</td>
 	<td></td>
 </tr>
 <tr>
@@ -1232,9 +1233,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
+	<td>waitForNotText</td>
+	<td>css=div.alert.alert-danger &gt; span</td>
+	<td>This will archive the channel from the team and make its contents inaccessible for all users.<br /><br />Are you sure you wish to archive the Fifth channel?</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -1628,11 +1629,10 @@
 	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td></td>
 </tr>
-<!--Invalid number resets to default on saving-->
 <tr>
 	<td>type</td>
 	<td>id=TeamSettings.MaxUsersPerTeam</td>
-	<td>ten</td>
+	<td>50</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1809,12 +1809,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[8]</td>
+	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[8]</td>
+	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
@@ -1865,7 +1865,6 @@
 	<td>@all again, no notify here either!</td>
 </tr>
 <!--Post at-all message-->
-<!--Hard to reliably find the Confirm button; if off by one it hits Cancel-->
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
@@ -1877,13 +1876,13 @@
 	<td>exact:By using @all or @channel you are about to send notifications to 5 people. Are you sure you want to do this?</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
-	<td>Confirm</td>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
+	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
@@ -1970,12 +1969,17 @@
 	<td>css=span.badge</td>
 	<td></td>
 </tr>
+<!--Verify messages posted, but ephemeral messages did not-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Off-Topic</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
-	<td>css=a.sidebar-item.unread-title</td>
-	<td>Off-Topic</td>
+	<td>link=Off-Topic</td>
+	<td></td>
 </tr>
-<!--Verify messages posted, but ephemeral messages did not-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=p:contains('@channel again, no notify!')</td>
@@ -2208,7 +2212,7 @@
 	<td>link=System Console</td>
 	<td></td>
 </tr>
-<!--Max Users Per Team-->
+<!--Set Max Users Per Team back to 50-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Users and Teams</td>
@@ -2224,7 +2228,6 @@
 	<td>css=h3.admin-console-header &gt; span</td>
 	<td>Users and Teams</td>
 </tr>
-<!--Max users "ten" (alpha characters) resets to default-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=TeamSettings.MaxUsersPerTeam</td>
@@ -2235,43 +2238,17 @@
 	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td></td>
 </tr>
-<!--It's failing to type "ten" but I can type it manually-->
 <tr>
 	<td>type</td>
 	<td>id=TeamSettings.MaxUsersPerTeam</td>
-	<td>ten</td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=TeamSettings.MaxUsersPerTeam</td>
-	<td>ten</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
+	<td>50</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
 	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td>50</td>
 </tr>
-<!--Max channels "ten" (alpha characters) resets to default-->
+<!--Set Max channels back to 2000-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=TeamSettings.MaxChannelsPerTeam</td>
@@ -2282,43 +2259,17 @@
 	<td>id=TeamSettings.MaxChannelsPerTeam</td>
 	<td></td>
 </tr>
-<!--It's failing to type "ten" but I can type it manually-->
 <tr>
 	<td>type</td>
 	<td>id=TeamSettings.MaxChannelsPerTeam</td>
-	<td>ten</td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=TeamSettings.MaxChannelsPerTeam</td>
-	<td>ten</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
+	<td>2000</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
 	<td>id=TeamSettings.MaxChannelsPerTeam</td>
 	<td>2000</td>
 </tr>
-<!--Max notifications "ten" (alpha characters) resets to default-->
+<!--Max notifications back to 1000-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=TeamSettings.MaxNotificationsPerChannel</td>
@@ -2329,11 +2280,10 @@
 	<td>id=TeamSettings.MaxNotificationsPerChannel</td>
 	<td></td>
 </tr>
-<!--It's failing to type "ten" but I can type it manually-->
 <tr>
 	<td>type</td>
 	<td>id=TeamSettings.MaxNotificationsPerChannel</td>
-	<td>ten</td>
+	<td>1000</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
