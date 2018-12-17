@@ -358,7 +358,7 @@
 <!--Filter a specific user and add to channel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=input.form-control.filter-textbox</td>
+	<td>css=div.Select-control</td>
 	<td></td>
 </tr>
 <tr>
@@ -708,10 +708,11 @@
 	<td>Remove from Favorites</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#favoriteChannel &gt; span</td>
-	<td>FAVORITE CHANNELS</td>
+	<td>waitForElementPresent</td>
+	<td>//*[@id='favoriteChannel']/span[contains(text(),'FAVORITE CHANNELS')] </td>
+	<td></td>
 </tr>
+<!--^^Had to replace CCS because of what looked like a bug in side bar CSS UNREADS sections has same id?-->
 <tr>
 	<td>waitForText</td>
 	<td>link=test3×</td>
@@ -1388,6 +1389,7 @@
 	<td>css=div.alert.alert-danger &gt; span</td>
 	<td>This will archive the channel from the team and make its contents inaccessible for all users. <br /><br />Are you sure you wish to archive the To Manage channel?</td>
 </tr>
+<!--^^ Locator looks perfect to me. It finds the span but won't match on the text^^-->
 <tr>
 	<td>waitForText</td>
 	<td>css=button.btn.btn-danger</td>
@@ -1443,6 +1445,7 @@
 	<td>css=div.alert.alert-danger &gt; span</td>
 	<td>This will archive the channel from the team and make its contents inaccessible for all users. <br /><br />Are you sure you wish to archive the Manage Private channel?</td>
 </tr>
+<!--^^ Locator looks perfect to me. It finds the span but won't match on the text^^-->
 <tr>
 	<td>waitForText</td>
 	<td>css=button.btn.btn-danger</td>
