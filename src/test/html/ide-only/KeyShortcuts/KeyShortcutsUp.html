@@ -107,8 +107,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span &gt; p</td>
-	<td>Edit this</td>
+	<td>id=post_textbox</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -127,8 +127,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span &gt; p</td>
-	<td>Edit this one, okay?</td>
+	<td>css=div.post-message__text &gt; p</td>
+	<td>exact:Edit this one, okay?</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.post-edited__indicator &gt; span</td>
+	<td>(edited)</td>
 </tr>
 <!--Switch channel, UP doesn't edit previous channel's post-->
 <tr>
@@ -172,6 +177,11 @@
 	<td>${KEY_UP}</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=edit_textbox</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForNotText</td>
 	<td>id=edit_textbox</td>
 	<td>exact:Edit this one, okay?</td>
@@ -204,10 +214,9 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span &gt; p</td>
-	<td>Edit this one, okay?</td>
+	<td>css=div.post-message__text &gt; p</td>
+	<td>exact:Edit this one, okay?</td>
 </tr>
-<!--^^ This step seems to fail because the messages has "(edited)" below it now so it's not exact-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -295,7 +304,6 @@
 	<td>id=post_textbox</td>
 	<td>${KEY_UP}</td>
 </tr>
-<!--Currently failing: https://mattermost.atlassian.net/browse/PLT-8532-->
 <tr>
 	<td>waitForText</td>
 	<td>id=edit_textbox</td>

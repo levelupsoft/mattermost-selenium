@@ -84,11 +84,6 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div[2]/div/div/span/p[2]/span</td>
-	<td>exact:Tip: If you add #, ##, or ### as the first character on a new line containing emoji, you can use larger sized emoji. To try it out, send a message such as: '# :smile:'.</td>
-</tr>
-<tr>
-	<td>waitForText</td>
 	<td>css=button.btn.btn-primary</td>
 	<td>Add Custom Emoji</td>
 </tr>
@@ -136,18 +131,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div[2]/div[2]/form/div[3]/label</td>
-	<td>Preview</td>
+	<td>css=form.form-horizontal</td>
+	<td>NameChoose a name for your emoji made of up to 64 characters consisting of lowercase letters, numbers, and the symbols '-' and '_'.<br /><br /><br />ImageSelect<br />JPG.jpgChoose the image for your emoji. The image can be a gif, png, or jpeg file with a max size of 1 MB. Dimensions will automatically resize to fit 128 by 128 pixels but keeping aspect ratio.<br /><br /><br /><br />PreviewThis is a sentence with in it.<br /><br />CancelSave</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.col-md-5.col-sm-8 &gt; div &gt; div.form__help &gt; span</td>
 	<td>Choose the image for your emoji. The image can be a gif, png, or jpeg file with a max size of 1 MB. Dimensions will automatically resize to fit 128 by 128 pixels but keeping aspect ratio.</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div[2]/div[2]/form/div[3]/div/span</td>
-	<td>This is a sentence with in it.</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -280,8 +270,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div[2]/div[2]/form/div[3]/div/span</td>
-	<td>This is a sentence with in it.</td>
+	<td>css=div.backstage-form</td>
+	<td>NameChoose a name for your emoji made of up to 64 characters consisting of lowercase letters, numbers, and the symbols '-' and '_'.<br /><br /><br />ImageSelect<br />JPG.jpgChoose the image for your emoji. The image can be a gif, png, or jpeg file with a max size of 1 MB. Dimensions will automatically resize to fit 128 by 128 pixels but keeping aspect ratio.<br /><br /><br /><br />PreviewThis is a sentence with in it.<br /><br />CancelSave</td>
 </tr>
 <!--Save new custom emoji-->
 <tr>
@@ -447,8 +437,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div[2]/div[2]/form/div[3]/div/span</td>
-	<td>This is a sentence with in it.</td>
+	<td>css=div.form-group</td>
+	<td>NameChoose a name for your emoji made of up to 64 characters consisting of lowercase letters, numbers, and the symbols '-' and '_'.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1178,6 +1168,7 @@
 	<td>css=button.reacticon__container.reaction.color--link.style--none &gt; span.icon.icon--emoji</td>
 	<td></td>
 </tr>
+<!--*** Visually verify Recently Used matches what you recently used-->
 <!--*** Click any emoji to add reaction in RHS-->
 <!--*** Visually verify reaction was added-->
 <tr>
@@ -1185,10 +1176,19 @@
 	<td>2000</td>
 	<td></td>
 </tr>
-<!--*** Visually verify Recently Used matches what you recently used-->
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=input.emoji-picker__search</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.sidebar--right__close</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
-	<td>css=button.reacticon__container.reaction.color--link.style--none &gt; span.icon.icon--emoji</td>
+	<td>css=button.sidebar--right__close</td>
 	<td></td>
 </tr>
 <tr>
@@ -1439,9 +1439,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div[2]/div/div/div[2]/table/tbody/tr[2]/td</td>
-	<td>exact::test10:</td>
+	<td>waitForElementPresent</td>
+	<td>css=td.emoji-list__name:contains('test10')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>

@@ -47,11 +47,6 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
 	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
@@ -109,13 +104,13 @@
 </tr>
 <!--Verify sign-in with email set to true-->
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[2]/label</td>
+	<td>waitForTextPresent</td>
+	<td></td>
 	<td>Enable sign-in with email:</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[2]/div/div/span</td>
+	<td>waitForTextPresent</td>
+	<td></td>
 	<td>When true, Mattermost allows users to sign in using their email and password.</td>
 </tr>
 <tr>
@@ -125,13 +120,13 @@
 </tr>
 <!--Verify sign-in with username set to true-->
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[3]/label</td>
+	<td>waitForTextPresent</td>
+	<td></td>
 	<td>Enable sign-in with username:</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[3]/div/div/span</td>
+	<td>waitForTextPresent</td>
+	<td></td>
 	<td>When true, users with email login can sign in using their username and password. This setting does not affect AD/LDAP login.</td>
 </tr>
 <tr>
@@ -473,7 +468,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
-	<td>We couldn't find an account matching your login credentials.</td>
+	<td>Unable to find an existing account matching your credentials. This team may require an invite from the team owner to join.</td>
 </tr>
 <!--LOG IN admin - username succeeds-->
 <tr>
@@ -675,7 +670,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
-	<td>We couldn't find an account matching your login credentials.</td>
+	<td>Unable to find an existing account matching your credentials. This team may require an invite from the team owner to join.</td>
 </tr>
 <!--LOG IN admin - email succeeds-->
 <tr>

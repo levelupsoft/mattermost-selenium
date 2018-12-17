@@ -836,11 +836,6 @@
 	<td>id=linkModalTextArea</td>
 	<td>permalinkpin</td>
 </tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
 <!--Open permalink-->
 <tr>
 	<td>open</td>
@@ -1111,12 +1106,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.Select-placeholder</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>core</td>
 </tr>
 <tr>
@@ -1136,12 +1131,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -1361,7 +1356,7 @@
 	<td>css=p:contains('For both flagging and pinning!')</td>
 	<td></td>
 </tr>
-<!--Cleanup: Leave both channels (need to write these steps)-->
+<!--Cleanup: Archive both channels (need to write these steps)-->
 </tbody></table>
 </body>
 </html>

@@ -140,7 +140,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>admin</td>
 </tr>
 <tr>
@@ -160,17 +160,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementNotPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <!--Verify link present to add users to channel-->
@@ -742,18 +737,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
+	<td>css=button.btn.btn-primary</td>
 	<td>Yes, convert to private channel</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-primary:contains('Yes, convert to private channel')</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>css=button.btn.btn-primary:contains('Yes, convert to private channel')</td>
-	<td></td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Yes, convert to private channel</td>
 </tr>
 <!--Verify channel intro text changed-->
 <tr>
@@ -860,9 +850,9 @@
 	<td>Back to Mattermost</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
 </tr>
 <!--LOG OUT admin-->
 <tr>
@@ -1154,12 +1144,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test</td>
 </tr>
 <tr>
@@ -1179,12 +1169,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <!--May fail if teammate name display is set to first/last, for example-->
@@ -1572,17 +1562,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
+	<td>css=button.btn.btn-primary</td>
 	<td>Yes, convert to private channel</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-primary:contains('Yes, convert to private channel')</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>css=button.btn.btn-primary:contains('Yes, convert to private channel')</td>
+	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>

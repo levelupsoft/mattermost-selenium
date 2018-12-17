@@ -12,6 +12,7 @@
 <tr><td rowspan="1" colspan="3">Search</td></tr>
 </thead><tbody>
 <!--*** This test needs a lot of work :/-->
+<!--*** Much of it is indeed in the Search test in the build. LM will clean up-->
 <!--LOG IN-->
 <tr>
 	<td>openAndWait</td>
@@ -340,12 +341,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4 &gt; span</td>
+	<td>css=div.sidebar--right__subheader &gt; h4 &gt; span</td>
 	<td>exact:No results found. Try again?</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.sidebar--right__subheader &gt; ul &gt; li &gt; span</td>
+	<td>css=li &gt; span</td>
 	<td>exact:If you're searching a partial phrase (ex. searching &quot;rea&quot;, looking for &quot;reach&quot; or &quot;reaction&quot;), append a * to your search term.</td>
 </tr>
 <!--The following will fail if Elasticsearch is not enabled-->
@@ -1189,12 +1190,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.mentions__name.suggestion--selected</td>
-	<td>@test2 - H Jenkins (asparagus)</td>
+	<td>@test2*</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=div.mentions__name.suggestion--selected</td>
-	<td>@test2 - H Jenkins (asparagus)</td>
+	<td>@test2*</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1215,7 +1216,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>@test2 direct${KEY_ENTER}</td>
+	<td>test2 direct${KEY_ENTER}</td>
 </tr>
 <!--Sleep-->
 <tr>
@@ -1260,8 +1261,18 @@
 	<td>id=post_textbox</td>
 	<td>@channel${KEY_ENTER}${KEY_ENTER}</td>
 </tr>
-<!--If tested on a server with more than 5 users, will fail to post b/c of confirmation-->
+<!--Will fail if confirm isn't triggered (just skip ahead after message posts)-->
 <!--Need to create new channel and only add the relevant user?-->
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Confirm</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Confirm</td>
+</tr>
 <tr>
 	<td>pause</td>
 	<td>1000</td>
@@ -1381,7 +1392,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; span.search-highlight</td>
+	<td>css=p span.mention--highlight</td>
 	<td>@test2</td>
 </tr>
 <tr>
@@ -1470,12 +1481,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.mentions__name.suggestion--selected</td>
-	<td>Town Square</td>
+	<td>Town Square*</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=div.mentions__name.suggestion--selected</td>
-	<td>Town Square</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1723,7 +1734,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; span.search-highlight</td>
+	<td>css=span.mention--highlight</td>
 	<td>test</td>
 </tr>
 <tr>
@@ -1754,12 +1765,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.mentions__name.suggestion--selected</td>
-	<td>Town Square</td>
+	<td>Town Square*</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=div.mentions__name.suggestion--selected</td>
-	<td>Town Square</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1780,7 +1791,7 @@
 <!--at-username link opens profile popover-->
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.popover-title</td>
+	<td>css=span.user-popover__username &gt; a</td>
 	<td>@test2</td>
 </tr>
 <tr>

@@ -75,13 +75,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.modal-intro &gt; span</td>
-	<td>Create a new private channel with restricted membership.</td>
+	<td>css=label &gt; div.flex-parent</td>
+	<td>Public - Anyone can join this channel.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.modal-intro &gt; button.style--none.color--link</td>
-	<td>Create a public channel</td>
+	<td>//div[2]/label/div</td>
+	<td>Private - Only invited members can join this channel.</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=private</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -507,7 +512,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/header [text]</td>
 </tr>
 <tr>
@@ -517,7 +522,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/header [text]</td>
 </tr>
 <!--/header without text opens Edit Header modal (cancel out)-->
@@ -554,7 +559,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/header [text]</td>
 </tr>
 <tr>
@@ -614,7 +619,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/header [text]</td>
 </tr>
 <tr>

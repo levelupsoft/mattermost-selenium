@@ -57,6 +57,12 @@
 	<td>css=strong.heading</td>
 	<td>Town Square</td>
 </tr>
+<!--Invite link appears at beginning of Town Square-->
+<tr>
+	<td>waitForText</td>
+	<td>//div[@id='channelIntro']/span/span</td>
+	<td>Invite others to this team</td>
+</tr>
 <!--Open System Console-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -200,6 +206,17 @@
 	<td>waitForElementPresent</td>
 	<td>css=p:contains('User creation has been disabled on this server, no invite(s) sent')</td>
 	<td></td>
+</tr>
+<!--Invite link no longer appears at top of Town Square-->
+<tr>
+	<td>waitForText</td>
+	<td>css=p.channel-intro__content &gt; span</td>
+	<td>Welcome to Town Square!<br /><br />Post messages here that you want everyone to see. Everyone automatically becomes a permanent member of this channel when they join the team.</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>//div[@id='channelIntro']/span/span</td>
+	<td>Invite others to this team</td>
 </tr>
 <!--LOG OUT and verify account creation flow ends with error-->
 <tr>
@@ -401,6 +418,7 @@
 	<td>link=Edit Scheme</td>
 	<td></td>
 </tr>
+<!--(This works b/c Teams is first in the list)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=div#all_users.permissions-block div.permissions-tree div.permissions-tree--body div.permission-group-permissions.open div.permission-group div.permission-group-row div.permission-check.checked</td>
@@ -427,8 +445,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=TeamSettings.EnableUserCreationfalse</td>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
@@ -588,12 +606,12 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='root']/div/div/div/div[2]/a/span[2]</td>
+	<td>link=Back</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div/div/div[2]/a/span[2]</td>
+	<td>link=Back</td>
 	<td></td>
 </tr>
 <tr>
@@ -659,9 +677,9 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -701,12 +719,12 @@
 <!--LOG OUT test2-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='root']/div/div/div/div[2]/a/span[2]</td>
+	<td>link=Back</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div/div/div[2]/a/span[2]</td>
+	<td>link=Back</td>
 	<td></td>
 </tr>
 <tr>
@@ -853,6 +871,11 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -909,9 +932,9 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -951,12 +974,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='root']/div/div/div/div[2]/a/span[2]</td>
+	<td>link=Back</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div/div/div[2]/a/span[2]</td>
+	<td>link=Back</td>
 	<td></td>
 </tr>
 <tr>
@@ -1012,12 +1035,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='root']/div/div/div/div[2]/a/span[2]</td>
+	<td>link=Back</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div/div/div[2]/a/span[2]</td>
+	<td>link=Back</td>
 	<td></td>
 </tr>
 <!--Create a New Team link is available, verify UI-->
@@ -1113,12 +1136,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='root']/div/div/div/div[2]/a/span[2]</td>
+	<td>link=Back</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div/div/div[2]/a/span[2]</td>
+	<td>link=Back</td>
 	<td></td>
 </tr>
 <!--Leave UI 2 team to return to original state-->

@@ -47,9 +47,9 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
 </tr>
 <!--Open System Console-->
 <tr>
@@ -441,7 +441,7 @@
 <tr>
 	<td>waitForValue</td>
 	<td>id=ServiceSettings.SiteURL</td>
-	<td>exact:https://selenium.mattermost.com/</td>
+	<td>exact:https://selenium.mattermost.com</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -536,6 +536,7 @@
 	<td>css=h3.admin-console-header &gt; span</td>
 	<td>Configuration</td>
 </tr>
+<!--xpaths changed; find better way to ID these-->
 <tr>
 	<td>waitForText</td>
 	<td>//div[@id='root']/div/div[3]/div/form/div/div[14]/div/div[2]/span</td>

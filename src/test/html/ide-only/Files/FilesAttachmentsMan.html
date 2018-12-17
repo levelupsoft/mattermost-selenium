@@ -774,45 +774,12 @@
 	<td>css=button.sidebar--right__close</td>
 	<td></td>
 </tr>
-<!--File with space in name-->
 <tr>
 	<td>pause</td>
 	<td>4000</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input[type=&quot;file&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=input[type=&quot;file&quot;]</td>
-	<td></td>
-</tr>
-<!--*** Manually select a file that has a space in the name-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=i.fa.fa-remove</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=post_textbox</td>
-	<td>Space${KEY_ENTER}</td>
-</tr>
-<!--*** Visually verify message posts and file name displays correctly-->
-<tr>
-	<td>pause</td>
-	<td>4000</td>
-	<td></td>
-</tr>
-<!--*** Manually create a file in your OS that is 0KB in size.  (ex: Right click in a folder and select "New>> Text Document" and leave the doc empty** -->
+<!--*** Manually select file that is 0KB in size: 0bytes.txt in Resources folder-->
 <tr>
 	<td>pause</td>
 	<td>6000</td>
@@ -828,7 +795,11 @@
 	<td>css=input[type=&quot;file&quot;]</td>
 	<td></td>
 </tr>
-<!--*** Manually select a file that is 0KB-->
+<tr>
+	<td>waitForText</td>
+	<td>css=label.control-label</td>
+	<td>You are uploading an empty file: 0bytes.txt</td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=i.fa.fa-remove</td>
@@ -864,9 +835,47 @@
 	<td>//p[contains(text(),'Post below this ^ file')]</td>
 	<td></td>
 </tr>
+<!--File with space in name-->
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<!--*** Manually select a file that has a space in the name-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=i.fa.fa-remove</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Space${KEY_ENTER}</td>
+</tr>
+<!--*** Visually verify message posts and file name displays correctly-->
 <!--Edit message that has an attachment-->
 <tr>
 	<td>waitForEditable</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
 	<td>id=post_textbox</td>
 	<td></td>
 </tr>
@@ -967,13 +976,13 @@
 <!--*** Manually click thumbnail to open image preview-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=a &gt; img</td>
+	<td>css=div.image-loaded.image-fade-in img</td>
 	<td></td>
 </tr>
 <!--Mouseover shows options-->
 <tr>
 	<td>mouseOver</td>
-	<td>css=a &gt; img</td>
+	<td>css=div.image-loaded.image-fade-in img</td>
 	<td></td>
 </tr>
 <tr>
@@ -1467,10 +1476,15 @@
 <!--*** Visually verify thumbnail zoomed and cropped: logo no text, no white space below-->
 <tr>
 	<td>pause</td>
-	<td>4000</td>
+	<td>8000</td>
 	<td></td>
 </tr>
 <!--Post and verify-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=i.fa.fa-remove</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>Pasted at</td>
@@ -1621,6 +1635,12 @@
 	<td>8000</td>
 	<td></td>
 </tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--*** Skip this for now; inconsistent results on different systems?-->
 <!--File with long filename and no spaces does not break RHS-->
 <tr>
 	<td>waitForText</td>
@@ -1705,6 +1725,11 @@
 <!--*** Visually verify displays image preview and truncated filename in RHS-->
 <!--*** NOTE: This is stuck in endless loading for some reason. Investigating-->
 <!--*** (only on Se server)-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <!--/test url test-attachments-->
 <tr>
 	<td>waitForElementPresent</td>

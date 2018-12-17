@@ -775,7 +775,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
-	<td>We couldn't find an account matching your login credentials.</td>
+	<td>Unable to find an existing account matching your credentials. This team may require an invite from the team owner to join.</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -931,12 +931,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
@@ -1149,12 +1149,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
@@ -1925,6 +1925,11 @@
 	<td>2000</td>
 	<td></td>
 </tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <!--*** v5.5 note: LM set up the Se server with Jumpcloud to continue from here-->
 <!--*** Continued from here on Se server-->
 <!--Verify account creation available for email and LDAP-->
@@ -1943,6 +1948,7 @@
 	<td>link=Email and Password</td>
 	<td></td>
 </tr>
+<!--Will fail if button text is different; this part doesn't click it so just skip to next step-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=AD/LDAP Credentials</td>

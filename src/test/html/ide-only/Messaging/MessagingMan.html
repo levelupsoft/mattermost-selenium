@@ -1073,21 +1073,10 @@
 	<td>css=p</td>
 	<td>This is important too.</td>
 </tr>
-<!--*** Make sure this is deleting "This is important too."-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
-	<td></td>
-</tr>
 <!--*** Manually click Delete in center on This is important too-->
 <tr>
 	<td>pause</td>
-	<td>3000</td>
+	<td>4000</td>
 	<td></td>
 </tr>
 <!--Delete parent post that is also flagged-->
@@ -1182,7 +1171,7 @@
 <!--This caught a bug: Not linked if popover opened from at-mention link in post-->
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.popover-title &gt; a</td>
+	<td>css=span.user-popover__username &gt; a</td>
 	<td>@corey</td>
 </tr>
 <tr>
@@ -1272,11 +1261,6 @@
 	<td></td>
 </tr>
 <!--Actions not available on system message-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=reply_textbox</td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -1477,6 +1461,7 @@
 </tr>
 <!--Markdown basics-->
 <!--*** NOTE: 4 images are broken (at the source); adding new samples-->
+<!--*** https://github.com/mattermost/mattermost-server/pull/9802-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -1763,7 +1748,7 @@
 </tr>
 <!--*** Make sure channel switch happens in center-->
 <!--Need to update to change channel-->
-<!--Post in RHS reply thread (different channel in center), no preview RHS-->
+<!--Post in RHS reply thread (different channel in center), preview in RHS-->
 <tr>
 	<td>sendKeys</td>
 	<td>id=reply_textbox</td>
