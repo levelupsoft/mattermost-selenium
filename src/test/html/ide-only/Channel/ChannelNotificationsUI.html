@@ -539,12 +539,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Account Settings</td>
+	<td>id=channelNotifications</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
@@ -651,22 +651,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Account Settings</td>
+	<td>id=channelNotifications</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Account Settings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=notificationsButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=notificationsButton</td>
+	<td>id=channelNotifications</td>
 	<td></td>
 </tr>
 <tr>
@@ -681,17 +671,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=desktopNotificationNever</td>
+	<td>id=channelNotificationNever</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=desktopNotificationNever</td>
+	<td>id=channelNotificationNever</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=desktopNotificationNever</td>
+	<td>id=channelNotificationNever</td>
 	<td>on</td>
 </tr>
 <tr>
@@ -705,18 +695,18 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=desktopDesc</td>
-	<td>Off</td>
+	<td>waitForElementPresent</td>
+	<td>//li[@id='desktopDesc']/span[contains(text(),'Never')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td>//button[@class='close']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#accountSettingsHeader &gt; button.close</td>
+	<td>//button[@class='close']</td>
 	<td></td>
 </tr>
 <tr>
@@ -762,12 +752,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Account Settings</td>
+	<td>id=channelNotifications</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
@@ -1313,12 +1303,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
@@ -1425,12 +1415,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
@@ -1525,6 +1515,11 @@
 </tr>
 <!--Set global default back to mentions-->
 <tr>
+	<td>pause</td>
+	<td></td>
+	<td>3000</td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
 	<td></td>
@@ -1536,12 +1531,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
@@ -2051,6 +2046,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td></td>
+	<td>3000</td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
 	<td></td>
@@ -2062,12 +2062,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
@@ -2174,12 +2174,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
@@ -2274,6 +2274,11 @@
 </tr>
 <!--Set global default back to mentions-->
 <tr>
+	<td>pause</td>
+	<td></td>
+	<td>3000</td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
 	<td></td>
@@ -2285,12 +2290,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
@@ -2354,6 +2359,11 @@
 	<td></td>
 	<td></td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td></td>
+	<td>3000</td>
+</tr>
 <!--Create new GM with any two users (first in the list)-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -2397,12 +2407,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -2856,12 +2866,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
@@ -2968,12 +2978,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
@@ -3079,12 +3089,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Account Settings</td>
+	<td>id=accountSettings</td>
 	<td></td>
 </tr>
 <tr>
