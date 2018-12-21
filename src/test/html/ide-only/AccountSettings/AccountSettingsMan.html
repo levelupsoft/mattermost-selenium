@@ -195,9 +195,100 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Town Square*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Town Square*</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
 	<td>Town Square</td>
+</tr>
+<!--Set own full name-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=nameEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=nameEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=firstName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=firstName</td>
+	<td>Test9first</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=lastName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=lastName</td>
+	<td>Test9last</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=nameDesc</td>
+	<td>Test9first Test9last</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
 </tr>
 <!--Verify in Town Square > View Members-->
 <tr>
@@ -215,11 +306,11 @@
 	<td>id=channelManageMembers</td>
 	<td></td>
 </tr>
-<!--Verify full name of other user displays and is styled span.light-->
+<!--Verify full name displays and is styled span.light-->
 <tr>
-	<td>waitForText</td>
-	<td>css=span.light</td>
-	<td>This Is a Very Long Name That Should Truncate</td>
+	<td>waitForElementPresent</td>
+	<td>css=span span.light:(contains'Test9first Test9last')</td>
+	<td></td>
 </tr>
 <!--Verify nickname of other user displays inside parentheses, span.light-->
 <tr>
@@ -274,11 +365,11 @@
 	<td>id=moreDirectMessage</td>
 	<td></td>
 </tr>
-<!--Verify full name of other user displays and is styled span.light-->
+<!--Verify full name displays and is styled span.light-->
 <tr>
-	<td>waitForText</td>
-	<td>css=span.light</td>
-	<td>This Is a Very Long Name That Should Truncate</td>
+	<td>waitForElementPresent</td>
+	<td>css=span span.light:(contains'Test9first Test9last')</td>
+	<td></td>
 </tr>
 <!--Verify nickname of other user displays inside parentheses, span.light-->
 <tr>
@@ -353,12 +444,6 @@
 	<td>//button[@id='addUsersToTeam']</td>
 	<td></td>
 </tr>
-<!--Verify full name of other user displays and is styled span.light-->
-<tr>
-	<td>waitForText</td>
-	<td>css=span.light</td>
-	<td>This Is a Very Long Name That Should Truncate</td>
-</tr>
 <!--Verify `@` appears before username who has no first or last name-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -383,6 +468,82 @@
 <tr>
 	<td>click</td>
 	<td>css=div.modal-header &gt; button.close &gt; span.sr-only</td>
+	<td></td>
+</tr>
+<!--Cleanup: Remove first / last from test9-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=nameEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=nameEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=firstName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=firstName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=lastName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=lastName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=nameDesc</td>
+	<td>Click 'Edit' to add your full name</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <!--Log out test9, log in test10-->
@@ -622,7 +783,7 @@
 	<td>css=div.user-popover:contains('test10')</td>
 	<td></td>
 </tr>
-<!--*** Visually Verify "This is a Long Name That Should Tr..."-->
+<!--*** Visually Verify "This is a Long Name That Should T..."-->
 <tr>
 	<td>pause</td>
 	<td>5000</td>
@@ -637,11 +798,6 @@
 	<td>waitForElementPresent</td>
 	<td>link=test10@test.com</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.popover__row.first &gt; a &gt; span</td>
-	<td>Edit Account Settings</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -803,6 +959,21 @@
 <tr>
 	<td>click</td>
 	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://selenium.mattermost.com/ui-automation/channels/town-square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
@@ -1122,6 +1293,119 @@
 	<td>id=usernameDesc</td>
 	<td>test10</td>
 </tr>
+<!--Remove profile picture - Cancel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=pictureEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=pictureEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=×</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=×</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<!--*** Visually verify generic profile pic displays-->
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>link=×</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Cancel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Cancel</td>
+	<td></td>
+</tr>
+<!--On Cancel, edit mode closes-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=pictureEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=pictureEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<!--*** Visually verify no change; profile pic was not removed-->
+<!--Remove profile picture-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=pictureEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=pictureEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=×</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=×</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<!--*** Visually verify generic profile pic displays-->
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>link=×</td>
+	<td></td>
+</tr>
+<!--Save removal of pic-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Save</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Save</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=pictureDesc</td>
+	<td>Click 'Edit' to upload an image.</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<!--*** If other browser open with other user, visually verify they see generic profile pic-->
 <!--Display: Theme-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1370,8 +1654,6 @@
 	<td>id=customThemes</td>
 	<td></td>
 </tr>
-<!--*** Something wrong with trying to paste vector in custom field-->
-<!--*** Left in manual tests for now-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=div.col-sm-12 &gt; textarea.form-control</td>
@@ -6669,6 +6951,385 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=@test10</td>
+	<td></td>
+</tr>
+<!--LOG OUT test10-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<!--Advanced Settings > Deactivate own account-->
+<!--Enabled on rctesting, so test there-->
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<!--*** Make sure you already have a test account that you can deactivate-->
+<tr>
+	<td>open</td>
+	<td>https://rctesting.reddogsofwar.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<!--*** Enter test account creds but do not click to log in-->
+<tr>
+	<td>pause</td>
+	<td>8000</td>
+	<td></td>
+</tr>
+<!--Store account creds-->
+<tr>
+	<td>waitForNotValue</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotValue</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>id=loginId</td>
+	<td>userdeact</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>id=loginPassword</td>
+	<td>passworddeact</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<!--*** Join or create team, skip tutorial, if haven't already-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<!--Cancel out of account deactivation, no change-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=advancedButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=advancedButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=deactivateAccountDesc</td>
+	<td>Click 'Edit' to deactivate your account</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=deactivateAccountEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=deactivateAccountEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=ul.section-max.form-horizontal </td>
+	<td>Deactivate Account<br />Deactivating your account removes your ability to log in to this server and disables all email and mobile notifications. To reactivate your account, contact your System Administrator.<br /><br /><br />DeactivateCancel</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=cancelSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=cancelSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>id=cancelSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=deactivateAccountDesc</td>
+	<td>Click 'Edit' to deactivate your account</td>
+</tr>
+<!--Deactivate account, taken to login page-->
+<tr>
+	<td>waitForText</td>
+	<td>id=deactivateAccountDesc</td>
+	<td>Click 'Edit' to deactivate your account</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=deactivateAccountEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=deactivateAccountEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=ul.section-max.form-horizontal </td>
+	<td>Deactivate Account<br />Deactivating your account removes your ability to log in to this server and disables all email and mobile notifications. To reactivate your account, contact your System Administrator.<br /><br /><br />DeactivateCancel</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=saveSetting</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Are you sure you want to deactivate your account? This can only be reversed by your System Administrator.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>Cancel</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-danger</td>
+	<td>Yes, deactivate my account</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-danger</td>
+	<td>Yes, deactivate my account</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<!--*** Manually verify email was received:-->
+<!--[Mattermost] Your account at rctesting.reddogsofwar.com has been deactivated-->
+<!--Your account has been deactivated at rctesting.reddogsofwar.com-->
+<tr>
+	<td>pause</td>
+	<td>8000</td>
+	<td></td>
+</tr>
+<!--Cannot log in after deactivation-->
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>${userdeact}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>${passworddeact}</td>
+</tr>
+<tr>
+	<td>waitForNotValue</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=label.control-label</td>
+	<td>Login failed because your account has been deactivated. Please contact an administrator.</td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--LDAP user does not see option to deactivate account-->
+<!--Log in as test LDAP user-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<!--*** Manually enter LDAP test user password (stored in LastPass secure note)-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>test.two</td>
+</tr>
+<tr>
+	<td>waitForNotValue</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<!--*** Manually join new team and skip tutorial if needed-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=advancedButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=advancedButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=joinLeaveTitle</td>
+	<td>Enable Join/Leave Messages</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=advancedPreviewFeaturesTitle</td>
+	<td>Preview pre-release features</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>id=deactivateAccountDesc</td>
+	<td>Click 'Edit' to deactivate your account</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>id=deactivateAccountEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<!--LOG OUT test LDAP user-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<!---->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
 	<td></td>
 </tr>
 <!--Tests end here for now-->
