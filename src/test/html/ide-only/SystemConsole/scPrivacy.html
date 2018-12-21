@@ -11,7 +11,7 @@
 <thead>
 <tr><td rowspan="1" colspan="3">scPrivacy</td></tr>
 </thead><tbody>
-<!--*** Must run scTeammateDisplay.html first, for user & team setup-->
+<!--*** Must run scTeammateName.html first, for user & team setup-->
 <!--LOG IN admin-->
 <tr>
 	<td>openAndWait</td>
@@ -278,7 +278,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.popover-content &gt; div.overflow--ellipsis.text-nowrap.padding-top</td>
+	<td>css=div.overflow--ellipsis.text-nowrap</td>
 	<td>Firstb Lastb</td>
 </tr>
 <tr>
@@ -396,6 +396,32 @@
 	<td>waitForTextNotPresent</td>
 	<td>admin@test.com</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<!--Cannot open DM with URL constructed using email address-->
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://selenium.mattermost.com/namedisplay/messages/userb@test.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Town Square</td>
 </tr>
 <!--Can search by first/last (from: and @-autocomplete)-->
 <tr>
@@ -752,7 +778,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.popover-content &gt; div.overflow--ellipsis.text-nowrap.padding-top</td>
+	<td>css=div.overflow--ellipsis.text-nowrap &gt; strong</td>
 	<td>Firstb Lastb</td>
 </tr>
 <tr>
@@ -869,6 +895,27 @@
 <tr>
 	<td>waitForTextPresent</td>
 	<td>admin@test.com</td>
+	<td></td>
+</tr>
+<!--Can open DM with URL constructed using email address-->
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>usera</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://selenium.mattermost.com/namedisplay/messages/userb@test.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>userb</td>
+</tr>
+<tr>
+	<td>waitForLocation</td>
+	<td>http://selenium.mattermost.com/namedisplay/messages/@userb</td>
 	<td></td>
 </tr>
 <!--LOG OUT admin-->
@@ -1148,7 +1195,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.popover-content &gt; div.overflow--ellipsis.text-nowrap.padding-top</td>
+	<td>css=div.overflow--ellipsis.text-nowrap</td>
 	<td>Firstb Lastb</td>
 </tr>
 <tr>
@@ -1604,7 +1651,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.popover-content &gt; div.overflow--ellipsis.text-nowrap.padding-top</td>
+	<td>css=div.overflow--ellipsis.text-nowrap</td>
 	<td>Firstb Lastb</td>
 </tr>
 <tr>
@@ -1980,7 +2027,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.popover-content &gt; div.overflow--ellipsis.text-nowrap.padding-top</td>
+	<td>css=div.overflow--ellipsis.text-nowrap</td>
 	<td>Firstb Lastb</td>
 </tr>
 <tr>
@@ -2431,7 +2478,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.popover-content &gt; div.overflow--ellipsis.text-nowrap.padding-top</td>
+	<td>css=div.overflow--ellipsis.text-nowrap</td>
 	<td>Firstb Lastb</td>
 </tr>
 <tr>
@@ -2736,7 +2783,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.popover-content &gt; div.overflow--ellipsis.text-nowrap.padding-top</td>
+	<td>css=div.overflow--ellipsis.text-nowrap</td>
 	<td>Firstb Lastb</td>
 </tr>
 <tr>
@@ -3155,6 +3202,8 @@
 	<td>id=logout</td>
 	<td></td>
 </tr>
+<!--*** If not using this setup anymore, log back in as admin and leave the NameDisplay team-->
+<!--*** Then go in and deactivate users a through e-->
 </tbody></table>
 </body>
 </html>
