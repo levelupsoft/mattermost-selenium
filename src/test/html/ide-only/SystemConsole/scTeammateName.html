@@ -11,8 +11,10 @@
 <thead>
 <tr><td rowspan="1" colspan="3">SysConsTeammateName</td></tr>
 </thead><tbody>
-<!--NOTE: Need to revisit this test; meant to test system console, but changing-->
-<!--in Account Settings overrides that. Not sure changing AS to match SC is meaningful-->
+<!--NOTE: This test verifies changing setting in System Console, for users who-->
+<!--have NOT changed teammate name display in Account Settings.-->
+<!--Then at the end it tests a couple scenarios with user changing Account Settings-->
+<!--to verify it overrides System Console setting.-->
 <!--LOG IN admin-->
 <tr>
 	<td>openAndWait</td>
@@ -293,6 +295,11 @@
 <tr>
 	<td>pause</td>
 	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
@@ -595,6 +602,14 @@
 	<td>2000</td>
 	<td></td>
 </tr>
+<!--*** For some reason, some of the purpose creation posts don't register as slash commands.-->
+<!--*** They work when I step through slowly, and also the editing/removing works fine.-->
+<!--*** Adjusted the verifications to just test edit/remove for now.-->
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
@@ -878,6 +893,11 @@
 <tr>
 	<td>pause</td>
 	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
@@ -1168,6 +1188,11 @@
 <tr>
 	<td>pause</td>
 	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
@@ -1501,6 +1526,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
 	<td>/purpose added by e${KEY_ENTER}</td>
@@ -1523,7 +1553,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>/purpose${KEY_ENTER}${KEY_ENTER}</td>
+	<td>/purpose${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -1741,7 +1771,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>usere</td>
 </tr>
 <tr>
@@ -1766,12 +1796,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -5180,6 +5210,11 @@
 <!--*** User data is used in the next test, scPrivacy.html-->
 <!--*** If not running scPrivacy.html subsequently, manually leave the team-->
 <!--*** If not running scPrivacy.html subsequently, can also deactivate the test users-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
