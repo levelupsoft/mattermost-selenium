@@ -1304,7 +1304,130 @@
 	<td>css=div.about-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
 	<td></td>
 </tr>
-<!--Start of new work-->
+<!--Long purpose wraps in autocomplete (center)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=qå</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=qå</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>qå</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#channelEditPurpose &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelEditPurpose &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=textarea.form-control.no-resize</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=textarea.form-control.no-resize</td>
+	<td>This purpose is long enough that it will wrap when viewed in autocomplete in the right hand side. This purpose is long enough that it will wrap when viewed in autocomplete in the right hand side. So the word asparagus should be visible!</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>css=textarea.form-control.no-resize</td>
+	<td>This purpose is long enough that it will wrap when viewed in autocomplete in the right hand side. This purpose is long enough that it will wrap when viewed in autocomplete in the right hand side. So the word asparagus should be visible!</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-primary.save-button</td>
+	<td>Save</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary.save-button</td>
+	<td>Save</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>~qå</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mention__purpose</td>
+	<td>This purpose is long enough that it will wrap when viewed in autocomplete in the right hand side. This purpose is long enough that it will wrap when viewed in autocomplete in the right hand side. So the word asparagus should be visible!</td>
+</tr>
+<!--*** Visually double-check the purpose wraps rather than truncating-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<!--Post a message, then open reply thread RHS-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>This is a post.${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_SHIFT}${KEY_UP}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=reply_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=reply_textbox</td>
+	<td>~qå</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mention__purpose</td>
+	<td>This purpose is long enough that it will wrap when viewed in autocomplete in the right hand side. This purpose is long enough that it will wrap when viewed in autocomplete in the right hand side. So the word asparagus should be visible!</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=div.mention__purpose:contains('This purpose is long enough that it will wrap when viewed in autocomplete in the right hand side. This purpose is long enough that it will wrap when viewed in autocomplete in the right hand side. So the word asparagus should be visible!')</td>
+	<td></td>
+</tr>
+<!--*** Visually double-check the purpose wraps rather than truncating-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
 <!--Start to create Private Channel through + icon-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1346,7 +1469,7 @@
 	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
-<!--Channel Crested without purpose-->
+<!--Channel created without purpose-->
 <tr>
 	<td>waitForText</td>
 	<td>css=#channelHeaderDescription &gt; button.style--none</td>
