@@ -10,7 +10,7 @@ manager.addRollupRule({
  
 commands.push({ command: 'waitForElementPresent', target: 'id=loginId', value: ''});
 commands.push({ command: 'type', target: 'id=loginId', value: args.username});
-commands.push({ command: 'type', target: 'id=loginPassword', value: args.password});
+commands.push({ command: 'type', target: 'id=loginPassword', value: 'passwd'});
 commands.push({ command: 'click', target: 'id=loginButton', value: ''});
 commands.push({ command: 'waitForElementPresent', target: 'id=sidebarHeaderDropdownButton', value: ''});
 return commands;
@@ -73,6 +73,26 @@ return commands;
  }
 });
 
+//Create Private Channel
+manager.addRollupRule({
+ name: 'createPrivateChannel'
+ , description: 'Creates a public Channel'
+ , args: [{ name: 'ChannelName' , description: 'Header' }], commandMatchers: []
+ , getExpandedCommands: function(args) {
+ var commands = [];
+ 
+commands.push({ command: 'waitForText', target: 'link=Town Square', value: 'Town Square'});
+commands.push({ command: 'waitForElementPresent', target: 'id=createPrivateChannel', value: ''});
+commands.push({ command: 'click', target: 'id=createPrivateChannel', value: ''});
+commands.push({ command: 'waitForElementPresent', target: 'id=newPrivateChannelName', value: ''});
+commands.push({ command: 'type', target: 'id=newPrivateChannelName', value: args.ChannelName});
+commands.push({ command: 'waitForElementPresent', target: "//button[@type='submit']", value: ''});
+commands.push({ command: 'click', target: "//button[@type='submit']", value: ''});
+commands.push({ command: 'waitForText', target: 'id=channelHeaderDropdownButton', value: args.ChannelName});
+return commands;
+ }
+});
+
 
 //Add user to channel
 manager.addRollupRule({
@@ -91,6 +111,7 @@ commands.push({ command: 'click', target: "//div[@class='more-modal__name'][cont
 commands.push({ command: 'waitForElementPresent', target: 'id=saveItems', value: ''});
 commands.push({ command: 'click', target: 'id=saveItems', value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//span[@data-mention='"+args.username+"']/following-sibling::strong[contains(text(),'added to the channel')]", value: ''});
+//^^This fails sometimes when last user is listed in 'other users' - have to click 'others'
 return commands;
  }
 });
@@ -118,7 +139,7 @@ return commands;
 //SwitchTeams
 manager.addRollupRule({
  name: 'switchTeam'
- , description: 'Open a team you are a member of'
+ , description: 'Open a team you are a member of MUST BE IN LINK FORMAT lower case no spaces ex: UI Automation would be ui-automation'
  , args: [{ name: 'TeamName', description: 'Open a team you are a member of'  }], commandMatchers: []
  , getExpandedCommands: function(args) {
  var commands = [];
@@ -181,7 +202,7 @@ return commands;
 //openReplyRhsForLastPost
 manager.addRollupRule({
  name: 'openReplyRhsForLastPost'
- , description: 'Open the ... menu of the last post made'
+ , description: 'Open the Reply menu of the last post made'
  , args: [], commandMatchers: []
  , getExpandedCommands: function(args) {
  var commands = [];
@@ -198,7 +219,7 @@ return commands;
 //openReplyRhsByText
 manager.addRollupRule({
  name: 'openReplyRhsByText'
- , description: 'Open the ... menu for the post containg provided text. Will select earlies matching post that has been loaded in the channel. (case sensitive match)'
+ , description: 'Open the Reply menu for the post containg provided text. Will select earlies matching post that has been loaded in the channel. (case sensitive match)'
  , args: [{ name: 'ContainsText' , description: 'Match earliest post containing the following text' }], commandMatchers: []
  , getExpandedCommands: function(args) {
  var commands = [];
@@ -351,7 +372,7 @@ return commands;
 //Promote user to Team Admin
 manager.addRollupRule({
  name: 'promoteUserToTeamAdmin'
- , description: 'Promtes user provide to Team Admin of the team provided. ex: username=test1, team=UI automation'
+ , description: 'Promtes user provided to Team Admin of the team provided. ex: username=test1, team=UI Automation'
  , args: [{ name: 'username' , description: 'team' }], commandMatchers: []
  , getExpandedCommands: function(args) {
  var commands = [];
@@ -381,6 +402,50 @@ return commands;
 });
 
 
+//Promote user to System Admin
+manager.addRollupRule({
+ name: 'promoteUserToSystemAdmin'
+ , description: 'Promtes user provided to System Admin'
+ , args: [{ name: 'username' , description: 'Provide user to promote to System Admin' }], commandMatchers: []
+ , getExpandedCommands: function(args) {
+ var commands = [];
+//Get current Team
+commands.push({ command: 'waitForElementPresent', target: "//div[@class='team-container active']/a", value: ''});
+commands.push({ command: 'storeAttribute', target: "//div[@class='team-container active']/a@href", value: 'TeamWithSlash'});
+commands.push({ command: 'assertText', target: "id=post_textbox", value: ''});
+commands.push({ command: 'sendKeys', target: "id=post_textbox", value: '${TeamWithSlash}'});
+commands.push({ command: 'sendKeys', target: "id=post_textbox", value: '${KEY_HOME}'});
+commands.push({ command: 'sendKeys', target: "id=post_textbox", value: '${KEY_DELETE}'});
+commands.push({ command: 'storeText', target: "//textarea[@id='post_textbox']", value: 'TeamName'});
+commands.push({ command: 'pause', target: "", value: '1000'});
+commands.push({ command: 'sendKeys', target: "id=post_textbox", value: '${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}'});
+//Promote User
+commands.push({ command: 'waitForElementPresent', target: "//span[@class='sidebar-header-dropdown__icon']", value: ''});
+commands.push({ command: 'click', target: "//span[@class='sidebar-header-dropdown__icon']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "id=systemConsole", value: ''});
+commands.push({ command: 'click', target: "id=systemConsole", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "id=users", value: ''});
+commands.push({ command: 'click', target: "id=users", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div/a/span/span[contains(text(),'Member')]", value: ''});
+commands.push({ command: 'click', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div/a/span/span[contains(text(),'Member')]", value: ''});
+//Update the lines below to new option
+commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div/ul[@class='dropdown-menu member-menu']/li[@role='presentation']/a[@id='manageRoles']/span", value: ''});
+commands.push({ command: 'click', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div/ul[@class='dropdown-menu member-menu']/li[@role='presentation']/a[@id='manageRoles']/span", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//input[@name='systemadmin']", value: ''});
+commands.push({ command: 'click', target: "//input[@name='systemadmin']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//button/span[contains(text(),'Save')] ", value: ''});
+commands.push({ command: 'click', target: "//button/span[contains(text(),'Save')] ", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div/a/span/span[contains(text(),'System Admin')]", value: ''});
+//Return to Team
+commands.push({ command: 'waitForElementPresent', target: "id=adminNavbarDropdownButton", value: ''});
+commands.push({ command: 'click', target: "id=adminNavbarDropdownButton", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "id=swithTo${TeamName}", value: ''});
+commands.push({ command: 'click', target: "id=swithTo${TeamName}", value: ''});
+return commands;
+ }
+});
+
+
 //Promote user to channel Admin
 manager.addRollupRule({
  name: 'promoteUserToChannelAdmin'
@@ -405,7 +470,7 @@ return commands;
 
 //Remove user from channel 
 manager.addRollupRule({
- name: 'reomoveUserFromChannel'
+ name: 'removeUserFromChannel'
  , description: 'Removes the user provided from the current channel'
  , args: [{ name: 'username', description: 'User to be removed'  }], commandMatchers: []
  , getExpandedCommands: function(args) {
@@ -424,3 +489,73 @@ commands.push({ command: 'click', target: "//button[@class='close']", value: ''}
 return commands;
  }
 });
+
+//Remove user from team 
+manager.addRollupRule({
+ name: 'removeUserFromTeam'
+ , description: 'Removes the user provided from the current team'
+ , args: [{ name: 'username', description: 'User to be removed'  }], commandMatchers: []
+ , getExpandedCommands: function(args) {
+ var commands = [];
+ 
+commands.push({ command: 'waitForElementPresent', target: "id=sidebarHeaderDropdownButton", value: ''});
+commands.push({ command: 'click', target: "id=sidebarHeaderDropdownButton", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "id=manageMembers", value: ''});
+commands.push({ command: 'click', target: "id=manageMembers", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal modal-dialog']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@class='dropdown-toggle theme color--link style--none']", value: ''});
+commands.push({ command: 'click', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@class='dropdown-toggle theme color--link style--none']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//div[@class='dropdown member-drop open']/ul/li/a/span[contains(text(),'Remove From Team')]", value: ''});
+commands.push({ command: 'click', target: "//div[@class='dropdown member-drop open']/ul/li/a/span[contains(text(),'Remove From Team')]", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//button[@class='close']", value: ''});
+commands.push({ command: 'click', target: "//button[@class='close']", value: ''});
+return commands;
+ }
+});
+
+
+//Create Team
+manager.addRollupRule({
+ name: 'createTeam'
+ , description: 'Creates a closed Team. DOES NOT SUPPORT SPACES OR UPPERCASE LETTERS'
+ , args: [{ name: 'TeamName' , description: 'team name to be created' }], commandMatchers: []
+ , getExpandedCommands: function(args) {
+ var commands = [];
+ 
+commands.push({ command: 'waitForElementPresent', target: "id=sidebarHeaderDropdownButton", value: ''});
+commands.push({ command: 'click', target: "id=sidebarHeaderDropdownButton", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "id=createTeam", value: ''});
+commands.push({ command: 'click', target: "id=createTeam", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "css=input.form-control", value: ''});
+commands.push({ command: 'type', target: "css=input.form-control", value: args.TeamName});
+commands.push({ command: 'waitForElementPresent', target: "//button[@type='submit']", value: ''});
+commands.push({ command: 'click', target: "//button[@type='submit']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//input[@value='"+args.TeamName+"']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//span[contains(text(),'Finish')]", value: ''});
+commands.push({ command: 'click', target: "//button[@type='submit']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//div[@class='team-container active']/a[@href='/"+args.TeamName+"']", value: ''});
+return commands;
+ }
+});
+
+
+//Add user to team
+manager.addRollupRule({
+ name: 'addUserToTeam'
+ , description: 'Add user to current team'
+ , args: [{ name: 'username' , description: 'User to be added to the team' }], commandMatchers: []
+ , getExpandedCommands: function(args) {
+ var commands = [];
+ 
+commands.push({ command: 'waitForElementPresent', target: "id=sidebarHeaderDropdownButton", value: ''});
+commands.push({ command: 'click', target: "id=sidebarHeaderDropdownButton", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "id=addUsersToTeam", value: ''});
+commands.push({ command: 'click', target: "id=addUsersToTeam", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]", value: ''});
+commands.push({ command: 'click', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]", value: ''});
+commands.push({ command: 'click', target: "id=saveItems", value: ''});
+return commands;
+ }
+});
+
+
