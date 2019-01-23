@@ -72,7 +72,7 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("desktopDesc")).getText().matches("^For mentions and direct messages, [\\s\\S]*shown for 5 seconds$")) break; } catch (Exception e) {}
+        	try { if (driver.findElement(By.id("desktopDesc")).getText().matches("^For mentions and direct messages[\\s\\S]*$")) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -115,7 +115,7 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.id("desktopDesc")).getText().matches("^For all activity, [\\s\\S]*shown for 5 seconds$")) break; } catch (Exception e) {}
+        	try { if (driver.findElement(By.id("desktopDesc")).getText().matches("^For all activity[\\s\\S]*$")) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
