@@ -186,6 +186,7 @@
 	<td>id=all_users-posts-edit_posts</td>
 	<td></td>
 </tr>
+<!--^^update system scheme to remove edit posts from Memeber in data setup this seems to be need below and all overrides have it enabled^^-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//div[@id='all_users-posts-edit_posts']/div[@class='permission-check ']</td>
@@ -264,7 +265,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.multi-select__container &gt; #saveSetting</td>
+	<td>css=div.multi-select__container &gt; #saveItems</td>
 	<td>Add</td>
 </tr>
 <!--Permission Config-->
@@ -460,7 +461,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.multi-select__container &gt; #saveSetting</td>
+	<td>css=div.multi-select__container &gt; #saveItems</td>
 	<td>Add</td>
 </tr>
 <tr>
@@ -536,7 +537,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td>Add</td>
 </tr>
 <tr>
@@ -611,12 +612,18 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span[@class='Select-value-label'][text()=&quot;test5&quot;]</td>
+	<td>div[@id='selectItems']//*/div[text()=&quot;test5&quot;]</td>
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/div[text()=&quot;test5&quot;]</td>
+	<td></td>
+</tr>
+<!--^^what happent to the input here?-->
+<tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td>Add</td>
 </tr>
 <tr>
@@ -708,12 +715,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span[@class='Select-value-label'][text()=&quot;test5&quot;]</td>
+	<td>div[@id='selectItems']//*/div[text()=&quot;test5&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td>Add</td>
 </tr>
 <tr>
@@ -779,15 +786,14 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[7]</td>
+	<td>//button[@class='close']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[7]</td>
+	<td>//button[@class='close']</td>
 	<td></td>
 </tr>
-<!--Promote user to Admin ^^-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -881,12 +887,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span[@class='Select-value-label'][text()=&quot;test5&quot;]</td>
+	<td>div[@id='selectItems']//*/div[text()=&quot;test5&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td>Add</td>
 </tr>
 <tr>
@@ -952,12 +958,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[7]</td>
+	<td>//button[@class='close']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[7]</td>
+	<td>//button[@class='close']</td>
 	<td></td>
 </tr>
 <!--Promote user to Admin ^^-->
@@ -1008,8 +1014,13 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td>Add</td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1083,12 +1094,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span[@class='Select-value-label'][text()=&quot;test5&quot;]</td>
+	<td>div[@id='selectItems']//*/div[text()=&quot;test5&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td>Add</td>
 </tr>
 <tr>
@@ -1235,7 +1246,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td>Add</td>
 </tr>
 <tr>
@@ -1310,12 +1321,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span[@class='Select-value-label'][text()=&quot;test5&quot;]</td>
+	<td>div[@id='selectItems']//*/div[text()=&quot;test5&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td>Add</td>
 </tr>
 <tr>
@@ -1560,20 +1571,15 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementNotPresent</td>
-	<td>id=channelManageMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyNotPresent</td>
+	<td>Item=Manage Members</td>
 </tr>
 <!--Go into the modal as user-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelManageMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelManageMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=View Members</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1592,12 +1598,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[7]</td>
+	<td>//button[@class='close']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[7]</td>
+	<td>//button[@class='close']</td>
 	<td></td>
 </tr>
 <tr>
@@ -1689,10 +1695,11 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementNotPresent</td>
-	<td>id=channelManageMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyNotPresent</td>
+	<td>Item=Manage Members</td>
 </tr>
+<!--View members in Span-->
 <tr>
 	<td>verifyElementPresent</td>
 	<td>id=channelViewInfo</td>
@@ -1772,6 +1779,7 @@
 	<td>css=span[class='sidebar-item__name']/span[text()=&quot;PrivateChanTeamB&quot;]</td>
 	<td></td>
 </tr>
+<!--What Happen to this channel PrivateChanTeamB test5 should have been added-->
 <tr>
 	<td>click</td>
 	<td>//span[@class='sidebar-item__name']/span[text()=&quot;PrivateChanTeamB&quot;]</td>
@@ -1822,21 +1830,15 @@
 <!--^^ May need to delete this from the box now that I'm done with it^^-->
 <tr>
 	<td>pause</td>
-	<td>4999</td>
+	<td>1000</td>
 	<td></td>
 </tr>
 <!--unable to find context menu. Must solve mouse Over-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[5]</td>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[5]</td>
-	<td></td>
-</tr>
-<!--^This clicks "..."^-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//div[@id='CENTER_dropdown_${LastPostId}']/div/ul/li/button/span[text()='Reply']</td>
@@ -1911,12 +1913,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span[@class='Select-value-label'][text()=&quot;test6&quot;]</td>
+	<td>div[@id='selectItems']//*/div[text()=&quot;test6&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td>Add</td>
 </tr>
 <tr>
@@ -2281,12 +2283,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span[@class='Select-value-label']/span[text()='test6']</td>
+	<td>div[@id='selectItems']//*/div/span[text()='test6']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -2343,12 +2345,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[7]</td>
+	<td>//button[@class='close']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[7]</td>
+	<td>//button[@class='close']</td>
 	<td></td>
 </tr>
 <tr>
@@ -2364,14 +2366,9 @@
 <!--User was removed from public channel-->
 <!--... Next Delete this channel-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//span[@class='sidebar-item__name'][text() = &quot;AnotherPubChannel2&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//span[@class='sidebar-item__name']/span[text() = &quot;AnotherPubChannel2&quot;]</td>
-	<td></td>
+	<td>rollup</td>
+	<td>openChannel</td>
+	<td>ChannelName=AnotherPubChannel2</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2412,6 +2409,11 @@
 	<td>click</td>
 	<td>//button[@class='btn btn-danger']/span[text()='Archive']</td>
 	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>openChannel</td>
+	<td>ChannelName=Town Square</td>
 </tr>
 <tr>
 	<td>verifyText</td>
@@ -2472,12 +2474,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span[@class='Select-value-label'][text()='test6']</td>
+	<td>div[@id='selectItems']//*/div[text()='test6']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -2534,12 +2536,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[7]</td>
+	<td>//button[@class='close']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[7]</td>
+	<td>//button[@class='close']</td>
 	<td></td>
 </tr>
 <tr>
@@ -2913,18 +2915,12 @@
 <!--^^ May need to delete this from the box now that I'm done with it^^-->
 <tr>
 	<td>pause</td>
-	<td>4999</td>
-	<td></td>
-</tr>
-<!--unable to find context menu. Must solve mouse Over-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[5]</td>
+	<td>500</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[5]</td>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
 <!--^This clicks "..."^-->
@@ -2938,6 +2934,7 @@
 	<td>//div[@id='CENTER_dropdown_${LastPostId}']/div/ul/li/button/span[text()='Edit']</td>
 	<td></td>
 </tr>
+<!--^^Since team is C, update system scheme to remove edit posts from Memeber in data setup^^-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//div[@id='CENTER_dropdown_${LastPostId}']/div/ul/li/button/span[text()='Delete']</td>
@@ -2946,11 +2943,6 @@
 <tr>
 	<td>click</td>
 	<td>//div[@id='CENTER_dropdown_${LastPostId}']/div/ul/li/button/span[text()='Delete']</td>
-	<td></td>
-</tr>
-<tr>
-	<td></td>
-	<td></td>
 	<td></td>
 </tr>
 <!--Delete Modal will not come up using selenium click on Delete Click delete manually then resume-->
@@ -3015,19 +3007,14 @@
 <!--^^ May need to delete this from the box now that I'm done with it^^-->
 <tr>
 	<td>pause</td>
-	<td>4999</td>
+	<td>50</td>
 	<td></td>
 </tr>
 <!--unable to find context menu. Must solve mouse Over-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[5]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[5]</td>
-	<td></td>
+	<td>rollup</td>
+	<td>openDotMenuByPostText</td>
+	<td>ContainsText=Post from Admin</td>
 </tr>
 <!--^This clicks "..."^-->
 <tr>
@@ -3100,12 +3087,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span[@class='Select-value-label'][text()='test6']</td>
+	<td>div[@id='selectItems']//*/div[text()='test6']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -3167,12 +3154,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[7]</td>
+	<td>//button[@class='close']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[7]</td>
+	<td>//button[@class='close']</td>
 	<td></td>
 </tr>
 <tr>
@@ -3234,12 +3221,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span[@class='Select-value-label'][text()='test6']</td>
+	<td>div[@id='selectItems']//*/div[text()='test6']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -3301,12 +3288,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[7]</td>
+	<td>//button[@class='close']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[7]</td>
+	<td>//button[@class='close']</td>
 	<td></td>
 </tr>
 <tr>
@@ -3516,19 +3503,14 @@
 <!--^^ May need to delete this from the box now that I'm done with it^^-->
 <tr>
 	<td>pause</td>
-	<td>4999</td>
+	<td>50</td>
 	<td></td>
 </tr>
 <!--unable to find context menu. Must solve mouse Over-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[5]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[5]</td>
-	<td></td>
+	<td>rollup</td>
+	<td>openDotMenuByPostText</td>
+	<td>ContainsText=Post from Admin</td>
 </tr>
 <!--^This clicks "..."^-->
 <tr>
@@ -3547,11 +3529,6 @@
 	<td></td>
 </tr>
 <!--Delete click will not work w\ SE please click Delete on the Post-->
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//div[@class='modal-body']</td>
