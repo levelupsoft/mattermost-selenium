@@ -36,7 +36,7 @@ sleep 5
 sudo systemctl start mattermost
 sleep 5
 
-./bin/mattermost user create --email admin@test.com --username admin --password passwd
+./bin/mattermost user create --email admin@test.com --username admin --password passwd --system_admin
 ./bin/mattermost user create --email test@test.com --username test --password passwd
 ./bin/mattermost user create --email test2@test.com --username test2 --password passwd
 ./bin/mattermost user create --email test3@test.com --username test3 --password passwd
