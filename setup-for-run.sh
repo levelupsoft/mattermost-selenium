@@ -32,7 +32,11 @@ cp ~/mattermost.mattermost-license ~/mattermost/config/mattermost.mattermost-lic
 cd ~/mattermost
 ./bin/mattermost reset --confirm true
 
-./bin/mattermost user create --email admin@test.com --username admin --password passwd
+sleep 5
+sudo systemctl start mattermost
+sleep 5
+
+./bin/mattermost user create --email admin@test.com --username admin --password passwd --system_admin
 ./bin/mattermost user create --email test@test.com --username test --password passwd
 ./bin/mattermost user create --email test2@test.com --username test2 --password passwd
 ./bin/mattermost user create --email test3@test.com --username test3 --password passwd
@@ -55,7 +59,3 @@ cd ~/mattermost
 
 mysql -u mmuser -ppasswd -h localhost -e "UPDATE Preferences SET Value = '999' WHERE Category = 'tutorial_step';" mattermost
 mysql -u mmuser -ppasswd -h localhost -e "UPDATE Teams SET AllowOpenInvite = '1' WHERE Name = 'ui-automation2';" mattermost
-
-sleep 120
-sudo systemctl start mattermost
-
