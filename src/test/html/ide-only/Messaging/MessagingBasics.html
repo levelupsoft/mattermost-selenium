@@ -4003,6 +4003,143 @@
 	<td>link=Click here to jump to recent messages.</td>
 	<td>Click here to jump to recent messages.</td>
 </tr>
+<!--Verify propwer error page whan a user hit a permalink to a DM-->
+<tr>
+	<td>verifyText</td>
+	<td>id=moreDirectMessage</td>
+	<td>More...</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=moreDirectMessage</td>
+	<td>More...</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[2]/div/div[6]/div/div</td>
+	<td>@test3</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[2]/div/div[6]/div/div</td>
+	<td>@test3</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveItems</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveItems</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Sample DM Message${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Permalink</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>id=linkModalTextArea</td>
+	<td>DMPermalink</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=linkModalCloseButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=linkModalCloseButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>openChannel</td>
+	<td>ChannelName=Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${DMPermalink}${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>login</td>
+	<td>username=admin@test.com</td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>openChannel</td>
+	<td>ChannelName=Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>${DMPermalink}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=${DMPermalink}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=span</td>
+	<td>Message Not Found</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=a &gt; span</td>
+	<td>Back to Mattermost</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a &gt; span</td>
+	<td>Back to Mattermost</td>
+</tr>
+<!--Switching back to User2 to continue test-->
+<tr>
+	<td>rollup</td>
+	<td>logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>login</td>
+	<td>username=test2</td>
+</tr>
 <!--Backslash escape character (have to include an extra b/c Se escapes them)-->
 <tr>
 	<td>waitForElementPresent</td>
