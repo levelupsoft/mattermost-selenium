@@ -209,7 +209,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=strong</td>
-	<td>JIRA</td>
+	<td>Jira</td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
@@ -377,7 +377,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h3.admin-console-header</td>
-	<td>JIRA</td>
+	<td>Jira</td>
 </tr>
 <!--*** Expects JIRA plugin to be off; change manually if needed-->
 <tr>
@@ -1325,12 +1325,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -1533,8 +1533,13 @@
 </tr>
 <!--Finding by div; may need to click Action button manually if it stops finding it-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='user-profile-popover']//*/button</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>//div[@id='user-profile-popover']/div[2]/div[7]/button</td>
+	<td>//div[@id='user-profile-popover']//*/button</td>
 	<td></td>
 </tr>
 <tr>

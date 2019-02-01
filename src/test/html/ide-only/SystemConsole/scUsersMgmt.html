@@ -201,14 +201,6 @@
 	<td>id=searchUsers</td>
 	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
 </tr>
-<!--This now fails because other tests add and then deactivate users-->
-<!--May not be able to meaningfully verify non-filtered number-->
-<!--Unless we store the value somewhere else and compare it here-->
-<tr>
-	<td>waitForText</td>
-	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>12 users</td>
-</tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
@@ -222,7 +214,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>1 user of 12 total</td>
+	<td>1 user of * total</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -625,7 +617,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>1 user of 12 total</td>
+	<td>1 user of * total</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -901,12 +893,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -954,11 +946,6 @@
 	<td>sendKeys</td>
 	<td>id=searchUsers</td>
 	<td>cor</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>1 user of 12 total</td>
 </tr>
 <tr>
 	<td>waitForText</td>
