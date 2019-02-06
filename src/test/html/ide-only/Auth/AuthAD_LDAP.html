@@ -44,6 +44,17 @@
 	<td>id=LdapSettings.Enablefalse</td>
 	<td></td>
 </tr>
+<!--Ensure LDAP sync is enabled-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=LdapSettings.EnableSynctrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=LdapSettings.EnableSynctrue</td>
+	<td></td>
+</tr>
 <!--Store login placeholder text to put it back later-->
 <tr>
 	<td>storeText</td>
@@ -907,10 +918,20 @@
 	<td>4000</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
 <!--*** Manually click through 1) TOS 2) team select and 3) tutorial as needed-->
 <tr>
 	<td>pause</td>
 	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
@@ -1372,6 +1393,7 @@
 	<td></td>
 </tr>
 <!--Nickname not editable for LDAP account (w/attribute set in LDAP)-->
+<!--If didn't set nickname attribute, this will fail (it will be editable)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=nicknameEdit</td>
@@ -1899,6 +1921,7 @@
 	<td>id=nameDesc</td>
 	<td>${firstlastldap}</td>
 </tr>
+<!--Nickname will fail if this attribute was never set-->
 <tr>
 	<td>waitForText</td>
 	<td>css=#nicknameDesc &gt; span</td>

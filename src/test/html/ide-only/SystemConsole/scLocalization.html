@@ -2530,9 +2530,28 @@
 	<td>css=option[value=&quot;nl&quot;]</td>
 	<td></td>
 </tr>
-<!--Change defaults to something other than current language choice?-->
-<!--Wait to write test until decisions made about helpful error text, etc.-->
-<!--Set available languages back to all by removing selections-->
+<tr>
+	<td>waitForText</td>
+	<td>id=cancelSetting</td>
+	<td>Cancel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=cancelSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<!--- Switching to second available language after it is added-->
+<!--Set server and client and available to one language, JP-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -2563,40 +2582,38 @@
 	<td>css=#localization &gt; span.sidebar-section.sidebar-subsection-title__text &gt; span</td>
 	<td></td>
 </tr>
+<!--Set default Server and Client to Japanese (JP)-->
 <tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×Deutsch <br />×Español <br />×English</td>
+	<td>waitForElementPresent</td>
+	<td>id=LocalizationSettings.DefaultServerLocale</td>
+	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>css=div.Select-control</td>
-	<td>${KEY_BACKSPACE}</td>
+	<td>select</td>
+	<td>id=LocalizationSettings.DefaultServerLocale</td>
+	<td>日本語</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×Deutsch <br />×Español</td>
+	<td>waitForElementPresent</td>
+	<td>id=LocalizationSettings.DefaultClientLocale</td>
+	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>css=div.Select-control</td>
-	<td>${KEY_BACKSPACE}</td>
+	<td>select</td>
+	<td>id=LocalizationSettings.DefaultClientLocale</td>
+	<td>日本語</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×Deutsch</td>
+	<td>pause</td>
+	<td>8000</td>
+	<td></td>
 </tr>
+<!--*** Manually set Available to JP (the last one) and English-->
+<!--*** (Remove the other languages)-->
 <tr>
-	<td>sendKeys</td>
-	<td>css=div.Select-control</td>
-	<td>${KEY_BACKSPACE}</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.Select-placeholder</td>
-	<td>Select...</td>
+	<td>waitForTextPresent</td>
+	<td>日本語<br /><br /><br />English</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2613,9 +2630,9 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
-<!--Log out-->
+<!--Set admin's client to Japanese-->
 <tr>
-	<td>waitForElementPresent</td>
+	<td>waitForText</td>
 	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
 	<td></td>
 </tr>
@@ -2624,6 +2641,360 @@
 	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=swithToui-automation</td>
+	<td>Switch to UI Automation</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=swithToui-automation</td>
+	<td>Switch to UI Automation</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=displayButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=displayButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=languagesEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=languagesEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=displayLanguage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=displayLanguage</td>
+	<td>日本語</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#generalSettingsTitle &gt; span</td>
+	<td>全般の設定</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<!--Remove English as available language-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#localization &gt; span.sidebar-section.sidebar-subsection-title__text &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#localization &gt; span.sidebar-section.sidebar-subsection-title__text &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<!--*** Manually click the X to remove English from Available-->
+<tr>
+	<td>waitForTextPresent</td>
+	<td>利用可能な言語:*日本語</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>日本語<br /><br /><br />English</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--Verify Language is hidden in Account Settings-->
+<tr>
+	<td>click</td>
+	<td>id=swithToui-automation</td>
+	<td>Switch to UI Automation</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=displayButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=displayButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channel_display_modeEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>id=languagesEdit</td>
+	<td></td>
+</tr>
+<!--Add English back as Available Language-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#localization &gt; span.sidebar-section.sidebar-subsection-title__text &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#localization &gt; span.sidebar-section.sidebar-subsection-title__text &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<!--*** Manually click the X to remove English from Available-->
+<tr>
+	<td>waitForTextPresent</td>
+	<td>利用可能な言語:*日本語*English</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--Switch to English in Account Settings-->
+<tr>
+	<td>click</td>
+	<td>id=swithToui-automation</td>
+	<td>Switch to UI Automation</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=displayButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=displayButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=languagesEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=languagesEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#settingTitle &gt; span</td>
+	<td>言語</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=displayLanguage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=displayLanguage</td>
+	<td>English</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#generalSettingsTitle &gt; span</td>
+	<td>General Settings</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<!--Cleanup: Set defaults to English and clear Available Languages-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#localization &gt; span.sidebar-section.sidebar-subsection-title__text &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#localization &gt; span.sidebar-section.sidebar-subsection-title__text &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=LocalizationSettings.DefaultServerLocale</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=LocalizationSettings.DefaultServerLocale</td>
+	<td>English</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=LocalizationSettings.DefaultClientLocale</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=LocalizationSettings.DefaultClientLocale</td>
+	<td>English</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<!--*** Manually click the Xs to remove EN and JP from Available-->
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>利用可能な言語:*日本語*English</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--Log out admin-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#logout &gt; span</td>

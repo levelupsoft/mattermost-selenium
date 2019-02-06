@@ -357,7 +357,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
-	<td>This team has reached the maximum number of allowed accounts. Contact your systems administrator to set a higher limit.</td>
+	<td>This team has reached the maximum number of allowed accounts. Contact your System Administrator to set a higher limit.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -927,7 +927,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
-	<td>This team has reached the maximum number of allowed accounts. Contact your systems administrator to set a higher limit.</td>
+	<td>This team has reached the maximum number of allowed accounts. Contact your System Administrator to set a higher limit.</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -1201,9 +1201,14 @@
 	<td>Unable to create more than 5 channels for current team</td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
+	<td>Cancel</td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-default</td>
-	<td></td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
+	<td>Cancel</td>
 </tr>
 <!--Delete channel, still counts toward max and can't create new-->
 <tr>
@@ -1262,9 +1267,14 @@
 	<td>Unable to create more than 5 channels for current team</td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
+	<td>Cancel</td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-default</td>
-	<td></td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
+	<td>Cancel</td>
 </tr>
 <!--Open System Console-->
 <tr>
@@ -1855,13 +1865,13 @@
 <!--Cancel out of warning, message does not post-->
 <tr>
 	<td>waitForText</td>
-	<td>css=button.btn.btn-default</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
 	<td>Cancel</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-default</td>
-	<td>Cancel</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
