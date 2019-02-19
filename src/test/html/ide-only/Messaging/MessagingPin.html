@@ -119,29 +119,77 @@
 	<td>css=span.post__pinned-badge &gt; span</td>
 	<td></td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td></td>
+	<td>500</td>
+</tr>
+<!--Ensure that reactions remanin in place when you pin and unpin a post-->
+<tr>
+	<td>rollup</td>
+	<td>openEmojiPickerForLastPost</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[6]/div/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.post-reaction__emoji.emoticon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Pin to channel</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td></td>
+	<td>500</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.post-reaction__emoji.emoticon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Un-pin from channel</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.post-reaction__emoji.emoticon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.post-reaction__emoji.emoticon</td>
+	<td></td>
+</tr>
 <!--Pin a message in center, badge appears-->
-<!--This isn't clicking the post menu anymore-->
-<!--Click or hover [...] menu to make Pin to channel visible-->
-<!--Hm. May have to manually click to pin it as well, even if visible-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[6]</td>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[6]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span:contains('Pin to channel')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span:contains('Pin to channel')</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Pin to channel</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

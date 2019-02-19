@@ -598,7 +598,11 @@
 	<td>css=div.post-message__text &gt; p</td>
 	<td>This is a post on team APlus, which I will flag.</td>
 </tr>
-<!--*** Manually hover over last post to make flag clickable-->
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.style--none.flag-icon__container </td>
@@ -701,6 +705,11 @@
 	<td>Here's a DM that will be flagged as well, which will show up in flagged posts list across teams.</td>
 </tr>
 <!--*** Manually hover over last message to make flag clickable-->
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.style--none.flag-icon__container </td>
@@ -1117,6 +1126,47 @@
 	<td>waitForText</td>
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Off-Topic</td>
+</tr>
+<!--Reply to a post will not show unread dot when switching teams-->
+<tr>
+	<td>rollup</td>
+	<td>openChannel</td>
+	<td>ChannelName=Town Square</td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>openReplyRhsForLastPost</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=reply_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>reply_textbox</td>
+	<td>Reply Posted${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>switchTeam</td>
+	<td>TeamName=six</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//div[@class='team-container unread']/a[@href='/six']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>switchTeam</td>
+	<td>TeamName=aplus</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
 </tr>
 <!--Cleanup: Leave both teams-->
 <tr>
