@@ -197,15 +197,40 @@
 	<td>@corey</td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=searchUsers</td>
-	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchUsers</td>
+	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<!--DH - Backsapce fails sometimes and I'm not sure how to fix it . tried adding pauses-->
+<!--This now fails because other tests add and then deactivate users-->
+<!--May not be able to meaningfully verify non-filtered number-->
+<!--Unless we store the value somewhere else and compare it here-->
+<tr>
+	<td>waitForText</td>
+	<td>css=span.member-count.pull-left &gt; span</td>
+	<td>12 users</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
 	<td>@admin</td>
 </tr>
+<!--DH - Not sure what the 2 above ^^ are looking for. Don't want to remove in case something broke-->
 <tr>
 	<td>sendKeys</td>
 	<td>id=searchUsers</td>
@@ -996,6 +1021,148 @@
 	<td>waitForElementPresent</td>
 	<td>link=Team Member</td>
 	<td></td>
+</tr>
+<!--Use status Filter-->
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=select.form-control.system-users__team-filter</td>
+	<td>label=All Users</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=select.form-control.system-users__filter</td>
+	<td>label=Inactive</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=span.member-count.pull-left &gt; span</td>
+	<td>1 user</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test10</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=select.form-control.system-users__team-filter</td>
+	<td>label=No Teams</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p &gt; span</td>
+	<td>No users found</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=select.form-control.system-users__team-filter</td>
+	<td>label=UI Automation</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test10</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=select.form-control.system-users__filter</td>
+	<td>label=System Admin</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=span.member-count.pull-left &gt; span</td>
+	<td>1 user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@admin</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=select.form-control.system-users__filter</td>
+	<td>label=None</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=span.member-count.pull-left &gt; span</td>
+	<td>11 users</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=select.form-control.system-users__team-filter</td>
+	<td>label=All Users</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=span.member-count.pull-left &gt; span</td>
+	<td>12 users</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=select.form-control.system-users__team-filter</td>
+	<td>label=No Teams</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test5</td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test6</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=select.form-control.system-users__filter</td>
+	<td>label=Inactive</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=select.form-control.system-users__team-filter</td>
+	<td>label=All Users</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=select.form-control.system-users__team-filter</td>
+	<td>label=UI Automation</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchUsers</td>
+	<td>Pickles</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p &gt; span</td>
+	<td>No users found</td>
+</tr>
+<!--All 3 filters can be used together-->
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchUsers</td>
+	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchUsers</td>
+	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchUsers</td>
+	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=span.member-count.pull-left &gt; span</td>
+	<td>1 user</td>
 </tr>
 <!--LOG OUT admin-->
 <tr>
