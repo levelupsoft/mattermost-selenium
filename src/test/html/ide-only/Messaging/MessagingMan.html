@@ -46,11 +46,6 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
-<tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
-</tr>
 <!--Turn on link previews in System Console-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -479,19 +474,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyText</td>
-	<td>css=div.modal-footer &gt; button.btn.btn-default &gt; span</td>
-	<td>Cancel</td>
-</tr>
-<tr>
 	<td>waitForText</td>
-	<td>css=button.btn.btn-default</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
 	<td>Cancel</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-default</td>
-	<td></td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
+	<td>Cancel</td>
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
@@ -879,6 +869,7 @@
 </tr>
 <!--*** Visually verify flagged posts icon blue when active, tooltip "Flagged Posts"-->
 <!--Verify messaging with no posts flagged-->
+<!--** Hm, some previous test seems to have left a flagged DM. Unflag it manually-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.sidebar--right__subheader &gt; ul &gt; li &gt; span</td>
@@ -1460,7 +1451,7 @@
 	<td></td>
 </tr>
 <!--Markdown basics-->
-<!--*** NOTE: 4 images are broken (at the source); adding new samples-->
+<!--*** NOTE: several of the images are broken (at the source); adding new samples-->
 <!--*** https://github.com/mattermost/mattermost-server/pull/9802-->
 <tr>
 	<td>waitForElementPresent</td>

@@ -525,6 +525,527 @@
 	<td>http://selenium.mattermost.com/admin_console/plugins/management</td>
 	<td></td>
 </tr>
+<!--Upload the 'original' giphy plugin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=documentation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<!--*** Manually select com.mattermost.giphy-plugin-ORIGINAL-0.0.1.tar.gz (in Resources)-->
+<tr>
+	<td>pause</td>
+	<td>7000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
+	<td>Upload</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<!--This step usually takes a while to finish uploading-->
+<tr>
+	<td>waitForNotEditable</td>
+	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<!--Enable Giphy plugin-->
+<!--Giphy should be first plugin in the list; if not this command may fail-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.padding-top &gt; a &gt; span</td>
+	<td>Enable</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.padding-top &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.alert.alert-success &gt; span</td>
+	<td>This plugin is running.</td>
+</tr>
+<!--Return to team to verify /giphy-->
+<tr>
+	<td>waitForText</td>
+	<td>id=swithToui-automation</td>
+	<td>Switch to UI Automation</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=swithToui-automation</td>
+	<td>Switch to UI Automation</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/giph</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.command.suggestion--selected</td>
+	<td>/giphy [search string]<br />Unleashes the magic of Giphy</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>y installed and enabled original</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
+	<td>/giphy installed and enabled original</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>installed and enabled original*(Posted using - ORIGINAL - /giphy)</td>
+	<td></td>
+</tr>
+<!--Delete message after verification to avoid future false positive-->
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none span:contains('Delete')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none span:contains('Delete')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-body &gt; span</td>
+	<td>exact:Are you sure you want to delete this Post?</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>installed and enabled original*(Posted using - ORIGINAL - /giphy)</td>
+	<td></td>
+</tr>
+<!--Upload the updated giphy plugin and accept overwrite prompt-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>7000</td>
+	<td></td>
+</tr>
+<!--*** Manually select com.mattermost.giphy-plugin-OVERWRITTEN-0.0.1.tar.gz (in Resources)-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
+	<td>Upload</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<!--This step usually takes a while to finish uploading-->
+<!--Click Overwrite at overwrite prompt-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-body &gt; span</td>
+	<td>exact:A plugin with this ID already exists. Would you like to overwrite it?</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-danger</td>
+	<td>Overwrite</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<!--Plugin update success message-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.form-group.half</td>
+	<td>Successfully updated plugin from *</td>
+</tr>
+<!--Giphy plugin should still be enabled-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.alert.alert-success &gt; span</td>
+	<td>This plugin is running.</td>
+</tr>
+<!--Return to team to verify /giphy after overwrite-->
+<tr>
+	<td>waitForText</td>
+	<td>id=swithToui-automation</td>
+	<td>Switch to UI Automation</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=swithToui-automation</td>
+	<td>Switch to UI Automation</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/giph</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.command.suggestion--selected</td>
+	<td>/giphy [search string]<br />Unleashes the magic of Giphy</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>y installed overwritten plugin</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
+	<td>/giphy installed overwritten plugin</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>installed overwritten plugin*(Posted using - OVERWRITTEN - /giphy)</td>
+	<td></td>
+</tr>
+<!--Delete message after verification to avoid future false positive-->
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none span:contains('Delete')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none span:contains('Delete')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-body &gt; span</td>
+	<td>exact:Are you sure you want to delete this Post?</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>installed overwritten plugin*(Posted using - OVERWRITTEN - /giphy)</td>
+	<td></td>
+</tr>
+<!--Reinstall original version-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;file&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>7000</td>
+	<td></td>
+</tr>
+<!--*** Manually select com.mattermost.giphy-plugin-ORIGINAL-0.0.1.tar.gz (in Resources)-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
+	<td>Upload</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<!--This step usually takes a while to finish uploading-->
+<!--Click Overwrite at overwrite prompt-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-body &gt; span</td>
+	<td>exact:A plugin with this ID already exists. Would you like to overwrite it?</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-danger</td>
+	<td>Overwrite</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<!--Plugin update success message-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.form-group.half</td>
+	<td>Successfully updated plugin from *</td>
+</tr>
+<!--Giphy plugin should still be enabled-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.alert.alert-success</td>
+	<td>This plugin is running.</td>
+</tr>
+<!--Return to team to verify /giphy returns Original text-->
+<tr>
+	<td>waitForText</td>
+	<td>id=swithToui-automation</td>
+	<td>Switch to UI Automation</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=swithToui-automation</td>
+	<td>Switch to UI Automation</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/giph</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.command.suggestion--selected</td>
+	<td>/giphy [search string]<br />Unleashes the magic of Giphy</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>y installed and enabled original</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
+	<td>/giphy installed and enabled original</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>installed and enabled original*(Posted using - ORIGINAL - /giphy)</td>
+	<td></td>
+</tr>
+<!--Delete message after verification to avoid future false positive-->
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none span:contains('Delete')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none span:contains('Delete')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-body &gt; span</td>
+	<td>exact:Are you sure you want to delete this Post?</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>installed and enabled original*(Posted using - ORIGINAL - /giphy)</td>
+	<td></td>
+</tr>
+<!--Cleanup: Remove Giphy plugin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=systemConsole</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=management</td>
+	<td></td>
+</tr>
+<!--Again, assumes Giphy is first in list (it should be on Se)-->
+<tr>
+	<td>waitForText</td>
+	<td>css=span &gt; a &gt; span</td>
+	<td>Remove</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span &gt; a &gt; span</td>
+	<td>Remove</td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>Giphy</td>
+	<td></td>
+</tr>
+<!--DEMO PLUGIN-->
 <!--Verify can upload the demo plugin-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -594,7 +1115,7 @@
 	<td>css=div.padding-top:contains('This plugin demonstrates the capabilities of a Mattermost plugin.')</td>
 	<td></td>
 </tr>
-<!--Can't upload the same plugin twice-->
+<!--Uploading the same plugin twice prompts to overwrite (new behavior v5.8)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=input[type=&quot;file&quot;]</td>
@@ -626,16 +1147,27 @@
 	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//label[@class='control-label']</td>
-	<td></td>
-</tr>
 <!--This step usually takes a while to finish uploading-->
+<!--Cancel out of overwrite prompt-->
 <tr>
 	<td>waitForText</td>
-	<td>//label[@class='control-label']</td>
-	<td>Unable to install plugin. A plugin with the same ID is already installed.</td>
+	<td>css=div.modal-body &gt; span</td>
+	<td>exact:A plugin with this ID already exists. Would you like to overwrite it?</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-link</td>
+	<td>Cancel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=div.col-sm-8 &gt; button.btn.btn-primary</td>
+	<td>Upload</td>
 </tr>
 <!--Enable demo-plugin-->
 <tr>
@@ -1640,6 +2172,47 @@
 	<td>Click anywhere to close</td>
 	<td></td>
 </tr>
+<!--File upload action option-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=fileUploadButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=fileUploadButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Upload using Demo Plugin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Upload using Demo Plugin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>You have triggered the root component of the demo plugin.<br /><br />Click anywhere to close.</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='channel_view']/div/div[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='channel_view']/div/div[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>Click anywhere to close</td>
+	<td></td>
+</tr>
 <!--demo_plugin settings page in System Console-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1744,9 +2317,6 @@
 	<td>css=div.sidebar--left__icons &gt; div</td>
 	<td>Demo Plugin: Enabled</td>
 </tr>
-<!--*** Testing 5.6.2 I see different behavior here: Disabled plugin-->
-<!--*** and tried slash command. Autocomplete still appears, and -->
-<!--*** trying to run it results in message "An error occurred while trying to execute this command."-->
 <!--/plugin_demo command no longer found-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1835,12 +2405,32 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/demo_p</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
+	<td>/demo_p</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.command__title</td>
+	<td>/demo_plugin (true|false)</td>
+</tr>
+<tr>
 	<td></td>
 	<td></td>
 	<td></td>
 </tr>
 <!--*** Plugin is removed in tests below; if you still have manual -->
-<!--*** tests to do, Don't run the below test to remove the plugin-->
+<!--*** tests to do, Don't run the below test to remove the plugin yet-->
 <tr>
 	<td></td>
 	<td></td>

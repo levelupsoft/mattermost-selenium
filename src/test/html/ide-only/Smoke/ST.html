@@ -168,11 +168,6 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=tutorialIntroInvite</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
 	<td>link=feedback@mattermost.com</td>
 	<td></td>
 </tr>
@@ -448,12 +443,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.btn.btn-default</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
 	<td>Cancel</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-default</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
 	<td></td>
 </tr>
 <tr>
@@ -1881,7 +1876,7 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
-<!--Open team invite link, create new account-->
+<!--Open STTeam invite link, create new account st2-->
 <tr>
 	<td>openAndWait</td>
 	<td>${teaminvitelink}</td>
@@ -2152,12 +2147,7 @@
 	<td>id=post_textbox</td>
 	<td>! Whole channel.${KEY_ENTER}</td>
 </tr>
-<!--Ah, this varies by server and has to be set in System Console to expect a confirm modal-->
-<tr>
-	<td>waitForText</td>
-	<td>css=span.mention--highlight &gt; span</td>
-	<td>@channel</td>
-</tr>
+<!--This will fail if the server is set in System Console to expect a confirm modal-->
 <!--Verify Main Menu options for non team admin (minimum; can vary)-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -2261,7 +2251,7 @@
 	<td></td>
 	<td></td>
 </tr>
-<!--Create new team from main menu-->
+<!--User st2 creates new team ST2Team from main menu-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -2526,7 +2516,7 @@
 	<td>//div[2]/div/div/div[2]/div/ul/li[2]/a/span</td>
 	<td>Make Team Admin</td>
 </tr>
-<!--Set back to team member-->
+<!--Set user testst back to team member-->
 <tr>
 	<td>click</td>
 	<td>//div[2]/div/div/div[2]/div/ul/li[2]/a/span</td>
@@ -3110,7 +3100,7 @@
 	<td>css=div.setting-list__hint &gt; span</td>
 	<td>Set the name of the team as it appears on your sign-in screen and at the top of the left-hand sidebar.</td>
 </tr>
-<!--Change team name-->
+<!--Change team name from ST2Team to Core Test Team-->
 <tr>
 	<td>type</td>
 	<td>id=teamName</td>
@@ -3632,7 +3622,6 @@
 	<td>css=div.team-btn.team-btn__add</td>
 	<td></td>
 </tr>
-<!--This is set up with a team available to join; skip the next step if no teams available to join-->
 <tr>
 	<td>waitForText</td>
 	<td>css=a.signup-team-login &gt; span</td>
@@ -3675,14 +3664,19 @@
 	<td>plus</td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>4000</td>
+	<td>type</td>
+	<td>css=input.form-control</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>css=input.form-control</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
 	<td>css=input.form-control</td>
-	<td>123</td>
+	<td>plus123</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -3734,7 +3728,7 @@
 	<td>4000</td>
 	<td></td>
 </tr>
-<!--Set team to be open to other users on the server-->
+<!--Set Plus team to be open to other users on the server-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
@@ -3928,6 +3922,7 @@
 </tr>
 <!--Verify mention badges - 2 on private channel, 1 on DM-->
 <!--*** This will fail if a different sidebar sort puts the 1 badge above the 2 badge-->
+<!--*** Can pause test and change sidebar to not show Unreads at top (until test is rewritten)-->
 <!--Open channels, verify message, verify badge disappears-->
 <tr>
 	<td>waitForText</td>
@@ -4005,7 +4000,7 @@
 	<td>css=strong.heading</td>
 	<td>Town Square</td>
 </tr>
-<!--LOG OUT testst, then in as ST2, to set team to be open to any user on the server-->
+<!--LOG OUT testst, then in as ST2, to set Core Test Team (ST2Test) to be open to any user on the server-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -4970,14 +4965,7 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
-<tr>
-	<td>waitForText</td>
-	<td>link=Town Square</td>
-	<td>Town Square</td>
-</tr>
-<!--LM: I think this part isn't messed up anymore, but could use better notes-->
-<!--This part got mixed up as well  :/ Changed to STTeam but not sure-->
-<!--Oh, maybe this is supposed to be testst verifying st2 removed?-->
+<!--Verify removed from testchannel-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//a[@href='/stteam']</td>
@@ -4998,7 +4986,7 @@
 	<td>link=${testchannel}</td>
 	<td></td>
 </tr>
-<!--This channel appears to actually be on Core Test Team? (Switching to Core team)-->
+<!--Switch to private channel on Core Test team-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.team-btn__initials</td>
@@ -5024,6 +5012,7 @@
 	<td>link=${privatechannel}*</td>
 	<td></td>
 </tr>
+<!--Marked as read, no mentions-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=${privatechannel}</td>

@@ -16,12 +16,43 @@
 <!--*** Such as ci-linux-postgres-->
 <!--*** Replace target "**REPLACE-PREFIX**" below with your Mattermost -->
 <!--*** email prefix (e.g. `linda` or `linda+test`)-->
-<!--*** Log in to any server using that Mattermost email address-->
+<!--*** Enter the creds for that user but DON'T CLICK TO LOG IN-->
 <!--*** Then run tests and verify as described-->
 <tr>
 	<td>store</td>
 	<td>**REPLACE-PREFIX**</td>
 	<td>prefix</td>
+</tr>
+<!--*** Manually enter user credentials but DO NOT CLICK to log in-->
+<tr>
+	<td>waitForNotValue</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotValue</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>id=loginId</td>
+	<td>username</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>id=loginPassword</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
 </tr>
 <!--1. Change email address-->
 <tr>
@@ -73,6 +104,16 @@
 	<td>type</td>
 	<td>id=confirmEmail</td>
 	<td>${prefix}+verification@mattermost.com</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=currentPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=currentPassword</td>
+	<td>${password}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -214,25 +255,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>7000</td>
-	<td></td>
-</tr>
-<!--*** Manually type current password in Current Password field-->
-<tr>
-	<td>waitForNotValue</td>
+	<td>type</td>
 	<td>id=currentPassword</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>7000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>storeValue</td>
-	<td>id=currentPassword</td>
-	<td>key</td>
+	<td>${password}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -242,7 +267,7 @@
 <tr>
 	<td>type</td>
 	<td>id=newPassword</td>
-	<td>${key}</td>
+	<td>${password}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -252,7 +277,7 @@
 <tr>
 	<td>type</td>
 	<td>id=confirmPassword</td>
-	<td>${key}</td>
+	<td>${password}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -319,7 +344,7 @@
 <tr>
 	<td>type</td>
 	<td>id=loginPassword</td>
-	<td>${key}</td>
+	<td>${password}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -372,6 +397,7 @@
 <!--2. Lists correct server name in body of email-->
 <!--*** MANUALLY CLEAN UP:-->
 <!--*** Replace your email address in first command in this test with **REPLACE-PREFIX**-->
+<!--***So it looks like this: store | **REPLACE-PREFIX** | prefix-->
 <!--*** And save, to be ready for next tester (or just don't save the change at all if other changes weren't made)-->
 <!--*** If you like, go back in and re-change your email address to what it had been-->
 </tbody></table>

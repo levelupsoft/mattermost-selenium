@@ -103,12 +103,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.mentions__name.suggestion--selected</td>
-	<td>Off-Topic</td>
+	<td>Off-Topic*</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=div.mentions__name.suggestion--selected</td>
-	<td>Off-Topic</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1071,9 +1071,9 @@
 	<td>${KEY_DOWN}</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.search-autocomplete__item.selected</td>
-	<td>test2</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.search-autocomplete__item.selected:contains('test2')</td>
+	<td></td>
 </tr>
 <!--Sleep-->
 <tr>
@@ -2000,7 +2000,7 @@
 <!--NOTE: Fails on postgres db unless Elasticsearch enabled-->
 <tr>
 	<td>waitForText</td>
-	<td>css=h4 &gt; span</td>
+	<td>css=div.sidebar--right__subheader &gt; h4 &gt; span</td>
 	<td>exact:No results found. Try again?</td>
 </tr>
 <!--Verify without quotes returns result-->
