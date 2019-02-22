@@ -46,11 +46,6 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
-<tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
-</tr>
 <!--Open System Console-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -228,7 +223,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=i.fa.fa-user</td>
+	<td>css=i.fa.fa-users</td>
 	<td></td>
 </tr>
 <tr>
@@ -519,7 +514,7 @@
 	<td>css=h4.modal-title &gt; span</td>
 	<td>About Mattermost</td>
 </tr>
-<!--The following two are failing; verify visually for now-->
+<!--About modal-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.form-group.less &gt; div &gt; span</td>
@@ -616,24 +611,6 @@
 	<td></td>
 </tr>
 <!--LOG OUT-->
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
-	<td>click</td>
-	<td>id=adminNavbarDropdownButton</td>
-	<td></td>
-</tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>css=#logout &gt; span</td>

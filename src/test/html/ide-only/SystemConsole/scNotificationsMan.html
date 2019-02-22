@@ -563,12 +563,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -1352,6 +1352,7 @@
 	<td></td>
 </tr>
 <!--*** AFTER batched email notification is received, continue:-->
+<!--*** (will verify notification email contents at the end of the test)-->
 <!--LOG IN first user (system admin) using stored creds-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1652,7 +1653,7 @@
 <!--SUBJ: New Direct Message from @username on [date] / FROM: Selenium Test Edit-->
 <!----- First DM: -->
 <!------- You have a new Direct Message. / @username / timestamp-->
-<!------- "Here's a DM. You should also see the full contents of this message. It should not be batched."-->
+<!------- "And here's a DM. You should also see the full contents of this message. It should not be batched."-->
 <!----- Second DM: -->
 <!------- You have a new Direct Message from @username-->
 <!------- [timestamp, but no channel or message body]-->
@@ -1661,13 +1662,14 @@
 <!----- First message:-->
 <!------- You have a new notification. / Channel: [channelname]-->
 <!------- @username - [timestamp] / message body-->
+<!------- "Hey @username, you should see the full contents of this message. It should not be batched."-->
 <!----- Second message:-->
 <!------- You have a new notification from @username, timestamp-->
 <!--***************************************************-->
 <!--***************************************************-->
 <!--***************************************************-->
 <!--OR CAN VERIFY FROM THE-->
-<!--FULL LIST OF EMAILS (IF NOT THREADED LIKE IN GMAIL):-->
+<!--FULL LIST OF EMAILS BELOW (IF NOT THREADED LIKE IN GMAIL):-->
 <!--*** Full list of emails that should have been received (not organized in Gmail threads):-->
 <!--1. Non-batched at-mention, full contents (subj "Notification in AA-Sorting-Test on <date>"):-->
 <!--   "Channel: Off-Topic" / "@<username>" / time (UTC), date-->

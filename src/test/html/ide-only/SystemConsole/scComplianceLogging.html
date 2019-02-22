@@ -248,14 +248,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/div/div[5]/div/table/tbody/tr/td[6]</td>
-	<td>Se Test 1</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/div/div[5]/div/table/tbody/tr/td[5]</td>
-	<td>adhoc</td>
+	<td>waitForTextPresent</td>
+	<td>adhoc*Se Test 1*admin@test.com</td>
+	<td></td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -281,9 +276,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/div/div[5]/div/table/tbody/tr/td[3]/span</td>
-	<td>finished</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.panel.compliance-panel div.compliance-panel__table div table.table tbody tr td span:contains('finished')</td>
+	<td></td>
 </tr>
 <!--Run a second report to verify newest displays at top-->
 <tr>
@@ -367,18 +362,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/div/div[5]/div/table/tbody/tr/td[3]/span</td>
-	<td>finished</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/div/div[5]/div/table/tbody/tr/td[6]</td>
-	<td>Se Test 2</td>
-</tr>
-<tr>
 	<td>waitForTextPresent</td>
-	<td>Se Test 2*Se Test 1</td>
+	<td>finished*adhoc*Se Test 2*Se Test 1</td>
 	<td></td>
 </tr>
 <!--Logging settings editable / not editable as expected-->

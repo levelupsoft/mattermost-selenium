@@ -133,10 +133,9 @@
 	<td>//button[@id='addUsersToTeam']</td>
 	<td></td>
 </tr>
-<!--Failing to find this field now; did this part manually until we can figure it out-->
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test8</td>
 </tr>
 <tr>
@@ -156,7 +155,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test9</td>
 </tr>
 <tr>
@@ -176,12 +175,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -358,7 +357,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
-	<td>This team has reached the maximum number of allowed accounts. Contact your systems administrator to set a higher limit.</td>
+	<td>This team has reached the maximum number of allowed accounts. Contact your System Administrator to set a higher limit.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -928,7 +927,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
-	<td>This team has reached the maximum number of allowed accounts. Contact your systems administrator to set a higher limit.</td>
+	<td>This team has reached the maximum number of allowed accounts. Contact your System Administrator to set a higher limit.</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -940,6 +939,11 @@
 <!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
+	<td>link=Back</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
 	<td>link=Back</td>
 	<td></td>
 </tr>
@@ -1197,9 +1201,14 @@
 	<td>Unable to create more than 5 channels for current team</td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
+	<td>Cancel</td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-default</td>
-	<td></td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
+	<td>Cancel</td>
 </tr>
 <!--Delete channel, still counts toward max and can't create new-->
 <tr>
@@ -1258,9 +1267,14 @@
 	<td>Unable to create more than 5 channels for current team</td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
+	<td>Cancel</td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-default</td>
-	<td></td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
+	<td>Cancel</td>
 </tr>
 <!--Open System Console-->
 <tr>
@@ -1697,12 +1711,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.Select-placeholder</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test3</td>
 </tr>
 <tr>
@@ -1722,7 +1736,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test5</td>
 </tr>
 <tr>
@@ -1742,7 +1756,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@class='Select-input']/input</td>
+	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
 	<td>test6</td>
 </tr>
 <tr>
@@ -1762,12 +1776,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -1851,13 +1865,13 @@
 <!--Cancel out of warning, message does not post-->
 <tr>
 	<td>waitForText</td>
-	<td>css=button.btn.btn-default</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
 	<td>Cancel</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-default</td>
-	<td>Cancel</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>

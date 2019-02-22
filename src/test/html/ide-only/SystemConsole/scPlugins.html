@@ -209,7 +209,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=strong</td>
-	<td>JIRA</td>
+	<td>Jira</td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
@@ -377,7 +377,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h3.admin-console-header</td>
-	<td>JIRA</td>
+	<td>Jira</td>
 </tr>
 <!--*** Expects JIRA plugin to be off; change manually if needed-->
 <tr>
@@ -556,7 +556,7 @@
 	<td>css=input[type=&quot;file&quot;]</td>
 	<td></td>
 </tr>
-<!--*** Manually select plugin demo-plugin.tar.gz (in Resources)-->
+<!--*** Manually select plugin com.mattermost.demo-plugin.tar.gz (in Resources)-->
 <tr>
 	<td>pause</td>
 	<td>7000</td>
@@ -961,7 +961,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.sidebar-item__name &gt; span</td>
+	<td>css=a.sidebar-item.unread-title.has-badge span.sidebar-item__name span</td>
 	<td>Demo Plugin</td>
 </tr>
 <tr>
@@ -1077,9 +1077,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForValue</td>
+	<td>waitForText</td>
 	<td>id=post_textbox</td>
-	<td>/demo_plugin </td>
+	<td>/demo_plugin</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -1239,6 +1239,18 @@
 	<td>MessageHasBeenUpdated in ~Off-Topic by @admin</td>
 </tr>
 <!--User joining team posts in Demo Plugin channel-->
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<!--*** NOTE: The test opens Se server URL; skip / go back -->
+<!--*** if testing on diff server - switch to any different team-->
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
 <!--Switch to UI2 team (everyone is already on UI1)-->
 <tr>
 	<td>open</td>
@@ -1313,12 +1325,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -1470,6 +1482,18 @@
 	<td>id=loginButton</td>
 	<td></td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<!--*** NOTE: The test opens Se server URL; skip / go back -->
+<!--*** if testing on diff server - switch to Demo Plugin channel-->
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
 <!--User logging in posts in Demo Plugin channel-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1509,8 +1533,13 @@
 </tr>
 <!--Finding by div; may need to click Action button manually if it stops finding it-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='user-profile-popover']//*/button</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>//div[@id='user-profile-popover']/div[2]/div[7]/button</td>
+	<td>//div[@id='user-profile-popover']//*/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -1715,6 +1744,9 @@
 	<td>css=div.sidebar--left__icons &gt; div</td>
 	<td>Demo Plugin: Enabled</td>
 </tr>
+<!--*** Testing 5.6.2 I see different behavior here: Disabled plugin-->
+<!--*** and tried slash command. Autocomplete still appears, and -->
+<!--*** trying to run it results in message "An error occurred while trying to execute this command."-->
 <!--/plugin_demo command no longer found-->
 <tr>
 	<td>waitForElementPresent</td>

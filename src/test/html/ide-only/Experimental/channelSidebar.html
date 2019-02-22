@@ -12,7 +12,7 @@
 <tr><td rowspan="1" colspan="3">channelSidebar</td></tr>
 </thead><tbody>
 <!--*** Test on a server with sysadmin user `admin` `passwd`-->
-<!--*** And experimental sidebar reorg enabled-->
+<!--*** And experimental sidebar reorg enabled (Se has it)-->
 <!--LOG IN admin-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -43,9 +43,9 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
 </tr>
 <!--Create new team-->
 <!--Store timestamp to append to team name (to make it unique)-->
@@ -1826,7 +1826,13 @@
 <!--Using waitForTextPresent and * to verify display order-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*5number*AAA*admin*alpha*BBB*Channel*channel test*NNN*Quick*Quick-test*rename*ZZZ*admin, papa*PUBLIC CHANNELS*Off-Topic*Town Square*PRIVATE CHANNELS*DIRECT MESSAGES*More...</td>
+	<td>UNREADS*[symbol]*5number*AAA*admin*alpha*BBB*CCC*Channel*channel test*NNN*Quick*Quick-test*rename*ZZZ*admin, papa*PUBLIC CHANNELS*Off-Topic*Town Square*PRIVATE CHANNELS*DIRECT MESSAGES*More...</td>
+	<td></td>
+</tr>
+<!--*** RN CHECK: log in as user papa-2, verify sidebar as above (hover to see all)-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
 	<td></td>
 </tr>
 <!--Turn Unreads off: Grouped by type, sorted alpha, favorites, no unreads (mentions not at top)-->
@@ -1906,7 +1912,22 @@
 	<td>PUBLIC CHANNELS*[symbol]*5number*AAA*BBB*Off-Topic*Quick*Quick-test*rename*Town Square*ZZZ*PRIVATE CHANNELS*alpha*CCC*Channel*channel test*NNN*DIRECT MESSAGES*admin*admin, papa</td>
 	<td></td>
 </tr>
-<!--More Unreads indicator (below)-->
+<!--*** RN CHECK papa-2: See below; no change (Unreads always on for mobile)-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<!--UNREADS | [symbol] | 5number | AAA | admin | alpha | BBB | CCC | Channel |  ...-->
+<!--... | channel test | NNN | Quick | Quick-test | rename | ZZZ | admin, papa |  ...-->
+<!--... | PUBLIC CHANNELS | Off-Topic | Town Square | PRIVATE CHANNELS |  ...-->
+<!--... | DIRECT MESSAGES-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<!--More Unreads indicator (below on webapp, More unreads up-arrow on RN)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=unreadIndicatorBottom</td>
@@ -2004,6 +2025,21 @@
 	<td>PUBLIC CHANNELS*ZZZ*rename*[symbol]*Quick-test*Quick*5number*BBB*AAA*Off-Topic*Town Square*PRIVATE CHANNELS*NNN*channel test*Channel*CCC*alpha*DIRECT MESSAGES*admin, papa*admin</td>
 	<td></td>
 </tr>
+<!--*** RN CHECK papa-2: See below; recency sort (Unreads always on for mobile)-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<!--UNREADS | admin | ZZZ | NNN | channel test | Channel | CCC | alpha | ...-->
+<!--... rename | [symbol] | Quick-test | Quick | 5number | BBB | AAA | ...-->
+<!--... admin, papa | PUBLIC CHANNELS | Off-Topic | Town Square | ...-->
+<!--... | PRIVATE CHANNELS | DIRECT MESSAGES-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
 <!--Change to combine all channel types (still sorted by Recency)-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -2096,6 +2132,20 @@
 	<td>RECENT ACTIVITY*admin, papa*admin*ZZZ*NNN*channel test*Channel*CCC*alpha*rename*[symbol]*Quick-test*Quick*5number*BBB*AAA*Off-Topic*Town Square</td>
 	<td></td>
 </tr>
+<!--*** RN CHECK papa-2: no change b/c all unread; grouped and recency (Unreads always on for mobile)-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<!--UNREADS | admin | ZZZ | NNN | channel test | Channel | CCC | alpha | ...-->
+<!--... rename | [symbol] | Quick-test | Quick | 5number | BBB | AAA | ...-->
+<!--... admin, papa | RECENT ACTIVITY | Off-Topic | Town Square-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
 <!--Set to combine all channel types , sorted alphabetically-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -2181,6 +2231,20 @@
 <tr>
 	<td>waitForTextPresent</td>
 	<td>CHANNELS*[symbol]*5number*AAA*admin*admin, papa*alpha*BBB*CCC*Channel*channel test*NNN*Off-Topic*Quick*Quick-test*rename*Town Square*ZZZ</td>
+	<td></td>
+</tr>
+<!--*** RN CHECK papa-2: see below; grouped (if read) and alpha (Unreads always on for mobile)-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<!--UNREADS | [symbol] | 5number | AAA | admin | alpha | BBB | ...-->
+<!--... | CCC | Channel | channel test | NNN | Quick | Quick-test | ...-->
+<!--... | rename | ZZZ | admin, papa | CHANNELS | Off-Topic | Town Square-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
 	<td></td>
 </tr>
 <!--Set to group Unreads separately, un-check Favorites being grouped-->
@@ -2285,6 +2349,20 @@
 	<td>UNREADS*[symbol]*5number*AAA*admin*alpha*BBB*CCC*Channel*channel test*NNN*Quick*Quick-test*rename*ZZZ*admin, papa*CHANNELS*Off-Topic*Town Square</td>
 	<td></td>
 </tr>
+<!--*** RN CHECK papa-2: no change (unreads already on); grouped (if read) and alpha (Unreads always on for mobile)-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<!--UNREADS | [symbol] | 5number | AAA | admin | alpha | BBB | ...-->
+<!--... | CCC | Channel | channel test | NNN | Quick | Quick-test | ...-->
+<!--... | rename | ZZZ | admin, papa | CHANNELS | Off-Topic | Town Square-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
 <!--papa-2 reads each channel, verifies LHS as it reorders-->
 <!--papa-2 also posts messages (out of alpha order) so admin can test recency-->
 <tr>
@@ -2304,6 +2382,7 @@
 	<td>UNREADS*[symbol]*5number*AAA*admin*alpha*BBB*CCC*Channel*channel test*NNN*Quick*Quick-test*rename*ZZZ*admin, papa*CHANNELS*Off-Topic*Town Square</td>
 	<td></td>
 </tr>
+<!--**** Left off writing RN checks here (note channel re-sorts on RN on reading in webapp)-->
 <tr>
 	<td>waitForText</td>
 	<td>id=channelHeaderDropdownButton</td>
@@ -4053,7 +4132,7 @@
 <!--Verify combined, recency, unreads (no favorites)-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>UNREADS*Quick*alpha*Channel*papa-2*ZZZ*5number*BBB*CCC*rename*[symbol]*RECENT ACTIVITY*NNN*papa, papa-2*AAA*channel test*Quick-test*Off-Topic*Town Square*More...</td>
+	<td>UNREADS*Quick*alpha*Channel*papa-2*5number*BBB*CCC*rename*[symbol]*RECENT ACTIVITY*ZZZ*NNN*papa, papa-2*AAA*channel test*Quick-test*Off-Topic*Town Square*More...</td>
 	<td></td>
 </tr>
 <!--Group types, alpha, with unreads (not favorites)-->
@@ -4551,6 +4630,7 @@
 	<td> Editing counts as recent activity!${KEY_ENTER}</td>
 </tr>
 <!--papa-2 goes to top of Favorites section as most recent in that section-->
+<!--Note: This can fail if the main browser window isn't in front-->
 <tr>
 	<td>waitForTextPresent</td>
 	<td>UNREADS*Quick*alpha*Channel*5number*BBB*CCC*rename*FAVORITE CHANNELS*papa-2*ZZZ*[symbol]*PUBLIC CHANNELS*AAA*Quick-test*Off-Topic*Town Square*More...*PRIVATE CHANNELS*NNN*channel test*DIRECT MESSAGES*papa, papa-2*More...</td>
@@ -4673,6 +4753,366 @@
 	<td>RECENT ACTIVITY*papa-2*ZZZ*5number*NNN*BBB*Quick*alpha*papa, papa-2*AAA*Channel*channel test*Quick-test*CCC*rename*[symbol]*Off-Topic*Town Square*More...</td>
 	<td></td>
 </tr>
+<!--MUTED CHANNELS-->
+<!--Admin mutes a GM, public, and private channels-->
+<!--Mute Quick-test-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Quick-test</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Quick-test</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Quick-test</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//button[@id='channelMute'])/*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@id='channelMute'])/*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=toggleMute</td>
+	<td></td>
+</tr>
+<!--Mute CCC-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=CCC</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=CCC</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>CCC</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//button[@id='channelMute'])/*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@id='channelMute'])/*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=toggleMute</td>
+	<td></td>
+</tr>
+<!--Mute GM papa, papa-2-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>papa, papa-2</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>G<br />papa, papa-2</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>papa, papa-2</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//button[@id='channelMute'])/*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@id='channelMute'])/*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=toggleMute</td>
+	<td></td>
+</tr>
+<!--Note: At this point, there are unreads in 5number, BBB, rename-->
+<!--And mentions in Quick, alpha, and Channel (these are in order of recency)-->
+<!--Switch to Off-Topic, the LOG OUT admin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>off-top</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<!--LOG IN papa-2-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>papa-2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<!--Post mentions in the channels that admin muted-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Quick-test</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Quick-test</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Quick-test</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Hi @admin, this is a mention for you in a muted channel.${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=CCC</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=CCC</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>CCC</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Hi @admin, this is a mention for you in a muted private channel.${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>admin, papa</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>G<br />admin, papa</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>G<br />admin, papa</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>admin, papa</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Hi @admin, this is a mention for you in a muted GM.${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<!--LOG OUT papa-2-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<!--LOG IN admin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<!--Verify order, with muted mention channels at the bottom-->
+<tr>
+	<td>waitForTextPresent</td>
+	<td>RECENT ACTIVITY*papa-2*ZZZ*5number*NNN*BBB*Quick*1*alpha*1*AAA*Channel*1*channel test*rename*[symbol]*Off-Topic*Town Square*papa, papa-2*1*CCC*1*Quick-test*1*More...</td>
+	<td></td>
+</tr>
+<!--Tests end here for now; can add steps to clean up (leave team)-->
+<!--Or if all the channels or users will mess up data on other teams, can rebuild server-->
 <tr>
 	<td></td>
 	<td></td>
