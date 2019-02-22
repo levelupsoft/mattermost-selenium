@@ -15,6 +15,11 @@
 <!--**This test MAY break if additional teams beyonf the 2 defaults exist**-->
 <!--LOG IN admin-->
 <tr>
+	<td>setSpeed</td>
+	<td>800</td>
+	<td></td>
+</tr>
+<tr>
 	<td>openAndWait</td>
 	<td>/login</td>
 	<td></td>
@@ -805,14 +810,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyText</td>
-	<td>css=button.btn.btn-default</td>
-	<td>Cancel</td>
+	<td>waitForElementPresent</td>
+	<td>//button[@class='btn btn-link']/span[text() = &quot;Cancel&quot;]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-default</td>
-	<td>Cancel</td>
+	<td>//button[@class='btn btn-link']/span[text() = &quot;Cancel&quot;]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>assertText</td>
@@ -990,7 +995,7 @@
 <!--^^Page must realize there are no unsaved changes when test is running fast^^-->
 <tr>
 	<td>click</td>
-	<td>//a[@class='fa fa-chevron-left back']</td>
+	<td>//a[@class='fa fa-angle-left back']</td>
 	<td></td>
 </tr>
 <tr>
@@ -1168,7 +1173,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@class='fa fa-chevron-left back']</td>
+	<td>//a[@class='fa fa-angle-left back']</td>
 	<td></td>
 </tr>
 <tr>
@@ -1377,8 +1382,8 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-default</td>
-	<td>Cancel</td>
+	<td>//button[@class='btn btn-link']/span[text() = 'Cancel']</td>
+	<td></td>
 </tr>
 <tr>
 	<td>verifyElementPresent</td>
@@ -1387,7 +1392,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@class='fa fa-chevron-left back']</td>
+	<td>//a[@class='fa fa-angle-left back']</td>
 	<td></td>
 </tr>
 <tr>
@@ -1397,8 +1402,8 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-default</td>
-	<td>Cancel</td>
+	<td>//button[@class='btn btn-link']/span[text() = 'Cancel']</td>
+	<td></td>
 </tr>
 <tr>
 	<td>verifyElementPresent</td>
@@ -1407,7 +1412,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@class='fa fa-chevron-left back']</td>
+	<td>//a[@class='fa fa-angle-left back']</td>
 	<td></td>
 </tr>
 <tr>
