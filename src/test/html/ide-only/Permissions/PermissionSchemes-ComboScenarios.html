@@ -11,6 +11,11 @@
 <thead>
 <tr><td rowspan="1" colspan="3">scPermissionSchemes-ComboScenarios</td></tr>
 </thead><tbody>
+<tr>
+	<td>setSpeed</td>
+	<td>800</td>
+	<td></td>
+</tr>
 <!--Data Setup-->
 <tr>
 	<td>openAndWait</td>
@@ -178,18 +183,18 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=all_users-posts-edit_posts</td>
+	<td>id=all_users-posts-edit_posts-edit_post</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=all_users-posts-edit_posts</td>
+	<td>id=all_users-posts-edit_posts-edit_post</td>
 	<td></td>
 </tr>
 <!--^^update system scheme to remove edit posts from Memeber in data setup this seems to be need below and all overrides have it enabled^^-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='all_users-posts-edit_posts']/div[@class='permission-check ']</td>
+	<td>//div[@id='all_users-posts-edit_posts-edit_post']/div[@class='permission-check ']</td>
 	<td></td>
 </tr>
 <tr>
@@ -224,7 +229,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@class='fa fa-chevron-left back']</td>
+	<td>//a[@class='fa fa-angle-left back']</td>
 	<td></td>
 </tr>
 <!--Create a Team Override Scheme-->
@@ -612,11 +617,6 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>div[@id='selectItems']//*/div[text()=&quot;test5&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
 	<td>//div[@id=&quot;selectItems&quot;]//*/div[text()=&quot;test5&quot;]</td>
 	<td></td>
 </tr>
@@ -715,7 +715,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>div[@id='selectItems']//*/div[text()=&quot;test5&quot;]</td>
+	<td>//div[@id='selectItems']//*/div[text()=&quot;test5&quot;]</td>
 	<td></td>
 </tr>
 <tr>
@@ -887,7 +887,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>div[@id='selectItems']//*/div[text()=&quot;test5&quot;]</td>
+	<td>//div[@id='selectItems']//*/div[text()=&quot;test5&quot;]</td>
 	<td></td>
 </tr>
 <tr>
@@ -1094,7 +1094,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>div[@id='selectItems']//*/div[text()=&quot;test5&quot;]</td>
+	<td>//div[@id='selectItems']//*/div[text()=&quot;test5&quot;]</td>
 	<td></td>
 </tr>
 <tr>
@@ -1321,7 +1321,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>div[@id='selectItems']//*/div[text()=&quot;test5&quot;]</td>
+	<td>//div[@id='selectItems']//*/div[text()=&quot;test5&quot;]</td>
 	<td></td>
 </tr>
 <tr>
@@ -1472,30 +1472,24 @@
 <!--^^ May need to delete this from the box now that I'm done with it^^-->
 <tr>
 	<td>pause</td>
-	<td>4999</td>
-	<td></td>
-</tr>
-<!--unable to find context menu. Must solve mouse Over-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[5]</td>
+	<td>1000</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[5]</td>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
 <!--^This clicks "..."^-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='CENTER_dropdown_${LastPostId}']/div/ul/li/button/span[text()='Reply']</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerify</td>
+	<td>Item=Reply</td>
 </tr>
 <tr>
-	<td>waitForElementNotPresent</td>
-	<td>//div[@id='CENTER_dropdown_${LastPostId}']/div/ul/li/button/span[text()='Delete']</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyNotPresent</td>
+	<td>Item=Delete</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1913,7 +1907,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>div[@id='selectItems']//*/div[text()=&quot;test6&quot;]</td>
+	<td>//div[@id='selectItems']//*/div[text()=&quot;test6&quot;]</td>
 	<td></td>
 </tr>
 <tr>
@@ -2283,7 +2277,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>div[@id='selectItems']//*/div/span[text()='test6']</td>
+	<td>//div[@id='selectItems']//*/div[text()='test6']</td>
 	<td></td>
 </tr>
 <tr>
@@ -2351,6 +2345,12 @@
 <tr>
 	<td>click</td>
 	<td>//button[@class='close']</td>
+	<td></td>
+</tr>
+<!--Selenium IDE is breaking when I close this Modal?-->
+<tr>
+	<td></td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -2474,7 +2474,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>div[@id='selectItems']//*/div[text()='test6']</td>
+	<td>//div[@id='selectItems']//*/div[text()='test6']</td>
 	<td></td>
 </tr>
 <tr>
@@ -3018,14 +3018,14 @@
 </tr>
 <!--^This clicks "..."^-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='CENTER_dropdown_${AdminPostId}']/div/ul/li/button/span[text()='Reply']</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerify</td>
+	<td>Item=Reply</td>
 </tr>
 <tr>
-	<td>waitForElementNotPresent</td>
-	<td>//div[@id='CENTER_dropdown_${AdminPostId}']/div/ul/li/button/span[text()='Delete']</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyNotPresent</td>
+	<td>Item=Delete</td>
 </tr>
 <!--Not Able to delete other users posts -->
 <tr>
@@ -3087,7 +3087,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>div[@id='selectItems']//*/div[text()='test6']</td>
+	<td>//div[@id='selectItems']//*/div[text()='test6']</td>
 	<td></td>
 </tr>
 <tr>
@@ -3221,7 +3221,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>div[@id='selectItems']//*/div[text()='test6']</td>
+	<td>//div[@id='selectItems']//*/div[text()='test6']</td>
 	<td></td>
 </tr>
 <tr>
@@ -4267,7 +4267,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//*[@id='channelHeaderTitle'][text()='PublicChannel2']</td>
+	<td>//*[@id='channelHeaderTitle'][text()='PrivateChanTeamA-Updat']</td>
 	<td></td>
 </tr>
 </tbody></table>
