@@ -608,6 +608,7 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>test2, test3</td>
 </tr>
+<!--This can fail if other testing has caused test2 to already be in LHS-->
 <!--DM has been removed from LHS-->
 <tr>
 	<td>waitForElementNotPresent</td>
@@ -669,7 +670,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>@test2 - Deactivated</td>
+	<td>@test2 - *Deactivated</td>
 	<td></td>
 </tr>
 <tr>
@@ -722,11 +723,6 @@
 	<td>waitForText</td>
 	<td>css=div.more-modal__name &gt; span</td>
 	<td>@test2 - *Deactivated</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveItems</td>
-	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -1161,6 +1157,7 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>test2</td>
 </tr>
+<!--This can fail if other testing has caused other archived icons to display-->
 <tr>
 	<td>waitForElementNotPresent</td>
 	<td>css=span.icon.icon__archive &gt; svg &gt; path</td>
