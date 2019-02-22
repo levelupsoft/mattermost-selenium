@@ -759,14 +759,14 @@
 	<td>exact:You will be removed from all public and private channels. If the team is private you will not be able to rejoin the team. Are you sure?</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=button.btn.btn-default</td>
-	<td>No</td>
+	<td>waitForElementPresent</td>
+	<td>id=leaveTeamNo</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-default</td>
-	<td>No</td>
+	<td>id=leaveTeamNo</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2119,16 +2119,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.form-control.filter-textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=input.form-control.filter-textbox</td>
-	<td>test6</td>
-</tr>
-<tr>
 	<td>waitForText</td>
 	<td>css=a.dropdown-toggle.theme &gt; span &gt; span</td>
 	<td>Inactive</td>
@@ -2905,6 +2895,8 @@
 	<td>css=p &gt; span</td>
 	<td>The team you're requesting is private or does not exist. Please contact your Administrator for an invitation.</td>
 </tr>
+<!--This may fail if running after custom branding test; with site name not set-->
+<!--it just says "Back to" - open ticket to address this: MM-13694-->
 <tr>
 	<td>waitForText</td>
 	<td>css=a &gt; span</td>
