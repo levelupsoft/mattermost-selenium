@@ -47,9 +47,9 @@
 	<td>8000</td>
 	<td></td>
 </tr>
-<!--*** Manually enter valid OneLogin password for the test user-->
+<!--*** Manually enter valid OneLogin password for the test user (don't click to log in)-->
 <tr>
-	<td>waitForNotText</td>
+	<td>waitForNotValue</td>
 	<td>id=user_password</td>
 	<td></td>
 </tr>
@@ -138,7 +138,14 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=nameDesc</td>
-	<td>QA Jesús Jes&amp;#xFA; OneLogin</td>
+	<td>QA Jesús*OneLogin</td>
+</tr>
+<!--This is supposed to verify literal `Jes&#xFA;` appears but-->
+<!--the command keeps converting it even if I try to escape it....-->
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Jesú</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1464,7 +1471,14 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.light</td>
-	<td>QA Jesús Jes&amp;#xFA; OneLogin</td>
+	<td>QA Jesús* OneLogin</td>
+</tr>
+<!--This is supposed to verify literal `Jes&#xFA;` appears but-->
+<!--the command keeps converting it even if I try to escape it....-->
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Jesú</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1741,6 +1755,12 @@
 	<td>xpath=(//a[@id='createTeam'])[2]</td>
 	<td></td>
 </tr>
+<!--Store timestamp to append to team name (to make it unique)-->
+<tr>
+	<td>store</td>
+	<td>javascript{(new Date().getHours()+&quot;&quot; + new Date().getMinutes() + &quot;&quot; + new Date().getSeconds())}</td>
+	<td>time</td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=input.form-control</td>
@@ -1749,7 +1769,7 @@
 <tr>
 	<td>type</td>
 	<td>css=input.form-control</td>
-	<td>RCOpenSAML</td>
+	<td>OpenSAML-${time}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1774,7 +1794,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h1#headerTeamName.team__name</td>
-	<td>RCOpenSAML</td>
+	<td>OpenSAML-${time}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1941,7 +1961,7 @@
 </tr>
 <!--*** Manually enter valid OKTA password for the test user-->
 <tr>
-	<td>waitForNotText</td>
+	<td>waitForNotValue</td>
 	<td>id=okta-signin-password</td>
 	<td></td>
 </tr>
@@ -2025,7 +2045,14 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=nameDesc</td>
-	<td>QA Jesús Jes&amp;#xFA; OKTA</td>
+	<td>QA Jesús * OKTA</td>
+</tr>
+<!--This is supposed to verify literal `Jes&#xFA;` appears but-->
+<!--the command keeps converting it even if I try to escape it....-->
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Jesú</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2123,7 +2150,7 @@
 <tr>
 	<td>type</td>
 	<td>css=input.form-control</td>
-	<td>RCClosedSAML</td>
+	<td>ClsdSAML-${time}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2148,7 +2175,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h1#headerTeamName.team__name</td>
-	<td>RCClosedSAML</td>
+	<td>ClsdSAML-${time}</td>
 </tr>
 <!--Get team invite-->
 <tr>
@@ -2238,7 +2265,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h1#headerTeamName.team__name</td>
-	<td>RCClosedSAML</td>
+	<td>ClsdSAML-${time}</td>
 </tr>
 <!--Switch OKTA to email: password mismatch error-->
 <tr>

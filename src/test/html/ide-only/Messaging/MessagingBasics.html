@@ -337,13 +337,13 @@
 	<td>Hello. Cancel out of this edit</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-default</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
+	<td>Cancel</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-default</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
 	<td></td>
 </tr>
 <tr>
@@ -742,12 +742,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.btn.btn-default</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
 	<td>Cancel</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-default</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
 	<td></td>
 </tr>
 <tr>
@@ -1467,6 +1467,16 @@
 	<td>type</td>
 	<td>id=confirmEmail</td>
 	<td>changed@test.com</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=currentPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=currentPassword</td>
+	<td>passwd</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3355,6 +3365,16 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
+	<td>id=currentPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=currentPassword</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
@@ -3570,13 +3590,13 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-default &gt; span:contains('Close')</td>
-	<td>Close</td>
+	<td>id=linkModalCloseButton</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-default &gt; span:contains('Close')</td>
-	<td>Close</td>
+	<td>id=linkModalCloseButton</td>
+	<td></td>
 </tr>
 <!--Leave Test- channel-->
 <tr>
@@ -3789,13 +3809,13 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-default &gt; span:contains('Close')</td>
-	<td>Close</td>
+	<td>id=linkModalCloseButton</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-default &gt; span:contains('Close')</td>
-	<td>Close</td>
+	<td>id=linkModalCloseButton</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3912,13 +3932,13 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-default &gt; span:contains('Close')</td>
-	<td>Close</td>
+	<td>id=linkModalCloseButton</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-default &gt; span:contains('Close')</td>
-	<td>Close</td>
+	<td>id=linkModalCloseButton</td>
+	<td></td>
 </tr>
 <!--Log out-->
 <tr>
@@ -4003,7 +4023,7 @@
 	<td>link=Click here to jump to recent messages.</td>
 	<td>Click here to jump to recent messages.</td>
 </tr>
-<!--Verify propwer error page whan a user hit a permalink to a DM-->
+<!--Verify proper error page whan a user hit a permalink to a DM-->
 <tr>
 	<td>verifyText</td>
 	<td>id=moreDirectMessage</td>

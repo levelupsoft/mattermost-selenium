@@ -675,12 +675,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.btn.btn-default</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
 	<td>No, keep it as &quot;Offline&quot;</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-default</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
 	<td></td>
 </tr>
 <!--Set to disable batching, send generic description-->
@@ -948,12 +948,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.btn.btn-default</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
 	<td>No, keep it as &quot;Offline&quot;</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-default</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
 	<td></td>
 </tr>
 <!--Set to enable batching, send generic description-->
@@ -1083,12 +1083,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.btn.btn-default</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
 	<td>No, keep it as &quot;Offline&quot;</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-default</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
 	<td></td>
 </tr>
 <tr>
@@ -1386,12 +1386,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.btn.btn-default</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
 	<td>No, keep it as &quot;Offline&quot;</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-default</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
 	<td></td>
 </tr>
 <!--Set to enable batching, send full contents-->
@@ -1694,6 +1694,279 @@
 <!--***************************************************-->
 <!--***************************************************-->
 <!--*** Also verify came from Selenium Test Edit, address 398 Testing Blvd, Paradise-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--BATCHED, set to NEVER: Should not receive any email notifications-->
+<!--LOG IN first user (system admin) using stored creds-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=loginId</td>
+	<td>${firstuser}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=loginPassword</td>
+	<td>${firstpassword}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
+	<td>No, keep it as &quot;Offline&quot;</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<!--Verify email batching is enabled (set to send every 15 minutes)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=accountSettings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=notificationsButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=notificationsButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#emailDesc &gt; span</td>
+	<td>Every 15 minutes</td>
+</tr>
+<!--Set to Never-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=emailEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=emailEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=emailNotificationNever</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=emailNotificationNever</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=emailNotificationNever</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>id=emailNotificationMinutes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#emailDesc &gt; span</td>
+	<td>Never</td>
+</tr>
+<!--LOG OUT first user-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<!--LOG IN second user using stored creds-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=loginId</td>
+	<td>${seconduser}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=loginPassword</td>
+	<td>${secondpassword}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<!--Post an at-mention in public channel (Off-Topic)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>off-to</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Batched! ${currentusername}, you should NOT receive an email notification for this.${KEY_ENTER}</td>
+</tr>
+<!--Send a DM-->
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/msg ${currentusername} And here's a DM. Similarly, you should not receive an email notification for this either.${KEY_ENTER}</td>
+</tr>
+<!--LOG OUT other user-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<!--*******************************************************-->
+<!--*** PAUSE TEST HERE, wait for 15 or 20 minutes-->
+<!--*** Verify NO EMAIL notification received for the at-mention or DM-->
+<!--*******************************************************-->
 <tr>
 	<td></td>
 	<td></td>
