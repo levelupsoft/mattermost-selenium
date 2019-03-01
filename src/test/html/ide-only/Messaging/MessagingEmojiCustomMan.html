@@ -1,3 +1,21 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ @DHaussermann Sign out
+10
+10 19 mattermost/mattermost-selenium
+ Code  Issues 0  Pull requests 1  Projects 0  Insights
+mattermost-selenium/src/test/html/ide-only/Messaging/MessagingEmojiCustomMan.html
+@DHaussermann DHaussermann Test addions for 5.9
+0b1ebe6  an hour ago
+@DHaussermann @lindalumitchell
+2246 lines (2245 sloc)  42.8 KB
+    
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -12,6 +30,11 @@
 <tr><td rowspan="1" colspan="3">New Test</td></tr>
 </thead><tbody>
 <!--LOG IN-->
+<tr>
+	<td>setSpeed</td>
+	<td>800</td>
+	<td></td>
+</tr>
 <tr>
 	<td>openAndWait</td>
 	<td>/login</td>
@@ -49,6 +72,97 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<!--Basic Emoji Tests-->
+<!--Add emojis with keyboard-->
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>post with emojis :kissing: :fearful:${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//span[@title=':kissing:']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//span[@title=':fearful:']</td>
+	<td></td>
+</tr>
+<!--Add emojis with emoji picker-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//span[@role='button'][@class='emoji-picker__container']</td>
+	<td></td>
+</tr>
+<!--^^Can't figure out why this is not clickable^^-->
+<!--Emojis only are jumbo (including with whitespace padding-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>:taco:${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//span[@class='all-emoji']//span[@title=':taco:']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>&nbsp;&nbsp;:sob:&nbsp;&nbsp;${KEY_ENTER}&nbsp;&nbsp;</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//span[@class='all-emoji']//span[@title=':sob:']</td>
+	<td></td>
+</tr>
+<!--Shothand emojis-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Punctuation test 1 :\|. ${KEY_ENTER}&nbsp;&nbsp;</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//span[@class='all-emoji']//span[@title=':neutral_face:']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Punctuation test 2 :-x! ${KEY_ENTER}&nbsp;&nbsp;</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//span[@class='all-emoji']//span[@title=':mask:']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <!--Open Custom Emoji page-->
@@ -2147,3 +2261,15 @@
 </tbody></table>
 </body>
 </html>
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
