@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://selenium.mattermost.com/" />
+<link rel="selenium.base" href="https://ci-linux-mysql-selenium.test.mattermost.com/" />
 <title>FilesAttachmentsMan</title>
 </head>
 <body>
@@ -697,7 +697,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>http://selenium.mattermost.com/api/v4/files/*/preview</td>
+	<td>https://ci-linux-mysql-selenium.test.mattermost.com/api/v4/files/*/preview</td>
 	<td></td>
 </tr>
 <!--Copy image, paste in message box, post:-->
@@ -1351,12 +1351,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//img[contains(@src,'http://selenium.mattermost.com/api/v4/files')]</td>
+	<td>//img[contains(@src,'https://ci-linux-mysql-selenium.test.mattermost.com/api/v4/files')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//img[contains(@src,'http://selenium.mattermost.com/api/v4/files')]</td>
+	<td>//img[contains(@src,'https://ci-linux-mysql-selenium.test.mattermost.com/api/v4/files')]</td>
 	<td></td>
 </tr>
 <!--*** Visually verify that file preview displays as expected-->
@@ -1828,7 +1828,7 @@
 	<td>4000</td>
 	<td></td>
 </tr>
-<!--*** Test on selenium.mattermost.com, on slow speed-->
+<!--*** Test on https://ci-linux-mysql-selenium.test.mattermost.com, on slow speed-->
 <!--*** Read the post and follow test instructions-->
 <!--*** Be sure to upload 5 attachments to one message-->
 <!--*** Verify after 5 trying to upload again shows error: "Uploads limited to 5 -->
