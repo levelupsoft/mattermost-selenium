@@ -1367,7 +1367,7 @@
 <!--Message in demo channel when a message is posted-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=p:contains('MessageHasBeenPosted in ~PluginTestChannel by')</td>
+	<td>css=p:contains('MessageHasBeenPosted: @admin, ~PluginTestChannel')</td>
 	<td></td>
 </tr>
 <tr>
@@ -1437,7 +1437,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=p:contains('MessageHasBeenPosted in ~Off-Topic by')</td>
+	<td>css=p:contains('MessageHasBeenPosted: @admin, ~Off-Topic')</td>
 	<td></td>
 </tr>
 <!--Leaving channel posts in plugin channel-->
@@ -1907,8 +1907,13 @@
 	<td>@corey</td>
 </tr>
 <tr>
+	<td>verifyText</td>
+	<td>css=div.more-modal__actions div.dropdown.member-drop button.dropdown-toggle.theme.color--link.style--none span span</td>
+	<td>Member</td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[7]</td>
+	<td>css=div.more-modal__actions div.dropdown.member-drop button.dropdown-toggle.theme.color--link.style--none span span</td>
 	<td></td>
 </tr>
 <tr>
@@ -2046,6 +2051,23 @@
 	<td>waitForTextPresent</td>
 	<td></td>
 	<td>User @admin has logged in</td>
+</tr>
+<!--OnConfigChange posts in Demo Plugin channel-->
+<tr>
+	<td>waitForTextPresent</td>
+	<td>OnConfigChange: loading new configuration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Yay! The random secret string was posted!</td>
+	<td></td>
+</tr>
+<!--Activating plugin posts message-->
+<tr>
+	<td>waitForTextPresent</td>
+	<td>OnActivate: com.mattermost.demo-plugin</td>
+	<td></td>
 </tr>
 <!--Action button in profile popover-->
 <tr>
@@ -2213,6 +2235,67 @@
 	<td>Click anywhere to close</td>
 	<td></td>
 </tr>
+<!--Post dropdown menu action-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarItem_off-topic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarItem_off-topic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>A post to click on${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Demo Plugin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Demo Plugin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>You have triggered the root component of the demo plugin.<br /><br />Click anywhere to close.</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='channel_view']/div/div[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='channel_view']/div/div[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>Click anywhere to close</td>
+	<td></td>
+</tr>
 <!--demo_plugin settings page in System Console-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -2248,6 +2331,21 @@
 	<td>waitForText</td>
 	<td>css=h3.admin-console-header</td>
 	<td>Demo Plugin</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p</td>
+	<td>exact:Header: Configure your demo plugin settings below</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=username</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2423,6 +2521,11 @@
 	<td>waitForText</td>
 	<td>css=div.command__title</td>
 	<td>/demo_plugin (true|false)</td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
 </tr>
 <tr>
 	<td></td>

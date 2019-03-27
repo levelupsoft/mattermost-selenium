@@ -20,7 +20,7 @@
 <!--*** Then run tests and verify as described-->
 <tr>
 	<td>store</td>
-	<td>**REPLACE-PREFIX**</td>
+	<td>linda+email</td>
 	<td>prefix</td>
 </tr>
 <!--*** Manually enter user credentials but DO NOT CLICK to log in-->
@@ -125,37 +125,23 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<!--Green dismissable banner (no link to re-send)-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#emailDesc &gt; span</td>
-	<td>Check your email to verify ${prefix}+verification@mattermost.com</td>
+	<td>css=div.announcement-bar.announcement-bar-success</td>
+	<td>Check your email inbox to verify the address.×</td>
 </tr>
+<!--Email address does not change until verified-->
 <tr>
 	<td>waitForText</td>
-	<td>css=span &gt; span</td>
-	<td>Check your email at ${prefix}+verification@mattermost.com to verify the address. Cannot find the email?</td>
+	<td>id=emailDesc</td>
+	<td>${prefix}@mattermost.com</td>
 </tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=a &gt; span</td>
-	<td>Send again</td>
-</tr>
-<!--Refresh, message bar persists-->
+<!--Refresh, message bar disappears (no longer persists v5.9)-->
 <tr>
 	<td>refreshAndWait</td>
 	<td></td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.announcement-bar</td>
-	<td>Check your email at ${prefix}+verification@mattermost.com to verify the address. Cannot find the email?Send again</td>
-</tr>
-<!--Switch channels, message bar persists-->
-<tr>
-	<td>storeText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>currentchannel</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -163,50 +149,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>id=post_textbox</td>
-	<td>${KEY_ALT}${KEY_UP}</td>
-</tr>
-<tr>
 	<td>waitForNotText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>${currentchannel}</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.announcement-bar</td>
-	<td>Check your email at ${prefix}+verification@mattermost.com to verify the address. Cannot find the email?Send again</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=post_textbox</td>
-	<td>${KEY_ALT}${KEY_DOWN}</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>${currentchannel}</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.announcement-bar</td>
-	<td>Check your email at ${prefix}+verification@mattermost.com to verify the address. Cannot find the email?Send again</td>
-</tr>
-<!--Click the Send again link-->
-<tr>
-	<td>waitForText</td>
-	<td>css=a &gt; span</td>
-	<td>Send again</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=a &gt; span</td>
-	<td>Send again</td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>8000</td>
-	<td></td>
+	<td>css=div.announcement-bar.announcement-bar-success</td>
+	<td>Check your email inbox to verify the address.×</td>
 </tr>
 <!--2. Change password (doesn't change it; just triggers email)-->
 <tr>

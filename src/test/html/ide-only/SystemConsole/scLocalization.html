@@ -2304,6 +2304,8 @@
 	<td>css=#systemConsole &gt; span</td>
 	<td></td>
 </tr>
+<!--Available Languages - Set some, only those set are available in Acct Settings-->
+<!--Set available languages to Deutsch, Español, English-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#localization &gt; span.sidebar-section.sidebar-subsection-title__text &gt; span</td>
@@ -2319,53 +2321,42 @@
 	<td>id=LocalizationSettings.AvailableLocales</td>
 	<td>Select...</td>
 </tr>
+<!--Very generic targets here; fails with `id=react-select-3-option-0` for -->
+<!--example, b/c those numbers are dynamic-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.Select-control</td>
-	<td></td>
+	<td>type</td>
+	<td>css=input</td>
+	<td>deutsch</td>
 </tr>
-<!--This part isn't working yet; can't figure out how to get it to select a language-->
-<!--Available Languages - Set some, only those set are available in Acct Settings-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.Select-control</td>
+	<td>waitForTextPresent</td>
+	<td>Deutsch</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.Select-control</td>
-	<td>${KEY_DOWN}</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=div.Select-control</td>
+	<td>css=input</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×Deutsch</td>
+	<td>waitForTextPresent</td>
+	<td>Deutsch</td>
+	<td></td>
 </tr>
-<!--The next steps should select Espanol; added `es` to see if that helps-->
+<tr>
+	<td>type</td>
+	<td>css=input</td>
+	<td>espanol</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Español</td>
+	<td></td>
+</tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.Select-control</td>
-	<td>${KEY_DOWN}</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=div.Select-control</td>
-	<td>${KEY_DOWN}</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=div.Select-control</td>
-	<td>es${KEY_ENTER}</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×Deutsch <br />×Español</td>
+	<td>css=input</td>
+	<td>${KEY_ENTER}</td>
 </tr>
 <!--Verify error if default language is not included in available languages-->
 <tr>
@@ -2385,29 +2376,24 @@
 </tr>
 <!--Add English to available languages, verify Save button is clickable-->
 <tr>
-	<td>sendKeys</td>
-	<td>css=div.Select-control</td>
-	<td>${KEY_UP}</td>
+	<td>type</td>
+	<td>css=input</td>
+	<td>english</td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>1000</td>
+	<td>waitForTextPresent</td>
+	<td>English</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.Select-control</td>
-	<td>${KEY_UP}</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=div.Select-control</td>
+	<td>css=input</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×Deutsch <br />×Español <br />×English</td>
+	<td>waitForTextPresent</td>
+	<td>Deutsch<br /><br /><br />Español<br /><br /><br />English</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -2420,9 +2406,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.Select-control</td>
-	<td>×Deutsch <br />×Español <br />×English</td>
+	<td>waitForTextPresent</td>
+	<td>Deutsch<br /><br /><br />Español<br /><br /><br />English</td>
+	<td></td>
 </tr>
 <!--Verify only available languages appear in Account Settings options-->
 <tr>
@@ -2605,19 +2591,79 @@
 </tr>
 <tr>
 	<td>pause</td>
-	<td>8000</td>
+	<td>2000</td>
 	<td></td>
 </tr>
-<!--*** Manually set Available to JP (the last one) and English-->
-<!--*** (Remove the other languages)-->
+<!--Remove the other languages-->
+<tr>
+	<td>sendKeys</td>
+	<td>css=input</td>
+	<td>${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>Deutsch<br /><br /><br />Español<br /><br /><br />English</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input</td>
+	<td>${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>Deutsch<br /><br /><br />Español</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input</td>
+	<td>${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=LocalizationSettings.AvailableLocales</td>
+	<td>Select...</td>
+</tr>
+<!--Set Available Languages to Japanese and English-->
+<tr>
+	<td>type</td>
+	<td>css=input</td>
+	<td>日本</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>日本語</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input</td>
+	<td>english</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>English</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input</td>
+	<td>${KEY_ENTER}</td>
+</tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>日本語<br /><br /><br />English</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <tr>
@@ -2742,11 +2788,16 @@
 	<td>4000</td>
 	<td></td>
 </tr>
-<!--*** Manually click the X to remove English from Available-->
+<!--Remove English from Available-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>利用可能な言語:*日本語</td>
+	<td>日本語<br /><br /><br />English</td>
 	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input</td>
+	<td>${KEY_BACKSPACE}</td>
 </tr>
 <tr>
 	<td>waitForTextNotPresent</td>
@@ -2830,11 +2881,16 @@
 	<td>4000</td>
 	<td></td>
 </tr>
-<!--*** Manually click the X to remove English from Available-->
+<!--Remove Japanese from Available (all languages available)-->
 <tr>
-	<td>waitForTextPresent</td>
-	<td>利用可能な言語:*日本語*English</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>css=input</td>
+	<td>${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=LocalizationSettings.AvailableLocales</td>
+	<td>Select...</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2969,18 +3025,7 @@
 	<td>English</td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>6000</td>
-	<td></td>
-</tr>
-<!--*** Manually click the Xs to remove EN and JP from Available-->
-<tr>
-	<td>waitForTextNotPresent</td>
-	<td>利用可能な言語:*日本語*English</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
+	<td>waitForEditable</td>
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>

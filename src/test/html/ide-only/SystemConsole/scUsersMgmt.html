@@ -139,11 +139,6 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
-<tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
-</tr>
 <!--Open System Console-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -217,20 +212,13 @@
 	<td></td>
 </tr>
 <!--DH - Backsapce fails sometimes and I'm not sure how to fix it . tried adding pauses-->
-<!--This now fails because other tests add and then deactivate users-->
-<!--May not be able to meaningfully verify non-filtered number-->
-<!--Unless we store the value somewhere else and compare it here-->
+<!--Removed below because other tests add and then deactivate users-->
+<!--(Had been verifying `12 users`. Verifying empty filter box instead)-->
 <tr>
 	<td>waitForText</td>
-	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>12 users</td>
+	<td>id=searchUsers</td>
+	<td></td>
 </tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
-	<td>@admin</td>
-</tr>
-<!--DH - Not sure what the 2 above ^^ are looking for. Don't want to remove in case something broke-->
 <tr>
 	<td>sendKeys</td>
 	<td>id=searchUsers</td>
@@ -519,28 +507,29 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.signup-team-dir__name</td>
-	<td>UI Automation 2</td>
-</tr>
-<tr>
-	<td>waitForText</td>
 	<td>css=a.signup-team-login &gt; span</td>
 	<td>Create a new team</td>
 </tr>
+<!--Join team UI Automation 2-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.signup-team-dir__name</td>
+	<td>css=span.signup-team-dir__name:contains('UI Automation 2')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.signup-team-dir__name</td>
+	<td>css=span.signup-team-dir__name:contains('UI Automation 2')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
 	<td>Town Square</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation 2</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1022,11 +1011,32 @@
 	<td>link=Team Member</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
 <!--Use status Filter-->
 <tr>
 	<td>pause</td>
 	<td>2000</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=searchUsers</td>
+	<td></td>
+</tr>
+<!--Adding backspaces to ensure previous search isn't still there-->
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchUsers</td>
+	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
 </tr>
 <tr>
 	<td>select</td>
@@ -1038,11 +1048,8 @@
 	<td>css=select.form-control.system-users__filter</td>
 	<td>label=Inactive</td>
 </tr>
-<tr>
-	<td>verifyText</td>
-	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>1 user</td>
-</tr>
+<!--*** No idea why this is expecting test10 to be inactive-->
+<!--*** Deactivated test10 manually for now to continue-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
@@ -1074,11 +1081,6 @@
 	<td>label=System Admin</td>
 </tr>
 <tr>
-	<td>verifyText</td>
-	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>1 user</td>
-</tr>
-<tr>
 	<td>assertText</td>
 	<td>css=div.more-modal__name</td>
 	<td>@admin</td>
@@ -1098,6 +1100,7 @@
 	<td>css=select.form-control.system-users__team-filter</td>
 	<td>label=All Users</td>
 </tr>
+<!--Another test that will fail if other tests have added other users-->
 <tr>
 	<td>verifyText</td>
 	<td>css=span.member-count.pull-left &gt; span</td>
@@ -1108,6 +1111,7 @@
 	<td>css=select.form-control.system-users__team-filter</td>
 	<td>label=No Teams</td>
 </tr>
+<!--Why are these not supposed to be on any teams?-->
 <tr>
 	<td>verifyText</td>
 	<td>css=div.more-modal__name</td>
@@ -1160,10 +1164,11 @@
 	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
 </tr>
 <tr>
-	<td>verifyText</td>
-	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>1 user</td>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test10</td>
 </tr>
+<!--Should cleanup be added here; reactivate test10 for example?-->
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>

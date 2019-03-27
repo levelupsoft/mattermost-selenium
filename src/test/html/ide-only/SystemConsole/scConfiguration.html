@@ -391,7 +391,7 @@
 	<td></td>
 	<td></td>
 </tr>
-<!--Link to other channel still works with trailing slash-->
+<!--Link to other channel still works with trailing slash in site URL-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -536,26 +536,25 @@
 	<td>css=h3.admin-console-header &gt; span</td>
 	<td>Configuration</td>
 </tr>
-<!--xpaths changed; find better way to ID these-->
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[14]/div/div[2]/span</td>
-	<td>This will purge all the in-memory caches for things like sessions, accounts, channels, etc. Deployments using High Availability will attempt to purge all the servers in the cluster. Purging the caches may adversly impact performance.</td>
+	<td>waitForElementPresent</td>
+	<td>css=span:contains('This will purge all the in-memory caches for things like sessions, accounts, channels, etc. Deployments using High Availability will attempt to purge all the servers in the cluster. Purging the caches may adversely impact performance.')</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[14]/div/div/button</td>
-	<td>Purge All Caches</td>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-default:contains('Purge All Caches')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[14]/div/div/button</td>
-	<td>Purge All Caches</td>
+	<td>css=button.btn.btn-default:contains('Purge All Caches')</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForNotText</td>
-	<td>//div[@id='root']/div/div[3]/div/form/div/div[15]/div/div/button</td>
-	<td>Loading...</td>
+	<td>waitForElementNotPresent</td>
+	<td>css=button.btn.btn-default:contains('Loading...')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
