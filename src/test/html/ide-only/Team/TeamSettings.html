@@ -1682,7 +1682,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>1 member of 12 total</td>
+	<td>1 member of * total</td>
 </tr>
 <!--Post messages and join 2nd team as prep for later tests-->
 <tr>
@@ -2181,7 +2181,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>0 members of 11 total</td>
+	<td>0 members of * total</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2666,7 +2666,7 @@
 	<td>css=div.mentions__name.suggestion--selected</td>
 	<td>Off-Topic*</td>
 </tr>
-<!--Need to clikc into the box for auto-complete-->
+<!--Need to click into the box for auto-complete-->
 <tr>
 	<td>click</td>
 	<td>css=div.mentions__name.suggestion--selected</td>
@@ -2878,7 +2878,7 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--*** In 5.5 and 5.6, UI Automation team was set to open, so this part didn't work-->
-<!--*** Fixed it manually to continue this test, but we need to make sure-->
+<!--*** Set UI2 to closed manually to continue this test, but we need to make sure-->
 <!--*** the test isn't inadvertently setting that team to be open somewhere-->
 <tr>
 	<td>waitForText</td>
@@ -2888,7 +2888,7 @@
 <!--Try to open URL for closed team you're not on-->
 <tr>
 	<td>open</td>
-	<td>http://selenium.mattermost.com/ui-automation/channels/town-square</td>
+	<td>https://selenium.mattermost.com/ui-automation/channels/town-square</td>
 	<td></td>
 </tr>
 <tr>
@@ -3083,15 +3083,11 @@
 	<td>login</td>
 	<td>username=admin@test.com</td>
 </tr>
+<!--Also for some reason admin isn't on UI2 anymore. This test or another?-->
 <tr>
 	<td>rollup</td>
 	<td>switchTeam</td>
 	<td>TeamName=ui-automation2</td>
-</tr>
-<tr>
-	<td>selectWindow</td>
-	<td>null</td>
-	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -3133,13 +3129,14 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<!--?? Was the above supposed to fill in pickles.org?-->
 <tr>
 	<td>waitForText</td>
 	<td>id=allowed_domainsDesc</td>
 	<td>pickles.org</td>
 </tr>
 <tr>
-	<td>waitForElementPositionTop</td>
+	<td>waitForElementPresent</td>
 	<td>css=button.close</td>
 	<td></td>
 </tr>
@@ -3158,20 +3155,26 @@
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
+<!--Try to add whichever user is top of list (won't be pickles.org)-->
 <tr>
 	<td>click</td>
 	<td>//button[@id='addUsersToTeam']</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[5]/div/div[2]</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.more-modal__name &gt; span</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.css-1461nca &gt; div</td>
-	<td>test3</td>
+	<td>click</td>
+	<td>css=div.more-modal__name &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3219,14 +3222,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.signup-team-dir__name</td>
-	<td>UI Automation 2</td>
+	<td>waitForElementPresent</td>
+	<td>css=span.signup-team-dir__name:contains('UI Automation 2')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.signup-team-dir__name</td>
-	<td>UI Automation 2</td>
+	<td>css=span.signup-team-dir__name:contains('UI Automation 2')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3236,6 +3239,16 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//div[@id='back_button']/a/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='back_button']/a/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.signup-team-dir__name:contains('UI Automation 2')</td>
 	<td></td>
 </tr>
 <tr>
@@ -3273,6 +3286,7 @@
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
+<!--Cleanup: Remove domain restriction-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=teamSettings</td>
@@ -3285,6 +3299,11 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
+	<td>id=allowed_domainsEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
 	<td>id=allowed_domainsEdit</td>
 	<td></td>
 </tr>
@@ -3302,6 +3321,11 @@
 	<td>click</td>
 	<td>id=saveSetting</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#allowed_domainsDesc &gt; span</td>
+	<td>Click 'Edit' to add an email domain whitelist.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

@@ -223,6 +223,58 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<!--Ensure email verification is turned on (click both to activate Save)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sign_up</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sign_up</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=EmailSettings.RequireEmailVerificationfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=EmailSettings.RequireEmailVerificationfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=EmailSettings.RequireEmailVerificationtrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=EmailSettings.RequireEmailVerificationtrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=EmailSettings.RequireEmailVerificationtrue</td>
+	<td>on</td>
+</tr>
+<!--Get team invite (for whichever team was top of the drop-down)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
@@ -238,7 +290,6 @@
 	<td>link=Switch to*</td>
 	<td></td>
 </tr>
-<!--Get team invite (for whichever team was top of the drop-down)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -872,6 +923,10 @@
 	<td>id=usernameDesc</td>
 	<td>mmostqa-edit</td>
 </tr>
+<!--Note: Thought had changed in v5.9 to not require GL email verification;-->
+<!--But it appears that it varies on the GitLab side-->
+<!--so this whole section re: verifying email address may not always apply-->
+<!--(Not a Mattermost issue; looks like caching affecting GL behavior)-->
 <!--Email not updated until verified-->
 <tr>
 	<td>waitForText</td>
@@ -885,6 +940,7 @@
 	<td></td>
 </tr>
 <!--Open Gmail to verify new email address-->
+<!--These steps may vary if that browser has logged in before-->
 <tr>
 	<td>open</td>
 	<td>https://gmail.com</td>
@@ -930,8 +986,10 @@
 	<td>name=password</td>
 	<td>${KEY_ENTER}</td>
 </tr>
+<!--Once logged in and viewing Inbox, start here-->
+<!--Confirm in GitLab-->
 <tr>
-	<td>verifyElementPresent</td>
+	<td>waitForElementPresent</td>
 	<td>css=span:contains('Confirmation instructions')</td>
 	<td></td>
 </tr>
@@ -1383,6 +1441,11 @@
 <!--Endpoint values pre-populate based on GitLab Site URL-->
 <!-- and are uneditable-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=GitLabSettings.Url</td>
+	<td>gitlaburl</td>
+</tr>
+<tr>
 	<td>storeValue</td>
 	<td>id=GitLabSettings.Url</td>
 	<td>gitlaburl</td>
@@ -1668,7 +1731,17 @@
 	<td>css=td</td>
 	<td>MattermostTest</td>
 </tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div/span</td>
+	<td>The application was revoked access.</td>
+</tr>
 <!--Back to Mattermost-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
 <tr>
 	<td>open</td>
 	<td>https://rctesting.reddogsofwar.com</td>
@@ -1946,8 +2019,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#emailDesc &gt; span</td>
-	<td>Check your email to verify mmostqa+qa-${date}@mattermost.com</td>
+	<td>css=div.announcement-bar.announcement-bar-success</td>
+	<td>Check your email inbox to verify the address.×</td>
 </tr>
 <!--Log out-->
 <tr>
@@ -2089,7 +2162,6 @@
 	<td>link=Sign out</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
