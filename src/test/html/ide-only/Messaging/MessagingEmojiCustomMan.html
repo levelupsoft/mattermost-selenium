@@ -111,7 +111,7 @@
 	<td>//span[@class='all-emoji']//span[@title=':sob:']</td>
 	<td></td>
 </tr>
-<!--Shothand emojis-->
+<!--Shorthand emojis-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -127,6 +127,7 @@
 	<td>//span[@class='all-emoji']//span[@title=':neutral_face:']</td>
 	<td></td>
 </tr>
+<!--^^This will fail until 5.10^^-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -135,11 +136,28 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>Punctuation test 2 :-x! ${KEY_ENTER}&nbsp;&nbsp;</td>
+	<td>Punctuation&nbsp;&nbsp;test 2 :-x! ${KEY_ENTER}&nbsp;&nbsp;</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//span[@class='all-emoji']//span[@title=':mask:']</td>
+	<td></td>
+</tr>
+<!--^^This will fail until 5.10^^-->
+<!--Unicode Emoji-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Unicode emoji 🤟 ${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//span[@class='emoticon emoticon--unicode'][contains(text(),'🤟')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -702,13 +720,14 @@
 	<td>3000</td>
 	<td></td>
 </tr>
-<!--Use custom emoji in reaction (emoji picker)-->
-<!--*** This is failing to find reaction emoji picker; it's finding message one-->
-<!--*** Same as [...] it can't find the hover menu (have tried many hover approaches)-->
-<!--*** Manually hover over last message, click emoji reaction icon-->
+<tr>
+	<td>rollup</td>
+	<td>openEmojiPickerForLastPost</td>
+	<td></td>
+</tr>
 <tr>
 	<td>pause</td>
-	<td>3000</td>
+	<td>500</td>
 	<td></td>
 </tr>
 <!--Filter emoji picker list-->
@@ -931,10 +950,17 @@
 	<td>css=span.all-emoji &gt; p &gt; span</td>
 	<td>exact::customlarge:</td>
 </tr>
+<!--Example of waitForText CSS locator that broke. Dylan can't figure out how to fix these and replaced with xpath.-->
+<!--waitForText --> css=span.all-emoji > p > span --> exact::customlarge:-->
 <tr>
-	<td>assertText</td>
-	<td>css=span.all-emoji &gt; p &gt; span</td>
-	<td>exact::customlarge:</td>
+	<td>waitForElementPresent</td>
+	<td>//span[@data-emoticon='customlarge'][contains(text(),':customlarge:')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//span[@data-emoticon='customanigif'][contains(text(),':customanigif:')]</td>
+	<td></td>
 </tr>
 <!--Re-enable custom emojis-->
 <tr>
@@ -1108,8 +1134,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.btn.btn-default</td>
+	<td>css=button.btn.btn-link</td>
 	<td>Cancel</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-primary</td>
+	<td>Delete</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1357,7 +1388,7 @@
 <!--*** Manually click a custom emoji-->
 <tr>
 	<td>pause</td>
-	<td>4000</td>
+	<td>5000</td>
 	<td></td>
 </tr>
 <!--Add text to the message and post-->
@@ -1397,6 +1428,11 @@
 <tr>
 	<td>pause</td>
 	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>openEmojiPickerForLastPost</td>
 	<td></td>
 </tr>
 <!--*** Hover over `Reactionary` post and click emoji picker for reactions-->
@@ -2161,7 +2197,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.btn.btn-default</td>
+	<td>css=button.btn.btn-link</td>
 	<td>Cancel</td>
 </tr>
 <tr>
@@ -2231,13 +2267,18 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=System Console</td>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=ServiceSettings.EnableCustomEmojifalse</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Logout</td>
 	<td></td>
 </tr>
 </tbody></table>

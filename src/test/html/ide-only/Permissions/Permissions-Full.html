@@ -1895,7 +1895,7 @@
 	<td></td>
 </tr>
 <!--Verify on mobile that Team Admin, Chan Admin and member permissions are disbaled  -->
-<!--<!--test2 : member, test3: channel admin, test4: Team Admin, test 5: System Admin-->-->
+<!--<!--test2 : member, test3: channel admin, test4: Team Admin, test 5: System Admin-->
 <tr>
 	<td></td>
 	<td></td>
@@ -4201,6 +4201,12 @@
 	<td>logout</td>
 	<td></td>
 </tr>
+<!--Check that Chan Amin permissons are now available on Mobile - test3 is only admin of PubChan1 and PrvChan1 There should be no new permissions for PubChan2 and PrvChan2-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <!--Verify permissions for All Members can be enabled -->
 <tr>
 	<td>rollup</td>
@@ -4851,7 +4857,6 @@
 	<td>//span[@class='sidebar-item__name']/span[contains(text(),'test2private-mod')]</td>
 	<td></td>
 </tr>
-<!--^^Dylan you are here^^-->
 <!--Edit and Delete own posts-->
 <tr>
 	<td>rollup</td>
@@ -4966,7 +4971,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//p[contains(text(),'Post 1 from test6-mod')] </td>
+	<td>//p[contains(text(),'Post 5 from test6-mod')] </td>
 	<td></td>
 </tr>
 <tr>
@@ -5104,6 +5109,12 @@
 <tr>
 	<td>rollup</td>
 	<td>logout</td>
+	<td></td>
+</tr>
+<!--test2 now has full acccess on mobile -->
+<tr>
+	<td></td>
+	<td></td>
 	<td></td>
 </tr>
 <!--Team overide scheme testing-->
@@ -5291,16 +5302,6 @@
 <tr>
 	<td>click</td>
 	<td>css=#all_users-posts-edit_posts-edit_others_posts &gt;div.permission-check.checked &gt; svg</td>
-	<td></td>
-</tr>
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td></td>
-	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -5837,6 +5838,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>rollup</td>
+	<td>openChannel</td>
+	<td>ChannelName=Town Square</td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Town Square</td>
@@ -6107,6 +6113,11 @@
 	<td></td>
 </tr>
 <!--^^Deleted^^-->
+<tr>
+	<td>rollup</td>
+	<td>openChannel</td>
+	<td>ChannelName=PrvChan2</td>
+</tr>
 <tr>
 	<td>rollup</td>
 	<td>openDotMenuByPostText</td>
@@ -6518,6 +6529,7 @@
 	<td>id=customEmoji</td>
 	<td></td>
 </tr>
+<!--^^Custom Emoji Can be weird accross teams. this is known^^-->
 <tr>
 	<td>waitForElementNotPresent</td>
 	<td>id=Integrations</td>
@@ -6935,7 +6947,300 @@
 	<td>logout</td>
 	<td></td>
 </tr>
-<!--All permissions granted by global scheme can be removed by overrode Scheme-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--All permissions can be granted by an override schemes when resticted globaly -->
+<!--<< Add a step where all permission are added to global scheme>> -->
+<!--Use the chuck below as a starting point... Oist fro emoji, edit and delete testing will need to be changed.-->
+<!--Verify permissions for All Members can be enabled -->
+<tr>
+	<td>rollup</td>
+	<td>login</td>
+	<td>username=admin@test.com</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Permission Schemes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Permission Schemes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h3.admin-console-header &gt; span</td>
+	<td>Permission Schemes</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Edit Scheme</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Edit Scheme</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-teams-send_invites &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<!--All Members - Teams-->
+<tr>
+	<td>click</td>
+	<td>css=#all_users-teams-send_invites &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-teams-send_invites &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#all_users-teams-create_team &gt;div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-teams-create_team &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<!--All Members - Manage Public Channels -->
+<tr>
+	<td>click</td>
+	<td>css=#all_users-public_channel-create_public_channel &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-public_channel-create_public_channel &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#all_users-public_channel-manage_public_channel_properties &gt;div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-public_channel-manage_public_channel_properties &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#all_users-public_channel-manage_public_channel_members &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-public_channel-manage_public_channel_members &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#all_users-public_channel-delete_public_channel &gt;div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-public_channel-delete_public_channel &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<!--All Members - Manage Private Channels -->
+<tr>
+	<td>click</td>
+	<td>css=#all_users-private_channel-create_private_channel&gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-private_channel-create_private_channel &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#all_users-private_channel-manage_private_channel_properties &gt;div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-private_channel-manage_private_channel_properties &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#all_users-private_channel-manage_private_channel_members &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-private_channel-manage_private_channel_members &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#all_users-private_channel-delete_private_channel &gt;div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-private_channel-delete_private_channel &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<!--All Members - Manage Posts-->
+<tr>
+	<td>click</td>
+	<td>css=#all_users-posts-edit_posts-edit_post &gt;div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-posts-edit_posts-edit_post &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#all_users-posts-edit_posts-edit_others_posts &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-posts-edit_posts-edit_others_posts &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#all_users-posts-delete_posts-delete_post &gt;div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-posts-delete_posts-delete_post &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#all_users-posts-delete_posts-delete_others_posts &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-posts-delete_posts-delete_others_posts &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#all_users-posts-reactions &gt;div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-posts-reactions &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<!--All Members - Integrations and Customizations-->
+<tr>
+	<td>click</td>
+	<td>css=#all_users-integrations-manage_webhooks &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-integrations-manage_webhooks &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#all_users-integrations-manage_slash_commands &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-integrations-manage_slash_commands &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#all_users-integrations-manage_emojis &gt;div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-integrations-manage_emojis &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button#saveSetting[disabled='']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=adminNavbarDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=adminNavbarDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=swithToui-automation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=swithToui-automation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>logout</td>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>

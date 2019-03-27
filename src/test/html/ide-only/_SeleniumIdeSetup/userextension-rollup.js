@@ -172,11 +172,11 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'storeAttribute', target: "//div[@id='postListContent']/div[contains(@id,'post_')][last()]@id", value: 'LastPostIdFull'});
+commands.push({ command: 'storeAttribute', target: "//div[@id='postListContent']//*/div[contains(@id,'post_')][last()]@id", value: 'LastPostIdFull'});
 commands.push({ command: 'waitForElementPresent', target: "//div[@id='${LastPostIdFull}']/div[@class='post__content ']", value: ''});
 commands.push({ command: 'mouseOver', target: "//div[@id='${LastPostIdFull}']/div[@class='post__content ']", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "css=button.dropdown-toggle.post__dropdown.color--link.style--none", value: ''});
-commands.push({ command: 'click', target: "css=button.dropdown-toggle.post__dropdown.color--link.style--none", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "css=button.post__dropdown color--link style--none", value: ''});
+commands.push({ command: 'click', target: "css=button.post__dropdown color--link style--none", value: ''});
 return commands;
  }
 });

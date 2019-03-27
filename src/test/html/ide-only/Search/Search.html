@@ -1393,7 +1393,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=p span.mention--highlight</td>
-	<td>@test2</td>
+	<td>test2</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='sidebar-right__body']//*/a[@class='mention-link mention--highlight'][contains(text(),'@test2')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
@@ -1998,6 +2003,7 @@
 	<td>&quot;five six&quot;${KEY_ENTER}</td>
 </tr>
 <!--NOTE: Fails on postgres db unless Elasticsearch enabled-->
+<!--If run after emoji man test - This will return a post created by the previous test-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.sidebar--right__subheader &gt; h4 &gt; span</td>
