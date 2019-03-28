@@ -124,7 +124,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'storeAttribute', target: "//div[@id='postListContent']/div[contains(@id,'post_')][last()]@id", value: 'LastPostIdFull'});
+commands.push({ command: 'storeAttribute', target: "//div[@id='postListContent']//*/div[contains(@id,'post_')][last()]@id", value: 'LastPostIdFull'});
 commands.push({ command: 'assertText', target: "id=post_textbox", value: ''});
 commands.push({ command: 'sendKeys', target: "id=post_textbox", value: '${LastPostIdFull}'});
 commands.push({ command: 'sendKeys', target: "id=post_textbox", value: '${KEY_HOME}'});
@@ -172,16 +172,16 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'storeAttribute', target: "//div[@id='postListContent']/div[contains(@id,'post_')][last()]@id", value: 'LastPostIdFull'});
+commands.push({ command: 'storeAttribute', target: "//div[@id='postListContent']//*/div[contains(@id,'post_')][last()]@id", value: 'LastPostIdFull'});
 commands.push({ command: 'waitForElementPresent', target: "//div[@id='${LastPostIdFull}']/div[@class='post__content ']", value: ''});
 commands.push({ command: 'mouseOver', target: "//div[@id='${LastPostIdFull}']/div[@class='post__content ']", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "css=button.dropdown-toggle.post__dropdown.color--link.style--none", value: ''});
-commands.push({ command: 'click', target: "css=button.dropdown-toggle.post__dropdown.color--link.style--none", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//button[@class='post__dropdown color--link style--none']", value: ''});
+commands.push({ command: 'click', target: "//button[@class='post__dropdown color--link style--none']", value: ''});
 return commands;
  }
 });
 
-//openDotMenuByText
+//openDotMenuByText NEED FIX
 manager.addRollupRule({
  name: 'openDotMenuByPostText'
  , description: 'Open the ... menu for the post containg provided text. Will select earlies matching post that has been loaded in the channel. (case sensitive match)'
@@ -189,7 +189,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'storeAttribute', target: "//p[contains(text(),'"+args.ContainsText+"')]/parent::div[@class='post-message__text']/parent::div[@class='post-message__text-container']/parent::div[@class='post-message post-message--collapsed']/parent::div[@id]/parent::div/parent::div/parent::div/parent::div@id", value: 'PostByText'});
+commands.push({ command: 'storeAttribute', target: "//p[contains(text(),'"+args.ContainsText+"')/parent::div[@class='post-message__text']/parent::div[@class='post-message__text-container']/parent::div[@class='post-message post-message--collapsed']/parent::div[@id]/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div@id]", value: 'PostByText'});
 commands.push({ command: 'waitForElementPresent', target: "//div[@id='${PostByText}']/div[@class='post__content ']", value: ''});
 commands.push({ command: 'mouseOver', target: "//div[@id='${PostByText}']/div[@class='post__content ']", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "css=button.dropdown-toggle.post__dropdown.color--link.style--none", value: ''});
@@ -207,11 +207,11 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'storeAttribute', target: "//div[@id='postListContent']/div[contains(@id,'post_')][last()]@id", value: 'LastPostIdFull'});
+commands.push({ command: 'storeAttribute', target: "//div[@id='postListContent']//*/div[contains(@id,'post_')][last()]@id", value: 'LastPostIdFull'});
 commands.push({ command: 'waitForElementPresent', target: "//div[@id='${LastPostIdFull}']/div[@class='post__content ']", value: ''});
 commands.push({ command: 'mouseOver', target: "//div[@id='${LastPostIdFull}']/div[@class='post__content ']", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "//button[@class='comment-icon__container color--link style--none commentIcon pull-right']", value: ''});
-commands.push({ command: 'click', target: "//button[@class='comment-icon__container color--link style--none commentIcon pull-right']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//button[@class='comment-icon__container color--link style--none pull-right']", value: ''});
+commands.push({ command: 'click', target: "//button[@class='comment-icon__container color--link style--none pull-right']", value: ''});
 return commands;
  }
 });
@@ -227,8 +227,8 @@ manager.addRollupRule({
 commands.push({ command: 'storeAttribute', target: "//p[contains(text(),'"+args.ContainsText+"')]/parent::div[@class='post-message__text']/parent::div[@class='post-message__text-container']/parent::div[@class='post-message post-message--collapsed']/parent::div[@id]/parent::div/parent::div/parent::div/parent::div@id", value: 'PostByText'});
 commands.push({ command: 'waitForElementPresent', target: "//div[@id='${PostByText}']/div[@class='post__content ']", value: ''});
 commands.push({ command: 'mouseOver', target: "//div[@id='${PostByText}']/div[@class='post__content ']", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "//button[@class='comment-icon__container color--link style--none commentIcon pull-right']", value: ''});
-commands.push({ command: 'click', target: "//button[@class='comment-icon__container color--link style--none commentIcon pull-right']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//button[@class='comment-icon__container color--link style--none pull-right']", value: ''});
+commands.push({ command: 'click', target: "//button[@class='comment-icon__container color--link style--none pull-right']", value: ''});
 return commands;
  }
 });
@@ -242,7 +242,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'storeAttribute', target: "//div[@id='postListContent']/div[contains(@id,'post_')][last()]@id", value: 'LastPostIdFull'});
+commands.push({ command: 'storeAttribute', target: "//div[@id='postListContent']//*/div[contains(@id,'post_')][last()]@id", value: 'LastPostIdFull'});
 commands.push({ command: 'waitForElementPresent', target: "//div[@id='${LastPostIdFull}']/div[@class='post__content ']", value: ''});
 commands.push({ command: 'mouseOver', target: "//div[@id='${LastPostIdFull}']/div[@class='post__content ']", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//button[@class='reacticon__container color--link style--none']", value: ''});
@@ -251,7 +251,7 @@ return commands;
  }
 });
 
-//openEmojiPickerByText
+//openEmojiPickerByText - Needs FIX
 manager.addRollupRule({
  name: 'openEmojiPickerByText'
  , description: 'Open the ... menu for the post containg provided text. Will select earlies matching post that has been loaded in the channel. (case sensitive match)'
@@ -259,7 +259,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'storeAttribute', target: "//p[contains(text(),'"+args.ContainsText+"')]/parent::div[@class='post-message__text']/parent::div[@class='post-message__text-container']/parent::div[@class='post-message post-message--collapsed']/parent::div[@id]/parent::div/parent::div/parent::div/parent::div@id", value: 'PostByText'});
+commands.push({ command: 'storeAttribute', target: "//p[contains(text(),'"+args.ContainsText+"')]/parent::div[@class='post-message__text']/parent::div[@class='post-message__text-container']/parent::div[@class='post-message post-message--collapsed']/parent::div[@id]/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div@id", value: 'PostByText'});
 commands.push({ command: 'waitForElementPresent', target: "//div[@id='${PostByText}']/div[@class='post__content ']", value: ''});
 commands.push({ command: 'mouseOver', target: "//div[@id='${PostByText}']/div[@class='post__content ']", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//button[@class='reacticon__container color--link style--none']", value: ''});
@@ -277,8 +277,8 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementPresent', target: "//ul[contains(@class,'dropdown-menu')]/li/button/span[text() = '"+args.Item+"']", value: ''});
-commands.push({ command: 'click', target: "//ul[contains(@class,'dropdown-menu')]/li/button/span[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//ul[contains(@class,'Menu dropdown-menu MenuWrapperAnimation-enter-done')]/li/button[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'click', target: "//ul[contains(@class,'Menu dropdown-menu MenuWrapperAnimation-enter-done')]/li/button[text() = '"+args.Item+"']", value: ''});
 return commands;
  }
 });
@@ -291,7 +291,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementPresent', target: "//ul[contains(@class,'dropdown-menu')]/li/button/span[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//ul[contains(@class,'Menu dropdown-menu MenuWrapperAnimation-enter-done')]/li/button[text() = '"+args.Item+"']", value: ''});
 return commands;
  }
 });
@@ -304,7 +304,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementNotPresent', target: "//ul[contains(@class,'dropdown-menu')]']/li/button/span[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'waitForElementNotPresent', target: "//ul[contains(@class,'Menu dropdown-menu MenuWrapperAnimation-enter-done')]/li/button[text() = '"+args.Item+"']", value: ''});
 return commands;
  }
 });
@@ -355,7 +355,7 @@ return commands;
 });
 
 
-//VerifyDotMenuItemNotPresent
+//VerifyChannelMenuItemNotPresent
 manager.addRollupRule({
  name: 'chanMenuItemVerifyNotPresent'
  , description: 'Verifies the desired item is NOT visble in the channel menu. Case sensitive'
@@ -428,7 +428,6 @@ commands.push({ command: 'waitForElementPresent', target: "id=users", value: ''}
 commands.push({ command: 'click', target: "id=users", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div/a/span/span[contains(text(),'Member')]", value: ''});
 commands.push({ command: 'click', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div/a/span/span[contains(text(),'Member')]", value: ''});
-//Update the lines below to new option
 commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div/ul[@class='dropdown-menu member-menu']/li[@role='presentation']/a[@id='manageRoles']/span", value: ''});
 commands.push({ command: 'click', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div/ul[@class='dropdown-menu member-menu']/li[@role='presentation']/a[@id='manageRoles']/span", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//input[@name='systemadmin']", value: ''});

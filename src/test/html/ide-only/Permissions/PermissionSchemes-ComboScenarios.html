@@ -11,7 +11,7 @@
 <thead>
 <tr><td rowspan="1" colspan="3">scPermissionSchemes-ComboScenarios</td></tr>
 </thead><tbody>
-<!--Dylan - Before next run! - ensure Teamb Scheme B on save has memebrs edit post and other others' posts -->
+<!--Dylan - Before next run! - ensure Teamb Scheme B should not have delete permissions OR move last test for abusing Edit to Team A (probably easier)-->
 <tr>
 	<td>setSpeed</td>
 	<td>800</td>
@@ -473,6 +473,31 @@
 <tr>
 	<td>click</td>
 	<td>css=#all_users-posts-delete_posts-delete_others_posts &gt; div.permission-check.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#all_users-posts-edit_posts-edit_post &gt; div.permission-check.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#all_users-posts-edit_posts-edit_others_posts &gt; div.permission-check.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>500</td>
 	<td></td>
 </tr>
 <tr>
@@ -1017,11 +1042,6 @@
 	<td>click</td>
 	<td>id=saveItems</td>
 	<td>Add</td>
-</tr>
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -4254,6 +4274,12 @@
 	<td>switchTeam</td>
 	<td>TeamName=teamb</td>
 </tr>
+<!--Remove Delete from Team B override-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -4262,7 +4288,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>post_textbox</td>
-	<td>Test5 Post${KEY_ENTER}</td>
+	<td>Test5 PostV2${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>rollup</td>

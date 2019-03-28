@@ -157,13 +157,18 @@
 </tr>
 <!--SMTP settings - Connection failures-->
 <tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>css=#systemConsole &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>css=#systemConsole &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -1646,9 +1651,15 @@
 <!----- First message says: You have 2 new notifications.-->
 <!------- Notification from @username [there is no channel name or message snippet]-->
 <!------- Direct Message from @username [there is no channel name or message snippet]-->
+<!---->
 <!------Second message says: You have 2 new notifications.-->
 <!------- Off-Topic / @username / "Batched, full contents! @you, this notification should be batched with the DM that follows, and you should see this sentence."-->
 <!------- Direct Message from / @username / "Batched DM! You should see this sentence as well, batched with the previous at-mention."-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <!--2. Non-batched DM thread (2 DMs)-->
 <!--SUBJ: New Direct Message from @username on [date] / FROM: Selenium Test Edit-->
 <!----- First DM: -->
@@ -1657,6 +1668,11 @@
 <!----- Second DM: -->
 <!------- You have a new Direct Message from @username-->
 <!------- [timestamp, but no channel or message body]-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <!--3. Non-batched mentions thread (2 messages)-->
 <!--SUBJ: Notification in [channel] on [date] / FROM: Selenium Test Edit-->
 <!----- First message:-->
