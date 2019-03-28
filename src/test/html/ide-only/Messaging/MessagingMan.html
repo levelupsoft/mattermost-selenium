@@ -240,10 +240,15 @@
 	<td>id=post_textbox</td>
 	<td>${KEY_UP}</td>
 </tr>
-<!--*** Visually verify text edit box is expanded in size-->
+<!--*** Visually verify as well that text edit box is expanded in size-->
 <tr>
 	<td>pause</td>
-	<td>8000</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//textarea[@id='edit_textbox'][@style='visibility: visible; height: 1434px;']</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -457,10 +462,20 @@
 	<td>id=post_textbox</td>
 	<td>Retain${KEY_ENTER}</td>
 </tr>
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Delete</td>
+</tr>
 <!--*** Manually click ... post menu and select Delete on the "Retain" post-->
 <tr>
 	<td>pause</td>
-	<td>8000</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <tr>
@@ -572,10 +587,15 @@
 <!--*** Visually verify flag appears gray and tooltip "Flag for follow up" on hover-->
 <tr>
 	<td>pause</td>
-	<td>3000</td>
+	<td>500</td>
 	<td></td>
 </tr>
-<!--Flag a message-->
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
+<!--Flag a message -->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.style--none.flag-icon__container &gt; span.icon</td>
@@ -667,7 +687,11 @@
 	<td></td>
 </tr>
 <!--Flag a message-->
-<!--*** Manually hover over the message-->
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.style--none.flag-icon__container &gt; span.icon</td>
@@ -752,6 +776,11 @@
 	<td></td>
 </tr>
 <!--Unflag `Quick brown fox` from RHS-->
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//div[@id='search-items-container']/div[2]/div[2]/div[2]/div[2]/div/div[2]/button</td>
@@ -881,7 +910,11 @@
 	<td>You haven't flagged any messages yet.You can add a flag to messages and comments by clicking the icon next to the timestamp.Flags are a way to mark messages for follow up. Your flags are personal, and cannot be seen by other users.</td>
 </tr>
 <!--Flag post in center and verify added to RHS-->
-<!--*** Manually hover over post This is important too.-->
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.style--none.flag-icon__container </td>
@@ -1065,6 +1098,7 @@
 	<td>This is important too.</td>
 </tr>
 <!--*** Manually click Delete in center on This is important too-->
+<!-- Note: Rollup does not exist for explicitly grabing post from center channel when post is also visible in RHS -->
 <tr>
 	<td>pause</td>
 	<td>4000</td>
@@ -1243,7 +1277,11 @@
 	<td>link=Off-Topic</td>
 	<td></td>
 </tr>
-<!--*** Scroll up to find another user's post, manually open reply thread RHS-->
+<tr>
+	<td>rollup</td>
+	<td>openReplyRhsByText</td>
+	<td>ContainsText=fromuser</td>
+</tr>
 <!--*** Verify profile popover in RHS:-->
 <!--*** @username, other elements-->
 <tr>
@@ -1277,9 +1315,57 @@
 	<td>css=span:contains('updated the channel header to:')</td>
 	<td></td>
 </tr>
-<!--*** Manually click [...] on system message and verify:-->
-<!--*** Not available: emoji reaction, flag, pin-->
-<!--*** Delete is available (at least for own system message; depends on permissions)-->
+<tr>
+	<td>rollup</td>
+	<td>closeRHS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=button.style--none.flag-icon__container</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyNotPresent</td>
+	<td>Pin to channel</td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyNotPresent</td>
+	<td>Reply</td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyNotPresent</td>
+	<td>Permalink</td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyNotPresent</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>dotMenuItemVerify</td>
+	<td>Item=Delete</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--*** Verify no emoji reaction or reply is available on hover-->
+<tr>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyNotPresent</td>
+	<td></td>
+</tr>
 <!--*** Timestamp is a link, opens permalink view-->
 <!--*** Manually click to jump to recent messages-->
 <tr>
