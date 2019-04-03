@@ -36,6 +36,7 @@ public enum DriverType implements DriverSetup {
         public WebDriver getWebDriverObject(DesiredCapabilities capabilities) {
             FirefoxOptions options = new FirefoxOptions();
             options.addCapabilities(capabilities);
+            options.addArguments("--headless");
             FirefoxProfile profile = new FirefoxProfile();
             profile.setPreference("app.update.auto", false);
             profile.setPreference("app.update.enabled", false);
@@ -50,6 +51,7 @@ public enum DriverType implements DriverSetup {
             DesiredCapabilities capabilities = DesiredCapabilities.chrome();
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--start-maximized");
+            options.addArguments("--headless");
             options.addArguments("start-fullscreen");
             capabilities.setCapability(ChromeOptions.CAPABILITY, options);
             capabilities.setCapability("chrome.switches", Arrays.asList("--no-default-browser-check"));
