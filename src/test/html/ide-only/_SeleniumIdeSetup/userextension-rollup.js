@@ -27,8 +27,8 @@ manager.addRollupRule({
  
 commands.push({ command: 'waitForElementPresent', target: "//span[@class='sidebar-header-dropdown__icon']", value: ''});
 commands.push({ command: 'click', target: "//span[@class='sidebar-header-dropdown__icon']", value: ''}); 
-commands.push({ command: 'waitForElementPresent', target: 'id=logout', value: ''});
-commands.push({ command: 'click', target: 'id=logout', value: ''});
+commands.push({ command: 'waitForElementPresent', target: 'css=#logout > button.style--none', value: ''});
+commands.push({ command: 'click', target: 'css=#logout > button.style--none', value: ''});
 commands.push({ command: 'waitForElementPresent', target: 'id=loginId', value: ''});
 return commands;
  }
