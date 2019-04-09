@@ -124,7 +124,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'storeAttribute', target: "//div[@id='postListContent']//*/div[contains(@id,'post_')][last()]@id", value: 'LastPostIdFull'});
+commands.push({ command: 'storeAttribute', target: "//div[@id='postListContent']/div[contains(@id,'post_')][last()]@id", value: 'LastPostIdFull'});
 commands.push({ command: 'assertText', target: "id=post_textbox", value: ''});
 commands.push({ command: 'sendKeys', target: "id=post_textbox", value: '${LastPostIdFull}'});
 commands.push({ command: 'sendKeys', target: "id=post_textbox", value: '${KEY_HOME}'});
@@ -172,7 +172,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'storeAttribute', target: "//div[@id='postListContent']//*/div[contains(@id,'post_')][last()]@id", value: 'LastPostIdFull'});
+commands.push({ command: 'storeAttribute', target: "//div[@id='postListContent']/div[contains(@id,'post_')][last()]@id", value: 'LastPostIdFull'});
 commands.push({ command: 'waitForElementPresent', target: "//div[@id='${LastPostIdFull}']/div[@class='post__content ']", value: ''});
 commands.push({ command: 'mouseOver', target: "//div[@id='${LastPostIdFull}']/div[@class='post__content ']", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//button[@class='post__dropdown color--link style--none']", value: ''});
@@ -207,7 +207,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'storeAttribute', target: "//div[@id='postListContent']//*/div[contains(@id,'post_')][last()]@id", value: 'LastPostIdFull'});
+commands.push({ command: 'storeAttribute', target: "//div[@id='postListContent']/div[contains(@id,'post_')][last()]@id", value: 'LastPostIdFull'});
 commands.push({ command: 'waitForElementPresent', target: "//div[@id='${LastPostIdFull}']/div[@class='post__content ']", value: ''});
 commands.push({ command: 'mouseOver', target: "//div[@id='${LastPostIdFull}']/div[@class='post__content ']", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//button[@class='comment-icon__container color--link style--none pull-right']", value: ''});
@@ -242,7 +242,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'storeAttribute', target: "//div[@id='postListContent']//*/div[contains(@id,'post_')][last()]@id", value: 'LastPostIdFull'});
+commands.push({ command: 'storeAttribute', target: "//div[@id='postListContent']/div[contains(@id,'post_')][last()]@id", value: 'LastPostIdFull'});
 commands.push({ command: 'waitForElementPresent', target: "//div[@id='${LastPostIdFull}']/div[@class='post__content ']", value: ''});
 commands.push({ command: 'mouseOver', target: "//div[@id='${LastPostIdFull}']/div[@class='post__content ']", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//button[@class='reacticon__container color--link style--none']", value: ''});
@@ -277,8 +277,8 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementPresent', target: "//ul[contains(@class,'Menu dropdown-menu MenuWrapperAnimation-enter-done')]/li/button[text() = '"+args.Item+"']", value: ''});
-commands.push({ command: 'click', target: "//ul[contains(@class,'Menu dropdown-menu MenuWrapperAnimation-enter-done')]/li/button[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//ul[contains(@class,'Menu dropdown-menu MenuWrapperAnimation-enter-done')]/li/button/span[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'click', target: "//ul[contains(@class,'Menu dropdown-menu MenuWrapperAnimation-enter-done')]/li/button/span[text() = '"+args.Item+"']", value: ''});
 return commands;
  }
 });
@@ -291,7 +291,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementPresent', target: "//ul[contains(@class,'Menu dropdown-menu MenuWrapperAnimation-enter-done')]/li/button[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//ul[contains(@class,'Menu dropdown-menu MenuWrapperAnimation-enter-done')]/li/button/span[text() = '"+args.Item+"']", value: ''});
 return commands;
  }
 });
@@ -304,7 +304,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementNotPresent', target: "//ul[contains(@class,'Menu dropdown-menu MenuWrapperAnimation-enter-done')]/li/button[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'waitForElementNotPresent', target: "//ul[contains(@class,'Menu dropdown-menu MenuWrapperAnimation-enter-done')]/li/button/span[text() = '"+args.Item+"']", value: ''});
 return commands;
  }
 });
@@ -334,8 +334,8 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementPresent', target: "//ul[@id='channelHeaderDropdownMenu']/li/button/span[text() = '"+args.Item+"']", value: ''});
-commands.push({ command: 'click', target: "//ul[@id='channelHeaderDropdownMenu']/li/button/span[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//ul[@id='channelHeaderDropdownMenu']/li/button[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'click', target: "//ul[@id='channelHeaderDropdownMenu']/li/button[text() = '"+args.Item+"']", value: ''});
 return commands;
  }
 });
@@ -349,7 +349,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementPresent', target: "//ul[@id='channelHeaderDropdownMenu']/li/button/span[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//ul[@id='channelHeaderDropdownMenu']/li/button[text() = '"+args.Item+"']", value: ''});
 return commands;
  }
 });
@@ -363,7 +363,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementNotPresent', target: "//ul[@id='channelHeaderDropdownMenu']/li/button/span[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'waitForElementNotPresent', target: "//ul[@id='channelHeaderDropdownMenu']/li/button[text() = '"+args.Item+"']", value: ''});
 return commands;
  }
 });
