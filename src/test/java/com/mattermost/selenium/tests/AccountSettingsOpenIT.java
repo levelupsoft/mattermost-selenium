@@ -18,9 +18,9 @@ public class AccountSettingsOpenIT extends DriverBase {
     @Test
     public void testAccountSettingsOpenIT() throws Exception {        // LOG IN
         driver.get(baseUrl + "/login");
-        disableAnimations();
+        // DisableAnimations
         for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
+        	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
@@ -30,19 +30,25 @@ public class AccountSettingsOpenIT extends DriverBase {
         driver.findElement(By.name("password")).clear();
         driver.findElement(By.name("password")).sendKeys("passwd");
         driver.findElement(By.id("loginButton")).click();
-        Thread.sleep(2000);
-        Thread.sleep(2000);
-        Thread.sleep(2000);
+        // Sleep
+        // Sleep
+        // Sleep
         // LOG OUT
         driver.navigate().refresh();
         for (int second = 0;; second++) {
-        	if (second >= 2) fail("timeout");
+        	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.linkText("Town Square"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
-        driver.findElement(By.cssSelector("#logout > span")).click();
-        Thread.sleep(2000);
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("#logout > button.style--none"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("#logout > button.style--none")).click();
+        // Sleep
     }
 }

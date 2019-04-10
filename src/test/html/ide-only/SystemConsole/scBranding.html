@@ -72,12 +72,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -139,22 +139,22 @@
 <!--LOG OUT-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--Verify custom name and description-->
@@ -215,12 +215,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -265,7 +265,22 @@
 	<td>css=input[type=&quot;file&quot;]</td>
 	<td></td>
 </tr>
-<!--Enable custom branding, upload image, add custom brand text-->
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=TeamSettings.SiteName</td>
+	<td>Custom Site Name</td>
+</tr>
+<!--Enable custom branding, image has not ever been uploaded-->
+<tr>
+	<td>waitForText</td>
+	<td>css=p &gt; span</td>
+	<td>No brand image uploaded</td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=TeamSettings.EnableCustomBrandtrue</td>
@@ -276,6 +291,54 @@
 	<td>id=TeamSettings.EnableCustomBrandtrue</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--LOG OUT-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none span:contains('Logout')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none span:contains('Logout')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<!--*** Visually verify no broken image icon appears (blank left hand side)-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Enable custom branding, upload image, add custom brand text-->
 <tr>
 	<td>waitForEditable</td>
 	<td>css=input[type=&quot;file&quot;]</td>
@@ -341,22 +404,22 @@
 <!--LOG OUT-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--Verify custom image and brand text-->
@@ -433,12 +496,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -505,22 +568,22 @@
 <!--LOG OUT-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--Verify brand customization has been removed-->

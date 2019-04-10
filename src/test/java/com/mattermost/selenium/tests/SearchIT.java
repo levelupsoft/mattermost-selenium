@@ -401,11 +401,11 @@ public class SearchIT extends DriverBase {
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#logout > button.style--none"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("logout")).click();
+        driver.findElement(By.cssSelector("#logout > button.style--none")).click();
         // LOG IN test2
         // DisableAnimations
         // Sleep
@@ -496,11 +496,11 @@ public class SearchIT extends DriverBase {
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#logout > button.style--none"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("logout")).click();
+        driver.findElement(By.cssSelector("#logout > button.style--none")).click();
         // LOG IN
         // DisableAnimations
         for (int second = 0;; second++) {
@@ -781,11 +781,11 @@ public class SearchIT extends DriverBase {
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#logout > button.style--none"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("logout")).click();
+        driver.findElement(By.cssSelector("#logout > button.style--none")).click();
         // LOG IN test2
         // Sleep
         // Sleep
@@ -1000,11 +1000,11 @@ public class SearchIT extends DriverBase {
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#logout > button.style--none"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("logout")).click();
+        driver.findElement(By.cssSelector("#logout > button.style--none")).click();
         // LOG IN test
         // DisableAnimations
         // Sleep
@@ -1233,10 +1233,10 @@ public class SearchIT extends DriverBase {
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#logout > button.style--none"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("logout")).click();
+        driver.findElement(By.cssSelector("#logout > button.style--none")).click();
     }
 }
