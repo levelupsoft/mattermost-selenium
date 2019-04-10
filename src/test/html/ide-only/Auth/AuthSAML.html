@@ -19,7 +19,7 @@
 <!--OneLogin account created by opening public channel URL-->
 <tr>
 	<td>open</td>
-	<td>https://ci-linux-mysql.mattermost.com/zzz-qa/channels/saml-test</td>
+	<td>https://mysql.test.mattermost.com/zzz-qa/channels/saml-test</td>
 	<td></td>
 </tr>
 <tr>
@@ -125,13 +125,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <!--Accented character and literal HTML entity come through as expected-->
@@ -286,23 +286,23 @@
 </tr>
 <!--Switch email to SAML: Invalid password-->
 <tr>
-	<td>waitForText</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -409,12 +409,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--OneLogin settings-->
@@ -469,12 +469,12 @@
 <!--OneLogin Settings - Login button text-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -521,22 +521,22 @@
 <!--LOG OUT system admin user-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--Verify new button text-->
@@ -599,12 +599,12 @@
 <!--OneLogin Settings - Replace original login button text-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -760,22 +760,22 @@
 <!--LOG OUT system admin user-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--Successfully log in using SAML-->
@@ -796,13 +796,8 @@
 </tr>
 <!--LOG OUT SAML user-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <tr>
@@ -854,12 +849,12 @@
 <!--Replace Site URL-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -936,22 +931,22 @@
 <!--LOG OUT system admin user-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
@@ -1013,12 +1008,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <!--Turn SAML SSO back on-->
@@ -1089,23 +1084,18 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div/form/div/div[10]/div/div/button</td>
-	<td>Remove Service Provider Private Key</td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>//div[@id='root']/div/div[2]/div/form/div/div[10]/div/div/button</td>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-danger:contains('Remove Service Provider Private Key')</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div/form/div/div[11]/div/div/button</td>
-	<td>Remove Service Provider Certificate</td>
+	<td>waitForEditable</td>
+	<td>css=button.btn.btn-danger:contains('Remove Service Provider Private Key')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForEditable</td>
-	<td>//div[@id='root']/div/div[2]/div/form/div/div[11]/div/div/button</td>
+	<td>css=button.btn.btn-danger:contains('Remove Service Provider Certificate')</td>
 	<td></td>
 </tr>
 <tr>
@@ -1239,22 +1229,22 @@
 <!--LOG OUT system admin user-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--LOG IN SAML user-->
@@ -1280,13 +1270,13 @@
 </tr>
 <!--Name fields are editable-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1336,13 +1326,8 @@
 </tr>
 <!--LOG OUT SAML user-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <tr>
@@ -1393,12 +1378,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <!--Replace first and last name attributes-->
@@ -1486,23 +1471,23 @@
 	<td>@qa-onelogin - *</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
+	<td>Member</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=deactivate</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none</td>
+	<td>Deactivate</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=deactivate</td>
+	<td>css=button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1522,29 +1507,29 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
 	<td>Inactive</td>
 </tr>
 <!--SAML user reactivates on logging back in -->
 <!--LOG OUT system admin user-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--LOG IN SAML user-->
@@ -1570,13 +1555,8 @@
 </tr>
 <!--LOG OUT SAML user-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <tr>
@@ -1627,12 +1607,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -1662,7 +1642,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
 	<td>Member</td>
 </tr>
 <tr>
@@ -1673,22 +1653,22 @@
 <!--LOG OUT system admin user-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--Add cleanup to clear out OneLogin user? Or leave for now for follow-up testing?-->
@@ -1747,12 +1727,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='createTeam'])[2]</td>
+	<td>link=Create a New Team</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='createTeam'])[2]</td>
+	<td>link=Create a New Team</td>
 	<td></td>
 </tr>
 <!--Store timestamp to append to team name (to make it unique)-->
@@ -1807,13 +1787,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=teamSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=#teamSettings &gt; button.style--none.</td>
+	<td>Team Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=teamSettings</td>
+	<td>css=#teamSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1868,12 +1848,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=getTeamInviteLink</td>
+	<td>css=#getTeamInviteLink &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=getTeamInviteLink</td>
+	<td>css=#getTeamInviteLink &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1898,13 +1878,8 @@
 </tr>
 <!--LOG OUT system admin-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <tr>
@@ -2032,13 +2007,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <!--Accented character (and literal HTML entity) comes through as expected-->
@@ -2081,13 +2056,8 @@
 </tr>
 <!--LOG OUT OKTA user-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN system admin-->
@@ -2134,12 +2104,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='createTeam'])[2]</td>
+	<td>link=Create a New Team</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='createTeam'])[2]</td>
+	<td>link=Create a New Team</td>
 	<td></td>
 </tr>
 <tr>
@@ -2190,12 +2160,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=getTeamInviteLink</td>
+	<td>css=#getTeamInviteLink &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=getTeamInviteLink</td>
+	<td>css=#getTeamInviteLink &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -2220,13 +2190,8 @@
 </tr>
 <!--LOG OUT system admin-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <tr>
@@ -2279,13 +2244,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2411,23 +2376,23 @@
 </tr>
 <!--Switch email to SAML: Invalid password-->
 <tr>
-	<td>waitForText</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2523,23 +2488,8 @@
 </tr>
 <!--LOG OUT OKTA user-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN system admin-->
@@ -2587,12 +2537,12 @@
 <!--OKTA Settings - Login button text-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -2639,22 +2589,22 @@
 <!--LOG OUT system admin user-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--Verify new button text-->
@@ -2717,12 +2667,12 @@
 <!--OKTA Settings - Replace original login button text-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -2878,22 +2828,22 @@
 <!--LOG OUT system admin user-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--Successfully log in using SAML-->
@@ -2914,13 +2864,8 @@
 </tr>
 <!--LOG OUT SAML user-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <tr>
@@ -2972,12 +2917,12 @@
 <!--Replace Site URL-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -3054,22 +2999,22 @@
 <!--LOG OUT system admin user-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
@@ -3131,12 +3076,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <!--Turn SAML SSO back on-->
@@ -3357,22 +3302,22 @@
 <!--LOG OUT system admin user-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--LOG IN SAML user-->
@@ -3398,13 +3343,13 @@
 </tr>
 <!--Name fields are editable-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3454,13 +3399,8 @@
 </tr>
 <!--LOG OUT SAML user-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <tr>
@@ -3511,12 +3451,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <!--Replace first and last name attributes-->
@@ -3592,23 +3532,23 @@
 	<td>@linda-qaokta - *</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
+	<td>Member</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=deactivate</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none</td>
+	<td>Deactivate</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=deactivate</td>
+	<td>css=button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -3628,29 +3568,29 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
 	<td>Inactive</td>
 </tr>
 <!--SAML user reactivates on logging back in -->
 <!--LOG OUT system admin user-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--LOG IN SAML user-->
@@ -3676,13 +3616,8 @@
 </tr>
 <!--LOG OUT SAML user-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <tr>
@@ -3733,12 +3668,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -3768,7 +3703,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
 	<td>Member</td>
 </tr>
 <tr>
@@ -3779,22 +3714,22 @@
 <!--LOG OUT system admin user-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--Add cleanup to clear out OKTA user? Or leave for now for follow-up testing?-->

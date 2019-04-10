@@ -74,12 +74,12 @@
 <!--Verify settings: email not required and open server true-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sign_up</td>
+	<td>id=signup</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sign_up</td>
+	<td>id=signup</td>
 	<td></td>
 </tr>
 <tr>
@@ -99,22 +99,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=adminNavbarDropdownButton</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=adminNavbarDropdownButton</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithToui-automation</td>
+	<td>css=li.MenuItem a:contains('Switch to&nbsp;&nbsp;UI Automation')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
+	<td>css=li.MenuItem a:contains('Switch to&nbsp;&nbsp;UI Automation')</td>
 	<td></td>
 </tr>
 <tr>
@@ -129,12 +129,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=getTeamInviteLink</td>
+	<td>css=#getTeamInviteLink &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=getTeamInviteLink</td>
+	<td>css=#getTeamInviteLink &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -165,12 +165,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--Create one now link > Signup page-->
@@ -313,12 +313,12 @@
 <!--Set open server to false-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sign_up</td>
+	<td>id=signup</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sign_up</td>
+	<td>id=signup</td>
 	<td></td>
 </tr>
 <tr>
@@ -359,22 +359,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=adminNavbarDropdownButton</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=adminNavbarDropdownButton</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
@@ -466,12 +466,12 @@
 <!--Set open server to true-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sign_up</td>
+	<td>id=signup</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sign_up</td>
+	<td>id=signup</td>
 	<td></td>
 </tr>
 <tr>
@@ -640,22 +640,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=adminNavbarDropdownButton</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=adminNavbarDropdownButton</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
@@ -878,33 +878,23 @@
 <!--Regenerate invite salt-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sign_up</td>
+	<td>id=signup</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sign_up</td>
+	<td>id=signup</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=button.btn.btn-default</td>
-	<td>Regenerate</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-default</td>
-	<td></td>
-</tr>
-<tr>
-	<td>storeText</td>
-	<td>id=EmailSettings.InviteSalt</td>
-	<td>invitesalt</td>
+	<td>Invalidate pending email invites</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=EmailSettings.InviteSalt</td>
-	<td>${invitesalt}</td>
+	<td>css=div.admin-console</td>
+	<td>SignupRequire Email Verification: truefalseTypically set to true in production. When true, Mattermost requires email verification after account creation prior to allowing login. Developers may set this field to false to skip sending verification emails for faster development.<br /><br /><br />Enable Open Server: truefalseWhen true, anyone can signup for a user account on this server without the need to be invited.<br /><br /><br />Enable Email Invitations: truefalseWhen true users can invite others to the system using email.<br /><br /><br />Invalidate pending email invites<br />This will invalidate active email invitations that have not been accepted by the user. By default email invitations expire after 48 hours.<br /><br /><br /><br />Save</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -912,44 +902,29 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForNotText</td>
-	<td>id=EmailSettings.InviteSalt</td>
-	<td>${invitesalt}</td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.alert.alert-success &gt; span</td>
+	<td>Pending email invitations invalidated successfully</td>
 </tr>
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=adminNavbarDropdownButton</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=adminNavbarDropdownButton</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 </tbody></table>
