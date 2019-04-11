@@ -44,7 +44,7 @@ manager.addRollupRule({
  
 commands.push({ command: 'waitForElementPresent', target: "//span[@class='sidebar-item__name']/span[contains(text(),'"+args.ChannelName+"')]", value: ''});
 commands.push({ command: 'click', target: "//span[@class='sidebar-item__name']/span[contains(text(),'"+args.ChannelName+"')]", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "//strong[@id='channelHeaderTitle'][contains(text(),'"+args.ChannelName+"')]", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//strong[@id='channelHeaderTitle']/span[contains(text(),'"+args.ChannelName+"')]", value: ''});
 return commands;
  }
 });
@@ -104,8 +104,8 @@ manager.addRollupRule({
  
 commands.push({ command: 'waitForElementPresent', target: 'id=channelHeaderTitle', value: ''});
 commands.push({ command: 'click', target: 'id=channelHeaderDropdownButton', value: ''});
-commands.push({ command: 'waitForElementPresent', target: 'id=channelAddMembers', value: ''});
-commands.push({ command: 'click', target: 'id=channelAddMembers', value: ''});
+commands.push({ command: 'waitForElementPresent', target: '//ul[@id="channelHeaderDropdownMenu"]/li/button[text() = "Add Members"]', value: ''});
+commands.push({ command: 'click', target: '//ul[@id="channelHeaderDropdownMenu"]/li/button[text() = "Add Members"]', value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]", value: ''});
 commands.push({ command: 'click', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]", value: ''});
 commands.push({ command: 'waitForElementPresent', target: 'id=saveItems', value: ''});
@@ -455,12 +455,12 @@ manager.addRollupRule({
  
 commands.push({ command: 'waitForElementPresent', target: "id=channelHeaderTitle", value: ''});
 commands.push({ command: 'click', target: "id=channelHeaderDropdownButton", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "id=channelManageMembers", value: ''});
-commands.push({ command: 'click', target: "id=channelManageMembers", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@id='channelMemberDropdown']", value: ''});
-commands.push({ command: 'click', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@id='channelMemberDropdown']", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "//div[@class='dropdown member-drop open']/ul[@class='dropdown-menu member-menu']/li/a[@id='makeChannelAdmin']", value: ''});
-commands.push({ command: 'click', target: "//div[@class='dropdown member-drop open']/ul[@class='dropdown-menu member-menu']/li/a[@id='makeChannelAdmin']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//ul[@id='channelHeaderDropdownMenu']/li/button[text() = 'Manage Members']", value: ''});
+commands.push({ command: 'click', target: "//ul[@id='channelHeaderDropdownMenu']/li/button[text() = 'Manage Members']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button ", value: ''});
+commands.push({ command: 'click', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button ", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]", value: ''});
+commands.push({ command: 'click', target: "//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//button[@class='close']", value: ''});
 commands.push({ command: 'click', target: "//button[@class='close']", value: ''});
 return commands;
@@ -477,12 +477,12 @@ manager.addRollupRule({
  
 commands.push({ command: 'waitForElementPresent', target: "id=channelHeaderTitle", value: ''});
 commands.push({ command: 'click', target: "id=channelHeaderDropdownButton", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "id=channelManageMembers", value: ''});
-commands.push({ command: 'click', target: "id=channelManageMembers", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@id='channelMemberDropdown']", value: ''});
-commands.push({ command: 'click', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@id='channelMemberDropdown']", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "//div[@class='dropdown member-drop open']/ul[@class='dropdown-menu member-menu']/li/a[@id='removeFromChannel']", value: ''});
-commands.push({ command: 'click', target: "//div[@class='dropdown member-drop open']/ul[@class='dropdown-menu member-menu']/li/a[@id='removeFromChannel']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//ul[@id='channelHeaderDropdownMenu']/li/button[text() = 'Manage Members']", value: ''});
+commands.push({ command: 'click', target: "//ul[@id='channelHeaderDropdownMenu']/li/button[text() = 'Manage Members']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button ", value: ''});
+commands.push({ command: 'click', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button ", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]", value: ''});
+commands.push({ command: 'click', target: "//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//button[@class='close']", value: ''});
 commands.push({ command: 'click', target: "//button[@class='close']", value: ''});
 return commands;
@@ -499,8 +499,8 @@ manager.addRollupRule({
  
 commands.push({ command: 'waitForElementPresent', target: "id=sidebarHeaderDropdownButton", value: ''});
 commands.push({ command: 'click', target: "id=sidebarHeaderDropdownButton", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "id=manageMembers", value: ''});
-commands.push({ command: 'click', target: "id=manageMembers", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//li[@id='manageMembers']/button", value: ''});
+commands.push({ command: 'click', target: "//li[@id='manageMembers']/button", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal modal-dialog']", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@class='dropdown-toggle theme color--link style--none']", value: ''});
 commands.push({ command: 'click', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@class='dropdown-toggle theme color--link style--none']", value: ''});
@@ -523,8 +523,8 @@ manager.addRollupRule({
  
 commands.push({ command: 'waitForElementPresent', target: "id=sidebarHeaderDropdownButton", value: ''});
 commands.push({ command: 'click', target: "id=sidebarHeaderDropdownButton", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "id=createTeam", value: ''});
-commands.push({ command: 'click', target: "id=createTeam", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//li[@id='createTeam']/a", value: ''});
+commands.push({ command: 'click', target: "//li[@id='createTeam']/a", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "css=input.form-control", value: ''});
 commands.push({ command: 'type', target: "css=input.form-control", value: args.TeamName});
 commands.push({ command: 'waitForElementPresent', target: "//button[@type='submit']", value: ''});
@@ -548,8 +548,8 @@ manager.addRollupRule({
  
 commands.push({ command: 'waitForElementPresent', target: "id=sidebarHeaderDropdownButton", value: ''});
 commands.push({ command: 'click', target: "id=sidebarHeaderDropdownButton", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "id=addUsersToTeam", value: ''});
-commands.push({ command: 'click', target: "id=addUsersToTeam", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//li[@id='addUsersToTeam']/button", value: ''});
+commands.push({ command: 'click', target: "//li[@id='addUsersToTeam']/button", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]", value: ''});
 commands.push({ command: 'click', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]", value: ''});
 commands.push({ command: 'click', target: "id=saveItems", value: ''});
