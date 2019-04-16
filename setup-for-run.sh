@@ -12,7 +12,7 @@ rm -f mattermost.tar.gz
 # mv mattermost-enterprise-linux-amd64.tar.gz mattermost.tar.gz
 
 # Use this to lock to specific version
- wget https://releases.mattermost.com/5.10.0-rc6/mattermost-5.10.0-rc3-linux-amd64.tar.gz
+ wget https://releases.mattermost.com/5.10.0-rc6/mattermost-5.10.0-rc6-linux-amd64.tar.gz
  mv mattermost-5.10.0-rc6-linux-amd64.tar.gz mattermost.tar.gz
 
 # Regular daily from release branch
