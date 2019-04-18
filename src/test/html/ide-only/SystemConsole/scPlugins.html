@@ -11,6 +11,7 @@
 <thead>
 <tr><td rowspan="1" colspan="3">SysConsPluginsConfig</td></tr>
 </thead><tbody>
+<!--Ensure the latest release build of the demo plugin is in Resources folder-->
 <!--LOG IN-->
 <tr>
 	<td>openAndWait</td>
@@ -72,12 +73,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <!--Disable plugin upload-->
@@ -248,12 +249,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -491,22 +492,22 @@
 <!--LOG OUT-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
@@ -602,14 +603,24 @@
 </tr>
 <!--Return to team to verify /giphy-->
 <tr>
-	<td>waitForText</td>
-	<td>id=swithToui-automation</td>
-	<td>Switch to UI Automation</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
-	<td>Switch to UI Automation</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -642,9 +653,19 @@
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForTextPresent</td>
 	<td>installed and enabled original*(Posted using - ORIGINAL - /giphy)</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>link=installed and enabled original</td>
+	<td>installed and enabled original</td>
 </tr>
 <!--Delete message after verification to avoid future false positive-->
 <tr>
@@ -685,12 +706,22 @@
 <!--Upload the updated giphy plugin and accept overwrite prompt-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -765,14 +796,24 @@
 </tr>
 <!--Return to team to verify /giphy after overwrite-->
 <tr>
-	<td>waitForText</td>
-	<td>id=swithToui-automation</td>
-	<td>Switch to UI Automation</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
-	<td>Switch to UI Automation</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -805,9 +846,19 @@
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForTextPresent</td>
 	<td>installed overwritten plugin*(Posted using - OVERWRITTEN - /giphy)</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>link=installed overwritten plugin</td>
+	<td>installed overwritten plugin</td>
 </tr>
 <!--Delete message after verification to avoid future false positive-->
 <tr>
@@ -848,12 +899,22 @@
 <!--Reinstall original version-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -928,14 +989,24 @@
 </tr>
 <!--Return to team to verify /giphy returns Original text-->
 <tr>
-	<td>waitForText</td>
-	<td>id=swithToui-automation</td>
-	<td>Switch to UI Automation</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
-	<td>Switch to UI Automation</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -971,6 +1042,11 @@
 	<td>waitForTextPresent</td>
 	<td>installed and enabled original*(Posted using - ORIGINAL - /giphy)</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>link=installed and enabled original</td>
+	<td>installed and enabled original</td>
 </tr>
 <!--Delete message after verification to avoid future false positive-->
 <tr>
@@ -1011,12 +1087,22 @@
 <!--Cleanup: Remove Giphy plugin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -1206,25 +1292,25 @@
 	<td>css=div.padding-top &gt; a &gt; span</td>
 	<td>Disable</td>
 </tr>
-<!--Verify demo-plugin functions - switch to any team-->
+<!--Verify demo-plugin functions - switch to team-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
-	<td>verifyElementPresent</td>
-	<td>css=span:contains('Switch to')</td>
+	<td>waitForElementPresent</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span:contains('Switch to')</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -1832,12 +1918,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>css=#addUsersToTeam &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>css=#addUsersToTeam &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1852,7 +1938,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.multi-select__help &gt; span</td>
+	<td>css=#numPeopleRemaining &gt; span</td>
 	<td>Use ↑↓ to browse, ↵ to select. You can add 19 more people.</td>
 </tr>
 <tr>
@@ -1883,12 +1969,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=manageMembers</td>
+	<td>css=#manageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=manageMembers</td>
+	<td>css=#manageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1907,23 +1993,23 @@
 	<td>@corey</td>
 </tr>
 <tr>
-	<td>verifyText</td>
-	<td>css=div.more-modal__actions div.dropdown.member-drop button.dropdown-toggle.theme.color--link.style--none span span</td>
-	<td>Member</td>
+	<td>waitForText</td>
+	<td>css=div.more-modal__row</td>
+	<td>@corey<br />corey@test.com<br /><br />Member</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.more-modal__actions div.dropdown.member-drop button.dropdown-toggle.theme.color--link.style--none span span</td>
+	<td>css=button.dropdown-toggle.theme.color--link.style--none span span</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=ul.dropdown-menu.member-menu &gt; li &gt; a &gt; span</td>
-	<td>Remove From Team</td>
+	<td>waitForElementPresent</td>
+	<td>css=#removeFromTeam &gt; button.style--none</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=ul.dropdown-menu.member-menu &gt; li &gt; a &gt; span</td>
+	<td>css=#removeFromTeam &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1946,15 +2032,63 @@
 	<td></td>
 	<td>UserHasLeftTeam: @corey</td>
 </tr>
-<!--LOG OUT admin-->
+<!--File uploaded creates post in channel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>link=Off-Topic</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>link=Off-Topic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div#fileUploadButton.icon.icon--attachment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div#fileUploadButton.icon.icon--attachment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<!--*** Manually select any file to upload-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=i.fa.fa-remove</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=a.post-image__download &gt; span &gt; svg</td>
+	<td></td>
+</tr>
+<!--User has been created post in channel-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--LOG OUT admin-->
+<tr>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--demo_plugin user not allowed to log in-->
@@ -2088,17 +2222,17 @@
 <!--Finding by div; may need to click Action button manually if it stops finding it-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='user-profile-popover']//*/button</td>
+	<td>css=div#user-profile-popover.fade.in.popover.right div.popover-content div button:contains('Action')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='user-profile-popover']//*/button</td>
+	<td>css=div#user-profile-popover.fade.in.popover.right div.popover-content div button:contains('Action')</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForTextPresent</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//div[@id='channel_view']/div/div[6]/div</td>
 	<td>You have triggered the root component of the demo plugin.<br /><br />Click anywhere to close.</td>
 </tr>
 <tr>
@@ -2125,17 +2259,17 @@
 <!--Top nav plugin action button-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=i.icon.fa.fa-plug</td>
+	<td>css=button#*.channel-header__icon.style--none i.icon.fa.fa-plug</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=i.icon.fa.fa-plug</td>
+	<td>css=button#*.channel-header__icon.style--none i.icon.fa.fa-plug</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForTextPresent</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//div[@id='channel_view']/div/div[6]/div</td>
 	<td>You have triggered the root component of the demo plugin.<br /><br />Click anywhere to close.</td>
 </tr>
 <tr>
@@ -2166,17 +2300,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Demo Plugin</td>
+	<td>css=li#*_pluginmenuitem.MenuItem button.style--none span:contains('Demo Plugin')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Demo Plugin</td>
+	<td>css=li#*_pluginmenuitem.MenuItem button.style--none span:contains('Demo Plugin')</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForTextPresent</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//div[@id='channel_view']/div/div[6]/div</td>
 	<td>You have triggered the root component of the demo plugin.<br /><br />Click anywhere to close.</td>
 </tr>
 <tr>
@@ -2216,8 +2350,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForTextPresent</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//div[@id='channel_view']/div/div[6]/div</td>
 	<td>You have triggered the root component of the demo plugin.<br /><br />Click anywhere to close.</td>
 </tr>
 <tr>
@@ -2268,17 +2402,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Demo Plugin</td>
+	<td>css=li.MenuItem button.style--none span:contains('Demo Plugin')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Demo Plugin</td>
+	<td>css=li.MenuItem button.style--none span:contains('Demo Plugin')</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForTextPresent</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//div[@id='channel_view']/div/div[6]/div</td>
 	<td>You have triggered the root component of the demo plugin.<br /><br />Click anywhere to close.</td>
 </tr>
 <tr>
@@ -2309,12 +2443,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -2352,6 +2486,47 @@
 	<td>css=div.help-text &gt; span</td>
 	<td>The channel to use as part of the demo plugin, created for each team automatically if it does not exist.</td>
 </tr>
+<!--Boolean setting persists after save and refresh-->
+<tr>
+	<td>waitForValue</td>
+	<td>id=enablementionuserfalse</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=enablementionusertrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enablementionusertrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enablementionusertrue</td>
+	<td>on</td>
+</tr>
 <!--Disable demo_plugin in System Console-->
 <!--*** Finding the right one relies on demo_plugin being first in list-->
 <tr>
@@ -2386,13 +2561,23 @@
 </tr>
 <!--Verify disabled on team (elements no longer visible)-->
 <tr>
-	<td>waitForText</td>
-	<td>id=swithToui-automation</td>
-	<td>Switch to UI Automation</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -2402,7 +2587,7 @@
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
-	<td>css=i.icon.fa.fa-plug</td>
+	<td>css=button#*.channel-header__icon.style--none i.icon.fa.fa-plug</td>
 	<td></td>
 </tr>
 <tr>
@@ -2449,12 +2634,22 @@
 <!--Briefly re-enable and verify to prepare for verifying removal-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -2483,8 +2678,23 @@
 	<td>This plugin is running.</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -2494,7 +2704,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=i.icon.fa.fa-plug</td>
+	<td>css=button#*.channel-header__icon.style--none i.icon.fa.fa-plug</td>
 	<td></td>
 </tr>
 <tr>
@@ -2542,12 +2752,22 @@
 <!--Remove demo-plugin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -2582,13 +2802,23 @@
 </tr>
 <!--Verify removed from team (elements no longer visible)-->
 <tr>
-	<td>waitForText</td>
-	<td>id=swithToui-automation</td>
-	<td>Switch to UI Automation</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -2650,23 +2880,8 @@
 <!--*** Add steps to cleanup demo plugin channels and demo_plugin user?-->
 <!--LOG OUT-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 </tbody></table>

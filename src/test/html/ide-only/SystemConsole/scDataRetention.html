@@ -167,12 +167,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=li &gt; span</td>
+	<td>css=div.modal-body &gt; div &gt; ul &gt; li &gt; span</td>
 	<td>All messages will be permanently deleted after 365 days.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//li[2]/span</td>
+	<td>//div[@id='confirmModal']/div/div/div[2]/div/ul/li[2]/span</td>
 	<td>All files will be permanently deleted after 365 days.</td>
 </tr>
 <tr>
@@ -193,22 +193,22 @@
 <!--Do a search with no results (on any team), verify data retention messaging-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=ul.dropdown-menu li a#* span</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=ul.dropdown-menu li a#* span</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -289,12 +289,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=li &gt; span</td>
+	<td>css=div.modal-body &gt; div &gt; ul &gt; li &gt; span</td>
 	<td>All messages will be retained indefinitely.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//li[2]/span</td>
+	<td>//div[@id='confirmModal']/div/div/div[2]/div/ul/li[2]/span</td>
 	<td>All files will be retained indefinitely.</td>
 </tr>
 <tr>
@@ -450,22 +450,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 </tbody></table>

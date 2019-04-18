@@ -11,11 +11,11 @@
 <thead>
 <tr><td rowspan="1" colspan="3">scSubpath</td></tr>
 </thead><tbody>
-<!--This test uses the subpath test server http://test-proxy.test.spinmint.com/mattermost-->
-<!--LOG IN admin-->
+<!--This test uses the subpath test server https://subpath.test.mattermost.com/mattermost/-->
+<!--LOG IN sysadmin-->
 <tr>
 	<td>openAndWait</td>
-	<td>http://test-proxy.test.spinmint.com/mattermost</td>
+	<td>https://subpath.test.mattermost.com/mattermost/</td>
 	<td></td>
 </tr>
 <!--DisableAnimations-->
@@ -33,12 +33,12 @@
 <tr>
 	<td>type</td>
 	<td>name=loginId</td>
-	<td>admin@test.com</td>
+	<td>sysadmin</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>name=password</td>
-	<td>passwd</td>
+	<td>sysadmin</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -88,13 +88,13 @@
 <tr>
 	<td>waitForValue</td>
 	<td>id=ServiceSettings.SiteURL</td>
-	<td>https://test-proxy.test.spinmint.com/mattermost</td>
+	<td>https://subpath.test.mattermost.com/mattermost</td>
 </tr>
 <!--Edit Site URL-->
 <tr>
 	<td>type</td>
 	<td>id=ServiceSettings.SiteURL</td>
-	<td>http://test-proxy.test.spinmint.com/edit</td>
+	<td>https://subpath.test.mattermost.com/edit</td>
 </tr>
 <tr>
 	<td>waitForEditable</td>
@@ -114,7 +114,7 @@
 <!--Still opens /mattermost (there hasn't been a server restart)-->
 <tr>
 	<td>openAndWait</td>
-	<td>http://test-proxy.test.spinmint.com/mattermost</td>
+	<td>https://subpath.test.mattermost.com/mattermost/</td>
 	<td></td>
 </tr>
 <tr>
@@ -156,13 +156,13 @@
 <tr>
 	<td>waitForValue</td>
 	<td>id=ServiceSettings.SiteURL</td>
-	<td>http://test-proxy.test.spinmint.com/edit</td>
+	<td>https://subpath.test.mattermost.com/edit</td>
 </tr>
-<!--Set back to https://test-proxy.test.spinmint.com/mattermost-->
+<!--Set back to https://subpath.test.mattermost.com/mattermost/-->
 <tr>
 	<td>type</td>
 	<td>id=ServiceSettings.SiteURL</td>
-	<td>https://test-proxy.test.spinmint.com/mattermost</td>
+	<td>https://subpath.test.mattermost.com/mattermost/</td>
 </tr>
 <tr>
 	<td>waitForEditable</td>
@@ -182,12 +182,12 @@
 <tr>
 	<td>waitForValue</td>
 	<td>id=ServiceSettings.SiteURL</td>
-	<td>https://test-proxy.test.spinmint.com/mattermost</td>
+	<td>https://subpath.test.mattermost.com/mattermost/</td>
 </tr>
 <!--Open without subpath, verify Tacoland!-->
 <tr>
 	<td>openAndWait</td>
-	<td>https://test-proxy.test.spinmint.com</td>
+	<td>https://subpath.test.mattermost.com/</td>
 	<td></td>
 </tr>
 <tr>
@@ -203,7 +203,7 @@
 <!--Back to Mattermost subpath, open team se-subpath-test via URL-->
 <tr>
 	<td>openAndWait</td>
-	<td>http://test-proxy.test.spinmint.com/mattermost/se-subpath-test/channels/town-square</td>
+	<td>https://subpath.test.mattermost.com/mattermost/se-subpath-test/channels/town-square</td>
 	<td></td>
 </tr>
 <tr>
@@ -627,7 +627,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>@admin! You're the best.${KEY_ENTER}</td>
+	<td>@sysadmin! You're the best.${KEY_ENTER}</td>
 </tr>
 <!--Switch to Off-Topic in center-->
 <tr>
@@ -683,13 +683,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>link=@admin</td>
-	<td>@admin</td>
+	<td>link=@sysadmin</td>
+	<td>@sysadmin</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=p</td>
-	<td>@admin! You're the best.</td>
+	<td>@sysadmin! You're the best.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -726,7 +726,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#${mentionid}_message &gt; div.post-message.post-message--collapsed &gt; div.post-message__text-container &gt; div.post-message__text &gt; p</td>
-	<td>@admin! You're the best.</td>
+	<td>@sysadmin! You're the best.</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -738,6 +738,62 @@
 	<td>waitForElementPresent</td>
 	<td>css=div#postListContent.post-list__content div#post_${mentionid}.post.post--highlight.other--root.current--user div.post__content div div div#${mentionid}_message.post__body div.post-message.post-message--collapsed div.post-message__text-container div.post-message__text p</td>
 	<td></td>
+</tr>
+<!--Leave and re-join public channel via permalink-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#channelHeaderTitle &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelHeaderTitle &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//ul[@id='channelHeaderDropdownMenu']/li[15]/button</td>
+	<td>Leave Channel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//ul[@id='channelHeaderDropdownMenu']/li[15]/button</td>
+	<td>Leave Channel</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#channelHeaderTitle &gt; span</td>
+	<td>Town Square</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>link=Se_Favorite_Channel*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${urlwhole}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Se_Favorite_Channel</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Se_Favorite_Channel*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#archive-link-home &gt; a &gt; span</td>
+	<td>Click here to jump to recent messages.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#archive-link-home &gt; a &gt; span</td>
+	<td>Click here to jump to recent messages.</td>
 </tr>
 <!--Create a private channel-->
 <tr>
@@ -877,25 +933,10 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Off-Topic</td>
 </tr>
-<!--LOG OUT admin-->
+<!--LOG OUT sysadmin-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <tr>
@@ -911,7 +952,7 @@
 </tr>
 <tr>
 	<td>waitForNotLocation</td>
-	<td>http://test-proxy.test.spinmint.com/mattermost/login</td>
+	<td>https://subpath.test.mattermost.com/mattermost/login</td>
 	<td></td>
 </tr>
 <tr>
@@ -919,7 +960,7 @@
 	<td>2000</td>
 	<td></td>
 </tr>
-<!--LOG IN admin-->
+<!--LOG IN sysadmin-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
@@ -928,12 +969,12 @@
 <tr>
 	<td>type</td>
 	<td>name=loginId</td>
-	<td>admin</td>
+	<td>sysadmin</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>name=password</td>
-	<td>passwd</td>
+	<td>sysadmin</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -969,25 +1010,57 @@
 	<td>css=#archive-link-home &gt; a &gt; span</td>
 	<td>Click here to jump to recent messages.</td>
 </tr>
+<!--Redirect to GM from link on login-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input.form-control.focused</td>
+	<td>off-topic</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Off-Topic</td>
+</tr>
 <!--LOG OUT admin-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
+<!--Open GM URL-->
 <tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>open</td>
+	<td>https://subpath.test.mattermost.com/mattermost/se-subpath-test/messages/89feda33890e005db8aa7126a9dde23556afe6a1</td>
 	<td></td>
 </tr>
 </tbody></table>

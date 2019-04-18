@@ -68,12 +68,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <!--LEGAL AND SUPPORT-->
@@ -173,22 +173,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td>Logout</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -254,13 +254,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>selectWindow</td>
-	<td>title=mattermost-server/README.md at master · mattermost/mattermost-server · GitHub</td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForLocation</td>
-	<td>https://github.com/mattermost/mattermost-server/blob/master/README.md</td>
+	<td>https://github.com/mattermost</td>
 	<td></td>
 </tr>
 <tr>
@@ -291,11 +286,6 @@
 <tr>
 	<td>pause</td>
 	<td>2000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>selectPopUp</td>
-	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -334,13 +324,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>selectPopUp</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForLocation</td>
-	<td>https://about.mattermost.com/features/</td>
+	<td>https://mattermost.com/product/</td>
 	<td></td>
 </tr>
 <tr>
@@ -409,12 +394,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=helpLink</td>
+	<td>link=Help</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=helpLink</td>
+	<td>link=Help</td>
 	<td></td>
 </tr>
 <tr>
@@ -424,7 +409,7 @@
 </tr>
 <tr>
 	<td>waitForLocation</td>
-	<td>https://about.mattermost.com/features/</td>
+	<td>https://mattermost.com/product/</td>
 	<td></td>
 </tr>
 <tr>
@@ -449,12 +434,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=reportLink</td>
+	<td>link=Report a Problem</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=reportLink</td>
+	<td>link=Report a Problem</td>
 	<td></td>
 </tr>
 <tr>
@@ -464,7 +449,7 @@
 </tr>
 <tr>
 	<td>waitForLocation</td>
-	<td>https://about.mattermost.com/community-applications/</td>
+	<td>https://integrations.mattermost.com/</td>
 	<td></td>
 </tr>
 <tr>
@@ -490,12 +475,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -551,22 +536,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td>Logout</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
 	<td></td>
 </tr>
 <!--Blank Terms default location-->
@@ -593,11 +578,6 @@
 <tr>
 	<td>pause</td>
 	<td>2000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>selectPopUp</td>
-	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -661,9 +641,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
@@ -678,12 +658,12 @@
 <!--Edit Support email link-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -804,22 +784,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td>Logout</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
 	<td></td>
 </tr>
 <!--Create new account to see tutorial (requires open server, with email verification OFF)-->
@@ -970,11 +950,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>selectPopUp</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForLocation</td>
 	<td>https://mattermost.com/</td>
 	<td></td>
@@ -1012,23 +987,8 @@
 </tr>
 <!--LOG OUT tutorialtest-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -1088,12 +1048,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=nativeAppLink</td>
+	<td>link=Download Apps</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=nativeAppLink</td>
+	<td>link=Download Apps</td>
 	<td></td>
 </tr>
 <tr>
@@ -1124,12 +1084,22 @@
 <!--Set download page link to blank-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -1175,22 +1145,22 @@
 <!--Download link hidden from main menu-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithToui-automation</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -1215,23 +1185,18 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
-	<td>id=nativeAppLink</td>
+	<td>link=Download Apps</td>
 	<td></td>
 </tr>
 <!--LOG OUT admin-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN tutorialtest-->
@@ -1316,13 +1281,8 @@
 </tr>
 <!--LOG OUT tutorialtest-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -1377,12 +1337,12 @@
 <!--Cleanup: Set all links back to original settings-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <!--LEGAL AND SUPPORT-->
@@ -1530,24 +1490,24 @@
 	<td>@tutorialtest</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
+	<td>Member</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=deactivate</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none</td>
+	<td>Deactivate</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=deactivate</td>
-	<td></td>
+	<td>css=button.style--none</td>
+	<td>Deactivate</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1561,18 +1521,28 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
 	<td>Inactive</td>
 </tr>
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td>Logout</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
 	<td></td>
 </tr>
 </tbody></table>
