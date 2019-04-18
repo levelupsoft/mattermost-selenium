@@ -127,23 +127,8 @@
 </tr>
 <!--LOG OUT test6-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Logout</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <tr>
@@ -194,12 +179,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#systemConsole &gt; span</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#systemConsole &gt; span</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -243,10 +228,16 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>css=#logout > button.style--none</td>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
+<tr>
+	<td>click</td>
+	<td>css=li.MenuItem button.style--none span:contains('Logout')</td>
+	<td></td>
+</tr>
+<!--Error with incorrect password-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=loginId</td>
@@ -282,6 +273,7 @@
 	<td>500</td>
 	<td></td>
 </tr>
+<!--Account locked after too many unsuccessful logins-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=loginId</td>
@@ -422,6 +414,7 @@
 	<td>500</td>
 	<td></td>
 </tr>
+<!--Set max login attempts to 10-->
 <tr>
 	<td>rollup</td>
 	<td>login</td>
@@ -439,12 +432,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#systemConsole &gt; span</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#systemConsole &gt; span</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -482,64 +475,25 @@
 	<td>1000</td>
 	<td></td>
 </tr>
-<tr>
-	<td>click</td>
-	<td>css=#users &gt; span.sidebar-section-title__text &gt; span</td>
-	<td></td>
-</tr>
+<!--Log out-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='more-modal__name'][contains(text(),'@test2')]/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div/a/span/span[contains(text(),'Member')]</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@class='more-modal__name'][contains(text(),'@test2')]/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div/a/span/span[contains(text(),'Member')]</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='more-modal__name'][contains(text(),'@test2')]/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div/ul[@class='dropdown-menu member-menu']/li[@role='presentation']/a[@id='resetPassword']/span</td>
+	<td>css=li.MenuItem button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@class='more-modal__name'][contains(text(),'@test2')]/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div/ul[@class='dropdown-menu member-menu']/li[@role='presentation']/a[@id='resetPassword']/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.input-group.input-group--limit &gt; input.form-control</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>css=div.input-group.input-group--limit &gt; input.form-control</td>
-	<td>passwd</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=path</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=loginId</td>
+	<td>css=li.MenuItem button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 </tbody></table>

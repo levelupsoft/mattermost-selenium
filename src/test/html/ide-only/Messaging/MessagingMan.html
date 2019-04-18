@@ -59,12 +59,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -104,24 +104,25 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithToui-automation</td>
+	<td>css=a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
+	<td>css=a</td>
 	<td></td>
 </tr>
+<!--Make these .md file instead?-->
 <!--Long post with link previews (posts in chunks to help Se not crash)-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -194,7 +195,7 @@
 	<td></td>
 </tr>
 <!--*** Visually verify Show More button, with gradient effect where the post is truncated-->
-<!--*** Visually verify website link preview displays-->
+<!--*** Visually verify website link preview displays below Show More-->
 <tr>
 	<td>waitForText</td>
 	<td>link=Panasonic Unveils Solar Roof That May Appear on the Tesla Model 3</td>
@@ -246,6 +247,7 @@
 	<td>5000</td>
 	<td></td>
 </tr>
+<!--? Is it always the following px? Failed, but visually verified-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//textarea[@id='edit_textbox'][@style='visibility: visible; height: 1434px;']</td>
@@ -472,7 +474,6 @@
 	<td>dotMenuItemVerifyAndSelect</td>
 	<td>Item=Delete</td>
 </tr>
-<!--*** Manually click ... post menu and select Delete on the "Retain" post-->
 <tr>
 	<td>pause</td>
 	<td>2000</td>
@@ -587,7 +588,7 @@
 <!--*** Visually verify flag appears gray and tooltip "Flag for follow up" on hover-->
 <tr>
 	<td>pause</td>
-	<td>500</td>
+	<td>5000</td>
 	<td></td>
 </tr>
 <tr>
@@ -976,6 +977,7 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>${flagchannel}</td>
 </tr>
+<!--Not finding following reply icon in RHS-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=searchCommentIcon_</td>
@@ -1636,13 +1638,8 @@
 </tr>
 <!--LOG OUT (to log back in as admin)-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -1689,12 +1686,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#systemConsole &gt; span</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#systemConsole &gt; span</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -1734,22 +1731,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithToui-automation</td>
+	<td>css=a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
+	<td>css=a</td>
 	<td></td>
 </tr>
 <!--Markdown link previews-->
@@ -1853,7 +1850,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>https://www.yahoo.com/news/panasonic-unveils-solar-roof-may-212400917.html</td>
+	<td>https://www.yahoo.com/news/panasonic-unveils-solar-roof-may-212400917.html${KEY_ENTER}</td>
 </tr>
 <!--Search results RHS does not display preview-->
 <tr>

@@ -13,14 +13,14 @@
 </thead><tbody>
 <!--EMAIL VERIFICATIONS-->
 <!--*** Test on any server with email enabled and email verification required-->
-<!--*** Such as ci-linux-postgres-->
+<!--*** Such as postgres.test-->
 <!--*** Replace target "**REPLACE-PREFIX**" below with your Mattermost -->
 <!--*** email prefix (e.g. `linda` or `linda+test`)-->
 <!--*** Enter the creds for that user but DON'T CLICK TO LOG IN-->
 <!--*** Then run tests and verify as described-->
 <tr>
 	<td>store</td>
-	<td>linda+email</td>
+	<td>**REPLACE-PREFIX**</td>
 	<td>prefix</td>
 </tr>
 <!--*** Manually enter user credentials but DO NOT CLICK to log in-->
@@ -66,13 +66,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -165,13 +165,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -240,7 +240,7 @@
 	<td>5000</td>
 	<td></td>
 </tr>
-<!--Log in and out to show can't log in with new email until verified-->
+<!--Log out to show can't log in with new email until verified-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#accountSettingsHeader &gt; button.close</td>
@@ -252,23 +252,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <tr>
@@ -303,24 +288,51 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=p &gt; span</td>
-	<td>Please verify your email address. Check your inbox for an email.</td>
+	<td>css=label.control-label</td>
+	<td>We couldn't find an account matching your login credentials.</td>
 </tr>
-<!--Resend verification email-->
+<!--Can still log in with old email address until new one is verified-->
 <tr>
-	<td>waitForText</td>
-	<td>css=button.btn.btn-primary</td>
-	<td>Resend Email</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=p.alert.alert-success &gt; span</td>
-	<td>Verification email sent.</td>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>${prefix}@mattermost.com</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>${password}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<!--Resend verification email isn't there anymore; flow is being revisited-->
+<!--Log out-->
+<tr>
+	<td>rollup</td>
+	<td>logout</td>
+	<td></td>
 </tr>
 <!--VERIFICATIONS-->
 <!--*** Check email, read through subject line and body, verify as described below-->
@@ -332,10 +344,9 @@
 <!--  1a. OR if not logged in, "Email Verified" in green box on login page-->
 <!--  1a. New address [prefix]+verification@mattermost.com is pre-populated-->
 <!--  1a. You can then log in-->
-<!--1b. Also received RE-SENT verification email (same as above)-->
-<!--1c. OLD address: "[server name] Your email address has changed"-->
-<!--  1c. "You updated your email"-->
-<!--  1c. "Your email address for [server] has been changed to [new email]"-->
+<!--1b. OLD address: "[server name] Your email address has changed"-->
+<!--  1b. "You updated your email"-->
+<!--  1b. "Your email address for [server] has been changed to [new email]"-->
 <!--*** Refresh app and make sure blue banner does not return at the top-->
 <!--***-->
 <!--2. "[server name] Your password has been updated"-->
