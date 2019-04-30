@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://selenium.mattermost.com/" />
+<link rel="selenium.base" href="https://selenium.test.mattermost.com/" />
 <title>SysConsTeammateName</title>
 </head>
 <body>
@@ -63,12 +63,12 @@
 <!--Create team for this test-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='createTeam']/span)[2]</td>
+	<td>link=Create a New Team</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='createTeam']/span)[2]</td>
+	<td>link=Create a New Team</td>
 	<td></td>
 </tr>
 <tr>
@@ -119,17 +119,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=getTeamInviteLink</td>
+	<td>css=#getTeamInviteLink &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=getTeamInviteLink</td>
+	<td>css=#getTeamInviteLink &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
-	<td>storeValue</td>
-	<td>//div[2]/textarea</td>
+	<td>storeText</td>
+	<td>id=linkModalTextArea</td>
 	<td>namedisplayinvite</td>
 </tr>
 <tr>
@@ -150,18 +150,23 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--Create usera from invite link-->
 <tr>
 	<td>pause</td>
 	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
 	<td></td>
 </tr>
 <tr>
@@ -370,12 +375,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -441,13 +446,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -678,12 +683,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -749,13 +754,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -968,12 +973,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1039,13 +1044,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1263,12 +1268,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1334,13 +1339,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1598,12 +1603,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1652,12 +1657,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <!--SET TO SHOW USERNAME (DEFAULT)-->
@@ -1693,22 +1698,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithTonamedisplay</td>
+	<td>css=li.MenuItem a:contains('Switch to&nbsp;&nbsp;NameDisplay')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithTonamedisplay</td>
+	<td>css=li.MenuItem a:contains('Switch to&nbsp;&nbsp;NameDisplay')</td>
 	<td></td>
 </tr>
 <tr>
@@ -2075,12 +2080,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -2120,22 +2125,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithTonamedisplay</td>
+	<td>css=li.MenuItem a:contains('Switch to&nbsp;&nbsp;NameDisplay')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithTonamedisplay</td>
+	<td>css=li.MenuItem a:contains('Switch to&nbsp;&nbsp;NameDisplay')</td>
 	<td></td>
 </tr>
 <tr>
@@ -2690,12 +2695,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -2740,22 +2745,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithTonamedisplay</td>
+	<td>css=li.MenuItem a:contains('Switch to&nbsp;&nbsp;NameDisplay')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithTonamedisplay</td>
+	<td>css=li.MenuItem a:contains('Switch to&nbsp;&nbsp;NameDisplay')</td>
 	<td></td>
 </tr>
 <tr>
@@ -3070,6 +3075,7 @@
 	<td>css=div.user-popover</td>
 	<td>usera</td>
 </tr>
+<!--No longer finding the reply icon in search result-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=searchCommentIcon_</td>
@@ -3163,6 +3169,7 @@
 	<td>css=div.user-popover</td>
 	<td>Firstb Lastb</td>
 </tr>
+<!--No longer finding the reply icon in search result-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=searchCommentIcon_</td>
@@ -3240,6 +3247,7 @@
 	<td>css=div.user-popover</td>
 	<td>userc</td>
 </tr>
+<!--No longer finding the reply icon in search result-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=searchCommentIcon_</td>
@@ -3286,6 +3294,7 @@
 	<td>css=div.user-popover</td>
 	<td>Firstd</td>
 </tr>
+<!--No longer finding the reply icon in search result-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=searchCommentIcon_</td>
@@ -3332,6 +3341,7 @@
 	<td>css=div.user-popover</td>
 	<td>Firste Laste</td>
 </tr>
+<!--No longer finding the reply icon in search result-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=searchCommentIcon_</td>
@@ -3365,12 +3375,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <!--SET TO SHOW USERNAME (DEFAULT)-->
@@ -3416,22 +3426,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithTonamedisplay</td>
+	<td>css=li.MenuItem a:contains('Switch to&nbsp;&nbsp;NameDisplay')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithTonamedisplay</td>
+	<td>css=li.MenuItem a:contains('Switch to&nbsp;&nbsp;NameDisplay')</td>
 	<td></td>
 </tr>
 <tr>
@@ -3573,13 +3583,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3940,6 +3950,7 @@
 	<td>css=div.user-popover</td>
 	<td>usera</td>
 </tr>
+<!--No longer finding the reply icon in search result-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=searchCommentIcon_</td>
@@ -4033,6 +4044,7 @@
 	<td>css=div.user-popover</td>
 	<td>Firstb Lastb</td>
 </tr>
+<!--No longer finding the reply icon in search result-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=searchCommentIcon_</td>
@@ -4110,6 +4122,7 @@
 	<td>css=div.user-popover</td>
 	<td>userc</td>
 </tr>
+<!--No longer finding the reply icon in search result-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=searchCommentIcon_</td>
@@ -4156,6 +4169,7 @@
 	<td>css=div.user-popover</td>
 	<td>Firstd</td>
 </tr>
+<!--No longer finding the reply icon in search result-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=searchCommentIcon_</td>
@@ -4202,6 +4216,7 @@
 	<td>css=div.user-popover</td>
 	<td>Firste Laste</td>
 </tr>
+<!--No longer finding the reply icon in search result-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=searchCommentIcon_</td>
@@ -4236,12 +4251,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -4281,22 +4296,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithTonamedisplay</td>
+	<td>css=li.MenuItem a:contains('Switch to&nbsp;&nbsp;NameDisplay')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithTonamedisplay</td>
+	<td>css=li.MenuItem a:contains('Switch to&nbsp;&nbsp;NameDisplay')</td>
 	<td></td>
 </tr>
 <tr>
@@ -4464,13 +4479,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -5079,13 +5094,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -5161,12 +5176,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <!--SET TO SHOW USERNAME (DEFAULT)-->
@@ -5218,22 +5233,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 </tbody></table>

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://selenium.mattermost.com/" />
+<link rel="selenium.base" href="https://selenium.test.mattermost.com/" />
 <title>scSecurity</title>
 </head>
 <body>
@@ -228,22 +228,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -473,12 +473,12 @@
 <tr>
 	<td>type</td>
 	<td>id=ServiceSettings.SiteURL</td>
-	<td>http://selenium.mattermost.com</td>
+	<td>https://selenium.test.mattermost.com</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
 	<td>id=ServiceSettings.SiteURL</td>
-	<td>http://selenium.mattermost.com</td>
+	<td>https://selenium.test.mattermost.com</td>
 </tr>
 <tr>
 	<td>waitForEditable</td>
@@ -678,22 +678,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 </tbody></table>

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://selenium.mattermost.com/" />
+<link rel="selenium.base" href="https://selenium.test.mattermost.com/" />
 <title>AccountSettingsDisplayLanguage</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
 	<td>700</td>
 	<td></td>
 </tr>
-<!--LOG IN-->
+<!--LOG IN test3-->
 <tr>
 	<td>openAndWait</td>
 	<td>/login</td>
@@ -64,17 +64,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>css=button.style--none:contains('Account Settings')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=displayButton</td>
+	<td>css=button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -209,8 +204,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Configurar Cuenta</td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -312,13 +312,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>css=button.style--none.</td>
 	<td>Kontoeinstellungen</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
-	<td></td>
+	<td>css=button.style--none.</td>
+	<td>Kontoeinstellungen</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -354,6 +354,16 @@
 <tr>
 	<td>click</td>
 	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <tr>
@@ -393,8 +403,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>css=button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -476,8 +491,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Impostazioni Account</td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -552,13 +572,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#accountSettings &gt; span</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account-instellingen</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -585,12 +605,12 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=displayLanguage</td>
-	<td>label=Polski (Alpha)</td>
+	<td>label=Polski (Beta)</td>
 </tr>
 <tr>
 	<td>select</td>
 	<td>id=displayLanguage</td>
-	<td>label=Polski (Alpha)</td>
+	<td>label=Polski (Beta)</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -629,8 +649,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Ustawienia Konta</td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -681,13 +706,23 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
+	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -729,7 +764,7 @@
 <!--Verify system message is translated-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('s-au alăturat echipei')</td>
+	<td>css=span:contains('sa alăturat echipei')</td>
 	<td></td>
 </tr>
 <tr>
@@ -748,8 +783,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>css=button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -805,8 +845,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>css=button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -862,8 +907,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>css=button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -914,8 +964,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>css=button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -971,8 +1026,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>css=button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1028,8 +1088,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>css=button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1085,8 +1150,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>css=button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1136,12 +1206,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Logout</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 </tbody></table>

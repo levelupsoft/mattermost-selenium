@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://selenium.mattermost.com" />
+<link rel="selenium.base" href="https://selenium.test.mattermost.com" />
 <title>AccountSettingsUsername</title>
 </head>
 <body>
@@ -52,13 +52,13 @@
 </tr>
 <!--General Settings-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -371,12 +371,22 @@
 <!--Cleanup: Set email address back to test@test.com-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>

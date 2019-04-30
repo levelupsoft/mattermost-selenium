@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<<<<<<< HEAD
     <head profile="http://selenium-ide.openqa.org/profiles/test-case">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link rel="selenium.base" href="http://selenium.mattermost.com/" />
+        <link rel="selenium.base" href="https://selenium.test.mattermost.com/" />
         <title>AccountSettingsMan</title>
     </head>
     <body>
@@ -12,7 +11,7 @@
             <thead>
                 <tr><td rowspan="1" colspan="3">AccountSettingsMan</td></tr>
             </thead><tbody>
-                <!--*** Test on selenium.mattermost.com, on slow speed-->
+                <!--*** Test on https://selenium.test.mattermost.com, on slow speed-->
 <!--*** Also open a separate browser and log in user test9-->
 <!--*** Files for profile pic etc. available in Resources folder-->
 <!--*** Watch a portion of that browser to see changes in real time-->
@@ -70,13 +69,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -140,24 +139,10 @@
 	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
+<!--Log out-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--Log in test9 to verify `@` is there, and there is no name-->
@@ -226,13 +211,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -298,12 +283,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelManageMembers</td>
+	<td>css=#channelManageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelManageMembers</td>
+	<td>css=#channelManageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <!--Verify full name displays and is styled span.light-->
@@ -436,12 +421,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>css=#addUsersToTeam &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>css=#addUsersToTeam &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <!--Verify `@` appears before username who has no first or last name-->
@@ -482,13 +467,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -548,13 +533,8 @@
 </tr>
 <!--Log out test9, log in test10-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <tr>
@@ -604,13 +584,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -698,13 +678,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -904,23 +884,8 @@
 <!--Verify other user sees updates in popover-->
 <!--LOG OUT test10-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN test9-->
@@ -968,7 +933,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>http://selenium.mattermost.com/ui-automation/channels/town-square</td>
+	<td>https://selenium.test.mattermost.com/ui-automation/channels/town-square</td>
 	<td></td>
 </tr>
 <tr>
@@ -1016,23 +981,8 @@
 </tr>
 <!--LOG OUT test9-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN test10-->
@@ -1085,13 +1035,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <!--Upload a picture that is not square (wider than tall, or taller than wide), can use:-->
@@ -1849,13 +1799,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1952,13 +1902,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2045,13 +1995,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2171,13 +2121,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2290,13 +2240,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2406,23 +2356,8 @@
 <!--Link preview displays in both RHS and center-->
 <!--Log out test10 and log in admin to enable link previews-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <tr>
@@ -2472,12 +2407,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -2518,22 +2453,22 @@
 <!--Log out admin, log test10 back in-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=li.MenuItem button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=li.MenuItem button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
@@ -2593,13 +2528,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2665,9 +2600,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyElementPresent</td>
-	<td>xpath=(//img[contains(@src,'https://avatars0.githubusercontent.com/u/9828093?s=400&amp;v=4')])[2]</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.attachment__body.attachment__body--opengraph &gt; div &gt; div</td>
+	<td>Open source Slack-alternative in Golang and React - Mattermost - mattermost/mattermost-server</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -2696,13 +2631,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2890,12 +2825,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3391,12 +3326,22 @@
 <!--Turn ON code block w/ CTRL+ENTER-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3472,12 +3417,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3641,23 +3586,8 @@
 <!--Log in as user you added to Join-->
 <!--LOG OUT test10-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -3769,23 +3699,8 @@
 <!--Log back in as test10 to verify no leave message-->
 <!--LOG OUT admin-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN test10-->
@@ -3885,13 +3800,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3988,13 +3903,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>

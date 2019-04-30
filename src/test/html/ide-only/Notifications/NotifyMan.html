@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://selenium.mattermost.com/" />
+<link rel="selenium.base" href="https://selenium.test.mattermost.com/" />
 <title>NotifMan</title>
 </head>
 <body>
@@ -242,23 +242,8 @@
 <!--Disable channel-wide mentions on test7's account-->
 <!--LOG OUT test6-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Logout</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN test7-->
@@ -312,13 +297,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -386,23 +371,8 @@
 <!--*** where test7 is logged in. Can also clear mentions and unreads-->
 <!--LOG OUT test7-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Logout</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN test6-->
@@ -514,23 +484,8 @@
 <!--Log back in as test7 to re-enable channel-wide mentions and set status to away-->
 <!--LOG OUT test6-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Logout</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN test7-->
@@ -584,13 +539,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -704,23 +659,8 @@
 <!--*** Make sure other browser shows test7 away, and not viewing Notify- channel-->
 <!--LOG OUT test7-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Logout</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN test6-->
@@ -802,23 +742,8 @@
 <!--Back to test7 to set status to online and verify settings-->
 <!--LOG OUT test6-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Logout</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN test7-->
@@ -879,23 +804,8 @@
 <!--Switch back to test6 to post an at-here in a channel that test7 is not in-->
 <!--LOG OUT test7-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Logout</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN test6-->
@@ -1003,12 +913,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelAddMembers</td>
+	<td>css=#channelAddMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelAddMembers</td>
+	<td>css=#channelAddMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>

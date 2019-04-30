@@ -355,7 +355,7 @@ return commands;
 });
 
 
-//VerifyChanelMenuItemNotPresent
+//VerifyChannelMenuItemNotPresent
 manager.addRollupRule({
  name: 'chanMenuItemVerifyNotPresent'
  , description: 'Verifies the desired item is NOT visble in the channel menu. Case sensitive'

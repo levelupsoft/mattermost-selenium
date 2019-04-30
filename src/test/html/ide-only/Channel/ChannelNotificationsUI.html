@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://selenium.mattermost.com/" />
+<link rel="selenium.base" href="https://selenium.test.mattermost.com/" />
 <title>ChannelNotificationsUI</title>
 </head>
 <body>
@@ -107,17 +107,17 @@
 <!--Verify modal elements-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <tr>
@@ -215,7 +215,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=markUnreadDesc</td>
-	<td>On</td>
+	<td>Mute is enabled. Desktop, email and push notifications will not be sent for this channel.</td>
 </tr>
 <!--Desktop notification section hidden when Mute is on-->
 <tr>
@@ -276,7 +276,7 @@
 <!--Public - Desktop Notifications - Verify modal options, cancel out of edit-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <tr>
@@ -336,7 +336,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <!--Public - Desktop Notifications - Save each option and verify-->
@@ -518,7 +518,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <!--Change global default in Account Settings and verify reflected in channel-->
@@ -538,13 +538,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotifications</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -595,7 +595,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>For all activity</td>
 </tr>
 <tr>
@@ -620,17 +620,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (all)</td>
 </tr>
 <!--Set global default to Never-->
@@ -650,8 +650,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -721,17 +726,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (none)</td>
 </tr>
 <tr>
@@ -751,13 +756,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelNotifications</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -807,7 +812,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>For mentions and direct messages</td>
 </tr>
 <tr>
@@ -871,17 +876,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <tr>
@@ -979,7 +984,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=markUnreadDesc</td>
-	<td>On</td>
+	<td>Mute is enabled. Desktop, email and push notifications will not be sent for this channel.</td>
 </tr>
 <!--Desktop notification section hidden when Mute is on-->
 <tr>
@@ -1040,7 +1045,7 @@
 <!--Private - Desktop Notifications - Verify modal options, cancel out of edit-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <tr>
@@ -1100,7 +1105,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <!--Private - Desktop Notifications - Save each option and verify-->
@@ -1282,7 +1287,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <!--Change global default in Account Settings and verify reflected in channel-->
@@ -1302,13 +1307,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1359,7 +1364,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>For all activity</td>
 </tr>
 <tr>
@@ -1384,17 +1389,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (all)</td>
 </tr>
 <!--Set global default to Never-->
@@ -1414,13 +1419,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1495,17 +1500,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (none)</td>
 </tr>
 <tr>
@@ -1530,13 +1535,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1586,7 +1591,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>For mentions and direct messages</td>
 </tr>
 <tr>
@@ -1624,17 +1629,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <tr>
@@ -1732,7 +1737,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=markUnreadDesc</td>
-	<td>On</td>
+	<td>Mute is enabled. Desktop, email and push notifications will not be sent for this channel.</td>
 </tr>
 <!--Desktop notification section hidden when Mute is on-->
 <tr>
@@ -1793,7 +1798,7 @@
 <!--Town Square - Desktop Notifications - Verify modal options, cancel out of edit-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <tr>
@@ -1853,7 +1858,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <!--Town Square - Desktop Notifications - Save each option and verify-->
@@ -2036,7 +2041,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <!--Change global default in Account Settings and verify reflected in channel-->
@@ -2061,13 +2066,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2118,7 +2123,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>For all activity</td>
 </tr>
 <tr>
@@ -2143,17 +2148,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (all)</td>
 </tr>
 <!--Set global default to Never-->
@@ -2173,13 +2178,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2254,17 +2259,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (none)</td>
 </tr>
 <tr>
@@ -2289,13 +2294,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2345,7 +2350,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>For mentions and direct messages</td>
 </tr>
 <tr>
@@ -2434,17 +2439,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <tr>
@@ -2542,7 +2547,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=markUnreadDesc</td>
-	<td>On</td>
+	<td>Mute is enabled. Desktop, email and push notifications will not be sent for this channel.</td>
 </tr>
 <!--Desktop notification section hidden when Mute is on-->
 <tr>
@@ -2603,7 +2608,7 @@
 <!--GM - Desktop Notifications - Verify modal options, cancel out of edit-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <tr>
@@ -2663,7 +2668,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <!--GM - Desktop Notifications - Save each option and verify-->
@@ -2845,7 +2850,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <!--Change global default in Account Settings and verify reflected in channel-->
@@ -2865,13 +2870,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2922,7 +2927,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>For all activity</td>
 </tr>
 <tr>
@@ -2947,17 +2952,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (all)</td>
 </tr>
 <!--Set global default to Never-->
@@ -2977,13 +2982,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3058,17 +3063,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (none)</td>
 </tr>
 <tr>
@@ -3088,13 +3093,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3144,7 +3149,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>For mentions and direct messages</td>
 </tr>
 <!--(No notification preferences to test on DM channels)-->
@@ -3181,18 +3186,18 @@
 </tr>
 <!--Set team 1 to Never-->
 <tr>
-	<td>waitForText</td>
-	<td>id=channelNotifications</td>
-	<td>Notification Preferences</td>
+	<td>waitForElementPresent</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <tr>
@@ -3277,13 +3282,13 @@
 	<td>Town Square</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=channelNotifications</td>
-	<td>Notification Preferences</td>
+	<td>waitForElementPresent</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3328,7 +3333,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Only for mentions</td>
 </tr>
 <!--Switch back to team 1 and verify setting is as it was before-->
@@ -3368,13 +3373,13 @@
 	<td>Town Square</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=channelNotifications</td>
-	<td>Notification Preferences</td>
+	<td>waitForElementPresent</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3420,7 +3425,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <!--Cleanup: Switch team 2 Town Square back to global default-->
@@ -3460,13 +3465,13 @@
 	<td>Town Square</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=channelNotifications</td>
-	<td>Notification Preferences</td>
+	<td>waitForElementPresent</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelNotifications</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3511,26 +3516,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#desktopDesc &gt; span</td>
+	<td>id=desktopDesc</td>
 	<td>Global default (mention)</td>
 </tr>
 <!--LOG OUT-->
 <tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 </tbody></table>

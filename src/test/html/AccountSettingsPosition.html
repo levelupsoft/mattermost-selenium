@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://selenium.mattermost.com" />
+<link rel="selenium.base" href="https://selenium.test.mattermost.com" />
 <title>AccountSettingsPosition</title>
 </head>
 <body>
@@ -57,13 +57,13 @@
 </tr>
 <!--General Settings-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -197,11 +197,6 @@
 	<td>Click 'Edit' to add your job title / position</td>
 </tr>
 <tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
 	<td>pause</td>
 	<td>3000</td>
 	<td></td>
@@ -215,8 +210,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 </tbody></table>

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://selenium.mattermost.com/" />
+<link rel="selenium.base" href="https://selenium.test.mattermost.com/" />
 <title>scNotificationsMan</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
 </thead><tbody>
 <!--*** TYPE IN LOGIN INFO for a system admin but do NOT click Sign in-->
 <!--*** This user should have email address that you can access-->
-<!--*** ON A SERVER that has email notifications set up (such as ci-linux-postgres)-->
+<!--*** ON A SERVER that has email notifications set up (such as postgres.test)-->
 <!--*** Also identify another user on the server you can log in as (no email access needed)-->
 <!--*** BOTH USERS should have the same team listed first in their team sidebars-->
 <tr>
@@ -70,13 +70,13 @@
 <!--EMAIL NOTIFICATIONS, BATCHED/NOT BATCHED & FULL/GENERIC CONTENTS-->
 <!--Verify email notifications are set to send Immediately-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -163,12 +163,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#systemConsole &gt; span</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#systemConsole &gt; span</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -201,6 +201,12 @@
 	<td>click</td>
 	<td>css=button.btn.btn-default</td>
 	<td></td>
+</tr>
+<!--Unclear if this is another example of the error text bug or updated text-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.alert.alert-warning</td>
+	<td>Connection unsuccessful: SendMail: Failed to authenticate on SMTP server, 535 Authentication Credentials Invalid</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -407,22 +413,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
@@ -634,12 +640,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -701,12 +707,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -757,22 +763,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--LOG IN second user using stored creds-->
@@ -907,12 +913,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -974,12 +980,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -1032,22 +1038,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
@@ -1113,13 +1119,13 @@
 </tr>
 <!--Verify email notifications are set to send every 15 minutes-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1190,12 +1196,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1330,12 +1336,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1412,12 +1418,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -1468,22 +1474,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
@@ -1618,12 +1624,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1774,13 +1780,13 @@
 </tr>
 <!--Verify email batching is enabled (set to send every 15 minutes)-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1857,12 +1863,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN second user using stored creds-->
@@ -1966,12 +1972,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -2044,12 +2050,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -2151,22 +2157,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 </tbody></table>

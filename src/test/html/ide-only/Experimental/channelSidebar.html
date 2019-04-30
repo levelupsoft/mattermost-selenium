@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://selenium.mattermost.com/" />
+<link rel="selenium.base" href="https://selenium.test.mattermost.com/" />
 <title>channelSidebar</title>
 </head>
 <body>
@@ -66,12 +66,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=createTeam</td>
+	<td>link=Create a New Team</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=createTeam</td>
+	<td>link=Create a New Team</td>
 	<td></td>
 </tr>
 <tr>
@@ -123,12 +123,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=getTeamInviteLink</td>
+	<td>css=#getTeamInviteLink &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=getTeamInviteLink</td>
+	<td>css=#getTeamInviteLink &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -154,12 +154,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -241,12 +241,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -328,12 +328,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -508,14 +508,16 @@
 	<td>id=public</td>
 	<td>on</td>
 </tr>
+<!--v5.10 the field ID seems to have changed to private from public-->
+<!--in this scenario but it still creates as public as expected-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newPrivateChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newPrivateChannelName</td>
 	<td>BBB</td>
 </tr>
 <tr>
@@ -1427,12 +1429,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newPublicChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newPublicChannelName</td>
 	<td>channel test</td>
 </tr>
 <tr>
@@ -1788,12 +1790,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1838,13 +1840,23 @@
 <!--Turn Unreads off: Grouped by type, sorted alpha, favorites, no unreads (mentions not at top)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1945,13 +1957,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2052,13 +2064,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2158,13 +2170,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2259,13 +2271,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2542,13 +2554,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2950,12 +2962,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -2967,7 +2979,7 @@
 <!--Open to Town Square in test-team in case re-opens to unexpected channel-->
 <tr>
 	<td>open</td>
-	<td>http://selenium.mattermost.com/side-${monthdaytime}/channels/town-square</td>
+	<td>https://selenium.test.mattermost.com/side-${monthdaytime}/channels/town-square</td>
 	<td></td>
 </tr>
 <tr>
@@ -3070,13 +3082,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3162,13 +3174,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3260,12 +3272,22 @@
 <!--Grouped by type, recency, Favorites (disable Unreads)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3342,12 +3364,22 @@
 <!--Group by channel type, sort by alpha, Favorites enabled-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3455,12 +3487,22 @@
 <!--Grouped by type, alpha (disable Favorites section)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3541,12 +3583,22 @@
 <!--Make changes, cancel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3634,12 +3686,22 @@
 <!--Group by type, recency, Unreads (no Favorites)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3833,12 +3895,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelConvert</td>
+	<td>css=#channelCovertToPrivate &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelConvert</td>
+	<td>css=#channelCovertToPrivate &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3869,12 +3931,22 @@
 <!--Group by channel type, sort recency, no favorites or unreads -->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3950,12 +4022,22 @@
 <!--Combine channel types, recency, with favorites, not unreads-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -4041,12 +4123,22 @@
 <!--Combine types, recency, with unreads (not favorites)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -4138,12 +4230,22 @@
 <!--Group types, alpha, with unreads (not favorites)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -4230,12 +4332,22 @@
 <!--Group types, alpha, with unreads, with favorites-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -4364,12 +4476,22 @@
 <!--Combine types, alpha, with unreads, not favorites-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -4456,12 +4578,22 @@
 <!--Group by type, recency, with unreads, with favorites-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -4639,12 +4771,22 @@
 <!--Combine all channel types, recency, remove Unreads and Favorites-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -4778,12 +4920,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@id='channelMute'])/*</td>
+	<td>//ul[@id='channelHeaderDropdownMenu']/li[4]/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@id='channelMute'])/*</td>
+	<td>//ul[@id='channelHeaderDropdownMenu']/li[4]/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -4814,12 +4956,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@id='channelMute'])/*</td>
+	<td>//ul[@id='channelHeaderDropdownMenu']/li[4]/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@id='channelMute'])/*</td>
+	<td>//ul[@id='channelHeaderDropdownMenu']/li[4]/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -4870,12 +5012,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@id='channelMute'])/*</td>
+	<td>//ul[@id='channelHeaderDropdownMenu']/li[3]/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@id='channelMute'])/*</td>
+	<td>//ul[@id='channelHeaderDropdownMenu']/li[3]/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -4922,13 +5064,8 @@
 	<td>Off-Topic</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN papa-2-->
@@ -5070,13 +5207,8 @@
 </tr>
 <!--LOG OUT papa-2-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -5191,13 +5323,13 @@
 <!--COMBINED CHANNEL TYPES, RECENCY - no favorites or unreads (but same either way)-->
 <!--(but same with or without favorites and unreads; could add more tests to verify those)-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -5441,13 +5573,13 @@
 <!--COMBINED CHANNEL TYPES, ALPHA - no favorites or unreads-->
 <!--*** Verified manually enabling favorites / unreads makes no difference; write tests?-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -5645,13 +5777,13 @@
 <!--CLEAN-UP-->
 <!--Set back to group by type, alpha, Favorites, Unreads (as with feature disabled)-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -5742,12 +5874,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 </tbody></table>
