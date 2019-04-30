@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://selenium.mattermost.com/" />
+<link rel="selenium.base" href="https://selenium.test.mattermost.com/" />
 <title>New Test</title>
 </head>
 <body>
@@ -136,13 +136,13 @@
 </tr>
 <!--View channel info without header-->
 <tr>
-	<td>waitForText</td>
-	<td>css=#channelHeaderDropdownMenu &gt; li &gt; #channelViewInfo</td>
-	<td>View Info</td>
+	<td>waitForElementPresent</td>
+	<td>css=#channelViewInfo &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelHeaderDropdownMenu &gt; li &gt; #channelViewInfo</td>
+	<td>css=#channelViewInfo &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -182,7 +182,7 @@
 <tr>
 	<td>click</td>
 	<td>css=div.channel-header__description.light &gt; button.style--none</td>
-	<td>Add a channel description</td>
+	<td></td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -326,13 +326,13 @@
 </tr>
 <!--Verify channel info with header-->
 <tr>
-	<td>waitForText</td>
-	<td>css=#channelHeaderDropdownMenu &gt; li &gt; #channelViewInfo</td>
-	<td>View Info</td>
+	<td>waitForElementPresent</td>
+	<td>css=#channelViewInfo &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelHeaderDropdownMenu &gt; li &gt; #channelViewInfo</td>
+	<td>css=#channelViewInfo &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -374,12 +374,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@id='channelEditHeader'])[2]</td>
+	<td>css=#channelEditHeader &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@id='channelEditHeader'])[2]</td>
+	<td>css=#channelEditHeader &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -482,13 +482,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#channelHeaderDropdownMenu &gt; li &gt; #channelViewInfo</td>
-	<td>View Info</td>
+	<td>waitForElementPresent</td>
+	<td>css=#channelViewInfo &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelHeaderDropdownMenu &gt; li &gt; #channelViewInfo</td>
+	<td>css=#channelViewInfo &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -537,12 +537,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=logout</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=logout</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 </tbody></table>

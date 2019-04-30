@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://selenium.mattermost.com/" />
+<link rel="selenium.base" href="https://selenium.test.mattermost.com/" />
 <title>AuthGitLab</title>
 </head>
 <body>
@@ -56,12 +56,22 @@
 <!--Disable signups-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -102,12 +112,22 @@
 <!--Log out system admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none span:contains('Logout')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.MenuItem button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
@@ -180,12 +200,22 @@
 <!--Re-enable signups-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -223,14 +253,66 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<!--Ensure email verification is turned on (click both to activate Save)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>id=signup</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>id=signup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=EmailSettings.RequireEmailVerificationfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=EmailSettings.RequireEmailVerificationfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=EmailSettings.RequireEmailVerificationtrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=EmailSettings.RequireEmailVerificationtrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=EmailSettings.RequireEmailVerificationtrue</td>
+	<td>on</td>
+</tr>
+<!--Get team invite (for whichever team was top of the drop-down)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
@@ -238,7 +320,6 @@
 	<td>link=Switch to*</td>
 	<td></td>
 </tr>
-<!--Get team invite (for whichever team was top of the drop-down)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -251,12 +332,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=getTeamInviteLink</td>
+	<td>css=#getTeamInviteLink &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=getTeamInviteLink</td>
+	<td>css=#getTeamInviteLink &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -347,14 +428,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>css=button.style--none</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -519,13 +600,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -612,14 +693,14 @@
 </tr>
 <!--Verify username and email can't be edited because set in GitLab-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
-	<td></td>
+	<td>css=button.style--none</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -853,13 +934,23 @@
 <!--Full name matches GitLab (replacing previous edit in Mm)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none</td>
+	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -872,139 +963,10 @@
 	<td>id=usernameDesc</td>
 	<td>mmostqa-edit</td>
 </tr>
-<!--Email not updated until verified-->
+<!--Email updated -->
 <tr>
 	<td>waitForText</td>
 	<td>id=emailDesc</td>
-	<td>Login done through GitLab (mmostqa@gmail.com)</td>
-</tr>
-<!--Log out mmostqa-edit-->
-<tr>
-	<td>rollup</td>
-	<td>logout</td>
-	<td></td>
-</tr>
-<!--Open Gmail to verify new email address-->
-<tr>
-	<td>open</td>
-	<td>https://gmail.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Sign In</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Sign In</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=identifierId</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=identifierId</td>
-	<td>mmostqa</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=identifierId</td>
-	<td>${KEY_ENTER}</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>name=password</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=password</td>
-	<td>passwdpasswd</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>name=password</td>
-	<td>${KEY_ENTER}</td>
-</tr>
-<tr>
-	<td>verifyElementPresent</td>
-	<td>css=span:contains('Confirmation instructions')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span:contains('Confirmation instructions')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=mmostqa+edit@gmail.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Confirm your email address</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Confirm your email address</td>
-	<td></td>
-</tr>
-<tr>
-	<td>selectPopUp</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>close</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>selectWindow</td>
-	<td>null</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.container-fluid.container-limited&nbsp;&nbsp;&nbsp;&gt; span</td>
-	<td>Your email address has been successfully confirmed.</td>
-</tr>
-<!--Back to Mattermost-->
-<tr>
-	<td>open</td>
-	<td>https://rctesting.reddogsofwar.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=GitLab</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=GitLab</td>
-	<td></td>
-</tr>
-<!--Email address has updated after verification-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=accountSettings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#emailDesc &gt; span</td>
 	<td>Login done through GitLab (mmostqa+edit@gmail.com)</td>
 </tr>
 <!--Log out mmostqa-edit-->
@@ -1042,12 +1004,22 @@
 <!--Deactivate GitLab user-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -1076,23 +1048,23 @@
 	<td>@mmostqa-edit - QA Reddogs</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
-	<td>Member</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
-	<td>Member</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>id=deactivate</td>
+	<td>css=span.caret</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=deactivate</td>
+	<td>css=span.caret</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none</td>
 	<td></td>
 </tr>
 <!--Verify SSO messaging-->
@@ -1113,18 +1085,28 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
 	<td>Inactive</td>
 </tr>
 <!--Log out system admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none span:contains('Logout')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.MenuItem button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--GitLab user is reactivated on signing in using SSO-->
@@ -1178,12 +1160,22 @@
 <!--Deactivate GitLab user-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <!--Fields hide when GitLab signin is disabled-->
@@ -1383,6 +1375,11 @@
 <!--Endpoint values pre-populate based on GitLab Site URL-->
 <!-- and are uneditable-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=GitLabSettings.Url</td>
+	<td>gitlaburl</td>
+</tr>
+<tr>
 	<td>storeValue</td>
 	<td>id=GitLabSettings.Url</td>
 	<td>gitlaburl</td>
@@ -1493,12 +1490,22 @@
 <!--Log out system admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none span:contains('Logout')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.MenuItem button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--GitLab user can still sign in-->
@@ -1552,12 +1559,22 @@
 <!--Re-enter Site URL-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -1603,12 +1620,22 @@
 <!--Log out system admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none span:contains('Logout')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.MenuItem button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--Verify messaging when Mattermost is not authorised-->
@@ -1668,7 +1695,17 @@
 	<td>css=td</td>
 	<td>MattermostTest</td>
 </tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div/span</td>
+	<td>The application was revoked access.</td>
+</tr>
 <!--Back to Mattermost-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
 <tr>
 	<td>open</td>
 	<td>https://rctesting.reddogsofwar.com</td>
@@ -1752,12 +1789,22 @@
 <!--Change signin method to email/password-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1851,12 +1898,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none</td>
+	<td>Account Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1946,8 +2003,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#emailDesc &gt; span</td>
-	<td>Check your email to verify mmostqa+qa-${date}@mattermost.com</td>
+	<td>css=div.announcement-bar.announcement-bar-success</td>
+	<td>Check your email inbox to verify the address.×</td>
 </tr>
 <!--Log out-->
 <tr>
@@ -2089,7 +2146,6 @@
 	<td>link=Sign out</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

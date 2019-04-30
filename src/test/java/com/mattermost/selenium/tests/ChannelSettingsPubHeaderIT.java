@@ -105,11 +105,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // View channel info without header
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("View Info".equals(driver.findElement(By.cssSelector("#channelHeaderDropdownMenu > li > #channelViewInfo")).getText())) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#channelViewInfo > button.style--none."))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#channelHeaderDropdownMenu > li > #channelViewInfo")).click();
+        driver.findElement(By.cssSelector("#channelViewInfo > button.style--none.")).click();
         // Sleep
         // Sleep
         // Sleep
@@ -230,11 +230,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Verify channel info with header
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("View Info".equals(driver.findElement(By.cssSelector("#channelHeaderDropdownMenu > li > #channelViewInfo")).getText())) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#channelViewInfo > button.style--none."))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#channelHeaderDropdownMenu > li > #channelViewInfo")).click();
+        driver.findElement(By.cssSelector("#channelViewInfo > button.style--none.")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("headertest".equals(driver.findElement(By.cssSelector("h4.modal-title > strong")).getText())) break; } catch (Exception e) {}
@@ -260,11 +260,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         driver.findElement(By.id("channelHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.xpath("(//button[@id='channelEditHeader'])[2]"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#channelEditHeader > button.style--none."))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.xpath("(//button[@id='channelEditHeader'])[2]")).click();
+        driver.findElement(By.cssSelector("#channelEditHeader > button.style--none.")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.id("edit_textbox"))) break; } catch (Exception e) {}
@@ -326,11 +326,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         driver.findElement(By.id("channelHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("View Info".equals(driver.findElement(By.cssSelector("#channelHeaderDropdownMenu > li > #channelViewInfo")).getText())) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#channelViewInfo > button.style--none."))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#channelHeaderDropdownMenu > li > #channelViewInfo")).click();
+        driver.findElement(By.cssSelector("#channelViewInfo > button.style--none.")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("headertest".equals(driver.findElement(By.cssSelector("h4.modal-title > strong")).getText())) break; } catch (Exception e) {}
@@ -369,10 +369,10 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("logout"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#logout > button.style--none"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("logout")).click();
+        driver.findElement(By.cssSelector("#logout > button.style--none")).click();
     }
 }

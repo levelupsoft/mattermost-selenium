@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://selenium.mattermost.com/" />
+<link rel="selenium.base" href="https://selenium.test.mattermost.com/" />
 <title>MessagingFlags</title>
 </head>
 <body>
@@ -234,7 +234,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='sidebar-right']/div[2]/div/div[3]/div[2]/div/div/div[3]/div/div/div/div[2]/div/div/div/span/p</td>
+	<td>css=div.post-right-comments-container div.post.post--thread.same--root.post--comment.current--user div.post__content div div.post__body div div.post-message.post-message--collapsed div.post-message__text-container div#postMessageText_kbqb5cthxigbmd1wxbsizttxhw.post-message__text p</td>
 	<td>on the donkey.</td>
 </tr>
 <!--Pin visible on parent post in RHS reply thread-->
@@ -327,12 +327,12 @@
 <!--Switch center to different channel, also changes in RHS-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Off-Topic</td>
+	<td>link=Off-Topic*</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Off-Topic</td>
+	<td>link=Off-Topic*</td>
 	<td></td>
 </tr>
 <tr>
@@ -453,16 +453,10 @@
 	<td>css=span.post__pinned-badge &gt; span</td>
 	<td></td>
 </tr>
-<!--This button can change number each time-->
-<!--*** Manually hover over ... post menu-->
+<!--Pin last post-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[7]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[7]</td>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
 <tr>
@@ -803,15 +797,9 @@
 	<td></td>
 </tr>
 <!--Pin the message-->
-<!--*** Manually hover-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[6]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[6]</td>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
 <tr>
@@ -853,15 +841,9 @@
 	<td>Unflag</td>
 </tr>
 <!--Get permalink-->
-<!--*** Manually hover-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[6]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[6]</td>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
 <tr>
@@ -922,17 +904,8 @@
 	<td>Pinned</td>
 </tr>
 <!--Un-pin in center in permalink view-->
-<!--*** Manually hover-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
-	<td></td>
-</tr>
+<!--rollup doesn't open the center permalink view-->
+<!--*** Open ... menu manually in center on permalink view-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=span:contains('Un-pin')</td>
@@ -971,16 +944,8 @@
 	<td>Click here to jump to recent messages.</td>
 </tr>
 <!--Re-pin in center-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
-	<td></td>
-</tr>
+<!--rollup doesn't open the center post menu-->
+<!--*** Open ... menu manually in center -->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=span:contains('Pin to channel')</td>
@@ -1002,16 +967,8 @@
 	<td></td>
 </tr>
 <!--Un-pinning in center removes Pinned in flagged posts RHS-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
-	<td></td>
-</tr>
+<!--rollup doesn't open the center post menu-->
+<!--*** Open ... menu manually in center -->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=span:contains('Un-pin from channel')</td>
@@ -1054,15 +1011,9 @@
 	<td></td>
 </tr>
 <!--Pin message-->
-<!--*** Manually hover-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[6]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[6]</td>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
 <tr>
@@ -1081,7 +1032,7 @@
 	<td>Pinned</td>
 </tr>
 <!--Open reply RHS-->
-<!--*** Manually open ... post menu-->
+<!--*** Manually open ... post menu in RHS-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>xpath=(//button[@type='button'])[6]</td>
@@ -1118,7 +1069,7 @@
 	<td>xpath=(//button[@type='button'])[3]</td>
 	<td></td>
 </tr>
-<!--*** Manually click Un-pin-->
+<!--*** Manually click Un-pin in RHS-->
 <!--Verify Pinned badge does not appear in center or RHS-->
 <tr>
 	<td>waitForNotText</td>

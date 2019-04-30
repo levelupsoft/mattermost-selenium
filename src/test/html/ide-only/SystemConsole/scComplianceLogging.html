@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://selenium.mattermost.com/" />
+<link rel="selenium.base" href="https://selenium.test.mattermost.com/" />
 <title>SysConsComplianceLogging</title>
 </head>
 <body>
@@ -103,12 +103,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div/form/div/div[3]/label</td>
+	<td>//div[@id='root']/div/div[2]/div/div/form/div/div[3]/label</td>
 	<td>Compliance Report Directory:</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div/form/div/div[4]/label</td>
+	<td>//div[@id='root']/div/div[2]/div/div/form/div/div[4]/label</td>
 	<td>Enable Daily Report:</td>
 </tr>
 <tr>
@@ -568,22 +568,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td>Logout</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
 	<td></td>
 </tr>
 <tr>

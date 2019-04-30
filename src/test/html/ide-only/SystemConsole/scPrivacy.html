@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://selenium.test.mattermost.com/" />
+<link rel="selenium.base" href="https://selenium.test.mattermost.com/" />
 <title>scPrivacy</title>
 </head>
 <body>
@@ -60,12 +60,12 @@
 <!--PRIVACY SETTINGS-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@id='systemConsole']/a</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@id='systemConsole']/a</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -107,12 +107,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=path</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=path</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none span:contains('Logout')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none span:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--LOG IN usera-->
@@ -334,12 +344,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=manageMembers</td>
+	<td>css=#manageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=manageMembers</td>
+	<td>css=#manageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -415,7 +425,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>http://selenium.mattermost.com/namedisplay/messages/userb@test.com</td>
+	<td>https://selenium.test.mattermost.com/namedisplay/messages/userb@test.com</td>
 	<td></td>
 </tr>
 <tr>
@@ -516,13 +526,8 @@
 </tr>
 <!--LOG OUT usera-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -580,12 +585,12 @@
 <!--Hide first/last names (email already hidden)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@id='systemConsole']/a</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@id='systemConsole']/a</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -631,23 +636,23 @@
 <!--Verify admin can see all-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=swithTonamedisplay</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=a</td>
+	<td>Switch to NameDisplay</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithTonamedisplay</td>
-	<td></td>
+	<td>css=a</td>
+	<td>Switch to NameDisplay</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -834,12 +839,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=manageMembers</td>
+	<td>css=#manageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=manageMembers</td>
+	<td>css=#manageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -905,7 +910,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>http://selenium.mattermost.com/namedisplay/messages/userb@test.com</td>
+	<td>https://selenium.test.mattermost.com/namedisplay/messages/userb@test.com</td>
 	<td></td>
 </tr>
 <tr>
@@ -915,18 +920,13 @@
 </tr>
 <tr>
 	<td>waitForLocation</td>
-	<td>http://selenium.mattermost.com/namedisplay/messages/@userb</td>
+	<td>https://selenium.test.mattermost.com/namedisplay/messages/@userb</td>
 	<td></td>
 </tr>
 <!--LOG OUT admin-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN userb-->
@@ -1216,12 +1216,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=manageMembers</td>
+	<td>css=#manageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=manageMembers</td>
+	<td>css=#manageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1392,13 +1392,8 @@
 </tr>
 <!--LOG OUT userb-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -1453,12 +1448,12 @@
 <!--Show email (first/last names still hidden)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@id='systemConsole']/a</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@id='systemConsole']/a</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -1504,23 +1499,23 @@
 <!--Verify admin can see all-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=swithTonamedisplay</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=a</td>
+	<td>Switch to NameDisplay</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithTonamedisplay</td>
-	<td></td>
+	<td>css=a</td>
+	<td>Switch to NameDisplay</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1707,12 +1702,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=manageMembers</td>
+	<td>css=#manageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=manageMembers</td>
+	<td>css=#manageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1772,13 +1767,8 @@
 </tr>
 <!--LOG OUT admin-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN userb-->
@@ -2048,12 +2038,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=manageMembers</td>
+	<td>css=#manageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=manageMembers</td>
+	<td>css=#manageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2219,13 +2209,8 @@
 </tr>
 <!--LOG OUT userb-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -2280,12 +2265,12 @@
 <!--Show email address and full name-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@id='systemConsole']/a</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@id='systemConsole']/a</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -2331,23 +2316,23 @@
 <!--Verify admin can see all-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=swithTonamedisplay</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=a</td>
+	<td>Switch to NameDisplay</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithTonamedisplay</td>
-	<td></td>
+	<td>css=a</td>
+	<td>Switch to NameDisplay</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2534,12 +2519,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=manageMembers</td>
+	<td>css=#manageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=manageMembers</td>
+	<td>css=#manageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2599,13 +2584,8 @@
 </tr>
 <!--LOG OUT admin-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN usera-->
@@ -2839,12 +2819,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=manageMembers</td>
+	<td>css=#manageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=manageMembers</td>
+	<td>css=#manageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3006,12 +2986,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3118,12 +3098,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3193,13 +3173,8 @@
 </tr>
 <!--LOG OUT usera-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--*** If not using this setup anymore, log back in as admin and leave the NameDisplay team-->

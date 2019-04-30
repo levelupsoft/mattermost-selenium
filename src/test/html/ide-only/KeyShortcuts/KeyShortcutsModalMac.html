@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://selenium.mattermost.com/" />
+<link rel="selenium.base" href="https://selenium.test.mattermost.com/" />
 <title>KeyShortcuts</title>
 </head>
 <body>
@@ -441,12 +441,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=keyboardShortcuts</td>
+	<td>css=#keyboardShortcuts &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=keyboardShortcuts</td>
+	<td>css=#keyboardShortcuts &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -624,25 +624,10 @@
 	<td>css=div.shortcuts-content &gt; div.modal-header &gt; button.close</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
 <!--LOG OUT-->
 <tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 </tbody></table>
