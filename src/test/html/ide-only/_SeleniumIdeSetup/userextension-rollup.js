@@ -277,8 +277,8 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementPresent', target: "//ul[contains(@class,'Menu dropdown-menu MenuWrapperAnimation-enter-done')]/li/button/span[text() = '"+args.Item+"']", value: ''});
-commands.push({ command: 'click', target: "//ul[contains(@class,'Menu dropdown-menu MenuWrapperAnimation-enter-done')]/li/button/span[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//li[@class='MenuItem']/button/span[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'click', target: "//li[@class='MenuItem']/button/span[text() = '"+args.Item+"']", value: ''});
 return commands;
  }
 });
@@ -291,7 +291,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementPresent', target: "//ul[contains(@class,'Menu dropdown-menu MenuWrapperAnimation-enter-done')]/li/button/span[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//li[@class='MenuItem']/button/span[text() = '"+args.Item+"']", value: ''});
 return commands;
  }
 });
@@ -304,7 +304,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementNotPresent', target: "//ul[contains(@class,'Menu dropdown-menu MenuWrapperAnimation-enter-done')]/li/button/span[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'waitForElementNotPresent', target: "//li[@class='MenuItem']/button/span[text() = '"+args.Item+"']", value: ''});
 return commands;
  }
 });
@@ -553,6 +553,40 @@ commands.push({ command: 'click', target: "//li[@id='addUsersToTeam']/button", v
 commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]", value: ''});
 commands.push({ command: 'click', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]", value: ''});
 commands.push({ command: 'click', target: "id=saveItems", value: ''});
+return commands;
+ }
+});
+
+//openReplyDotMenuForTopPost
+manager.addRollupRule({
+ name: 'openReplyDotMenuForTopPost'
+ , description: 'Open the ... menu of the Top post in Reply thread'
+ , args: [], commandMatchers: []
+ , getExpandedCommands: function(args) {
+ var commands = [];
+ 
+commands.push({ command: 'storeAttribute', target: "//div[@class='post-right__scroll']//*/div[contains(@id,'postMessageText_')][last()]@id", value: 'TopRhsPost'});
+commands.push({ command: 'waitForElementPresent', target: "//div[@id='${TopRhsPost}']/p", value: ''});
+commands.push({ command: 'mouseOver', target: "//div[@id='${TopRhsPost}']/p", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//button[contains(@id,'RHS_ROOT_button_')]", value: ''});
+commands.push({ command: 'click', target: "//button[contains(@id,'RHS_ROOT_button_')]", value: ''});
+return commands;
+ }
+});
+
+//openSearchDotMenuForTopPost
+manager.addRollupRule({
+ name: 'openSearchDotMenuForTopPost'
+ , description: 'Open the ... menu of the Top post in Reply thread'
+ , args: [], commandMatchers: []
+ , getExpandedCommands: function(args) {
+ var commands = [];
+ 
+commands.push({ command: 'storeAttribute', target: "//div[@class='post post--thread']//*/div[contains(@id,'postMessageText_')][last()]@id", value: 'TopSearchPost'});
+commands.push({ command: 'waitForElementPresent', target: "//div[@id='${TopSearchPost}']/p", value: ''});
+commands.push({ command: 'mouseOver', target: "//div[@id='${TopSearchPost}']/p", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//button[contains(@id,'SEARCH_button_')]", value: ''});
+commands.push({ command: 'click', target: "//button[contains(@id,'SEARCH_button_')]", value: ''});
 return commands;
  }
 });
