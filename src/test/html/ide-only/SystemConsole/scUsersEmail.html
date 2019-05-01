@@ -67,12 +67,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -137,12 +137,12 @@
 <!--Make sure email verification is turned off-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sign_up</td>
+	<td>id=signup</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sign_up</td>
+	<td>id=signup</td>
 	<td></td>
 </tr>
 <tr>
@@ -185,22 +185,22 @@
 <!--Open Email Update modal-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=resetEmail</td>
+	<td>//span[contains(text(),'Update Email')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=resetEmail</td>
+	<td>//span[contains(text(),'Update Email')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -246,22 +246,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=resetEmail</td>
+	<td>//span[contains(text(),'Update Email')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=resetEmail</td>
+	<td>//span[contains(text(),'Update Email')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -322,24 +322,24 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForNotText</td>
-	<td>css=h4.modal-title &gt; span</td>
-	<td>Reset Email</td>
+	<td>waitForElementNotPresent</td>
+	<td>//span[contains(text(),'Update Email')]</td>
+	<td></td>
 </tr>
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--LOG IN test2 using username (no verification required)-->
@@ -396,12 +396,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--Verify old email address does not work to log in test2-->
@@ -484,12 +484,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>//*[@id='accountSettings']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>//*[@id='accountSettings']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -571,12 +571,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -674,22 +674,22 @@
 <!--Open Email Update modal-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=resetEmail</td>
+	<td>//span[contains(text(),'Update Email')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=resetEmail</td>
+	<td>//span[contains(text(),'Update Email')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -725,12 +725,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>//span[@class='menu-icon']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//span [contains(text(),'Logout')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 </tbody></table>

@@ -164,12 +164,12 @@
 <!--Search will fail sometime with Se - added pause.-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.dropdown-toggle.post__dropdown.color--link.style--none</td>
+	<td>//button[@class='post__dropdown color--link style--none']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.dropdown-toggle.post__dropdown.color--link.style--none</td>
+	<td>//button[@class='post__dropdown color--link style--none']</td>
 	<td></td>
 </tr>
 <tr>
@@ -263,12 +263,12 @@
 <!--Search will fail sometime with Se - added pause.-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.dropdown-toggle.post__dropdown.color--link.style--none</td>
+	<td>//button[@class='post__dropdown color--link style--none']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.dropdown-toggle.post__dropdown.color--link.style--none</td>
+	<td>//button[@class='post__dropdown color--link style--none']</td>
 	<td></td>
 </tr>
 <tr>
@@ -362,12 +362,12 @@
 <!--Search will fail sometime with Se - added pause.-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.dropdown-toggle.post__dropdown.color--link.style--none</td>
+	<td>//button[@class='post__dropdown color--link style--none']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.dropdown-toggle.post__dropdown.color--link.style--none</td>
+	<td>//button[@class='post__dropdown color--link style--none']</td>
 	<td></td>
 </tr>
 <tr>
@@ -461,12 +461,12 @@
 <!--Search will fail sometime with Se - added pause.-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.dropdown-toggle.post__dropdown.color--link.style--none</td>
+	<td>//button[@class='post__dropdown color--link style--none']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.dropdown-toggle.post__dropdown.color--link.style--none</td>
+	<td>//button[@class='post__dropdown color--link style--none']</td>
 	<td></td>
 </tr>
 <tr>
@@ -617,7 +617,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.image-preload</td>
+	<td>//div[@class='image-container'] </td>
 	<td></td>
 </tr>
 <!--*** Visually verify thumbnail in post (cropped, centered, filename)-->
@@ -1023,12 +1023,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.edit-modal.modal-dialog &gt; div.modal-content &gt; div.modal-footer &gt; button.btn.btn-primary</td>
+	<td>//button[@id='editButton']/span[contains(text(),'Save')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.edit-modal.modal-dialog &gt; div.modal-content &gt; div.modal-footer &gt; button.btn.btn-primary</td>
+	<td>//button[@id='editButton']/span[contains(text(),'Save')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -1278,12 +1278,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN test3-->
@@ -1346,7 +1346,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.image-preload</td>
+	<td>//div[@class='image-loaded image-fade-in ']</td>
 	<td></td>
 </tr>
 <tr>
@@ -1388,12 +1388,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN test10-->
@@ -1539,12 +1539,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.dropdown-toggle.post__dropdown.color--link.style--none</td>
+	<td>//button[@class='post__dropdown color--link style--none']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.dropdown-toggle.post__dropdown.color--link.style--none</td>
+	<td>//button[@class='post__dropdown color--link style--none']</td>
 	<td></td>
 </tr>
 <tr>
@@ -1612,7 +1612,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>https://about.mattermost.com/wp-content/uploads/2016/01/logo.png?foo${KEY_ENTER}</td>
+	<td>https://about.mattermost.com/wp-content/uploads/2016/01/logo.png?foo</td>
 </tr>
 <!--*** Manually right-click the image and copy, then paste in message box-->
 <!--*** Visually verify thumbnail zoomed and cropped: logo icon, no text, no white space below-->
@@ -1936,7 +1936,7 @@
 </tr>
 <!--*** Visually verify displays image preview and truncated filename in RHS-->
 <!--*** NOTE: This is stuck in endless loading for some reason. Investigating-->
-<!--*** (only on Se server)-->
+<!--*** (only on Se server) - DKH Not seeing this issue Apr-13-2019-->
 </tbody></table>
 </body>
 </html>

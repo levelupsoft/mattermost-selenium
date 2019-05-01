@@ -64,38 +64,28 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#accountSettings &gt; span</td>
+	<td>//*[@id='accountSettings']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>verifyElementNotPresent</td>
-	<td>css=#systemConsole &gt; span</td>
+	<td>Link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>verifyElementNotPresent</td>
-	<td>css=#teamSettings &gt; span</td>
+	<td>//*[@id='teamSettings']/button</td>
 	<td></td>
 </tr>
 <!--LOG OUT corey-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -236,28 +226,23 @@
 </tr>
 <!--Change Member to System Admin-->
 <tr>
-	<td>waitForText</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
-	<td>Member</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#manageRoles &gt; span</td>
+	<td>//span[contains(text(),'Manage Roles')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#manageRoles &gt; span</td>
+	<td>//span[contains(text(),'Manage Roles')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -287,28 +272,23 @@
 </tr>
 <!--Remove from team-->
 <tr>
-	<td>waitForText</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
-	<td>System Admin</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'System Admin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'System Admin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#manageTeams &gt; span</td>
+	<td>//span[contains(text(),'Manage Teams')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#manageTeams &gt; span</td>
+	<td>//span[contains(text(),'Manage Teams')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -383,9 +363,9 @@
 	<td>@corey</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
-	<td>System Admin</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'System Admin')]</td>
+	<td></td>
 </tr>
 <!--User logs in to verify System Admin-->
 <!--LOG OUT admin-->
@@ -399,17 +379,17 @@
 <!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--LOG IN corey-->
@@ -477,12 +457,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
@@ -504,6 +484,11 @@
 	<td>waitForText</td>
 	<td>css=div.signup__content &gt; h4 &gt; span</td>
 	<td>Teams you can join:</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//span[contains(text(),'UI Automation 2')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -543,13 +528,23 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#systemConsole &gt; span</td>
+	<td>Link=System Console</td>
 	<td></td>
 </tr>
-<!--LOG OUT corey-->
 <tr>
 	<td>clickAndWait</td>
 	<td>css=#logout &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<!--Logout Corey-->
+<tr>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -639,28 +634,23 @@
 	<td>@corey</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
-	<td>System Admin</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'System Admin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'System Admin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#manageRoles &gt; span</td>
+	<td>//span[contains(text(),'Manage Roles')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#manageRoles &gt; span</td>
+	<td>//span[contains(text(),'Manage Roles')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -690,28 +680,28 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td>Member</td>
 </tr>
 <!--Change to Team Admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#manageTeams &gt; span</td>
+	<td>//span[contains(text(),'Manage Teams')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#manageTeams &gt; span</td>
+	<td>//span[contains(text(),'Manage Teams')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -726,12 +716,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#makeTeamAdmin &gt; span</td>
+	<td>//span[contains(text(),'Make Team Admin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#makeTeamAdmin &gt; span</td>
+	<td>//span[contains(text(),'Make Team Admin')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -752,17 +742,17 @@
 <!--LOT OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--LOG IN corey, verify Team Settings is visible-->
@@ -806,21 +796,11 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#teamSettings &gt; span</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG OUT corey-->
-<tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
-	<td></td>
-</tr>
 <!--LOG IN admin-->
 <!--DisableAnimations-->
 <tr>
@@ -869,7 +849,7 @@
 	<td>css=strong.heading</td>
 	<td>Town Square</td>
 </tr>
-<!--Add corey back to UI Automation team-->
+<!--Add corey back to UI Automation team- DKH Corey is already on this team and was promoted to team admin is steps just above. Did not change steps below as I'm unsure of what sate the Corey data should be in.  -->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -882,12 +862,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>//*[@id='addUsersToTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>//*[@id='addUsersToTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -968,22 +948,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#manageTeams &gt; span</td>
+	<td>//span[contains(text(),'Manage Teams')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#manageTeams &gt; span</td>
+	<td>//span[contains(text(),'Manage Teams')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -998,12 +978,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#makeMember &gt; span</td>
+	<td>//span[contains(text(),'Make Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#makeMember &gt; span</td>
+	<td>//span[contains(text(),'Make Member')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -1022,6 +1002,7 @@
 	<td></td>
 </tr>
 <!--Use status Filter-->
+<!--DKH- The scetion below does not run well - I think this test would have to run of fresh data for these to line up - Manualy verified menu filters-->
 <tr>
 	<td>pause</td>
 	<td>2000</td>
@@ -1055,6 +1036,7 @@
 	<td>css=div.more-modal__name</td>
 	<td>@test10</td>
 </tr>
+<!--This user is actrive - possibly due to other tests verified manually-->
 <tr>
 	<td>select</td>
 	<td>css=select.form-control.system-users__team-filter</td>
@@ -1172,17 +1154,17 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 </tbody></table>

@@ -400,35 +400,15 @@
 </tr>
 <!--Cancel out of a delete (use postid to find [...] > Delete)-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=SEARCH_dropdown_${postid}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>mouseOver</td>
-	<td>css=a.search-item__jump &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=SEARCH_dropdown_${postid}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>2000</td>
+	<td>rollup</td>
+	<td>openSearchDotMenuForTopPost</td>
 	<td></td>
 </tr>
 <!--*** If needed, manually click the [...] menu on Greetings post in RHS search results-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='SEARCH_dropdown_${postid}']/div/ul/li[3]/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='SEARCH_dropdown_${postid}']/div/ul/li[3]/button</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Delete</td>
 </tr>
 <!--Confirmation modal warns the message has a reply-->
 <tr>
@@ -612,15 +592,22 @@
 	<td>Reply</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='RHS_COMMENT_dropdown_${replyid}']/div/ul/li[4]/button</td>
+	<td>rollup</td>
+	<td>openSearchDotMenuForTopPost</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='RHS_COMMENT_dropdown_${replyid}']/div/ul/li[4]/button</td>
+	<td>pause</td>
 	<td></td>
+	<td>3000</td>
 </tr>
+<!--Manually open dot menu for the "Reply" comment in RHS-->
+<tr>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Edit</td>
+</tr>
+<!--^^2 steps above need maintenance to find delelet on ... menu^^-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=edit_textbox</td>
@@ -789,14 +776,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='SEARCH_dropdown_${deleteid}']/div/ul/li[3]/button</td>
+	<td>rollup</td>
+	<td>openSearchDotMenuForTopPost</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='SEARCH_dropdown_${deleteid}']/div/ul/li[3]/button</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Dele</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -934,19 +921,14 @@
 </tr>
 <!--*** Hm, this command finds the [...] menu in the RHS; will it work above? xpath-->
 <tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[3]</td>
+	<td>rollup</td>
+	<td>openSearchDotMenuForTopPost</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='SEARCH_dropdown_${editid}']/div/ul/li[4]/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='SEARCH_dropdown_${editid}']/div/ul/li[4]/button</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Edit</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1045,14 +1027,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='RHS_COMMENT_dropdown_${editid}']/div/ul/li[3]/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='RHS_COMMENT_dropdown_${editid}']/div/ul/li[3]/button</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Delete</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1573,17 +1550,15 @@
 	<td>id=post_textbox</td>
 	<td></td>
 </tr>
-<!--Can't pin in center; can't get to [...] in center-->
 <tr>
-	<td>pause</td>
-	<td>8000</td>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
-<!--*** Manually click [...] and Pin to channel on last center post-->
 <tr>
-	<td>waitForText</td>
-	<td>css=div.post__header--info &gt; div.col &gt; span.post__pinned-badge</td>
-	<td>Pinned</td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Pin to channel</td>
 </tr>
 <!--RHS updates-->
 <tr>
@@ -1765,17 +1740,13 @@
 	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[5]</td>
 	<td>pinned2id</td>
 </tr>
-<!--Un-pin in RHS-->
+<!--Un-pin in RHS - Maually click dot menu of pinned post in RHS -->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='SEARCH_dropdown_${pinned2id}']/div/ul/li[2]/button</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Un-pin from channel</td>
 </tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='SEARCH_dropdown_${pinned2id}']/div/ul/li[2]/button</td>
-	<td></td>
-</tr>
+<!--I'll come back to this later...-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.sidebar--right__subheader &gt; ul &gt; li &gt; span</td>
@@ -1811,22 +1782,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=getTeamInviteLink</td>
+	<td>//*[@id='getTeamInviteLink']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=getTeamInviteLink</td>
+	<td>//*[@id='getTeamInviteLink']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[2]/textarea</td>
+	<td>//textarea[@id='linkModalTextArea']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>//div[2]/textarea</td>
+	<td>//textarea[@id='linkModalTextArea']</td>
 	<td>teaminvitelink</td>
 </tr>
 <tr>
@@ -1860,12 +1831,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -2161,54 +2132,54 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>//*[@id='accountSettings']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sendEmailInvite</td>
+	<td>//*[@id='sendEmailInvite']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=getTeamInviteLink</td>
+	<td>//*[@id='getTeamInviteLink']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>//*[@id='addUsersToTeam']/button</td>
 	<td></td>
 </tr>
 <!--Note: Displays as "View Members" despite ID-->
 <tr>
-	<td>waitForText</td>
-	<td>id=manageMembers</td>
+	<td>waitForElementPresent</td>
+	<td>//*[@id='manageMembers']/button</td>
 	<td>View Members</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=manageMembers</td>
+	<td>//*[@id='manageMembers']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='createTeam']/span)[2]</td>
+	<td>//*[@id='createTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[@id='leaveTeam']</td>
+	<td>//*[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
-	<td>id=teamSettings</td>
+	<td>//*[@id='teamSettings']/button</td>
 	<td></td>
 </tr>
 <!--Non-admin can view team members and filter list-->
 <tr>
 	<td>click</td>
-	<td>id=manageMembers</td>
+	<td>//*[@id='manageMembers']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -2350,12 +2321,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>//*[@id='addUsersToTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=teamSettings</td>
+	<td>//*[@id='teamSettings']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -2370,23 +2341,23 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='createTeam']/span)[2]</td>
+	<td>//*[@id='createTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[@id='leaveTeam']</td>
+	<td>//*[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <!--Add user to team from main menu, filter user list-->
 <tr>
 	<td>click</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>//*[@id='addUsersToTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.multi-select__help &gt; span</td>
+	<td>//span[contains(text(),'Use ↑↓ to browse, ↵ to select. You can add 20 more people.')] </td>
 	<td>Use ↑↓ to browse, ↵ to select. You can add 20 more people.</td>
 </tr>
 <tr>
@@ -2410,8 +2381,8 @@
 	<td>@testst</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.multi-select__help &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>//span[contains(text(),'Use ↑↓ to browse, ↵ to select. You can add 19 more people.')] </td>
 	<td>Use ↑↓ to browse, ↵ to select. You can add 19 more people.</td>
 </tr>
 <tr>
@@ -2462,18 +2433,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=manageMembers</td>
+	<td>waitForElementPresent</td>
+	<td>//*[@id='manageMembers']/button</td>
 	<td>Manage Members</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=manageMembers</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>id=manageMembers</td>
+	<td>//*[@id='manageMembers']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -2507,40 +2473,40 @@
 	<td>Member</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=ul.dropdown-menu.member-menu &gt; li &gt; a &gt; span</td>
-	<td>Remove From Team</td>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Team')]</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[2]/div/div/div[2]/div/ul/li[2]/a/span</td>
-	<td>Make Team Admin</td>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Team Admin')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Team Admin')]</td>
+	<td></td>
 </tr>
 <!--Set user testst back to team member-->
 <tr>
-	<td>click</td>
-	<td>//div[2]/div/div/div[2]/div/ul/li[2]/a/span</td>
-	<td>Make Team Admin</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=button.dropdown-toggle.theme.color--link.style--none &gt; span &gt; span</td>
-	<td>Team Admin</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Team Admin')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.dropdown-toggle.theme.color--link.style--none &gt; span &gt; span</td>
-	<td>Team Admin</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Team Admin')]</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[2]/div/div/div[2]/div/ul/li[2]/a/span</td>
-	<td>Make Member</td>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Member')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[2]/div/div/div[2]/div/ul/li[2]/a/span</td>
-	<td>Make Member</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Member')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2697,14 +2663,14 @@
 </tr>
 <!--Open Add Members modal for channel, from Manage Members modal-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelAddMembers</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Add Members</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2796,12 +2762,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=manageMembers</td>
+	<td>//*[@id='manageMembers']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=manageMembers</td>
+	<td>//*[@id='manageMembers']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -2835,13 +2801,13 @@
 	<td>Member</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=ul.dropdown-menu.member-menu &gt; li &gt; a &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Team')]</td>
 	<td>Remove From Team</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=ul.dropdown-menu.member-menu &gt; li &gt; a &gt; span</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Team')]</td>
 	<td>Remove From Team</td>
 </tr>
 <tr>
@@ -2876,14 +2842,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Add Members</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3031,12 +2992,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=teamSettings</td>
+	<td>//*[@id='teamSettings']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=teamSettings</td>
+	<td>//*[@id='teamSettings']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -3154,12 +3115,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=teamSettings</td>
+	<td>//*[@id='teamSettings']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=teamSettings</td>
+	<td>//*[@id='teamSettings']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -3270,12 +3231,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=teamSettings</td>
+	<td>//*[@id='teamSettings']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=teamSettings</td>
+	<td>//*[@id='teamSettings']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -3741,12 +3702,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#teamSettings &gt; span</td>
+	<td>//*[@id='teamSettings']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#teamSettings &gt; span</td>
+	<td>//*[@id='teamSettings']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -3795,6 +3756,11 @@
 	<td>Yes</td>
 </tr>
 <!--LOGOUT ST2-->
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#logout &gt; span</td>
@@ -3925,14 +3891,14 @@
 <!--*** Can pause test and change sidebar to not show Unreads at top (until test is rewritten)-->
 <!--Open channels, verify message, verify badge disappears-->
 <tr>
-	<td>waitForText</td>
-	<td>css=span.badge</td>
-	<td>2</td>
+	<td>waitForElementPresent</td>
+	<td>//span[@id='unreadMentions'][contains(text(),'2')] </td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.badge</td>
-	<td>2</td>
+	<td>//span[@id='unreadMentions'][contains(text(),'2')] </td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4013,12 +3979,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN as ST2-->
@@ -4086,12 +4052,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=teamSettings</td>
+	<td>//*[@id='teamSettings']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=teamSettings</td>
+	<td>//*[@id='teamSettings']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -4142,12 +4108,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN as testst-->
@@ -4201,12 +4167,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#joinAnotherTeam &gt; span</td>
+	<td>//*[@id='joinTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#joinAnotherTeam &gt; span</td>
+	<td>//*[@id='joinTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
@@ -4259,12 +4225,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN as ST2-->
@@ -4379,12 +4345,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN as testst-->
@@ -4458,9 +4424,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyElementPresent</td>
-	<td>id=channelNotifications</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerify</td>
+	<td>Item=Notification Preferences</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4488,20 +4454,20 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelDelete</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerify</td>
+	<td>Item=Archive Channel</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelLeave</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerify</td>
+	<td>Item=Leave Channel</td>
 </tr>
 <!--View Info-->
 <tr>
-	<td>click</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=View Info</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -4540,9 +4506,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelEditPurpose</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Edit Channel Purpose</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4696,14 +4662,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#channelViewInfo &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#channelViewInfo &gt; span</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=View Info</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -4752,14 +4713,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelLeave</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelLeave</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Leave Channel</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4834,19 +4790,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#channelManageMembers &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#channelManageMembers &gt; span</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Manage Members</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -4855,22 +4801,42 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelMemberDropdown</td>
+	<td>//span[contains(text(),'×')] </td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelMemberDropdown</td>
+	<td>//span[contains(text(),'×')] </td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>openChanMenu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Manage Members</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Channel Member')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Channel Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#removeFromChannel &gt; span</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#removeFromChannel &gt; span</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -4908,28 +4874,8 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -5621,6 +5567,36 @@
 <tr>
 	<td>click</td>
 	<td>//div[@id='center_dropdownnkj8uw3icinyxekthdaefaywaa']/div/ul/li[3]/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='${TopSearchPost}']/p</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Team Admin')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Member')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//span[contains(text(),'×')] </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Channel Member')]</td>
 	<td></td>
 </tr>
 </tbody></table>

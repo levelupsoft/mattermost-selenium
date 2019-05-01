@@ -22,6 +22,11 @@
 	<td>login</td>
 	<td>username=admin@test.com</td>
 </tr>
+<tr>
+	<td>rollup</td>
+	<td>switchTeam</td>
+	<td>TeamName=ui-automation</td>
+</tr>
 <!--Create Channels and add users-->
 <tr>
 	<td>rollup</td>
@@ -172,6 +177,11 @@
 	<td>username=test3</td>
 </tr>
 <tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
 	<td>rollup</td>
 	<td>promoteUserToTeamAdmin</td>
 	<td>username=test4, team=UI Automation</td>
@@ -181,6 +191,7 @@
 	<td>promoteUserToSystemAdmin</td>
 	<td>username=test5</td>
 </tr>
+<!--Promote to team admin and sys admin need fixing-->
 <tr>
 	<td>rollup</td>
 	<td>logout</td>
@@ -190,6 +201,11 @@
 	<td>rollup</td>
 	<td>login</td>
 	<td>username=test6</td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>switchTeam</td>
+	<td>TeamName=ui-automation</td>
 </tr>
 <tr>
 	<td>rollup</td>
@@ -525,15 +541,25 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#all_users-integrations-manage_emojis &gt;div.permission-check.checked &gt; svg</td>
+	<td>css=#all_users-integrations-create_emojis &gt;div.permission-check.checked &gt; svg</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#all_users-integrations-manage_emojis &gt; div.permission-check </td>
+	<td>css=#all_users-integrations-create_emojis &gt; div.permission-check </td>
 	<td></td>
 </tr>
-<!--Team Admin - Manage Posts-->
+<tr>
+	<td>click</td>
+	<td>css=#all_users-integrations-delete_emojis &gt;div.permission-check.checked &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#all_users-integrations-delete_emojis &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<!--Team Admin - Manage Posts - all_users-integrations-delete_emojis-->
 <tr>
 	<td>click</td>
 	<td>css=#team_admin-posts-delete_posts-delete_post &gt;div.permission-check.checked &gt; svg</td>
@@ -1170,12 +1196,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Integrations &gt; span</td>
+	<td>//li[@id='integrations']/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Integrations &gt; span</td>
+	<td>//li[@id='integrations']/a</td>
 	<td></td>
 </tr>
 <tr>
@@ -1215,12 +1241,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#customEmoji &gt; span</td>
+	<td>//li[@id='customEmojis']/a</td>
 	<td>Custom Emoji</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#customEmoji &gt; span</td>
+	<td>//li[@id='customEmojis']/a</td>
 	<td>Custom Emoji</td>
 </tr>
 <tr>
@@ -2183,6 +2209,7 @@
 	<td>login</td>
 	<td>username=test4</td>
 </tr>
+<!--Fix remove user from team-->
 <tr>
 	<td>rollup</td>
 	<td>removeUserFromTeam</td>
@@ -2727,12 +2754,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Integrations &gt; span</td>
+	<td>//li[@id='integrations']/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Integrations &gt; span</td>
+	<td>//li[@id='integrations']/a</td>
 	<td></td>
 </tr>
 <tr>
@@ -2772,12 +2799,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#customEmoji &gt; span</td>
+	<td>//li[@id='customEmojis']/a</td>
 	<td>Custom Emoji</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#customEmoji &gt; span</td>
+	<td>//li[@id='customEmojis']/a</td>
 	<td>Custom Emoji</td>
 </tr>
 <tr>
@@ -4674,7 +4701,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
+	<td>waitForElementPresent</td>
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Town Square</td>
 </tr>
@@ -4848,7 +4875,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
+	<td>waitForElementPresent</td>
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Town Square</td>
 </tr>
@@ -5043,12 +5070,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Integrations &gt; span</td>
+	<td>//li[@id='integrations']/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Integrations &gt; span</td>
+	<td>//li[@id='integrations']/a</td>
 	<td></td>
 </tr>
 <tr>
@@ -5088,12 +5115,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#customEmoji &gt; span</td>
+	<td>//li[@id='customEmojis']/a</td>
 	<td>Custom Emoji</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#customEmoji &gt; span</td>
+	<td>//li[@id='customEmojis']/a</td>
 	<td>Custom Emoji</td>
 </tr>
 <tr>
@@ -6222,12 +6249,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Integrations &gt; span</td>
+	<td>//li[@id='integrations']/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Integrations &gt; span</td>
+	<td>//li[@id='integrations']/a</td>
 	<td></td>
 </tr>
 <tr>
@@ -6267,12 +6294,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#customEmoji &gt; span</td>
+	<td>//li[@id='customEmojis']/a</td>
 	<td>Custom Emoji</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#customEmoji &gt; span</td>
+	<td>//li[@id='customEmojis']/a</td>
 	<td>Custom Emoji</td>
 </tr>
 <tr>
@@ -7239,6 +7266,11 @@
 <tr>
 	<td>rollup</td>
 	<td>logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=systemConsole</td>
 	<td></td>
 </tr>
 </tbody></table>
