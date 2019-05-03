@@ -2302,13 +2302,23 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithToui-automation</td>
+	<td>css=div.header__info</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
+	<td>css=div.header__info</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=a</td>
+	<td>Switch to UI Automation</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a</td>
+	<td>Switch to UI Automation</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2322,6 +2332,11 @@
 </tr>
 <!--Team Admin should not see option to demote System Admin-->
 <!--LOG OUT admin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
 <tr>
 	<td>rollup</td>
 	<td>logout</td>
@@ -2853,7 +2868,7 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--*** In 5.5 and 5.6, UI Automation team was set to open, so this part didn't work-->
-<!--*** Set UI2 to closed manually to continue this test, but we need to make sure-->
+<!--*** Set UI (1) to closed manually to continue this test, but we need to make sure-->
 <!--*** the test isn't inadvertently setting that team to be open somewhere-->
 <tr>
 	<td>waitForText</td>
@@ -3096,7 +3111,7 @@
 	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=allowedDomains</td>
 	<td>pickles.org</td>
 </tr>
@@ -3110,7 +3125,7 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
-<!--?? Was the above supposed to fill in pickles.org?-->
+<!--Changed the above to type instead of sendKeys so it would register-->
 <tr>
 	<td>waitForText</td>
 	<td>id=allowed_domainsDesc</td>
@@ -3318,6 +3333,138 @@
 	<td>css=button.close</td>
 	<td></td>
 </tr>
+<tr>
+	<td>rollup</td>
+	<td>logout</td>
+	<td></td>
+</tr>
+<!--This tests on mysql.test b/c it has >200 teams-->
+<!--Log in admin-->
+<tr>
+	<td>open</td>
+	<td>https://mysql.test.mattermost.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>login</td>
+	<td>username=admin</td>
+</tr>
+<!--Verify not already on ZZZ QA team (not in sidebar)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>css=#zzz-qaTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td></td>
+</tr>
+<!--Open Team Selection page and verify ZZZ QA team is not listed-->
+<tr>
+	<td>click</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Join Another Team</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Join Another Team</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.signup__content &gt; h4 &gt; span</td>
+	<td>Teams you can join:</td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>css=#ZZZ_QA &gt; span.signup-team-dir__name</td>
+	<td></td>
+</tr>
+<!--Back to team, post link to ZZZ QA team-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=back_button_icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=back_button_icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>https://mysql.test.mattermost.com/zzz-qa/channels/town-square${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=exact:https://mysql.test.mattermost.com/zzz-qa/channels/town-square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=exact:https://mysql.test.mattermost.com/zzz-qa/channels/town-square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>ZZZ QA</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#zzz-qaTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td></td>
+</tr>
+<!--Cleanup: Leave ZZZ QA team-->
+<tr>
+	<td>click</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#leaveTeam &gt; button.style--none.</td>
+	<td>Leave Team</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#leaveTeam &gt; button.style--none.</td>
+	<td>Leave Team</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>id=headerTeamName</td>
+	<td>ZZZ QA</td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>css=#zzz-qaTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td></td>
+</tr>
+<!--Log out admin user-->
 <tr>
 	<td>rollup</td>
 	<td>logout</td>
