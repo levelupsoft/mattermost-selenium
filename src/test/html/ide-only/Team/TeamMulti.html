@@ -54,12 +54,12 @@
 <!--Create team from main menu -->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='createTeam'])[2]</td>
+	<td>//li[@id='createTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='createTeam'])[2]</td>
+	<td>//li[@id='createTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
@@ -125,7 +125,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=teamSettings</td>
+	<td>//*[@id='teamSettings']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -165,13 +165,8 @@
 </tr>
 <!--LOG OUT test6-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Logout</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -236,12 +231,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[@id='leaveTeam']</td>
+	<td>//li[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[@id='leaveTeam']</td>
+	<td>//li[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -370,12 +365,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=joinAnotherTeam</td>
+	<td>//li[@id='joinTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=joinAnotherTeam</td>
+	<td>//li[@id='joinTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
@@ -421,22 +416,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithToui-automation</td>
+	<td>//li[@class='MenuItem']/a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
+	<td>//li[@class='MenuItem']/a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -457,12 +452,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=joinAnotherTeam</td>
+	<td>//li[@id='joinTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=joinAnotherTeam</td>
+	<td>//li[@id='joinTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
@@ -704,7 +699,6 @@
 	<td>css=div.post-message__text &gt; p</td>
 	<td>Here's a DM that will be flagged as well, which will show up in flagged posts list across teams.</td>
 </tr>
-<!--*** Manually hover over last message to make flag clickable-->
 <tr>
 	<td>rollup</td>
 	<td>openDotMenuForLastPost</td>
@@ -1181,12 +1175,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[@id='leaveTeam']</td>
+	<td>//li[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[@id='leaveTeam']</td>
+	<td>//li[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -1226,12 +1220,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[@id='leaveTeam']</td>
+	<td>//li[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[@id='leaveTeam']</td>
+	<td>//li[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -1251,13 +1245,8 @@
 </tr>
 <!--LOG OUT admin-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Logout</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--Cleanup: test6 leave team Six-->
@@ -1326,12 +1315,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[@id='leaveTeam']</td>
+	<td>//li[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[@id='leaveTeam']</td>
+	<td>//li[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -1351,13 +1340,8 @@
 </tr>
 <!--LOG OUT test6-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Logout</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 </tbody></table>

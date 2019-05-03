@@ -127,22 +127,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#swithToui-automation &gt; span</td>
+	<td>//li[@class='MenuItem']/a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#swithToui-automation &gt; span</td>
+	<td>//li[@class='MenuItem']/a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -168,12 +168,12 @@
 <!--Error messaging in Email Invite modal-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#sendEmailInvite &gt; span</td>
+	<td>//*[@id='sendEmailInvite']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#sendEmailInvite &gt; span</td>
+	<td>//*[@id='sendEmailInvite']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -228,8 +228,8 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <tr>
@@ -347,12 +347,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=System Console</td>
+	<td>//*[@id='systemConsole']/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=System Console</td>
+	<td>//*[@id='systemConsole']/a</td>
 	<td></td>
 </tr>
 <!--Re-enable account creation-->
@@ -451,22 +451,23 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
+<!--debug-->
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#swithToui-automation &gt; span</td>
+	<td>//li[@class='MenuItem']/a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#swithToui-automation &gt; span</td>
+	<td>//li[@class='MenuItem']/a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -492,12 +493,12 @@
 <!--No error messaging in Email Invite modal-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#sendEmailInvite &gt; span</td>
+	<td>//*[@id='sendEmailInvite']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#sendEmailInvite &gt; span</td>
+	<td>//*[@id='sendEmailInvite']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -544,12 +545,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[@id='leaveTeam']</td>
+	<td>//*[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[@id='leaveTeam']</td>
+	<td>//*[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -585,12 +586,12 @@
 <!--Team selection page displays team creation link-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#joinAnotherTeam &gt; span</td>
+	<td>//*[@id='joinTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#joinAnotherTeam &gt; span</td>
+	<td>//*[@id='joinTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
@@ -615,28 +616,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-primary</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN test2 to verify non-system-admin cannot create new team-->
@@ -693,7 +674,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#joinAnotherTeam &gt; span</td>
+	<td>//*[@id='joinTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
@@ -703,14 +684,15 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#joinAnotherTeam &gt; span</td>
+	<td>//*[@id='joinTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.signup-team-dir__name</td>
-	<td>UI Automation 2</td>
+	<td>waitForElementPresent</td>
+	<td>//span[@class='signup-team-dir__name'][contains(text(),'UI Automation 2')]</td>
+	<td></td>
 </tr>
+<!--^^Had to make UI Automation 2 joinable for this step to work-->
 <tr>
 	<td>verifyElementNotPresent</td>
 	<td>css=a.signup-team-login &gt; span</td>
@@ -728,23 +710,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Logout</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <tr>
@@ -879,22 +846,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -949,12 +916,12 @@
 <!--Team creation available from team selection page-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#joinAnotherTeam &gt; span</td>
+	<td>//*[@id='joinTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#joinAnotherTeam &gt; span</td>
+	<td>//*[@id='joinTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
@@ -994,12 +961,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#joinAnotherTeam &gt; span</td>
+	<td>//*[@id='joinTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#joinAnotherTeam &gt; span</td>
+	<td>//*[@id='joinTeam']/a</td>
 	<td></td>
 </tr>
 <!--Join 2nd team to make `+` available in team sidebar-->
@@ -1024,9 +991,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=h2 &gt; span</td>
-	<td>Team Name</td>
+	<td>waitForElementPresent</td>
+	<td>///span[contains(text(),'UI Automation 2)]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1145,6 +1112,12 @@
 	<td></td>
 </tr>
 <!--Leave UI 2 team to return to original state-->
+<!--Manually re-add to UI automation 2-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
@@ -1162,12 +1135,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@id='leaveTeam'])[2]</td>
+	<td> //*[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@id='leaveTeam'])[2]</td>
+	<td> //*[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -1192,23 +1165,8 @@
 </tr>
 <!--LOG OUT test2-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 </tbody></table>

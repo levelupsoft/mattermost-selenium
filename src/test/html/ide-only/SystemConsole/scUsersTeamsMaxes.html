@@ -64,12 +64,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='createTeam']/span)[2]</td>
+	<td>//*[@id='createTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='createTeam']/span)[2]</td>
+	<td>//*[@id='createTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
@@ -125,12 +125,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>//*[@id='addUsersToTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>//*[@id='addUsersToTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -206,22 +206,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#getTeamInviteLink &gt; span</td>
+	<td>//*[@id='getTeamInviteLink']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#getTeamInviteLink &gt; span</td>
+	<td>//*[@id='getTeamInviteLink']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[2]/textarea</td>
+	<td>//textarea[@id='linkModalTextArea']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>//div[2]/textarea</td>
+	<td>//textarea[@id='linkModalTextArea']</td>
 	<td>teamInviteLink</td>
 </tr>
 <!--Open System Console-->
@@ -290,22 +290,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--Open invite link URL and verify can't sign up b/c max number users reached-->
@@ -458,22 +458,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#deactivate &gt; span</td>
+	<td>//span[contains(text(),'Deactivate')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#deactivate &gt; span</td>
+	<td>//span[contains(text(),'Deactivate')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -487,9 +487,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
-	<td>Inactive</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Inactive')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>type</td>
@@ -508,22 +508,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#deactivate &gt; span</td>
+	<td>//span[contains(text(),'Deactivate')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#deactivate &gt; span</td>
+	<td>//span[contains(text(),'Deactivate')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -537,29 +537,29 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Inactive')]</td>
 	<td>Inactive</td>
 </tr>
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--Open invite link URL and verify can sign up-->
@@ -631,12 +631,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -720,12 +720,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=teamSettings</td>
+	<td>//*[@id='teamSettings']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=teamSettings</td>
+	<td>//*[@id='teamSettings']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -828,22 +828,22 @@
 <!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--LOG IN test10-->
@@ -906,12 +906,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=joinAnotherTeam</td>
+	<td>//*[@id='joinTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=joinAnotherTeam</td>
+	<td>//*[@id='joinTeam']/a</td>
 	<td></td>
 </tr>
 <tr>
@@ -964,13 +964,8 @@
 </tr>
 <!--LOG OUT test1-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -1003,13 +998,13 @@
 	<td>passwd</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=loginButton</td>
+	<td>pause</td>
+	<td>1000</td>
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>3000</td>
+	<td>click</td>
+	<td>id=loginButton</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -1096,17 +1091,17 @@
 <!--Verify can create up to 5 channels on UsersTeamsMaxes team-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithTousersteamsmaxes</td>
+	<td>//li[@class='MenuItem']/a[contains(text(),'Switch to&nbsp;&nbsp;UsersTeamsMaxes')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -1222,14 +1217,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelDelete</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelDelete</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Archive Channel</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1289,12 +1279,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>Link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>Link=System Console</td>
 	<td></td>
 </tr>
 <!--Max Notifications Per Channel-->
@@ -1346,22 +1336,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithTousersteamsmaxes</td>
+	<td>//li[@class='MenuItem']/a[contains(text(),'Switch to&nbsp;&nbsp;UsersTeamsMaxes')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithTousersteamsmaxes</td>
+	<td>//li[@class='MenuItem']/a[contains(text(),'Switch to&nbsp;&nbsp;UsersTeamsMaxes')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -1434,12 +1424,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN testokay-->
@@ -1528,12 +1518,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -1615,12 +1605,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>Link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>Link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -1671,22 +1661,22 @@
 <!--Add users to team to trigger no notifications and warning-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithTousersteamsmaxes</td>
+	<td>//li[@class='MenuItem']/a[contains(text(),'Switch to&nbsp;&nbsp;UsersTeamsMaxes')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithTousersteamsmaxes</td>
+	<td>//li[@class='MenuItem']/a[contains(text(),'Switch to&nbsp;&nbsp;UsersTeamsMaxes')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -1701,12 +1691,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>//*[@id='addUsersToTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>//*[@id='addUsersToTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -1928,12 +1918,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN testokay-->
@@ -2028,12 +2018,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -2125,22 +2115,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithTousersteamsmaxes</td>
+	<td>//li[@class='MenuItem']/a[contains(text(),'Switch to&nbsp;&nbsp;UsersTeamsMaxes')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithTousersteamsmaxes</td>
+	<td>//li[@class='MenuItem']/a[contains(text(),'Switch to&nbsp;&nbsp;UsersTeamsMaxes')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -2382,22 +2372,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#deactivate &gt; span</td>
+	<td>//span[contains(text(),'Deactivate')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#deactivate &gt; span</td>
+	<td>//span[contains(text(),'Deactivate')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -2411,9 +2401,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
-	<td>Inactive</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Inactive')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>type</td>
@@ -2432,48 +2422,48 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Inactive')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Inactive')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#activate &gt; span</td>
+	<td>//span[contains(text(),'Activate')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#activate &gt; span</td>
+	<td>//span[contains(text(),'Activate')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#memberDropdown &gt; span &gt; span</td>
-	<td>Member</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
+	<td></td>
 </tr>
 <!--Cleanup: Remove default test users from team, leave team-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithTousersteamsmaxes</td>
+	<td>//li[@class='MenuItem']/a[contains(text(),'Switch to&nbsp;&nbsp;UsersTeamsMaxes')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithTousersteamsmaxes</td>
+	<td>//li[@class='MenuItem']/a[contains(text(),'Switch to&nbsp;&nbsp;UsersTeamsMaxes')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -2498,12 +2488,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=manageMembers</td>
+	<td>//*[@id='manageMembers']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=manageMembers</td>
+	<td>//*[@id='manageMembers']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -2523,13 +2513,23 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=ul.dropdown-menu.member-menu &gt; li &gt; a &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=ul.dropdown-menu.member-menu &gt; li &gt; a &gt; span</td>
-	<td>Remove From Team</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Team')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Team')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2537,9 +2537,24 @@
 	<td>5 members of 5 total</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=ul.dropdown-menu.member-menu &gt; li &gt; a &gt; span</td>
-	<td>Remove From Team</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Team')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Team')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2547,9 +2562,24 @@
 	<td>4 members of 4 total</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=ul.dropdown-menu.member-menu &gt; li &gt; a &gt; span</td>
-	<td>Remove From Team</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Team')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Team')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2557,9 +2587,24 @@
 	<td>3 members of 3 total</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=ul.dropdown-menu.member-menu &gt; li &gt; a &gt; span</td>
-	<td>Remove From Team</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Team')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Team')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2567,9 +2612,24 @@
 	<td>2 members of 2 total</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=ul.dropdown-menu.member-menu &gt; li &gt; a &gt; span</td>
-	<td>Remove From Team</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Team')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Team')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2603,12 +2663,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[@id='leaveTeam']</td>
+	<td>//*[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[@id='leaveTeam']</td>
+	<td>//*[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -2628,23 +2688,8 @@
 </tr>
 <!--LOG OUT admin-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Logout</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 </tbody></table>

@@ -131,9 +131,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Add Members</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -260,9 +260,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelManageMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Manage Members</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -315,6 +315,7 @@
 	<td>css=input.form-control.filter-textbox</td>
 	<td></td>
 </tr>
+<!--debug-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
@@ -322,28 +323,33 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelMemberDropdown &gt; span &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#channelMemberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='dropdown member-drop']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#makeChannelAdmin &gt; span</td>
+	<td>//div[@class='MenuWrapper ']/button </td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#makeChannelAdmin &gt; span</td>
+	<td>//div[@class='MenuWrapper ']/button </td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#channelMemberDropdown &gt; span &gt; span</td>
-	<td>Channel Admin</td>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Admin')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -428,34 +434,34 @@
 	<td>Manage Members</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelManageMembers</td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Manage Members</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Member')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=channelMemberDropdown</td>
-	<td>Channel Member</td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>id=channelMemberDropdown</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Member')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#makeChannelAdmin &gt; span</td>
-	<td>Make Channel Admin</td>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=removeFromChannel</td>
-	<td>Remove From Channel</td>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=removeFromChannel</td>
-	<td>Remove From Channel</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -484,44 +490,49 @@
 </tr>
 <!--Change from Channel Admin to Channel Member-->
 <tr>
-	<td>waitForText</td>
-	<td>id=channelMemberDropdown</td>
-	<td>Channel Admin</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelMemberDropdown</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#makeChannelMember &gt; span</td>
-	<td>Make Channel Member</td>
+	<td>click</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Admin')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Member')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#makeChannelMember &gt; span</td>
-	<td>Make Channel Member</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Member')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Member')]</td>
+	<td></td>
 </tr>
 <!--Remove demoted user from channel-->
 <tr>
-	<td>waitForText</td>
-	<td>id=channelMemberDropdown</td>
-	<td>Channel Member</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Member')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelMemberDropdown</td>
-	<td>Channel Member</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Member')]</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=removeFromChannel</td>
-	<td>Remove From Channel</td>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=removeFromChannel</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -782,9 +793,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Add Members</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -911,9 +922,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelManageMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Manage Members</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -926,9 +937,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#channelMemberDropdown &gt; span &gt; span</td>
-	<td>Channel Member</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Member')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -973,28 +984,28 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelMemberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelMemberDropdown &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#makeChannelAdmin &gt; span</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#makeChannelAdmin &gt; span</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#channelMemberDropdown &gt; span &gt; span</td>
-	<td>Channel Admin</td>
+	<td>click</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Admin')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1079,34 +1090,34 @@
 	<td>Manage Members</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelManageMembers</td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Manage Members</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Member')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=channelMemberDropdown</td>
-	<td>Channel Member</td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>id=channelMemberDropdown</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Member')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#makeChannelAdmin &gt; span</td>
-	<td>Make Channel Admin</td>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=removeFromChannel</td>
-	<td>Remove From Channel</td>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=removeFromChannel</td>
-	<td>Remove From Channel</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1135,44 +1146,44 @@
 </tr>
 <!--Change from Channel Admin to Channel Member-->
 <tr>
-	<td>waitForText</td>
-	<td>id=channelMemberDropdown</td>
-	<td>Channel Admin</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelMemberDropdown</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#makeChannelMember &gt; span</td>
-	<td>Make Channel Member</td>
+	<td>click</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Admin')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Member')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#makeChannelMember &gt; span</td>
-	<td>Make Channel Member</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Member')]</td>
+	<td></td>
 </tr>
 <!--Remove demoted user from channel-->
 <tr>
-	<td>waitForText</td>
-	<td>id=channelMemberDropdown</td>
-	<td>Channel Member</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Member')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelMemberDropdown</td>
-	<td>Channel Member</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Member')]</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=removeFromChannel</td>
-	<td>Remove From Channel</td>
+	<td>waitForElementPresent</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=removeFromChannel</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -1370,21 +1381,16 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelDelete</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelDelete</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Archive Channel</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.alert.alert-danger &gt; span</td>
 	<td>This will archive the channel from the team and make its contents inaccessible for all users. <br /><br />Are you sure you wish to archive the To Manage channel?</td>
 </tr>
-<!--^^ Locator looks perfect to me. It finds the span but won't match on the text^^-->
+<!--^^ Locator won't match on the text because channel name is in <strong> tag^^-->
 <tr>
 	<td>waitForText</td>
 	<td>css=button.btn.btn-danger</td>
@@ -1426,14 +1432,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelDelete</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelDelete</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Archive Channel</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1471,18 +1472,8 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 </tbody></table>

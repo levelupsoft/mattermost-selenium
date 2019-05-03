@@ -11,7 +11,6 @@
 <thead>
 <tr><td rowspan="1" colspan="3">scPermissionSchemes-ComboScenarios</td></tr>
 </thead><tbody>
-<!--Dylan - Before next run! - ensure Teamb Scheme B should not have delete permissions OR move last test for abusing Edit to Team A (probably easier)-->
 <tr>
 	<td>setSpeed</td>
 	<td>800</td>
@@ -470,6 +469,7 @@
 	<td>css=div.multi-select__container &gt; #saveItems</td>
 	<td>Add</td>
 </tr>
+<!--Click -->
 <tr>
 	<td>click</td>
 	<td>css=#all_users-posts-delete_posts-delete_others_posts &gt; div.permission-check.</td>
@@ -517,13 +517,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyText</td>
-	<td>id=swithToteama</td>
-	<td>Switch to TeamA</td>
+	<td>waitForElementPresent</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;TeamA')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToteama</td>
+	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;TeamA')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -533,12 +533,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>//li[@id='addUsersToTeam']/button</td>
 	<td>Add Members to Team</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>//li[@id='addUsersToTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -572,8 +572,8 @@
 	<td>Add</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=sidebarHeaderDropdownButton</td>
+	<td>waitForElementPresent</td>
+	<td>//span[@class='sidebar-header-dropdown__icon']</td>
 	<td></td>
 </tr>
 <tr>
@@ -617,19 +617,14 @@
 	<td>PrivateChanTeamA</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Add Members</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -646,7 +641,6 @@
 	<td>//div[@id=&quot;selectItems&quot;]//*/div[text()=&quot;test5&quot;]</td>
 	<td></td>
 </tr>
-<!--^^what happent to the input here?-->
 <tr>
 	<td>click</td>
 	<td>id=saveItems</td>
@@ -665,7 +659,7 @@
 </tr>
 <!--Create additonal channels for Later Use-->
 <tr>
-	<td>waitForText</td>
+	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
@@ -715,19 +709,14 @@
 	<td>PrivateChannel2</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Add Members</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -756,29 +745,14 @@
 </tr>
 <!--^^Validate system message to confirm user was added to channel^^-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelManageMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelManageMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Manage Members</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -787,27 +761,27 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='more-modal__name'][text()='@test5']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@id='channelMemberDropdown']</td>
+	<td>//div[@class='more-modal__name'][text()='@test5']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@class='more-modal__name'][text()='@test5']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@id='channelMemberDropdown']</td>
+	<td>//div[@class='more-modal__name'][text()='@test5']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button </td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#makeChannelAdmin &gt; span</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#makeChannelAdmin &gt; span</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='more-modal__name'][text()='@test5']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@id='channelMemberDropdown']/span/span[text()='Channel Admin']</td>
+	<td>//div[@class='more-modal__name'][text()='@test5']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button /span/span[text()='Channel Admin']</td>
 	<td></td>
 </tr>
 <tr>
@@ -837,7 +811,7 @@
 </tr>
 <!--Create additonal channels for Later Use-->
 <tr>
-	<td>waitForText</td>
+	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
@@ -882,24 +856,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>PublicChannel2</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Add Members</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -929,28 +893,18 @@
 <!--^^Validate system message to confirm user was added to channel^^-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
 	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelManageMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelManageMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Manage Members</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -959,27 +913,27 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='more-modal__name'][text()='@test5']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@id='channelMemberDropdown']</td>
+	<td>//div[@class='more-modal__name'][text()='@test5']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button </td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@class='more-modal__name'][text()='@test5']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@id='channelMemberDropdown']</td>
+	<td>//div[@class='more-modal__name'][text()='@test5']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button </td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#makeChannelAdmin &gt; span</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#makeChannelAdmin &gt; span</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='more-modal__name'][text()='@test5']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@id='channelMemberDropdown']/span/span[text()='Channel Admin']</td>
+	<td>//div[@class='more-modal__name'][text()='@test5']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button /span/span[text()='Channel Admin']</td>
 	<td></td>
 </tr>
 <tr>
@@ -1004,7 +958,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
+	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
@@ -1015,12 +969,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>//li[@id='addUsersToTeam']/button</td>
 	<td>Add Members to Team</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>//li[@id='addUsersToTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -1044,7 +998,7 @@
 	<td>Add</td>
 </tr>
 <tr>
-	<td>waitForText</td>
+	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
@@ -1089,19 +1043,19 @@
 	<td>PrivateChanTeamB</td>
 </tr>
 <tr>
-	<td>click</td>
+	<td>waitForElementPresent</td>
 	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelAddMembers</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Add Members</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1222,7 +1176,7 @@
 <!--Move to Team C-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelAddMembers</td>
+	<td>//a[@href='/teamc']</td>
 	<td></td>
 </tr>
 <tr>
@@ -1231,7 +1185,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
+	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
@@ -1241,13 +1195,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//button[@id='addUsersToTeam']</td>
-	<td>Add Members to Team</td>
+	<td>waitForElementPresent</td>
+	<td>//li[@id='addUsersToTeam']/button</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>//li[@id='addUsersToTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -1271,7 +1225,7 @@
 	<td>Add</td>
 </tr>
 <tr>
-	<td>waitForText</td>
+	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
@@ -1316,19 +1270,14 @@
 	<td>PrivateChanTeamC</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Add Members</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1398,12 +1347,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td>Logout</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1525,12 +1474,12 @@
 <!--^^Not sure why this click fails whn it can find the element^^-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[@id='leaveTeam']</td>
+	<td>//li[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>//li[@id='addUsersToTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -1855,24 +1804,19 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='CENTER_dropdown_${LastPostId}']/div/ul/li/button/span[text()='Reply']</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerify</td>
+	<td>Item=Reply</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='CENTER_dropdown_${LastPostId}']</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerify</td>
+	<td>Item=Delete</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='CENTER_dropdown_${LastPostId}']/div/ul/li/button/span[text()='Delete']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='CENTER_dropdown_${LastPostId}']/div/ul/li/button/span[text()='Edit']</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerify</td>
+	<td>Item=Edit</td>
 </tr>
 <!--^^This is not broken but setting allow edit on Scheme B on setup seems to have failed^^-->
 <!--^^Add a step to test that edit is actually functional^^-->
@@ -1888,12 +1832,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[@id='leaveTeam']</td>
+	<td>//li[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>//li[@id='leaveTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -1908,7 +1852,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[@id='addUsersToTeam']</td>
+	<td>//li[@id='addUsersToTeam']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -2070,19 +2014,14 @@
 	<td>Off-Topic</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Off-Topic</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelEditHeader</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Edit Channel Header</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2110,19 +2049,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Off-Topic</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelEditPurpose</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Edit Channel Purpose</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2140,24 +2074,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=View Info</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2180,24 +2104,14 @@
 	<td>Off-Topic</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Off-Topic</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelRename</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelRename</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Rename Channel</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2262,29 +2176,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Add Members</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2314,29 +2213,14 @@
 <!--User Added to Public channel-->
 <!--Go into the modal as user-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelManageMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelManageMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Manage Members</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2391,24 +2275,14 @@
 	<td>AnotherPubChannel2</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>AnotherPubChannel2</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelDelete</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelDelete</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Archive Channel</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2443,6 +2317,11 @@
 <!--User is able to delete public Channel-->
 <!--Use this below to test Add remove of user from private channel-->
 <tr>
+	<td>rollup</td>
+	<td>openChannel</td>
+	<td>ChannelName=PrivateChanTeamB</td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>//span[@class='sidebar-item__name']/span[text() = &quot;PrivateChanTeamB&quot;]</td>
 	<td></td>
@@ -2453,29 +2332,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Add Members</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2505,29 +2369,14 @@
 <!--User Added to Public channel-->
 <!--Go into the modal as user-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelManageMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelManageMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Manage Members</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2586,24 +2435,14 @@
 	<td>PrivateChanTeamB</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>PrivateChanTeamB</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelDelete</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelDelete</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Archive Channel</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2719,19 +2558,14 @@
 	<td>Off-Topic</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Off-Topic</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelEditHeader</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Edit Channel Header</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2760,19 +2594,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelEditPurpose</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Edit Channel Purpose</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2790,24 +2619,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=View Info</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2830,24 +2649,14 @@
 	<td>Off-Topic</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Off-Topic</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelRename</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelRename</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Rename Channel</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3050,29 +2859,14 @@
 </tr>
 <!--Use this below to test Add remove of user from private channel-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Add Members</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3102,29 +2896,14 @@
 <!--User Added to Public channel-->
 <!--Go into the modal as user-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelManageMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelManageMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Manage Members</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3133,22 +2912,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='more-modal__name'][text()='@test6']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@id='channelMemberDropdown']</td>
+	<td>//div[@class='more-modal__name'][text()='@test6']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button </td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@class='more-modal__name'][text()='@test6']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@id='channelMemberDropdown']</td>
+	<td>//div[@class='more-modal__name'][text()='@test6']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button </td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='removeFromChannel']/span)[2]</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='removeFromChannel']/span)[2]</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -3184,29 +2963,14 @@
 </tr>
 <!--Use this below to test Add remove of user from private channel-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelAddMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Add Members</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3236,29 +3000,14 @@
 <!--User Added to Public channel-->
 <!--Go into the modal as user-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelManageMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelManageMembers</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Manage Members</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3267,22 +3016,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='more-modal__name'][text()='@test6']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@id='channelMemberDropdown']</td>
+	<td>//div[@class='more-modal__name'][text()='@test6']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button </td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@class='more-modal__name'][text()='@test6']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@id='channelMemberDropdown']</td>
+	<td>//div[@class='more-modal__name'][text()='@test6']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button </td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//a[@id='removeFromChannel']/span)[2]</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[@id='removeFromChannel']/span)[2]</td>
+	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -3317,19 +3066,14 @@
 	<td>PrivateChannel2</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>PrivateChannel2</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelEditHeader</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Edit Channel Header</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3351,26 +3095,20 @@
 	<td>css=button[class='btn btn-primary save-button']</td>
 	<td></td>
 </tr>
-<!--^^Why does this not always save?^^-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//p[@class='markdown__paragraph-inline'][text()='Update Header Test']</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelEditPurpose</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Edit Channel Purpose</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3388,30 +3126,21 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=View Info</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//div[@class='info__value'][text()=&quot;Test Purpose&quot;]</td>
 	<td></td>
 </tr>
+<!--^^Step Missing where you set pupose? ^^-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=div.about-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
@@ -3423,29 +3152,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelRename</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelRename</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Rename Channel</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3513,19 +3227,14 @@
 </tr>
 <!--^This clicks "..."^-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='CENTER_dropdown_${AdminPostId}']/div/ul/li/button/span[text()='Reply']</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerify</td>
+	<td>Item=Reply</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='CENTER_dropdown_${AdminPostId}']/div/ul/li/button/span[text()='Delete']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='CENTER_dropdown_${AdminPostId}']/div/ul/li/button/span[text()='Delete']</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Delete</td>
 </tr>
 <!--Delete click will not work w\ SE please click Delete on the Post-->
 <tr>
@@ -3561,24 +3270,14 @@
 	<td>PrivateChannel2-Update</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>PrivateChannel2-Update</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelDelete</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelDelete</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Archive Channel</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3619,12 +3318,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout > button.style--none</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -3659,7 +3358,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#systemConsole &gt; span</td>
+	<td>//li[@id='systemConsole']/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//li[@id='systemConsole']/a</td>
 	<td></td>
 </tr>
 <tr>
@@ -3687,6 +3391,7 @@
 	<td>id=searchUsers</td>
 	<td>test5</td>
 </tr>
+<!--Replace this with a rollup instead of fixing it-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//div[@class='more-modal__name']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop text-right']</td>
@@ -3851,19 +3556,14 @@
 	<td>PubChan3</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>PubChan3</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelEditHeader</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Edit Channel Header</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3885,26 +3585,20 @@
 	<td>css=button[class='btn btn-primary save-button']</td>
 	<td></td>
 </tr>
-<!--^^Why does this not always save?^^-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//p[@class='markdown__paragraph-inline'][text()='PubChan3- Updated']</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelEditPurpose</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Edit Channel Purpose</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3922,24 +3616,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=View Info</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3957,29 +3641,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelRename</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelRename</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Rename Channel</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4023,19 +3692,14 @@
 	<td>PrivateChanTeamA</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>PrivateChanTeamA</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelEditHeader</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Edit Channel Header</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4064,19 +3728,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelEditPurpose</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Edit Channel Purpose</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4094,24 +3753,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=View Info</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4129,29 +3778,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelRename</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelRename</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Rename Channel</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4220,34 +3854,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>NewPriChan</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelViewInfo</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelDelete</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelDelete</td>
-	<td></td>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Archive Channel</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4308,7 +3922,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=edit_textbox</td>
-	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
