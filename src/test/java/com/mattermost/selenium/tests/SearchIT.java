@@ -39,6 +39,14 @@ public class SearchIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        // Open flagged posts RHS to ensure search box is expanded (in case of narrow window)
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("channelHeaderFlagButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderFlagButton")).click();
         // Search: Basic, markdown
         driver.findElement(By.id("post_textbox")).sendKeys("/test url test-search.md" + Keys.ENTER);
         for (int second = 0;; second++) {
@@ -180,6 +188,14 @@ public class SearchIT extends DriverBase {
         // Verify search results
         // Should probaby split this out into separate posts, since the highlight verification isn't really working right
         // Otherwise it's not independently verifying that various results are returned
+        // Open flagged posts RHS to ensure search box is expanded (in case of narrow window)
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("channelHeaderFlagButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderFlagButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("input.search-bar"))) break; } catch (Exception e) {}
@@ -207,6 +223,14 @@ public class SearchIT extends DriverBase {
 
         // Accents, non-Latin characters
         driver.navigate().refresh();
+        // Open flagged posts RHS to ensure search box is expanded (in case of narrow window)
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("channelHeaderFlagButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderFlagButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("input.search-bar"))) break; } catch (Exception e) {}
@@ -221,6 +245,14 @@ public class SearchIT extends DriverBase {
         }
 
         driver.navigate().refresh();
+        // Open flagged posts RHS to ensure search box is expanded (in case of narrow window)
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("channelHeaderFlagButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderFlagButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("input.search-bar"))) break; } catch (Exception e) {}
@@ -237,6 +269,14 @@ public class SearchIT extends DriverBase {
         }
 
         driver.navigate().refresh();
+        // Open flagged posts RHS to ensure search box is expanded (in case of narrow window)
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("channelHeaderFlagButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderFlagButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("input.search-bar"))) break; } catch (Exception e) {}
@@ -254,6 +294,14 @@ public class SearchIT extends DriverBase {
         }
 
         driver.navigate().refresh();
+        // Open flagged posts RHS to ensure search box is expanded (in case of narrow window)
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("channelHeaderFlagButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderFlagButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("input.search-bar"))) break; } catch (Exception e) {}
@@ -271,6 +319,14 @@ public class SearchIT extends DriverBase {
         }
 
         driver.navigate().refresh();
+        // Open flagged posts RHS to ensure search box is expanded (in case of narrow window)
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("channelHeaderFlagButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderFlagButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("input.search-bar"))) break; } catch (Exception e) {}
@@ -348,6 +404,14 @@ public class SearchIT extends DriverBase {
 
         driver.findElement(By.id("post_textbox")).sendKeys("inchannel #verify" + Keys.ENTER);
         // Sleep
+        // Open flagged posts RHS to ensure search box is expanded (in case of narrow window)
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("channelHeaderFlagButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderFlagButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("input.search-bar"))) break; } catch (Exception e) {}
@@ -569,6 +633,14 @@ public class SearchIT extends DriverBase {
         }
 
         // Sleep
+        // Open flagged posts RHS to ensure search box is expanded (in case of narrow window)
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("channelHeaderFlagButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderFlagButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("input.search-bar"))) break; } catch (Exception e) {}
@@ -607,6 +679,14 @@ public class SearchIT extends DriverBase {
             verificationErrors.append(e.toString());
         }
         driver.navigate().refresh();
+        // Open flagged posts RHS to ensure search box is expanded (in case of narrow window)
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("channelHeaderFlagButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderFlagButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("input.search-bar"))) break; } catch (Exception e) {}
@@ -652,6 +732,14 @@ public class SearchIT extends DriverBase {
 
         driver.navigate().refresh();
         // Sleep
+        // Open flagged posts RHS to ensure search box is expanded (in case of narrow window)
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("channelHeaderFlagButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderFlagButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("input.search-bar"))) break; } catch (Exception e) {}
@@ -826,6 +914,14 @@ public class SearchIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        // Open flagged posts RHS to ensure search box is expanded (in case of narrow window)
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("channelHeaderFlagButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderFlagButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("input.search-bar"))) break; } catch (Exception e) {}
@@ -1131,6 +1227,14 @@ public class SearchIT extends DriverBase {
 
         driver.navigate().refresh();
         // at-username link opens profile popover
+        // Open flagged posts RHS to ensure search box is expanded (in case of narrow window)
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("channelHeaderFlagButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderFlagButton")).click();
         // Open in RHS so Se can find clean link
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -1179,6 +1283,14 @@ public class SearchIT extends DriverBase {
 
         // DM search
         driver.navigate().refresh();
+        // Open flagged posts RHS to ensure search box is expanded (in case of narrow window)
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("channelHeaderFlagButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderFlagButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("input.search-bar"))) break; } catch (Exception e) {}
@@ -1203,6 +1315,14 @@ public class SearchIT extends DriverBase {
         }
 
         // Sleep
+        // Open flagged posts RHS to ensure search box is expanded (in case of narrow window)
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("channelHeaderFlagButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderFlagButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("input.search-bar"))) break; } catch (Exception e) {}
