@@ -102,6 +102,9 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("strong.heading")).click();
+        // Sleep
+        // Sleep
+        // Sleep
         // View channel info without header
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
