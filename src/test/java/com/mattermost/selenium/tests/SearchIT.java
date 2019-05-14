@@ -39,6 +39,9 @@ public class SearchIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        // Sleep
+        // Sleep
+        // Sleep
         // Open flagged posts RHS to ensure search box is expanded (in case of narrow window)
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
