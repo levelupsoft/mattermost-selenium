@@ -57,11 +57,11 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#teamSettings > button.style--none."))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#teamSettings > button.style--none"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#teamSettings > button.style--none.")).click();
+        driver.findElement(By.cssSelector("#teamSettings > button.style--none")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("UI Automation".equals(driver.findElement(By.id("nameDesc")).getText())) break; } catch (Exception e) {}
@@ -84,11 +84,11 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#teamSettings > button.style--none."))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#teamSettings > button.style--none"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#teamSettings > button.style--none.")).click();
+        driver.findElement(By.cssSelector("#teamSettings > button.style--none")).click();
         // Team name required
         // Sleep
         // Sleep
@@ -228,11 +228,11 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#teamSettings > button.style--none."))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#teamSettings > button.style--none"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#teamSettings > button.style--none.")).click();
+        driver.findElement(By.cssSelector("#teamSettings > button.style--none")).click();
         // Edit Team Name
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -282,11 +282,11 @@ public class TeamSettingsNameDescIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#teamSettings > button.style--none."))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#teamSettings > button.style--none"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#teamSettings > button.style--none.")).click();
+        driver.findElement(By.cssSelector("#teamSettings > button.style--none")).click();
         // Sleep
         // Sleep
         for (int second = 0;; second++) {
@@ -344,11 +344,11 @@ public class TeamSettingsNameDescIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#teamSettings > button.style--none."))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#teamSettings > button.style--none"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#teamSettings > button.style--none.")).click();
+        driver.findElement(By.cssSelector("#teamSettings > button.style--none")).click();
         // Sleep
         // Sleep
         // Team name field max characters prevents typing
@@ -433,11 +433,11 @@ public class TeamSettingsNameDescIT extends DriverBase {
         driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#teamSettings > button.style--none."))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#teamSettings > button.style--none"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#teamSettings > button.style--none.")).click();
+        driver.findElement(By.cssSelector("#teamSettings > button.style--none")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Click 'Edit' to add a team description.".equals(driver.findElement(By.id("descriptionDesc")).getText())) break; } catch (Exception e) {}
