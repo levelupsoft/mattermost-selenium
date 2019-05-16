@@ -209,11 +209,6 @@
 	<td>Connection unsuccessful: SendMail: Failed to authenticate on SMTP server, 535 Authentication Credentials Invalid</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.alert.alert-warning</td>
-	<td>The SMTP server, port, or username has changed. Please re-enter the SMTP password to test connection.</td>
-</tr>
-<tr>
 	<td>type</td>
 	<td>id=smtpUsername</td>
 	<td>${smtpusername}</td>
@@ -357,6 +352,11 @@
 	<td>id=feedbackOrganization</td>
 	<td>mailingaddress</td>
 </tr>
+<tr>
+	<td>storeValue</td>
+	<td>id=replyToAddress</td>
+	<td>replyaddress</td>
+</tr>
 <!--Edit address, etc. in outgoing email-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -377,6 +377,11 @@
 	<td>type</td>
 	<td>id=feedbackEmail</td>
 	<td>feedback@mattermost.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=replyToAddress</td>
+	<td>replyfeedback@mattermost.com</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1715,7 +1720,10 @@
 <!--***************************************************-->
 <!--***************************************************-->
 <!--***************************************************-->
-<!--*** Also verify came from Selenium Test Edit, address 398 Testing Blvd, Paradise-->
+<!--*** ALSO verify came from Selenium Test Edit,-->
+<!--*** address 398 Testing Blvd, Paradise-->
+<!--*** Click to reply to one of the messages and verify reply-to-->
+<!--*** shows as replyfeedback@mattermost.com-->
 <tr>
 	<td></td>
 	<td></td>
@@ -1994,7 +2002,7 @@
 	<td></td>
 	<td></td>
 </tr>
-<!--*** AFTER verifying, run the rest of the test below to clean up and reset settings-->
+<!--*** AFTER verifying, run the rest (clean up and reset settings)-->
 <!--LOG IN first user (system admin) using stored creds-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -2138,6 +2146,16 @@
 	<td>waitForValue</td>
 	<td>id=feedbackOrganization</td>
 	<td>${mailingaddress}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=replyToAddress</td>
+	<td>${replyaddress}</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=replyToAddress</td>
+	<td>${replyaddress}</td>
 </tr>
 <tr>
 	<td>waitForEditable</td>

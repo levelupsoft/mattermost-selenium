@@ -11,7 +11,7 @@
 <thead>
 <tr><td rowspan="1" colspan="3">AuthGitLab</td></tr>
 </thead><tbody>
-<!--This tests on rctesting using the QA test account-->
+<!--This tests on rc.test using the QA test account-->
 <tr>
 	<td>open</td>
 	<td>https://rc.test.mattermost.com</td>
@@ -1050,7 +1050,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name &gt; span</td>
-	<td>@mmostqa-edit - QA Reddogs</td>
+	<td>@mmostqa-edit - MM QA</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1090,7 +1090,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
+	<td>css=div.text-right &gt; a &gt; span</td>
 	<td>Inactive</td>
 </tr>
 <!--Log out system admin-->
@@ -1694,7 +1694,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=td</td>
-	<td>MattermostTest</td>
+	<td>rc.test</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
@@ -1709,22 +1709,22 @@
 <tr>
 	<td>waitForNotText</td>
 	<td>css=td</td>
-	<td>MattermostTest</td>
+	<td>rc.test</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>//div/span</td>
 	<td>The application was revoked access.</td>
 </tr>
-<!--Back to Mattermost-->
+<!--Back to Mattermost - Might need to do an extra logout -->
 <tr>
 	<td>pause</td>
-	<td>6000</td>
+	<td>4000</td>
 	<td></td>
 </tr>
 <tr>
 	<td>open</td>
-	<td>https://rctesting.reddogsofwar.com</td>
+	<td>https://rc.test.mattermost.com</td>
 	<td></td>
 </tr>
 <tr>
@@ -1741,7 +1741,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h3.page-title</td>
-	<td>exact:Authorize MattermostTest to use your account?</td>
+	<td>exact:Authorize rc.test to use your account?</td>
 </tr>
 <!--Denying authorization prevents login-->
 <tr>
@@ -1788,7 +1788,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h3.page-title</td>
-	<td>exact:Authorize MattermostTest to use your account?</td>
+	<td>exact:Authorize rc.test to use your account?</td>
 </tr>
 <!--Authorizing allows login-->
 <tr>

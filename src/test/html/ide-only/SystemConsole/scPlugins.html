@@ -224,10 +224,10 @@
 </tr>
 <!--Verify on server without plugins enabled in config.json-->
 <!--*** Upload is enabled now on Se server; switching this for now to use -->
-<!--*** https://ci-windows-mysql.mattermost.com-->
+<!--*** https://windows.test.mattermost.com-->
 <tr>
 	<td>open</td>
-	<td>https://ci-windows-mysql.mattermost.com</td>
+	<td>https://windows.test.mattermost.com</td>
 	<td></td>
 </tr>
 <!--*** MANUALLY LOG IN to ci-windows-mysql as a system admin-->
@@ -1956,7 +1956,7 @@
 	<td></td>
 	<td>UserHasJoinedTeam: @</td>
 </tr>
-<!--User leaving team posts in Demo Plugin channel-->
+<!--User leaving team posts in Demo Plugin channel (verifies later)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -2076,16 +2076,205 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=a.post-image__download &gt; span &gt; svg</td>
+	<td>css=div.image-name &gt; div</td>
 	<td></td>
 </tr>
-<!--User has been created post in channel-->
+<!--Verify posts for user left team, file posted-->
 <tr>
-	<td></td>
-	<td></td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarSwitcherButton</td>
 	<td></td>
 </tr>
-<!--LOG OUT admin-->
+<tr>
+	<td>click</td>
+	<td>id=sidebarSwitcherButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.focused</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input.form-control.focused</td>
+	<td>demo plugin</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Demo Plugin*</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>Demo Plugin*</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Demo Plugin</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>UserHasLeftTeam: @corey</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>MessageHasBeenPosted: @admin, ~Off-Topic</td>
+	<td></td>
+</tr>
+<!--User has been created creates post in channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>id=linkModalTextArea</td>
+	<td>inviteplugin</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=linkModalCloseButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=linkModalCloseButton</td>
+	<td></td>
+</tr>
+<!--Log out admin-->
+<tr>
+	<td>rollup</td>
+	<td>logout</td>
+	<td></td>
+</tr>
+<!--Create account from invite link-->
+<tr>
+	<td>open</td>
+	<td>${inviteplugin}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Email and Password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Email and Password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=email</td>
+	<td>pluginuser@test.com</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>pluginuser</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=createAccountButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=createAccountButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerUsername</td>
+	<td>@pluginuser</td>
+</tr>
+<!--Join plugin demo channel and verify post-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#tutorialSkipLink &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#tutorialSkipLink &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarChannelsMore</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarChannelsMore</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.more-modal__name</td>
+	<td>Demo Plugin</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__actions &gt; button.btn.btn-primary</td>
+	<td>Join</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__actions &gt; button.btn.btn-primary</td>
+	<td>Join</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#channelHeaderTitle &gt; span</td>
+	<td>Demo Plugin</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>UserHasJoinedTeam: @pluginuser</td>
+	<td></td>
+</tr>
+<!--LOG OUT pluginuser-->
 <tr>
 	<td>rollup</td>
 	<td>logout</td>

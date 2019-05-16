@@ -130,12 +130,22 @@
 <!--Add admin to channel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelAddMembers</td>
+	<td>id=channelHeaderDropdownIcon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelAddMembers</td>
+	<td>id=channelHeaderDropdownIcon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#channelAddMembers &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelAddMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -274,12 +284,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelLeave</td>
+	<td>//ul[@id='channelHeaderDropdownMenu']/li[14]/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelLeave</td>
+	<td>//ul[@id='channelHeaderDropdownMenu']/li[14]/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -352,12 +362,12 @@
 <!--Post permalink in other channel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Off-Topic</td>
+	<td>link=Off-Topic*</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Off-Topic</td>
+	<td>link=Off-Topic*</td>
 	<td></td>
 </tr>
 <tr>
@@ -399,12 +409,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelLeave</td>
+	<td>//ul[@id='channelHeaderDropdownMenu']/li[14]/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelLeave</td>
+	<td>//ul[@id='channelHeaderDropdownMenu']/li[14]/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -414,26 +424,8 @@
 </tr>
 <!--LOG OUT test-->
 <tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <tr>
@@ -504,12 +496,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Integrations</td>
+	<td>link=Integrations</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Integrations</td>
+	<td>link=Integrations</td>
 	<td></td>
 </tr>
 <tr>
@@ -570,12 +562,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -625,23 +617,23 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=swithToui-automation</td>
+	<td>css=a</td>
 	<td>Switch to UI Automation</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
-	<td>Switch to UI Automation</td>
+	<td>css=a</td>
+	<td></td>
 </tr>
 <!--Cancel out of converting channel to private-->
 <tr>
@@ -671,12 +663,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelConvert</td>
+	<td>css=#channelCovertToPrivate &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelConvert</td>
+	<td>css=#channelCovertToPrivate &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -722,12 +714,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelConvert</td>
+	<td>css=#channelCovertToPrivate &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelConvert</td>
+	<td>css=#channelCovertToPrivate &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -806,12 +798,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Integrations</td>
+	<td>link=Integrations</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Integrations</td>
+	<td>link=Integrations</td>
 	<td></td>
 </tr>
 <tr>
@@ -866,36 +858,8 @@
 </tr>
 <!--LOG OUT admin-->
 <tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=loginId</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN test-->
@@ -1059,36 +1023,8 @@
 <!--Add non-system admin to channel to verify can't add members-->
 <!--LOG OUT test-->
 <tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=loginId</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -1195,36 +1131,8 @@
 </tr>
 <!--LOG OUT admin-->
 <tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=loginId</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN test-->
@@ -1304,47 +1212,19 @@
 	<td>View Info</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=channelManageMembers</td>
-	<td>View Members</td>
-</tr>
-<tr>
-	<td>waitForNotText</td>
-	<td>id=channelAddMembers</td>
-	<td>Add Members</td>
-</tr>
-<!--LOG OUT test-->
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
 	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
+	<td>css=#channelViewMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
+	<td>css=#channelViewMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
+<!--LOG OUT test-->
 <tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=loginId</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -1395,12 +1275,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -1450,23 +1330,23 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.dropdown__icon.admin-navbar-dropdown__icon</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=swithToui-automation</td>
+	<td>css=a</td>
 	<td>Switch to UI Automation</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
-	<td>Switch to UI Automation</td>
+	<td>css=a</td>
+	<td></td>
 </tr>
 <!--Cleanup: Archive test channel-->
 <tr>
@@ -1491,12 +1371,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelDelete</td>
+	<td>css=#channelArchiveChannel &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelDelete</td>
+	<td>css=#channelArchiveChannel &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1557,12 +1437,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelConvert</td>
+	<td>css=#channelCovertToPrivate &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelConvert</td>
+	<td>css=#channelCovertToPrivate &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1587,36 +1467,8 @@
 </tr>
 <!--LOG OUT test-->
 <tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=loginId</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--New account isn't added to Off-Topic after it's converted to private-->
@@ -1671,7 +1523,7 @@
 	<td></td>
 </tr>
 <!--This will fail if not the top team in list (working on how to make it less brittle)-->
-<!--In the meantime, click UI Automation 2 team manually-->
+<!--In the meantime, may click UI Automation 2 team manually-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//a[@id='UI_Automation_2']</td>
@@ -1702,34 +1554,56 @@
 	<td>link=Off-Topic</td>
 	<td></td>
 </tr>
-<!--Need to add a step to leave the team just joined, in the event the server is not immediately rebuilt-->
+<!--Cleanup: Leave the team-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#leaveTeam &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#leaveTeam &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation 2</td>
+</tr>
 <!--***********-->
 <!--If feasible, rebuild the server after running this test; -->
 <!--could cause problems in other tests if Off-Topic is private-->
 <!--***********-->
 <!--LOG OUT noprivate-->
 <tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=span</td>
+	<td>Logout</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
-	<td></td>
+	<td>css=span</td>
+	<td>Logout</td>
 </tr>
 </tbody></table>
 </body>
