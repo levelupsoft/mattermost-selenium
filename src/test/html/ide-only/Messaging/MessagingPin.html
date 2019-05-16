@@ -233,7 +233,7 @@
 	<td>Pin the tail</td>
 </tr>
 <tr>
-	<td>waitForText</td>
+	<td>waitForElementPresent</td>
 	<td>css=div.post-right-comments-container div.post.post--thread.same--root.post--comment.current--user div.post__content div div.post__body div div.post-message.post-message--collapsed div.post-message__text-container div#postMessageText_kbqb5cthxigbmd1wxbsizttxhw.post-message__text p</td>
 	<td>on the donkey.</td>
 </tr>
@@ -1032,27 +1032,7 @@
 	<td>Pinned</td>
 </tr>
 <!--Open reply RHS-->
-<!--*** Manually open ... post menu in RHS-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[6]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[6]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=ul.dropdown-menu.bottom &gt; li &gt; button.style--none</td>
-	<td>Reply</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=ul.dropdown-menu.bottom &gt; li &gt; button.style--none</td>
-	<td>Reply</td>
-</tr>
+<!--*** Manually open reply RHS -->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=reply_textbox</td>
@@ -1190,7 +1170,12 @@
 	<td>css=span:contains('Pin to channel')</td>
 	<td></td>
 </tr>
-<!--*** Manually hover-->
+<!--Pin DM in center-->
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.style--none &gt; span:contains('Pin to channel')</td>
@@ -1243,9 +1228,45 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>Pinned posts in Direct Message</td>
+</tr>
+<!--*** Open ... menu manually in center -->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none &gt; span:contains('Delete')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none &gt; span:contains('Delete')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=deletePostModalButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=deletePostModalButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=li &gt; span</td>
+	<td>There are no pinned messages yet.</td>
+</tr>
+<tr>
 	<td>waitForNotText</td>
 	<td>css=span.sidebar--right__title &gt; span</td>
 	<td>Pinned posts in Town Square</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>Pinned posts in Direct Message</td>
 </tr>
 <!--Open pinned posts RHS for center channel-->
 <tr>
@@ -1268,17 +1289,23 @@
 	<td>8000</td>
 	<td></td>
 </tr>
-<!--*** Manually pin "For both flagging..."-->
+<!--Pin "For both flagging..."-->
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelHeaderPinButton</td>
+	<td>css=button.style--none &gt; span:contains('Pin to channel')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelHeaderPinButton</td>
+	<td>css=button.style--none &gt; span:contains('Pin to channel')</td>
 	<td></td>
 </tr>
+<!--Pinned list still open, switched to viewed channel-->
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title &gt; span</td>
@@ -1299,17 +1326,7 @@
 	<td>css=span.post__pinned-badge &gt; span</td>
 	<td>Pinned</td>
 </tr>
-<!--*** Manually hover over center channel post-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[9]</td>
-	<td></td>
-</tr>
+<!--*** Manually open ... menu for center channel post-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=span:contains('Delete')</td>
@@ -1355,7 +1372,83 @@
 	<td>css=p:contains('For both flagging and pinning!')</td>
 	<td></td>
 </tr>
-<!--Cleanup: Archive both channels (need to write these steps)-->
+<!--Cleanup: Archive both channels-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelHeaderDropdownIcon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderDropdownIcon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#channelArchiveChannel &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelArchiveChannel &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Pin-*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Pin-*</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#channelArchiveChannel &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelArchiveChannel &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>link=Pin-*</td>
+	<td></td>
+</tr>
+<!--Log out test-->
+<tr>
+	<td>rollup</td>
+	<td>logout</td>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>

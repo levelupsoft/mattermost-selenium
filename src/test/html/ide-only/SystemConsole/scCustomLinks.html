@@ -137,22 +137,22 @@
 <tr>
 	<td>type</td>
 	<td>id=SupportSettings.AboutLink</td>
-	<td>https://api.mattermost.com/</td>
+	<td>https://about.gitlab.com/</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=SupportSettings.HelpLink</td>
-	<td>https://about.mattermost.com/features/</td>
+	<td>https://www.google.com/</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=SupportSettings.ReportAProblemLink</td>
-	<td>https://about.mattermost.com/community-applications/</td>
+	<td>https://docs.mattermost.com</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
 	<td>id=SupportSettings.ReportAProblemLink</td>
-	<td>https://about.mattermost.com/community-applications/</td>
+	<td>https://docs.mattermost.com</td>
 </tr>
 <tr>
 	<td>waitForEditable</td>
@@ -225,7 +225,7 @@
 </tr>
 <tr>
 	<td>waitForLocation</td>
-	<td>https://api.mattermost.com/</td>
+	<td>https://about.gitlab.com/</td>
 	<td></td>
 </tr>
 <tr>
@@ -325,7 +325,7 @@
 </tr>
 <tr>
 	<td>waitForLocation</td>
-	<td>https://mattermost.com/product/</td>
+	<td>https://www.google.com/</td>
 	<td></td>
 </tr>
 <tr>
@@ -382,6 +382,7 @@
 	<td>link=Town Square</td>
 	<td>Town Square</td>
 </tr>
+<!--Verify links in main menu-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -409,7 +410,7 @@
 </tr>
 <tr>
 	<td>waitForLocation</td>
-	<td>https://mattermost.com/product/</td>
+	<td>https://www.google.com/</td>
 	<td></td>
 </tr>
 <tr>
@@ -449,7 +450,7 @@
 </tr>
 <tr>
 	<td>waitForLocation</td>
-	<td>https://integrations.mattermost.com/</td>
+	<td>https://docs.mattermost.com/</td>
 	<td></td>
 </tr>
 <tr>
@@ -462,7 +463,108 @@
 	<td>null</td>
 	<td></td>
 </tr>
-<!--Blank TOS, Help, Report a Problem-->
+<!--Verify links in About modal-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#about &gt; button.style--none.</td>
+	<td>About Mattermost</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#about &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.about-modal__links &gt; a &gt; span</td>
+	<td>Terms of Service</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.about-modal__links &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForLocation</td>
+	<td>https://mattermost.com/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>close</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Privacy Policy</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Privacy Policy</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForLocation</td>
+	<td>https://github.com/mattermost</td>
+	<td></td>
+</tr>
+<tr>
+	<td>close</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<!--Blank TOS, Privacy, Help, Report a Problem-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -501,6 +603,11 @@
 <tr>
 	<td>type</td>
 	<td>id=SupportSettings.TermsOfServiceLink</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=SupportSettings.PrivacyPolicyLink</td>
 	<td></td>
 </tr>
 <tr>
@@ -595,7 +702,6 @@
 	<td>null</td>
 	<td></td>
 </tr>
-<!--Blank Help and Report a Problem hidden from main menu-->
 <!--LOG IN admin-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -630,6 +736,7 @@
 	<td>link=Town Square</td>
 	<td>Town Square</td>
 </tr>
+<!--Blank Help and Report a Problem hidden from main menu-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -655,7 +762,83 @@
 	<td>id=SupportSettings.HelpLink</td>
 	<td></td>
 </tr>
+<!--Default TOS link in About modal, no Privacy link in About modal-->
+<tr>
+	<td>waitForText</td>
+	<td>css=#about &gt; button.style--none.</td>
+	<td>About Mattermost</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#about &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.about-modal__links &gt; a &gt; span</td>
+	<td>Terms of Service</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.about-modal__links &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForLocation</td>
+	<td>https://about.mattermost.com/default-terms/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>close</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Terms of Service</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>link=Privacy</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
 <!--Edit Support email link-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=System Console</td>
@@ -728,11 +911,6 @@
 	<td>Mattermost App Links</td>
 </tr>
 <!--Edit Download Page link-->
-<tr>
-	<td>storeValue</td>
-	<td>id=NativeAppSettings.AppDownloadLink</td>
-	<td>downloadpagelink</td>
-</tr>
 <tr>
 	<td>storeValue</td>
 	<td>id=NativeAppSettings.AppDownloadLink</td>
@@ -1491,12 +1669,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
+	<td>link=Member</td>
 	<td>Member</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
+	<td>link=Member</td>
 	<td></td>
 </tr>
 <tr>
@@ -1521,7 +1699,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
+	<td>css=div.text-right &gt; a &gt; span</td>
 	<td>Inactive</td>
 </tr>
 <!--LOG OUT admin-->

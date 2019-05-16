@@ -15,12 +15,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=systemConsole</td>
+	<td>link=System Console</td>
 	<td></td>
 </tr>
 <tr>
@@ -103,6 +103,21 @@
 	<td>AD/LDAP Test Successful</td>
 </tr>
 <!--LOG OUT-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
@@ -1072,6 +1087,7 @@
 	<td>8000</td>
 	<td></td>
 </tr>
+<!--*** Hm, these passwds were already entered above? Skip ahead to success msg if test hangs here-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=password</td>
@@ -1202,6 +1218,11 @@
 	<td>click</td>
 	<td>link=Switch to using AD/LDAP</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForAttribute</td>
+	<td>css=input.form-control@placeholder</td>
+	<td>Password</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1933,7 +1954,7 @@
 	<td></td>
 	<td></td>
 </tr>
-<!--*** v5.5 note: LM set up the Se server with Jumpcloud to continue from here-->
+<!--*** v5.5 and on: LM set up the Se server with Jumpcloud to continue from here-->
 <!--*** Continued from here on Se server-->
 <!--Verify account creation available for email and LDAP-->
 <tr>
@@ -2097,13 +2118,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='root']/div/div/div/ul/li[13]/button</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td>Logout</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div/div/ul/li[13]/button</td>
+	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
 	<td></td>
 </tr>
 <tr>

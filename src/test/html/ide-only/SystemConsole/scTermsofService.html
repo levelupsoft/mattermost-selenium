@@ -104,24 +104,19 @@
 </tr>
 <!--Enter markdown TOS text-->
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=SupportSettings.CustomTermsOfServiceText</td>
-	<td>- This is a bullet point&nbsp;&nbsp;- This is another bullet point&nbsp;&nbsp;&nbsp;**This has been bolded**&nbsp;&nbsp;~~This has been struck through~~&nbsp;&nbsp;*This has been italicized*&nbsp;&nbsp;[This is a link to mattermost.com](https://mattermost.com)&nbsp;&nbsp;`This is inline code` </td>
+	<td>- This is a bullet point&nbsp;&nbsp;<br />- This is another bullet point <br /><br /> **This has been bolded** <br /><br /> ~~This has been struck through~~ <br /><br />*This has been italicized* <br /><br />[This is a link to mattermost.com](https://mattermost.com) <br /><br />`This is inline code`<br /><br />- This is a bullet point&nbsp;&nbsp;<br />- This is another bullet point <br /><br /> **This has been bolded** <br /><br /> ~~This has been struck through~~ <br /><br />*This has been italicized* <br /><br />[This is a link to mattermost.com](https://mattermost.com) <br /><br />`This is inline code`<br /><br />- This is a bullet point&nbsp;&nbsp;<br />- This is another bullet point <br /><br /> **This has been bolded** <br /><br /> ~~This has been struck through~~ <br /><br />*This has been italicized* <br /><br />[This is a link to mattermost.com](https://mattermost.com) <br /><br />`This is inline code`<br /><br />- This is a bullet point&nbsp;&nbsp;<br />- This is another bullet point <br /><br /> **This has been bolded** <br /><br /> ~~This has been struck through~~ <br /><br />*This has been italicized* <br /><br />[This is a link to mattermost.com](https://mattermost.com) <br /><br />`This is inline code`<br /><br /></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>id=SupportSettings.CustomTermsOfServiceText</td>
-	<td>- This is a bullet point&nbsp;&nbsp;- This is another bullet point&nbsp;&nbsp;&nbsp;**This has been bolded**&nbsp;&nbsp;~~This has been struck through~~&nbsp;&nbsp;*This has been italicized*&nbsp;&nbsp;[This is a link to mattermost.com](https://mattermost.com)&nbsp;&nbsp;`This is inline code` </td>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>id=SupportSettings.CustomTermsOfServiceText</td>
-	<td>- This is a bullet point&nbsp;&nbsp;- This is another bullet point&nbsp;&nbsp;&nbsp;**This has been bolded**&nbsp;&nbsp;~~This has been struck through~~&nbsp;&nbsp;*This has been italicized*&nbsp;&nbsp;[This is a link to mattermost.com](https://mattermost.com)&nbsp;&nbsp;`This is inline code` </td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=SupportSettings.CustomTermsOfServiceText</td>
-	<td>- This is a bullet point&nbsp;&nbsp;- This is another bullet point&nbsp;&nbsp;&nbsp;**This has been bolded**&nbsp;&nbsp;~~This has been struck through~~&nbsp;&nbsp;*This has been italicized*&nbsp;&nbsp;[This is a link to mattermost.com](https://mattermost.com)&nbsp;&nbsp;`This is inline code` </td>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -131,7 +126,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>//div[@id='root']/div/div[2]/div/div/div/ul/li[2]</td>
-	<td>This is another bullet point</td>
+	<td>This is another bullet point <br /> This has been bolded <br /> This has been struck through</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -179,7 +174,37 @@
 	<td>id=acceptTerms</td>
 	<td></td>
 </tr>
-
+<!--Cleanup: Set TOS to false-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=SupportSettings.CustomTermsOfServiceEnabledfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=SupportSettings.CustomTermsOfServiceEnabledfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=SupportSettings.CustomTermsOfServiceEnabledfalse</td>
+	<td>on</td>
+</tr>
 </tbody></table>
 </body>
 </html>
