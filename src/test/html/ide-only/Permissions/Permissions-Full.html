@@ -618,27 +618,32 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=adminNavbarDropdownButton</td>
+	<td>//a[@class='fa fa-angle-left back']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=adminNavbarDropdownButton</td>
+	<td>//a[@class='fa fa-angle-left back']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithToui-automation</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>//span [contains(text(),'Logout')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--Verify System Admin has permissions are correctly enabled-->
@@ -2135,32 +2140,7 @@
 <!--Integrations and Customizations -->
 <tr>
 	<td>click</td>
-	<td>//div[@id='team_admin-integrations-manage_webhooks']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='team_admin-integrations-manage_webhooks']/div[@class='permission-check checked']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='team_admin-integrations-manage_slash_commands']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='team_admin-integrations-manage_slash_commands']/div[@class='permission-check checked']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='team_admin-integrations-manage_emojis']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='team_admin-integrations-manage_emojis']/div[@class='permission-check checked']</td>
+	<td>//div[@id='team_admin-integrations']</td>
 	<td></td>
 </tr>
 <tr>
@@ -2180,27 +2160,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=adminNavbarDropdownButton</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=adminNavbarDropdownButton</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithToui-automation</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
-	<td></td>
-</tr>
-<tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--Verify Team Admin permissions can be enabled-->
@@ -2209,7 +2184,6 @@
 	<td>login</td>
 	<td>username=test4</td>
 </tr>
-<!--Fix remove user from team-->
 <tr>
 	<td>rollup</td>
 	<td>removeUserFromTeam</td>
@@ -3426,27 +3400,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=adminNavbarDropdownButton</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=adminNavbarDropdownButton</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithToui-automation</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
-	<td></td>
-</tr>
-<tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--Verify Channel Admin permissions granted are working correctly-->
@@ -4447,32 +4416,7 @@
 <!--All Members - Integrations and Customizations-->
 <tr>
 	<td>click</td>
-	<td>css=#all_users-integrations-manage_webhooks &gt; div.permission-check </td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#all_users-integrations-manage_webhooks &gt; div.permission-check </td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#all_users-integrations-manage_slash_commands &gt; div.permission-check </td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#all_users-integrations-manage_slash_commands &gt; div.permission-check </td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#all_users-integrations-manage_emojis &gt;div.permission-check </td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#all_users-integrations-manage_emojis &gt; div.permission-check </td>
+	<td>id=all_users-integrations</td>
 	<td></td>
 </tr>
 <tr>
@@ -4492,27 +4436,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=adminNavbarDropdownButton</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=adminNavbarDropdownButton</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=swithToui-automation</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
-	<td></td>
-</tr>
-<tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--Verify System Admin has permissions are correctly enabled-->
@@ -5369,32 +5308,12 @@
 <!--All Members - Integrations and Customizations-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#all_users-integrations-manage_webhooks &gt; div.permission-check </td>
+	<td>id=all_users-integrations</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#all_users-integrations-manage_webhooks &gt;div.permission-check.checked &gt; svg</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#all_users-integrations-manage_slash_commands &gt; div.permission-check </td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#all_users-integrations-manage_slash_commands &gt;div.permission-check.checked &gt; svg</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#all_users-integrations-manage_emojis &gt;div.permission-check.checked &gt; svg</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#all_users-integrations-manage_emojis &gt; div.permission-check </td>
+	<td>id=all_users-integrations</td>
 	<td></td>
 </tr>
 <!--Channel Admin-->
@@ -5670,13 +5589,23 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=swithToui-automation</td>
+	<td>waitForElementPresent</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>click</td>
+	<td>//span[@class='menu-icon']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//span [contains(text(),'Logout')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--Verify System Admin has permissions are correctly enabled-->

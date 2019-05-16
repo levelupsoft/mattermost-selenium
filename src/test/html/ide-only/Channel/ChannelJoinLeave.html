@@ -263,38 +263,15 @@
 	<td>id=post_textbox</td>
 	<td>Join from a permalink!${KEY_ENTER}</td>
 </tr>
-<!--It's no longer locating the Permalink button in center-->
-<!--Nor is it finding the three-dot menu in RHS anymore :/-->
-<!--*** Manually open Permalink modal-->
 <tr>
-	<td>pause</td>
-	<td>4999</td>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=post_textbox</td>
-	<td>${KEY_SHIFT}${KEY_UP}</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.col.col__reply div.MenuWrapper button#RHS_ROOT_button_*.post__dropdown.color--link.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=li &gt; button.style--none</td>
-	<td>Permalink</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=li &gt; button.style--none</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Permalink</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -338,14 +315,6 @@
 </tr>
 <!--LOG OUT test9-->
 <tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
 	<td>rollup</td>
 	<td>logout</td>
 	<td></td>
@@ -353,41 +322,10 @@
 <!--LOG IN test10-->
 <!--DisableAnimations-->
 <tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
+	<td>rollup</td>
+	<td>login</td>
+	<td>username=test10</td>
 </tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>name=loginId</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=loginId</td>
-	<td>test10@test.com</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=password</td>
-	<td>passwd</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=loginButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
 <tr>
 	<td>waitForText</td>
 	<td>link=Town Square</td>
@@ -490,27 +428,15 @@
 	<td>css=p:contains('Try to join this private channel from a link...')</td>
 	<td></td>
 </tr>
-<!--Open RHS so Se can find Permalink button-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>id=post_textbox</td>
-	<td>${KEY_SHIFT}${KEY_UP}</td>
-</tr>
-<!--*** Manually click dot-menu on post-->
-<tr>
-	<td>waitForText</td>
-	<td>css=li &gt; button.style--none</td>
-	<td>Permalink</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=li &gt; button.style--none</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Permalink</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -698,14 +624,6 @@
 	<td></td>
 </tr>
 <!--LOG OUT -->
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
 <tr>
 	<td>rollup</td>
 	<td>logout</td>
