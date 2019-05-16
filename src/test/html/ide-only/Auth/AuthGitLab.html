@@ -14,7 +14,7 @@
 <!--This tests on rctesting using the QA test account-->
 <tr>
 	<td>open</td>
-	<td>https://rctesting.reddogsofwar.com</td>
+	<td>https://rc.test.mattermost.com</td>
 	<td></td>
 </tr>
 <!--Enter creds for any system admin (but don't click to log in)-->
@@ -912,7 +912,7 @@
 <!--Back to Mattermost, sign in using GitLab-->
 <tr>
 	<td>open</td>
-	<td>https://rctesting.reddogsofwar.com</td>
+	<td>https://rc.test.mattermost.com</td>
 	<td></td>
 </tr>
 <tr>
@@ -976,6 +976,11 @@
 	<td></td>
 </tr>
 <!--Log in system admin using previously stored credentials-->
+<tr>
+	<td>open</td>
+	<td>https://rc.test.mattermost.com</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=loginId</td>
@@ -1457,6 +1462,17 @@
 	<td></td>
 </tr>
 <!--Removing Mattermost Site URL does not prevent GitLab signin-->
+<!--Manually disable email batching before removing URL-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td>storeValue</td>
 	<td>id=ServiceSettings.SiteURL</td>

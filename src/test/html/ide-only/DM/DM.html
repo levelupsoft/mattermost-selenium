@@ -162,6 +162,11 @@
 <!--Sleep-->
 <!--Join channel test4 just created-->
 <tr>
+	<td>rollup</td>
+	<td>switchTeam</td>
+	<td>TeamName=ui-automation</td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>css=h1#headerTeamName.team__name</td>
 	<td>UI Automation</td>
@@ -434,24 +439,14 @@
 </tr>
 <!--*** Needs updating; manually open post menu and click Delete-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.dropdown-toggle.post__dropdown.color--link.style--none</td>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=button.dropdown-toggle.post__dropdown.color--link.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.style--none &gt; span:contains('Delete')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.style--none &gt; span:contains('Delete')</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Delete</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
