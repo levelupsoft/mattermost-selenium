@@ -73,17 +73,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>headertest</td>
 </tr>
 <tr>
@@ -113,7 +113,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='post-list']/div[2]/div/div/div/button</td>
+	<td>//div[@id='channelIntro']/button</td>
 	<td>Invite others to this channel</td>
 </tr>
 <tr>
@@ -163,7 +163,7 @@
 <!--Sleep-->
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.modal-title &gt; strong</td>
+	<td>css=#channelInfoModalLabel &gt; strong</td>
 	<td>headertest</td>
 </tr>
 <tr>
@@ -345,13 +345,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.modal-title &gt; strong</td>
+	<td>css=#channelInfoModalLabel &gt; strong</td>
 	<td>headertest</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.info__label &gt; span</td>
-	<td>exact:Header:</td>
+	<td>css=div.info__value &gt; p</td>
+	<td>exact:*Header</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -501,7 +501,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.modal-title &gt; strong</td>
+	<td>css=#channelInfoModalLabel &gt; strong</td>
 	<td>headertest</td>
 </tr>
 <tr>
