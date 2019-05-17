@@ -53,14 +53,14 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         driver.findElement(By.id("createPublicChannel")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("newChannelName"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("newPublicChannelName"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("newChannelName")).clear();
-        driver.findElement(By.id("newChannelName")).sendKeys("");
-        driver.findElement(By.id("newChannelName")).clear();
-        driver.findElement(By.id("newChannelName")).sendKeys("headertest");
+        driver.findElement(By.id("newPublicChannelName")).clear();
+        driver.findElement(By.id("newPublicChannelName")).sendKeys("");
+        driver.findElement(By.id("newPublicChannelName")).clear();
+        driver.findElement(By.id("newPublicChannelName")).sendKeys("headertest");
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("URL: /headertest (Edit)".equals(driver.findElement(By.cssSelector("p.input__help.dark")).getText())) break; } catch (Exception e) {}
@@ -88,10 +88,11 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Invite others to this channel".equals(driver.findElement(By.xpath("//div[@id='channelIntro']/button")).getText())) break; } catch (Exception e) {}
+        	try { if ("Invite others to this channel".equals(driver.findElement(By.xpath("//div[@id='post-list']/div[2]/div/div/div/button")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
+        driver.navigate().refresh();
         // Sleep
         // Sleep
         // Sleep
@@ -102,9 +103,6 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         }
 
         driver.findElement(By.cssSelector("strong.heading")).click();
-        // Sleep
-        // Sleep
-        // Sleep
         // View channel info without header
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -118,7 +116,7 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("headertest".equals(driver.findElement(By.cssSelector("#channelInfoModalLabel > strong")).getText())) break; } catch (Exception e) {}
+        	try { if ("headertest".equals(driver.findElement(By.cssSelector("h4.modal-title > strong")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -240,13 +238,13 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         driver.findElement(By.cssSelector("li#channelViewInfo.MenuItem button.style--none")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("headertest".equals(driver.findElement(By.cssSelector("#channelInfoModalLabel > strong")).getText())) break; } catch (Exception e) {}
+        	try { if ("headertest".equals(driver.findElement(By.cssSelector("h4.modal-title > strong")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.cssSelector("div.info__value > p")).getText().matches("^exact:[\\s\\S]*Header$")) break; } catch (Exception e) {}
+        	try { if ("Header:".equals(driver.findElement(By.cssSelector("div.info__label > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -336,7 +334,7 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
         driver.findElement(By.cssSelector("li#channelViewInfo.MenuItem button.style--none")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("headertest".equals(driver.findElement(By.cssSelector("#channelInfoModalLabel > strong")).getText())) break; } catch (Exception e) {}
+        	try { if ("headertest".equals(driver.findElement(By.cssSelector("h4.modal-title > strong")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
