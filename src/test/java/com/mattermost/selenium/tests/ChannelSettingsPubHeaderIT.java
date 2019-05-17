@@ -244,7 +244,7 @@ public class ChannelSettingsPubHeaderIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (driver.findElement(By.cssSelector("div.info__value > p")).getText().matches("^exact:[\\s\\S]*Header$")) break; } catch (Exception e) {}
+        	try { if (driver.findElement(By.cssSelector("div.info__value > p")).getText().matches("^[\\s\\S]*Header$")) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
