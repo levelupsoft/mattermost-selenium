@@ -39,17 +39,19 @@ public class SearchIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        // Does the page still fail to fully render if a refresh is inserted here?
+        driver.navigate().refresh();
         // Sleep
         // Sleep
         // Sleep
         // Open flagged posts RHS to ensure search box is expanded (in case of narrow window)
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("channelHeaderFlagButton"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("button#channelHeaderFlagButton.channel-header__icon.icon--hidden.style--none"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.id("channelHeaderFlagButton")).click();
+        driver.findElement(By.cssSelector("button#channelHeaderFlagButton.channel-header__icon.icon--hidden.style--none")).click();
         // Search: Basic, markdown
         driver.findElement(By.id("post_textbox")).sendKeys("/test url test-search.md" + Keys.ENTER);
         for (int second = 0;; second++) {

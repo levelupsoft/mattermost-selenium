@@ -51,6 +51,12 @@
 	<td>id=post_textbox</td>
 	<td></td>
 </tr>
+<!--Does the page still fail to fully render if a refresh is inserted here?-->
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td>pause</td>
 	<td>3000</td>
@@ -62,12 +68,12 @@
 <!--Open flagged posts RHS to ensure search box is expanded (in case of narrow window)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelHeaderFlagButton</td>
+	<td>css=button#channelHeaderFlagButton.channel-header__icon.icon--hidden.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelHeaderFlagButton</td>
+	<td>css=button#channelHeaderFlagButton.channel-header__icon.icon--hidden.style--none</td>
 	<td></td>
 </tr>
 <!--Search: Basic, markdown-->
