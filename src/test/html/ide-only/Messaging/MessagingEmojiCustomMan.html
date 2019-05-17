@@ -129,7 +129,6 @@
 	<td>//span[@class='emoticon'][@title=':neutral_face:']</td>
 	<td></td>
 </tr>
-<!--^^This will fail until 5.10^^-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -147,7 +146,6 @@
 	<td>//span[@class='emoticon'][@title=':mask:']</td>
 	<td></td>
 </tr>
-<!--^^This will fail until 5.10^^-->
 <!--Unicode Emoji-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -307,6 +305,11 @@
 <tr>
 	<td>pause</td>
 	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.backstage-form__footer &gt; button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
@@ -1465,13 +1468,13 @@
 <!--Open emoji picker in RHS-->
 <!--LM can't get this part to work; clicked manually-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.reacticon__container.reaction.color--link.style--none &gt; span.icon.icon--emoji</td>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=button.reacticon__container.reaction.color--link.style--none &gt; span.icon.icon--emoji</td>
+	<td>rollup</td>
+	<td>openEmojiPickerForLastPost</td>
 	<td></td>
 </tr>
 <tr>

@@ -977,6 +977,11 @@
 </tr>
 <!--Log in system admin using previously stored credentials-->
 <tr>
+	<td>open</td>
+	<td>https://rc.test.mattermost.com</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>id=loginId</td>
 	<td></td>
@@ -1457,6 +1462,17 @@
 	<td></td>
 </tr>
 <!--Removing Mattermost Site URL does not prevent GitLab signin-->
+<!--Manually disable email batching before removing URL-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td>storeValue</td>
 	<td>id=ServiceSettings.SiteURL</td>

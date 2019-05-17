@@ -3367,11 +3367,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=#systemConsole &gt; span</td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
 	<td>css=#users &gt; span.sidebar-section-title__text &gt; span</td>
 	<td></td>
@@ -3391,7 +3386,7 @@
 	<td>id=searchUsers</td>
 	<td>test5</td>
 </tr>
-<!--Replace this with a rollup instead of fixing it-->
+<!--Replace these steps with a rollup instead of fixing it-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//div[@class='more-modal__name']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop text-right']</td>
@@ -3450,22 +3445,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span[class='dropdown__icon admin-navbar-dropdown__icon']</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span[class='dropdown__icon admin-navbar-dropdown__icon']</td>
+	<td>//span[@class='menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout &gt; span</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout &gt; span</td>
+	<td>//span [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--Switch back to test user-->
@@ -3880,7 +3875,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//*[@id='channelHeaderTitle'][text()='PrivateChanTeamA-Updat']</td>
+	<td>//*[@id='channelHeaderTitle']/span[contains(text(),'PrivateChanTeamA-Updat')]</td>
 	<td></td>
 </tr>
 <tr>

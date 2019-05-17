@@ -502,10 +502,10 @@ commands.push({ command: 'click', target: "id=sidebarHeaderDropdownButton", valu
 commands.push({ command: 'waitForElementPresent', target: "//li[@id='manageMembers']/button", value: ''});
 commands.push({ command: 'click', target: "//li[@id='manageMembers']/button", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal modal-dialog']", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@class='dropdown-toggle theme color--link style--none']", value: ''});
-commands.push({ command: 'click', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='dropdown member-drop']/button[@class='dropdown-toggle theme color--link style--none']", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "//div[@class='dropdown member-drop open']/ul/li/a/span[contains(text(),'Remove From Team')]", value: ''});
-commands.push({ command: 'click', target: "//div[@class='dropdown member-drop open']/ul/li/a/span[contains(text(),'Remove From Team')]", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button[@class='dropdown-toggle theme color--link style--none']", value: ''});
+commands.push({ command: 'click', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button[@class='dropdown-toggle theme color--link style--none']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//li[@id='removeFromTeam']/button/span[contains(text(),'Remove From Team')]", value: ''});
+commands.push({ command: 'click', target: "//li[@id='removeFromTeam']/button/span[contains(text(),'Remove From Team')]", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//button[@class='close']", value: ''});
 commands.push({ command: 'click', target: "//button[@class='close']", value: ''});
 return commands;

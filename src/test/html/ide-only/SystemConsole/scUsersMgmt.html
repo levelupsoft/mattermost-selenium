@@ -433,7 +433,12 @@
 	<td></td>
 </tr>
 <!--Sleep-->
-<!--Sleep-->
+<tr>
+	<td>rollup</td>
+	<td>switchTeam</td>
+	<td></td>
+</tr>
+<!--//a[@href='/undefined']-->
 <!--Sleep-->
 <tr>
 	<td>waitForText</td>
@@ -466,18 +471,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=ul.dropdown-menu &gt; li &gt; a &gt; span</td>
-	<td>Team Selection</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>css=ul.dropdown-menu &gt; li &gt; a &gt; span</td>
+	<td>//li[@class='MenuItem']/a[contains(text(),'Team Selection')] </td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=ul.dropdown-menu &gt; li &gt; a &gt; span</td>
+	<td>//li[@class='MenuItem']/a[contains(text(),'Team Selection')] </td>
 	<td></td>
 </tr>
 <tr>
@@ -516,31 +516,6 @@
 	<td>id=headerTeamName</td>
 	<td>UI Automation 2</td>
 </tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>Link=System Console</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
 <!--Logout Corey-->
 <tr>
 	<td>rollup</td>
@@ -577,6 +552,11 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
+<tr>
+	<td>rollup</td>
+	<td>openChannel</td>
+	<td>ChannelName=Town Square</td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
@@ -621,7 +601,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=searchUsers</td>
-	<td>cor</td>
+	<td>corey</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -939,7 +919,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=searchUsers</td>
-	<td>cor</td>
+	<td>corey</td>
 </tr>
 <tr>
 	<td>waitForText</td>

@@ -169,6 +169,11 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
+	<td>rollup</td>
+	<td>openChannel</td>
+	<td>ChannelName=Town Square</td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
 	<td>Town Square</td>
@@ -527,6 +532,11 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
+	<td>rollup</td>
+	<td>openChannel</td>
+	<td>ChannelName=Town Square</td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
 	<td>Town Square</td>
@@ -883,6 +893,11 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
+<tr>
+	<td>rollup</td>
+	<td>openChannel</td>
+	<td>ChannelName=Town Square</td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
@@ -1830,23 +1845,23 @@
 	<td>@notify.${datetime}</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td>Member</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
 	<td>Member</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=button.style--none</td>
+	<td>waitForElementPresent</td>
+	<td>//span[contains(text(),'Deactivate')]</td>
 	<td>Deactivate</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none</td>
+	<td>//span[contains(text(),'Deactivate')]</td>
 	<td>Deactivate</td>
 </tr>
 <tr>
@@ -1860,9 +1875,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.MenuWrapper. &gt; a &gt; span &gt; span</td>
-	<td>Inactive</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Inactive')]</td>
+	<td></td>
 </tr>
 <!--LOG OUT admin-->
 <tr>

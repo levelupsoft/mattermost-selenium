@@ -275,8 +275,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#channelMemberDropdown &gt; span &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Member')]</td>
 	<td>Channel Member</td>
 </tr>
 <tr>
@@ -323,17 +323,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='dropdown member-drop']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='MenuWrapper ']/button </td>
+	<td>//div[@class='MenuWrapper ']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@class='MenuWrapper ']/button </td>
+	<td>//div[@class='MenuWrapper ']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -1441,7 +1436,7 @@
 	<td>css=div.alert.alert-danger &gt; span</td>
 	<td>This will archive the channel from the team and make its contents inaccessible for all users. <br /><br />Are you sure you wish to archive the Manage Private channel?</td>
 </tr>
-<!--^^ Locator looks perfect to me. It finds the span but won't match on the text^^-->
+<!--^^ Locator won't match on the text because channel name is in <strong> tag^^-->
 <tr>
 	<td>waitForText</td>
 	<td>css=button.btn.btn-danger</td>
@@ -1474,6 +1469,11 @@
 <tr>
 	<td>rollup</td>
 	<td>logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>https://rc.test.mattermost.com</td>
 	<td></td>
 </tr>
 </tbody></table>
