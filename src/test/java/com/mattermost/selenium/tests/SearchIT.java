@@ -920,6 +920,10 @@ public class SearchIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        driver.navigate().refresh();
+        // Sleep
+        // Sleep
+        // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.cssSelector("span.icon.icon__mentions > svg"))) break; } catch (Exception e) {}
