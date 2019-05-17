@@ -51,7 +51,7 @@
 	<td>id=post_textbox</td>
 	<td></td>
 </tr>
-<!--Does the page still fail to fully render if a refresh is inserted here?-->
+<!--Refresh page to avoid test failure due to page not fully rendering-->
 <tr>
 	<td>refreshAndWait</td>
 	<td></td>
@@ -479,6 +479,16 @@
 	<td>waitForTextPresent</td>
 	<td></td>
 	<td>${jumpmessage}*Click here to jump</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.sidebar--right__close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.sidebar--right__close</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

@@ -39,7 +39,7 @@ public class SearchIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        // Does the page still fail to fully render if a refresh is inserted here?
+        // Refresh page to avoid test failure due to page not fully rendering
         driver.navigate().refresh();
         // Sleep
         // Sleep
@@ -357,6 +357,13 @@ public class SearchIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("button.sidebar--right__close"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("button.sidebar--right__close")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if (isElementPresent(By.linkText("Click here to jump to recent messages."))) break; } catch (Exception e) {}
