@@ -1488,28 +1488,6 @@
 	<td>css=span.icon.icon__mentions &gt; svg</td>
 	<td></td>
 </tr>
-<!--Open flagged posts RHS to ensure search box is expanded (in case of narrow window)-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.search-bar</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
 <tr>
 	<td>click</td>
 	<td>css=span.icon.icon__mentions &gt; svg</td>
@@ -1730,6 +1708,16 @@
 <tr>
 	<td>pause</td>
 	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
 	<td></td>
 </tr>
 <!--LOG OUT test2-->
@@ -2107,6 +2095,11 @@
 	<td>verifyNotText</td>
 	<td>css=p</td>
 	<td>test3 has joined the channel</td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
 </tr>
 <!--LOG OUT-->
 <tr>

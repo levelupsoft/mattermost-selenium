@@ -926,21 +926,6 @@ public class SearchIT extends DriverBase {
         	Thread.sleep(1000);
         }
 
-        // Open flagged posts RHS to ensure search box is expanded (in case of narrow window)
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("channelHeaderFlagButton"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        driver.findElement(By.id("channelHeaderFlagButton")).click();
-        for (int second = 0;; second++) {
-        	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("input.search-bar"))) break; } catch (Exception e) {}
-        	Thread.sleep(1000);
-        }
-
-        // Sleep
         driver.findElement(By.cssSelector("span.icon.icon__mentions > svg")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
@@ -1095,6 +1080,13 @@ public class SearchIT extends DriverBase {
         // Sleep
         driver.findElement(By.id("post_textbox")).sendKeys("test usernameDM" + Keys.ENTER);
         // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("".equals(driver.findElement(By.id("post_textbox")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.navigate().refresh();
         // LOG OUT test2
         // Sleep
         // Sleep
@@ -1358,6 +1350,7 @@ public class SearchIT extends DriverBase {
         } catch (Error e) {
             verificationErrors.append(e.toString());
         }
+        driver.navigate().refresh();
         // LOG OUT
         // Sleep
         // Sleep
