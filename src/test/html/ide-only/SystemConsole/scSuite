@@ -8,34 +8,29 @@
 <body>
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
-<tr><td><a href="scReporting.html">scReporting</a></td></tr>
-<tr><td><a href="scUsersMgmt.html">scUsersMgmt</a></td></tr>
-<tr><td><a href="scUsersPassword.html">scUsersPassword</a></td></tr>
-<tr><td><a href="scUsersDeactivate.html">scUsersDeactivate</a></td></tr>
-<tr><td><a href="scConfiguration.html">scConfiguration</a></td></tr>
-<tr><td><a href="scLocalization.html">scLocalization</a></td></tr>
-<tr><td><a href="scUsersTeamsCreation.html">scUsersTeamsCreation</a></td></tr>
-<tr><td><a href="scUsersTeamsMaxes.html">scUsersTeamsMaxes</a></td></tr>
-<tr><td><a href="scRestrictAcctDomain.html">scRestrictAcctDomain</a></td></tr>
-<tr><td><a href="scUsersTeamsDM.html">scUsersTeamsDM</a></td></tr>
-<tr><td><a href="scTeammateName.html">scTeammateName</a></td></tr>
-<tr><td><a href="scPrivacy.html">scPrivacy</a></td></tr>
-<tr><td><a href="scAnnouncement.html">scAnnouncement</a></td></tr>
-<tr><td><a href="scComplianceLogging.html">scComplianceLogging</a></td></tr>
-<tr><td><a href="scAuthEmailUsername.html">scAuthEmailUsername</a></td></tr>
-<tr><td><a href="scAuthMFA.html">scAuthMFA</a></td></tr>
-<tr><td><a href="scSecSignup.html">scSecSignup</a></td></tr>
-<tr><td><a href="scPassword.html">scPassword</a></td></tr>
-<tr><td><a href="scSecurity.html">scSecurity</a></td></tr>
-<tr><td><a href="scNotificationSettings.html">scNotificationSettings</a></td></tr>
-<tr><td><a href="scPlugins.html">scPlugins</a></td></tr>
-<tr><td><a href="scDataRetention.html">scDataRetention</a></td></tr>
-<tr><td><a href="scExport.html">scExport</a></td></tr>
-<tr><td><a href="scNotificationsMan.html">scNotificationsMan</a></td></tr>
-<tr><td><a href="scCustomLinks.html">scCustomLinks</a></td></tr>
-<tr><td><a href="scUsersEmail.html">scUsersEmail</a></td></tr>
-<tr><td><a href="scSubpath.html">scSubpath</a></td></tr>
-<tr><td><a href="scBranding.html">scBranding</a></td></tr>
+<tr><td><a href="sc01-Reporting.html">sc01-Reporting</a></td></tr>
+<tr><td><a href="sc02-UsersMgmt.html">sc02-UsersMgmt</a></td></tr>
+<tr><td><a href="sc03-UsersEmail.html">sc03-UsersEmail</a></td></tr>
+<tr><td><a href="sc04-UsersPassword.html">sc04-UsersPassword</a></td></tr>
+<tr><td><a href="sc05-UsersDeactivate.html">sc05-UsersDeactivate</a></td></tr>
+<tr><td><a href="sc06-EnvWebserver.html">sc06-EnvWebserver</a></td></tr>
+<tr><td><a href="sc06.5-EnvSubpath.html">sc06.5-EnvSubpath</a></td></tr>
+<tr><td><a href="sc07-EnvSettings.html">sc07-EnvSettings</a></td></tr>
+<tr><td><a href="sc08-CustomBranding.html">sc08-CustomBranding</a></td></tr>
+<tr><td><a href="sc09-CustomLinks.html">sc09-CustomLinks</a></td></tr>
+<tr><td><a href="sc10-Localization.html">sc10-Localization</a></td></tr>
+<tr><td><a href="sc11-UsersTeamsMaxes.html">sc11-UsersTeamsMaxes</a></td></tr>
+<tr><td><a href="sc12-UsersTeamsDM.html">sc12-UsersTeamsDM</a></td></tr>
+<tr><td><a href="sc13-TeammateName.html">sc13-TeammateName</a></td></tr>
+<tr><td><a href="sc14-Privacy.html">sc14-Privacy</a></td></tr>
+<tr><td><a href="sc15-Notifications.html">sc15-Notifications</a></td></tr>
+<tr><td><a href="sc16-NotificationsMan.html">sc16-NotificationsMan</a></td></tr>
+<tr><td><a href="sc17-Announcement.html">sc17-Announcement</a></td></tr>
+<tr><td><a href="sc18-Posts_PublicLinks.html">sc18-Posts_PublicLinks</a></td></tr>
+<tr><td><a href="sc19-IntegrationsSettings.html">sc19-IntegrationsSettings</a></td></tr>
+<tr><td><a href="sc20-DataRetention.html">sc20-DataRetention</a></td></tr>
+<tr><td><a href="sc21-ComplianceExport.html">sc21-ComplianceExport</a></td></tr>
+<tr><td><a href="sc22-TermsofService.html">sc22-TermsofService</a></td></tr>
 </tbody></table>
 </body>
 </html>
