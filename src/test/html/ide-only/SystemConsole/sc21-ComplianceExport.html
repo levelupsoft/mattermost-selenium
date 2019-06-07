@@ -17,43 +17,19 @@
 	<td>/login</td>
 	<td></td>
 </tr>
-<!--DisableAnimations-->
+<tr>
+	<td>rollup</td>
+	<td>login</td>
+	<td>username=admin</td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=loginId</td>
-	<td>admin@test.com</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=password</td>
-	<td>passwd</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=loginButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -66,25 +42,257 @@
 	<td>link=System Console</td>
 	<td></td>
 </tr>
+<!--Elements not editable when disabled, and editable when enabled-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Compliance</td>
+	<td>id=compliance/export</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Compliance</td>
+	<td>id=compliance/export</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
-	<td>Compliance Settings</td>
+	<td>css=div.admin-console__header &gt; span</td>
+	<td>Compliance Export (Beta)</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enableComplianceExportfalse</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=exportJobStartTime</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=exportFormat</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=exportLocation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=enableComplianceExporttrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enableComplianceExporttrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=exportJobStartTime</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=exportFormat</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--Invalid time and directory values-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=exportJobStartTime</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=exportJobStartTime</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.help-text &gt; span</td>
-	<td>When true, Mattermost allows compliance reporting from the Compliance and Auditing tab. See documentation to learn more.</td>
+	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
+	<td>Message export job DailyRuntime must be a 24-hour time stamp in the form HH:MM.</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=exportJobStartTime</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=exportJobStartTime</td>
+	<td>ten</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
+	<td>Message export job DailyRuntime must be a 24-hour time stamp in the form HH:MM.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=exportJobStartTime</td>
+	<td>0300</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
+	<td>Message export job DailyRuntime must be a 24-hour time stamp in the form HH:MM.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=exportJobStartTime</td>
+	<td>3:00</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--Run now populates job table-->
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>Run Compliance Export Job Now</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td>Run Compliance Export Job Now</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>Pending</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.status-icon-success &gt; span</td>
+	<td>Success</td>
+</tr>
+<!--Job completion details are tested manually-->
+<!--Start and Cancel a job-->
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-default</td>
+	<td>Run Compliance Export Job Now</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-default</td>
+	<td>Run Compliance Export Job Now</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>Pending</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//span[@title='Cancel']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span[@title='Cancel']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//span[text()='Canceled']</td>
+	<td></td>
+</tr>
+<!--Cleanup: Disable Export-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=enableComplianceExportfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enableComplianceExportfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--Compliance Monitoring (being deprecated)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=compliance/monitoring</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=compliance/monitoring</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.admin-console__header &gt; span</td>
+	<td>Audits</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.banner__content</td>
+	<td>This feature is replaced by a new Compliance Export feature, and will be removed in a future release. We recommend migrating to the new system.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -103,12 +311,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div/div/form/div/div[3]/label</td>
+	<td>//div[@id='adminConsoleWrapper']/div[2]/div/div/div[2]/div/form/div/div/div[3]/label</td>
 	<td>Compliance Report Directory:</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='root']/div/div[2]/div/div/form/div/div[4]/label</td>
+	<td>//div[@id='adminConsoleWrapper']/div[2]/div/div/div[2]/div/form/div/div/div[4]/label</td>
 	<td>Enable Daily Report:</td>
 </tr>
 <tr>
@@ -171,15 +379,24 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
-<!--Verify in Compliance and Auditing section-->
+<!--Verify in Compliance Export section-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Compliance and Auditing</td>
+	<td>link=Compliance Export</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Compliance and Auditing</td>
+	<td>link=Compliance Export</td>
+	<td></td>
+</tr>
+<!--***** Where did this page go?! Used to be under Other (at the bottom)-->
+<!--***** I don't see the report section anywhere now (nor on their spreadsheet)-->
+<!--***** Asked Katie and Brad in a GM-->
+<!--Add in Compliance Reports here after it's back: MM-16089-->
+<tr>
+	<td></td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -366,203 +583,9 @@
 	<td>finished*adhoc*Se Test 2*Se Test 1</td>
 	<td></td>
 </tr>
-<!--Logging settings editable / not editable as expected-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Logging</td>
 	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Logging</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
-	<td>Logging</td>
-</tr>
-<!--Console level-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=LogSettings.ConsoleLevel</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=LogSettings.ConsoleLevel</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=LogSettings.ConsoleJsontrue</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=LogSettings.EnableConsolefalse</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=LogSettings.EnableConsolefalse</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotEditable</td>
-	<td>id=LogSettings.ConsoleLevel</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=LogSettings.ConsoleJsontrue</td>
-	<td>off</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=LogSettings.EnableConsoletrue</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=LogSettings.ConsoleLevel</td>
-	<td></td>
-</tr>
-<!--File level-->
-<tr>
-	<td>waitForEditable</td>
-	<td>id=LogSettings.FileLevel</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=LogSettings.FileJsontrue</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=LogSettings.FileLocation</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=LogSettings.EnableFilefalse</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=LogSettings.EnableFilefalse</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotEditable</td>
-	<td>id=LogSettings.FileLevel</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotValue</td>
-	<td>id=LogSettings.FileJsontrue</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForNotEditable</td>
-	<td>id=LogSettings.FileLocation</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=LogSettings.EnableFiletrue</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=LogSettings.EnableFiletrue</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=LogSettings.FileLevel</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=LogSettings.FileLocation</td>
-	<td></td>
-</tr>
-<!--Webhook debugging and diagnostics-->
-<tr>
-	<td>waitForValue</td>
-	<td>id=LogSettings.EnableWebhookDebuggingtrue</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=LogSettings.EnableWebhookDebuggingfalse</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=LogSettings.EnableDiagnosticstrue</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=LogSettings.EnableDiagnosticsfalse</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=privacy policy</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=LogSettings.EnableWebhookDebuggingfalse</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=LogSettings.EnableWebhookDebuggingfalse</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=LogSettings.EnableDiagnosticsfalse</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=LogSettings.EnableWebhookDebuggingfalse</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=LogSettings.EnableDiagnosticsfalse</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=LogSettings.EnableWebhookDebuggingtrue</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=LogSettings.EnableDiagnosticstrue</td>
 	<td></td>
 </tr>
 <!--LOG OUT admin-->
