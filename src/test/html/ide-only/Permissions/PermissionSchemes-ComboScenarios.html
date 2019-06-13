@@ -151,17 +151,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <!--Set System Scheme-->
@@ -260,7 +260,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.modal-title</td>
+	<td>css=#teamSelectorModalLabel &gt; span</td>
 	<td>Add Teams To Team Selection List</td>
 </tr>
 <tr>
@@ -429,7 +429,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <!--^^Permission scheme page is loaded^^-->
@@ -456,7 +456,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.modal-title</td>
+	<td>css=#teamSelectorModalLabel &gt; span</td>
 	<td>Add Teams To Team Selection List</td>
 </tr>
 <tr>
@@ -507,7 +507,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <!--Permission data created-->
@@ -583,17 +583,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td>PrivateChanTeamA</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelPurpose</td>
+	<td>id=newChannelPurpose</td>
 	<td>Private Channel for TeamA</td>
 </tr>
 <tr>
@@ -675,17 +675,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td>PrivateChannel2</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelPurpose</td>
+	<td>id=newChannelPurpose</td>
 	<td>PrivateChannel2</td>
 </tr>
 <tr>
@@ -771,12 +771,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -827,17 +827,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>PublicChannel2</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelPurpose</td>
+	<td>id=newChannelPurpose</td>
 	<td>PublicChannel2</td>
 </tr>
 <tr>
@@ -923,12 +923,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -1009,17 +1009,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td>PrivateChanTeamB</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelPurpose</td>
+	<td>id=newChannelPurpose</td>
 	<td>Private Channel for TeamB</td>
 </tr>
 <tr>
@@ -1095,22 +1095,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>AnotherPubChannel</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelPurpose</td>
+	<td>id=newChannelPurpose</td>
 	<td>AnotherPubChannel</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelHeader</td>
+	<td>id=newChannelHeader</td>
 	<td>AnotherPubChannel</td>
 </tr>
 <tr>
@@ -1140,22 +1140,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>AnotherPubChannel2</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelPurpose</td>
+	<td>id=newChannelPurpose</td>
 	<td>AnotherPubChannel2</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelHeader</td>
+	<td>id=newChannelHeader</td>
 	<td>AnotherPubChannel2</td>
 </tr>
 <tr>
@@ -1236,17 +1236,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td>PrivateChanTeamC</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelPurpose</td>
+	<td>id=newChannelPurpose</td>
 	<td>Private Channel for TeamC</td>
 </tr>
 <tr>
@@ -1415,7 +1415,7 @@
 <!--Get Id of the post you just made -->
 <tr>
 	<td>storeAttribute</td>
-	<td>//div[@id='postListContent']/div[contains(@id,'post_')][last()]@id</td>
+	<td>//div[@id='postListContent']//*/div[contains(@id,'post_')][last()]@id</td>
 	<td>LastPostIdFull</td>
 </tr>
 <tr>
@@ -1767,7 +1767,7 @@
 <!--Get Id of the post you just made -->
 <tr>
 	<td>storeAttribute</td>
-	<td>//div[@id='postListContent']/div[contains(@id,'post_')][last()]@id</td>
+	<td>//div[@id='postListContent']//*/div[contains(@id,'post_')][last()]@id</td>
 	<td>LastPostIdFull</td>
 </tr>
 <tr>
@@ -1908,22 +1908,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>TestPblChannelCreate</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelPurpose</td>
+	<td>id=newChannelPurpose</td>
 	<td>Test Pbl Channel Description</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelHeader</td>
+	<td>id=newChannelHeader</td>
 	<td>Test Pbl Channel Header</td>
 </tr>
 <tr>
@@ -1959,22 +1959,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td>TestPrvChannelCreate</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelPurpose</td>
+	<td>id=newChannelPurpose</td>
 	<td>Test Prv Channel Description</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelHeader</td>
+	<td>id=newChannelHeader</td>
 	<td>Test Prv Channel Header</td>
 </tr>
 <tr>
@@ -2503,22 +2503,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>TestPblChannelCreate</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelPurpose</td>
+	<td>id=newChannelPurpose</td>
 	<td>Test Pbl Channel Description</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelHeader</td>
+	<td>id=newChannelHeader</td>
 	<td>Test Pbl Channel Header</td>
 </tr>
 <tr>
@@ -2712,7 +2712,7 @@
 <!--Get Id of the post you just made -->
 <tr>
 	<td>storeAttribute</td>
-	<td>//div[@id='postListContent']/div[contains(@id,'post_')][last()]@id</td>
+	<td>//div[@id='postListContent']//*/div[contains(@id,'post_')][last()]@id</td>
 	<td>LastPostIdFull</td>
 </tr>
 <tr>
@@ -2922,12 +2922,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -3026,12 +3026,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -3506,17 +3506,17 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelPurpose</td>
+	<td>id=newChannelPurpose</td>
 	<td>PubChan3</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelHeader</td>
+	<td>id=newChannelHeader</td>
 	<td>PubChan3</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>PubChan3</td>
 </tr>
 <tr>
@@ -3820,22 +3820,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td>NewPriChan</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelPurpose</td>
+	<td>id=newChannelPurpose</td>
 	<td>NewPriChan</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelHeader</td>
+	<td>id=newChannelHeader</td>
 	<td>NewPriChan</td>
 </tr>
 <tr>
