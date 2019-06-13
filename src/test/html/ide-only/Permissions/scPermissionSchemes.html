@@ -78,21 +78,31 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <!--^^Permission scheme page is loaded^^-->
 <!--Create a Team Override Scheme-->
+<tr>
+	<td>waitForText</td>
+	<td>css=#teamSelectorModalLabel &gt; span</td>
+	<td>Add Teams To Team Selection List</td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>link=New Team Override Scheme</td>
@@ -120,7 +130,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.modal-title</td>
+	<td>css=#teamSelectorModalLabel &gt; span</td>
 	<td>Add Teams To Team Selection List</td>
 </tr>
 <tr>
@@ -187,7 +197,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.modal-title</td>
+	<td>css=#teamSelectorModalLabel &gt; span</td>
 	<td>Add Teams To Team Selection List</td>
 </tr>
 <tr>
@@ -342,7 +352,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.modal-title</td>
+	<td>css=#teamSelectorModalLabel &gt; span</td>
 	<td>Add Teams To Team Selection List</td>
 </tr>
 <!--Can't find this today - Must be replaced -->
@@ -368,8 +378,8 @@
 </tr>
 <!--^^Added new Scheme^^-->
 <tr>
-	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>verifyText</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <tr>
@@ -379,12 +389,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span [contains(text(),'Logout')]</td>
+	<td>//button[contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//span [contains(text(),'Logout')]</td>
+	<td>//button[contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -508,17 +518,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <tr>
@@ -564,12 +574,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span [contains(text(),'Logout')]</td>
+	<td>//button[contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//span [contains(text(),'Logout')]</td>
+	<td>//button[contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -697,17 +707,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <!--^^Permission scheme page is loaded^^-->
@@ -733,8 +743,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=h4.modal-title</td>
+	<td>verifyText</td>
+	<td>css=#teamSelectorModalLabel &gt; span</td>
 	<td>Add Teams To Team Selection List</td>
 </tr>
 <tr>
@@ -862,7 +872,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <tr>
@@ -879,7 +889,7 @@
 <!--^^Team is not under old scheme^^-->
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <!--^^Permission scheme page is loaded^^-->
@@ -911,7 +921,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <!--^^Permission scheme page is loaded^^-->
@@ -1009,8 +1019,8 @@
 	<td>Edit Scheme</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=h3.admin-console-header.with-back &gt; span</td>
+	<td>verifyText</td>
+	<td>css=div.admin-console__header.with-back &gt; div &gt; span</td>
 	<td>System Scheme</td>
 </tr>
 <tr>
@@ -1183,7 +1193,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <!--^^Permission scheme page is loaded^^-->
@@ -1210,7 +1220,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.modal-title</td>
+	<td>css=#teamSelectorModalLabel &gt; span</td>
 	<td>Add Teams To Team Selection List</td>
 </tr>
 <tr>
@@ -1235,7 +1245,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <tr>
@@ -1377,8 +1387,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.modal-title &gt; span</td>
-	<td>exact:Discard Changes?</td>
+	<td>css=div.modal-body &gt; span</td>
+	<td>exact:You have unsaved changes, are you sure you want to discard them?</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -1397,8 +1407,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.modal-title &gt; span</td>
-	<td>exact:Discard Changes?</td>
+	<td>css=div.modal-body &gt; span</td>
+	<td>exact:You have unsaved changes, are you sure you want to discard them?</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -1417,8 +1427,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.modal-title &gt; span</td>
-	<td>exact:Discard Changes?</td>
+	<td>css=div.modal-body &gt; span</td>
+	<td>exact:You have unsaved changes, are you sure you want to discard them?</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -1429,7 +1439,7 @@
 <!--Deleting data to keep datasets isolated-->
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <tr>
@@ -1459,7 +1469,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <tr>
@@ -1489,7 +1499,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <tr>
@@ -1519,7 +1529,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <tr>
@@ -1549,7 +1559,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <tr>
@@ -1589,12 +1599,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span [contains(text(),'Logout')]</td>
+	<td>//button[contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//span [contains(text(),'Logout')]</td>
+	<td>//button[contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
