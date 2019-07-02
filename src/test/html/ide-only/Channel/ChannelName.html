@@ -149,7 +149,7 @@
 	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
 	<td></td>
 </tr>
-<!--Maximum 22 characters - On creation-->
+<!--Maximum 64 characters - On creation-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#sidebarChannelsMore &gt; span</td>
@@ -172,23 +172,23 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
-	<td>1234567890123456789012&amp;</td>
+	<td>id=newChannelName</td>
+	<td>1234567890123456789012345678901234567890123456789012345678901234&amp;</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=newPublicChannelName</td>
-	<td>1234567890123456789012</td>
+	<td>id=newChannelName</td>
+	<td>1234567890123456789012345678901234567890123456789012345678901234</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=p.input__help.dark</td>
-	<td>exact:URL: /1234567890123456789012 (Edit)</td>
+	<td>exact:URL: /1234567890123456789012345678901234567890123456789012345678901234 (Edit)</td>
 </tr>
 <!--Cancel-->
 <tr>
@@ -390,7 +390,7 @@
 	<td>css=div.form-control.custom-textarea.custom-textarea--emoji-picker</td>
 	<td>Write to Dév Spé</td>
 </tr>
-<!--Rename - Maximum 22 characters (using dropdown)-->
+<!--Rename - Maximum 64 characters (using dropdown)-->
 <tr>
 	<td>type</td>
 	<td>id=display_name</td>
@@ -404,12 +404,12 @@
 <tr>
 	<td>type</td>
 	<td>id=display_name</td>
-	<td>PublicNameTwentyTwoMaxx</td>
+	<td>Channel Name Maximum Sixty-Four Characters So Just One X At EndXX</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
 	<td>id=display_name</td>
-	<td>PublicNameTwentyTwoMax</td>
+	<td>Channel Name Maximum Sixty-Four Characters So Just One X At EndX</td>
 </tr>
 <!--Edit URL-->
 <tr>
@@ -460,7 +460,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
-	<td>PublicNameTwentyTwoMax</td>
+	<td>Channel Name Maximum Sixty-Four Characters So Just One X At EndX</td>
 </tr>
 <!--Verify that the URL ends with new-url-->
 <tr>
@@ -472,7 +472,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.form-control.custom-textarea.custom-textarea--emoji-picker</td>
-	<td>Write to PublicNameTwentyTwoMax</td>
+	<td>Write to Channel Name Maximum Sixty-Four Characters So Just One X At EndX</td>
 </tr>
 <!--Rename - Minimum 2 characters (using slash command)-->
 <tr>
@@ -493,14 +493,15 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
-	<td>PublicNameTwentyTwoMax</td>
+	<td>Channel Name Maximum Sixty-Four Characters So Just One X At EndX</td>
 </tr>
 <tr>
 	<td>verifyNotText</td>
 	<td>css=strong.heading</td>
 	<td>1</td>
 </tr>
-<!--Rename - Maximum 22 characters (using slash command)-->
+<!--Rename - Maximum 64 characters (using slash command)-->
+<!--Still restricted to 22 until MM-16115 is fixed-->
 <tr>
 	<td>refreshAndWait</td>
 	<td></td>
@@ -514,8 +515,9 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>/rename Twenty-Three Characters${KEY_ENTER}</td>
+	<td>/rename Sixty-Five Characters Will Not Be Accepted As A New Channel NameX${KEY_ENTER}</td>
 </tr>
+<!--\/ Need to update system message for 64 char \/-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=p:contains('Channel name must be 22 or fewer characters')</td>
@@ -524,7 +526,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
-	<td>PublicNameTwentyTwoMax</td>
+	<td>Channel Name Maximum Sixty-Four Characters So Just One X At EndX</td>
 </tr>
 <!--NON-LATIN CHARACTERS IN URL > EDIT URL OPENS-->
 <!--Public channel, using す-->
@@ -540,12 +542,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>すすす</td>
 </tr>
 <tr>
@@ -585,17 +587,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>${KEY_ESC}</td>
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <!--Private channel, using Б-->
@@ -611,12 +613,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td>БББ</td>
 </tr>
 <tr>
@@ -656,17 +658,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td>${KEY_ESC}</td>
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <!--CAN'T DUPLICATE CHANNEL NAME / URL-->
@@ -682,12 +684,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>off-topic</td>
 </tr>
 <!--Include header and purpose, to verify not cleared while editing URL-->
@@ -812,12 +814,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>off-topic</td>
 </tr>
 <tr>
@@ -898,12 +900,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>Authorize</td>
 </tr>
 <tr>
@@ -921,6 +923,52 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Authorize</td>
 </tr>
+<!--Can create a channel with space hyphen space (3 hyphens in URL)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=createPublicChannel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=createPublicChannel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=newChannelName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=newChannelName</td>
+	<td>Check One - Two</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p.input__help.dark</td>
+	<td>exact:URL: /check-one---two (Edit)</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Create New Channel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>Check One - Two</td>
+</tr>
+<tr>
+	<td>waitForLocation</td>
+	<td>https://selenium.test.mattermost.com/ui-automation/channels/check-one---two</td>
+	<td></td>
+</tr>
 <!--PRIVATE CHANNEL NAME-->
 <!--Minimum 2 characters - On creation-->
 <tr>
@@ -935,12 +983,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td>1</td>
 </tr>
 <tr>
@@ -961,17 +1009,17 @@
 <!--Maximum 22 characters - On creation-->
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td>1234567890123456789012&amp;</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td>1234567890123456789012</td>
 </tr>
 <tr>
@@ -1230,6 +1278,7 @@
 	<td>id=post_textbox</td>
 	<td>/rename Twenty-Three Characters${KEY_ENTER}</td>
 </tr>
+<!--\/ Need to update system message for 64 char \/-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=p:contains('Channel name must be 22 or fewer characters')</td>
@@ -1447,6 +1496,7 @@
 	<td>id=post_textbox</td>
 	<td>/rename Twenty-Three Characters${KEY_ENTER}</td>
 </tr>
+<!--\/ Need to update system message for 64 char \/-->
 <tr>
 	<td>waitForText</td>
 	<td>css=p:contains('Channel name must be 22 or fewer characters')</td>

@@ -59,7 +59,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <!--Store timestamp to append to channel name (to make it unique)-->
@@ -70,13 +70,13 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <!--Create new test channel appending datetime to the name-->
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>Test-${datetime}</td>
 </tr>
 <tr>
@@ -318,8 +318,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.edit-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; h4.modal-title &gt; span</td>
-	<td>Edit Post</td>
+	<td>css=div.modal-header</td>
+	<td>×CloseEdit Post</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -517,6 +517,7 @@
 	<td>id=reply_textbox</td>
 	<td></td>
 </tr>
+<!--Have to figure out how to get to the beginning of the channel (?)-->
 <tr>
 	<td>waitForText</td>
 	<td>//div[@id='postListContent']/button</td>
@@ -918,12 +919,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('Edit')</td>
+	<td>css=button.style--none:contains('Edit')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span:contains('Edit')</td>
+	<td>css=button.style--none:contains('Edit')</td>
 	<td></td>
 </tr>
 <tr>
@@ -1185,12 +1186,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=p:contains('were mentioned but they are not in the channel. Would you like to')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=p:contains('? They will have access to all message history.')</td>
+	<td>css=p:contains('did not get notified by this mention because they are not in the channel. Would you like to add them to the channel? They will have access to all message history.')</td>
 	<td></td>
 </tr>
 <tr>
@@ -1402,8 +1398,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyElementPresent</td>
-	<td>css=span:contains('CAUTION: This mentions everyone in channel')</td>
+	<td>waitForElementPresent</td>
+	<td>css=span:contains('Notifies everyone in this channel')</td>
 	<td></td>
 </tr>
 <!--Pressing TAB selects top option-->
@@ -1970,8 +1966,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyElementPresent</td>
-	<td>css=span:contains('CAUTION: This mentions everyone in channel')</td>
+	<td>waitForElementPresent</td>
+	<td>css=span:contains('Notifies everyone in this channel')</td>
 	<td></td>
 </tr>
 <tr>
@@ -2126,17 +2122,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td>Private-${datetime}</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td>Private-${datetime}</td>
 </tr>
 <tr>
@@ -3452,12 +3448,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>Nested-${datetime}</td>
 </tr>
 <tr>
@@ -3784,12 +3780,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td>Pri2-${datetime}</td>
 </tr>
 <!--Can't get the following to work anymore. Verify URL shows as /pri2-${datetime}-->
@@ -4067,13 +4063,13 @@
 	<td>More...</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[2]/div/div[6]/div/div</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.more-modal__name:contains('@test3')</td>
 	<td>@test3</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[2]/div/div[6]/div/div</td>
+	<td>css=div.more-modal__name:contains('@test3')</td>
 	<td>@test3</td>
 </tr>
 <tr>

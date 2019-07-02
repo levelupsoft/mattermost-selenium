@@ -188,7 +188,7 @@
 	<td>one hello${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
+	<td>waitForValue</td>
 	<td>id=post_textbox</td>
 	<td></td>
 </tr>
@@ -198,7 +198,7 @@
 	<td>world two${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
+	<td>waitForValue</td>
 	<td>id=post_textbox</td>
 	<td></td>
 </tr>
@@ -206,6 +206,11 @@
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
 	<td>world hello${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -223,8 +228,8 @@
 	<td>hello world${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight</td>
+	<td>waitForElementPresent</td>
+	<td>css=p span.search-highlight:contains('world')</td>
 	<td>world</td>
 </tr>
 <tr>
@@ -2016,6 +2021,63 @@
 	<td>waitForNotText</td>
 	<td>css=h4 &gt; span</td>
 	<td>exact:No results found. Try again?</td>
+</tr>
+<!--Wild * asterisk disregarded if not preceded by text-->
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>qwertyjkl${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>qwerty${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.search-bar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input.search-bar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=input.search-bar</td>
+	<td>qwerty *${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.search-highlight</td>
+	<td>qwerty</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/open off-topic${KEY_ENTER}</td>
+</tr>
+<!--Change channel in center and make sure non-returned string is not present-->
+<tr>
+	<td>waitForText</td>
+	<td>css=#channelHeaderTitle &gt; span</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>qwertyjkl</td>
+	<td></td>
 </tr>
 <!--LOG OUT-->
 <tr>

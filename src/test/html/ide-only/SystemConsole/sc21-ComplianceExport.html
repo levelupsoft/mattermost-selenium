@@ -286,8 +286,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.admin-console__header &gt; span</td>
-	<td>Audits</td>
+	<td>css=div.admin-console__header</td>
+	<td>Compliance Monitoring</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -379,36 +379,7 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
-<!--Verify in Compliance Export section-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Compliance Export</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Compliance Export</td>
-	<td></td>
-</tr>
-<!--***** Where did this page go?! Used to be under Other (at the bottom)-->
-<!--***** I don't see the report section anywhere now (nor on their spreadsheet)-->
-<!--***** Asked Katie and Brad in a GM-->
-<!--Add in Compliance Reports here after it's back: MM-16089-->
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.compliance-panel__table</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=h3 &gt; span</td>
-	<td>Compliance Reports</td>
-</tr>
+<!--Verify Compliance Reporting-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=desc</td>
@@ -583,9 +554,20 @@
 	<td>finished*adhoc*Se Test 2*Se Test 1</td>
 	<td></td>
 </tr>
+<!--User Activity Logs are present-->
 <tr>
-	<td></td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.panel.compliance-panel &gt; div &gt; h4 &gt; span</td>
+	<td>User Activity Logs</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//button[@type='submit'])[3]</td>
+	<td>Reload User Activity Logs</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.panel.compliance-panel div.compliance-panel__table div table.table</td>
 	<td></td>
 </tr>
 <!--LOG OUT admin-->

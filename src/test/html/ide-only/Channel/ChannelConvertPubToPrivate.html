@@ -50,11 +50,6 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
-<tr>
-	<td>waitForText</td>
-	<td>link=Town Square</td>
-	<td>Town Square</td>
-</tr>
 <!--Non-system admin creates Public Channel-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -130,12 +125,12 @@
 <!--Add admin to channel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownIcon</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelHeaderDropdownIcon</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -238,7 +233,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=reply_textbox</td>
+	<td>css=div.col.col__reply div.MenuWrapper</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.col.col__reply div.MenuWrapper</td>
 	<td></td>
 </tr>
 <tr>
@@ -572,12 +572,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=schemes</td>
+	<td>id=user_management/permissions/</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=schemes</td>
+	<td>id=user_management/permissions/</td>
 	<td></td>
 </tr>
 <tr>
@@ -1285,12 +1285,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=schemes</td>
+	<td>id=user_management/permissions/</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=schemes</td>
+	<td>id=user_management/permissions/</td>
 	<td></td>
 </tr>
 <tr>

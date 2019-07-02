@@ -224,7 +224,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <!--Store timestamp to append to channel name (to make it unique)-->
@@ -235,13 +235,13 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <!--Create new test channel appending datetime to the name-->
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>Test-${datetime}</td>
 </tr>
 <tr>
@@ -2096,7 +2096,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.mention__fullname &gt; span</td>
-	<td>Notifies everyone in the channel</td>
+	<td>Notifies everyone in this channel</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2189,7 +2189,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; h4.modal-title &gt; span</td>
+	<td>css=#teamMemberModalLabel &gt; span</td>
 	<td>STTeam Members</td>
 </tr>
 <tr>
@@ -2443,11 +2443,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.more-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; h4.modal-title &gt; span</td>
-	<td>ST2Team Members</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
 	<td>css=input.form-control.filter-textbox</td>
 	<td></td>
@@ -2473,18 +2468,23 @@
 	<td>Member</td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>css=#removeFromTeam &gt; button.style--none</td>
+	<td>Remove From Team</td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Team')]</td>
+	<td>css=li.MenuItem button.style--none:contains('Remove From Team')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Team Admin')]</td>
+	<td>css=li.MenuItem button.style--none:contains('Make Team Admin')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Team Admin')]</td>
+	<td>css=li.MenuItem button.style--none:contains('Make Team Admin')</td>
 	<td></td>
 </tr>
 <!--Set user testst back to team member-->
@@ -2500,12 +2500,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Member')]</td>
+	<td>css=li.MenuItem button.style--none:contains('Make Member')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Member')]</td>
+	<td>css=li.MenuItem button.style--none:contains('Make Member')</td>
 	<td></td>
 </tr>
 <tr>
@@ -2536,22 +2536,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td>Private-${datetime}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPrivateChannelPurpose</td>
+	<td>id=newChannelPurpose</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPrivateChannelPurpose</td>
+	<td>id=newChannelPurpose</td>
 	<td>ST2's purpose</td>
 </tr>
 <tr>
@@ -2802,13 +2802,13 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Team')]</td>
-	<td>Remove From Team</td>
+	<td>css=li.MenuItem button.style--none:contains('Remove From Team')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Team')]</td>
-	<td>Remove From Team</td>
+	<td>css=li.MenuItem button.style--none:contains('Remove From Team')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3755,31 +3755,28 @@
 	<td>id=open_inviteDesc</td>
 	<td>Yes</td>
 </tr>
-<!--LOGOUT ST2-->
-<tr>
-	<td>clickAndWait</td>
-	<td>css=#logout &gt; button.style--none</td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout &gt; span</td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout &gt; span</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<!--LOGOUT ST2-->
+<tr>
+	<td>rollup</td>
+	<td>logout</td>
 	<td></td>
 </tr>
 <!--LOG IN testST-->
-<!--DisableAnimations-->
 <tr>
 	<td>pause</td>
 	<td>2000</td>
 	<td></td>
 </tr>
-<!--Sleep-->
-<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
@@ -4831,12 +4828,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td>css=li.MenuItem button.style--none:contains('Remove From Channel')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td>css=li.MenuItem button.style--none:contains('Remove From Channel')</td>
 	<td></td>
 </tr>
 <tr>

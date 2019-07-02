@@ -63,7 +63,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <!--Store timestamp to append to channel name (to make it unique)-->
@@ -74,13 +74,13 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <!--Create new test channel appending datetime to the name-->
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>Pin-${datetime}</td>
 </tr>
 <tr>
@@ -124,7 +124,8 @@
 	<td></td>
 	<td>500</td>
 </tr>
-<!--Ensure that reactions remanin in place when you pin and unpin a post-->
+<!--Ensure that reactions remain in place when you pin and unpin a post-->
+<!--Rollup needs updating; doing some things manually for now-->
 <tr>
 	<td>rollup</td>
 	<td>openEmojiPickerForLastPost</td>
@@ -145,6 +146,7 @@
 	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
+<!--Rollup needs updating; doing some things manually for now-->
 <tr>
 	<td>rollup</td>
 	<td>dotMenuItemVerifyAndSelect</td>
@@ -543,12 +545,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('Edit')</td>
+	<td>css=button.style--none:contains('Edit')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span:contains('Edit')</td>
+	<td>css=button.style--none:contains('Edit')</td>
 	<td></td>
 </tr>
 <tr>
@@ -614,12 +616,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('Un-pin')</td>
+	<td>css=button.style--none:contains('Un-pin')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span:contains('Un-pin')</td>
+	<td>css=button.style--none:contains('Un-pin')</td>
 	<td></td>
 </tr>
 <tr>
@@ -735,7 +737,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <!--Store timestamp to append to channel name (to make it unique)-->
@@ -746,13 +748,13 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <!--Create new test channel appending datetime to the name-->
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>Pin2-${datetime}</td>
 </tr>
 <tr>
@@ -908,12 +910,12 @@
 <!--*** Open ... menu manually in center on permalink view-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('Un-pin')</td>
+	<td>css=button.style--none:contains('Un-pin')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span:contains('Un-pin')</td>
+	<td>css=button.style--none:contains('Un-pin')</td>
 	<td></td>
 </tr>
 <!--Verify un-pinned in center permalink view and in flagged posts RHS-->
@@ -948,12 +950,12 @@
 <!--*** Open ... menu manually in center -->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('Pin to channel')</td>
+	<td>css=button.style--none:contains('Pin to channel')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span:contains('Pin to channel')</td>
+	<td>css=button.style--none:contains('Pin to channel')</td>
 	<td></td>
 </tr>
 <tr>
@@ -971,12 +973,12 @@
 <!--*** Open ... menu manually in center -->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('Un-pin from channel')</td>
+	<td>css=button.style--none:contains('Un-pin from channel')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none &gt; span:contains('Un-pin from channel')</td>
+	<td>css=button.style--none:contains('Un-pin from channel')</td>
 	<td></td>
 </tr>
 <tr>
@@ -1018,12 +1020,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('Pin to channel')</td>
+	<td>css=button.style--none:contains('Pin to channel')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none &gt; span:contains('Pin to channel')</td>
+	<td>css=button.style--none:contains('Pin to channel')</td>
 	<td></td>
 </tr>
 <tr>
@@ -1178,12 +1180,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.style--none &gt; span:contains('Pin to channel')</td>
+	<td>css=button.style--none:contains('Pin to channel')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none &gt; span:contains('Pin to channel')</td>
+	<td>css=button.style--none:contains('Pin to channel')</td>
 	<td></td>
 </tr>
 <tr>
@@ -1235,12 +1237,12 @@
 <!--*** Open ... menu manually in center -->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.style--none &gt; span:contains('Delete')</td>
+	<td>css=button.style--none:contains('Delete')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none &gt; span:contains('Delete')</td>
+	<td>css=button.style--none:contains('Delete')</td>
 	<td></td>
 </tr>
 <tr>
@@ -1297,12 +1299,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.style--none &gt; span:contains('Pin to channel')</td>
+	<td>css=button.style--none:contains('Pin to channel')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none &gt; span:contains('Pin to channel')</td>
+	<td>css=button.style--none:contains('Pin to channel')</td>
 	<td></td>
 </tr>
 <!--Pinned list still open, switched to viewed channel-->
@@ -1329,12 +1331,12 @@
 <!--*** Manually open ... menu for center channel post-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('Delete')</td>
+	<td>css=button.style--none:contains('Delete')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none &gt; span:contains('Delete')</td>
+	<td>css=button.style--none:contains('Delete')</td>
 	<td></td>
 </tr>
 <tr>
