@@ -519,7 +519,23 @@
 	<td>css=span &gt; span</td>
 	<td>Please configure your Site URL in the System Console.</td>
 </tr>
-<!--Add more tests for this page, including disabling APIv3?-->
+<!--Add more tests for this page? Lots of fields never tested?-->
+<!--Enable Insecure Outgoing Connections-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.form-group label.control-label.col-sm-4:contains('Enable Insecure Outgoing Connections:')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=ServiceSettings.EnableInsecureOutgoingConnectionstrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=ServiceSettings.EnableInsecureOutgoingConnectionsfalse</td>
+	<td></td>
+</tr>
 <!--Purge All Caches doesn't cause an error-->
 <tr>
 	<td>waitForElementPresent</td>

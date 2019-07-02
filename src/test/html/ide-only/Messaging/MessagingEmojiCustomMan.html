@@ -239,16 +239,21 @@
 	<td>css=input[type=&quot;file&quot;]</td>
 	<td></td>
 </tr>
-<!--*** Manually select file (won't be created)-->
+<!--*** Manually select any valid file (won't be created)-->
 <tr>
 	<td>pause</td>
-	<td>5000</td>
+	<td>8000</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.col-md-5.col-sm-8 &gt; div &gt; div.form__help &gt; span</td>
 	<td>Choose the image for your emoji. The image can be a gif, png, or jpeg file with a max size of 1 MB. Dimensions will automatically resize to fit 128 by 128 pixels but keeping aspect ratio.</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>This is a sentence with</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -304,7 +309,12 @@
 <!--*** Manually select file 30k-too-big-for-custom-emoji.gif from Resources-->
 <tr>
 	<td>pause</td>
-	<td>5000</td>
+	<td>8000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>This is a sentence with</td>
 	<td></td>
 </tr>
 <tr>
@@ -376,7 +386,12 @@
 <!--*** Manually select this large image file: JPG.jpg-->
 <tr>
 	<td>pause</td>
-	<td>4000</td>
+	<td>8000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>This is a sentence with</td>
 	<td></td>
 </tr>
 <tr>
@@ -543,13 +558,18 @@
 <!--*** Manually select an animated gif: GIF.gif-->
 <tr>
 	<td>pause</td>
-	<td>4000</td>
+	<td>8000</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=span.add-emoji__filename</td>
 	<td>GIF.gif</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>This is a sentence with</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -707,6 +727,7 @@
 	<td>3000</td>
 	<td></td>
 </tr>
+<!--*** These are breaking; manually click emoji reaction picker on last post-->
 <tr>
 	<td>rollup</td>
 	<td>openEmojiPickerForLastPost</td>
@@ -868,17 +889,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=emoji</td>
+	<td>id=site_config/emoji</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=emoji</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=*.admin-console-header</td>
+	<td>id=site_config/emoji</td>
 	<td></td>
 </tr>
 <tr>
@@ -934,6 +950,16 @@
 <!--Verify that custom emoji now render as text-->
 <tr>
 	<td>waitForElementPresent</td>
+	<td>id=sidebarItem_town-square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarItem_town-square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
 	<td>css=span.all-emoji p span:contains(':customlarge:')</td>
 	<td></td>
 </tr>
@@ -972,17 +998,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=emoji</td>
+	<td>id=site_config/emoji</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=emoji</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=*.admin-console-header</td>
+	<td>id=site_config/emoji</td>
 	<td></td>
 </tr>
 <tr>
@@ -1116,12 +1137,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.modal-title &gt; span</td>
+	<td>css=div.modal-header</td>
 	<td>Delete Custom Emoji</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.alert.alert-warning &gt; span</td>
+	<td>css=div.alert.alert-warning</td>
 	<td>exact:This action permanently deletes the custom emoji. Are you sure you want to delete it?</td>
 </tr>
 <tr>
@@ -1214,6 +1235,11 @@
 <!--*** Refresh other user in other browser and verify deleted emoji is gone-->
 <!--*** Message shows text `:customanigif:`-->
 <!--*** Custom emoji reaction disappears entirely-->
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
 <!--Emoji picker - Use section -->
 <!--*** On all sections: Verify section icon bold and others gray-->
 <tr>
@@ -1422,6 +1448,7 @@
 	<td>2000</td>
 	<td></td>
 </tr>
+<!--*** May have to manually open emoji reaction picker on last post-->
 <tr>
 	<td>rollup</td>
 	<td>openEmojiPickerForLastPost</td>
@@ -1469,11 +1496,6 @@
 <!--LM can't get this part to work; clicked manually-->
 <tr>
 	<td>rollup</td>
-	<td>openDotMenuForLastPost</td>
-	<td></td>
-</tr>
-<tr>
-	<td>rollup</td>
 	<td>openEmojiPickerForLastPost</td>
 	<td></td>
 </tr>
@@ -1486,7 +1508,7 @@
 <!--*** Visually verify reaction was added-->
 <tr>
 	<td>pause</td>
-	<td>6000</td>
+	<td>8000</td>
 	<td></td>
 </tr>
 <!--Expand RHS, can still add reaction using emoji picker-->
@@ -1503,12 +1525,17 @@
 <!--*** Visually verify sidebar expanded, LHS has overlay-->
 <tr>
 	<td>pause</td>
-	<td>2000</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.post-body__actions &gt; span.emoji-picker__container</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.reacticon__container.reaction.color--link.style--none &gt; span.icon.icon--emoji</td>
+	<td>css=span.post-body__actions &gt; span.emoji-picker__container</td>
 	<td></td>
 </tr>
 <!--*** Visually verify Recently Used matches what you recently used-->
@@ -1516,7 +1543,7 @@
 <!--*** Visually verify reaction was added-->
 <tr>
 	<td>pause</td>
-	<td>2000</td>
+	<td>6000</td>
 	<td></td>
 </tr>
 <tr>
@@ -1905,7 +1932,7 @@
 	<td>id=post_textbox</td>
 	<td>/test url test-emoticons1${KEY_ENTER}</td>
 </tr>
-<!--*** Visually verify all emoji load as expected-->
+<!--*** Visually verify all emoji load as expected (none obviously broken / missing)-->
 <!--LM add notes about what it should look like, including last emoji-->
 <tr>
 	<td>pause</td>
@@ -2144,7 +2171,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.modal-title &gt; span</td>
+	<td>css=div.modal-header</td>
 	<td>Delete Custom Emoji</td>
 </tr>
 <tr>

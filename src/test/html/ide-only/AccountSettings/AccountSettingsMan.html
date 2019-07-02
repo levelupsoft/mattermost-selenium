@@ -51,11 +51,6 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
-<tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
-</tr>
 <!--Verifies username, name, nickname display in member lists-->
 <!--First verifes test10 has no name set and add a nickname, then log out-->
 <tr>
@@ -566,11 +561,6 @@
 	<td>click</td>
 	<td>id=loginButton</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
 </tr>
 <!--Add position, verify max 128 characters-->
 <tr>
@@ -2417,12 +2407,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=posts</td>
+	<td>id=site_config/posts</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=posts</td>
+	<td>id=site_config/posts</td>
 	<td></td>
 </tr>
 <tr>
@@ -2463,12 +2453,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none span:contains('Logout')</td>
+	<td>css=button.style--none:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none span:contains('Logout')</td>
+	<td>css=button.style--none:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
@@ -2601,7 +2591,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.attachment__body.attachment__body--opengraph &gt; div &gt; div</td>
+	<td>css=div.attachment__body.attachment__body--opengraph &gt; div</td>
 	<td>Open source Slack-alternative in Golang and React - Mattermost - mattermost/mattermost-server</td>
 </tr>
 <tr>
@@ -3479,12 +3469,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>Join</td>
 </tr>
 <tr>
@@ -3613,6 +3603,7 @@
 	<td>id=loginButton</td>
 	<td></td>
 </tr>
+<!--Might not land on the right team-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Join1</td>
@@ -3724,6 +3715,11 @@
 <tr>
 	<td>click</td>
 	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
@@ -4029,6 +4025,7 @@
 	<td></td>
 </tr>
 <!--Tests end here for now-->
+<!--Manually clean up by archiving added channels etc.-->
 </tbody></table>
 </body>
 >>>>>>> master

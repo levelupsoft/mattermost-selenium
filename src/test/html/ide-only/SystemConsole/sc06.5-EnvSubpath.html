@@ -935,7 +935,7 @@
 </tr>
 <!--LOG OUT sysadmin-->
 <!--Logout rollup got stuck in a loop; trying it with just the individual steps-->
-<!--^ **** Turns out it's a bug in v5.12 - re-test after fixed-->
+<!--^ **** Turns out was a bug in v5.12 - rollup was fine-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=span.sidebar-header-dropdown__icon</td>
@@ -1089,10 +1089,32 @@
 	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
+<!--missing steps for this one....-->
 <!--Open GM URL-->
 <tr>
 	<td>open</td>
 	<td>https://subpath.test.mattermost.com/mattermost/se-subpath-test/messages/89feda33890e005db8aa7126a9dde23556afe6a1</td>
+	<td></td>
+</tr>
+<!--LOG IN sysadmin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>sysadmin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>sysadmin</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
 	<td></td>
 </tr>
 <tr>

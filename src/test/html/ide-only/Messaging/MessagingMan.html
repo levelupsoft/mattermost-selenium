@@ -69,12 +69,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=posts</td>
+	<td>id=site_config/posts</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=posts</td>
+	<td>id=site_config/posts</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=ServiceSettings.EnableLinkPreviewsfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ServiceSettings.EnableLinkPreviewsfalse</td>
 	<td></td>
 </tr>
 <tr>
@@ -122,7 +132,55 @@
 	<td>css=a</td>
 	<td></td>
 </tr>
-<!--Make these .md file instead?-->
+<!--Create Msg- channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=createPublicChannel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=createPublicChannel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=newChannelName</td>
+	<td></td>
+</tr>
+<!--Store timestamp to append to channel name (to make it unique)-->
+<tr>
+	<td>store</td>
+	<td>javascript{((new Date().getMonth()+1)+&quot;&quot;+new Date().getDate())+&quot;-&quot;+(new Date().getHours()+&quot;&quot; + new Date().getMinutes() + &quot;&quot; + new Date().getSeconds())}</td>
+	<td>datetime</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=newChannelName</td>
+	<td></td>
+</tr>
+<!--Create new test channel appending datetime to the name-->
+<tr>
+	<td>type</td>
+	<td>id=newChannelName</td>
+	<td>Msg-${datetime}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=strong.heading</td>
+	<td>Msg-${datetime}</td>
+</tr>
+<!--Make these .md file instead? (add test-long-post..md but rename it? to https://github.com/mattermost/mattermost-server/tree/master/tests-->
 <!--Long post with link previews (posts in chunks to help Se not crash)-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -203,37 +261,42 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.post-collapse__show-more-button</td>
+	<td>css=button#showMoreButton.post-collapse__show-more-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button#showMoreButton.post-collapse__show-more-button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>pause</td>
 	<td>6000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.post-collapse__show-more-button</td>
 	<td></td>
 </tr>
 <!--*** Visually verify full expanded post displays-->
 <!--*** Visually verify Show Less button-->
 <!--*** Visually verify link preview still displays-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.post-collapse__show-more-button</td>
-	<td></td>
-</tr>
-<tr>
 	<td>pause</td>
 	<td>6000</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=showMoreButton</td>
+	<td>Show Less</td>
+</tr>
 <!--Re-collapse to truncated post view-->
 <tr>
 	<td>click</td>
-	<td>css=button.post-collapse__show-more-button</td>
+	<td>id=showMoreButton</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=showMoreButton</td>
+	<td>Show More</td>
 </tr>
 <!--Edit long message (starting in truncated view)-->
 <tr>
@@ -241,7 +304,7 @@
 	<td>id=post_textbox</td>
 	<td>${KEY_UP}</td>
 </tr>
-<!--*** Visually verify as well that text edit box is expanded in size-->
+<!--*** Visually verify that text edit box is expanded in size-->
 <tr>
 	<td>pause</td>
 	<td>5000</td>
@@ -283,6 +346,16 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//img[@alt='image placeholder']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h1.attachment__title.attachment__title--opengraph</td>
+	<td>Panasonic Unveils Solar Roof That May Appear on the Tesla Model 3</td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>css=span.post-edited__indicator &gt; span</td>
 	<td>(edited)</td>
@@ -308,6 +381,7 @@
 	<td>css=h5.markdown__heading:contains('Spacer post between link preview posts')</td>
 	<td></td>
 </tr>
+<!--Could also make this a .md test file-->
 <!--Link preview with URL below the fold on long post-->
 <tr>
 	<td>sendKeys</td>
@@ -373,6 +447,16 @@
 <tr>
 	<td>pause</td>
 	<td>8000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//a[contains(text(),'Panasonic Unveils Solar Roof That May Appear on the Tesla Model 3')])[2]</td>
+	<td>Panasonic Unveils Solar Roof That May Appear on the Tesla Model 3</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//img[@alt='image placeholder'])[2]</td>
 	<td></td>
 </tr>
 <!--Long post (with link preview) in RHS-->
@@ -462,8 +546,9 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>Retain${KEY_ENTER}</td>
+	<td>Retain-${datetime}${KEY_ENTER}</td>
 </tr>
+<!--*** Rollup needs updating; may have to open post menu manually-->
 <tr>
 	<td>rollup</td>
 	<td>openDotMenuForLastPost</td>
@@ -506,7 +591,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>Retain</td>
+	<td>Retain-${datetime}</td>
 	<td></td>
 </tr>
 <!--FLAG-->
@@ -523,25 +608,25 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <!--Store timestamp to append to channel name (to make it unique)-->
 <tr>
 	<td>store</td>
 	<td>javascript{(new Date().getFullYear()+&quot;&quot;+(new Date().getMonth()+1)+&quot;&quot;+new Date().getDate())+&quot;-&quot;+(new Date().getHours()+&quot;&quot; + new Date().getMinutes() + &quot;&quot; + new Date().getSeconds())}</td>
-	<td>datetime</td>
+	<td>datetime1</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <!--Create new test channel appending datetime to the name-->
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
-	<td>Flag-${datetime}</td>
+	<td>id=newChannelName</td>
+	<td>Flag-${datetime1}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -556,7 +641,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
-	<td>Flag-${datetime}</td>
+	<td>Flag-${datetime1}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -588,15 +673,17 @@
 <!--*** Visually verify flag appears gray and tooltip "Flag for follow up" on hover-->
 <tr>
 	<td>pause</td>
-	<td>5000</td>
+	<td>7000</td>
 	<td></td>
 </tr>
+<!--Rollup command needs updating (thus the manual hovers for now)-->
 <tr>
 	<td>rollup</td>
 	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
 <!--Flag a message -->
+<!--*** Manually hover over message to make flag icon visible-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.style--none.flag-icon__container &gt; span.icon</td>
@@ -625,7 +712,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <!--Store timestamp to append to channel name (to make it unique)-->
@@ -636,13 +723,13 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <!--Create new test channel appending datetime to the name-->
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>Flag2-${datetime2}</td>
 </tr>
 <tr>
@@ -688,11 +775,13 @@
 	<td></td>
 </tr>
 <!--Flag a message-->
+<!--Rollup command needs updating (thus the manual hovers for now)-->
 <tr>
 	<td>rollup</td>
 	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
+<!--*** Manually hover over message to make flag icon visible-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.style--none.flag-icon__container &gt; span.icon</td>
@@ -770,6 +859,12 @@
 	<td>3000</td>
 	<td></td>
 </tr>
+<!--Rollup command needs updating (thus the manual hovers for now)-->
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
 <!--*** Manually verify tooltip "Unflag" on hover-->
 <tr>
 	<td>pause</td>
@@ -777,11 +872,6 @@
 	<td></td>
 </tr>
 <!--Unflag `Quick brown fox` from RHS-->
-<tr>
-	<td>rollup</td>
-	<td>openDotMenuForLastPost</td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//div[@id='search-items-container']/div[2]/div[2]/div[2]/div[2]/div/div[2]/button</td>
@@ -912,10 +1002,11 @@
 </tr>
 <!--Flag post in center and verify added to RHS-->
 <tr>
-	<td>rollup</td>
-	<td>openDotMenuForLastPost</td>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
+<!--*** Manually hover over `This is important too` message to make flag icon visible-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.style--none.flag-icon__container </td>
@@ -977,15 +1068,15 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>${flagchannel}</td>
 </tr>
-<!--Not finding following reply icon in RHS-->
+<!--Reply from RHS-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=searchCommentIcon_</td>
+	<td>css=svg#Layer_1</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=searchCommentIcon_</td>
+	<td>css=svg#Layer_1</td>
 	<td></td>
 </tr>
 <tr>
@@ -1287,9 +1378,70 @@
 <!--*** Verify profile popover in RHS:-->
 <!--*** @username, other elements-->
 <tr>
+	<td>waitForText</td>
+	<td>css=div.user-popover</td>
+	<td>test2</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.user-popover</td>
+	<td>test2</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.overflow--ellipsis.text-nowrap &gt; strong</td>
+	<td>H Jenkins</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>link=test2@test.com</td>
+	<td>test2@test.com</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Send Message</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=a.text-nowrap &gt; button.style--none.</td>
+	<td>Add to a Channel</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.user-popover__username &gt; a</td>
+	<td>@test2</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.user-popover__role</td>
+	<td>Team Admin</td>
+</tr>
+<tr>
 	<td>pause</td>
 	<td>8000</td>
 	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.user-popover</td>
+	<td>test2</td>
+</tr>
+<!--Go back to Msg- channel for these-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarItem_msg-${datetime}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarItem_msg-${datetime}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#channelHeaderTitle &gt; span</td>
+	<td>Msg-${datetime}</td>
 </tr>
 <!--Actions not available on system message-->
 <tr>
@@ -1322,11 +1474,13 @@
 	<td>closeRHS</td>
 	<td></td>
 </tr>
+<!--Rollup command needs updating (thus the manual instructions for now)-->
 <tr>
 	<td>rollup</td>
 	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
+<!--*** Manually open dot menu on system message post-->
 <tr>
 	<td>waitForElementNotPresent</td>
 	<td>css=button.style--none.flag-icon__container</td>
@@ -1540,6 +1694,7 @@
 </tr>
 <!--Markdown basics-->
 <!--*** NOTE: several of the images are broken (at the source); adding new samples-->
+<!--*** Thought I found some but they didn't all work (some only worked on spinmint...?)-->
 <!--*** https://github.com/mattermost/mattermost-server/pull/9802-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1673,7 +1828,7 @@
 	<td>id=loginButton</td>
 	<td></td>
 </tr>
-<!--Enable link previews in System Console (or change config to turn it on)-->
+<!--Enable link previews in System Console (or verify enabled)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -1696,12 +1851,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=posts</td>
+	<td>id=site_config/posts</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=posts</td>
+	<td>id=site_config/posts</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=ServiceSettings.EnableLinkPreviewsfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ServiceSettings.EnableLinkPreviewsfalse</td>
 	<td></td>
 </tr>
 <tr>
@@ -1748,6 +1913,22 @@
 	<td>click</td>
 	<td>css=a</td>
 	<td></td>
+</tr>
+<!--Go back to Msg- channel for these-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarItem_msg-${datetime}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarItem_msg-${datetime}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#channelHeaderTitle &gt; span</td>
+	<td>Msg-${datetime}</td>
 </tr>
 <!--Markdown link previews-->
 <tr>
