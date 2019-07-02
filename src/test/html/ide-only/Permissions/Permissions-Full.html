@@ -356,17 +356,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <tr>
@@ -638,12 +638,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span [contains(text(),'Logout')]</td>
+	<td>//button[contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//span [contains(text(),'Logout')]</td>
+	<td>//button[contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--Verify System Admin has permissions are correctly enabled-->
@@ -1927,6 +1927,7 @@
 </tr>
 <!--Verify on mobile that Team Admin, Chan Admin and member permissions are disbaled  -->
 <!--<!--test2 : member, test3: channel admin, test4: Team Admin, test 5: System Admin-->
+<!--Ensure Edit time limit is set to `Anytime` in permissions confi!-->
 <tr>
 	<td></td>
 	<td></td>
@@ -1960,17 +1961,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <tr>
@@ -2170,12 +2171,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span [contains(text(),'Logout')]</td>
+	<td>//button[contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//span [contains(text(),'Logout')]</td>
+	<td>//button[contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--Verify Team Admin permissions can be enabled-->
@@ -3237,17 +3238,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <tr>
@@ -3410,12 +3411,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span [contains(text(),'Logout')]</td>
+	<td>//button[contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//span [contains(text(),'Logout')]</td>
+	<td>//button[contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--Verify Channel Admin permissions granted are working correctly-->
@@ -4231,17 +4232,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <tr>
@@ -4446,12 +4447,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span [contains(text(),'Logout')]</td>
+	<td>//button[contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//span [contains(text(),'Logout')]</td>
+	<td>//button[contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--Verify System Admin has permissions are correctly enabled-->
@@ -5113,12 +5114,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
@@ -5148,7 +5149,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.modal-title</td>
+	<td>css=#teamSelectorModalLabel &gt; span</td>
 	<td>Add Teams To Team Selection List</td>
 </tr>
 <tr>
@@ -5600,12 +5601,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span [contains(text(),'Logout')]</td>
+	<td>//button[contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//span [contains(text(),'Logout')]</td>
+	<td>//button[contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--Verify System Admin has permissions are correctly enabled-->
@@ -6944,17 +6945,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Permission Schemes</td>
+	<td>link=Permissions</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header &gt; span</td>
 	<td>Permission Schemes</td>
 </tr>
 <tr>
