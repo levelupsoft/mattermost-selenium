@@ -27,7 +27,6 @@ mkdir -p ~/mattermost
 tar -C ~/ -xzf mattermost.tar.gz
 
 cp ~/config.json ~/mattermost/config/config.json
-cp ~/mattermost.mattermost-license ~/mattermost/config/mattermost.mattermost-license
 
 cd ~/mattermost
 ./bin/mattermost reset --confirm true
@@ -59,3 +58,8 @@ sleep 5
 
 mysql -u mmuser -ppasswd -h localhost -e "UPDATE Preferences SET Value = '999' WHERE Category = 'tutorial_step';" mattermost
 mysql -u mmuser -ppasswd -h localhost -e "UPDATE Teams SET AllowOpenInvite = '1' WHERE Name = 'ui-automation2';" mattermost
+
+# Upload the license to the database to be able to remove when needed
+./bin/mattermost license upload ~/mattermost.mattermost-license
+sudo systemctl restart mattermost
+
