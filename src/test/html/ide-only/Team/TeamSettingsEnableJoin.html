@@ -52,6 +52,11 @@
 	<td>Town Square</td>
 </tr>
 <tr>
+	<td>open</td>
+	<td>https://selenium.test.mattermost.com/ui-automation</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
@@ -107,7 +112,7 @@
 	<td>id=open_inviteDesc</td>
 	<td>No</td>
 </tr>
-<!--Cancel out of changes-->
+<!--Cancel out of changing team to be open-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=open_inviteEdit</td>
@@ -145,35 +150,11 @@
 </tr>
 <!--LOG OUT admin-->
 <tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
 	<td>rollup</td>
 	<td>logout</td>
 	<td></td>
 </tr>
-<!--LOG IN as test4, leave team, can't rejoin team-->
-<!--DisableAnimations-->
+<!--LOG IN test5-->
 <tr>
 	<td>pause</td>
 	<td>3000</td>
@@ -187,7 +168,7 @@
 <tr>
 	<td>type</td>
 	<td>name=loginId</td>
-	<td>test4@test.com</td>
+	<td>test5@test.com</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -204,9 +185,6 @@
 	<td>3000</td>
 	<td></td>
 </tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
 <tr>
 	<td>waitForText</td>
 	<td>link=Town Square</td>
@@ -273,7 +251,7 @@
 	<td>id=headerTeamName</td>
 	<td>UI Automation 2</td>
 </tr>
-<!--Leave teams (*** If leave team isn't working in IDE, leave manually)-->
+<!--Leave both teams (*** If leave team isn't working in IDE, leave manually)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -359,17 +337,19 @@
 	<td>css=a.signup-team-login &gt; span</td>
 	<td>Create a new team</td>
 </tr>
+<!--Open team is available in list of teams to join-->
 <tr>
 	<td>waitForText</td>
 	<td>css=#UI_Automation_2 &gt; span.signup-team-dir__name</td>
 	<td>UI Automation 2</td>
 </tr>
+<!--Closed team is not available in list of teams to join-->
 <tr>
 	<td>waitForNotText</td>
 	<td>css=span.signup-team-dir__name</td>
 	<td>UI Automation</td>
 </tr>
-<!--LOG OUT test4-->
+<!--LOG OUT test5-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Logout</td>
@@ -426,7 +406,12 @@
 	<td>Town Square</td>
 </tr>
 <!--Verify system message-->
-<!--Enable anyone on server to join team-->
+<!--Enable anyone on server to join team 1-->
+<tr>
+	<td>open</td>
+	<td>https://selenium.test.mattermost.com/ui-automation</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -484,19 +469,11 @@
 </tr>
 <!--LOG OUT admin-->
 <tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
 	<td>rollup</td>
 	<td>logout</td>
 	<td></td>
 </tr>
-<!--LOG IN as test4, join team-->
+<!--LOG IN as test5, join team-->
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -516,7 +493,7 @@
 <tr>
 	<td>type</td>
 	<td>name=loginId</td>
-	<td>test4@test.com</td>
+	<td>test5@test.com</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -533,15 +510,12 @@
 	<td>3000</td>
 	<td></td>
 </tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.signup__content &gt; h4 &gt; span</td>
 	<td>Teams you can join:</td>
 </tr>
-<!--Rejoin team-->
+<!--Rejoin team 1-->
 <tr>
 	<td>waitForText</td>
 	<td>css=a.signup-team-login &gt; span</td>
@@ -567,15 +541,12 @@
 	<td>id=headerTeamName</td>
 	<td>UI Automation</td>
 </tr>
-<!--LOG OUT test4-->
+<!--LOG OUT test5-->
 <tr>
 	<td>pause</td>
 	<td>3000</td>
 	<td></td>
 </tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
 <tr>
 	<td>rollup</td>
 	<td>logout</td>
@@ -618,16 +589,18 @@
 	<td>3000</td>
 	<td></td>
 </tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
 <tr>
 	<td>waitForText</td>
 	<td>link=Town Square</td>
 	<td>Town Square</td>
 </tr>
 <!--Verify system message-->
-<!--Disable other users joining the team-->
+<!--Disable other users joining team 1-->
+<tr>
+	<td>open</td>
+	<td>https://selenium.test.mattermost.com/ui-automation</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -689,14 +662,6 @@
 	<td>No</td>
 </tr>
 <!--LOG OUT admin-->
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
 <tr>
 	<td>rollup</td>
 	<td>logout</td>
