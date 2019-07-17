@@ -2228,9 +2228,9 @@
 </tr>
 <!--Verify joined closed team (known it doesn't necessarily open to the new team)-->
 <tr>
-	<td>waitForText</td>
-	<td>css=h1#headerTeamName.team__name</td>
-	<td>ClsdSAML-${time}</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.team-container a#clsdsaml-${time}TeamButton</td>
+	<td></td>
 </tr>
 <!--Switch OKTA to email: password mismatch error-->
 <tr>
@@ -2547,12 +2547,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saml</td>
+	<td>id=authentication/saml</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saml</td>
+	<td>id=authentication/saml</td>
 	<td></td>
 </tr>
 <!--Store existing button text to replace it later-->
@@ -2677,12 +2677,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saml</td>
+	<td>id=authentication/saml</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saml</td>
+	<td>id=authentication/saml</td>
 	<td></td>
 </tr>
 <tr>
@@ -2740,12 +2740,12 @@
 <!--Store Site URL-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=configuration</td>
+	<td>id=environment/web_server</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=configuration</td>
+	<td>id=environment/web_server</td>
 	<td></td>
 </tr>
 <tr>
@@ -2771,12 +2771,12 @@
 <!--Service Provider Login URL is prepopulated based on Site URL-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saml</td>
+	<td>id=authentication/saml</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saml</td>
+	<td>id=authentication/saml</td>
 	<td></td>
 </tr>
 <tr>
@@ -2792,12 +2792,12 @@
 <!--Site URL blank > Can still log in using SAML-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=configuration</td>
+	<td>id=environment/web_server</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=configuration</td>
+	<td>id=environment/web_server</td>
 	<td></td>
 </tr>
 <tr>
@@ -2927,12 +2927,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=configuration</td>
+	<td>id=environment/web_server</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=configuration</td>
+	<td>id=environment/web_server</td>
 	<td></td>
 </tr>
 <tr>
@@ -2963,12 +2963,12 @@
 <!--SAML login false-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saml</td>
+	<td>id=authentication/saml</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saml</td>
+	<td>id=authentication/saml</td>
 	<td></td>
 </tr>
 <tr>
@@ -3087,12 +3087,12 @@
 <!--Turn SAML SSO back on-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saml</td>
+	<td>id=authentication/saml</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saml</td>
+	<td>id=authentication/saml</td>
 	<td></td>
 </tr>
 <tr>
@@ -3151,7 +3151,7 @@
 	<td>id=SamlSettings.Encrypttrue</td>
 	<td></td>
 </tr>
-<!--These are no longer the right buttons; verified manually 5.11-->
+<!--These are no longer the right buttons; verified manually 5.13-->
 <!--Also, need to swap order of these tests so encryption ends up enabled-->
 <tr>
 	<td>waitForEditable</td>
@@ -3464,12 +3464,12 @@
 <!--Replace first and last name attributes-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saml</td>
+	<td>id=authentication/saml</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saml</td>
+	<td>id=authentication/saml</td>
 	<td></td>
 </tr>
 <tr>
@@ -3510,12 +3510,12 @@
 <!--Help text on deactivating SAML user from System Console-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=users</td>
+	<td>id=user_management/users</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=users</td>
+	<td>id=user_management/users</td>
 	<td></td>
 </tr>
 <tr>
@@ -3680,12 +3680,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=users</td>
+	<td>id=user_management/users</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=users</td>
+	<td>id=user_management/users</td>
 	<td></td>
 </tr>
 <tr>

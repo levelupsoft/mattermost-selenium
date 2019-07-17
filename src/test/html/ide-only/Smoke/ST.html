@@ -2150,16 +2150,10 @@
 	<td>//*[@id='addUsersToTeam']/button</td>
 	<td></td>
 </tr>
-<!--Note: Displays as "View Members" despite ID-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//*[@id='manageMembers']/button</td>
+	<td>//*[@id='viewMembers']/button</td>
 	<td>View Members</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//*[@id='manageMembers']/button</td>
-	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2179,7 +2173,7 @@
 <!--Non-admin can view team members and filter list-->
 <tr>
 	<td>click</td>
-	<td>//*[@id='manageMembers']/button</td>
+	<td>//*[@id='viewMembers']/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -4784,6 +4778,11 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>openChanMenu</td>
 	<td></td>
 </tr>
 <tr>

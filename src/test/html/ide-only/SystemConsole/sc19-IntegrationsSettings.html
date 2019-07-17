@@ -279,7 +279,7 @@
 	<td>Yes, I have copied the token</td>
 </tr>
 <tr>
-	<td>close</td>
+	<td>click</td>
 	<td>id=confirmModalButton</td>
 	<td></td>
 </tr>
@@ -834,12 +834,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.modal-body</td>
-	<td>@test5<br />test5@test.com<br /><br /><br />Personal access tokens function similarly to session tokens and can be used by integrations to interact with this Mattermost server. Tokens are disabled if the user is deactivated. Learn more about personal access tokens.<br />Token Description: Non-admin first token<br />Token ID: *<br /><br />Delete<br /><br />Token Description: Non-admin second token<br />Token ID: *<br /><br />Delete</td>
+	<td>@test5<br />test5@test.com<br /><br /><br />Personal access tokens function similarly to session tokens and can be used by integrations to interact with this Mattermost server. Tokens are disabled if the user is deactivated. Learn more about personal access tokens.<br />Token Description: Non-admin second token<br />Token ID:*<br /><br />Delete<br /><br />Token Description: Non-admin first token<br />Token ID:*<br /><br />Delete</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.manage-teams__team</td>
-	<td>Token Description: Non-admin first token<br />Token ID: *<br /><br />Delete</td>
+	<td>css=div.manage-teams__team-name &gt; div.whitespace--nowrap.overflow--ellipsis</td>
+	<td>Token Description: Non-admin second token</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -855,12 +855,12 @@
 <tr>
 	<td>waitForNotText</td>
 	<td>css=div.modal-body</td>
-	<td>@test5<br />test5@test.com<br /><br /><br />Personal access tokens function similarly to session tokens and can be used by integrations to interact with this Mattermost server. Tokens are disabled if the user is deactivated. Learn more about personal access tokens.<br />Token Description: Non-admin first token<br />Token ID: *<br /><br />Delete<br /><br />Token Description: Non-admin second token<br />Token ID: *<br /><br />Delete</td>
+	<td>@test5<br />test5@test.com<br /><br /><br />Personal access tokens function similarly to session tokens and can be used by integrations to interact with this Mattermost server. Tokens are disabled if the user is deactivated. Learn more about personal access tokens.<br />Token Description: Non-admin second token<br />Token ID:*<br /><br />Delete<br /><br />Token Description: Non-admin first token<br />Token ID:*<br /><br />Delete</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.modal-body</td>
-	<td>@test5<br />test5@test.com<br /><br /><br />Personal access tokens function similarly to session tokens and can be used by integrations to interact with this Mattermost server. Tokens are disabled if the user is deactivated. Learn more about personal access tokens.<br />Token Description: Non-admin second token<br />Token ID: pa8d1kmoqjfdixw64e5g3rymic<br /><br />Delete</td>
+	<td>@test5<br />test5@test.com<br /><br /><br />Personal access tokens function similarly to session tokens and can be used by integrations to interact with this Mattermost server. Tokens are disabled if the user is deactivated. Learn more about personal access tokens.<br />Token Description: Non-admin first token<br />Token ID:*<br /><br />Delete</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -953,7 +953,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.whitespace--nowrap.overflow--ellipsis</td>
-	<td>Token Description: Non-admin second token</td>
+	<td>Token Description: Non-admin first token</td>
 </tr>
 <tr>
 	<td>waitForNotText</td>
@@ -975,7 +975,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.whitespace--nowrap.overflow--ellipsis</td>
-	<td>Token Description: Non-admin second token(Disabled)</td>
+	<td>Token Description: Non-admin first token(Disabled)</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1088,7 +1088,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.manage-teams__team-name &gt; div.whitespace--nowrap.overflow--ellipsis</td>
-	<td>Token Description: Non-admin second token</td>
+	<td>Token Description: Non-admin first token</td>
 </tr>
 <!--LOG OUT admin-->
 <tr>
@@ -1171,7 +1171,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.whitespace--nowrap.overflow--ellipsis</td>
-	<td>Token Description: Non-admin second token(Disabled)</td>
+	<td>Token Description: Non-admin first token(Disabled)</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1191,7 +1191,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.alert.alert-danger</td>
-	<td>exact:Any integrations using this token will no longer be able to access the Mattermost API. You cannot undo this action.<br /><br />Are you sure want to delete the Non-admin second token token?</td>
+	<td>Any integrations using this token will no longer be able to access the Mattermost API. You cannot undo this action.<br /><br />Are you sure want to delete the Non-admin first token token?</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1884,76 +1884,6 @@
 	<td>waitForValue</td>
 	<td>id=ServiceSettings.AllowCorsFrom</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=ServiceSettings.EnableInsecureOutgoingConnectionstrue</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=ServiceSettings.EnableInsecureOutgoingConnectionstrue</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=ServiceSettings.EnableInsecureOutgoingConnectionstrue</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=ServiceSettings.EnableInsecureOutgoingConnectionstrue</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=ServiceSettings.EnableInsecureOutgoingConnectionsfalse</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=ServiceSettings.EnableInsecureOutgoingConnectionsfalse</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=ServiceSettings.EnableInsecureOutgoingConnectionsfalse</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=ServiceSettings.EnableInsecureOutgoingConnectionsfalse</td>
-	<td>on</td>
 </tr>
 <!--LOG OUT admin-->
 <tr>

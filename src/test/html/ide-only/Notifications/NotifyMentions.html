@@ -192,7 +192,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <!--Store timestamp to append to channel name (to make it unique)-->
@@ -203,13 +203,13 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <!--Create new test channel appending datetime to the name-->
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>Mentions-${datetime}</td>
 </tr>
 <tr>
@@ -961,9 +961,9 @@
 	<td>@channel hello!${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=h4.modal-title &gt; span:contains('Confirm sending notifications to entire channel')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.modal-header</td>
+	<td>Confirm sending notifications to entire channel</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1002,9 +1002,9 @@
 	<td>@all hello!${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=h4.modal-title &gt; span:contains('Confirm sending notifications to entire channel')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.modal-header</td>
+	<td>Confirm sending notifications to entire channel</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1821,12 +1821,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=users</td>
+	<td>id=user_management/users</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=users</td>
+	<td>id=user_management/users</td>
 	<td></td>
 </tr>
 <tr>
@@ -1856,12 +1856,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span[contains(text(),'Deactivate')]</td>
+	<td>//button[contains(text(),'Deactivate')]</td>
 	<td>Deactivate</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//span[contains(text(),'Deactivate')]</td>
+	<td>//button[contains(text(),'Deactivate')]</td>
 	<td>Deactivate</td>
 </tr>
 <tr>
@@ -1892,13 +1892,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none span</td>
+	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
 	<td>Logout</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none span</td>
-	<td></td>
+	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
+	<td>Logout</td>
 </tr>
 </tbody></table>
 </body>

@@ -411,17 +411,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
-	<td>System Statistics</td>
+	<td>css=span</td>
+	<td>System Console</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span[@class='menu-icon']</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//span[@class='menu-icon']</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
@@ -433,11 +433,6 @@
 	<td>click</td>
 	<td>//li[@class='MenuItem']/a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
 </tr>
 <!--Join team from main menu-->
 <tr>
@@ -498,13 +493,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.signup-team-dir__name</td>
+	<td>css=#UI_Automation_2 &gt; span.signup-team-dir__name</td>
 	<td>UI Automation 2</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.signup-team-dir__name</td>
-	<td></td>
+	<td>css=#UI_Automation_2 &gt; span.signup-team-dir__name</td>
+	<td>UI Automation 2</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -517,6 +512,7 @@
 	<td>UI Automation 2</td>
 </tr>
 <!--Create team from `+` in team sidebar when no more open teams are available-->
+<!--*** Brittle test; if other tests have left other open teams in there, this will fail-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=div.team-btn.team-btn__add</td>
@@ -820,12 +816,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>DoublePlus</td>
 </tr>
 <tr>
@@ -886,12 +882,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>Sixes</td>
 </tr>
 <tr>

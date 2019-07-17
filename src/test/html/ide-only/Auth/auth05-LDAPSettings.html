@@ -1,8 +1,37 @@
 <!--*** Ensure LDAP is set up on the server you're running this on-->
 <!--*** And doesn't already have test.one as a user (such as rctesting)-->
+<!--********************************************************************-->
 <!--*** Or, configure Se server with test LDAP Jumpcloud (from private repo)-->
+<!--*** Ensure Nickname and Position variables have (any) values-->
 <!--*** ALSO make sure Signup > Open Server is TRUE-->
-<!--*** MANUALLY log in as a system admin-->
+<!--********************************************************************-->
+<!--*** MANUALLY enter system admin credentials but DON'T-->
+<!--*** click to log in yet (creds will be temporarily stored)-->
+<tr>
+	<td>waitForNotValue</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotValue</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>id=loginId</td>
+	<td>adminuser</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>id=loginPassword</td>
+	<td>adminpwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -134,10 +163,30 @@
 	<td>css=div.form-group input#loginId.form-control@placeholder</td>
 	<td>*LDAP*</td>
 </tr>
-<!--*** Manually log back in as a system admin-->
+<!--LOG IN admin using stored credentials-->
 <tr>
-	<td>pause</td>
-	<td>6000</td>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>${adminuser}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>${adminpwd}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -265,10 +314,30 @@
 	<td>css=span.color--light &gt; a &gt; span</td>
 	<td>Click here to sign in.</td>
 </tr>
-<!--*** Manually log back in as a system admin-->
+<!--LOG IN admin using stored credentials-->
 <tr>
-	<td>pause</td>
-	<td>6000</td>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>${adminuser}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>${adminpwd}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -762,12 +831,23 @@
 	<td>id=loginPassword</td>
 	<td></td>
 </tr>
+<!--*** Manually enter LDAP user's password (from private resources)-->
+<!--*** But DON'T click to log in (password will be stored for this test)-->
 <tr>
 	<td>pause</td>
 	<td>8000</td>
 	<td></td>
 </tr>
-<!--*** Manually enter LDAP user's password (from private resources)-->
+<tr>
+	<td>waitForNotValue</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>id=loginPassword</td>
+	<td>testtwopwd</td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
@@ -781,17 +861,37 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
-	<td>We couldn't find an account matching your login credentials.</td>
+	<td>Enter a valid email or username and/or password.</td>
 </tr>
 <tr>
 	<td>pause</td>
 	<td>3000</td>
 	<td></td>
 </tr>
-<!--*** Manually log back in as a system admin-->
+<!--LOG IN admin using stored credentials-->
 <tr>
-	<td>pause</td>
-	<td>6000</td>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>${adminuser}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>${adminpwd}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -893,11 +993,10 @@
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>8000</td>
-	<td></td>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>${testtwopwd}</td>
 </tr>
-<!--*** Manually enter LDAP user's password (from private resources)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
@@ -1077,17 +1176,12 @@
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>8000</td>
-	<td></td>
+	<td>type</td>
+	<td>name=ldapPassword</td>
+	<td>${testtwopwd}</td>
 </tr>
-<!--*** Manually enter LDAP user's password (from private resources)-->
-<tr>
-	<td>pause</td>
-	<td>8000</td>
-	<td></td>
-</tr>
-<!--*** Hm, these passwds were already entered above? Skip ahead to success msg if test hangs here-->
+<!--*** Hm, these passwds were already entered above? -->
+<!--*** Skip ahead to success msg if test hangs here-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=password</td>
@@ -1260,11 +1354,10 @@
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>8000</td>
-	<td></td>
+	<td>type</td>
+	<td>name=ldapPassword</td>
+	<td>${testtwopwd}</td>
 </tr>
-<!--*** Manually enter LDAP user's password (from private resources)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
@@ -1322,11 +1415,10 @@
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>8000</td>
-	<td></td>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>${testtwopwd}</td>
 </tr>
-<!--*** Manually enter LDAP user's password (from private resources)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=loginButton</td>
@@ -1457,10 +1549,30 @@
 	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
-<!--*** MANUALLY log in as a system admin-->
+<!--LOG IN admin using stored credentials-->
 <tr>
-	<td>pause</td>
-	<td>6000</td>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>${adminuser}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>${adminpwd}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -1577,11 +1689,10 @@
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>8000</td>
-	<td></td>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>${testtwopwd}</td>
 </tr>
-<!--*** Manually enter LDAP user's password (from private resources)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=loginButton</td>
@@ -1751,10 +1862,30 @@
 	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
-<!--*** MANUALLY log in as a system admin-->
+<!--LOG IN admin using stored credentials-->
 <tr>
-	<td>pause</td>
-	<td>6000</td>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>${adminuser}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>${adminpwd}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -1886,11 +2017,10 @@
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>8000</td>
-	<td></td>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>${testtwopwd}</td>
 </tr>
-<!--*** Manually enter LDAP user's password (from private resources)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=loginButton</td>
@@ -2073,12 +2203,12 @@
 <!--Disable account creation with email/password-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=authentication_email</td>
+	<td>id=authentication/email</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=authentication_email</td>
+	<td>id=authentication/email</td>
 	<td></td>
 </tr>
 <tr>
@@ -2363,7 +2493,7 @@
 	<td>id=loginButton</td>
 	<td></td>
 </tr>
-<!--New user created, closed team joined-->
+<!--New user created, closed team joined (hm. not new if used Se server above)-->
 <tr>
 	<td>waitForText</td>
 	<td>id=tutorialIntroContent</td>
@@ -2444,12 +2574,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=authentication_email</td>
+	<td>id=authentication/email</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=authentication_email</td>
+	<td>id=authentication/email</td>
 	<td></td>
 </tr>
 <tr>
@@ -2510,7 +2640,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <!--Store timestamp to append to channel name (to make it unique)-->
@@ -2521,13 +2651,13 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td></td>
 </tr>
 <!--Create new test channel appending datetime to the name-->
 <tr>
 	<td>type</td>
-	<td>id=newPublicChannelName</td>
+	<td>id=newChannelName</td>
 	<td>LDAP-${datetime}</td>
 </tr>
 <tr>

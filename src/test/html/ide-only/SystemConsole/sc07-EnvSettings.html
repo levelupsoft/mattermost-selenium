@@ -91,7 +91,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[2]/div/div[3]</td>
+	<td>//div[2]/div/div[2]/div/div[3]</td>
 	<td>exact:Database: ${driver}</td>
 </tr>
 <!--*** Can visually verify the Version is correct as well-->
@@ -334,7 +334,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header</td>
 	<td>Elasticsearch</td>
 </tr>
 <tr>
@@ -604,6 +604,16 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
+	<td>id=confirmModalButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=confirmModalButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
 	<td>id=ImageProxySettings.Enabletrue</td>
 	<td></td>
 </tr>
@@ -711,6 +721,16 @@
 	<td></td>
 </tr>
 <!--SMTP settings - Change, Save, refresh, verify saved-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=environment/smtp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=environment/smtp</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=EmailSettings.SMTPServer</td>
@@ -859,14 +879,20 @@
 	<td>username</td>
 </tr>
 <tr>
-	<td>waitForValue</td>
+	<td>waitForSelectedLabel</td>
+	<td>id=EmailSettings.ConnectionSecurity</td>
+	<td>TLS (Recommended)</td>
+</tr>
+<!--Password not visible-->
+<tr>
+	<td>waitForNotValue</td>
 	<td>id=EmailSettings.SMTPPassword</td>
 	<td>password</td>
 </tr>
 <tr>
-	<td>waitForSelectedLabel</td>
-	<td>id=EmailSettings.ConnectionSecurity</td>
-	<td>TLS (Recommended)</td>
+	<td>waitForValue</td>
+	<td>id=EmailSettings.SMTPPassword</td>
+	<td>exact:********************************</td>
 </tr>
 <!--Test Connection button - Error message-->
 <tr>
@@ -937,7 +963,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header</td>
+	<td>css=div.admin-console__header</td>
 	<td>Push Notification Server</td>
 </tr>
 <tr>
@@ -1393,7 +1419,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header</td>
 	<td>High Availability</td>
 </tr>
 <tr>
@@ -1450,7 +1476,7 @@
 <!--RATE LIMITING settings editable when enabled, and saveable-->
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header</td>
+	<td>css=div.admin-console__header</td>
 	<td>Rate Limiting</td>
 </tr>
 <tr>
@@ -1604,7 +1630,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header</td>
 	<td>Logging</td>
 </tr>
 <!--Logging settings editable / not editable as expected-->
@@ -1811,7 +1837,7 @@
 <!--Change settings, log out, log back in, verify still what they changed to-->
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header</td>
 	<td>Session Lengths</td>
 </tr>
 <tr>
@@ -2088,7 +2114,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header &gt; span</td>
+	<td>css=div.admin-console__header</td>
 	<td>Performance Monitoring</td>
 </tr>
 <tr>
@@ -2180,7 +2206,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header</td>
+	<td>css=div.admin-console__header</td>
 	<td>Developer Settings</td>
 </tr>
 <!--Turn off /test slash command-->
@@ -2367,8 +2393,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
+	<td>id=showMoreButton</td>
+	<td>Show More</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=showMoreButton</td>
+	<td>Show More</td>
+</tr>
+<tr>
+	<td>waitForText</td>
 	<td>css=code.hljs</td>
-	<td>exact:COMMANDS: Setup - Creates a testing environment in current team. /test setup [teams] [fuzz] &lt;Num Channels&gt; &lt;Num Users&gt; &lt;NumPosts&gt; Example: /test setup teams fuzz 10 20 50 Users - Add a specified number of random users with fuzz text to current team. /test users [fuzz] &lt;Min Users&gt; &lt;Max Users&gt; Example: /test users fuzz 5 10 Channels - Add a specified number of random channels with fuzz text to current team. /test channels [fuzz] &lt;Min Channels&gt; &lt;Max Channels&gt; Example: /test channels fuzz 5 10 Posts - Add some random posts with fuzz text to current channel. /test posts [fuzz] &lt;Min Posts&gt; &lt;Max Posts&gt; &lt;Max Images&gt; Example: /test posts fuzz 5 10 3 Url - Add a post containing the text from a given url to current channel. /test url Example: /test http://www.example.com/sample_file.md Json - Add a post using the JSON file as payload to the current channel. /test json url Example /test json http://www.example.com/sample_body.json</td>
+	<td>exact:COMMANDS: Setup - Creates a testing environment in current team. /test setup [teams] [fuzz] &lt;Num Channels&gt; &lt;Num Users&gt; &lt;NumPosts&gt; Example: /test setup teams fuzz 10 20 50 Users - Add a specified number of random users with fuzz text to current team. /test users [fuzz] &lt;Min Users&gt; &lt;Max Users&gt; Example: /test users fuzz 5 10 Channels - Add a specified number of random channels with fuzz text to current team. /test channels [fuzz] &lt;Min Channels&gt; &lt;Max Channels&gt; Example: /test channels fuzz 5 10 Posts - Add some random posts with fuzz text to current channel. /test posts [fuzz] &lt;Min Posts&gt; &lt;Max Posts&gt; &lt;Max Images&gt; Example: /test posts fuzz 5 10 3 Post - Add post to a channel as another user. /test post u=@username p=passwd c=~channelname t=teamname &quot;message&quot; Example: /test post u=@user-1 p=user-1 c=~town-square t=ad-1 &quot;message&quot; Url - Add a post containing the text from a given url to current channel. /test url Example: /test http://www.example.com/sample_file.md Json - Add a post using the JSON file as payload to the current channel. /test json url Example /test json http://www.example.com/sample_body.json</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
