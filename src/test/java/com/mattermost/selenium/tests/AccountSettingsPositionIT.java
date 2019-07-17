@@ -42,11 +42,11 @@ public class AccountSettingsPositionIT extends DriverBase {
         // General Settings
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("#accountSettings > button.style--none."))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("#accountSettings > button.style--none"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("#accountSettings > button.style--none.")).click();
+        driver.findElement(By.cssSelector("#accountSettings > button.style--none")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
         	try { if ("Click 'Edit' to add your job title / position".equals(driver.findElement(By.id("positionDesc")).getText())) break; } catch (Exception e) {}
