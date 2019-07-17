@@ -8,12 +8,12 @@ cp -f ~/mattermost/logs/mattermost.log $WORKSPACE/mm-latest.log
 rm -f mattermost.tar.gz
 
 # Regular daily from master
-# wget https://releases.mattermost.com/mattermost-platform/master/mattermost-enterprise-linux-amd64.tar.gz
-# mv mattermost-enterprise-linux-amd64.tar.gz mattermost.tar.gz
+wget https://releases.mattermost.com/mattermost-platform/master/mattermost-enterprise-linux-amd64.tar.gz
+mv mattermost-enterprise-linux-amd64.tar.gz mattermost.tar.gz
 
 # Use this to lock to specific version
-wget https://releases.mattermost.com/5.13.0-rc4/mattermost-5.13.0-rc4-linux-amd64.tar.gz
-mv mattermost-5.13.0-rc4-linux-amd64.tar.gz mattermost.tar.gz
+# wget https://releases.mattermost.com/5.13.0-rc4/mattermost-5.13.0-rc4-linux-amd64.tar.gz
+# mv mattermost-5.13.0-rc4-linux-amd64.tar.gz mattermost.tar.gz
 
 # Regular daily from release branch
 # wget https://releases.mattermost.com/mattermost-platform/release-5.13/mattermost-enterprise-linux-amd64.tar.gz
