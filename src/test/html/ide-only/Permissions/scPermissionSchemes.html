@@ -99,9 +99,9 @@
 <!--^^Permission scheme page is loaded^^-->
 <!--Create a Team Override Scheme-->
 <tr>
-	<td>waitForText</td>
-	<td>css=#teamSelectorModalLabel &gt; span</td>
-	<td>Add Teams To Team Selection List</td>
+	<td>waitForElementPresent</td>
+	<td>//span[contains(text(),'Team Override Schemes')] </td>
+	<td>Team Override Schemes</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -378,13 +378,13 @@
 </tr>
 <!--^^Added new Scheme^^-->
 <tr>
-	<td>verifyText</td>
-	<td>css=div.admin-console__header &gt; span</td>
-	<td>Permission Schemes</td>
+	<td>waitForElementPresent</td>
+	<td>//span[contains(text(),'Team Override Schemes')] </td>
+	<td>Team Override Schemes</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//span[@class='menu-icon']</td>
+	<td>//span[@class='style--none menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
@@ -569,7 +569,7 @@
 <!--^^Scheme Deleted^^-->
 <tr>
 	<td>click</td>
-	<td>//span[@class='menu-icon']</td>
+	<td>//span[@class='style--none menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
@@ -1005,7 +1005,7 @@
 <!--^^Page must realize there are no unsaved changes when test is running fast^^-->
 <tr>
 	<td>click</td>
-	<td>//a[@class='fa fa-angle-left back']</td>
+	<td>//a[@class='fa fa-angle-left back active'] </td>
 	<td></td>
 </tr>
 <tr>
@@ -1183,7 +1183,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@class='fa fa-angle-left back']</td>
+	<td>//a[@class='fa fa-angle-left back active'] </td>
 	<td></td>
 </tr>
 <tr>
@@ -1402,7 +1402,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@class='fa fa-angle-left back']</td>
+	<td>//a[@class='fa fa-angle-left back active'] </td>
 	<td></td>
 </tr>
 <tr>
@@ -1422,7 +1422,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@class='fa fa-angle-left back']</td>
+	<td>//a[@class='fa fa-angle-left back active'] </td>
 	<td></td>
 </tr>
 <tr>
@@ -1594,7 +1594,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//span[@class='menu-icon']</td>
+	<td>//span[@class='style--none menu-icon']</td>
 	<td></td>
 </tr>
 <tr>

@@ -229,7 +229,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@class='fa fa-angle-left back']</td>
+	<td>//a[@class='fa fa-angle-left back active'] </td>
 	<td></td>
 </tr>
 <!--Create a Team Override Scheme-->
@@ -3182,9 +3182,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>PrivateChannel2-Update</td>
+	<td>waitForElementPresent</td>
+	<td>//*[@id='channelHeaderTitle']/span[contains(text(),'PrivateChannel2-Update')]</td>
+	<td></td>
 </tr>
 <!--^^Edit Public Channel Details^^-->
 <tr>
@@ -3255,19 +3255,14 @@
 <!--Channel Admin Able to delete other users posts -->
 <!--... Next Delete this channel-->
 <tr>
+	<td>rollup</td>
+	<td>openChannel</td>
+	<td>ChannelName=PrivateChannel2-Update</td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
-	<td>//span[@class='sidebar-item__name']/span[text() = &quot;PrivateChannel2-Update&quot;]</td>
+	<td>//*[@id='channelHeaderTitle']/span[contains(text(),'PrivateChannel2-Update')]</td>
 	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//span[@class='sidebar-item__name']/span[text() = &quot;PrivateChannel2-Update&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>PrivateChannel2-Update</td>
 </tr>
 <tr>
 	<td>rollup</td>
@@ -3367,13 +3362,18 @@
 	<td></td>
 </tr>
 <tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
-	<td>css=#users &gt; span.sidebar-section-title__text &gt; span</td>
+	<td>//a[@id='user_management/users']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#users &gt; span.sidebar-section-title__text &gt; span</td>
+	<td>//a[@id='user_management/users']</td>
 	<td></td>
 </tr>
 <tr>
@@ -3445,22 +3445,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span[@class='menu-icon']</td>
+	<td>//span[@class='style--none menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//span[@class='menu-icon']</td>
+	<td>//span[@class='style--none menu-icon']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span [contains(text(),'Logout')]</td>
+	<td>//button[contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//span [contains(text(),'Logout')]</td>
+	<td>//button[contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--Switch back to test user-->
@@ -3805,7 +3805,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=channelHeaderDropdownButton</td>
-	<td>PrivateChanTeamA-Updat</td>
+	<td>PrivateChanTeamA-Updated</td>
 </tr>
 <!--Private channel can still be edited-->
 <tr>

@@ -333,12 +333,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -445,17 +445,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -496,12 +496,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Member')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Member')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Member')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -522,12 +522,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -588,7 +588,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; h4.modal-title &gt; span.name</td>
+	<td>css=span.name</td>
 	<td>To Manage</td>
 </tr>
 <tr>
@@ -989,12 +989,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -1101,17 +1101,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Admin')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -1152,12 +1152,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Member')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Make Channel Member')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Member')]</td>
 	<td></td>
 </tr>
 <!--Remove demoted user from channel-->
@@ -1173,12 +1173,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']//*/span[contains(text(),'Remove From Channel')]</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -1238,8 +1238,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.more-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; h4.modal-title &gt; span.name</td>
+	<td>verifyText</td>
+	<td>css=span.name</td>
 	<td>Manage Private</td>
 </tr>
 <tr>
@@ -1469,11 +1469,6 @@
 <tr>
 	<td>rollup</td>
 	<td>logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>https://rc.test.mattermost.com</td>
 	<td></td>
 </tr>
 </tbody></table>
