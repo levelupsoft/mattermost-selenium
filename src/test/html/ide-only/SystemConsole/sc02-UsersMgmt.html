@@ -54,12 +54,12 @@
 <!--Verify not System Admin or Team Admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
@@ -862,12 +862,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
@@ -877,7 +877,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <!--LOG OUT corey-->
@@ -944,13 +944,13 @@
 	<td>@corey</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.text-right &gt; a &gt; span</td>
+	<td>Member</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Member')]</td>
+	<td>css=div.text-right &gt; a &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -1042,13 +1042,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
 	<td>Deactivate</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none</td>
-	<td>Deactivate</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1182,12 +1182,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
 	<td>Activate</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
 	<td>Activate</td>
 </tr>
 <tr>
@@ -1318,12 +1318,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
@@ -1336,7 +1336,7 @@
 	<td>css=#addUsersToTeam &gt; button.style--none.</td>
 	<td></td>
 </tr>
-<!--(corey should be the only user in the list)-->
+<!--(corey should be the only user in the list if no other data has been added)-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
