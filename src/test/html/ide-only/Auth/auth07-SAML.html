@@ -109,9 +109,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>SAML Test</td>
 </tr>
 <!--First and last names not editable-->
 <tr>
@@ -126,12 +126,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td>css=button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <!--Accented character and literal HTML entity come through as expected-->
@@ -206,7 +206,7 @@
 <tr>
 	<td>type</td>
 	<td>name=password</td>
-	<td>aaaaaaaA1!</td>
+	<td>aaaaaaa</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -216,7 +216,7 @@
 <tr>
 	<td>type</td>
 	<td>name=passwordconfirm</td>
-	<td>aaaaaaaB1!</td>
+	<td>baaaaaa</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -237,7 +237,7 @@
 <tr>
 	<td>type</td>
 	<td>name=passwordconfirm</td>
-	<td>aaaaaaaA1!</td>
+	<td>aaaaaaa</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -272,7 +272,7 @@
 <tr>
 	<td>type</td>
 	<td>id=loginPassword</td>
-	<td>aaaaaaaA1!</td>
+	<td>aaaaaaa</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -297,12 +297,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td>css=button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -364,7 +364,7 @@
 <tr>
 	<td>type</td>
 	<td>name=password</td>
-	<td>aaaaaaaA1!</td>
+	<td>aaaaaaa</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -892,7 +892,7 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
-<!--SAML login false-->
+<!--Verify Signature false > Can still log in using SAML-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=authentication/saml</td>
@@ -903,6 +903,177 @@
 	<td>id=authentication/saml</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=SamlSettings.Verifyfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=SamlSettings.Verifyfalse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--LOG OUT system admin user-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none:contains('Logout')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none:contains('Logout')</td>
+	<td></td>
+</tr>
+<!--Successfully log in using SAML-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=With OneLogin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=With OneLogin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<!--LOG OUT SAML user-->
+<tr>
+	<td>rollup</td>
+	<td>logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<!--LOG IN system admin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>${adminid}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>${adminpwd}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<!--Set back to Verify Signature true-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=authentication/saml</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=authentication/saml</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=SamlSettings.Verifytrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=SamlSettings.Verifytrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--SAML login false-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=SamlSettings.Enablefalse</td>
@@ -1271,12 +1442,12 @@
 <!--Name fields are editable-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td>css=button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1467,8 +1638,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name &gt; a &gt; span</td>
-	<td>@qa-onelogin*</td>
+	<td>css=div.more-modal__name &gt; span</td>
+	<td>@qa-onelogin - *</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1482,13 +1653,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=li.MenuItem &gt; button.style--none</td>
+	<td>css=button.style--none</td>
 	<td>Deactivate</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem &gt; button.style--none</td>
-	<td>Deactivate</td>
+	<td>css=button.style--none</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1637,7 +1808,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name &gt; a &gt; span</td>
+	<td>css=div.more-modal__name &gt; span</td>
 	<td>@qa-onelogin - *</td>
 </tr>
 <tr>
@@ -1931,7 +2102,7 @@
 </tr>
 <tr>
 	<td>pause</td>
-	<td>18000</td>
+	<td>8000</td>
 	<td></td>
 </tr>
 <!--*** Manually enter valid OKTA password for the test user-->
@@ -2008,12 +2179,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td>css=button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <!--Accented character (and literal HTML entity) comes through as expected-->
@@ -2245,12 +2416,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td>css=button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2387,12 +2558,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td>css=button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3346,12 +3517,12 @@
 <!--Name fields are editable-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td>css=button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td>css=button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3530,7 +3701,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name &gt; a &gt; span</td>
+	<td>css=div.more-modal__name &gt; span</td>
 	<td>@linda-qaokta - *</td>
 </tr>
 <tr>
@@ -3545,12 +3716,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=li.MenuItem &gt; button.style--none</td>
+	<td>css=button.style--none</td>
 	<td>Deactivate</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem &gt; button.style--none</td>
+	<td>css=button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -3700,7 +3871,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name &gt; a &gt; span</td>
+	<td>css=div.more-modal__name &gt; span</td>
 	<td>@linda-qaokta - *</td>
 </tr>
 <tr>
