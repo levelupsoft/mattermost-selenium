@@ -25,8 +25,8 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementPresent', target: "//button[@class='style--none sidebar-header-dropdown__icon']", value: ''});
-commands.push({ command: 'click', target: "//button[@class='style--none sidebar-header-dropdown__icon']", value: ''}); 
+commands.push({ command: 'waitForElementPresent', target: "//span[@class='sidebar-header-dropdown__icon']", value: ''});
+commands.push({ command: 'click', target: "//span[@class='sidebar-header-dropdown__icon']", value: ''}); 
 commands.push({ command: 'waitForElementPresent', target: 'css=#logout > button.style--none', value: ''});
 commands.push({ command: 'click', target: 'css=#logout > button.style--none', value: ''});
 commands.push({ command: 'waitForElementPresent', target: 'id=loginId', value: ''});
@@ -377,8 +377,8 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementPresent', target: "//button[@class='style--none sidebar-header-dropdown__icon']", value: ''});
-commands.push({ command: 'click', target: "//button[@class='style--none sidebar-header-dropdown__icon']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//span[@class='sidebar-header-dropdown__icon']", value: ''});
+commands.push({ command: 'click', target: "//span[@class='sidebar-header-dropdown__icon']", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "id=systemConsole", value: ''});
 commands.push({ command: 'click', target: "id=systemConsole", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "id=users", value: ''});
@@ -420,8 +420,8 @@ commands.push({ command: 'storeText', target: "//textarea[@id='post_textbox']", 
 commands.push({ command: 'pause', target: "", value: '1000'});
 commands.push({ command: 'sendKeys', target: "id=post_textbox", value: '${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}${KEY_DELETE}'});
 //Promote User
-commands.push({ command: 'waitForElementPresent', target: "//button[@class='style--none sidebar-header-dropdown__icon']", value: ''});
-commands.push({ command: 'click', target: "//button[@class='style--none sidebar-header-dropdown__icon']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//span[@class='sidebar-header-dropdown__icon']", value: ''});
+commands.push({ command: 'click', target: "//span[@class='sidebar-header-dropdown__icon']", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "id=systemConsole", value: ''});
 commands.push({ command: 'click', target: "id=systemConsole", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "id=users", value: ''});
