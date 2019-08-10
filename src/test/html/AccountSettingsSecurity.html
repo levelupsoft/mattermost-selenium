@@ -55,12 +55,12 @@
 <!--Security-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=#accountSettings &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=#accountSettings &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -398,17 +398,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
+	<td>css=#accountSettings &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=securityButton</td>
+	<td>css=#accountSettings &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -479,84 +474,6 @@
 	<td>updated1</td>
 </tr>
 <tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<!--DisableAnimations-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=loginId</td>
-	<td>test2@test.com</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>name=password</td>
-	<td>passwdd</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=loginButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=accountSettings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=accountSettings</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<tr>
 	<td>waitForElementPresent</td>
 	<td>id=securityButton</td>
 	<td></td>
@@ -619,12 +536,12 @@
 <!--Open Access History and Active Sessions Views-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[2]/div/div/div[2]/button</td>
+	<td>css=button.style--none.security-links.color--link span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[2]/div/div/div[2]/button</td>
+	<td>css=button.style--none.security-links.color--link span</td>
 	<td></td>
 </tr>
 <tr>
@@ -681,8 +598,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettings &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>id=accountSettings</td>
+	<td>css=#accountSettings &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -698,12 +620,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[2]/button[2]</td>
+	<td>css=button.style--none.security-links.color--link.margin-top span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[2]/button[2]</td>
+	<td>css=button.style--none.security-links.color--link.margin-top span</td>
 	<td></td>
 </tr>
 <tr>
@@ -721,6 +643,11 @@
 	<td>click</td>
 	<td>css=div.activity-log__action &gt; button.btn.btn-primary</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.alert.alert-warning &gt; span</td>
+	<td>Your session has expired. Please log in again.</td>
 </tr>
 </tbody></table>
 </body>
