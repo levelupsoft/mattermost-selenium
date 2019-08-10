@@ -332,7 +332,7 @@
 	<td>Webapp of Mattermost server: https://github.com/mattermost/mattermost-server - mattermost/mattermost-webapp</td>
 	<td></td>
 </tr>
-<!--Two Custom URL schemes render as links-->
+<!--Two Custom URL schemes render as links, incl. valid punctuation-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -371,7 +371,7 @@
 <tr>
 	<td>type</td>
 	<td>id=DisplaySettings.CustomUrlSchemes</td>
-	<td>taco,okay-then</td>
+	<td> taco,okay-then,taco+what,taco.what</td>
 </tr>
 <tr>
 	<td>waitForEditable</td>
@@ -416,7 +416,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>taco:lala and okay-then:example.com${KEY_ENTER}</td>
+	<td>taco:lala and okay-then:example.com and taco+what:test and taco.what:test${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
@@ -431,6 +431,16 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=okay-then:example.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=taco+what:test</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=taco.what:test</td>
 	<td></td>
 </tr>
 <!--Errors for invalid custom URL schemes-->
