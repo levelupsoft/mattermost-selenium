@@ -109,9 +109,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>SAML Test</td>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
 </tr>
 <!--First and last names not editable-->
 <tr>
@@ -126,12 +126,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <!--Accented character and literal HTML entity come through as expected-->
@@ -206,7 +206,7 @@
 <tr>
 	<td>type</td>
 	<td>name=password</td>
-	<td>aaaaaaa</td>
+	<td>aaaaaaaA1!</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -216,7 +216,7 @@
 <tr>
 	<td>type</td>
 	<td>name=passwordconfirm</td>
-	<td>baaaaaa</td>
+	<td>aaaaaaaB1!</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -237,7 +237,7 @@
 <tr>
 	<td>type</td>
 	<td>name=passwordconfirm</td>
-	<td>aaaaaaa</td>
+	<td>aaaaaaaA1!</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -272,7 +272,7 @@
 <tr>
 	<td>type</td>
 	<td>id=loginPassword</td>
-	<td>aaaaaaa</td>
+	<td>aaaaaaaA1!</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -297,12 +297,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -364,7 +364,7 @@
 <tr>
 	<td>type</td>
 	<td>name=password</td>
-	<td>aaaaaaa</td>
+	<td>aaaaaaaA1!</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1271,12 +1271,12 @@
 <!--Name fields are editable-->
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1467,8 +1467,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name &gt; span</td>
-	<td>@qa-onelogin - *</td>
+	<td>css=div.more-modal__name &gt; a &gt; span</td>
+	<td>@qa-onelogin*</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1482,13 +1482,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
 	<td>Deactivate</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none</td>
-	<td></td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
+	<td>Deactivate</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1637,7 +1637,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name &gt; span</td>
+	<td>css=div.more-modal__name &gt; a &gt; span</td>
 	<td>@qa-onelogin - *</td>
 </tr>
 <tr>
@@ -1931,7 +1931,7 @@
 </tr>
 <tr>
 	<td>pause</td>
-	<td>8000</td>
+	<td>18000</td>
 	<td></td>
 </tr>
 <!--*** Manually enter valid OKTA password for the test user-->
@@ -2008,12 +2008,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <!--Accented character (and literal HTML entity) comes through as expected-->
@@ -2245,12 +2245,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2387,12 +2387,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3346,12 +3346,12 @@
 <!--Name fields are editable-->
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3530,7 +3530,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name &gt; span</td>
+	<td>css=div.more-modal__name &gt; a &gt; span</td>
 	<td>@linda-qaokta - *</td>
 </tr>
 <tr>
@@ -3545,12 +3545,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
 	<td>Deactivate</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -3700,7 +3700,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name &gt; span</td>
+	<td>css=div.more-modal__name &gt; a &gt; span</td>
 	<td>@linda-qaokta - *</td>
 </tr>
 <tr>
