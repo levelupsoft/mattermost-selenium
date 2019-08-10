@@ -95,7 +95,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.help-text &gt; span</td>
-	<td>When true, enables plugins on your Mattermost server. Use plugins to integrate with third-party systems, extend functionality or customize the user interface of your Mattermost server. See documentation to learn more.</td>
+	<td>When true, enables plugins on your Mattermost server. Use plugins to integrate with third-party systems, extend functionality, or customize the user interface of your Mattermost server. See documentation to learn more.</td>
 </tr>
 <tr>
 	<td>waitForAttribute</td>
@@ -264,11 +264,7 @@
 	<td></td>
 </tr>
 <!--Choose file button is not clickable (upload disabled in config)-->
-<tr>
-	<td>waitForValue</td>
-	<td>id=enabletrue</td>
-	<td>on</td>
-</tr>
+<!--Plugins need to be disabled for the following tets - They may alreday be ensabled on the server you choose when the server was switched above-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=input[type=&quot;file&quot;]</td>
@@ -282,7 +278,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=p.help-text &gt; span</td>
-	<td>Enable plugin uploads in config.json. See documentation to learn more.</td>
+	<td>To enable plugins, set Enable Plugins to true. See documentation to learn more.</td>
 </tr>
 <tr>
 	<td>waitForAttribute</td>
@@ -293,6 +289,57 @@
 	<td>waitForAttribute</td>
 	<td>link=documentation@href</td>
 	<td>https://about.mattermost.com/default-plugins</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enabletrue</td>
+	<td>off</td>
+</tr>
+<!--Enable Plugins-->
+<tr>
+	<td>waitForText</td>
+	<td>css=label.control-label.col-sm-4</td>
+	<td>Enable Plugins:</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=enabletrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enabletrue</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enablefalse</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enabletrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enabletrue</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
 </tr>
 <!--Verify pre-packaged plugins are present-->
 <tr>
@@ -737,6 +784,58 @@
 	<td>waitForAttribute</td>
 	<td>link=documentation@href</td>
 	<td>https://about.mattermost.com/default-zoom-documentation</td>
+</tr>
+<!--When I plugin cannot be started it fails properly and the user can attempt to enable it again-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=plugins/plugin_management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=plugins/plugin_management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[@data-plugin-id='jira']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@data-plugin-id='jira']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td></td>
+	<td>4000</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[@data-plugin-id='jira']/span[contains(text(),'Disable')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.alert.alert-warning &gt; span</td>
+	<td>This plugin failed to start. Check your system logs for errors.</td>
+</tr>
+<!--Plugin Failed to start properly-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[@data-plugin-id='jira']/span[contains(text(),'Disable')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@data-plugin-id='jira']/span[contains(text(),'Disable')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[@data-plugin-id='jira']/span[contains(text(),'Enable')]</td>
+	<td></td>
 </tr>
 <!--ORIGINAL plugin is overwritten by updated version-->
 <!--Upload the 'original' giphy plugin-->
@@ -2551,6 +2650,7 @@
 	<td>id=loginButton</td>
 	<td></td>
 </tr>
+<!---->
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
@@ -2729,12 +2829,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li#*_pluginmenuitem.MenuItem button.style--none span:contains('Demo Plugin')</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Demo Plugin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li#*_pluginmenuitem.MenuItem button.style--none span:contains('Demo Plugin')</td>
+	<td>//li[@class='MenuItem']/button[contains(text(),'Demo Plugin')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -2830,14 +2930,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none span:contains('Demo Plugin')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=li.MenuItem button.style--none span:contains('Demo Plugin')</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Demo Plugin</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2882,17 +2977,27 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=custom/com.mattermost.demo-plugin</td>
+	<td>id=plugins/plugin_management</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=custom/com.mattermost.demo-plugin</td>
+	<td>id=plugins/plugin_management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=plugins/plugin_com.mattermost.demo-plugin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=plugins/plugin_com.mattermost.demo-plugin</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h3.admin-console-header</td>
+	<td>css=div.admin-console__header</td>
 	<td>Demo Plugin</td>
 </tr>
 <tr>
@@ -2974,19 +3079,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=strong</td>
-	<td>Demo Plugin</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.padding-top &gt; a &gt; span</td>
-	<td>Disable</td>
+	<td>waitForElementPresent</td>
+	<td>//a[@data-plugin-id='com.mattermost.demo-plugin']/span[contains(text(),'Disable')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.padding-top &gt; a &gt; span</td>
-	<td>Disable</td>
+	<td>//a[@data-plugin-id='com.mattermost.demo-plugin']/span[contains(text(),'Disable')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3097,19 +3197,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.padding-top &gt; a &gt; span</td>
-	<td>Enable</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.padding-top &gt; a &gt; span</td>
+	<td>waitForElementPresent</td>
+	<td>//a[@data-plugin-id='com.mattermost.demo-plugin']/span[contains(text(),'Enable')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.alert.alert-success &gt; span</td>
-	<td>This plugin is running.</td>
+	<td>click</td>
+	<td>//a[@data-plugin-id='com.mattermost.demo-plugin']/span[contains(text(),'Enable')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3171,18 +3266,9 @@
 	<td></td>
 	<td></td>
 </tr>
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
 <!--*** Plugin is removed in tests below; if you still have manual -->
 <!--*** tests to do, Don't run the below test to remove the plugin yet-->
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
+<!--*** I fixed it to always enable correct plugin this will work now - DKH-->
 <!--Remove demo-plugin-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -3206,22 +3292,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=management</td>
+	<td>id=plugins/plugin_management</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=management</td>
+	<td>id=plugins/plugin_management</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span &gt; a &gt; span</td>
-	<td>Remove</td>
+	<td>waitForElementPresent</td>
+	<td>//a[@data-plugin-id='com.mattermost.demo-plugin']/span[contains(text(),'Remove')]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Remove</td>
+	<td>//a[@data-plugin-id='com.mattermost.demo-plugin']/span[contains(text(),'Remove')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -3306,6 +3392,82 @@
 	<td>css=label.control-label</td>
 	<td>Command with a trigger of '/demo_plugin' not found. Click here to send as a message.</td>
 </tr>
+<!--Pre-Installed Plugins have no remove-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=plugins/plugin_management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=plugins/plugin_management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//a[@data-plugin-id='com.mattermost.aws-sns']/span[contains(text(),'Remove')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//a[@data-plugin-id='mattermost-autolink']/span[contains(text(),'Remove')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//a[@data-plugin-id='com.mattermost.custom-attributes']/span[contains(text(),'Remove')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//a[@data-plugin-id='github']/span[contains(text(),'Remove')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//a[@data-plugin-id='jira']/span[contains(text(),'Remove')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//a[@data-plugin-id='com.mattermost.nps']/span[contains(text(),'Remove')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//a[@data-plugin-id='com.mattermost.welcomebot']/span[contains(text(),'Remove')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//a[@data-plugin-id='zoom']/span[contains(text(),'Remove')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td></td>
 	<td></td>
@@ -3316,6 +3478,62 @@
 <tr>
 	<td>rollup</td>
 	<td>logout</td>
+	<td></td>
+</tr>
+<!--Enable Plugins-->
+<tr>
+	<td>waitForText</td>
+	<td>css=label.control-label.col-sm-4</td>
+	<td>Enable Plugins:</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=enabletrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enabletrue</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enablefalse</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enabletrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=enabletrue</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[@data-plugin-id='jira']/span[contains(text(),'Disable')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//a[@data-plugin-id='github']/span[contains(text(),'Remove')]</td>
 	<td></td>
 </tr>
 </tbody></table>
