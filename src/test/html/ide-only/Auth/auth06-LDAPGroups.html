@@ -50,12 +50,12 @@
 <!--Create Engineering team (no new channels)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
@@ -777,12 +777,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='ldap_groups']/div[2]/div[3]/div[4]/div/span</td>
+	<td>//div[@id='ldap_groups']/div[2]/div[3]/div[5]/div/span</td>
 	<td>qa</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='ldap_groups']/div[2]/div[3]/div[5]/div/span</td>
+	<td>//div[@id='ldap_groups']/div[2]/div[3]/div[6]/div/span</td>
 	<td>xyz</td>
 </tr>
 <tr>
@@ -1000,12 +1000,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none</td>
+	<td>css=li.MenuItem</td>
+	<td>Add Team</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
 	<td>Add Team</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
 	<td>Add Team</td>
 </tr>
 <tr>
@@ -1112,6 +1117,11 @@
 	<td>Pending</td>
 </tr>
 <tr>
+	<td>waitForNotText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>Pending</td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>css=span.status-icon-success &gt; span</td>
 	<td>Success</td>
@@ -1149,12 +1159,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='ldap_groups']/div[2]/div[3]/div[4]/div/span</td>
+	<td>//div[@id='ldap_groups']/div[2]/div[3]/div[5]/div/span</td>
 	<td>qa</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='ldap_groups']/div[2]/div[3]/div[5]/div/span</td>
+	<td>//div[@id='ldap_groups']/div[2]/div[3]/div[6]/div/span</td>
 	<td>xyz</td>
 </tr>
 <!--Change back to lowercase 'cn' just to be tidy :)-->
@@ -1661,6 +1671,11 @@
 </tr>
 <tr>
 	<td>waitForText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>Pending</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
 	<td>css=span.status-icon-warning &gt; span</td>
 	<td>Pending</td>
 </tr>
@@ -2208,8 +2223,8 @@
 <!--Still linked-->
 <tr>
 	<td>waitForText</td>
-	<td>css=div.groups-list</td>
-	<td>Unlink Selected Groups<br /><br />Name<br />Mattermost Linking<br /><br /><br /><br />abcNot Linked<br /><br /><br />developersNot Linked<br /><br /><br />engineeringLinkedEdit<br /><br /><br />qaLinkedEdit<br /><br /><br />xyzLinkedEdit<br /><br /><br />1 - 5 of 5</td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Unlink Selected Groups</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -2219,8 +2234,8 @@
 <!--No longer linked-->
 <tr>
 	<td>waitForText</td>
-	<td>css=div.groups-list</td>
-	<td>Link Selected Groups<br /><br />Name<br />Mattermost Linking<br /><br /><br /><br />abcNot Linked<br /><br /><br />developersNot Linked<br /><br /><br />engineeringLinkedEdit<br /><br /><br />qaNot Linked<br /><br /><br />xyzNot Linked<br /><br /><br />1 - 5 of 5</td>
+	<td>css=div.groups-list--global-actions</td>
+	<td>Link Selected Groups</td>
 </tr>
 <!--Sync LDAP-->
 <tr>
@@ -2440,8 +2455,368 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Link Selected Groups</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Link Selected Groups</td>
+</tr>
+<!--"Linked" and "Configure" in UI-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.groups-list--global-actions</td>
+	<td>Unlink Selected Groups</td>
+</tr>
+<!--abc group: Link ABC private channel-->
+<tr>
+	<td>waitForText</td>
+	<td>css=span.group-actions &gt; a &gt; span</td>
+	<td>Configure</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.group-actions &gt; a &gt; span</td>
+	<td>Configure</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Add Team or Channel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Add Team or Channel</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=li.MenuItem:nth-child(2) &gt; button:nth-child(1)</td>
+	<td>Add Channel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.MenuItem:nth-child(2) &gt; button:nth-child(1)</td>
+	<td>Add Channel</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__details</td>
+	<td>ABC(Developers)</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.channel-name</td>
+	<td>ABC</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=selectItems</td>
+	<td>ABC (Developers)</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=saveItems</td>
+	<td>Add</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveItems</td>
+	<td>Add</td>
+</tr>
+<!--Back button on Group Configuration page-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='adminConsoleWrapper']/div[2]/div/div/div/div/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='adminConsoleWrapper']/div[2]/div/div/div/div/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.group-actions &gt; a &gt; span</td>
+	<td>Edit</td>
+</tr>
+<!--Sync LDAP-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=authentication/ldap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=authentication/ldap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.job-table__create-button &gt; div &gt; button.btn.btn-default</td>
+	<td>AD/LDAP Synchronize Now</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.job-table__create-button &gt; div &gt; button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>Pending</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>Pending</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>In Progress</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.status-icon-success &gt; span</td>
+	<td>Success</td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>Scanned 0 LDAP users and 0 groups.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>--</td>
+	<td></td>
+</tr>
+<!--LOG OUT system admin user-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=svg[title=&quot;Menu Icon&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=svg[title=&quot;Menu Icon&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td></td>
+</tr>
+<!--Log in carlos.test (abc group) for the first time > -->
+<!-- > Dev's team, ABC channel & Engineering team, default channels-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>carlos.test</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>Password1</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>Engineering</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#engineeringTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#developersTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#developersTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#sidebarItem_abc &gt; span.sidebar-item__name &gt; span</td>
+	<td>ABC</td>
+</tr>
+<!--LOG OUT carlos.test-->
+<tr>
+	<td>rollup</td>
+	<td>logout</td>
+	<td></td>
+</tr>
+<!--LOG IN system admin using stored credentials-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>${ldapadmin}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>${ldappwd}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<!--Unlink abc, then re-link, and previous configuration persists-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=headerTeamName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=headerTeamName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=user_management/groups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_management/groups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.group-actions &gt; a &gt; span</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.group-actions &gt; a &gt; span</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.name</td>
+	<td>Developers</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.group-teams-and-channels</td>
+	<td>Name<br /><br /><br />Developers<br /><br /><br /><br /><br /><br />ABC<br />Remove</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_management/groups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>link=Linked</td>
+	<td>Linked</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Linked</td>
+	<td>Linked</td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
 	<td></td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>link=Not Linked</td>
+	<td>Not Linked</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Not Linked</td>
+	<td>Not Linked</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.group-actions &gt; a &gt; span</td>
+	<td>Configure</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.group-actions &gt; a &gt; span</td>
+	<td>Configure</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.name</td>
+	<td>Developers</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.group-teams-and-channels</td>
+	<td>Name<br /><br /><br />Developers<br /><br /><br /><br /><br /><br />ABC<br />Remove</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_management/groups</td>
 	<td></td>
 </tr>
 <tr>
