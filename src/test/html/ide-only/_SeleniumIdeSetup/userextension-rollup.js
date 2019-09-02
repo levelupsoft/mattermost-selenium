@@ -501,7 +501,7 @@ commands.push({ command: 'waitForElementPresent', target: "id=sidebarHeaderDropd
 commands.push({ command: 'click', target: "id=sidebarHeaderDropdownButton", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//li[@id='manageMembers']/button", value: ''});
 commands.push({ command: 'click', target: "//li[@id='manageMembers']/button", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal modal-dialog']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//div[@class='a11y__modal more-modal modal-dialog']", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button[@class='dropdown-toggle theme color--link style--none']", value: ''});
 commands.push({ command: 'click', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button[@class='dropdown-toggle theme color--link style--none']", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//li[@id='removeFromTeam']/button[contains(text(),'Remove From Team')]", value: ''});
@@ -587,6 +587,20 @@ commands.push({ command: 'waitForElementPresent', target: "//div[@id='${TopSearc
 commands.push({ command: 'mouseOver', target: "//div[@id='${TopSearchPost}']", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//button[@class='post__dropdown color--link style--none']", value: ''});
 commands.push({ command: 'click', target: "//button[@class='post__dropdown color--link style--none']", value: ''});
+return commands;
+ }
+});
+
+//Look for extra dividers in channel menu 
+manager.addRollupRule({
+ name: 'noExtraDeviders'
+ , description: 'Ensure there are no extra deviders bars in channel drop down menu. Covers both deviders with no options in between and extra devider at the bottom'
+ , args: [], commandMatchers: []
+ , getExpandedCommands: function(args) {
+ var commands = [];
+ 
+commands.push({ command: 'waitForElementNotPresent', target: "//li[@class='MenuGroup menu-divider']/following-sibling::li[position()=1][@class='MenuGroup menu-divider']", value: ''});
+
 return commands;
  }
 });
