@@ -70,13 +70,13 @@
 <!--EMAIL NOTIFICATIONS, BATCHED/NOT BATCHED & FULL/GENERIC CONTENTS-->
 <!--Verify email notifications are set to send Immediately-->
 <tr>
-	<td>waitForText</td>
-	<td>css=button.style--none.</td>
-	<td>Account Settings</td>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -355,6 +355,11 @@
 </tr>
 <!--Stores second user's login creds (until test / Se is closed)-->
 <tr>
+	<td>pause</td>
+	<td>8000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>storeValue</td>
 	<td>id=loginId</td>
 	<td>seconduser</td>
@@ -363,11 +368,6 @@
 	<td>storeValue</td>
 	<td>id=loginPassword</td>
 	<td>secondpassword</td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>8000</td>
-	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -1025,13 +1025,18 @@
 </tr>
 <!--Verify email notifications are set to send every 15 minutes-->
 <tr>
-	<td>waitForText</td>
-	<td>css=button.style--none.</td>
-	<td>Account Settings</td>
+	<td>pause</td>
+	<td>8000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1689,13 +1694,13 @@
 </tr>
 <!--Verify email batching is enabled (set to send every 15 minutes)-->
 <tr>
-	<td>waitForText</td>
-	<td>css=button.style--none.</td>
-	<td>Account Settings</td>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>

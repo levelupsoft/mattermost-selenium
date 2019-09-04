@@ -1800,22 +1800,22 @@
 <!--Set first and last names to test placeholder text with admin DM-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=button.style--none.</td>
-	<td>Account Settings</td>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1955,22 +1955,22 @@
 <!--Set teammate name display to first/last-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=button.style--none.</td>
-	<td>Account Settings</td>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2067,12 +2067,12 @@
 <!--Set teammate name display to nickname-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -2147,8 +2147,13 @@
 </tr>
 <!--Placeholder text in GM (one user has nickname, one user doesn't)-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=addDirectChannel</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>//h4[@id='directChannel']/button</td>
+	<td>id=addDirectChannel</td>
 	<td></td>
 </tr>
 <tr>
@@ -2240,12 +2245,12 @@
 <!--Cleanup: admin set back to display username-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -2364,22 +2369,22 @@
 <!--Cleanup: Remove first/last for test5-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=button.style--none.</td>
-	<td>Account Settings</td>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>

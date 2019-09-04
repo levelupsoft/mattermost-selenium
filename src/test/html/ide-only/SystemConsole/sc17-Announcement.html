@@ -49,12 +49,12 @@
 <!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
@@ -174,14 +174,13 @@
 	<td>2000</td>
 	<td></td>
 </tr>
-<!--*** *** v5.12 verifying if should truncate now: https://community-daily.mattermost.com/core/pl/jenr1hb7aifp3r7rz73ouk5nty-->
-<!--*** Visually verify that all text is legible (banner background is multi-line)-->
+<!--*** *** As of v5.12 banner should truncate, even if dismissable: https://community-daily.mattermost.com/core/pl/jenr1hb7aifp3r7rz73ouk5nty-->
+<!--*** Can view all text in tooltop on hover-->
 <tr>
 	<td>pause</td>
 	<td>6000</td>
 	<td></td>
 </tr>
-<!--Long text is all visible-->
 <tr>
 	<td>waitForText</td>
 	<td>css=p.markdown__paragraph-inline</td>
