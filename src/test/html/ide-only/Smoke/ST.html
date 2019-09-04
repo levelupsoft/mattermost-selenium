@@ -1171,6 +1171,7 @@
 	<td></td>
 </tr>
 <!--*** Manually hover over the flag on "I'll come back to this later"-->
+<!--*** Hm. No tooltip on old FF but works on Chrome (5.14)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.style--none.flag-icon__container </td>
@@ -2013,12 +2014,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox</td>
 	<td>ST2 wrote this header</td>
 </tr>
 <tr>
@@ -3324,12 +3325,12 @@
 <!--Add emoji to message-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//form[@id='create_post']/div/div/div/span/span[2]/span</td>
+	<td>id=emojiPickerButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//form[@id='create_post']/div/div/div/span/span[2]/span</td>
+	<td>id=emojiPickerButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -3686,12 +3687,12 @@
 <!--Set Plus team to be open to other users on the server-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon &gt; svg</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -4544,17 +4545,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox</td>
 	<td>*Header* ${KEY_SHIFT}${KEY_ENTER} </td>
 </tr>
 <tr>
@@ -4565,7 +4566,7 @@
 <!--Sleep-->
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox</td>
 	<td>- Item 1 ${KEY_SHIFT}${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -4576,7 +4577,7 @@
 <!--Sleep-->
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.modal-body.edit-modal-body &gt; div &gt; div.textarea-wrapper &gt; div &gt; div &gt; #edit_textbox</td>
+	<td>id=edit_textbox</td>
 	<td>- [Item 2 is a link](http://google.com)</td>
 </tr>
 <tr>

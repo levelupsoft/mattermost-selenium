@@ -1059,7 +1059,7 @@
 	<td></td>
 	<td></td>
 </tr>
-<!--/me-->
+<!--/me (no longer in italics after v5.14 MM-2954)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -1076,19 +1076,25 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=em</td>
+	<td>waitForTextPresent</td>
 	<td>Posting from the slash-me command</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
 	<td></td>
 </tr>
+<!--Uppercase slash /Me-->
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
 	<td>/Me Posting from the slash-me command with a capital M${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Posting from the slash-me command*Posting from the slash-me command</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1101,9 +1107,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=em</td>
-	<td>Posting from the slash-me command</td>
+	<td>waitForTextPresent</td>
+	<td>Posting from the slash-me command*Posting from the slash-me command</td>
+	<td></td>
 </tr>
 <!--/logout-->
 <tr>
