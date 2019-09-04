@@ -12,7 +12,8 @@
 <tr><td rowspan="1" colspan="3">SysConsPluginsConfig</td></tr>
 </thead><tbody>
 <!--Ensure you have downloaded the latest demo-plugin.tar.gz from:-->
-<!--https://plugins-store.test.mattermost.com/ci/mattermost-plugin-demo-ci.tar.gz-->
+<!--Do NOT use this Link. https://plugins-store.test.mattermost.com/ci/mattermost-plugin-demo-ci.tar.gz-->
+<!--Get Dylan to Build the plugin from Master-->
 <!--LOG IN-->
 <tr>
 	<td>openAndWait</td>
@@ -194,7 +195,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>Net Promoter Score (com.mattermost.nps - *)<br />This plugin sends Net Promoter Score surveys to gather user feedback on Mattermost.</td>
+	<td>User Satisfaction Surveys (com.mattermost.nps - *)<br />This plugin sends quarterly user satisfaction surveys to gather feedback and help improve Mattermost.</td>
 	<td></td>
 </tr>
 <tr>
@@ -364,12 +365,12 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>Net Promoter Score (com.mattermost.nps - *)<br />This plugin sends Net Promoter Score surveys to gather user feedback on Mattermost.</td>
+	<td>User Satisfaction Surveys (com.mattermost.nps - *)<br />This plugin sends quarterly user satisfaction surveys to gather feedback and help improve Mattermost.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>Welcome Bot (com.mattermost.welcomebot - *)<br />This plugin adds a WelcomeBot that helps add new users to channels.</td>
+	<td>User Satisfaction Surveys (com.mattermost.nps - *)<br />This plugin sends quarterly user satisfaction surveys to gather feedback and help improve Mattermost.</td>
 	<td></td>
 </tr>
 <tr>
@@ -486,7 +487,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>Net Promoter Score (com.mattermost.nps - *)<br />This plugin sends Net Promoter Score surveys to gather user feedback on Mattermost.</td>
+	<td>User Satisfaction Surveys (com.mattermost.nps - *)<br />This plugin sends quarterly user satisfaction surveys to gather feedback and help improve Mattermost.</td>
 	<td></td>
 </tr>
 <tr>
@@ -668,11 +669,6 @@
 	<td>Jira</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=admin_user_setting_username</td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForText</td>
 	<td>css=button.btn.btn-default</td>
 	<td>Regenerate</td>
@@ -696,12 +692,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.admin-console__header</td>
-	<td>Net Promoter Score</td>
+	<td>User Satisfaction Surveys</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.banner</td>
-	<td>A net promoter score survey measures user satisfaction. Learn more about net promoter score surveys.</td>
+	<td>Mattermost sends user satisfaction surveys to gather feedback and improve product quality. Learn more about user satisfaction surveys.</td>
 </tr>
 <tr>
 	<td>waitForAttribute</td>
@@ -710,14 +706,15 @@
 </tr>
 <tr>
 	<td>waitForAttribute</td>
-	<td>link=net promoter score survey@href</td>
+	<td>link=user satisfaction survey@href</td>
 	<td>https://mattermost.com/pl/default-nps</td>
 </tr>
 <tr>
 	<td>waitForAttribute</td>
 	<td>link=privacy policy@href</td>
-	<td>https://mattermost.com/pl/default-nps-privacy-policy</td>
+	<td></td>
 </tr>
+<!--^^Unknown CSS failure?^^-->
 <!--Welcome Bot-->
 <tr>
 	<td>click</td>
@@ -785,25 +782,15 @@
 	<td>link=documentation@href</td>
 	<td>https://about.mattermost.com/default-zoom-documentation</td>
 </tr>
-<!--When I plugin cannot be started it fails properly and the user can attempt to enable it again-->
+<!--When a plugin cannot be started it fails properly and the user can attempt to enable it again-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=plugins/plugin_management</td>
+	<td>//a[@data-plugin-id='com.mattermost.aws-sns']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=plugins/plugin_management</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//a[@data-plugin-id='jira']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//a[@data-plugin-id='jira']</td>
+	<td>//a[@data-plugin-id='com.mattermost.aws-sns']</td>
 	<td></td>
 </tr>
 <tr>
@@ -813,7 +800,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@data-plugin-id='jira']/span[contains(text(),'Disable')]</td>
+	<td>//a[@data-plugin-id='com.mattermost.aws-sns']/span[contains(text(),'Disable')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -824,17 +811,17 @@
 <!--Plugin Failed to start properly-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@data-plugin-id='jira']/span[contains(text(),'Disable')]</td>
+	<td>//a[@data-plugin-id='com.mattermost.aws-sns']/span[contains(text(),'Disable')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@data-plugin-id='jira']/span[contains(text(),'Disable')]</td>
+	<td>//a[@data-plugin-id='com.mattermost.aws-sns']/span[contains(text(),'Disable')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@data-plugin-id='jira']/span[contains(text(),'Enable')]</td>
+	<td>//a[@data-plugin-id='com.mattermost.aws-sns']/span[contains(text(),'Enable')]</td>
 	<td></td>
 </tr>
 <!--ORIGINAL plugin is overwritten by updated version-->
@@ -1022,12 +1009,12 @@
 <!--Upload the updated giphy plugin and accept overwrite prompt-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
@@ -1235,12 +1222,12 @@
 <!--Reinstall original version-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
@@ -1438,12 +1425,12 @@
 <!--Cleanup: Remove Giphy plugin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
@@ -1520,7 +1507,12 @@
 	<td></td>
 </tr>
 <!--*** Manually select com.mattermost.demo-plugin.tar.gz you downloaded from:-->
-<!--https://plugins-store.test.mattermost.com/ci/mattermost-plugin-demo-ci.tar.gz-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Use the same plugin package as at the begining of the test-->
 <tr>
 	<td>pause</td>
 	<td>7000</td>
@@ -2204,15 +2196,9 @@
 <!--*** NOTE: The test opens Se server URL; skip / go back -->
 <!--*** if testing on diff server - switch to any different team-->
 <tr>
-	<td>pause</td>
-	<td>2000</td>
-	<td></td>
-</tr>
-<!--Switch to UI2 team (everyone is already on UI1)-->
-<tr>
-	<td>open</td>
-	<td>https://selenium.test.mattermost.com/ui-automation2</td>
-	<td></td>
+	<td>rollup</td>
+	<td>switchTeam</td>
+	<td>TeamName=ui-automation2</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2467,12 +2453,12 @@
 <!--User has been created creates post in channel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
@@ -2774,6 +2760,7 @@
 	<td>//div[@id='channel_view']/div/div[6]</td>
 	<td></td>
 </tr>
+<!--^^This Div is too ugly to find right now - no destingishing attribute Fix later^^-->
 <tr>
 	<td>verifyTextNotPresent</td>
 	<td>Click anywhere to close</td>
@@ -2811,6 +2798,7 @@
 	<td>//div[@id='channel_view']/div/div[6]</td>
 	<td></td>
 </tr>
+<!--<!--^^This Div is too ugly to find right now - no destingishing attribute Fix later^^-->-->
 <tr>
 	<td>verifyTextNotPresent</td>
 	<td>Click anywhere to close</td>
@@ -2852,6 +2840,7 @@
 	<td>//div[@id='channel_view']/div/div[6]</td>
 	<td></td>
 </tr>
+<!--Woking but Xpaths need maintenace-->
 <tr>
 	<td>verifyTextNotPresent</td>
 	<td>Click anywhere to close</td>
@@ -3063,12 +3052,6 @@
 </tr>
 <!--Disable demo_plugin in System Console-->
 <tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<!--*** Finding the right one relies on demo_plugin being first in list-->
-<tr>
 	<td>waitForElementPresent</td>
 	<td>id=plugins/plugin_management</td>
 	<td></td>
@@ -3168,12 +3151,12 @@
 <!--Briefly re-enable and verify to prepare for verifying removal-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
@@ -3272,12 +3255,12 @@
 <!--Remove demo-plugin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
@@ -3395,12 +3378,12 @@
 <!--Pre-Installed Plugins have no remove-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>css=button.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>
