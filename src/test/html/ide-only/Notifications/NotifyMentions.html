@@ -63,13 +63,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=button.style--none.</td>
-	<td>Account Settings</td>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -395,13 +395,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=button.style--none.</td>
-	<td>Account Settings</td>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1364,13 +1364,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=button.style--none.</td>
-	<td>Account Settings</td>
+	<td>waitForElementPresent</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1442,7 +1442,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=p.more-modal__name</td>
+	<td>css=button.style--none.more-modal__name</td>
 	<td>Mentions-${datetime}</td>
 </tr>
 <tr>
@@ -1476,7 +1476,12 @@
 	<td>link=@test6</td>
 	<td></td>
 </tr>
-<!--*** Need to change all of these to switch to Town Square before logging out-->
+<!--Switch to Town Square before logging out-->
+<tr>
+	<td>rollup</td>
+	<td>openChannel</td>
+	<td>ChannelName=Town Square</td>
+</tr>
 <!--LOG OUT notify.new-->
 <tr>
 	<td>rollup</td>
@@ -1588,6 +1593,12 @@
 	<td>id=post_textbox</td>
 	<td>Hey @notify.${datetime}: See you tomorrow!${KEY_ENTER}</td>
 </tr>
+<!--Switch to Town Square before logging out-->
+<tr>
+	<td>rollup</td>
+	<td>openChannel</td>
+	<td>ChannelName=Town Square</td>
+</tr>
 <!--LOG OUT test6-->
 <tr>
 	<td>rollup</td>
@@ -1680,6 +1691,12 @@
 	<td>Hey @notify.${datetime}: See you tomorrow!</td>
 	<td></td>
 </tr>
+<!--Switch to Town Square before logging out-->
+<tr>
+	<td>rollup</td>
+	<td>openChannel</td>
+	<td>ChannelName=Town Square</td>
+</tr>
 <!--LOG OUT notify.${datetime}-->
 <tr>
 	<td>rollup</td>
@@ -1750,7 +1767,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=p.more-modal__name</td>
+	<td>css=div.more-modal__details</td>
 	<td>Mentions-${datetime}</td>
 </tr>
 <tr>

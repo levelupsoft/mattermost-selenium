@@ -111,12 +111,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
@@ -260,13 +260,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
-	<td>Account Settings</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -539,6 +539,7 @@
 	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
 	<td>The custom URL scheme okay! is invalid. Custom URL schemes must start with a letter and contain only letters, numbers and hyphen (-).</td>
 </tr>
+<!--This is no longer true; dot and plus sign allowed v5.14. v5.15 error msg will be updated-->
 <tr>
 	<td>type</td>
 	<td>id=DisplaySettings.CustomUrlSchemes</td>
