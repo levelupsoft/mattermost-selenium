@@ -47,7 +47,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='channelIntro']/span/span</td>
+	<td>id=introTextInvite</td>
 	<td>Invite others to this team</td>
 </tr>
 <!--Open System Console-->
@@ -207,8 +207,23 @@
 </tr>
 <!--LOG OUT and verify account creation flow ends with error-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -859,8 +874,23 @@
 	<td>restrictinvite</td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--Invite fails for disallowed domain-->
@@ -977,8 +1007,23 @@
 	<td>restrictinvite2</td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--Invite fails for disallowed domain-->

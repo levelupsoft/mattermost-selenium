@@ -328,11 +328,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>close</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
 	<td>pause</td>
 	<td>2000</td>
 	<td></td>
@@ -517,11 +512,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>close</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
 	<td>selectWindow</td>
 	<td>null</td>
 	<td></td>
@@ -583,6 +573,11 @@
 <tr>
 	<td>pause</td>
 	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>title=Terms of Service – Mattermost</td>
 	<td></td>
 </tr>
 <tr>
@@ -902,8 +897,8 @@
 </tr>
 <!--May fail to switch to tab / popup-->
 <tr>
-	<td>selectPopUp</td>
-	<td></td>
+	<td>selectWindow</td>
+	<td>title=Mattermost: Open Source, Self-hosted Slack Alternative</td>
 	<td></td>
 </tr>
 <tr>
@@ -944,9 +939,24 @@
 </tr>
 <!--LOG OUT tutorialtest-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td>Logout</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td>Logout</td>
 </tr>
 <!--LOG IN admin-->
 <tr>
@@ -1124,9 +1134,24 @@
 </tr>
 <!--LOG OUT admin-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td>Logout</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td>Logout</td>
 </tr>
 <!--LOG IN tutorialtest-->
 <tr>
@@ -1210,9 +1235,24 @@
 </tr>
 <!--LOG OUT tutorialtest-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td>Logout</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td>Logout</td>
 </tr>
 <!--LOG IN admin-->
 <tr>

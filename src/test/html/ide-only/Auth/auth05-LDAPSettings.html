@@ -144,12 +144,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[9]/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[9]/button</td>
 	<td></td>
 </tr>
 <!--LDAP placeholder text does not display-->
@@ -268,8 +268,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[9]/button</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[9]/button</td>
 	<td></td>
 </tr>
 <!--Custom placeholder text displays in login field-->
@@ -861,7 +866,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
-	<td>Enter a valid email or username and/or password.</td>
+	<td>Enter a valid email or username and/or password, or sign in using another method.</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -968,12 +973,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--Create new account using LDAP-->
@@ -1046,12 +1051,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
@@ -1265,12 +1270,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1447,12 +1452,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1664,12 +1669,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[9]/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[9]/button</td>
 	<td></td>
 </tr>
 <!--Log LDAP user back in-->
@@ -1716,13 +1721,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
-	<td>Account Settings</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1992,12 +1997,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[9]/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[9]/button</td>
 	<td></td>
 </tr>
 <!--Log LDAP user back in-->
@@ -2044,12 +2049,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2070,8 +2075,23 @@
 </tr>
 <!--LOG OUT-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -2434,8 +2454,23 @@
 </tr>
 <!--LOG OUT admin-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -2516,8 +2551,23 @@
 </tr>
 <!--LOG OUT test.two-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -2554,12 +2604,12 @@
 <!--Re-enable account creation with email/password-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -2683,8 +2733,23 @@
 </tr>
 <!--LOG OUT admin-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -2803,8 +2868,23 @@
 </tr>
 <!--LOG OUT test.two-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>

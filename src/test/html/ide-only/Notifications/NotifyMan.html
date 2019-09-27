@@ -242,8 +242,23 @@
 <!--Disable channel-wide mentions on test7's account-->
 <!--LOG OUT test6-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN test7-->
@@ -273,14 +288,6 @@
 	<td>id=loginButton</td>
 	<td></td>
 </tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
@@ -371,8 +378,23 @@
 <!--*** where test7 is logged in. Can also clear mentions and unreads-->
 <!--LOG OUT test7-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN test6-->
@@ -402,14 +424,6 @@
 	<td>id=loginButton</td>
 	<td></td>
 </tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
 <!--Channel-wide mentions on test7's account don't trigger mention badges (just unreads)-->
 <!--*** Watch LHS in other browser: unread, no mention badge-->
 <tr>
@@ -484,8 +498,23 @@
 <!--Log back in as test7 to re-enable channel-wide mentions and set status to away-->
 <!--LOG OUT test6-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN test7-->
@@ -515,14 +544,6 @@
 	<td>id=loginButton</td>
 	<td></td>
 </tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
@@ -659,8 +680,23 @@
 <!--*** Make sure other browser shows test7 away, and not viewing Notify- channel-->
 <!--LOG OUT test7-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN test6-->
@@ -690,14 +726,6 @@
 	<td>id=loginButton</td>
 	<td></td>
 </tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -742,8 +770,23 @@
 <!--Back to test7 to set status to online and verify settings-->
 <!--LOG OUT test6-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN test7-->
@@ -774,14 +817,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
 	<td>Town Square</td>
@@ -804,8 +839,23 @@
 <!--Switch back to test6 to post an at-here in a channel that test7 is not in-->
 <!--LOG OUT test7-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN test6-->
@@ -835,14 +885,6 @@
 	<td>id=loginButton</td>
 	<td></td>
 </tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
