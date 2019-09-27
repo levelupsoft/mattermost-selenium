@@ -179,8 +179,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=li.active &gt; a.sidebar-item.has-close</td>
+	<td>waitForTextPresent</td>
+	<td></td>
 	<td>2<br />test2, test3×</td>
 </tr>
 <!--Open System Console-->
@@ -264,7 +264,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.modal-body &gt; div &gt; span</td>
-	<td>exact:This action deactivates test2. They will be logged out and not have access to any teams or channels on this system. Are you sure you want to deactivate test2?</td>
+	<td>This action deactivates test2. They will be logged out and not have access to any teams or channels on this system.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -482,7 +482,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.modal-body &gt; div &gt; span</td>
-	<td>exact:This action deactivates test2. They will be logged out and not have access to any teams or channels on this system. Are you sure you want to deactivate test2?</td>
+	<td>This action deactivates test2. They will be logged out and not have access to any teams or channels on this system.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1221,8 +1221,23 @@
 </tr>
 <!--LOG OUT admin-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 </tbody></table>

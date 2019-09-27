@@ -3762,8 +3762,23 @@
 </tr>
 <!--LOGOUT ST2-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN testST-->
@@ -4863,21 +4878,25 @@
 </tr>
 <!--Log out testST-->
 <tr>
-	<td>pause</td>
-	<td>3000</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
 <!--LOG IN ST2-->
 <!--DisableAnimations-->
 <tr>

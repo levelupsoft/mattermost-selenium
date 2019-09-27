@@ -11,10 +11,10 @@
 <thead>
 <tr><td rowspan="1" colspan="3">AuthSAML</td></tr>
 </thead><tbody>
-<!--Test OneLogin on ci-linux-mysql-->
+<!--Test OneLogin on mysql.test-->
 <!--*** Ensure the SAML user you are testing with has been cleared if needed,-->
 <!--*** by changing login method, username, and email address-->
-<!--*** Also ensure LOGGED OUT of ci-linux-mysql-->
+<!--*** Also ensure LOGGED OUT of mysql.test-->
 <!--*** Also ensure LOGGED OUT of any OneLogin account in that browser-->
 <!--OneLogin account created by opening public channel URL-->
 <tr>
@@ -34,13 +34,28 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=user_email</td>
+	<td>id=username</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=user_email</td>
-	<td>linda+qaol@mattermost.com</td>
+	<td>id=username</td>
+	<td>qa-onelogin</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=password</td>
+	<td></td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -50,17 +65,17 @@
 <!--*** Manually enter valid OneLogin password for the test user (don't click to log in)-->
 <tr>
 	<td>waitForNotValue</td>
-	<td>id=user_password</td>
+	<td>id=password</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=user_submit</td>
+	<td>//button[@type='submit']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=user_submit</td>
+	<td>//button[@type='submit']</td>
 	<td></td>
 </tr>
 <tr>
@@ -126,12 +141,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <!--Accented character and literal HTML entity come through as expected-->
@@ -206,7 +221,7 @@
 <tr>
 	<td>type</td>
 	<td>name=password</td>
-	<td>aaaaaaa</td>
+	<td>aaaaaaaA1!</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -216,7 +231,7 @@
 <tr>
 	<td>type</td>
 	<td>name=passwordconfirm</td>
-	<td>baaaaaa</td>
+	<td>baaaaaaA1!</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -237,7 +252,7 @@
 <tr>
 	<td>type</td>
 	<td>name=passwordconfirm</td>
-	<td>aaaaaaa</td>
+	<td>aaaaaaaA1!</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -272,7 +287,7 @@
 <tr>
 	<td>type</td>
 	<td>id=loginPassword</td>
-	<td>aaaaaaa</td>
+	<td>aaaaaaaA1!</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -297,12 +312,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -343,7 +358,7 @@
 <tr>
 	<td>type</td>
 	<td>name=password</td>
-	<td>wrong</td>
+	<td>wrongAAAAA1!</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -364,7 +379,7 @@
 <tr>
 	<td>type</td>
 	<td>name=password</td>
-	<td>aaaaaaa</td>
+	<td>aaaaaaaA1!</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -796,8 +811,23 @@
 </tr>
 <!--LOG OUT SAML user-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -967,8 +997,23 @@
 </tr>
 <!--LOG OUT SAML user-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1442,12 +1487,12 @@
 <!--Name fields are editable-->
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1497,8 +1542,23 @@
 </tr>
 <!--LOG OUT SAML user-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1638,8 +1698,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name &gt; span</td>
-	<td>@qa-onelogin - *</td>
+	<td>css=div.more-modal__name &gt; a &gt; span</td>
+	<td>@qa-onelogin*</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1653,12 +1713,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
 	<td>Deactivate</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1726,8 +1786,23 @@
 </tr>
 <!--LOG OUT SAML user-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1808,8 +1883,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name &gt; span</td>
-	<td>@qa-onelogin - *</td>
+	<td>css=div.more-modal__name &gt; a &gt; span</td>
+	<td>@qa-onelogin*</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2049,8 +2124,23 @@
 </tr>
 <!--LOG OUT system admin-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -2179,12 +2269,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <!--Accented character (and literal HTML entity) comes through as expected-->
@@ -2227,8 +2317,23 @@
 </tr>
 <!--LOG OUT OKTA user-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN system admin-->
@@ -2361,8 +2466,23 @@
 </tr>
 <!--LOG OUT system admin-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -2416,12 +2536,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2558,12 +2678,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2659,8 +2779,23 @@
 </tr>
 <!--LOG OUT OKTA user-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN system admin-->
@@ -3035,8 +3170,23 @@
 </tr>
 <!--LOG OUT SAML user-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -3517,12 +3667,12 @@
 <!--Name fields are editable-->
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td>Account Settings</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.</td>
+	<td>css=#accountSettings &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3572,8 +3722,23 @@
 </tr>
 <!--LOG OUT SAML user-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -3701,7 +3866,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name &gt; span</td>
+	<td>css=div.more-modal__name &gt; a &gt; span</td>
 	<td>@linda-qaokta - *</td>
 </tr>
 <tr>
@@ -3716,13 +3881,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
 	<td>Deactivate</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none</td>
-	<td></td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
+	<td>Deactivate</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3789,8 +3954,23 @@
 </tr>
 <!--LOG OUT SAML user-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -3871,7 +4051,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name &gt; span</td>
+	<td>css=div.more-modal__name &gt; a &gt; span</td>
 	<td>@linda-qaokta - *</td>
 </tr>
 <tr>

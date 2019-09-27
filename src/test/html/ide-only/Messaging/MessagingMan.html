@@ -1378,14 +1378,14 @@
 <!--*** Verify profile popover in RHS:-->
 <!--*** @username, other elements-->
 <tr>
-	<td>waitForText</td>
-	<td>css=div.user-popover</td>
-	<td>test2</td>
+	<td>waitForElementPresent</td>
+	<td>css=button.user-popover.style--none</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.user-popover</td>
-	<td>test2</td>
+	<td>css=button.user-popover.style--none</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1793,8 +1793,23 @@
 </tr>
 <!--LOG OUT (to log back in as admin)-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -2067,7 +2082,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h1.markdown__heading</td>
+	<td>css=span</td>
 	<td>Messaging Basics</td>
 </tr>
 <tr>

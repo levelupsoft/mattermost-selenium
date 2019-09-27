@@ -2402,18 +2402,18 @@
 	<td>Show More</td>
 </tr>
 <tr>
-	<td>waitForTextPresent</td>
-	<td>COMMANDS:&nbsp;&nbsp;Setup - Creates a testing environment in current team.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/test setup [teams] [fuzz] &lt;Num Channels&gt; &lt;Num Users&gt; &lt;NumPosts&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/test setup teams fuzz 10 20 50&nbsp;&nbsp;Users - Add a specified number of random users with fuzz text to current team.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/test users [fuzz] &lt;Min Users&gt; &lt;Max Users&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/test users fuzz 5 10&nbsp;&nbsp;Channels - Add a specified number of random channels with fuzz text to current team.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/test channels [fuzz] &lt;Min Channels&gt; &lt;Max Channels&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/test channels fuzz 5 10&nbsp;&nbsp;Posts - Add some random posts with fuzz text to current channel.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/test posts [fuzz] &lt;Min Posts&gt; &lt;Max Posts&gt; &lt;Max Images&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/test posts fuzz 5 10 3&nbsp;&nbsp;Post - Add post to a channel as another user.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/test post u=@username p=passwd c=~channelname t=teamname &quot;message&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/test post u=@user-1 p=user-1 c=~town-square t=ad-1 &quot;message&quot;&nbsp;&nbsp;Url - Add a post containing the text from a given url to current channel.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/test url&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/test http://www.example.com/sample_file.md&nbsp;&nbsp;Json - Add a post using the JSON file as payload to the current channel.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/test json url&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/test json http://www.example.com/sample_body.json</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=code.hljs</td>
+	<td>COMMANDS: Setup - Creates a testing environment in current team. /test setup [teams] [fuzz] &lt;Num Channels&gt; &lt;Num Users&gt; &lt;NumPosts&gt; Example: /test setup teams fuzz 10 20 50 Users - Add a specified number of random users with fuzz text to current team. /test users [fuzz] &lt;Min Users&gt; &lt;Max Users&gt; Example: /test users fuzz 5 10 Channels - Add a specified number of random channels with fuzz text to current team. /test channels [fuzz] &lt;Min Channels&gt; &lt;Max Channels&gt; Example: /test channels fuzz 5 10 Posts - Add some random posts with fuzz text to current channel. /test posts [fuzz] &lt;Min Posts&gt; &lt;Max Posts&gt; &lt;Max Images&gt; Example: /test posts fuzz 5 10 3 Post - Add post to a channel as another user. /test post u=@username p=passwd c=~channelname t=teamname &quot;message&quot; Example: /test post u=@user-1 p=user-1 c=~town-square t=ad-1 &quot;message&quot; Url - Add a post containing the text from a given url to current channel. /test url Example: /test http://www.example.com/sample_file.md Json - Add a post using the JSON file as payload to the current channel. /test json url Example /test json http://www.example.com/sample_body.json</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sidebar-header-dropdown__icon</td>
+	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>

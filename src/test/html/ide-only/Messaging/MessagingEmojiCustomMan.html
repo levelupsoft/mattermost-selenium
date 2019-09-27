@@ -464,7 +464,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//form[@id='create_post']/div/div/div/div/div/div[2]/div/div/div[2]</td>
+	<td>css=div.emoticon-suggestion.suggestion--selected</td>
 	<td></td>
 </tr>
 <tr>
@@ -475,12 +475,12 @@
 <!--Select from autocomplete-->
 <tr>
 	<td>waitForText</td>
-	<td>//form[@id='create_post']/div/div/div/div/div/div[2]/div/div/div[2]</td>
+	<td>//div[@id='suggestionList']/div/div[2]</td>
 	<td>exact::customlarge:</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//form[@id='create_post']/div/div/div/div/div/div[2]/div/div/div[2]</td>
+	<td>//div[@id='suggestionList']/div/div[2]</td>
 	<td>exact::customlarge:</td>
 </tr>
 <tr>
@@ -677,8 +677,23 @@
 </tr>
 <!--New custom emoji renders as expected after logging out and back in-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -858,8 +873,23 @@
 	<td>2000</td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1073,8 +1103,23 @@
 </tr>
 <!--Continue with test as test8-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1233,7 +1278,17 @@
 	<td></td>
 </tr>
 <!--*** Refresh other user in other browser and verify deleted emoji is gone-->
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
 <!--*** Message shows text `:customanigif:`-->
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
 <!--*** Custom emoji reaction disappears entirely-->
 <tr>
 	<td>pause</td>
@@ -1568,8 +1623,23 @@
 </tr>
 <!--Log out and back in, verify Recently Used still correct-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1641,12 +1711,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//form[@id='create_post']/div/div/div/div/div/div[2]/div/div/div[2]</td>
+	<td>//div[@id='suggestionList']/div/div[2]</td>
 	<td>exact::taco:</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//form[@id='create_post']/div/div/div/div/div/div[2]/div/div/div[2]</td>
+	<td>//div[@id='suggestionList']/div/div[2]</td>
 	<td>exact::taco:</td>
 </tr>
 <tr>
@@ -1719,7 +1789,6 @@
 	<td>12000</td>
 	<td></td>
 </tr>
-<!--*** Changed this to make alias match a username-->
 <!--Verify :username: does not trigger a mention-->
 <!--Create alias for existing emoji (created earlier)-->
 <tr>
@@ -1883,8 +1952,23 @@
 </tr>
 <!--Log out and in as test10 and verify emoji name didn't trigger mention-->
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1907,14 +1991,6 @@
 	<td>id=loginButton</td>
 	<td></td>
 </tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -2083,8 +2159,23 @@
 	<td>Back to Mattermost</td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 <!--LOG IN test8-->
@@ -2246,8 +2337,23 @@
 	<td>People</td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>logout</td>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
 </tbody></table>

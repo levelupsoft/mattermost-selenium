@@ -497,7 +497,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
-	<td>The custom URL scheme %% is invalid. Custom URL schemes must start with a letter and contain only letters, numbers and hyphen (-).</td>
+	<td>The custom URL scheme %% is invalid. Custom URL schemes must start with a letter and contain only letters, numbers, plus (+), period (.) and hyphen (-).</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -537,9 +537,9 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
-	<td>The custom URL scheme okay! is invalid. Custom URL schemes must start with a letter and contain only letters, numbers and hyphen (-).</td>
+	<td>The custom URL scheme okay! is invalid. Custom URL schemes must start with a letter and contain only letters, numbers, plus (+), period (.) and hyphen (-).</td>
 </tr>
-<!--This is no longer true; dot and plus sign allowed v5.14. v5.15 error msg will be updated-->
+<!--Dot and plus sign allowed v5.14. v5.15 -->
 <tr>
 	<td>type</td>
 	<td>id=DisplaySettings.CustomUrlSchemes</td>
@@ -556,9 +556,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
 	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
-	<td>The custom URL scheme this.that is invalid. Custom URL schemes must start with a letter and contain only letters, numbers and hyphen (-).</td>
+	<td></td>
 </tr>
 <tr>
 	<td>type</td>
@@ -576,9 +581,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
 	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
-	<td>The custom URL scheme this+that is invalid. Custom URL schemes must start with a letter and contain only letters, numbers and hyphen (-).</td>
+	<td></td>
 </tr>
 <tr>
 	<td>type</td>
@@ -598,6 +608,11 @@
 <tr>
 	<td>waitForNotEditable</td>
 	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
 	<td></td>
 </tr>
 <!--PUBLIC LINKS-->
