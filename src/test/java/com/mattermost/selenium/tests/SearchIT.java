@@ -1267,7 +1267,7 @@ public class SearchIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("img.user-popover__image"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("img.Avatar.Avatar-xxl"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
