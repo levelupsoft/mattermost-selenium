@@ -676,7 +676,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.banner</td>
-	<td>exact:Use this webhook URL to set up the Jira integration. See documentation to learn more.https://SITEURL/plugins/jira/webhook?secret=WEBHOOKSECRET&amp;team=TEAMURL&amp;channel=CHANNELURL</td>
+	<td>exact:Use this webhook URL format to configure the Jira integration. https://SITEURL/plugins/jira/api/v2/webhook?secret=WEBHOOKSECRET</td>
 </tr>
 <tr>
 	<td>waitForAttribute</td>
@@ -783,6 +783,11 @@
 	<td>https://about.mattermost.com/default-zoom-documentation</td>
 </tr>
 <!--When a plugin cannot be started it fails properly and the user can attempt to enable it again-->
+<tr>
+	<td>click</td>
+	<td>//a[@id='plugins/plugin_management']</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//a[@data-plugin-id='com.mattermost.aws-sns']</td>
@@ -2217,8 +2222,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=p.more-modal__name</td>
+	<td>verifyText</td>
+	<td>css=button.style--none.more-modal__name</td>
 	<td>Demo Plugin</td>
 </tr>
 <tr>
@@ -2575,8 +2580,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=p.more-modal__name</td>
+	<td>verifyText</td>
+	<td>css=button.style--none.more-modal__name</td>
 	<td>Demo Plugin</td>
 </tr>
 <tr>
@@ -2747,7 +2752,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='channel_view']/div/div[6]/div</td>
+	<td>//span[@id='channel_view']/div/div[6]/div</td>
 	<td>You have triggered the root component of the demo plugin.<br /><br />Click anywhere to close.</td>
 </tr>
 <tr>
@@ -2798,7 +2803,7 @@
 	<td>//div[@id='channel_view']/div/div[6]</td>
 	<td></td>
 </tr>
-<!--<!--^^This Div is too ugly to find right now - no destingishing attribute Fix later^^-->-->
+<!--<!--^^This Div is too ugly to find right now - no destingishing attribute Fix later^^-->
 <tr>
 	<td>verifyTextNotPresent</td>
 	<td>Click anywhere to close</td>
@@ -2817,12 +2822,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Demo Plugin')]</td>
+	<td>//li[@class='MenuItem'][contains(@id,'_pluginmenuitem')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Demo Plugin')]</td>
+	<td>//li[@class='MenuItem'][contains(@id,'_pluginmenuitem')]/button</td>
 	<td></td>
 </tr>
 <tr>
@@ -2920,7 +2925,7 @@
 </tr>
 <tr>
 	<td>rollup</td>
-	<td>dotMenuItemVerifyAndSelect</td>
+	<td>dotMenuItemVerify</td>
 	<td>Item=Demo Plugin</td>
 </tr>
 <tr>
@@ -2990,9 +2995,9 @@
 	<td>Demo Plugin</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=p</td>
-	<td>exact:Header: Configure your demo plugin settings below</td>
+	<td>waitForElementPresent</td>
+	<td>//span[contains(text(),'Header: Configure your demo plugin settings below')] </td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
