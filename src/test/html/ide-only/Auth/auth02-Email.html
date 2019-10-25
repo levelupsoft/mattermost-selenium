@@ -143,32 +143,32 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalTextArea</td>
+	<td>css=input.share-link-input</td>
 	<td></td>
 </tr>
 <tr>
-	<td>storeText</td>
-	<td>id=linkModalTextArea</td>
+	<td>storeValue</td>
+	<td>css=input.share-link-input.a11y--active</td>
 	<td>authinvite</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=#closeIcon &gt; svg</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=#closeIcon &gt; svg</td>
 	<td></td>
 </tr>
 <!--LOG OUT admin-->

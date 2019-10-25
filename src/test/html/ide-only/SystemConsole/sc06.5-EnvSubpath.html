@@ -194,7 +194,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h1</td>
-	<td>Welcome to tacoland!</td>
+	<td>Welcome to TacoLand!</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -373,12 +378,12 @@
 <!--*** Manually hover over permalink message-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.style--none.flag-icon__container </td>
+	<td>id=CENTER_flagIcon_${postid}</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.flag-icon__container </td>
+	<td>id=CENTER_flagIcon_${postid}</td>
 	<td></td>
 </tr>
 <!--Flag is visible on that post-->
@@ -861,41 +866,26 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=searchBox</td>
-	<td>private channel message you will see${KEY_ENTER}</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight</td>
-	<td>private</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=li &gt; button.style--none</td>
-	<td>Permalink</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=li &gt; button.style--none</td>
-	<td></td>
+	<td>in:private-${monthdaytime}${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalTextArea</td>
+	<td>css=a.search-item__jump &gt; span</td>
 	<td></td>
 </tr>
 <tr>
-	<td>storeText</td>
-	<td>id=linkModalTextArea</td>
+	<td>click</td>
+	<td>css=a.search-item__jump &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#archive-link-home &gt; a &gt; span</td>
+	<td>Click here to jump to recent messages.</td>
+</tr>
+<tr>
+	<td>storeLocation</td>
 	<td>privateperma</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=linkModalCloseButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=linkModalCloseButton</td>
 	<td></td>
 </tr>
 <!--Switch to Off-Topic before signing out-->
@@ -962,6 +952,11 @@
 </tr>
 <!--Open private channel message permalink-->
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>openAndWait</td>
 	<td>${privateperma}</td>
 	<td></td>
@@ -1006,6 +1001,8 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Opens to private channel message permalink-->
+<!--*** This is dropping redirect for some reason on old FF; -->
+<!--*** Passes manually on FF ESR, Chrome, Safari-->
 <tr>
 	<td>waitForText</td>
 	<td>id=channelHeaderDropdownButton</td>
@@ -1088,8 +1085,10 @@
 	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
-<!--missing steps for this one....-->
+<!--(Opens known GM URL)-->
 <!--Open GM URL-->
+<!--*** This is dropping redirect for some reason on old FF; -->
+<!--*** Passes manually on FF ESR, Chrome, Safari-->
 <tr>
 	<td>open</td>
 	<td>https://subpath.test.mattermost.com/mattermost/se-subpath-test/messages/89feda33890e005db8aa7126a9dde23556afe6a1</td>
@@ -1189,6 +1188,8 @@
 	<td>https://subpath.test.mattermost.com/mattermost/se-subpath-test/messages/@karen.austin</td>
 	<td></td>
 </tr>
+<!--*** This is dropping redirect for some reason on old FF; -->
+<!--*** Passes manually on FF ESR, Chrome, Safari-->
 <!--LOG IN sysadmin-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1248,8 +1249,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=p</td>
-	<td>End user help and documentation.</td>
+	<td>css=h2.headline</td>
+	<td>Welcome to Mattermost Academy</td>
 </tr>
 <tr>
 	<td>close</td>
@@ -1360,9 +1361,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
 </tr>
 <!--Leave and re-join public channel via permalink - 2nd subpath-->
 <tr>

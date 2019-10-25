@@ -403,7 +403,7 @@
 	<td>css=div.modal-header &gt; button.close &gt; span.sr-only</td>
 	<td></td>
 </tr>
-<!--Verify in Add Members to Team list-->
+<!--Verify in Invite People-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//a[@href='/ui-automation2']</td>
@@ -431,38 +431,56 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#addUsersToTeam &gt; button.style--none.</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#addUsersToTeam &gt; button.style--none.</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<!--*** Cannot for the life of me get it to type in that field :/-->
+<tr>
+	<td>pause</td>
+	<td>8000</td>
+	<td></td>
+</tr>
+<!--*** Manually type `test10` in the Invite People field-->
+<tr>
+	<td>waitForTextPresent</td>
+	<td>@test10</td>
 	<td></td>
 </tr>
 <!--Verify `@` appears before username who has no first or last name-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
+	<td>pause</td>
+	<td>8000</td>
 	<td></td>
 </tr>
+<!--*** Manually type `corey` in the Invite People field-->
 <tr>
-	<td>type</td>
-	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
-	<td>corey</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>waitForTextPresent</td>
+	<td>@corey</td>
 	<td>@corey</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.modal-header &gt; button.close &gt; span.sr-only</td>
+	<td>css=#closeIcon &gt; svg</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.modal-header &gt; button.close &gt; span.sr-only</td>
+	<td>css=#closeIcon &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=confirmModalButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=confirmModalButton</td>
 	<td></td>
 </tr>
 <!--Cleanup: Remove first / last from test9-->
@@ -4196,42 +4214,48 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#addUsersToTeam &gt; button.style--none.</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#addUsersToTeam &gt; button.style--none.</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<!--*** Manually type `test10` in the Invite People field and press Enter-->
+<tr>
+	<td>pause</td>
+	<td>8000</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
+	<td>waitForTextPresent</td>
+	<td>@test10</td>
 	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
-	<td>test10</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name &gt; span</td>
-	<td>@test10*</td>
+	<td>//div[@id='root-portal']/div/div/div/div/div[4]/div/div/div/div</td>
+	<td>*</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.more-modal__name &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveItems</td>
+	<td>waitForEditable</td>
+	<td>id=inviteMembersButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveItems</td>
+	<td>id=inviteMembersButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.reason</td>
+	<td>This member has been added to the team.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
@@ -4655,12 +4679,6 @@
 	<td>css=#accountSettingsHeader &gt; button.close</td>
 	<td></td>
 </tr>
-<!--Preview link not visible until text is entered-->
-<tr>
-	<td>verifyElementNotPresent</td>
-	<td>css=#previewLink &gt; span</td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -4680,6 +4698,11 @@
 	<td>click</td>
 	<td>css=#previewLink &gt; span</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//div[@id='postContent']/div[2]/div)[27]</td>
+	<td>admin<br />7:11 PM</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -4716,10 +4739,11 @@
 	<td>id=post_textbox</td>
 	<td>${KEY_ENTER}</td>
 </tr>
+<!--*** Visually verify that `Bold!` in the post is in boldface-->
 <tr>
-	<td>waitForText</td>
-	<td>css=div.post-message__text &gt; p &gt; strong</td>
-	<td>Bold!</td>
+	<td>waitForElementPresent</td>
+	<td>css=p &gt; strong:(contains:'Bold!')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

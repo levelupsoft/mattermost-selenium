@@ -123,11 +123,6 @@
 	<td>id=tutorialNextButton</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>SAML Test</td>
-</tr>
 <!--First and last names not editable-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -2094,32 +2089,32 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalTextArea</td>
+	<td>css=input.share-link-input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>id=linkModalTextArea</td>
+	<td>css=input.share-link-input</td>
 	<td>openteamurl</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=#closeIcon &gt; svg &gt; path</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=#closeIcon &gt; svg &gt; path</td>
 	<td></td>
 </tr>
 <!--LOG OUT system admin-->
@@ -2436,32 +2431,32 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalTextArea</td>
+	<td>css=input.share-link-input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>id=linkModalTextArea</td>
+	<td>css=input.share-link-input</td>
 	<td>closedteamurl</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=#closeIcon &gt; svg &gt; path</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=#closeIcon &gt; svg &gt; path</td>
 	<td></td>
 </tr>
 <!--LOG OUT system admin-->
@@ -3472,7 +3467,7 @@
 	<td>id=SamlSettings.Encrypttrue</td>
 	<td></td>
 </tr>
-<!--These are no longer the right buttons; verified manually 5.13-->
+<!--These are no longer the right buttons; verified manually 5.16-->
 <!--Also, need to swap order of these tests so encryption ends up enabled-->
 <tr>
 	<td>waitForEditable</td>

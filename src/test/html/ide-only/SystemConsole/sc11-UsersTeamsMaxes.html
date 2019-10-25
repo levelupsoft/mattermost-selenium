@@ -101,27 +101,33 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//*[@id='addUsersToTeam']/button</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//*[@id='addUsersToTeam']/button</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<!--Might have to change the following to a different number after `select-`-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=react-select-2-input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
+	<td>id=react-select-2-input</td>
 	<td>test8</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>id=react-select-2-option-0</td>
 	<td>@test8</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.more-modal__name</td>
+	<td>id=react-select-2-option-0</td>
 	<td></td>
 </tr>
 <tr>
@@ -131,32 +137,62 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
+	<td>id=react-select-2-input</td>
 	<td>test9</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>id=react-select-2-option-0</td>
 	<td>@test9</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.more-modal__name</td>
+	<td>id=react-select-2-option-0</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#numPeopleRemaining &gt; span</td>
-	<td>Use ↑↓ to browse, ↵ to select. You can add 18 more people.</td>
+	<td>//div[@id='root-portal']/div/div/div/div/div[4]/div/div/div/div</td>
+	<td>test8<br /><br /><br />test9</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveItems</td>
+	<td>id=inviteMembersButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveItems</td>
+	<td>id=inviteMembersButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.InvitationModalConfirmStep &gt; h1</td>
+	<td>Members Invited to UsersTeamsMaxes</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.name</td>
+	<td>@test8</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[@id='root-portal']/div/div/div/div/div[2]/div/div[2]/div[2]/div/span</td>
+	<td>@test9</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.reason</td>
+	<td>This member has been added to the team.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Done</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
@@ -182,23 +218,33 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//*[@id='getTeamInviteLink']/button</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//*[@id='getTeamInviteLink']/button</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//textarea[@id='linkModalTextArea']</td>
+	<td>css=input.share-link-input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>//textarea[@id='linkModalTextArea']</td>
+	<td>css=input.share-link-input</td>
 	<td>teamInviteLink</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#closeIcon &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#closeIcon &gt; svg</td>
+	<td></td>
 </tr>
 <!--Open System Console-->
 <tr>
@@ -642,14 +688,19 @@
 </tr>
 <!--Set max users per team to current number, open team for others to join-->
 <tr>
-	<td>waitForText</td>
-	<td>css=div.team-container.active &gt; a &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
-	<td>Us</td>
+	<td>waitForElementPresent</td>
+	<td>//a[@id='usersteamsmaxesTeamButton']/div/div/div</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.team-container.active &gt; a &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
-	<td>Us</td>
+	<td>//a[@id='usersteamsmaxesTeamButton']/div/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>UsersTeamsMaxes</td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
@@ -953,7 +1004,7 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>name=loginId</td>
-	<td>admin@test.com</td>
+	<td></td>
 </tr>
 <tr>
 	<td>type</td>
@@ -1183,7 +1234,7 @@
 	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
 	<td>Cancel</td>
 </tr>
-<!--Delete channel, still counts toward max and can't create new-->
+<!--Archive channel, still counts toward max and can't create new-->
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
@@ -1687,33 +1738,34 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//*[@id='addUsersToTeam']/button</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//*[@id='addUsersToTeam']/button</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
+<!--Might have to change the following to a different number after `select-`-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
+	<td>id=react-select-2-input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
+	<td>id=react-select-2-input</td>
 	<td>test3</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>id=react-select-2-option-0</td>
 	<td>@test3</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td>@test3</td>
+	<td>id=react-select-2-option-0</td>
+	<td></td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -1722,18 +1774,18 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
+	<td>id=react-select-2-input</td>
 	<td>test5</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>id=react-select-2-option-0</td>
 	<td>@test5</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td>@test5</td>
+	<td>id=react-select-2-option-0</td>
+	<td></td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -1742,33 +1794,48 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
+	<td>id=react-select-2-input</td>
 	<td>test6</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>id=react-select-2-option-0</td>
 	<td>@test6</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td>@test6</td>
+	<td>id=react-select-2-option-0</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForNotText</td>
-	<td>css=div.more-modal__name</td>
-	<td>@test6</td>
+	<td>waitForText</td>
+	<td>//div[@id='root-portal']/div/div/div/div/div[4]/div/div/div/div</td>
+	<td>test3<br /><br /><br />test5<br /><br /><br />test6</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveItems</td>
+	<td>id=inviteMembersButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveItems</td>
+	<td>id=inviteMembersButton</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.InvitationModalConfirmStep &gt; h1</td>
+	<td>Members Invited to UsersTeamsMaxes</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Done</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Done</td>
 </tr>
 <tr>
 	<td>waitForText</td>

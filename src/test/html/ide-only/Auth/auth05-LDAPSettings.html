@@ -2429,27 +2429,32 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.share-link-input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>id=linkModalTextArea</td>
+	<td>css=input.share-link-input</td>
 	<td>inviteldap</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=#closeIcon &gt; svg</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=#closeIcon &gt; svg</td>
 	<td></td>
 </tr>
 <!--LOG OUT admin-->
@@ -2758,6 +2763,7 @@
 	<td></td>
 </tr>
 <!--Existing user joins public channel on open team by opening URL-->
+<!--*** Redirect failing on old FF but works on newer FF, Chrome, desktop-->
 <tr>
 	<td>open</td>
 	<td>${ldapchannel}</td>
@@ -2807,13 +2813,13 @@
 <!--Get URL for closed team-->
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-btn__initials</td>
+	<td>css=div.TeamIcon__initials.TeamIcon__initials__md</td>
 	<td>UI</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.team-btn__initials</td>
-	<td></td>
+	<td>css=div.TeamIcon__initials.TeamIcon__initials__md</td>
+	<td>UI</td>
 </tr>
 <tr>
 	<td>waitForText</td>

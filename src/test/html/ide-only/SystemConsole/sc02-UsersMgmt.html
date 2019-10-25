@@ -46,11 +46,6 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
-<tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
-</tr>
 <!--Verify not System Admin or Team Admin-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -78,11 +73,6 @@
 	<td></td>
 </tr>
 <!--LOG OUT corey-->
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=li#logout.MenuItem button.style--none</td>
@@ -297,7 +287,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=select.form-control.system-users__filter</td>
-	<td>All UsersSystem AdminInactive</td>
+	<td>All UsersSystem AdminGuestInactive</td>
 </tr>
 <tr>
 	<td>select</td>
@@ -866,11 +856,6 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
@@ -1348,39 +1333,25 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#addUsersToTeam &gt; button.style--none.</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#addUsersToTeam &gt; button.style--none.</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
-<!--(corey should be the only user in the list)-->
+<!--Can't get Se to function in new Invite modal :(-->
+<!--Using invite link instead-->
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
-	<td>@corey</td>
+	<td>css=button.share-link-input-button</td>
+	<td>Copy Link</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td>@corey</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#numPeopleRemaining &gt; span</td>
-	<td>Use ↑↓ to browse, ↵ to select. You can add 19 more people.</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=saveItems</td>
-	<td>Add</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveItems</td>
-	<td></td>
+	<td>storeValue</td>
+	<td>css=input.share-link-input</td>
+	<td>invitelink</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -1388,6 +1359,58 @@
 	<td></td>
 </tr>
 <!--LOG OUT admin-->
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=li#logout.MenuItem button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li#logout.MenuItem button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<!--Open invite link and log in as corey to re-join UI-Automation team-->
+<tr>
+	<td>open</td>
+	<td>${invitelink}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#signin_account_link &gt; span</td>
+	<td>Click here to sign in.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#signin_account_link &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>login</td>
+	<td>username=corey</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation</td>
+</tr>
+<!--LOG OUT corey-->
 <tr>
 	<td>click</td>
 	<td>id=sidebarHeaderDropdownButton</td>

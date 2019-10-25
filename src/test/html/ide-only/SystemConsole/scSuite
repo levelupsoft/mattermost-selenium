@@ -10,6 +10,7 @@
 <tr><td><b>Test Suite</b></td></tr>
 <tr><td><a href="sc01-Reporting.html">sc01-Reporting</a></td></tr>
 <tr><td><a href="sc02-UsersMgmt.html">sc02-UsersMgmt</a></td></tr>
+<tr><td><a href="sc02.5-UsersDetail.html">sc02.5-UsersDetail</a></td></tr>
 <tr><td><a href="sc03-UsersEmail.html">sc03-UsersEmail</a></td></tr>
 <tr><td><a href="sc04-UsersPassword.html">sc04-UsersPassword</a></td></tr>
 <tr><td><a href="sc05-UsersDeactivate.html">sc05-UsersDeactivate</a></td></tr>

@@ -1238,16 +1238,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
 	<td>/rename 1${KEY_ENTER}</td>
@@ -1507,7 +1497,6 @@
 	<td>id=post_textbox</td>
 	<td>/rename Town Square sixty-five3456789012345678901234567890123456789012345${KEY_ENTER}</td>
 </tr>
-<!--\/ Need to update system message for 64 char \/-->
 <tr>
 	<td>waitForText</td>
 	<td>css=p:contains('Channel name must be 64 or fewer characters')</td>
@@ -1516,7 +1505,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
-	<td>Town Square sixty-five345678901234567890123456789012345678901234</td>
+	<td>Town Square sixty-four345678901234567890123456789012345678901234</td>
 </tr>
 <!--Rename back to Town Square-->
 <tr>
@@ -1584,23 +1573,23 @@
 <!--Put link into header of another channel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span[@class='sidebar-item__name']/span[contains(text(),'headertest')]</td>
+	<td>//span[@class='sidebar-item__name']/span[contains(text(),'Off-Topic')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//span[@class='sidebar-item__name']/span[contains(text(),'headertest')]</td>
+	<td>//span[@class='sidebar-item__name']/span[contains(text(),'Off-Topic')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>headertest</td>
+	<td>css=button.channel-header__trigger.style--none</td>
+	<td>Off-Topic</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>headertest</td>
+	<td>css=button.channel-header__trigger.style--none</td>
+	<td>Off-Topic</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1712,28 +1701,13 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarItem_off-topic</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarItem_off-topic</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//p[contains(text(),'headertest')]/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/button/span[contains(text(),'Join')]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//p[contains(text(),'headertest')]/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/button/span[contains(text(),'Join')]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>headertest</td>
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>

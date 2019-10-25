@@ -125,7 +125,6 @@
 	<td>500</td>
 </tr>
 <!--Ensure that reactions remain in place when you pin and unpin a post-->
-<!--Rollup needs updating; doing some things manually for now-->
 <tr>
 	<td>rollup</td>
 	<td>openEmojiPickerForLastPost</td>
@@ -146,7 +145,6 @@
 	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
-<!--Rollup needs updating; doing some things manually for now-->
 <tr>
 	<td>rollup</td>
 	<td>dotMenuItemVerifyAndSelect</td>
@@ -837,6 +835,7 @@
 	<td>css=button.style--none.flag-icon__container </td>
 	<td></td>
 </tr>
+<!--*** Tooltip not appearing on very old FF but works everywhere else-->
 <tr>
 	<td>waitForText</td>
 	<td>css=#flagTooltip &gt; div.tooltip-inner &gt; span</td>
@@ -946,17 +945,10 @@
 	<td>Click here to jump to recent messages.</td>
 </tr>
 <!--Re-pin in center-->
-<!--rollup doesn't open the center post menu-->
-<!--*** Open ... menu manually in center -->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.style--none:contains('Pin to channel')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.style--none:contains('Pin to channel')</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Pin to channel</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -969,17 +961,10 @@
 	<td></td>
 </tr>
 <!--Un-pinning in center removes Pinned in flagged posts RHS-->
-<!--rollup doesn't open the center post menu-->
-<!--*** Open ... menu manually in center -->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.style--none:contains('Un-pin from channel')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.style--none:contains('Un-pin from channel')</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Un-pin from channel</td>
 </tr>
 <tr>
 	<td>waitForNotText</td>
@@ -1034,7 +1019,16 @@
 	<td>Pinned</td>
 </tr>
 <!--Open reply RHS-->
-<!--*** Manually open reply RHS -->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_SHIFT}${KEY_UP}</td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=reply_textbox</td>
@@ -1042,16 +1036,20 @@
 </tr>
 <!--Un-pin in RHS-->
 <tr>
+	<td>rollup</td>
+	<td>openReplyDotMenuForTopPost</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[3]</td>
+	<td>css=button.style--none:contains('Un-pin from channel')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[3]</td>
+	<td>css=button.style--none:contains('Un-pin from channel')</td>
 	<td></td>
 </tr>
-<!--*** Manually click Un-pin in RHS-->
 <!--Verify Pinned badge does not appear in center or RHS-->
 <tr>
 	<td>waitForNotText</td>
@@ -1234,16 +1232,10 @@
 	<td>css=span.sidebar--right__title &gt; span</td>
 	<td>Pinned posts in Direct Message</td>
 </tr>
-<!--*** Open ... menu manually in center -->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.style--none:contains('Delete')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.style--none:contains('Delete')</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Delete</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1328,7 +1320,11 @@
 	<td>css=span.post__pinned-badge &gt; span</td>
 	<td>Pinned</td>
 </tr>
-<!--*** Manually open ... menu for center channel post-->
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.style--none:contains('Delete')</td>

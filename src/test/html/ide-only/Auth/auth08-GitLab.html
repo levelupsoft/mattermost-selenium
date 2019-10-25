@@ -332,18 +332,33 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
-	<td>storeText</td>
-	<td>id=linkModalTextArea</td>
+	<td>waitForElementPresent</td>
+	<td>css=input.share-link-input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>css=input.share-link-input</td>
 	<td>teaminvite</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#closeIcon &gt; svg &gt; path</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#closeIcon &gt; svg &gt; path</td>
+	<td></td>
 </tr>
 <!--Log out system admin-->
 <tr>

@@ -274,47 +274,14 @@
 </tr>
 <!--Send email: Email sends but links are invalid (currently hardcoded to send to linda@mm)-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
+	<td>pause</td>
+	<td>8000</td>
 	<td></td>
 </tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#sendEmailInvite &gt; button.style--none.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#sendEmailInvite &gt; button.style--none.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.form-control</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=input.form-control</td>
-	<td>linda+se@mattermost.com</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.modal-invite-member.modal-dialog &gt; div.modal-content &gt; div.modal-footer &gt; button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.modal-invite-member.modal-dialog &gt; div.modal-content &gt; div.modal-footer &gt; button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<!--*** Actually, email is not configured on Se server. LM look into this-->
-<!--*** Linda verifies manually in Mm email account-->
+<!--Se can't find fields on the new Invite modal :(-->
+<!--Add email address manually where you can receive email-->
+<!--*** Actually, email is not configured on Se server. LM tested manually-->
+<!--*** Linda verifies manually on postgres.test-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>

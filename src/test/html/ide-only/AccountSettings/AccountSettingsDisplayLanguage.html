@@ -134,21 +134,36 @@
 	<td></td>
 </tr>
 <!--Switch to ES-->
-<!--***These selections don't work anymore (nor does anything else I tried :/  )-->
+<!--*** Using arrows to select (all locators I tried no longer work)-->
 <tr>
-	<td>select</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
 	<td>id=displayLanguage</td>
 	<td>label=Español</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -236,14 +251,24 @@
 </tr>
 <!--Switch to DE-->
 <tr>
-	<td>select</td>
-	<td>css=react-select__control</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=displayLanguage</td>
 	<td>label=Deutsch</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -254,6 +279,11 @@
 	<td>waitForText</td>
 	<td>id=sidebarChannelsMore</td>
 	<td>Mehr...</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
 </tr>
 <!--Verify system message is translated-->
 <tr>
@@ -348,14 +378,34 @@
 </tr>
 <!--Switch to FR-->
 <tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>label=Français</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -455,19 +505,48 @@
 </tr>
 <!--Switch to IT-->
 <tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>label=Italiano</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td></td>
 </tr>
-<!--No translation for Save (was Guardar? Or was something else?). So verifying Cancel for now-->
 <tr>
-	<td>waitForText</td>
-	<td>id=cancelSetting</td>
-	<td>Annuler</td>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <tr>
@@ -536,19 +615,55 @@
 	<td>css=label.control-label</td>
 	<td>Cambia la lingua</td>
 </tr>
+<!--Switch to NE-->
 <tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>label=Nederlands (Alpha)</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <tr>
@@ -605,27 +720,57 @@
 <!--Switch to PL-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=displayLanguage</td>
-	<td>label=Polski</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td></td>
 </tr>
 <tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>label=Polski</td>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <tr>
@@ -681,13 +826,63 @@
 </tr>
 <!--Switch to BR-->
 <tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>label=Português (Brasil)</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <tr>
@@ -748,13 +943,68 @@
 </tr>
 <!--Switch to RO-->
 <tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>Română</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <tr>
@@ -815,13 +1065,73 @@
 </tr>
 <!--Switch to TR-->
 <tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>Türkçe</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <tr>
@@ -877,13 +1187,78 @@
 </tr>
 <!--Switch to RU-->
 <tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>label=Pусский (Alpha)</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <tr>
@@ -940,13 +1315,83 @@
 <!--Added new language Ukrainian-->
 <!--Switch to UA-->
 <tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>label=Yкраїнська (Alpha)</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <tr>
@@ -1002,13 +1447,88 @@
 </tr>
 <!--Switch to KR-->
 <tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>label=한국어 (Alpha)</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <tr>
@@ -1059,13 +1579,93 @@
 </tr>
 <!--Switch to CN-->
 <tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>中文 (简体)</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <tr>
@@ -1121,13 +1721,98 @@
 </tr>
 <!--Switch to TW-->
 <tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>label=中文 (繁體)</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <tr>
@@ -1183,14 +1868,94 @@
 </tr>
 <!--Switch to JP-->
 <tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>label=日本語</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1253,15 +2018,26 @@
 	<td>id=languagesEdit</td>
 	<td></td>
 </tr>
+<!--Set back to EN-->
 <tr>
-	<td>select</td>
-	<td>id=displayLanguage</td>
-	<td>label=English</td>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
+	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
