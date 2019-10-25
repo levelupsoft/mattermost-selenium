@@ -468,7 +468,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-btn__initials</td>
+	<td>css=div.TeamIcon__initials.TeamIcon__initials__md</td>
 	<td>QA</td>
 </tr>
 <tr>
@@ -744,6 +744,7 @@
 	<td>css=div.alert.alert-success &gt; span</td>
 	<td>AD/LDAP Test Successful</td>
 </tr>
+<!---->
 <!--View Groups but do not link any yet-->
 <!--These are really flaky; just verify the groups appear and say Not Linked-->
 <tr>
@@ -1457,12 +1458,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#qaTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>//a[@id='qaTeamButton']/div/div/div/div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#qaTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>//a[@id='qaTeamButton']/div/div/div/div</td>
 	<td></td>
 </tr>
 <tr>
@@ -1765,12 +1766,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#qaTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>//a[@id='qaTeamButton']/div/div/div/div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#qaTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>//a[@id='qaTeamButton']/div/div/div/div</td>
 	<td></td>
 </tr>
 <tr>
@@ -1795,12 +1796,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-btn__initials</td>
+	<td>css=div.TeamIcon__initials.TeamIcon__initials__md</td>
 	<td>En</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.team-btn__initials</td>
+	<td>css=div.TeamIcon__initials.TeamIcon__initials__md</td>
 	<td>En</td>
 </tr>
 <tr>
@@ -2122,14 +2123,14 @@
 	<td>PUBLIC CHANNELS+Off-TopicTown SquareMore...</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#engineeringTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
-	<td>En</td>
+	<td>waitForElementPresent</td>
+	<td>//a[@id='engineeringTeamButton']/div/div/div/div</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#engineeringTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
-	<td>En</td>
+	<td>//a[@id='engineeringTeamButton']/div/div/div/div</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2713,24 +2714,29 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//a[@id='engineeringTeamButton']/div/div/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id='engineeringTeamButton']/div/div/div/div</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
 	<td>Engineering</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#engineeringTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#developersTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.TeamIcon__initials.TeamIcon__initials__md</td>
+	<td>De</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#developersTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
-	<td></td>
+	<td>css=div.TeamIcon__initials.TeamIcon__initials__md</td>
+	<td>De</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2854,6 +2860,18 @@
 	<td>refreshAndWait</td>
 	<td></td>
 	<td></td>
+</tr>
+<!--*** This needs to have abc as first item on the page; if using instance with-->
+<!--*** many groups may need to click to next page after refresh-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.group-name</td>
+	<td>abc</td>
 </tr>
 <tr>
 	<td>waitForText</td>

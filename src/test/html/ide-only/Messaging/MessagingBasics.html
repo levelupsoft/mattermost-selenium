@@ -116,37 +116,15 @@
 	<td></td>
 </tr>
 <!--Reply using [...] menu - reply posts in RHS and center-->
-<!--*** No longer works to find dot menu; manually click dot menu on Hello post-->
-<!--*** Manually click dot menu on Hello post and click Reply-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=img.more-modal__image</td>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
 <tr>
-	<td>mouseOver</td>
-	<td>css=img.more-modal__image</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.dropdown-toggle.post__dropdown.color--link.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.dropdown-toggle.post__dropdown.color--link.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=ul.dropdown-menu.bottom &gt; li &gt; button.style--none</td>
-	<td>Reply</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=ul.dropdown-menu.bottom &gt; li &gt; button.style--none</td>
-	<td>Reply</td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Reply</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -509,16 +487,14 @@
 	<td>css=span.search-highlight</td>
 	<td>hungry</td>
 </tr>
-<!--*** No longer finding RHS reply-->
-<!--*** Manually click reply arrow on RHS search result I'm hungry...-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=searchCommentIcon_</td>
+	<td>css=span.comment-icon</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=searchCommentIcon_</td>
+	<td>css=span.comment-icon</td>
 	<td></td>
 </tr>
 <tr>
@@ -1582,9 +1558,9 @@
 	<td>1</td>
 </tr>
 <tr>
-	<td>waitForText</td>
+	<td>waitForTextPresent</td>
 	<td>css=p.markdown__paragraph-inline</td>
-	<td>You and @test8 added to the channel by @test2.</td>
+	<td></td>
 </tr>
 <!--Other user sees (edited)-->
 <tr>
@@ -1647,12 +1623,12 @@
 <!--@-autocomplete - nickname-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.team-btn__initials</td>
+	<td>id=ui-automationTeamButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.team-btn__initials</td>
+	<td>id=ui-automationTeamButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -2235,7 +2211,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=channelHeaderDropdownButton</td>
-	<td>test9, test10</td>
+	<td>test10, test9</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3553,33 +3529,10 @@
 	<td>id=post_textbox</td>
 	<td>Permalinkpost${KEY_ENTER}</td>
 </tr>
-<!--This doesn't work anymore either, to try to get to [...] options-->
-<!--Point is to open permalink modal-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=img.more-modal__image</td>
-	<td></td>
-</tr>
-<tr>
-	<td>mouseOver</td>
-	<td>css=img.more-modal__image</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.dropdown-toggle.post__dropdown.color--link.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.dropdown-toggle.post__dropdown.color--link.style--none</td>
-	<td></td>
-</tr>
-<!--*** Manually click ... and Permalink on "Permalinkpost" for now-->
-<tr>
-	<td>pause</td>
-	<td>6000</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Permalink</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3750,8 +3703,6 @@
 	<td>id=newChannelName</td>
 	<td>Pri2-${datetime}</td>
 </tr>
-<!--Can't get the following to work anymore. Verify URL shows as /pri2-${datetime}-->
-<!--Ah, it may have just lost track of the variable's value. If this works in future, set back to full text verify-->
 <tr>
 	<td>waitForTextPresent</td>
 	<td>URL: /pri2-${datetime} (</td>
@@ -3793,12 +3744,11 @@
 	<td>css=p:contains('pri2 channel permalink')</td>
 	<td></td>
 </tr>
-<!--Also failing to find [...] - open Permalink modal manually on "pri2 channel permalink"-->
-<!--*** Manually click ... and Permalink on "pri2 channel permalink" for now-->
+<!--Get permalink-->
 <tr>
-	<td>pause</td>
-	<td>6000</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Permalink</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3846,9 +3796,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
+	<td>waitForElementNotPresent</td>
+	<td>css=button.btn.btn-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
 </tr>
 <tr>
 	<td>open</td>
@@ -3881,9 +3836,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
 </tr>
 <!--Log out, open permalink, enter creds, opens to permalink-->
 <!--Create post and permalink-->
@@ -3917,11 +3872,10 @@
 	<td>id=post_textbox</td>
 	<td></td>
 </tr>
-<!--*** Fails to find [...] etc.; open permalink modal manually on "Log out and permalink"-->
 <tr>
-	<td>pause</td>
-	<td>6000</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Permalink</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

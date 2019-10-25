@@ -1231,42 +1231,32 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//*[@id='getTeamInviteLink']/button</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//*[@id='getTeamInviteLink']/button</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-primary.pull-left</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//textarea[@id='linkModalTextArea']</td>
+	<td>css=input.share-link-input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>//textarea[@id='linkModalTextArea']</td>
+	<td>css=input.share-link-input</td>
 	<td>teaminvitelinkold</td>
 </tr>
 <tr>
-	<td>verifyValue</td>
-	<td>//textarea[@id='linkModalTextArea']</td>
-	<td>exact:${teaminvitelinkold}</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=#closeIcon &gt; svg</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=#closeIcon &gt; svg</td>
 	<td></td>
 </tr>
 <tr>
@@ -1407,43 +1397,35 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//*[@id='getTeamInviteLink']/button</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//*[@id='getTeamInviteLink']/button</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-primary.pull-left</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//textarea[@id='linkModalTextArea']</td>
+	<td>css=input.share-link-input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>//textarea[@id='linkModalTextArea']</td>
+	<td>css=input.share-link-input</td>
 	<td>teaminvitelinknew</td>
 </tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#closeIcon &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#closeIcon &gt; svg</td>
+	<td></td>
+</tr>
 <!--LOG OUT admin-->
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -2480,6 +2462,16 @@
 </tr>
 <!--Verify system message-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=#sidebarItem_town-square &gt; span.sidebar-item__name &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#sidebarItem_town-square &gt; span.sidebar-item__name &gt; span</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForTextPresent</td>
 	<td>test4 was removed from the team.</td>
 	<td></td>
@@ -2497,27 +2489,32 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//*[@id='getTeamInviteLink']/button</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//*[@id='getTeamInviteLink']/button</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
-	<td>storeText</td>
-	<td>//textarea[@id='linkModalTextArea']</td>
+	<td>waitForElementPresent</td>
+	<td>css=input.share-link-input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>css=input.share-link-input</td>
 	<td>privateinvitelink</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=#closeIcon &gt; svg</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=#closeIcon &gt; svg</td>
 	<td></td>
 </tr>
 <!--Removed member does not display in channel drop-down Add Member list-->
@@ -2814,12 +2811,12 @@
 <!--(Grab invite to UI2 for following test)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#ui-automation2TeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>//a[@id='ui-automation2TeamButton']/div/div/div/div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#ui-automation2TeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>//a[@id='ui-automation2TeamButton']/div/div/div/div</td>
 	<td></td>
 </tr>
 <tr>
@@ -2834,32 +2831,32 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalTextArea</td>
+	<td>css=input.share-link-input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>id=linkModalTextArea</td>
+	<td>css=input.share-link-input</td>
 	<td>ui2invite</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.close</td>
+	<td>css=#closeIcon &gt; svg</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.close</td>
+	<td>css=#closeIcon &gt; svg</td>
 	<td></td>
 </tr>
 <!--Team Admin who was removed and rejoined is added back as Member-->
@@ -3191,43 +3188,45 @@
 </tr>
 <!--Try to add whichever user is top of list (won't be pickles.org)-->
 <tr>
-	<td>click</td>
-	<td>//*[@id='addUsersToTeam']/button</td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='addUsersToTeamModal']//*/div[contains(text(),'@test3')]</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='addUsersToTeamModal']//*/div[contains(text(),'@test3')]</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
+<!--*** Cannot figure out how to type in this modal-->
 <tr>
 	<td>pause</td>
-	<td>1000</td>
+	<td>8000</td>
 	<td></td>
 </tr>
+<!--*** Manually type `test` and press Enter-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveItems</td>
+	<td>waitForEditable</td>
+	<td>id=inviteMembersButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveItems</td>
+	<td>id=inviteMembersButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=label.control-label.font-weight--normal</td>
-	<td>Email must be from a specific domain (e.g. @example.com). Please ask your team or system administrator for details.</td>
+	<td>css=div.reason</td>
+	<td>exact:Error: Email must be from a specific domain (e.g. @example.com). Please ask your team or system administrator for details.</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#closeIcon &gt; svg</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.close</td>
+	<td>css=#closeIcon &gt; svg</td>
 	<td></td>
 </tr>
 <tr>
@@ -3506,15 +3505,10 @@
 	<td>id=headerTeamName</td>
 	<td>ZZZ QA</td>
 </tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#zzz-qaTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
-	<td></td>
-</tr>
 <!--Cleanup: Leave ZZZ QA team-->
 <tr>
 	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
 	<td></td>
 </tr>
 <tr>

@@ -339,18 +339,23 @@
 </tr>
 <!--*** TYPE IN LOGIN INFO for the other (second) user but do NOT click Sign in-->
 <tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>id=loginId</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForNotValue</td>
-	<td>id=loginId</td>
+	<td>id=loginPassword</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForNotValue</td>
-	<td>id=loginPassword</td>
+	<td>id=loginId</td>
 	<td></td>
 </tr>
 <!--Stores second user's login creds (until test / Se is closed)-->
@@ -490,12 +495,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=img.more-modal__image</td>
+	<td>css=button.user-popover.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=img.more-modal__image</td>
+	<td>css=button.user-popover.style--none</td>
 	<td></td>
 </tr>
 <tr>

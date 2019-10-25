@@ -1783,32 +1783,32 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//*[@id='getTeamInviteLink']/button</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//*[@id='getTeamInviteLink']/button</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//textarea[@id='linkModalTextArea']</td>
+	<td>css=input.share-link-input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>//textarea[@id='linkModalTextArea']</td>
+	<td>css=input.share-link-input</td>
 	<td>teaminvitelink</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-primary.pull-left</td>
+	<td>css=#closeIcon &gt; svg &gt; path</td>
 	<td></td>
 </tr>
 <tr>
-	<td>refreshAndWait</td>
-	<td></td>
+	<td>click</td>
+	<td>css=#closeIcon &gt; svg &gt; path</td>
 	<td></td>
 </tr>
 <!--Log out and open team invite link-->
@@ -2138,17 +2138,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//*[@id='sendEmailInvite']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//*[@id='getTeamInviteLink']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//*[@id='addUsersToTeam']/button</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2311,12 +2301,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=getTeamInviteLink</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//*[@id='addUsersToTeam']/button</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -2347,47 +2332,38 @@
 <!--Add user to team from main menu, filter user list-->
 <tr>
 	<td>click</td>
-	<td>//*[@id='addUsersToTeam']/button</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
+<!--*** Manually enter user testst (figured this out in another test but need to go find it)-->
 <tr>
 	<td>waitForText</td>
-	<td>//span[contains(text(),'Use ↑↓ to browse, ↵ to select. You can add 20 more people.')] </td>
-	<td>Use ↑↓ to browse, ↵ to select. You can add 20 more people.</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
-	<td>testst</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.more-modal__name</td>
+	<td>id=react-select-2-option-0</td>
 	<td>@testst</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.more-modal__name</td>
+	<td>id=react-select-2-option-0</td>
 	<td>@testst</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//span[contains(text(),'Use ↑↓ to browse, ↵ to select. You can add 19 more people.')] </td>
-	<td>Use ↑↓ to browse, ↵ to select. You can add 19 more people.</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveItems</td>
+	<td>waitForEditable</td>
+	<td>id=inviteMembersButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=saveItems</td>
+	<td>id=inviteMembersButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-primary</td>
+	<td>Done</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>

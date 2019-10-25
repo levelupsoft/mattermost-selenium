@@ -2364,7 +2364,7 @@
 <!--So I just put back the dynamic ID back in for now, which will break later :(-->
 <tr>
 	<td>type</td>
-	<td>//*[@id=&quot;react-select-3-input&quot;]</td>
+	<td>//*[@id=&quot;react-select-4-input&quot;]</td>
 	<td>deutsch</td>
 </tr>
 <tr>
@@ -2374,7 +2374,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>//*[@id=&quot;react-select-3-input&quot;]</td>
+	<td>//*[@id=&quot;react-select-4-input&quot;]</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -2384,7 +2384,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//*[@id=&quot;react-select-3-input&quot;]</td>
+	<td>//*[@id=&quot;react-select-4-input&quot;]</td>
 	<td>espanol</td>
 </tr>
 <tr>
@@ -2394,7 +2394,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>//*[@id=&quot;react-select-3-input&quot;]</td>
+	<td>//*[@id=&quot;react-select-4-input&quot;]</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <!--Verify error if default language is not included in available languages-->
@@ -2416,7 +2416,7 @@
 <!--Add English to available languages, verify Save button is clickable-->
 <tr>
 	<td>type</td>
-	<td>//*[@id=&quot;react-select-3-input&quot;]</td>
+	<td>//*[@id=&quot;react-select-4-input&quot;]</td>
 	<td>english</td>
 </tr>
 <tr>
@@ -2426,7 +2426,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>//*[@id=&quot;react-select-3-input&quot;]</td>
+	<td>//*[@id=&quot;react-select-4-input&quot;]</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -2516,45 +2516,23 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
+	<td>sendKeys</td>
 	<td>id=displayLanguage</td>
-	<td>DeutschEnglishEspañol</td>
+	<td>${KEY_DOWN}</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=option[value=&quot;de&quot;]</td>
+	<td>waitForTextPresent</td>
+	<td>Deutsch<br />English<br />Español</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=option[value=&quot;en&quot;]</td>
+	<td>pause</td>
+	<td>8000</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=option[value=&quot;es&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementNotPresent</td>
-	<td>css=option[value=&quot;ru&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementNotPresent</td>
-	<td>css=option[value=&quot;fr&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementNotPresent</td>
-	<td>css=option[value=&quot;jp&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementNotPresent</td>
-	<td>css=option[value=&quot;nl&quot;]</td>
-	<td></td>
-</tr>
+<!--** No longer verifying drop-down items w/CSS (and it thinks Russian is visible)-->
+<!--*** Visually verify that only the three languages display;-->
+<!--*** not displaying other languages like Russian, French, Japanese, etc.-->
 <tr>
 	<td>waitForText</td>
 	<td>id=cancelSetting</td>
@@ -2636,7 +2614,7 @@
 <!--Remove the other languages-->
 <tr>
 	<td>sendKeys</td>
-	<td>//*[@id=&quot;react-select-3-input&quot;]</td>
+	<td>//*[@id=&quot;react-select-5-input&quot;]</td>
 	<td>${KEY_BACKSPACE}</td>
 </tr>
 <tr>
@@ -2646,7 +2624,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>//*[@id=&quot;react-select-3-input&quot;]</td>
+	<td>//*[@id=&quot;react-select-5-input&quot;]</td>
 	<td>${KEY_BACKSPACE}</td>
 </tr>
 <tr>
@@ -2656,7 +2634,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>//*[@id=&quot;react-select-3-input&quot;]</td>
+	<td>//*[@id=&quot;react-select-5-input&quot;]</td>
 	<td>${KEY_BACKSPACE}</td>
 </tr>
 <tr>
@@ -2667,7 +2645,7 @@
 <!--Set Available Languages to Japanese and English-->
 <tr>
 	<td>type</td>
-	<td>//*[@id=&quot;react-select-3-input&quot;]</td>
+	<td>//*[@id=&quot;react-select-5-input&quot;]</td>
 	<td>日本</td>
 </tr>
 <tr>
@@ -2677,7 +2655,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>//*[@id=&quot;react-select-3-input&quot;]</td>
+	<td>//*[@id=&quot;react-select-5-input&quot;]</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -2687,7 +2665,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>//*[@id=&quot;react-select-3-input&quot;]</td>
+	<td>//*[@id=&quot;react-select-5-input&quot;]</td>
 	<td>english</td>
 </tr>
 <tr>
@@ -2697,7 +2675,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>//*[@id=&quot;react-select-3-input&quot;]</td>
+	<td>//*[@id=&quot;react-select-5-input&quot;]</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -2782,19 +2760,29 @@
 	<td></td>
 </tr>
 <tr>
-	<td>select</td>
+	<td>sendKeys</td>
 	<td>id=displayLanguage</td>
-	<td>日本語</td>
+	<td>${KEY_DOWN}</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
+	<td>waitForTextPresent</td>
+	<td>English<br />日本語</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
+	<td>sendKeys</td>
+	<td>id=displayLanguage</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=displayLanguage</td>
+	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2854,8 +2842,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>//div[@id='LocalizationSettings.AvailableLocales']/div/div/div[2]/div</td>
+	<td>English</td>
+</tr>
+<tr>
 	<td>sendKeys</td>
-	<td>//*[@id=&quot;react-select-4-input&quot;]</td>
+	<td>//div[@id='LocalizationSettings.AvailableLocales']/div/div/div[2]/div</td>
 	<td>${KEY_BACKSPACE}</td>
 </tr>
 <tr>
@@ -2987,8 +2980,13 @@
 </tr>
 <!--Remove Japanese from Available (all languages available)-->
 <tr>
+	<td>waitForText</td>
+	<td>id=LocalizationSettings.AvailableLocales</td>
+	<td>日本語</td>
+</tr>
+<tr>
 	<td>sendKeys</td>
-	<td>//*[@id=&quot;react-select-5-input&quot;]</td>
+	<td>id=LocalizationSettings.AvailableLocales</td>
 	<td>${KEY_BACKSPACE}</td>
 </tr>
 <tr>
@@ -3083,8 +3081,23 @@
 	<td></td>
 </tr>
 <tr>
-	<td>select</td>
+	<td>sendKeys</td>
 	<td>id=displayLanguage</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=displayLanguage</td>
+	<td>${KEY_DOWN}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=displayLanguage</td>
+	<td>${KEY_TAB}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[@id='displayLanguage']/div/div</td>
 	<td>English</td>
 </tr>
 <tr>

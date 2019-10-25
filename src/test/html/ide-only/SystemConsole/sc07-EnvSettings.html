@@ -2392,19 +2392,9 @@
 	<td>/test${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=showMoreButton</td>
-	<td>Show More</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=showMoreButton</td>
-	<td>Show More</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=code.hljs</td>
-	<td>COMMANDS: Setup - Creates a testing environment in current team. /test setup [teams] [fuzz] &lt;Num Channels&gt; &lt;Num Users&gt; &lt;NumPosts&gt; Example: /test setup teams fuzz 10 20 50 Users - Add a specified number of random users with fuzz text to current team. /test users [fuzz] &lt;Min Users&gt; &lt;Max Users&gt; Example: /test users fuzz 5 10 Channels - Add a specified number of random channels with fuzz text to current team. /test channels [fuzz] &lt;Min Channels&gt; &lt;Max Channels&gt; Example: /test channels fuzz 5 10 Posts - Add some random posts with fuzz text to current channel. /test posts [fuzz] &lt;Min Posts&gt; &lt;Max Posts&gt; &lt;Max Images&gt; Example: /test posts fuzz 5 10 3 Post - Add post to a channel as another user. /test post u=@username p=passwd c=~channelname t=teamname &quot;message&quot; Example: /test post u=@user-1 p=user-1 c=~town-square t=ad-1 &quot;message&quot; Url - Add a post containing the text from a given url to current channel. /test url Example: /test http://www.example.com/sample_file.md Json - Add a post using the JSON file as payload to the current channel. /test json url Example /test json http://www.example.com/sample_body.json</td>
+	<td>waitForTextPresent</td>
+	<td>Mattermost testing commands to help configure the system*COMMANDS:*Setup - Creates a testing environment in current team.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

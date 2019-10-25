@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://selenium.test.mattermost.com/" />
+<title>sc02.5-UserDetail</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">sc02.5-UserDetail</td></tr>
+</thead><tbody>
+<!--LOG IN-->
+<tr>
+	<td>openAndWait</td>
+	<td>/login</td>
+	<td></td>
+</tr>
+<!--DisableAnimations-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>admin@test.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sleep-->
+<!--Sleep-->
+<!--Sleep-->
+<!--Open System Console-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=user_management/users</td>
+	<td>Users</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_management/users</td>
+	<td></td>
+</tr>
+<!--Open detail page for @corey-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=searchUsers</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchUsers</td>
+	<td>corey</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=@corey</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=@corey</td>
+	<td></td>
+</tr>
+<!--Verify user details-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.admin-console__header.with-back &gt; div &gt; span</td>
+	<td>User Configuration</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>css=input.SystemUserDetail__input.form-control</td>
+	<td>corey@test.com</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.SystemUserDetail__field-text</td>
+	<td>corey</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.SystemUserDetail__field-text &gt; span.SystemUserDetail__field-text</td>
+	<td>Email</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p &gt; span</td>
+	<td>Member</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.AdminUserCard__user-id</td>
+	<td></td>
+</tr>
+<!--Verify user ID opens DM-->
+<tr>
+	<td>storeText</td>
+	<td>css=div.AdminUserCard__user-id</td>
+	<td>idtextcorey</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>&quot;${idtextcorey}&quot;.split(&quot; &quot;)[2]</td>
+	<td>idcorey</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>https://selenium.test.mattermost.com/ui-automation/messages/${idcorey}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td>corey</td>
+</tr>
+<!--Back to user page-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=user_management/users</td>
+	<td>Users</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_management/users</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=searchUsers</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchUsers</td>
+	<td>corey</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=@corey</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=@corey</td>
+	<td></td>
+</tr>
+<!--Team Membership shows team the user is on-->
+<tr>
+	<td>waitForText</td>
+	<td>css=h3</td>
+	<td>Team Membership</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.TeamIcon__initials.TeamIcon__initials__sm</td>
+	<td>UI</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=b</td>
+	<td>UI Automation</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.TeamRow__description &gt; span</td>
+	<td>Invite only</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[@id='adminConsoleWrapper']/div[2]/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/span[2]/span</td>
+	<td>Member</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.counter &gt; span</td>
+	<td>1 - 1 of 1</td>
+</tr>
+<!--Add team-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.add-team-button &gt; button.btn.btn-primary</td>
+	<td>Add Team</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.add-team-button &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-header</td>
+	<td>×CloseAdd Teams To Team Selection List</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>UI Automation 2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__details div.team-info-block div.team-data div.title:contains('UI Automation 2')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=selectItems</td>
+	<td>UI Automation 2</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveItems</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveItems</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[@id='adminConsoleWrapper']/div[2]/div/div/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/div/div[2]/b</td>
+	<td>UI Automation 2</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[@id='adminConsoleWrapper']/div[2]/div/div/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/span/span</td>
+	<td>Anyone can join</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[@id='adminConsoleWrapper']/div[2]/div/div/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/span[2]/span</td>
+	<td>Member</td>
+</tr>
+<!--LOG OUT admin-->
+<!--LOG IN corey-->
+<tr>
+	<td>rollup</td>
+	<td>login</td>
+	<td>username=corey</td>
+</tr>
+<!--User sees added team-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.TeamIcon__initials.TeamIcon__initials__md</td>
+	<td>UI</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//a[@id='ui-automation2TeamButton']/div/div/div/div</td>
+	<td>UI</td>
+</tr>
+<!--LOG OUT corey-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<!--LOG IN admin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>admin@test.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<!--Open System Console-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=user_management/users</td>
+	<td>Users</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_management/users</td>
+	<td></td>
+</tr>
+<!--Remove @corey from all teams-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=searchUsers</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchUsers</td>
+	<td>corey</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@corey</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Member</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Member</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none:contains('Manage Teams')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.MenuItem button.style--none:contains('Manage Teams')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.MenuWrapper. &gt; a &gt; span</td>
+	<td>Team Member</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.MenuWrapper. &gt; a &gt; span</td>
+	<td>Team Member</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//li[2]/button</td>
+	<td>Remove From Team</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//li[2]/button</td>
+	<td>Remove From Team</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.MenuWrapper. &gt; a &gt; span</td>
+	<td>Team Member</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.MenuWrapper. &gt; a &gt; span</td>
+	<td>Team Member</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//li[2]/button</td>
+	<td>Remove From Team</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//li[2]/button</td>
+	<td>Remove From Team</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=div.MenuWrapper. &gt; a &gt; span</td>
+	<td>Team Member</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<!--Verify no teams listed on user detail page-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=@corey</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=@corey</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.AbstractList__empty &gt; span</td>
+	<td>No teams found</td>
+</tr>
+<!--Known issue (on several lists): `1 - 0 of 0`-->
+<!--Add back to UI team-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.add-team-button &gt; button.btn.btn-primary</td>
+	<td>Add Team</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.add-team-button &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-header</td>
+	<td>×CloseAdd Teams To Team Selection List</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>UI Automation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__details div.team-info-block div.team-data div.title:contains('UI Automation')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=selectItems</td>
+	<td>UI Automation</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveItems</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveItems</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=b</td>
+	<td>UI Automation</td>
+</tr>
+<!--Add team description and icon-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=a</td>
+	<td>Switch to UI Automation</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a</td>
+	<td>Switch to UI Automation</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#teamSettings &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#teamSettings &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=descriptionEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=descriptionEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=teamDescription</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=teamDescription</td>
+	<td>Here's a description of the team</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=descriptionDesc</td>
+	<td>Here's a description of the team</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=team_iconEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=team_iconEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//li[2]/ul/li[2]/button</td>
+	<td>Select</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//li[2]/ul/li[2]/button</td>
+	<td></td>
+</tr>
+<!--*** Manually select any valid image (can use the sloth png)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.img-preview__image</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>//li[3]/button[2]</td>
+	<td>Save</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//li[3]/button[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=team_iconEdit</td>
+	<td></td>
+</tr>
+<!--Set to be open team-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=open_inviteEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=open_inviteEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=teamOpenInvite</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=teamOpenInvite</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=open_inviteDesc</td>
+	<td>Yes</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<!--Verify changes on user detail > team membership-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=user_management/users</td>
+	<td>Users</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_management/users</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=searchUsers</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchUsers</td>
+	<td>corey</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=@corey</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=@corey</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.TeamIcon__image.TeamIcon__sm</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[@id='adminConsoleWrapper']/div[2]/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div[2]/div</td>
+	<td>Here's a description of the team</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.TeamRow__description &gt; span</td>
+	<td>Anyone can join</td>
+</tr>
+</tbody></table>
+</body>
+</html>
