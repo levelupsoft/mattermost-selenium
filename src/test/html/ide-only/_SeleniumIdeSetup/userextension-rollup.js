@@ -548,11 +548,19 @@ manager.addRollupRule({
  
 commands.push({ command: 'waitForElementPresent', target: "id=sidebarHeaderDropdownButton", value: ''});
 commands.push({ command: 'click', target: "id=sidebarHeaderDropdownButton", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "//li[@id='addUsersToTeam']/button", value: ''});
-commands.push({ command: 'click', target: "//li[@id='addUsersToTeam']/button", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]", value: ''});
-commands.push({ command: 'click', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]", value: ''});
-commands.push({ command: 'click', target: "id=saveItems", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//li[@id='invitePeople']/button", value: ''});
+commands.push({ command: 'click', target: "//li[@id='invitePeople']/button", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//div[contains(text(),'Add members or email addresses')]", value: ''});
+commands.push({ command: 'click', target: "//div[contains(text(),'Add members or email addresses')]", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//*[contains(@id,'react-select')]", value: ''});
+commands.push({ command: 'type', target: "//*[contains(@id,'react-select')]", value: args.username})
+commands.push({ command: 'pause', target: "500", value: ''});
+commands.push({ command: 'click', target: "//*[contains(@id,'-option-0')]", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "id=inviteMembersButton", value: 'Invite Members'});
+commands.push({ command: 'click', target: "id=inviteMembersButton", value: 'Invite Members'});
+commands.push({ command: 'pause', target: "500", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "css=button.btn.btn-primary", value: ''});
+commands.push({ command: 'click', target: "css=button.btn.btn-primary", value: ''});
 return commands;
  }
 });
