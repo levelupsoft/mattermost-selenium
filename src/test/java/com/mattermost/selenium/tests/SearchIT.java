@@ -69,7 +69,7 @@ public class SearchIT extends DriverBase {
         driver.findElement(By.cssSelector("input.search-bar")).sendKeys("hello" + Keys.ENTER);
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("span.sidebar--right__title > span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("span.sidebar--right__title"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -939,7 +939,7 @@ public class SearchIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Direct Message (with test)".equals(driver.findElement(By.cssSelector("div.search-channel__name > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Direct Message (with test)".equals(driver.findElement(By.cssSelector("div.search-channel__name")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -1183,7 +1183,7 @@ public class SearchIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Direct Message (with test2)".equals(driver.findElement(By.cssSelector("div.search-channel__name > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Direct Message (with test2)".equals(driver.findElement(By.cssSelector("div.search-channel__name")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -1312,7 +1312,7 @@ public class SearchIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Direct Message (with test2)".equals(driver.findElement(By.cssSelector("div.search-channel__name > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Direct Message (with test2)".equals(driver.findElement(By.cssSelector("div.search-channel__name")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
