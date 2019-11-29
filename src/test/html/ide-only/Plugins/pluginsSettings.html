@@ -214,6 +214,7 @@
 	<td>Remove</td>
 	<td></td>
 </tr>
+<!--^^known issue that Jenkins has a remove.^^-->
 <tr>
 	<td>pause</td>
 	<td>8000</td>
@@ -624,17 +625,42 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.banner</td>
-	<td>To set up the GitHub plugin, you need to register a GitHub OAuth app here https://github.com/settings/applications/new.</td>
+	<td>css=div.banner &gt; span</td>
+	<td>The GitHub plugin for Mattermost allows users to Subscribe to notifications, stay up-to-date with reviews, see the status of your pull requests at a glance, and other common GitHub actions - directly from Mattermost.<br /><br /> Instructions for setup are available here</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=githuboauthclientid</td>
+	<td>id=PluginSettings.PluginStates.github.Enabletrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PluginSettings.PluginStates.github.Enabletrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=githuboauthclientsecret</td>
+	<td>id=PluginSettings.Plugins.github.githuboauthclientid</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=PluginSettings.Plugins.github.githuboauthclientsecret</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=PluginSettings.Plugins.github.githuborg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=PluginSettings.Plugins.github.enterprisebaseurl</td>
 	<td></td>
 </tr>
 <tr>
@@ -643,24 +669,19 @@
 	<td>Regenerate</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=githuborg</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=enterprisebaseurl</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=enterpriseuploadurl</td>
+	<td>click</td>
+	<td>id=PluginSettings.PluginStates.github.Enablefalse</td>
 	<td></td>
 </tr>
 <!--JIRA-->
 <tr>
 	<td>click</td>
 	<td>id=plugins/plugin_jira</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=confirmModalButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -676,7 +697,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.banner</td>
-	<td>exact:Use this webhook URL to set up the Jira integration. See documentation to learn more.https://SITEURL/plugins/jira/webhook?secret=WEBHOOKSECRET&amp;team=TEAMURL&amp;channel=CHANNELURL</td>
+	<td>exact:Use this webhook URL format to configure the Jira integration. https://SITEURL/plugins/jira/api/v2/webhook?secret=WEBHOOKSECRET</td>
 </tr>
 <tr>
 	<td>waitForAttribute</td>
@@ -753,28 +774,38 @@
 	<td>Zoom</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=zoomurl</td>
+	<td>click</td>
+	<td>id=PluginSettings.PluginStates.zoom.Enabletrue</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=zoomapiurl</td>
+	<td>id=PluginSettings.Plugins.zoom.zoomurl</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=apikey</td>
+	<td>id=PluginSettings.Plugins.zoom.zoomapiurl</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=apisecret</td>
+	<td>id=PluginSettings.Plugins.zoom.apikey</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.btn.btn-default</td>
+	<td>id=PluginSettings.Plugins.zoom.apisecret</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=PluginSettings.Plugins.zoom.webhooksecret</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PluginSettings.PluginStates.zoom.Enablefalse</td>
 	<td></td>
 </tr>
 <tr>
@@ -783,6 +814,16 @@
 	<td>https://about.mattermost.com/default-zoom-documentation</td>
 </tr>
 <!--When a plugin cannot be started it fails properly and the user can attempt to enable it again-->
+<tr>
+	<td>click</td>
+	<td>//a[@id='plugins/plugin_management']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=confirmModalButton</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//a[@data-plugin-id='com.mattermost.aws-sns']</td>
@@ -1506,7 +1547,7 @@
 	<td>css=input[type=&quot;file&quot;]</td>
 	<td></td>
 </tr>
-<!--*** Manually select com.mattermost.demo-plugin.tar.gz you downloaded from:-->
+<!--*** GHet latest Demo Plugin from: https://github.com/mattermost/mattermost-plugin-demo/releases-->
 <tr>
 	<td></td>
 	<td></td>
@@ -1613,6 +1654,11 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//a[@data-plugin-id='com.mattermost.demo-plugin']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <tr>
@@ -2237,44 +2283,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#addUsersToTeam &gt; button.style--none.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#addUsersToTeam &gt; button.style--none.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.more-modal__description</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__description</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#numPeopleRemaining &gt; span</td>
-	<td>Use ↑↓ to browse, ↵ to select. You can add 19 more people.</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveItems</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveItems</td>
-	<td></td>
+	<td>rollup</td>
+	<td>addUserToTeam</td>
+	<td>username=corey</td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
@@ -2463,27 +2474,38 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td>css=#invitePeople &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.share-link-input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeText</td>
-	<td>id=linkModalTextArea</td>
+	<td>//input[@class='share-link-input']</td>
 	<td>inviteplugin</td>
+</tr>
+<!--I think this is not working since the locator had to change -->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=#closeIcon &gt; svg</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=#closeIcon &gt; svg</td>
 	<td></td>
 </tr>
 <!--Log out admin-->
@@ -2687,9 +2709,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>open</td>
-	<td>https://selenium.test.mattermost.com/ui-automation/channels/demo_plugin</td>
-	<td></td>
+	<td>rollup</td>
+	<td>openChannel</td>
+	<td>ChannelName=Demo Plugin</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2991,38 +3013,28 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=p</td>
+	<td>css=div.banner &gt; span</td>
 	<td>exact:Header: Configure your demo plugin settings below</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelname</td>
+	<td>id=PluginSettings.Plugins.com+mattermost+demo-plugin.channelname</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=username</td>
+	<td>id=PluginSettings.Plugins.com+mattermost+demo-plugin.username</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.help-text &gt; span</td>
+	<td>verifyText</td>
+	<td>//div[@id='adminConsoleWrapper']/div[2]/div/div/div[2]/div/form/div/div/div[3]/div/div/span</td>
 	<td>The channel to use as part of the demo plugin, created for each team automatically if it does not exist.</td>
 </tr>
 <!--Boolean setting persists after save and refresh-->
 <tr>
-	<td>waitForValue</td>
-	<td>id=enablementionuserfalse</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=enablementionusertrue</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>id=enablementionusertrue</td>
+	<td>id=PluginSettings.PluginStates.com+mattermost+demo-plugin.Enabletrue</td>
 	<td></td>
 </tr>
 <tr>
