@@ -1,425 +1,375 @@
-package com.example.tests;
+package com.mattermost.selenium.tests;
 
-import java.util.regex.Pattern;
-import java.util.concurrent.TimeUnit;
+import com.mattermost.selenium.DriverBase;
+
 import org.junit.*;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
+
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class ChannelSettingsPubHeaderIT {
-  private WebDriver driver;
-  private String baseUrl;
-  private boolean acceptNextAlert = true;
-  private StringBuffer verificationErrors = new StringBuffer();
+import org.testng.annotations.Test;
 
-  @Before
-  public void setUp() throws Exception {
-    driver = new FirefoxDriver();
-    baseUrl = "https://selenium.test.mattermost.com/";
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-  }
+import java.util.regex.Pattern;
 
-  @Test
-  public void testChannelSettingsPubHeaderIT() throws Exception {
-    // LOG IN
-    driver.get(baseUrl + "/login");
-    // DisableAnimations
-    // Sleep
-    // Sleep
-    // Sleep
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.name("loginId"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
+public class ChannelSettingsPubHeaderIT extends DriverBase {
+
+    @Test
+    public void testChannelSettingsPubHeaderIT() throws Exception {        // LOG IN
+        driver.get(baseUrl + "/login");
+        // DisableAnimations
+        // Sleep
+        // Sleep
+        // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.name("loginId"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.name("loginId")).clear();
+        driver.findElement(By.name("loginId")).sendKeys("admin@test.com");
+        driver.findElement(By.name("password")).clear();
+        driver.findElement(By.name("password")).sendKeys("passwd");
+        driver.findElement(By.id("loginButton")).click();
+        // Sleep
+        // Sleep
+        // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Town Square".equals(driver.findElement(By.linkText("Town Square")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        // PUBLIC CHANNEL
+        // Add Public Channel from + icon, without header
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("createPublicChannel"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("createPublicChannel")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("newChannelName"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("newChannelName")).clear();
+        driver.findElement(By.id("newChannelName")).sendKeys("");
+        driver.findElement(By.id("newChannelName")).clear();
+        driver.findElement(By.id("newChannelName")).sendKeys("headertest");
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("URL: /headertest (Edit)".equals(driver.findElement(By.cssSelector("p.input__help.dark")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("form.form-horizontal > div.modal-footer > button.btn.btn-primary"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("form.form-horizontal > div.modal-footer > button.btn.btn-primary")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Beginning of headertest".equals(driver.findElement(By.cssSelector("h2.channel-intro__title > span")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (driver.findElement(By.cssSelector("p.channel-intro__content > span > span")).getText().matches("^This is the start of the headertest channel, created by admin[\\s\\S]*$")) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Invite others to this channel".equals(driver.findElement(By.xpath("//div[@id='channelIntro']/button")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("headertest".equals(driver.findElement(By.cssSelector("strong.heading")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("strong.heading")).click();
+        // View channel info without header
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("li#channelViewInfo.MenuItem button.style--none"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("li#channelViewInfo.MenuItem button.style--none")).click();
+        // Sleep
+        // Sleep
+        // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("headertest".equals(driver.findElement(By.cssSelector("#channelInfoModalLabel > strong")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        try {
+            assertThat("Header:", is(not(driver.findElement(By.cssSelector("div.info__label > span")).getText())));
+        } catch (Error e) {
+            verificationErrors.append(e.toString());
+        }
+        driver.findElement(By.cssSelector("div.about-modal.modal-dialog > div.modal-content > div.modal-header > button.close")).click();
+        driver.navigate().refresh();
+        // Add header using `Add a channel description` placeholder link
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Add a channel description".equals(driver.findElement(By.cssSelector("div.channel-header__description.light > button.style--none")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("div.channel-header__description.light > button.style--none")).click();
+        // Sleep
+        // Sleep
+        // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Edit the text appearing next to the channel name in the channel header.".equals(driver.findElement(By.cssSelector("div.modal-body.edit-modal-body > div > p > span")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        // Sleep
+        // Sleep
+        // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("edit_textbox"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        // Verify header 1024 character limit
+        driver.findElement(By.id("edit_textbox")).sendKeys("https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&");
+        // Sleep
+        // Sleep
+        // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&".equals(driver.findElement(By.id("edit_textbox")).getAttribute("value"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary.save-button"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("button.btn.btn-primary.save-button")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("This channel header is too long, please enter a shorter one".equals(driver.findElement(By.cssSelector("label.control-label")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        // Sleep
+        // Sleep
+        // Sleep
+        driver.navigate().refresh();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("headertest".equals(driver.findElement(By.cssSelector("strong.heading")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        // Add header using `Set a Header` link
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.xpath("//div[@id='channelIntro']/button[2]"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.xpath("//div[@id='channelIntro']/button[2]")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("edit_textbox"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("edit_textbox")).sendKeys("*Header");
+        // Sleep
+        // Sleep
+        // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary.save-button"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("button.btn.btn-primary.save-button")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (driver.findElement(By.cssSelector("p.markdown__paragraph-inline")).getText().matches("^[\\s\\S]*Header$")) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        // Sleep
+        // Sleep
+        // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("channelHeaderDropdownButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderDropdownButton")).click();
+        // Verify channel info with header
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("li#channelViewInfo.MenuItem button.style--none"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("li#channelViewInfo.MenuItem button.style--none")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("headertest".equals(driver.findElement(By.cssSelector("#channelInfoModalLabel > strong")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (driver.findElement(By.cssSelector("div.info__value > p")).getText().matches("^[\\s\\S]*Header$")) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("div.about-modal.modal-dialog > div.modal-content > div.modal-header > button.close")).click();
+        driver.navigate().refresh();
+        // Edit header, use markdown
+        // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("channelHeaderDropdownButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderDropdownButton")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("#channelEditHeader > button.style--none"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("#channelEditHeader > button.style--none")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("edit_textbox"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("edit_textbox")).sendKeys("* " + Keys.SHIFT + Keys.ENTER);
+        // Sleep
+        driver.findElement(By.id("edit_textbox")).sendKeys("- Item 1 " + Keys.SHIFT + Keys.ENTER);
+        // Sleep
+        driver.findElement(By.id("edit_textbox")).sendKeys("- [Item 2 is a link](http://google.com)");
+        // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary.save-button"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("button.btn.btn-primary.save-button")).click();
+        // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Header".equals(driver.findElement(By.cssSelector("em")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("em")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Header".equals(driver.findElement(By.cssSelector("div.popover-content > p > em")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Item 1".equals(driver.findElement(By.cssSelector("div.popover-content > ul > li")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Item 2 is a link".equals(driver.findElement(By.xpath("(//a[contains(text(),'Item 2 is a link')])[3]")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.linkText("Item 2 is a link"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("em")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("channelHeaderDropdownButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderDropdownButton")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("li#channelViewInfo.MenuItem button.style--none"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("li#channelViewInfo.MenuItem button.style--none")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("headertest".equals(driver.findElement(By.cssSelector("#channelInfoModalLabel > strong")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Header".equals(driver.findElement(By.cssSelector("div.info__value > p > em")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Item 1".equals(driver.findElement(By.cssSelector("div.info__value > ul > li")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("Item 2 is a link".equals(driver.findElement(By.xpath("(//a[contains(text(),'Item 2 is a link')])[3]")).getText())) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("div.about-modal.modal-dialog > div.modal-content > div.modal-header > button.close")).click();
+        // LOG OUT
+        // Sleep
+        // Sleep
+        // Sleep
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.id("sidebarHeaderDropdownButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("#logout > button.style--none"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("#logout > button.style--none")).click();
     }
-
-    driver.findElement(By.name("loginId")).clear();
-    driver.findElement(By.name("loginId")).sendKeys("admin@test.com");
-    driver.findElement(By.name("password")).clear();
-    driver.findElement(By.name("password")).sendKeys("passwd");
-    driver.findElement(By.id("loginButton")).click();
-    // Sleep
-    // Sleep
-    // Sleep
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("Town Square".equals(driver.findElement(By.linkText("Town Square")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    // PUBLIC CHANNEL
-    // Add Public Channel from + icon, without header
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.id("createPublicChannel"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.id("createPublicChannel")).click();
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.id("newChannelName"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.id("newChannelName")).clear();
-    driver.findElement(By.id("newChannelName")).sendKeys("");
-    driver.findElement(By.id("newChannelName")).clear();
-    driver.findElement(By.id("newChannelName")).sendKeys("headertest");
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("URL: /headertest (Edit)".equals(driver.findElement(By.cssSelector("p.input__help.dark")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.cssSelector("form.form-horizontal > div.modal-footer > button.btn.btn-primary"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.cssSelector("form.form-horizontal > div.modal-footer > button.btn.btn-primary")).click();
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("Beginning of headertest".equals(driver.findElement(By.cssSelector("h2.channel-intro__title > span")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (driver.findElement(By.cssSelector("p.channel-intro__content > span > span")).getText().matches("^This is the start of the headertest channel, created by admin[\\s\\S]*$")) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("Invite others to this channel".equals(driver.findElement(By.xpath("//div[@id='channelIntro']/button")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("headertest".equals(driver.findElement(By.cssSelector("strong.heading")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.cssSelector("strong.heading")).click();
-    // View channel info without header
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.cssSelector("li#channelViewInfo.MenuItem button.style--none"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.cssSelector("li#channelViewInfo.MenuItem button.style--none")).click();
-    // Sleep
-    // Sleep
-    // Sleep
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("headertest".equals(driver.findElement(By.cssSelector("#channelInfoModalLabel > strong")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    try {
-      assertThat("Header:", is(not(driver.findElement(By.cssSelector("div.info__label > span")).getText())));
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
-    driver.findElement(By.cssSelector("div.about-modal.modal-dialog > div.modal-content > div.modal-header > button.close")).click();
-    driver.navigate().refresh();
-    // Add header using `Add a channel description` placeholder link
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("Add a channel description".equals(driver.findElement(By.cssSelector("div.channel-header__description.light > button.style--none")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.cssSelector("div.channel-header__description.light > button.style--none")).click();
-    // Sleep
-    // Sleep
-    // Sleep
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("Edit the text appearing next to the channel name in the channel header.".equals(driver.findElement(By.cssSelector("div.modal-body.edit-modal-body > div > p > span")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    // Sleep
-    // Sleep
-    // Sleep
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.id("edit_textbox"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    // Verify header 1024 character limit
-    driver.findElement(By.id("edit_textbox")).sendKeys("https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&");
-    // Sleep
-    // Sleep
-    // Sleep
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&".equals(driver.findElement(By.id("edit_textbox")).getAttribute("value"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary.save-button"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.cssSelector("button.btn.btn-primary.save-button")).click();
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("This channel header is too long, please enter a shorter one".equals(driver.findElement(By.cssSelector("label.control-label")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    // Sleep
-    // Sleep
-    // Sleep
-    driver.navigate().refresh();
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("headertest".equals(driver.findElement(By.cssSelector("strong.heading")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    // Add header using `Set a Header` link
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.xpath("//div[@id='channelIntro']/button[2]"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.xpath("//div[@id='channelIntro']/button[2]")).click();
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.id("edit_textbox"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.id("edit_textbox")).sendKeys("*Header");
-    // Sleep
-    // Sleep
-    // Sleep
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary.save-button"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.cssSelector("button.btn.btn-primary.save-button")).click();
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (driver.findElement(By.cssSelector("p.markdown__paragraph-inline")).getText().matches("^[\\s\\S]*Header$")) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    // Sleep
-    // Sleep
-    // Sleep
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.id("channelHeaderDropdownButton"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.id("channelHeaderDropdownButton")).click();
-    // Verify channel info with header
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.cssSelector("li#channelViewInfo.MenuItem button.style--none"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.cssSelector("li#channelViewInfo.MenuItem button.style--none")).click();
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("headertest".equals(driver.findElement(By.cssSelector("#channelInfoModalLabel > strong")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (driver.findElement(By.cssSelector("div.info__value > p")).getText().matches("^[\\s\\S]*Header$")) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.cssSelector("div.about-modal.modal-dialog > div.modal-content > div.modal-header > button.close")).click();
-    driver.navigate().refresh();
-    // Edit header, use markdown
-    // Sleep
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.id("channelHeaderDropdownButton"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.id("channelHeaderDropdownButton")).click();
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.cssSelector("#channelEditHeader > button.style--none"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.cssSelector("#channelEditHeader > button.style--none")).click();
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.id("edit_textbox"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.id("edit_textbox")).sendKeys("* " + Keys.SHIFT + Keys.ENTER);
-    // Sleep
-    driver.findElement(By.id("edit_textbox")).sendKeys("- Item 1 " + Keys.SHIFT + Keys.ENTER);
-    // Sleep
-    driver.findElement(By.id("edit_textbox")).sendKeys("- [Item 2 is a link](http://google.com)");
-    // Sleep
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.cssSelector("button.btn.btn-primary.save-button"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.cssSelector("button.btn.btn-primary.save-button")).click();
-    // Sleep
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("Header".equals(driver.findElement(By.cssSelector("em")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.cssSelector("em")).click();
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("Header".equals(driver.findElement(By.cssSelector("div.popover-content > p > em")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("Item 1".equals(driver.findElement(By.cssSelector("div.popover-content > ul > li")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("Item 2 is a link".equals(driver.findElement(By.xpath("(//a[contains(text(),'Item 2 is a link')])[3]")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.linkText("Item 2 is a link"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.cssSelector("em")).click();
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.id("channelHeaderDropdownButton"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.id("channelHeaderDropdownButton")).click();
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.cssSelector("li#channelViewInfo.MenuItem button.style--none"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.cssSelector("li#channelViewInfo.MenuItem button.style--none")).click();
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("headertest".equals(driver.findElement(By.cssSelector("#channelInfoModalLabel > strong")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("Header".equals(driver.findElement(By.cssSelector("div.info__value > p > em")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("Item 1".equals(driver.findElement(By.cssSelector("div.info__value > ul > li")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if ("Item 2 is a link".equals(driver.findElement(By.xpath("(//a[contains(text(),'Item 2 is a link')])[3]")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.cssSelector("div.about-modal.modal-dialog > div.modal-content > div.modal-header > button.close")).click();
-    // LOG OUT
-    // Sleep
-    // Sleep
-    // Sleep
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.id("sidebarHeaderDropdownButton"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.id("sidebarHeaderDropdownButton")).click();
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.cssSelector("#logout > button.style--none"))) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-
-    driver.findElement(By.cssSelector("#logout > button.style--none")).click();
-  }
-
-  @After
-  public void tearDown() throws Exception {
-    driver.quit();
-    String verificationErrorString = verificationErrors.toString();
-    if (!"".equals(verificationErrorString)) {
-      fail(verificationErrorString);
-    }
-  }
-
-  private boolean isElementPresent(By by) {
-    try {
-      driver.findElement(by);
-      return true;
-    } catch (NoSuchElementException e) {
-      return false;
-    }
-  }
-
-  private boolean isAlertPresent() {
-    try {
-      driver.switchTo().alert();
-      return true;
-    } catch (NoAlertPresentException e) {
-      return false;
-    }
-  }
-
-  private String closeAlertAndGetItsText() {
-    try {
-      Alert alert = driver.switchTo().alert();
-      String alertText = alert.getText();
-      if (acceptNextAlert) {
-        alert.accept();
-      } else {
-        alert.dismiss();
-      }
-      return alertText;
-    } finally {
-      acceptNextAlert = true;
-    }
-  }
 }
