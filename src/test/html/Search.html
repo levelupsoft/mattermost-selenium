@@ -65,17 +65,6 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Sleep-->
-<!--Open flagged posts RHS to ensure search box is expanded (in case of narrow window)-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=button#channelHeaderFlagButton.channel-header__icon.icon--hidden.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button#channelHeaderFlagButton.channel-header__icon.icon--hidden.style--none</td>
-	<td></td>
-</tr>
 <!--Search: Basic, markdown-->
 <tr>
 	<td>sendKeys</td>
@@ -89,12 +78,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>hello${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -249,30 +238,24 @@
 <!--Verify search results-->
 <!--Should probaby split this out into separate posts, since the highlight verification isn't really working right-->
 <!--Otherwise it's not independently verifying that various results are returned-->
-<!--Open flagged posts RHS to ensure search box is expanded (in case of narrow window)-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderFlagButton</td>
+	<td>refreshAndWait</td>
 	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderFlagButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>hello world${KEY_ENTER}</td>
 </tr>
 <!--Highlight verification no longer working in the build;-->
@@ -293,25 +276,14 @@
 	<td></td>
 	<td></td>
 </tr>
-<!--Open flagged posts RHS to ensure search box is expanded (in case of narrow window)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>crème fraîche${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -324,30 +296,19 @@
 	<td></td>
 	<td></td>
 </tr>
-<!--Open flagged posts RHS to ensure search box is expanded (in case of narrow window)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>您好*${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -360,31 +321,20 @@
 	<td></td>
 	<td></td>
 </tr>
-<!--Open flagged posts RHS to ensure search box is expanded (in case of narrow window)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <!--Wildcard-->
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>hell*${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -397,30 +347,19 @@
 	<td></td>
 	<td></td>
 </tr>
-<!--Open flagged posts RHS to ensure search box is expanded (in case of narrow window)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>&quot;hell&quot;*${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -433,30 +372,19 @@
 	<td></td>
 	<td></td>
 </tr>
-<!--Open flagged posts RHS to ensure search box is expanded (in case of narrow window)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>hello${KEY_ENTER}</td>
 </tr>
 <!--Jump to permalink view-->
@@ -574,25 +502,14 @@
 	<td>1000</td>
 	<td></td>
 </tr>
-<!--Open flagged posts RHS to ensure search box is expanded (in case of narrow window)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -603,7 +520,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>in:town</td>
 </tr>
 <!--Sleep-->
@@ -630,7 +547,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td> </td>
 </tr>
 <!--Sleep-->
@@ -641,7 +558,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>inchannel${KEY_ENTER}</td>
 </tr>
 <!--Sleep-->
@@ -956,25 +873,14 @@
 	<td>1000</td>
 	<td></td>
 </tr>
-<!--Open flagged posts RHS to ensure search box is expanded (in case of narrow window)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -985,7 +891,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>from:tes</td>
 </tr>
 <!--Sleep-->
@@ -1012,7 +918,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>fromuser${KEY_ENTER}</td>
 </tr>
 <!--Sleep-->
@@ -1041,25 +947,14 @@
 	<td></td>
 	<td></td>
 </tr>
-<!--Open flagged posts RHS to ensure search box is expanded (in case of narrow window)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -1070,7 +965,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>from:test2</td>
 </tr>
 <!--Sleep-->
@@ -1092,7 +987,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <!--Sleep-->
@@ -1103,7 +998,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td> in:off-topic</td>
 </tr>
 <!--Sleep-->
@@ -1119,7 +1014,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>${KEY_TAB}</td>
 </tr>
 <!--Sleep-->
@@ -1130,7 +1025,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>fromuser${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -1154,25 +1049,14 @@
 	<td>1000</td>
 	<td></td>
 </tr>
-<!--Open flagged posts RHS to ensure search box is expanded (in case of narrow window)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -1183,7 +1067,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>from:</td>
 </tr>
 <!--Sleep-->
@@ -1194,32 +1078,32 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>${KEY_DOWN}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>${KEY_DOWN}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>${KEY_DOWN}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>${KEY_UP}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>${KEY_DOWN}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>${KEY_DOWN}</td>
 </tr>
 <tr>
@@ -1235,7 +1119,7 @@
 </tr>
 <tr>
 	<td>verifyValue</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>exact:from:</td>
 </tr>
 <!--At-mention search-->
@@ -1938,17 +1822,6 @@
 	<td></td>
 </tr>
 <!--at-username link opens profile popover-->
-<!--Open flagged posts RHS to ensure search box is expanded (in case of narrow window)-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
 <!--Open in RHS so Se can find clean link-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -2007,25 +1880,14 @@
 	<td></td>
 	<td></td>
 </tr>
-<!--Open flagged posts RHS to ensure search box is expanded (in case of narrow window)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -2036,7 +1898,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>direct${KEY_ENTER}</td>
 </tr>
 <!--Sleep-->
@@ -2057,29 +1919,23 @@
 </tr>
 <!--Sleep-->
 <tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
 	<td>pause</td>
 	<td>1000</td>
 	<td></td>
 </tr>
-<!--Open flagged posts RHS to ensure search box is expanded (in case of narrow window)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderFlagButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -2090,7 +1946,7 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
+	<td>id=searchBox</td>
 	<td>test3${KEY_ENTER}</td>
 </tr>
 <!--Sleep-->
