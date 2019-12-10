@@ -54,7 +54,21 @@ public class SearchIT extends DriverBase {
 
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("searchBox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelHeaderMentionButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderMentionButton")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("span.sidebar__search-clear-x"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("span.sidebar__search-clear-x")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("".equals(driver.findElement(By.id("searchBox")).getAttribute("value"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -188,7 +202,21 @@ public class SearchIT extends DriverBase {
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("searchBox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelHeaderMentionButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderMentionButton")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("span.sidebar__search-clear-x"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("span.sidebar__search-clear-x")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("".equals(driver.findElement(By.id("searchBox")).getAttribute("value"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -215,7 +243,21 @@ public class SearchIT extends DriverBase {
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("searchBox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelHeaderMentionButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderMentionButton")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("span.sidebar__search-clear-x"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("span.sidebar__search-clear-x")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("".equals(driver.findElement(By.id("searchBox")).getAttribute("value"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -229,7 +271,21 @@ public class SearchIT extends DriverBase {
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("searchBox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelHeaderMentionButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderMentionButton")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("span.sidebar__search-clear-x"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("span.sidebar__search-clear-x")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("".equals(driver.findElement(By.id("searchBox")).getAttribute("value"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -245,7 +301,21 @@ public class SearchIT extends DriverBase {
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("searchBox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelHeaderMentionButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderMentionButton")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("span.sidebar__search-clear-x"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("span.sidebar__search-clear-x")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("".equals(driver.findElement(By.id("searchBox")).getAttribute("value"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -262,7 +332,21 @@ public class SearchIT extends DriverBase {
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("searchBox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelHeaderMentionButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderMentionButton")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("span.sidebar__search-clear-x"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("span.sidebar__search-clear-x")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("".equals(driver.findElement(By.id("searchBox")).getAttribute("value"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -279,7 +363,21 @@ public class SearchIT extends DriverBase {
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("searchBox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelHeaderMentionButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderMentionButton")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("span.sidebar__search-clear-x"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("span.sidebar__search-clear-x")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("".equals(driver.findElement(By.id("searchBox")).getAttribute("value"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -363,7 +461,21 @@ public class SearchIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("searchBox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelHeaderMentionButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderMentionButton")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("span.sidebar__search-clear-x"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("span.sidebar__search-clear-x")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("".equals(driver.findElement(By.id("searchBox")).getAttribute("value"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -584,7 +696,21 @@ public class SearchIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("searchBox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelHeaderMentionButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderMentionButton")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("span.sidebar__search-clear-x"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("span.sidebar__search-clear-x")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("".equals(driver.findElement(By.id("searchBox")).getAttribute("value"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -622,7 +748,21 @@ public class SearchIT extends DriverBase {
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("searchBox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelHeaderMentionButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderMentionButton")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("span.sidebar__search-clear-x"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("span.sidebar__search-clear-x")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("".equals(driver.findElement(By.id("searchBox")).getAttribute("value"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -667,7 +807,21 @@ public class SearchIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("searchBox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelHeaderMentionButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderMentionButton")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("span.sidebar__search-clear-x"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("span.sidebar__search-clear-x")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("".equals(driver.findElement(By.id("searchBox")).getAttribute("value"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -1151,7 +1305,21 @@ public class SearchIT extends DriverBase {
         // Open in RHS so Se can find clean link
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("searchBox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelHeaderMentionButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderMentionButton")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("span.sidebar__search-clear-x"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("span.sidebar__search-clear-x")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("".equals(driver.findElement(By.id("searchBox")).getAttribute("value"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -1198,7 +1366,21 @@ public class SearchIT extends DriverBase {
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("searchBox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelHeaderMentionButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderMentionButton")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("span.sidebar__search-clear-x"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("span.sidebar__search-clear-x")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("".equals(driver.findElement(By.id("searchBox")).getAttribute("value"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -1223,7 +1405,21 @@ public class SearchIT extends DriverBase {
         driver.navigate().refresh();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.id("searchBox"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.id("channelHeaderMentionButton"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.id("channelHeaderMentionButton")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if (isElementPresent(By.cssSelector("span.sidebar__search-clear-x"))) break; } catch (Exception e) {}
+        	Thread.sleep(1000);
+        }
+
+        driver.findElement(By.cssSelector("span.sidebar__search-clear-x")).click();
+        for (int second = 0;; second++) {
+        	if (second >= 60) fail("timeout");
+        	try { if ("".equals(driver.findElement(By.id("searchBox")).getAttribute("value"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
