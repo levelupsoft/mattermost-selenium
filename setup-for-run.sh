@@ -17,7 +17,7 @@ rm -f mattermost.tar.gz
 
 # Regular daily from release branch
 wget https://releases.mattermost.com/mattermost-platform/release-5.19/mattermost-enterprise-linux-amd64.tar.gz
-# mv mattermost-enterprise-linux-amd64.tar.gz mattermost.tar.gz
+mv mattermost-enterprise-linux-amd64.tar.gz mattermost.tar.gz
 
 
 rm -rf ~/mattermost
