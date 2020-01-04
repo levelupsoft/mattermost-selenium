@@ -347,7 +347,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//img[@alt='image placeholder']</td>
+	<td>css=div.attachment__body.attachment__body--opengraph</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.style--none.file-preview__button img.attachment__image.attachment__image--opengraph.large_image</td>
 	<td></td>
 </tr>
 <tr>
@@ -453,11 +458,6 @@
 	<td>waitForText</td>
 	<td>xpath=(//a[contains(text(),'Panasonic Unveils Solar Roof That May Appear on the Tesla Model 3')])[2]</td>
 	<td>Panasonic Unveils Solar Roof That May Appear on the Tesla Model 3</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//img[@alt='image placeholder'])[2]</td>
-	<td></td>
 </tr>
 <!--Long post (with link preview) in RHS-->
 <tr>
@@ -809,7 +809,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>css=span.sidebar--right__title</td>
 	<td>Flagged Posts</td>
 </tr>
 <tr>
@@ -1132,7 +1132,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>css=span.sidebar--right__title</td>
 	<td>Flagged Posts</td>
 </tr>
 <!--Verify reply no longer in RHS-->
@@ -2004,9 +2004,9 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>https://coveralls.io/builds/9818822/source?filename=app%2Faudit.go${KEY_ENTER}</td>
+	<td>https://www.google.com/search/howsearchworks/?fg=1</td>
 </tr>
-<!--*** Visually verify Coveralls.io preview, no image, no change in RHS-->
+<!--*** Visually verify Google info preview, no image, no change in RHS-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=reply_textbox</td>
@@ -2044,7 +2044,7 @@
 	<td>id=post_textbox</td>
 	<td>https://www.yahoo.com/news/panasonic-unveils-solar-roof-may-212400917.html${KEY_ENTER}</td>
 </tr>
-<!--Search results RHS does not display preview-->
+<!--Search results RHS does not display preview (?)-->
 <tr>
 	<td>sendKeys</td>
 	<td>id=searchBox</td>

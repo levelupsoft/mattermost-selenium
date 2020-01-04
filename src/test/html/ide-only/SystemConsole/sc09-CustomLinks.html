@@ -306,6 +306,7 @@
 	<td>css=#about &gt; button.style--none.</td>
 	<td></td>
 </tr>
+<!--About modal Terms and Privacy stay as default, not customized-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.about-modal__links &gt; a &gt; span</td>
@@ -322,14 +323,15 @@
 	<td></td>
 </tr>
 <!--May fail to switch to tab / popup (and close the wrong tab)-->
+<!--*** Should open https://about.mattermost.com/default-terms/-->
 <tr>
-	<td>selectWindow</td>
-	<td>title=Mattermost: Open Source, Self-hosted Slack Alternative</td>
+	<td>selectPopUp</td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
 	<td>verifyLocation</td>
-	<td>https://mattermost.com/</td>
+	<td>https://about.mattermost.com/default-terms/</td>
 	<td></td>
 </tr>
 <tr>
@@ -357,6 +359,7 @@
 	<td>link=Privacy Policy</td>
 	<td></td>
 </tr>
+<!--Should redirect to https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md-->
 <tr>
 	<td>pause</td>
 	<td>2000</td>
@@ -369,7 +372,7 @@
 </tr>
 <tr>
 	<td>waitForLocation</td>
-	<td>https://github.com/mattermost</td>
+	<td>https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md</td>
 	<td></td>
 </tr>
 <tr>
@@ -517,8 +520,18 @@
 </tr>
 <!--May fail to switch to tab / popup-->
 <tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForLocation</td>
 	<td>https://about.mattermost.com/default-terms/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>close</td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -586,8 +599,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>selectWindow</td>
-	<td>title=Terms of Service – Mattermost</td>
+	<td>selectPopUp</td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -907,8 +920,8 @@
 </tr>
 <!--May fail to switch to tab / popup-->
 <tr>
-	<td>selectWindow</td>
-	<td>title=Mattermost: Open Source, Self-hosted Slack Alternative</td>
+	<td>selectPopUp</td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>

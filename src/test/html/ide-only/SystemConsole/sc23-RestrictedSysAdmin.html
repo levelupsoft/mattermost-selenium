@@ -141,80 +141,9 @@
 	<td>id=user_management/permissions/</td>
 	<td>Permissions</td>
 </tr>
-<!--Can turn on LDAP group sync and see that page in User Management section-->
-<tr>
-	<td>waitForElementNotPresent</td>
-	<td>id=user_management/groups</td>
-	<td></td>
-</tr>
+<!--LDAP group sync present (no longer experimental v5.18)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=experimental/features</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=experimental/features</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=ServiceSettings.ExperimentalLdapGroupSynctrue</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=ServiceSettings.ExperimentalLdapGroupSynctrue</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=user_management/groups</td>
-	<td></td>
-</tr>
-<!--Turn LDAP group sync back off-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=ServiceSettings.ExperimentalLdapGroupSyncfalse</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=ServiceSettings.ExperimentalLdapGroupSyncfalse</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementNotPresent</td>
 	<td>id=user_management/groups</td>
 	<td></td>
 </tr>

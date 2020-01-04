@@ -1096,11 +1096,6 @@
 	<td>css=span.all-emoji &gt; p &gt; span</td>
 	<td>exact::customlarge:</td>
 </tr>
-<tr>
-	<td>waitForElementNotPresent</td>
-	<td>css=span.all-emoji p span:contains(':customlarge:')</td>
-	<td></td>
-</tr>
 <!--Continue with test as test8-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1297,16 +1292,6 @@
 </tr>
 <!--Emoji picker - Use section -->
 <!--*** On all sections: Verify section icon bold and others gray-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#emojiPickerButton &gt; svg</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#emojiPickerButton &gt; svg</td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=i.fa.fa-leaf</td>
@@ -1994,6 +1979,21 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.sidebar-item__name &gt; span</td>
+	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.sidebar-item__name &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>6000</td>
 	<td></td>
 </tr>
 <!--*** Visually verify no mention, same emoji with name and alias-->

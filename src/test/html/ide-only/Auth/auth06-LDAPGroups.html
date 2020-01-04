@@ -363,42 +363,6 @@
 	<td>link=System Console</td>
 	<td></td>
 </tr>
-<!--Enable LDAP Groups feature-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=experimental/features</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=experimental/features</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=ServiceSettings.ExperimentalLdapGroupSynctrue</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=ServiceSettings.ExperimentalLdapGroupSynctrue</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
 <!--Set QA team to have a custom permissions scheme (doesn't matter what)-->
 <!--(There was a bug that only affected teams with custom perms scheme)-->
 <tr>
@@ -641,7 +605,7 @@
 <tr>
 	<td>type</td>
 	<td>id=LdapSettings.LdapServer</td>
-	<td>ec2-18-208-183-240.compute-1.amazonaws.com</td>
+	<td>ldap.dev.spinmint.com</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -764,7 +728,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.group-name</td>
+	<td>css=div.group-name &gt; span</td>
 	<td>abc</td>
 </tr>
 <tr>
@@ -940,7 +904,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.group-name</td>
+	<td>css=div.group-row &gt; div.group-name &gt; span</td>
 	<td>engineering</td>
 </tr>
 <tr>
@@ -1141,7 +1105,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.group-name</td>
+	<td>css=div.group-name &gt; span</td>
 	<td>abc</td>
 </tr>
 <tr>
@@ -1299,7 +1263,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.group-name</td>
+	<td>css=div.group-row &gt; div.group-name &gt; span</td>
 	<td>qa</td>
 </tr>
 <tr>
@@ -1581,7 +1545,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.group-name</td>
+	<td>css=div.group-row &gt; div.group-name</td>
 	<td>qa</td>
 </tr>
 <tr>
@@ -1919,7 +1883,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.group-name</td>
+	<td>css=div.group-row &gt; div.group-name &gt; span</td>
 	<td>xyz</td>
 </tr>
 <tr>
@@ -2222,12 +2186,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.group-name:contains('qa')</td>
+	<td>css=div.group-name &gt; span:contains('qa')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.group-name:contains('qa')</td>
+	<td>css=div.group-name &gt; span:contains('qa')</td>
 	<td></td>
 </tr>
 <!--Button is enabled after first selection-->
@@ -2243,23 +2207,23 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.group-name:contains('xyz')</td>
+	<td>css=div.group-name &gt; span:contains('xyz')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.group-name:contains('xyz')</td>
+	<td>css=div.group-name &gt; span:contains('xyz')</td>
 	<td></td>
 </tr>
 <!--qa and xyz are checked (can visually verify highlighted rows)-->
 <tr>
 	<td>waitForText</td>
-	<td>css=div.group.checked &gt; div.group-row &gt; span.group-name</td>
+	<td>css=div.group.checked &gt; div.group-row &gt; div.group-name &gt; span</td>
 	<td>qa</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.group.checked div.group-row span.group-name:contains('xyz')</td>
+	<td>css=div.group.checked &gt; div.group-row &gt; div.group-name &gt; span:contains('xyz')</td>
 	<td></td>
 </tr>
 <!--Still linked-->
@@ -2483,32 +2447,32 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.group-name:contains('abc')</td>
+	<td>css=div.group-name &gt; span:contains('abc')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.group-name:contains('abc')</td>
+	<td>css=div.group-name &gt; span:contains('abc')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.group-name:contains('qa')</td>
+	<td>css=div.group-name &gt; span:contains('qa')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.group-name:contains('qa')</td>
+	<td>css=div.group-name &gt; span:contains('qa')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.group-name:contains('xyz')</td>
+	<td>css=div.group-name &gt; span:contains('xyz')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.group-name:contains('xyz')</td>
+	<td>css=div.group-name &gt; span:contains('xyz')</td>
 	<td></td>
 </tr>
 <tr>
@@ -2870,7 +2834,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.group-name</td>
+	<td>css=div.group-row &gt; div.group-name &gt; span</td>
 	<td>abc</td>
 </tr>
 <tr>
@@ -3183,7 +3147,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.group-name</td>
+	<td>css=div.group-name &gt; span</td>
 	<td>developers</td>
 </tr>
 <tr>
@@ -3285,7 +3249,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.group-name</td>
+	<td>css=div.group-name &gt; span</td>
 	<td>qa</td>
 </tr>
 <tr>
@@ -4325,7 +4289,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.group-name</td>
+	<td>css=div.group-name &gt; span</td>
 	<td>qa</td>
 </tr>
 <tr>
@@ -4421,7 +4385,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.group-name</td>
+	<td>css=div.group-name &gt; span</td>
 	<td>xyz</td>
 </tr>
 <tr>

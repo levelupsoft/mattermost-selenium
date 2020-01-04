@@ -1,5 +1,5 @@
 <!--*** Ensure LDAP is set up on the server you're running this on-->
-<!--*** And doesn't already have test.one as a user (such as rctesting)-->
+<!--*** And doesn't already have test.one as a user (such as rc.test)-->
 <!--********************************************************************-->
 <!--*** Or, configure Se server with test LDAP Jumpcloud (from private repo)-->
 <!--*** Ensure Nickname and Position variables have (any) values-->
@@ -144,12 +144,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[9]/button</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[9]/button</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--LDAP placeholder text does not display-->
@@ -269,12 +269,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[9]/button</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[9]/button</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--Custom placeholder text displays in login field-->
@@ -445,7 +445,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.alert.alert-warning &gt; span</td>
-	<td>AD/LDAP Test Failure: Unable to connect to AD/LDAP server - undefined</td>
+	<td>AD/LDAP Test Failure: Unable to connect to AD/LDAP server</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -572,7 +572,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.alert.alert-warning &gt; span</td>
-	<td>AD/LDAP Test Failure: Unable to connect to AD/LDAP server - undefined</td>
+	<td>AD/LDAP Test Failure: Unable to connect to AD/LDAP server</td>
 </tr>
 <!--Connection Security - Change setting back, test successful-->
 <tr>
@@ -866,7 +866,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
-	<td>Enter a valid email or username and/or password, or sign in using another method.</td>
+	<td>Enter a valid email or username and/or password.</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -1669,12 +1669,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[9]/button</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[9]/button</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--Log LDAP user back in-->
@@ -1997,12 +1997,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[9]/button</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[9]/button</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
 	<td></td>
 </tr>
 <!--Log LDAP user back in-->
@@ -2268,13 +2268,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
-	<td>Logout</td>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
 	<td></td>
 </tr>
 <tr>
