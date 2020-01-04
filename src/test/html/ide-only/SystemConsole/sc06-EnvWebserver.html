@@ -270,7 +270,7 @@
 <tr>
 	<td>waitForAttribute</td>
 	<td>link=System Console@href</td>
-	<td>/admin_console/environment/web_server</td>
+	<td>*/admin_console/environment/web_server</td>
 </tr>
 <!--Send email: Email sends but links are invalid (currently hardcoded to send to linda@mm)-->
 <tr>
@@ -278,7 +278,6 @@
 	<td>8000</td>
 	<td></td>
 </tr>
-<!--Se can't find fields on the new Invite modal :(-->
 <!--Add email address manually where you can receive email-->
 <!--*** Actually, email is not configured on Se server. LM tested manually-->
 <!--*** Linda verifies manually on postgres.test-->
@@ -324,7 +323,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=ServiceSettings.SiteURL</td>
 	<td>https://selenium.test.mattermost.com/</td>
 </tr>
@@ -435,8 +434,9 @@
 	<td>id=ServiceSettings.SiteURL</td>
 	<td></td>
 </tr>
+<!--*** No longer saving text on sendKeys (also tried type and others)... ?-->
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=ServiceSettings.SiteURL</td>
 	<td>https://selenium.test.mattermost.com</td>
 </tr>

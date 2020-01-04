@@ -453,22 +453,16 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
-	<td>Logout</td>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
-	<td>Logout</td>
-</tr>
-<!--LOG IN corey-->
-<tr>
-	<td>openAndWait</td>
-	<td>/login</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
 	<td></td>
 </tr>
-<!--DisableAnimations-->
+<!--LOG IN corey-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.btn.btn-primary</td>
@@ -816,14 +810,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
-	<td>Logout</td>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
-	<td>Logout</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td></td>
 </tr>
 <!--LOG IN corey, verify Team Settings is visible-->
 <!--DisableAnimations-->
@@ -893,14 +887,24 @@
 </tr>
 <!--LOG IN admin-->
 <tr>
-	<td>rollup</td>
-	<td>login</td>
-	<td>username=admin</td>
+	<td>waitForElementPresent</td>
+	<td>name=loginId</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>admin@test.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
 </tr>
 <!--Change Team Admin back to Member-->
 <tr>
@@ -980,12 +984,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[contains(text(),'Make Member')]</td>
+	<td>//button[contains(text(),'Make Team Member')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[contains(text(),'Make Member')]</td>
+	<td>//button[contains(text(),'Make Team Member')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -1401,9 +1405,19 @@
 	<td></td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>login</td>
-	<td>username=corey</td>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>corey</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>

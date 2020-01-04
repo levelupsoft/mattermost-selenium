@@ -76,7 +76,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>css=span.sidebar--right__title</td>
 	<td></td>
 </tr>
 <!--Switch channel in center to make sure verifying in search results in RHS-->
@@ -1344,7 +1344,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.search-channel__name &gt; span</td>
+	<td>css=div.search-channel__name</td>
 	<td>Direct Message (with test)</td>
 </tr>
 <tr>
@@ -1521,12 +1521,12 @@
 <!--The following will fail if testing on a different server without the same setup-->
 <tr>
 	<td>waitForText</td>
-	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>id=switchChannel_test</td>
 	<td>@test - *</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>id=switchChannel_test</td>
 	<td></td>
 </tr>
 <tr>
@@ -1662,7 +1662,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.search-channel__name &gt; span</td>
+	<td>css=div.search-channel__name</td>
 	<td>Direct Message (with test2)</td>
 </tr>
 <tr>
@@ -1787,7 +1787,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.search-channel__name &gt; span</td>
+	<td>css=div.search-channel__name</td>
 	<td>Direct Message (with test2)</td>
 </tr>
 <tr>
@@ -1799,6 +1799,11 @@
 <tr>
 	<td>pause</td>
 	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -1949,9 +1954,9 @@
 </tr>
 <!--Verify without quotes returns result-->
 <tr>
-	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
-	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
@@ -1995,9 +2000,9 @@
 	<td>test15@test.com</td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>css=input.search-bar</td>
-	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
@@ -2056,8 +2061,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>css=input.search-bar</td>
+	<td>refreshAndWait</td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>

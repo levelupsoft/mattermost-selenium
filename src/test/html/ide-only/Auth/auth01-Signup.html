@@ -132,42 +132,6 @@
 	<td>//li[@class='MenuItem']/a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
 	<td></td>
 </tr>
-<!--Error messaging in Email Invite modal-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//*[@id='sendEmailInvite']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//*[@id='sendEmailInvite']/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.modal-body &gt; div &gt; p &gt; span</td>
-	<td>User creation has been disabled for your team. Please ask your Team Administrator for details.</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
-	<td>Cancel</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.modal-footer &gt; button.btn.btn-link</td>
-	<td>Cancel</td>
-</tr>
 <!--Error trying to use slash command /invite_people-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -534,60 +498,33 @@
 	<td></td>
 </tr>
 <!--Send Email Invite fails with wrong domain-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#sendEmailInvite &gt; button.style--none.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#sendEmailInvite &gt; button.style--none.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.form-control</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>css=input.form-control</td>
-	<td>selenium@test.com</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.modal-invite-member.modal-dialog &gt; div.modal-content &gt; div.modal-footer &gt; button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.modal-invite-member.modal-dialog &gt; div.modal-content &gt; div.modal-footer &gt; button.btn.btn-primary</td>
-	<td></td>
-</tr>
+<!--*** Use new invite flow-->
 <tr>
 	<td>waitForText</td>
-	<td>css=label.control-label</td>
-	<td>The following email addresses do not belong to an accepted domain: selenium@test.com. Please contact your System Administrator for details.</td>
+	<td>css=button.style--none.MenuItem__help</td>
+	<td>Invite PeopleAdd or invite people to the team</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.MenuItem__help</td>
+	<td></td>
+</tr>
+<!--*** Manually enter selenium@test.com in Invite People -->
+<!--*** Then press Tab, then Invite Members-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.reason</td>
+	<td>exact:Error: The following email addresses do not belong to an accepted domain: selenium2@test.com. Please contact your System Administrator for details.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.modal-invite-member.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
+	<td>css=button.close-x</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.modal-invite-member.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
+	<td>css=button.close-x</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=confirmModalButton</td>
-	<td>Yes, Discard</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=confirmModalButton</td>
-	<td>Yes, Discard</td>
 </tr>
 <!--Multiple domains specified-->
 <tr>
@@ -837,6 +774,16 @@
 	<td>id=cancelSetting</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
 <!--Get team invite (open team)-->
 <tr>
 	<td>waitForText</td>
@@ -855,23 +802,33 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
-	<td>Get Team Invite Link</td>
+	<td>css=button.style--none.MenuItem__help</td>
+	<td>Invite PeopleAdd or invite people to the team</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td>css=button.style--none.MenuItem__help</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalTextArea</td>
+	<td>css=input.share-link-input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>id=linkModalTextArea</td>
+	<td>css=input.share-link-input</td>
 	<td>restrictinvite</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close-x</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close-x</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -967,13 +924,13 @@
 </tr>
 <!--Get team invite link for closed team-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#ui-automation2TeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=#ui-automation2TeamButton &gt; div.team-btn.</td>
+	<td>UI</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#ui-automation2TeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>css=#ui-automation2TeamButton &gt; div.team-btn.</td>
 	<td></td>
 </tr>
 <tr>
@@ -988,23 +945,33 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
-	<td>Get Team Invite Link</td>
+	<td>css=button.style--none.MenuItem__help</td>
+	<td>Invite PeopleAdd or invite people to the team</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td>css=button.style--none.MenuItem__help</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalTextArea</td>
+	<td>css=input.share-link-input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>id=linkModalTextArea</td>
+	<td>css=input.share-link-input</td>
 	<td>restrictinvite2</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close-x</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close-x</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1277,28 +1244,33 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.MenuItem__help</td>
+	<td>Invite PeopleAdd or invite people to the team</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
+	<td>css=button.style--none.MenuItem__help</td>
 	<td></td>
 </tr>
 <tr>
-	<td>storeText</td>
-	<td>id=linkModalTextArea</td>
+	<td>waitForElementPresent</td>
+	<td>css=input.share-link-input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>css=input.share-link-input</td>
 	<td>invitelink</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=button.close-x</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=button.close-x</td>
 	<td></td>
 </tr>
 <!--LOG OUT admin-->

@@ -855,11 +855,6 @@
 	<td>css=span.btn-close</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
-</tr>
 <!--Messages in archived DM still returned in Search-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -873,7 +868,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.search-channel__name &gt; span</td>
+	<td>css=div.search-channel__name</td>
 	<td>Direct Message (with test2)</td>
 </tr>
 <tr>
@@ -1119,8 +1114,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.mentions__name.suggestion--selected</td>
-	<td>G<br />test2, test3</td>
+	<td>//div[@id='switchChannel_test2, test3']/div</td>
+	<td>G</td>
 </tr>
 <tr>
 	<td>click</td>

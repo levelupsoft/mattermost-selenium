@@ -360,14 +360,9 @@
 </tr>
 <!--/offline in a reply-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.comment-icon &gt; #Layer_1</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.comment-icon &gt; #Layer_1</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_SHIFT}${KEY_UP}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -626,12 +621,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelHeaderDescription &gt; span.status. &gt; #Layer_1 &gt; path.dnd--icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Layer_1 &gt; path.dnd--icon</td>
+	<td>css=#channelHeaderDescription &gt; span.status. &gt; svg &gt; g &gt; path.dnd--icon</td>
 	<td></td>
 </tr>
 <!--/dnd off - Turn off Do Not Disturb-->
@@ -657,7 +647,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelHeaderDescription &gt; span.status. &gt; #Layer_1 &gt; path.online--icon</td>
+	<td>css=#channelHeaderDescription &gt; span.status. &gt; svg &gt; g &gt; path.online--icon</td>
 	<td></td>
 </tr>
 <tr>
@@ -679,7 +669,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=button.style--none.MenuItem__help</td>
-	<td>Do Not DisturbDisables Desktop and Push Notifications</td>
+	<td>Do Not DisturbDisables desktop, email and push notifications</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -693,12 +683,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelHeaderDescription &gt; span.status. &gt; #Layer_1 &gt; path.dnd--icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Layer_1 &gt; path.dnd--icon</td>
+	<td>css=#channelHeaderDescription &gt; span.status. &gt; svg &gt; g &gt; path.dnd--icon</td>
 	<td></td>
 </tr>
 <!--Toggle off DND using /dnd (while already on)-->
@@ -724,7 +709,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelHeaderDescription &gt; span.status. &gt; #Layer_1 &gt; path.online--icon</td>
+	<td>css=#channelHeaderDescription &gt; span.status. &gt; svg &gt; g &gt; path.online--icon</td>
 	<td></td>
 </tr>
 <tr>
@@ -821,7 +806,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=code.hljs</td>
-	<td>exact:1. Not a list item, **not bolded**, http://notalink.com, ~off-topic is not a link to the channel.</td>
+	<td>1. Not a list item, **not bolded**, http://notalink.com, ~off-topic is not a link to the channel.</td>
 </tr>
 <tr>
 	<td>verifyElementNotPresent</td>
