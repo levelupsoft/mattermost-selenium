@@ -65,13 +65,23 @@
 <!--LOG IN admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=loginId</td>
+	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>login</td>
-	<td>username=admin</td>
+	<td>type</td>
+	<td>name=loginId</td>
+	<td>admin@test.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
 </tr>
 <!--Open System Console-->
 <tr>
@@ -303,14 +313,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
-	<td>Logout</td>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
-	<td>Logout</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td></td>
 </tr>
 <!--LOG IN test2 using username (no verification required)-->
 <tr>
@@ -699,13 +709,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
-	<td>Logout</td>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
+	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
 	<td></td>
 </tr>
 </tbody></table>

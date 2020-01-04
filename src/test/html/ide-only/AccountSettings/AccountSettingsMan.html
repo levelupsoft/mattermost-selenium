@@ -3173,12 +3173,17 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=code.hljs</td>
-	<td>code1 code2, then CTRL+ENTER closes the code block and sends the post <br />code1 code2, then CTRL+ENTER closes the code block and sends the post</td>
+	<td>code1 code2, then CTRL+ENTER closes the code block and sends the post<br />code1 code2, then CTRL+ENTER closes the code block and sends the post</td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>id=searchBox</td>
-	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.flex-child.search-bar__container &gt; div.sidebar-right__table &gt; #searchFormContainer &gt; form.search__form &gt; #searchClearButton &gt; span.sidebar__search-clear-x</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.flex-child.search-bar__container &gt; div.sidebar-right__table &gt; #searchFormContainer &gt; form.search__form &gt; #searchClearButton &gt; span.sidebar__search-clear-x</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3245,7 +3250,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=code.hljs</td>
-	<td>codeA codeB, then close the code block with a line of backticks and SHIFT+ENTER <br />codeA codeB, then close the code block with a line of backticks and SHIFT+ENTER</td>
+	<td>codeA codeB, then close the code block with a line of backticks and SHIFT+ENTER<br />codeA codeB, then close the code block with a line of backticks and SHIFT+ENTER</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3253,9 +3258,14 @@
 	<td>And follow with another line of plain text after the code block.</td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>id=searchBox</td>
-	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.flex-child.search-bar__container &gt; div.sidebar-right__table &gt; #searchFormContainer &gt; form.search__form &gt; #searchClearButton &gt; span.sidebar__search-clear-x</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.flex-child.search-bar__container &gt; div.sidebar-right__table &gt; #searchFormContainer &gt; form.search__form &gt; #searchClearButton &gt; span.sidebar__search-clear-x</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3321,18 +3331,23 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='search-items-container']/div/div[2]/div[2]/div[2]/div[2]/div/div/div/div/div[2]/code</td>
-	<td>codeblock2 <br />codeblock2</td>
+	<td>css=div.search-item-snippet.post__body</td>
+	<td>codeblock1<br />codeblock2<br />codeblock2</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.post-code.post-code--wrap</td>
+	<td>css=code.hljs</td>
 	<td>codeblock1</td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>id=searchBox</td>
-	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.flex-child.search-bar__container &gt; div.sidebar-right__table &gt; #searchFormContainer &gt; form.search__form &gt; #searchClearButton &gt; span.sidebar__search-clear-x</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.flex-child.search-bar__container &gt; div.sidebar-right__table &gt; #searchFormContainer &gt; form.search__form &gt; #searchClearButton &gt; span.sidebar__search-clear-x</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3413,8 +3428,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=code.hljs</td>
-	<td>How about a codeblockreply?</td>
+	<td>css=code</td>
+	<td>exact:How about a codeblockreply?</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3531,7 +3546,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.channel-intro__title &gt; span</td>
+	<td>css=h2.channel-intro__title &gt; span</td>
 	<td>Beginning of Join</td>
 </tr>
 <!--Expected for message to show even if join/leave turned off, if -->
@@ -4698,11 +4713,6 @@
 	<td>click</td>
 	<td>css=#previewLink &gt; span</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>xpath=(//div[@id='postContent']/div[2]/div)[27]</td>
-	<td>admin<br />7:11 PM</td>
 </tr>
 <tr>
 	<td>waitForText</td>

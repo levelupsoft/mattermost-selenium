@@ -464,7 +464,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.alert.alert-warning &gt; span</td>
-	<td>Connection unsuccessful: S3 Bucket is required - undefined</td>
+	<td>Connection unsuccessful: S3 Bucket is required</td>
 </tr>
 <!--Can save values-->
 <tr>
@@ -506,7 +506,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.alert.alert-warning &gt; span</td>
-	<td>Connection unsuccessful: Error checking if bucket exists. - undefined</td>
+	<td>Connection unsuccessful: Error checking if bucket exists.</td>
 </tr>
 <tr>
 	<td>refreshAndWait</td>
@@ -656,7 +656,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
-	<td>Invalid RemoteImageProxyOptions for atmos/camo. Must be set to your shared key.</td>
+	<td>Invalid RemoteImageProxyURL for atmos/camo. Must be set to your shared key.</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -787,12 +787,12 @@
 	<td>3333</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=EmailSettings.SMTPServer</td>
 	<td>${server}</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=EmailSettings.SMTPPort</td>
 	<td>${port}</td>
 </tr>
@@ -1917,12 +1917,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
+	<td>//button [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
+	<td>//button [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -2510,12 +2510,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
+	<td>//button [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
+	<td>//button [contains(text(),'Logout')]</td>
 	<td></td>
 </tr>
 </tbody></table>
