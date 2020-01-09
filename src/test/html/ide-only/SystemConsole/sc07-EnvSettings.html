@@ -183,17 +183,17 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=maxIdleConns</td>
 	<td>${idle}</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=maxOpenConns</td>
 	<td>${open}</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=queryTimeout</td>
 	<td>${query}</td>
 </tr>
@@ -378,8 +378,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=connectionUrl</td>
+	<td>sendKeys</td>
+	<td>css=input#connectionUrl.form-control</td>
 	<td>invalid</td>
 </tr>
 <tr>
@@ -656,7 +656,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
-	<td>Invalid RemoteImageProxyURL for atmos/camo. Must be set to your shared key.</td>
+	<td>Invalid RemoteImageProxyOptions for atmos/camo. Must be set to your shared key.</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -2246,7 +2246,7 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
-<!--/post shouldn't work-->
+<!--/test shouldn't work-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
@@ -2365,7 +2365,7 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
-<!--/post should work-->
+<!--/test should work-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
