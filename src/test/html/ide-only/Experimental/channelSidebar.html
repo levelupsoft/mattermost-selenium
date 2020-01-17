@@ -3486,16 +3486,10 @@
 	<td></td>
 </tr>
 <tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>link=*papa, papa-2</td>
 	<td></td>
 </tr>
-<!--Linda this click step will break a test further down that expects the GM to be unread-->
 <tr>
 	<td>waitForText</td>
 	<td>id=channelHeaderDropdownButton</td>
@@ -3817,7 +3811,6 @@
 	<td></td>
 </tr>
 <!--Verify type, recency, unreads (mentions at top), no favorites This -->
-<!--This step fails because of a step above where the "papa, papa-2" gm is opened - no step exists to post in the GM as another user to set it unrtead again. Note that trying to fix it now will cause it to break the recency test locator below where channels are checked by recency with favorites grouped seperately-->
 <tr>
 	<td>waitForTextPresent</td>
 	<td>UNREADS*NNN*Quick*alpha*AAA*Channel*papa-2*5number*BBB*papa, papa-2*channel test*Quick-test*CCC*rename*[symbol]*PUBLIC CHANNELS*ZZZ*Off-Topic*Town Square*PRIVATE CHANNELS*DIRECT MESSAGES</td>
