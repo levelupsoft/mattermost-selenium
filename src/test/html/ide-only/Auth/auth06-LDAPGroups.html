@@ -603,7 +603,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.LdapServer</td>
 	<td>ldap.dev.spinmint.com</td>
 </tr>
@@ -613,7 +613,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.BaseDN</td>
 	<td>dc=mm,dc=test,dc=com</td>
 </tr>
@@ -623,7 +623,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.BindUsername</td>
 	<td>cn=admin,dc=mm,dc=test,dc=com</td>
 </tr>
@@ -633,53 +633,63 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.BindPassword</td>
 	<td>mostest</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.GroupDisplayNameAttribute</td>
 	<td>cn</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.GroupIdAttribute</td>
 	<td>cn</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.FirstNameAttribute</td>
 	<td>cn</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.LastNameAttribute</td>
 	<td>sn</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.EmailAttribute</td>
 	<td>mail</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.UsernameAttribute</td>
 	<td>mail</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.IdAttribute</td>
 	<td>mail</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.LoginIdAttribute</td>
 	<td>uid</td>
 </tr>
 <tr>
 	<td>waitForNotValue</td>
 	<td>id=LdapSettings.LoginIdAttribute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>16000</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -724,7 +734,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.admin-console__header</td>
-	<td>Groups</td>
+	<td>Groups (Beta)</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1101,7 +1111,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.admin-console__header</td>
-	<td>Groups</td>
+	<td>Groups (Beta)</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3354,9 +3364,24 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.share-link-input</td>
+	<td></td>
+</tr>
+<tr>
 	<td>storeValue</td>
-	<td>id=linkModalTextArea</td>
+	<td>css=input.share-link-input</td>
 	<td>preconstrainedinvite</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close-x</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close-x</td>
+	<td></td>
 </tr>
 <tr>
 	<td>rollup</td>
