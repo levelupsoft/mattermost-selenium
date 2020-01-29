@@ -114,7 +114,7 @@ public class AccountSettingsDisplayIT extends DriverBase {
         driver.findElement(By.id("clockFormatB")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Select how you prefer time displayed.".equals(driver.findElement(By.xpath("//li/div/div[3]/span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Clock Display12-hour clock (example: 4:00 PM)\n\n24-hour clock (example: 16:00)\n\n\nSelect how you prefer time displayed.\n\n\nSaveCancel".equals(driver.findElement(By.cssSelector("div.col-sm-9.col-sm-offset-3")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -201,7 +201,7 @@ public class AccountSettingsDisplayIT extends DriverBase {
         driver.findElement(By.id("collapseEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Set whether previews of image links and image attachment thumbnails show as expanded or collapsed by default. This setting can also be controlled using the slash commands /expand and /collapse.".equals(driver.findElement(By.xpath("//li/div/div[3]/span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Default appearance of image previewsExpanded\n\nCollapsed\n\n\nSet whether previews of image links and image attachment thumbnails show as expanded or collapsed by default. This setting can also be controlled using the slash commands /expand and /collapse.\n\n\nSaveCancel".equals(driver.findElement(By.cssSelector("div.col-sm-9.col-sm-offset-3")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -262,7 +262,7 @@ public class AccountSettingsDisplayIT extends DriverBase {
         driver.findElement(By.id("message_displayEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Select how messages in a channel should be displayed.".equals(driver.findElement(By.xpath("//li/div/div[3]/span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Message DisplayStandard: Easy to scan and read.\n\nCompact: Fit as many messages on the screen as we can.\n\n\nSelect how messages in a channel should be displayed.\n\n\nSaveCancel".equals(driver.findElement(By.cssSelector("div.col-sm-9.col-sm-offset-3")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -346,7 +346,7 @@ public class AccountSettingsDisplayIT extends DriverBase {
         driver.findElement(By.id("channel_display_modeFormatB")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Select the width of the center channel.".equals(driver.findElement(By.xpath("//li/div/div[3]/span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Channel DisplayFull width\n\nFixed width, centered\n\n\nSelect the width of the center channel.\n\n\nSaveCancel".equals(driver.findElement(By.cssSelector("div.col-sm-9.col-sm-offset-3")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
