@@ -119,6 +119,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>css=#settingTitle &gt; span</td>
+	<td>Clock Display</td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>id=clockFormatA</td>
 	<td></td>
@@ -134,9 +139,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.col-sm-9.col-sm-offset-3</td>
-	<td>Clock Display12-hour clock (example: 4:00 PM)<br /><br />24-hour clock (example: 16:00)<br /><br /><br />Select how you prefer time displayed.<br /><br /><br />SaveCancel</td>
+	<td>waitForValue</td>
+	<td>css=#clockFormatB</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -241,8 +246,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.col-sm-9.col-sm-offset-3</td>
-	<td>Default appearance of image previewsExpanded<br /><br />Collapsed<br /><br /><br />Set whether previews of image links and image attachment thumbnails show as expanded or collapsed by default. This setting can also be controlled using the slash commands /expand and /collapse.<br /><br /><br />SaveCancel</td>
+	<td>css=#settingTitle &gt; span</td>
+	<td>Default appearance of image previews</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -317,8 +322,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.col-sm-9.col-sm-offset-3</td>
-	<td>Message DisplayStandard: Easy to scan and read.<br /><br />Compact: Fit as many messages on the screen as we can.<br /><br /><br />Select how messages in a channel should be displayed.<br /><br /><br />SaveCancel</td>
+	<td>css=#settingTitle &gt; span</td>
+	<td>Message Display</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -428,9 +433,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.col-sm-9.col-sm-offset-3</td>
-	<td>Channel DisplayFull width<br /><br />Fixed width, centered<br /><br /><br />Select the width of the center channel.<br /><br /><br />SaveCancel</td>
+	<td>waitForValue</td>
+	<td>css=#channel_display_modeFormatB</td>
+	<td>on</td>
 </tr>
 <tr>
 	<td>click</td>
