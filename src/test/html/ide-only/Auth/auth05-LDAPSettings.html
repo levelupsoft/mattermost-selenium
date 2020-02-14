@@ -144,12 +144,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--LDAP placeholder text does not display-->
@@ -269,12 +269,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--Custom placeholder text displays in login field-->
@@ -489,7 +489,7 @@
 	<td>userfilter</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.UserFilter</td>
 	<td>(&amp;(invalid-objectCategory=Person)(!(UserAccountControl:)</td>
 </tr>
@@ -642,7 +642,7 @@
 	<td>AD/LDAP field &quot;Username Attribute&quot; is required.</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.UsernameAttribute</td>
 	<td>${ldapusername}</td>
 </tr>
@@ -719,7 +719,7 @@
 	<td>syncinterval</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.SyncIntervalMinutes</td>
 	<td>5</td>
 </tr>
@@ -775,7 +775,7 @@
 	<td>loginidatt</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.LoginIdAttribute</td>
 	<td>domain\username</td>
 </tr>
@@ -812,12 +812,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--Attempt to create new account using LDAP (should fail)-->
@@ -936,7 +936,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.LoginIdAttribute</td>
 	<td>${loginidatt}</td>
 </tr>
@@ -973,12 +973,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--Create new account using LDAP-->
@@ -1092,12 +1092,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=a.btn.btn-primary &gt; span</td>
-	<td>Switch to using email and password</td>
+	<td>Switch to Using Email and Password</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=a.btn.btn-primary &gt; span</td>
-	<td>Switch to using email and password</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1310,12 +1310,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Switch to using AD/LDAP</td>
+	<td>link=Switch to Using AD/LDAP</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Switch to using AD/LDAP</td>
+	<td>link=Switch to Using AD/LDAP</td>
 	<td></td>
 </tr>
 <tr>
@@ -1669,12 +1669,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--Log LDAP user back in-->
@@ -1929,12 +1929,12 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.FirstNameAttribute</td>
 	<td>${givennameldap}</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.LastNameAttribute</td>
 	<td>${lastnameldap}</td>
 </tr>
@@ -1944,7 +1944,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.NicknameAttribute</td>
 	<td>${nicknameldap}</td>
 </tr>
@@ -1997,12 +1997,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--Log LDAP user back in-->
@@ -2269,12 +2269,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
@@ -2492,12 +2492,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#signup &gt; span</td>
-	<td>Create one now</td>
+	<td>Create one now.</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=#signup &gt; span</td>
-	<td>Create one now</td>
+	<td></td>
 </tr>
 <!--Note: For now, this just appears to reload the login page. This is expected;-->
 <!--there are efforts underway to improve the LDAP flow but for now it just-->
@@ -2537,7 +2537,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=tutorialIntroContent</td>
-	<td>Welcome to:MattermostYour team communication all in one place, instantly searchable and available anywhere.<br />Keep your team connected to help them achieve what matters most.<br /><br /><br />NextSkip tutorial</td>
+	<td>Welcome to:MattermostYour team communication all in one place, instantly searchable and available anywhere.<br />Keep your team connected to help them achieve what matters most.<br /><br /><br />NextSkip Tutorial</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

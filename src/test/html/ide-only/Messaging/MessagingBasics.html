@@ -575,7 +575,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=li[value=&quot;1&quot;]</td>
+	<td>css=ol.markdown__list &gt; li</td>
 	<td>One</td>
 </tr>
 <tr>
@@ -1557,11 +1557,6 @@
 	<td>css=span.badge</td>
 	<td>1</td>
 </tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>css=p.markdown__paragraph-inline</td>
-	<td></td>
-</tr>
 <!--Other user sees (edited)-->
 <tr>
 	<td>waitForTextPresent</td>
@@ -1877,9 +1872,9 @@
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>id=edit_textbox</td>
-	<td>${KEY_ENTER}</td>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2722,11 +2717,6 @@
 	<td>waitForText</td>
 	<td>css=div.suggestion-list__divider &gt; span &gt; span</td>
 	<td>My Channels</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span:contains('headertest')</td>
-	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

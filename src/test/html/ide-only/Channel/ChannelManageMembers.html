@@ -65,18 +65,18 @@
 <!--Create Public Channel through More... modal-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>id=createNewChannel</td>
-	<td>Create New Channel</td>
+	<td>Create Channel</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -131,9 +131,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>chanMenuItemVerifyAndSelect</td>
-	<td>Item=Add Members</td>
+	<td>waitForElementPresent</td>
+	<td>css=#channelAddMembers &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelAddMembers &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -260,9 +265,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>chanMenuItemVerifyAndSelect</td>
-	<td>Item=Manage Members</td>
+	<td>waitForElementPresent</td>
+	<td>css=#channelManageMembers &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelManageMembers &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -332,13 +342,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
+	<td>Make Channel Admin</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -429,44 +439,49 @@
 	<td>Manage Members</td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>chanMenuItemVerifyAndSelect</td>
-	<td>Item=Manage Members</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Member')]</td>
+	<td>css=#channelManageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Member')]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.form-control.filter-textbox</td>
+	<td>css=#channelManageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
 	<td>css=input.form-control.filter-textbox</td>
 	<td>test7</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test7</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Member')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@class='MenuWrapper ']/button/span/span[contains(text(),'Channel Member')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.MenuItem__primary-text:contains('Remove from Channel')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.MenuItem__primary-text:contains('Remove from Channel')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.form-control.filter-textbox</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -495,13 +510,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Member')]</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
+	<td>Make Channel Member</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Member')]</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -522,12 +537,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
+	<td>css=span.MenuItem__primary-text:contains('Remove from Channel')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
+	<td>css=span.MenuItem__primary-text:contains('Remove from Channel')</td>
 	<td></td>
 </tr>
 <tr>
@@ -788,9 +803,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>chanMenuItemVerifyAndSelect</td>
-	<td>Item=Add Members</td>
+	<td>waitForText</td>
+	<td>css=#channelAddMembers &gt; button.style--none.</td>
+	<td>Add Members</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelAddMembers &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -917,9 +937,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>chanMenuItemVerifyAndSelect</td>
-	<td>Item=Manage Members</td>
+	<td>waitForElementPresent</td>
+	<td>css=#channelManageMembers &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelManageMembers &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -988,13 +1013,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
+	<td>Make Channel Admin</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -1085,9 +1110,14 @@
 	<td>Manage Members</td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>chanMenuItemVerifyAndSelect</td>
-	<td>Item=Manage Members</td>
+	<td>waitForElementPresent</td>
+	<td>css=#channelManageMembers &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelManageMembers &gt; button.style--none.</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1101,17 +1131,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
+	<td>css=span.MenuItem__primary-text:contains('Remove from Channel')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
+	<td>css=span.MenuItem__primary-text:contains('Remove from Channel')</td>
 	<td></td>
 </tr>
 <tr>
@@ -1152,12 +1177,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Member')]</td>
+	<td>css=span.MenuItem__primary-text:contains('Make Channel Member')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Member')]</td>
+	<td>css=span.MenuItem__primary-text:contains('Make Channel Member')</td>
 	<td></td>
 </tr>
 <!--Remove demoted user from channel-->
@@ -1173,12 +1198,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
+	<td>css=span.MenuItem__primary-text:contains('Remove from Channel')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
+	<td>css=span.MenuItem__primary-text:contains('Remove from Channel')</td>
 	<td></td>
 </tr>
 <tr>
@@ -1376,9 +1401,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>chanMenuItemVerifyAndSelect</td>
-	<td>Item=Archive Channel</td>
+	<td>waitForText</td>
+	<td>css=#channelArchiveChannel &gt; button.style--none.</td>
+	<td>Archive Channel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelArchiveChannel &gt; button.style--none.</td>
+	<td>Archive Channel</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1427,9 +1457,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>chanMenuItemVerifyAndSelect</td>
-	<td>Item=Archive Channel</td>
+	<td>waitForText</td>
+	<td>css=#channelArchiveChannel &gt; button.style--none.</td>
+	<td>Archive Channel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelArchiveChannel &gt; button.style--none.</td>
+	<td>Archive Channel</td>
 </tr>
 <tr>
 	<td>waitForText</td>

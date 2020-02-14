@@ -1578,17 +1578,17 @@
 </tr>
 <!--Reset to original values-->
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=RateLimitSettings.PerSec</td>
 	<td>${persec}</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=RateLimitSettings.MaxBurst</td>
 	<td>${burst}</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=RateLimitSettings.MemoryStoreSize</td>
 	<td>${store}</td>
 </tr>
@@ -1917,12 +1917,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button [contains(text(),'Logout')]</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button [contains(text(),'Logout')]</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -2510,12 +2510,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button [contains(text(),'Logout')]</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button [contains(text(),'Logout')]</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 </tbody></table>

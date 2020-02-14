@@ -87,27 +87,27 @@
 </tr>
 <!--Edit links for TOS, Privacy, About, Help, Report a Problem-->
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=SupportSettings.TermsOfServiceLink</td>
 	<td>https://mattermost.com/</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=SupportSettings.PrivacyPolicyLink</td>
 	<td>https://github.com/mattermost</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=SupportSettings.AboutLink</td>
 	<td>https://about.gitlab.com/</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=SupportSettings.HelpLink</td>
 	<td>https://www.google.com/</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=SupportSettings.ReportAProblemLink</td>
 	<td>https://docs.mattermost.com</td>
 </tr>
@@ -144,13 +144,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
-	<td>Logout</td>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
@@ -483,13 +483,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
-	<td>Logout</td>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--Blank Terms default location-->
@@ -681,7 +681,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=SupportSettings.SupportEmail</td>
 	<td>feedback-edit@mattermost.com</td>
 </tr>
@@ -713,7 +713,7 @@
 	<td>downloadpagelink</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=NativeAppSettings.AppDownloadLink</td>
 	<td>https://mattermost.com</td>
 </tr>
@@ -762,13 +762,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
-	<td>Logout</td>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--Create new account to see tutorial (requires open server, with email verification OFF)-->
@@ -780,7 +780,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#signup &gt; span</td>
-	<td>Create one now</td>
+	<td>Create one now.</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -808,7 +808,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=name</td>
 	<td>tutorialtest</td>
 </tr>
@@ -818,7 +818,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=password</td>
 	<td>passwd</td>
 </tr>
@@ -835,7 +835,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=a.signup-team-login &gt; span</td>
-	<td>Create a new team</td>
+	<td>Create a team</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -848,7 +848,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>css=input.form-control</td>
 	<td>TutorialTeam</td>
 </tr>
@@ -890,7 +890,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#tutorialSkipLink &gt; span</td>
-	<td>Skip tutorial</td>
+	<td>Skip Tutorial</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -974,12 +974,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#logout &gt; button.style--none</td>
-	<td>Logout</td>
+	<td>Log Out</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=#logout &gt; button.style--none</td>
-	<td>Logout</td>
+	<td></td>
 </tr>
 <!--LOG IN admin-->
 <tr>
@@ -1167,14 +1167,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#logout &gt; button.style--none</td>
-	<td>Logout</td>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout &gt; button.style--none</td>
-	<td>Logout</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
+	<td></td>
 </tr>
 <!--LOG IN tutorialtest-->
 <tr>
@@ -1228,7 +1228,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#tutorialSkipLink &gt; span</td>
-	<td>Skip tutorial</td>
+	<td>Skip Tutorial</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1270,12 +1270,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#logout &gt; button.style--none</td>
-	<td>Logout</td>
+	<td>Log Out</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=#logout &gt; button.style--none</td>
-	<td>Logout</td>
+	<td></td>
 </tr>
 <!--LOG IN admin-->
 <tr>
@@ -1506,13 +1506,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
-	<td>Logout</td>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='root']/div/div/div/ul/li[10]/button</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 </tbody></table>

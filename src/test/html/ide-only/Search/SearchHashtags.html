@@ -153,11 +153,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
 	<td>css=a:contains('#hashtag')</td>
 	<td></td>
@@ -205,16 +200,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
 	<td>#world #nohello${KEY_ENTER}</td>
@@ -228,11 +213,6 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
 	<td></td>
 </tr>
 <!--Sleep-->
@@ -269,9 +249,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.search-highlight &gt; a.mention-link</td>
-	<td>#world</td>
+	<td>waitForElementPresent</td>
+	<td>css=span.search-highlight a.mention-link:contains('#world')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
