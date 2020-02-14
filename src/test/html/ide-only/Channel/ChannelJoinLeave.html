@@ -55,12 +55,12 @@
 <!--Create Public Channel through More... modal-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
@@ -137,12 +137,12 @@
 <!--Find and join channel from More...-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
@@ -269,9 +269,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>dotMenuItemVerifyAndSelect</td>
-	<td>Item=Permalink</td>
+	<td>waitForElementPresent</td>
+	<td>css=span.MenuItem__primary-text:contains('Permalink')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.MenuItem__primary-text:contains('Permalink')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -449,9 +454,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>dotMenuItemVerifyAndSelect</td>
-	<td>Item=Permalink</td>
+	<td>waitForElementPresent</td>
+	<td>css=span.MenuItem__primary-text:contains('Permalink')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.MenuItem__primary-text:contains('Permalink')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

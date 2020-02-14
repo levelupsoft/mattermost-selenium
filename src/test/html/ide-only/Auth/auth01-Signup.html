@@ -375,12 +375,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.style--none:contains('Logout')</td>
+	<td>css=button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none:contains('Logout')</td>
+	<td>css=button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--Acct creation from link on signin page fails with wrong domain-->
@@ -501,20 +501,25 @@
 <!--*** Use new invite flow-->
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.MenuItem__help</td>
+	<td>css=button.style--none.MenuItem__with-help</td>
 	<td>Invite PeopleAdd or invite people to the team</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.MenuItem__help</td>
+	<td>css=button.style--none.MenuItem__with-help</td>
 	<td></td>
 </tr>
 <!--*** Manually enter selenium@test.com in Invite People -->
 <!--*** Then press Tab, then Invite Members-->
 <tr>
 	<td>waitForText</td>
+	<td>css=div.invitation-modal-confirm-not-sent &gt; h2 &gt; span</td>
+	<td>Invitations Not Sent</td>
+</tr>
+<tr>
+	<td>waitForText</td>
 	<td>css=div.reason</td>
-	<td>exact:Error: The following email addresses do not belong to an accepted domain: selenium2@test.com. Please contact your System Administrator for details.</td>
+	<td>Email must be from a specific domain (e.g. @example.com). Please ask your team or system administrator for details.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -596,12 +601,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.style--none:contains('Logout')</td>
+	<td>css=button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none:contains('Logout')</td>
+	<td>css=button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--Acct creation from link on signin page succeeds with correct domain-->
@@ -802,12 +807,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.MenuItem__help</td>
+	<td>css=button.style--none.MenuItem__with-help</td>
 	<td>Invite PeopleAdd or invite people to the team</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.MenuItem__help</td>
+	<td>css=button.style--none.MenuItem__with-help</td>
 	<td></td>
 </tr>
 <tr>
@@ -945,12 +950,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.MenuItem__help</td>
+	<td>css=button.style--none.MenuItem__with-help</td>
 	<td>Invite PeopleAdd or invite people to the team</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.MenuItem__help</td>
+	<td>css=button.style--none.MenuItem__with-help</td>
 	<td></td>
 </tr>
 <tr>
@@ -1245,12 +1250,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.MenuItem__help</td>
+	<td>css=button.style--none.MenuItem__with-help</td>
 	<td>Invite PeopleAdd or invite people to the team</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.MenuItem__help</td>
+	<td>css=button.style--none.MenuItem__with-help</td>
 	<td></td>
 </tr>
 <tr>
@@ -1298,16 +1303,16 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#signup &gt; span</td>
-	<td>Create one now</td>
+	<td>Create one now.</td>
 </tr>
 <tr>
 	<td>waitForAttribute</td>
-	<td>link=Create one now@href</td>
+	<td>link=Create one now.@href</td>
 	<td>/signup_user_complete</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Create one now</td>
+	<td>link=Create one now.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1358,7 +1363,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Create a new team</td>
+	<td>link=Create a team</td>
 	<td></td>
 </tr>
 <tr>
@@ -1461,12 +1466,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.style--none:contains('Logout')</td>
+	<td>css=button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none:contains('Logout')</td>
+	<td>css=button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
@@ -1698,12 +1703,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.style--none:contains('Logout')</td>
+	<td>css=button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none:contains('Logout')</td>
+	<td>css=button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
@@ -1729,12 +1734,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#signup &gt; span</td>
-	<td>Create one now</td>
+	<td>Create one now.</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=#signup &gt; span</td>
-	<td>Create one now</td>
+	<td>Create one now.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1866,12 +1871,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.style--none:contains('Logout')</td>
+	<td>css=button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none:contains('Logout')</td>
+	<td>css=button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
@@ -2046,12 +2051,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.style--none:contains('Logout')</td>
+	<td>css=button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none:contains('Logout')</td>
+	<td>css=button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 </tbody></table>

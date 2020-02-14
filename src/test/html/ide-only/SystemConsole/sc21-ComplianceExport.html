@@ -152,6 +152,11 @@
 <tr>
 	<td>type</td>
 	<td>id=exportJobStartTime</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=exportJobStartTime</td>
 	<td>ten</td>
 </tr>
 <tr>
@@ -172,6 +177,11 @@
 <tr>
 	<td>type</td>
 	<td>id=exportJobStartTime</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=exportJobStartTime</td>
 	<td>0300</td>
 </tr>
 <tr>
@@ -186,6 +196,11 @@
 </tr>
 <tr>
 	<td>type</td>
+	<td>id=exportJobStartTime</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
 	<td>id=exportJobStartTime</td>
 	<td>3:00</td>
 </tr>
@@ -464,9 +479,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.panel.compliance-panel div.compliance-panel__table div table.table tbody tr td span:contains('finished')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=span.status-icon-success &gt; span</td>
+	<td>Success</td>
 </tr>
 <!--Run a second report to verify newest displays at top-->
 <tr>
@@ -551,7 +566,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>finished*adhoc*Se Test 2*Se Test 1</td>
+	<td>Success*adhoc*Se Test 2*Se Test 1</td>
 	<td></td>
 </tr>
 <!--User Activity Logs are present-->
@@ -582,13 +597,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
-	<td>Logout</td>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none:contains('Log Out')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='adminConsoleWrapper']/div/div/ul/li[10]/button</td>
+	<td>css=button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 </tbody></table>

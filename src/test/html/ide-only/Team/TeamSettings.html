@@ -816,7 +816,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=a.signup-team-login &gt; span</td>
-	<td>Create a new team</td>
+	<td>Create a team</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1165,7 +1165,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=a.signup-team-login &gt; span</td>
-	<td>Create a new team</td>
+	<td>Create a team</td>
 </tr>
 <tr>
 	<td>verifyNotText</td>
@@ -1989,14 +1989,14 @@
 	<td>Member</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//button[contains(text(),'Deactivate')]</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
+	<td>Deactivate</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[contains(text(),'Deactivate')]</td>
-	<td></td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
+	<td>Deactivate</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2135,13 +2135,13 @@
 	<td>Inactive</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//button[contains(text(),'Activate')]</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
+	<td>Activate</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[contains(text(),'Activate')]</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
 	<td></td>
 </tr>
 <tr>
@@ -2155,13 +2155,13 @@
 	<td>Member</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//button[contains(text(),'Manage Teams')]</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//div[@id='adminConsoleWrapper']/div[2]/div/div/div[2]/div/div/div/div/div[2]/div/div/div/div/div[2]/div/div[2]/ul/li[3]/button</td>
+	<td>Manage Teams</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[contains(text(),'Manage Teams')]</td>
+	<td>//div[@id='adminConsoleWrapper']/div[2]/div/div/div[2]/div/div/div/div/div[2]/div/div/div/div/div[2]/div/div[2]/ul/li[3]/button</td>
 	<td></td>
 </tr>
 <!--Verifies team admin on both teams-->
@@ -2301,7 +2301,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Remove From Team')</td>
+	<td>css=li.MenuItem button.style--none:contains('Remove from Team')</td>
 	<td></td>
 </tr>
 <tr>
@@ -2437,12 +2437,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Remove From Team')</td>
+	<td>css=li.MenuItem button.style--none:contains('Remove from Team')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Remove From Team')</td>
+	<td>css=li.MenuItem button.style--none:contains('Remove from Team')</td>
 	<td></td>
 </tr>
 <tr>
@@ -3217,7 +3217,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.reason</td>
-	<td>exact:Error: Email must be from a specific domain (e.g. @example.com). Please ask your team or system administrator for details.</td>
+	<td>Email must be from a specific domain (e.g. @example.com). Please ask your team or system administrator for details.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

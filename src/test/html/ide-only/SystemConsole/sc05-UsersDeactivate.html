@@ -248,12 +248,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[contains(text(),'Deactivate')]</td>
+	<td>css=span.MenuItem__primary-text:contains('Deactivate')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[contains(text(),'Deactivate')]</td>
+	<td>css=span.MenuItem__primary-text:contains('Deactivate')</td>
 	<td></td>
 </tr>
 <tr>
@@ -293,8 +293,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>//button [contains(text(),'Logout')]</td>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--LOG IN test2 to verify not deactivated-->
@@ -350,12 +355,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#logout &gt; button.style--none</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#logout &gt; button.style--none</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--LOG IN admin-->
@@ -466,12 +471,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[contains(text(),'Deactivate')]</td>
+	<td>css=span.MenuItem__primary-text:contains('Deactivate')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[contains(text(),'Deactivate')]</td>
+	<td>css=span.MenuItem__primary-text:contains('Deactivate')</td>
 	<td></td>
 </tr>
 <tr>
@@ -511,8 +516,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>//button [contains(text(),'Logout')]</td>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--Try to LOG IN test2 to verify deactivated-->
@@ -941,12 +951,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[contains(text(),'Activate')]</td>
+	<td>css=span.MenuItem__primary-text:contains('Activate')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[contains(text(),'Activate')]</td>
+	<td>css=span.MenuItem__primary-text:contains('Activate')</td>
 	<td></td>
 </tr>
 <tr>
@@ -966,8 +976,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>//button [contains(text(),'Logout')]</td>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--LOG IN test2 to verify reactivated-->

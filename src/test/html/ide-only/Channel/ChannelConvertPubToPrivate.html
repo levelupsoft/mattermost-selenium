@@ -49,18 +49,18 @@
 <!--Non-system admin creates Public Channel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>id=createNewChannel</td>
-	<td>Create New Channel</td>
+	<td>Create Channel</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -238,13 +238,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=li &gt; button.style--none</td>
-	<td>Permalink</td>
+	<td>waitForElementPresent</td>
+	<td>css=li &gt; button.style--none:contains('Permalink')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li &gt; button.style--none</td>
+	<td>css=li &gt; button.style--none:contains('Permalink')</td>
 	<td></td>
 </tr>
 <tr>
@@ -296,12 +296,12 @@
 <!--Verify public channel appears in More...-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
@@ -1018,12 +1018,12 @@
 <!--Converted channel does not appear in Public Channels More...-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
@@ -1753,7 +1753,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.group-teams-and-channels--body</td>
-	<td>Name<br />off-topic<br />Team<br />UI Automation 2</td>
+	<td>Name<br />Off-Topic<br />Team<br />UI Automation 2</td>
 </tr>
 <tr>
 	<td>waitForText</td>

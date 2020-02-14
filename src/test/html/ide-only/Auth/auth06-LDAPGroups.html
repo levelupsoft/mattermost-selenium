@@ -60,12 +60,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Create a New Team</td>
+	<td>link=Create a Team</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Create a New Team</td>
+	<td>link=Create a Team</td>
 	<td></td>
 </tr>
 <tr>
@@ -116,12 +116,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Create a New Team</td>
+	<td>link=Create a Team</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Create a New Team</td>
+	<td>link=Create a Team</td>
 	<td></td>
 </tr>
 <tr>
@@ -264,12 +264,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Create a New Team</td>
+	<td>link=Create a Team</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Create a New Team</td>
+	<td>link=Create a Team</td>
 	<td></td>
 </tr>
 <tr>
@@ -779,12 +779,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--Log in corey.test for first time, no teams-->
@@ -1011,7 +1011,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.name</td>
+	<td>css=td</td>
 	<td>Engineering</td>
 </tr>
 <tr>
@@ -1115,28 +1115,33 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.group-name &gt; span</td>
+	<td>css=div.group-row &gt; div.group-name</td>
 	<td>abc</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='ldap_groups']/div[2]/div[3]/div[2]/div/span</td>
-	<td>developers</td>
+	<td>waitForElementPresent</td>
+	<td>id=abc_group</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='ldap_groups']/div[2]/div[3]/div[3]/div/span</td>
-	<td>engineering</td>
+	<td>waitForElementPresent</td>
+	<td>id=developers_group</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='ldap_groups']/div[2]/div[3]/div[5]/div/span</td>
-	<td>qa</td>
+	<td>waitForElementPresent</td>
+	<td>id=engineering_group</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='ldap_groups']/div[2]/div[3]/div[6]/div/span</td>
-	<td>xyz</td>
+	<td>waitForElementPresent</td>
+	<td>id=qa_group</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=xyz_group</td>
+	<td></td>
 </tr>
 <!--Change back to lowercase 'cn' just to be tidy :)-->
 <tr>
@@ -1353,7 +1358,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.name</td>
+	<td>css=td</td>
 	<td>QA</td>
 </tr>
 <!--User(s) not listed yet-->
@@ -1375,12 +1380,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--Log in lindy.test for first time > -->
@@ -1631,8 +1636,8 @@
 <!--Channel appears under QA team, both have "Remove" as added separately-->
 <tr>
 	<td>waitForText</td>
-	<td>css=div.group-teams-and-channels</td>
-	<td>Name<br /><br /><br />QA<br />Remove<br /><br /><br /><br /><br />Ticket Management<br />Remove</td>
+	<td>css=div.AdminPanel__content</td>
+	<td>NameTypeAssigned RolesQATeamMember <br /><br /><br />RemoveTicket ManagementChannelMember <br /><br /><br />Remove</td>
 </tr>
 <!--Sync LDAP-->
 <tr>
@@ -1698,12 +1703,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--Log in lindy.test again > -->
@@ -1966,11 +1971,11 @@
 	<td>id=saveItems</td>
 	<td></td>
 </tr>
-<!--Channel appears under Dev team, but only one "Remove"-->
+<!--Channel appears under Dev team, both show "Remove" (this changed around v5.20)-->
 <tr>
 	<td>waitForText</td>
-	<td>css=div.group-teams-and-channels</td>
-	<td>Name<br /><br /><br />Developers<br /><br /><br /><br /><br /><br />XYZ<br />Remove</td>
+	<td>css=div.AdminPanel__content</td>
+	<td>NameTypeAssigned RolesDevelopersTeamMember <br /><br /><br />RemoveXYZChannel (Private)Member <br /><br /><br />Remove</td>
 </tr>
 <!--Sync LDAP-->
 <tr>
@@ -2041,12 +2046,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--Log in george.test for the first time > -->
@@ -2322,12 +2327,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--Log in jesus.test (xyz group) for the first time > -->
@@ -2647,12 +2652,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--Log in carlos.test (abc group) for the first time > -->
@@ -2807,13 +2812,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.name</td>
+	<td>css=td</td>
 	<td>Developers</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.group-teams-and-channels</td>
-	<td>Name<br /><br /><br />Developers<br /><br /><br /><br /><br /><br />ABC<br />Remove</td>
+	<td>css=div.AdminPanel__content</td>
+	<td>NameTypeAssigned RolesDevelopersTeamMember <br /><br /><br />RemoveABCChannel (Private)Member <br /><br /><br />Remove</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -2869,13 +2874,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.name</td>
+	<td>css=td</td>
 	<td>Developers</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.group-teams-and-channels</td>
-	<td>Name<br /><br /><br />Developers<br /><br /><br /><br /><br /><br />ABC<br />Remove</td>
+	<td>css=div.AdminPanel__content</td>
+	<td>NameTypeAssigned RolesDevelopersTeamMember <br /><br /><br />RemoveABCChannel (Private)Member <br /><br /><br />Remove</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -2932,12 +2937,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Create a New Team</td>
+	<td>link=Create a Team</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Create a New Team</td>
+	<td>link=Create a Team</td>
 	<td></td>
 </tr>
 <tr>
@@ -3025,12 +3030,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Create a New Team</td>
+	<td>link=Create a Team</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Create a New Team</td>
+	<td>link=Create a Team</td>
 	<td></td>
 </tr>
 <tr>
@@ -3157,7 +3162,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.group-name &gt; span</td>
+	<td>css=div.group-row &gt; div.group-name</td>
 	<td>developers</td>
 </tr>
 <tr>
@@ -3223,7 +3228,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.name</td>
+	<td>css=td</td>
 	<td>Constrain-Dev</td>
 </tr>
 <!--Link qa group to Constrain-QA-Channel (not directly linked to a team)-->
@@ -3259,7 +3264,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.group-name &gt; span</td>
+	<td>css=div.group-row &gt; div.group-name</td>
 	<td>qa</td>
 </tr>
 <tr>
@@ -3324,15 +3329,238 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.group-teams-and-channels</td>
-	<td>Name<br /><br /><br />No-Con-QA-Team<br /><br /><br /><br /><br /><br />Constrain-QA-Channel<br />Remove<br /><br /><br /><br />QA<br />Remove<br /><br /><br /><br /><br />Ticket Management<br />Remove</td>
+	<td>css=div.AdminPanel__content</td>
+	<td>NameTypeAssigned RolesNo-Con-QA-TeamTeamMember <br /><br /><br />RemoveConstrain-QA-ChannelChannel (Private)Member <br /><br /><br />RemoveQATeamMember <br /><br /><br />RemoveTicket ManagementChannelMember <br /><br /><br />Remove</td>
 </tr>
 <tr>
-	<td></td>
-	<td></td>
+	<td>pause</td>
+	<td>8000</td>
 	<td></td>
 </tr>
-<!--Get team invite for a team that is about to be constrained - Constrain-Dev-->
+<!--Constrain / sync team and channel-->
+<tr>
+	<td>waitForText</td>
+	<td>id=user_management/channels</td>
+	<td>Channels</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_management/channels</td>
+	<td>Channels</td>
+</tr>
+<!--Sync channel Constrain-QA-Channel-->
+<tr>
+	<td>waitForText</td>
+	<td>css=h3 &gt; span</td>
+	<td>Channels</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>constrain-qa-channel</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[@id='groups-list--body']/div/div/span</td>
+	<td>Constrain-QA-Channel</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h3 &gt; span</td>
+	<td>Channel Profile</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=label.line-switch__label</td>
+	<td>Sync Group Members</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//button[@type='button']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@type='button']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#channel_groups &gt; div.header &gt; div &gt; h3</td>
+	<td>Synced Groups</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.group-name.row-content</td>
+	<td>qa</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=label.control-label</td>
+	<td>*will be removed from this team. They are not in groups linked to this team.View These Users</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>css=#saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-body &gt; span</td>
+	<td>*will be removed on the next AD/LDAP synchronization. They are not in groups linked to this group. Are you sure you wish to remove these users?</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#confirmModalButton</td>
+	<td>Save and remove user*</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#confirmModalButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>css=#saveSetting</td>
+	<td></td>
+</tr>
+<!--Sync team Constrain-Dev-->
+<tr>
+	<td>waitForText</td>
+	<td>id=user_management/teams</td>
+	<td>Teams</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_management/teams</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>constrain-dev</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=b</td>
+	<td>Constrain-Dev</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.group-row.group-row-large &gt; div.group-content</td>
+	<td>Invite OnlyEdit</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h3 &gt; span</td>
+	<td>Team Profile</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=label.line-switch__label</td>
+	<td>Sync Group Members</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//button[@type='button']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@type='button']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#team_groups &gt; div.header &gt; div &gt; h3 &gt; span</td>
+	<td>Synced Groups</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.group-name.row-content</td>
+	<td>developers</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=label.control-label</td>
+	<td>*will be removed from this team. They are not in groups linked to this team.View These Users</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>css=#saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-body &gt; span</td>
+	<td>*will be removed on the next AD/LDAP synchronization. They are not in groups linked to this channel. Are you sure you wish to remove these users?</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#confirmModalButton</td>
+	<td>Save and remove user*</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#confirmModalButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>css=#saveSetting</td>
+	<td></td>
+</tr>
+<!--Get team invite for a team that was just constrained - Constrain-Dev-->
 <tr>
 	<td>open</td>
 	<td>https://selenium.test.mattermost.com/constrain-dev/channels/town-square</td>
@@ -3349,18 +3577,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.MenuItem__with-help</td>
+	<td>Invite PeopleAdd or invite people to the team</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#getTeamInviteLink &gt; button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=linkModalTextArea</td>
+	<td>css=button.style--none.MenuItem__with-help</td>
 	<td></td>
 </tr>
 <tr>
@@ -3386,23 +3609,6 @@
 <tr>
 	<td>rollup</td>
 	<td>logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<!--***** Manually use CLI to enable constraint on:-->
-<!--***** Constraint-Dev team and Constrain-QA-Channel channel-->
-<!--./mattermost group team enable constrain-dev-->
-<!--./mattermost group channel enable no-con-qa-team:constrain-qa-channel-->
-<!--***** Can verify constrained:-->
-<!--./mattermost group team status constrain-dev-->
-<!--./mattermost group channel status no-con-qa-team:constrain-qa-channel-->
-<tr>
-	<td></td>
-	<td></td>
 	<td></td>
 </tr>
 <!--Try to use team invite link - email/password user-->
@@ -3480,6 +3686,7 @@
 	<td>id=loginId</td>
 	<td></td>
 </tr>
+<!--Log in lindy.test (to the team invite link)-->
 <tr>
 	<td>open</td>
 	<td>${preconstrainedinvite}</td>
@@ -3520,18 +3727,125 @@
 	<td>id=loginButton</td>
 	<td></td>
 </tr>
-<!--lindy.test is logged in but does not join the constrained team-->
+<!--Verify lindy.test is on Constrain-Dev team (she created it) before sync-->
 <tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
-	<td>Engineering</td>
+	<td>Constrain-Dev</td>
 </tr>
 <tr>
-	<td></td>
-	<td></td>
+	<td>waitForElementPresent</td>
+	<td>id=engineeringTeamButton</td>
 	<td></td>
 </tr>
-<!--Verify lindy.test is on Constrain-Dev team (she created it) before sync-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=no-con-qa-teamTeamButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=qaTeamButton</td>
+	<td></td>
+</tr>
+<!--LOG OUT lindy.test-->
+<tr>
+	<td>rollup</td>
+	<td>logout</td>
+	<td></td>
+</tr>
+<!--LOG IN system admin using stored credentials-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>${ldapadmin}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>${ldappwd}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<!--Sync LDAP-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=headerTeamName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=headerTeamName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=authentication/ldap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=authentication/ldap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.job-table__create-button &gt; div &gt; button.btn.btn-default</td>
+	<td>AD/LDAP Synchronize Now</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.job-table__create-button &gt; div &gt; button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>Pending</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>Pending</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>In Progress</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.status-icon-success &gt; span</td>
+	<td>Success</td>
+</tr>
 <!--LOG OUT system admin user-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -3545,15 +3859,14 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
-<!--Log in lindy.test-->
 <!-- > Just Engineering team, default channels-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -3586,29 +3899,44 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
+	<td>waitForNotText</td>
 	<td>id=headerTeamName</td>
 	<td>Constrain-Dev</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.team-btn__initials</td>
-	<td>Co</td>
+	<td>waitForElementPresent</td>
+	<td>id=engineeringTeamButton</td>
+	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#engineeringTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>waitForElementNotPresent</td>
+	<td>id=constrain-devTeamButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#qaTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>id=no-con-qa-teamTeamButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=qaTeamButton</td>
 	<td></td>
 </tr>
 <!--LOG OUT lindy.test-->
 <tr>
 	<td>rollup</td>
 	<td>logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
 	<td></td>
 </tr>
 <!--LOG IN system admin using stored credentials-->
@@ -4548,12 +4876,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--LOG IN as each of users in group and have them leave channel-->
@@ -5329,12 +5657,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Logout')</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
 	<td></td>
 </tr>
 <!--LOG IN linda.test-->
