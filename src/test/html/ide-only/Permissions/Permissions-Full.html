@@ -193,6 +193,11 @@
 </tr>
 <!--Promote to team admin and sys admin need fixing-->
 <tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
 	<td>rollup</td>
 	<td>logout</td>
 	<td></td>
@@ -599,6 +604,11 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#team_admin-integrations-manage_slash_commands &gt; div.permission-check </td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -1417,6 +1427,12 @@
 	<td>ChannelName=Town Square</td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Open Channel Menu does not always work at high speed --- Added pause-->
+<tr>
 	<td>rollup</td>
 	<td>openChanMenu</td>
 	<td></td>
@@ -1479,7 +1495,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>Post to Edit</td>
+	<td>Post to Edit ${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>rollup</td>
@@ -2186,12 +2202,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[contains(text(),'Logout')]</td>
+	<td>//*[contains(text(),'Log Out')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[contains(text(),'Logout')]</td>
+	<td>//*[contains(text(),'Log Out')]</td>
 	<td></td>
 </tr>
 <!--Verify Team Admin permissions can be enabled-->
@@ -3426,12 +3442,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[contains(text(),'Logout')]</td>
+	<td>//*[contains(text(),'Log Out')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[contains(text(),'Logout')]</td>
+	<td>//*[contains(text(),'Log Out')]</td>
 	<td></td>
 </tr>
 <!--Verify Channel Admin permissions granted are working correctly-->
@@ -4462,12 +4478,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[contains(text(),'Logout')]</td>
+	<td>//*[contains(text(),'Log Out')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[contains(text(),'Logout')]</td>
+	<td>//*[contains(text(),'Log Out')]</td>
 	<td></td>
 </tr>
 <!--Verify System Admin has permissions are correctly enabled-->
@@ -5616,12 +5632,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[contains(text(),'Logout')]</td>
+	<td>//*[contains(text(),'Log Out')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[contains(text(),'Logout')]</td>
+	<td>//*[contains(text(),'Log Out')]</td>
 	<td></td>
 </tr>
 <!--Verify System Admin has permissions are correctly enabled-->

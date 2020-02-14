@@ -735,7 +735,7 @@
 	<td>link=privacy policy@href</td>
 	<td></td>
 </tr>
-<!--^^Unknown CSS failure?^^-->
+<!--^^dkh- Unknown CSS failure?^^-->
 <!--Welcome Bot-->
 <tr>
 	<td>click</td>
@@ -1547,7 +1547,7 @@
 	<td>css=input[type=&quot;file&quot;]</td>
 	<td></td>
 </tr>
-<!--*** GHet latest Demo Plugin from: https://github.com/mattermost/mattermost-plugin-demo/releases-->
+<!--*** Get latest Demo Plugin from: https://github.com/mattermost/mattermost-plugin-demo/releases-->
 <tr>
 	<td></td>
 	<td></td>
@@ -2492,12 +2492,12 @@
 	<td>//input[@class='share-link-input']</td>
 	<td>inviteplugin</td>
 </tr>
-<!--I think this is not working since the locator had to change -->
 <tr>
 	<td></td>
 	<td></td>
 	<td></td>
 </tr>
+<!--I think this is not working since the locator had to change - Manually copy the invite link  to your clipboard-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#closeIcon &gt; svg</td>
@@ -2518,6 +2518,12 @@
 <tr>
 	<td>open</td>
 	<td>${inviteplugin}</td>
+	<td></td>
+</tr>
+<!--Paste the invite link-->
+<tr>
+	<td></td>
+	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -2597,19 +2603,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=p.more-modal__name</td>
-	<td>Demo Plugin</td>
-</tr>
-<tr>
-	<td>waitForText</td>
+	<td>waitForElementPresent</td>
 	<td>css=div.more-modal__actions &gt; button.btn.btn-primary</td>
-	<td>Join</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=div.more-modal__actions &gt; button.btn.btn-primary</td>
-	<td>Join</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>

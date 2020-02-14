@@ -564,7 +564,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-primary</td>
-	<td>Create New Channel</td>
+	<td>Create Channel</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -656,7 +656,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-primary</td>
-	<td>Create New Channel</td>
+	<td>Create Channel</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -1120,16 +1120,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
 	<td>rollup</td>
 	<td>addUserToTeam</td>
 	<td>username=test5</td>
@@ -1162,7 +1152,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-primary</td>
-	<td>Create New Channel</td>
+	<td>Create Channel</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -1258,7 +1248,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#logout &gt; button.style--none</td>
-	<td>Logout</td>
+	<td>Log Out</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -2015,12 +2005,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
@@ -2418,6 +2408,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>800</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>//span[@class='sidebar-item__name']/span[text() = &quot;Off-Topic&quot;]</td>
 	<td></td>
@@ -2426,6 +2421,11 @@
 	<td>waitForText</td>
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Off-Topic</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
 </tr>
 <tr>
 	<td>rollup</td>
@@ -2457,7 +2457,6 @@
 	<td>css=button[class='btn btn-primary save-button']</td>
 	<td></td>
 </tr>
-<!--^^Why does this not always save?^^-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//p[@class='markdown__paragraph-inline'][text()='Update Header Test']</td>
@@ -3089,7 +3088,6 @@
 	<td>50</td>
 	<td></td>
 </tr>
-<!--unable to find context menu. Must solve mouse Over-->
 <tr>
 	<td>rollup</td>
 	<td>openDotMenuByPostText</td>
@@ -3360,12 +3358,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[contains(text(),'Logout')]</td>
+	<td>//*[contains(text(),'Log Out')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[contains(text(),'Logout')]</td>
+	<td>//*[contains(text(),'Log Out')]</td>
 	<td></td>
 </tr>
 <!--Switch back to test user-->
@@ -3787,7 +3785,7 @@
 	<td>switchTeam</td>
 	<td>TeamName=teamb</td>
 </tr>
-<!--Remove Delete from Team B override-->
+<!--Remove Delete Posts from Team B override-->
 <tr>
 	<td></td>
 	<td></td>

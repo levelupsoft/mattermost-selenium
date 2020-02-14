@@ -58,11 +58,10 @@ manager.addRollupRule({
  var commands = [];
  
 commands.push({ command: 'waitForText', target: 'link=Town Square', value: 'Town Square'});
-commands.push({ command: 'waitForElementPresent', target: 'id=sidebarChannelsMore', value: ''});
-commands.push({ command: 'click', target: 'id=sidebarChannelsMore', value: ''});
-commands.push({ command: 'waitForText', target: 'id=createNewChannel', value: 'Create New Channel'});
-commands.push({ command: 'waitForElementPresent', target: 'id=createNewChannel', value: ''});
-commands.push({ command: 'click', target: 'id=createNewChannel', value: ''});
+commands.push({ command: 'waitForElementPresent', target: 'id=sidebarChannelContainer', value: ''});
+commands.push({ command: 'click', target: 'id=sidebarChannelContainer', value: ''});
+commands.push({ command: 'waitForElementPresent', target: 'id=createPublicChannel', value: 'Create New Channel'});
+commands.push({ command: 'click', target: 'id=createPublicChannel', value: ''});
 commands.push({ command: 'waitForElementPresent', target: 'css=div.col-sm-9 > input.form-control', value: ''});
 commands.push({ command: 'type', target: 'css=div.col-sm-9 > input.form-control', value: ''});
 commands.push({ command: 'type', target: 'css=div.col-sm-9 > input.form-control', value: args.ChannelName});
@@ -104,8 +103,8 @@ manager.addRollupRule({
  
 commands.push({ command: 'waitForElementPresent', target: 'id=channelHeaderTitle', value: ''});
 commands.push({ command: 'click', target: 'id=channelHeaderDropdownButton', value: ''});
-commands.push({ command: 'waitForElementPresent', target: '//button[contains(text(),"Add Members")]', value: ''});
-commands.push({ command: 'click', target: '//button[contains(text(),"Add Members")]', value: ''});
+commands.push({ command: 'waitForElementPresent', target: '//*[contains(text(),"Add Members")]', value: ''});
+commands.push({ command: 'click', target: '//*[contains(text(),"Add Members")]', value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]", value: ''});
 commands.push({ command: 'click', target: "//div[@class='more-modal__name'][contains(text(),'@"+args.username+"')]", value: ''});
 commands.push({ command: 'waitForElementPresent', target: 'id=saveItems', value: ''});
@@ -277,8 +276,8 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementPresent', target: "//li[@class='MenuItem']/button[text() = '"+args.Item+"']", value: ''});
-commands.push({ command: 'click', target: "//li[@class='MenuItem']/button[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//li[@class='MenuItem']//*[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'click', target: "//li[@class='MenuItem']//*[text() = '"+args.Item+"']", value: ''});
 return commands;
  }
 });
@@ -291,7 +290,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementPresent', target: "//li[@class='MenuItem']/button[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//li[@class='MenuItem']//*[text() = '"+args.Item+"']", value: ''});
 return commands;
  }
 });
@@ -304,7 +303,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementNotPresent', target: "//li[@class='MenuItem']/button[text() = '"+args.Item+"']", value: ''});
+commands.push({ command: 'waitForElementNotPresent', target: "//li[@class='MenuItem']//*[text() = '"+args.Item+"']", value: ''});
 return commands;
  }
 });
@@ -334,8 +333,8 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementPresent', target: "//button[contains(text(),'"+args.Item+"')]", value: ''});
-commands.push({ command: 'click', target: "//button[contains(text(),'"+args.Item+"')]", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//*[contains(text(),'"+args.Item+"')]", value: ''});
+commands.push({ command: 'click', target: "//*[contains(text(),'"+args.Item+"')]", value: ''});
 return commands;
  }
 });
@@ -349,7 +348,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementPresent', target: "//button[contains(text(),'"+args.Item+"')]", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//*[contains(text(),'"+args.Item+"')]", value: ''});
 return commands;
  }
 });
@@ -363,7 +362,7 @@ manager.addRollupRule({
  , getExpandedCommands: function(args) {
  var commands = [];
  
-commands.push({ command: 'waitForElementNotPresent', target: "//button[contains(text(),'"+args.Item+"')]", value: ''});
+commands.push({ command: 'waitForElementNotPresent', target: "//*[contains(text(),'"+args.Item+"')]", value: ''});
 return commands;
  }
 });
@@ -455,12 +454,12 @@ manager.addRollupRule({
  
 commands.push({ command: 'waitForElementPresent', target: "id=channelHeaderTitle", value: ''});
 commands.push({ command: 'click', target: "id=channelHeaderDropdownButton", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "//button[contains(text(),'Manage Members')]", value: ''});
-commands.push({ command: 'click', target: "//button[contains(text(),'Manage Members')]", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//*[contains(text(),'Manage Members')]", value: ''});
+commands.push({ command: 'click', target: "//*[contains(text(),'Manage Members')]", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button ", value: ''});
 commands.push({ command: 'click', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button ", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]", value: ''});
-commands.push({ command: 'click', target: "//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//*[@class='MenuItem']//*[contains(text(),'Make Channel Admin')]", value: ''});
+commands.push({ command: 'click', target: "//*[@class='MenuItem']//*[contains(text(),'Make Channel Admin')]", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//button[@class='close']", value: ''});
 commands.push({ command: 'click', target: "//button[@class='close']", value: ''});
 return commands;
@@ -477,12 +476,12 @@ manager.addRollupRule({
  
 commands.push({ command: 'waitForElementPresent', target: "id=channelHeaderTitle", value: ''});
 commands.push({ command: 'click', target: "id=channelHeaderDropdownButton", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "//button[contains(text(),'Manage Members')]", value: ''});
-commands.push({ command: 'click', target: "//button[contains(text(),'Manage Members')]", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//*[contains(text(),'Manage Members')]", value: ''});
+commands.push({ command: 'click', target: "//*[contains(text(),'Manage Members')]", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button ", value: ''});
 commands.push({ command: 'click', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button ", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]", value: ''});
-commands.push({ command: 'click', target: "//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//*[@class='MenuItem']//*[contains(text(),'Remove from Channel')]", value: ''});
+commands.push({ command: 'click', target: "//*[@class='MenuItem']//*[contains(text(),'Remove from Channel')]", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//button[@class='close']", value: ''});
 commands.push({ command: 'click', target: "//button[@class='close']", value: ''});
 return commands;
@@ -504,8 +503,8 @@ commands.push({ command: 'click', target: "//li[@id='manageMembers']/button", va
 commands.push({ command: 'waitForElementPresent', target: "//div[@class='a11y__modal more-modal modal-dialog']", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button[@class='dropdown-toggle theme color--link style--none']", value: ''});
 commands.push({ command: 'click', target: "//div[@class='more-modal__name'][text() = '@"+args.username+"']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button[@class='dropdown-toggle theme color--link style--none']", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "//li[@id='removeFromTeam']/button[contains(text(),'Remove From Team')]", value: ''});
-commands.push({ command: 'click', target: "//li[@id='removeFromTeam']/button[contains(text(),'Remove From Team')]", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//*[@class='MenuItem']//*[contains(text(),'Remove from Team')]", value: ''});
+commands.push({ command: 'click', target: "//*[@class='MenuItem']//*[contains(text(),'Remove from Team')]", value: ''});
 commands.push({ command: 'waitForElementPresent', target: "//button[@class='close']", value: ''});
 commands.push({ command: 'click', target: "//button[@class='close']", value: ''});
 return commands;
