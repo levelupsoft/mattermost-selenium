@@ -464,6 +464,11 @@
 </tr>
 <!--Add Comment button disabled until text in reply box-->
 <tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>css=input.btn.btn-primary.comment-btn.disabled</td>
 	<td></td>
@@ -521,8 +526,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.search-autocomplete__item.selected</td>
-	<td>test-${datetime}</td>
+	<td>css=span.search-autocomplete__name</td>
+	<td>Test-${datetime} (~test-${datetime})</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -1569,7 +1574,7 @@
 <tr>
 	<td>rollup</td>
 	<td>dotMenuItemVerifyAndSelect</td>
-	<td>Item=Pin to channel</td>
+	<td>Item=Pin to Channel</td>
 </tr>
 <!--RHS updates-->
 <tr>
@@ -1961,12 +1966,12 @@
 <!--Join public channel from More...-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#sidebarChannelsMore &gt; span</td>
+	<td>css=#sidebarPublicChannelsMore &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#sidebarChannelsMore &gt; span</td>
+	<td>css=#sidebarPublicChannelsMore &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -2230,12 +2235,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Create a New Team</td>
+	<td>link=Create a Team</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Create a New Team</td>
+	<td>link=Create a Team</td>
 	<td></td>
 </tr>
 <tr>
@@ -2451,11 +2456,11 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#removeFromTeam &gt; button.style--none</td>
-	<td>Remove From Team</td>
+	<td>Remove from Team</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Remove From Team')</td>
+	<td>css=li.MenuItem button.style--none:contains('Remove from Team')</td>
 	<td></td>
 </tr>
 <tr>
@@ -2783,12 +2788,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Remove From Team')</td>
+	<td>css=li.MenuItem button.style--none:contains('Remove from Team')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Remove From Team')</td>
+	<td>css=li.MenuItem button.style--none:contains('Remove from Team')</td>
 	<td></td>
 </tr>
 <tr>
@@ -3567,12 +3572,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=a.signup-team-login &gt; span</td>
-	<td>Create a new team</td>
+	<td>Create a team</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=a.signup-team-login &gt; span</td>
-	<td>Create a new team</td>
+	<td>Create a team</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3840,7 +3845,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Create a new team</td>
+	<td>link=Create a team</td>
 	<td></td>
 </tr>
 <tr>
@@ -4829,12 +4834,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Remove From Channel')</td>
+	<td>css=li.MenuItem button.style--none:contains('Remove from Channel')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Remove From Channel')</td>
+	<td>css=li.MenuItem button.style--none:contains('Remove from Channel')</td>
 	<td></td>
 </tr>
 <tr>
