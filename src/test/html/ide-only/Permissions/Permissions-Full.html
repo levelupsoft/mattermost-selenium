@@ -648,12 +648,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//button[contains(text(),'Logout')]</td>
+	<td>//*[contains(text(),'Log Out')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[contains(text(),'Logout')]</td>
+	<td>//*[contains(text(),'Log Out')]</td>
 	<td></td>
 </tr>
 <!--Verify System Admin has permissions are correctly enabled-->
@@ -3884,7 +3884,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//p[contains(text(),'Post D from test 3-mod')] </td>
+	<td>//p[contains(text(),'Post B from test 3-mod')] </td>
 	<td></td>
 </tr>
 <tr>
@@ -5611,9 +5611,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.title</td>
-	<td>Team Override Scheme A</td>
+	<td>verifyText</td>
+	<td>css=div.admin-console__header &gt; span</td>
+	<td>Permission Schemes</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -5624,6 +5624,11 @@
 	<td>waitForElementPresent</td>
 	<td>//span[@class='menu-icon']</td>
 	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td></td>
+	<td>1000</td>
 </tr>
 <tr>
 	<td>click</td>

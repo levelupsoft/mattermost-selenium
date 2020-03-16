@@ -736,12 +736,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
+	<td>//*[@class='MenuItem']//*[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
+	<td>//*[@class='MenuItem']//*[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -808,7 +808,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-primary</td>
-	<td>Create New Channel</td>
+	<td>Create Channel</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -888,12 +888,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
+	<td>//*[@class='MenuItem']//*[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Make Channel Admin')]</td>
+	<td>//*[@class='MenuItem']//*[contains(text(),'Make Channel Admin')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -960,7 +960,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-primary</td>
-	<td>Create New Channel</td>
+	<td>Create Channel</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -2045,6 +2045,7 @@
 	<td>chanMenuItemVerifyAndSelect</td>
 	<td>Item=Add Members</td>
 </tr>
+<!--Refresh hick-up here when user has not changed channel since permissions were modified. (it's in Jira)-->
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
@@ -2093,13 +2094,28 @@
 	<td></td>
 </tr>
 <tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='more-modal__name'][text()='@test6']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/button[@id='removeMember']</td>
+	<td>//div[@class='more-modal__name'][text()='@test6']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@class='more-modal__name'][text()='@test6']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/button[@id='removeMember']</td>
+	<td>//div[@class='more-modal__name'][text()='@test6']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//*[@class='MenuItem']//*[contains(text(),'Remove from Channel')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//*[@class='MenuItem']//*[contains(text(),'Remove from Channel')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -2250,12 +2266,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//div[@class='more-modal__name'][text()='@test6']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/button[@id='removeMember']</td>
+	<td>//div[@class='more-modal__name'][text()='@test6']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@class='more-modal__name'][text()='@test6']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/button[@id='removeMember']</td>
+	<td>//div[@class='more-modal__name'][text()='@test6']/parent::div[@class='more-modal__details']/following-sibling::div[@class='more-modal__actions']/div[@class='MenuWrapper ']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//*[@class='MenuItem']//*[contains(text(),'Remove from Channel')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//*[@class='MenuItem']//*[contains(text(),'Remove from Channel')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -2791,12 +2817,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
+	<td>//*[@class='MenuItem']//*[contains(text(),'Remove from Channel')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
+	<td>//*[@class='MenuItem']//*[contains(text(),'Remove from Channel')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -2895,12 +2921,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
+	<td>//*[@class='MenuItem']//*[contains(text(),'Remove from Channel')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//li[@class='MenuItem']/button[contains(text(),'Remove From Channel')]</td>
+	<td>//*[@class='MenuItem']//*[contains(text(),'Remove from Channel')]</td>
 	<td></td>
 </tr>
 <tr>
