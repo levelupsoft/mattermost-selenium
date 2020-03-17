@@ -187,12 +187,11 @@ manager.addRollupRule({
  , args: [{ name: 'ContainsText' , description: 'Match earliest post containing the following text' }], commandMatchers: []
  , getExpandedCommands: function(args) {
  var commands = [];
- 
-commands.push({ command: 'storeAttribute', target: "//p[contains(text(),'"+args.ContainsText+"')/parent::div[@class='post-message__text']/parent::div[@class='post-message__text-container']/parent::div[@class='post-message post-message--collapsed']/parent::div[@id]/parent::div/parent::div/parent::div/parent::div/parent::div/parent::div@id]", value: 'PostByText'});
-commands.push({ command: 'waitForElementPresent', target: "//div[@id='${PostByText}']/div[@class='post__content ']", value: ''});
-commands.push({ command: 'mouseOver', target: "//div[@id='${PostByText}']/div[@class='post__content ']", value: ''});
-commands.push({ command: 'waitForElementPresent', target: "css=button.dropdown-toggle.post__dropdown.color--link.style--none", value: ''});
-commands.push({ command: 'click', target: "css=button.dropdown-toggle.post__dropdown.color--link.style--none", value: ''});
+// Previous version of storing IDs and crawling back up the DOM was needlessly complex. Now uses infinite look down to determine post content 
+commands.push({ command: 'waitForElementPresent', target: "//div[@class='post__content ']//*/p[contains(text(),'"+args.ContainsText+"')]", value: ''});
+commands.push({ command: 'mouseOver', target: "//div[@class='post__content ']//*/p[contains(text(),'"+args.ContainsText+"')]", value: ''});
+commands.push({ command: 'waitForElementPresent', target: "//button[@class='post__dropdown color--link style--none']", value: ''});
+commands.push({ command: 'click', target: "//button[@class='post__dropdown color--link style--none']", value: ''});
 return commands;
  }
 });
