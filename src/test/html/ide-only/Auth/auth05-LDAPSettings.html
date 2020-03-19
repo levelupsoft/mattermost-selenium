@@ -237,7 +237,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.LoginFieldName</td>
 	<td>Test LDAP Text</td>
 </tr>
@@ -384,6 +384,11 @@
 <tr>
 	<td>type</td>
 	<td>id=LdapSettings.LoginFieldName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=LdapSettings.LoginFieldName</td>
 	<td>${ldapfield}</td>
 </tr>
 <tr>
@@ -414,6 +419,11 @@
 </tr>
 <tr>
 	<td>type</td>
+	<td>id=LdapSettings.LdapServer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.LdapServer</td>
 	<td>invalid.co</td>
 </tr>
@@ -449,6 +459,11 @@
 </tr>
 <tr>
 	<td>type</td>
+	<td>id=LdapSettings.LdapServer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.LdapServer</td>
 	<td>${ldapserver}</td>
 </tr>
@@ -510,6 +525,11 @@
 </tr>
 <tr>
 	<td>type</td>
+	<td>id=LdapSettings.UserFilter</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.UserFilter</td>
 	<td>${userfilter}</td>
 </tr>
@@ -693,7 +713,7 @@
 	<td>AD/LDAP field &quot;Login ID Attribute&quot; is required.</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.LoginIdAttribute</td>
 	<td>${idattribute}</td>
 </tr>
@@ -717,6 +737,11 @@
 	<td>storeValue</td>
 	<td>id=LdapSettings.SyncIntervalMinutes</td>
 	<td>syncinterval</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.SyncIntervalMinutes</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -751,6 +776,11 @@
 <tr>
 	<td>type</td>
 	<td>id=LdapSettings.SyncIntervalMinutes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=LdapSettings.SyncIntervalMinutes</td>
 	<td>${syncinterval}</td>
 </tr>
 <tr>
@@ -773,6 +803,11 @@
 	<td>storeValue</td>
 	<td>id=LdapSettings.LoginIdAttribute</td>
 	<td>loginidatt</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.LoginIdAttribute</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -932,6 +967,11 @@
 <!--Set Login ID Attribute back to original value-->
 <tr>
 	<td>waitForElementPresent</td>
+	<td>id=LdapSettings.LoginIdAttribute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
 	<td>id=LdapSettings.LoginIdAttribute</td>
 	<td></td>
 </tr>
@@ -1929,9 +1969,19 @@
 	<td></td>
 </tr>
 <tr>
+	<td>type</td>
+	<td>id=LdapSettings.FirstNameAttribute</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=LdapSettings.FirstNameAttribute</td>
 	<td>${givennameldap}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.LastNameAttribute</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -1940,6 +1990,11 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
+	<td>id=LdapSettings.NicknameAttribute</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
 	<td>id=LdapSettings.NicknameAttribute</td>
 	<td></td>
 </tr>

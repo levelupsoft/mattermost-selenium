@@ -1944,6 +1944,38 @@
 	<td></td>
 </tr>
 <!--Markdown lists-->
+<!--Ordered list can start with zero-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>0. Zeroth${KEY_SHIFT}${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>1. First${KEY_SHIFT}${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>2. Second${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>0. Zeroth 1. First 2. Second</td>
+	<td></td>
+</tr>
+<!--Verify markdown test file-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>

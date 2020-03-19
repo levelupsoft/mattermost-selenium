@@ -2967,7 +2967,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#advancedCtrlSendTitle &gt; span</td>
-	<td>Send messages on CTRL+ENTER</td>
+	<td>Send messages on ⌘+ENTER</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4087,6 +4087,16 @@
 <tr>
 	<td>type</td>
 	<td>id=TeamSettings.MaxUsersPerTeam</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
+	<td>200</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td>200</td>
 </tr>
 <tr>
@@ -4661,8 +4671,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=li.col-sm-9.col-sm-offset-3</td>
-	<td>Show markdown preview option in message input box<br /><br /><br />Check any pre-released features you'd like to preview. You may also need to refresh the page before the setting will take effect.<br /><br />SaveCancel</td>
+	<td>css=div.checkbox</td>
+	<td>Show markdown preview option in message input box</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
