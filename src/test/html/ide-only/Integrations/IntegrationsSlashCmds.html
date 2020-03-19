@@ -805,8 +805,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=code.hljs:contains('1. Not a list item, **not bolded**, http://notalink.com, ~off-topic is not a link to the channel.')</td>
-	<td></td>
+	<td>css=code.hljs</td>
+	<td>1. Not a list item, **not bolded**, http://notalink.com, ~off-topic is not a link to the channel.</td>
 </tr>
 <tr>
 	<td>verifyElementNotPresent</td>
@@ -1762,10 +1762,6 @@
 	<td></td>
 </tr>
 <!--Grant access to Integrations for non-admins-->
-<!--This was moved to Permission Schemes except in TE-->
-<!--*** Could manually remove license and run the steps-->
-<!--*** Then put the license back on-->
-<!--*** But can't seem to remove license from Se server?-->
 <tr>
 	<td>click</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -1783,38 +1779,41 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#custom &gt; span.sidebar-section.sidebar-subsection-title__text &gt; span</td>
+	<td>id=user_management/permissions/</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#custom &gt; span.sidebar-section.sidebar-subsection-title__text &gt; span</td>
+	<td>id=user_management/permissions/</td>
 	<td></td>
 </tr>
 <tr>
-	<td></td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=a.btn.btn-primary &gt; span</td>
+	<td>Edit Scheme</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.btn.btn-primary &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=enableOnlyAdminIntegrationsfalse</td>
+	<td>css=#all_users-integrations-manage_slash_commands &gt; div.permission-check.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=enableOnlyAdminIntegrationsfalse</td>
+	<td>css=#all_users-integrations-manage_slash_commands &gt; div.permission-check.</td>
 	<td></td>
 </tr>
-<!--^^This setting no longer exists it was replaced w\ Advanced Permissions - -->
-<!--for now I disabled it manually^^^-->
 <tr>
 	<td>pause</td>
-	<td>3000</td>
+	<td>4000</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
+	<td>waitForEditable</td>
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
@@ -1829,44 +1828,26 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyValue</td>
-	<td>id=enableOnlyAdminIntegrationsfalse</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=adminNavbarDropdownButton</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.header__info</td>
+	<td>System Console<br />@admin</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=adminNavbarDropdownButton</td>
-	<td></td>
+	<td>css=div.header__info</td>
+	<td>System Console<br />@admin</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=swithToui-automation</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=a</td>
+	<td>Switch to UI Automation</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=swithToui-automation</td>
-	<td></td>
+	<td>css=a</td>
+	<td>Switch to UI Automation</td>
 </tr>
 <!--LOG OUT as admin (using slash command)-->
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -1993,13 +1974,7 @@
 	<td>link=Back to Mattermost</td>
 	<td></td>
 </tr>
-<!--^^Steps above with "test" user fail (see comment at start of this section)-->
 <!--LOG OUT as test-->
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
 <tr>
 	<td>pause</td>
 	<td>3000</td>

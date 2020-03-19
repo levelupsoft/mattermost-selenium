@@ -1611,9 +1611,19 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementNotPresent</td>
-	<td>css=span:contains('@test4')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.suggestion-list__divider &gt; span &gt; span</td>
+	<td>Channel Members</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=div.suggestion-list__divider &gt; span &gt; span</td>
+	<td>Channel Members</td>
 </tr>
 <!--@-autocomplete - nickname-->
 <tr>
@@ -2206,7 +2216,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=channelHeaderDropdownButton</td>
-	<td>test10, test9</td>
+	<td>test9, test10</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2621,11 +2631,6 @@
 	<td>waitForText</td>
 	<td>css=div.suggestion-list__divider &gt; span &gt; span</td>
 	<td>My Channels</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span:contains('headertest')</td>
-	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

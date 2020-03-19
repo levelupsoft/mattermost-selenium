@@ -15,6 +15,11 @@
 <!--*** This is true on Se server if no changes have been made-->
 <!--Account creation from signin page, using email / password-->
 <tr>
+	<td>store</td>
+	<td>javascript{(new Date().getDate())+&quot;-&quot;+(+ new Date().getSeconds())}</td>
+	<td>dayseconds</td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>css=#signup &gt; span</td>
 	<td></td>
@@ -42,7 +47,7 @@
 <tr>
 	<td>type</td>
 	<td>id=email</td>
-	<td>testST@test.com</td>
+	<td>testST${dayseconds}@test.com</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -52,7 +57,7 @@
 <tr>
 	<td>type</td>
 	<td>id=name</td>
-	<td>testST</td>
+	<td>testST${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -98,7 +103,7 @@
 <tr>
 	<td>type</td>
 	<td>css=input.form-control</td>
-	<td>STTeam</td>
+	<td>STTeam${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -113,7 +118,7 @@
 <tr>
 	<td>waitForValue</td>
 	<td>css=input.form-control</td>
-	<td>stteam</td>
+	<td>stteam${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -398,17 +403,27 @@
 	<td>link=Click here to jump to recent messages.</td>
 	<td></td>
 </tr>
-<!--Cancel out of a delete (use postid to find [...] > Delete)-->
+<!--Cancel out of a delete (use postid to locate the right ... menu)-->
 <tr>
-	<td>rollup</td>
-	<td>openSearchDotMenuForTopPost</td>
+	<td>waitForElementPresent</td>
+	<td>css=#SEARCH_button_${postid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#SEARCH_button_${postid}</td>
 	<td></td>
 </tr>
 <!--*** If needed, manually click the [...] menu on Greetings post in RHS search results-->
 <tr>
-	<td>rollup</td>
-	<td>dotMenuItemVerifyAndSelect</td>
-	<td>Item=Delete</td>
+	<td>waitForText</td>
+	<td>css=button.style--none.MenuItem__dangerous</td>
+	<td>Delete</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.MenuItem__dangerous</td>
+	<td>Delete</td>
 </tr>
 <!--Confirmation modal warns the message has a reply-->
 <tr>
@@ -463,11 +478,6 @@
 	<td>Greetings</td>
 </tr>
 <!--Add Comment button disabled until text in reply box-->
-<tr>
-	<td>selectWindow</td>
-	<td>null</td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=input.btn.btn-primary.comment-btn.disabled</td>
@@ -934,16 +944,21 @@
 	<td>xpath=(//button[@type='button'])[3]</td>
 	<td></td>
 </tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[3]</td>
+	<td></td>
+</tr>
 <!--*** Hm, this command finds the [...] menu in the RHS; will it work above? xpath-->
 <tr>
-	<td>rollup</td>
-	<td>openSearchDotMenuForTopPost</td>
+	<td>waitForElementPresent</td>
+	<td>css=span.MenuItem__primary-text:contains('Edit')</td>
 	<td></td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>dotMenuItemVerifyAndSelect</td>
-	<td>Item=Edit</td>
+	<td>click</td>
+	<td>css=span.MenuItem__primary-text:contains('Edit')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1031,20 +1046,17 @@
 	<td>css=p:contains('The clouds should clear later, hopefully.')</td>
 	<td></td>
 </tr>
+<!--No longer finding the post menu-->
+<!--** Manually click `The clouds...` post menu-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[4]</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.style--none.MenuItem__dangerous</td>
+	<td>Delete</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[4]</td>
+	<td>css=button.style--none.MenuItem__dangerous</td>
 	<td></td>
-</tr>
-<tr>
-	<td>rollup</td>
-	<td>dotMenuItemVerifyAndSelect</td>
-	<td>Item=Delete</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1796,6 +1808,7 @@
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
 </tr>
+<!--** If testing on ESR before invite flow changed, do this part manually-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=#invitePeople &gt; button.style--none.</td>
@@ -1891,7 +1904,7 @@
 <tr>
 	<td>type</td>
 	<td>id=email</td>
-	<td>ST2@test.com</td>
+	<td>ST2${dayseconds}@test.com</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1901,7 +1914,7 @@
 <tr>
 	<td>type</td>
 	<td>id=name</td>
-	<td>st2</td>
+	<td>st2${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2035,7 +2048,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=edit_textbox</td>
-	<td>ST2 wrote this header</td>
+	<td>ST2${dayseconds} wrote this header</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2050,7 +2063,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=p.markdown__paragraph-inline</td>
-	<td>ST2 wrote this header</td>
+	<td>ST2${dayseconds} wrote this header</td>
 </tr>
 <!--Post a mention using autocomplete in the message box-->
 <tr>
@@ -2061,7 +2074,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>Hello @tests</td>
+	<td>Hello @testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2071,7 +2084,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.mention--align</td>
-	<td>@testst</td>
+	<td>@testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -2081,7 +2094,7 @@
 <tr>
 	<td>waitForValue</td>
 	<td>id=post_textbox</td>
-	<td>Hello @testst</td>
+	<td>Hello @testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -2090,7 +2103,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=@testst</td>
+	<td>link=@testst${dayseconds}</td>
 	<td></td>
 </tr>
 <!--Post at-channel-->
@@ -2190,11 +2203,11 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#teamMemberModalLabel &gt; span</td>
-	<td>STTeam Members</td>
+	<td>STTeam${dayseconds} Members</td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>1 - 2 members of 2 total*@st2*st2@test.com</td>
+	<td>1 - 2 members of 2 total*@st2*st2${dayseconds}@test.com</td>
 	<td></td>
 </tr>
 <tr>
@@ -2215,7 +2228,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>@testst</td>
+	<td>@testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>refreshAndWait</td>
@@ -2256,7 +2269,7 @@
 <tr>
 	<td>type</td>
 	<td>css=input.form-control</td>
-	<td>ST2Team</td>
+	<td>ST2Team${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2276,7 +2289,7 @@
 <tr>
 	<td>waitForValue</td>
 	<td>css=input.form-control</td>
-	<td>st2team</td>
+	<td>st2team${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2296,7 +2309,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
-	<td>ST2Team</td>
+	<td>ST2Team${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2354,12 +2367,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=react-select-2-option-0</td>
-	<td>@testst</td>
+	<td>@testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>id=react-select-2-option-0</td>
-	<td>@testst</td>
+	<td>@testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForEditable</td>
@@ -2383,13 +2396,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>link=@testst</td>
-	<td>@testst</td>
+	<td>link=@testst${dayseconds}</td>
+	<td>@testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.post-message__text &gt; div</td>
-	<td>You joined the team.<br /><br />@testst added to the team by you.</td>
+	<td>You joined the team.<br /><br />@testst${dayseconds} added to the team by you.</td>
 </tr>
 <tr>
 	<td>refreshAndWait</td>
@@ -2404,7 +2417,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.post-message__text &gt; div</td>
-	<td>You joined the team.<br /><br />@testst added to the team by you.</td>
+	<td>You joined the team.<br /><br />@testst${dayseconds} added to the team by you.</td>
 </tr>
 <!--Team (not System) Admin can make a non-admin a team admin-->
 <!--Change non-admin to team admin in Manage Members-->
@@ -2436,12 +2449,12 @@
 <tr>
 	<td>sendKeys</td>
 	<td>css=input.form-control.filter-textbox</td>
-	<td>tests</td>
+	<td>testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>@testst</td>
+	<td>@testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2589,7 +2602,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>st2</td>
+	<td>st2${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2610,7 +2623,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>@st2</td>
+	<td>@st2${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2635,7 +2648,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>@st2</td>
+	<td>@st2${dayseconds}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -2645,7 +2658,7 @@
 <tr>
 	<td>waitForNotText</td>
 	<td>css=div.more-modal__name</td>
-	<td>@st2</td>
+	<td>@st2${dayseconds}</td>
 </tr>
 <!--Open Add Members modal for channel, from Manage Members modal-->
 <tr>
@@ -2661,7 +2674,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__row.clickable&nbsp;&nbsp;&gt; div.more-modal__details &gt; div.more-modal__name</td>
-	<td>@testst</td>
+	<td>@testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2722,12 +2735,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.post-message__text &gt; div</td>
-	<td>You joined the channel.<br /><br />@testst added to the channel by you.</td>
+	<td>You joined the channel.<br /><br />@testst${dayseconds} added to the channel by you.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>link=@testst</td>
-	<td>@testst</td>
+	<td>link=@testst${dayseconds}</td>
+	<td>@testst${dayseconds}</td>
 </tr>
 <!--Member count icon increments up +1-->
 <tr>
@@ -2774,7 +2787,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>@testst</td>
+	<td>@testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2906,18 +2919,18 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=stteamTeamButton</td>
+	<td>id=stteam${dayseconds}TeamButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=stteamTeamButton</td>
+	<td>id=stteam${dayseconds}TeamButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
-	<td>STTeam</td>
+	<td>STTeam${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2952,18 +2965,18 @@
 <!--Back to ST2Team-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=st2teamTeamButton</td>
+	<td>id=st2team${dayseconds}TeamButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=st2teamTeamButton</td>
+	<td>id=st2team${dayseconds}TeamButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
-	<td>ST2Team</td>
+	<td>ST2Team${dayseconds}</td>
 </tr>
 <!--Team name and description-->
 <tr>
@@ -2989,7 +3002,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=nameDesc</td>
-	<td>ST2Team</td>
+	<td>ST2Team${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3025,7 +3038,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=nameDesc</td>
-	<td>ST2Team</td>
+	<td>ST2Team${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3056,7 +3069,7 @@
 <tr>
 	<td>type</td>
 	<td>id=teamName</td>
-	<td>Core Test Team</td>
+	<td>Core Team${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3071,7 +3084,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=nameDesc</td>
-	<td>Core Test Team</td>
+	<td>Core Team${dayseconds}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -3086,7 +3099,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
-	<td>Core Test Team</td>
+	<td>Core Team${dayseconds}</td>
 </tr>
 <!--Team description-->
 <tr>
@@ -3259,12 +3272,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>@testst</td>
+	<td>@testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=div.more-modal__name</td>
-	<td>@testst</td>
+	<td>@testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3285,12 +3298,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=p.channel-intro-text &gt; span</td>
-	<td>This is the start of your direct message history with testst.<br />Direct messages and files shared here are not shown to people outside this area.</td>
+	<td>This is the start of your direct message history with testst${dayseconds}.<br />Direct messages and files shared here are not shown to people outside this area.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
-	<td>testst</td>
+	<td>testst${dayseconds}</td>
 </tr>
 <!--Verify status at top of DM channel-->
 <tr>
@@ -3373,18 +3386,18 @@
 <!--Get permalink for a message, then leave channel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@href='/stteam']</td>
+	<td>//a[@href='/stteam${dayseconds}']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@href='/stteam']</td>
+	<td>//a[@href='/stteam${dayseconds}']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
-	<td>STTeam</td>
+	<td>STTeam${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3399,7 +3412,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=p.markdown__paragraph-inline</td>
-	<td>ST2 wrote this header</td>
+	<td>ST2${dayseconds} wrote this header</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3492,7 +3505,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=p.markdown__paragraph-inline</td>
-	<td>ST2 wrote this header</td>
+	<td>ST2${dayseconds} wrote this header</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3556,7 +3569,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=p.markdown__paragraph-inline</td>
-	<td>ST2 wrote this header</td>
+	<td>ST2${dayseconds} wrote this header</td>
 </tr>
 <!--Create new team from `+` in team sidebar-->
 <tr>
@@ -3587,7 +3600,7 @@
 <tr>
 	<td>type</td>
 	<td>css=input.form-control</td>
-	<td>Plus</td>
+	<td>Plus${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3608,7 +3621,7 @@
 <tr>
 	<td>waitForValue</td>
 	<td>css=input.form-control</td>
-	<td>plus</td>
+	<td>plus${dayseconds}</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -3623,7 +3636,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>css=input.form-control</td>
-	<td>plus123</td>
+	<td>plusedit${dayseconds}</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -3633,7 +3646,7 @@
 <tr>
 	<td>verifyValue</td>
 	<td>css=input.form-control</td>
-	<td>plus123</td>
+	<td>plusedit${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3667,7 +3680,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=a:contains('123')</td>
+	<td>css=a:contains('plusedit')</td>
 	<td></td>
 </tr>
 <tr>
@@ -3786,7 +3799,7 @@
 <tr>
 	<td>type</td>
 	<td>name=loginId</td>
-	<td>testst</td>
+	<td>testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -3834,8 +3847,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Plus &gt; span.signup-team-dir__name</td>
-	<td>Plus</td>
+	<td>id=Plus${dayseconds}</td>
+	<td>Plus${dayseconds}</td>
 </tr>
 <!--Closed team is not listed-->
 <tr>
@@ -3850,8 +3863,8 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Plus &gt; span.signup-team-dir__name</td>
-	<td>Plus</td>
+	<td>id=Plus${dayseconds}</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3871,18 +3884,18 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@href='/stteam']</td>
+	<td>//a[@href='/stteam${dayseconds}']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
-	<td>STTeam</td>
+	<td>STTeam${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForNotText</td>
 	<td>id=headerTeamName</td>
-	<td>ST2Team</td>
+	<td>ST2Team${dayseconds}</td>
 </tr>
 <!--Verify mention badges - 2 on private channel, 1 on DM-->
 <!--*** This will fail if a different sidebar sort puts the 1 badge above the 2 badge-->
@@ -3905,8 +3918,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>link=@testst</td>
-	<td>@testst</td>
+	<td>link=@testst${dayseconds}</td>
+	<td>@testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3936,7 +3949,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
-	<td>st2</td>
+	<td>st2${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4001,7 +4014,7 @@
 <tr>
 	<td>type</td>
 	<td>id=loginId</td>
-	<td>st2</td>
+	<td>st2${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4036,7 +4049,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
-	<td>Core Test Team</td>
+	<td>Core Team${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4130,7 +4143,7 @@
 <tr>
 	<td>type</td>
 	<td>id=loginId</td>
-	<td>testst</td>
+	<td>testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4198,12 +4211,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.signup-team-dir__name</td>
-	<td>Core Test Team</td>
+	<td>Core Team${dayseconds}</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=span.signup-team-dir__name</td>
-	<td>Core Test Team</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -4247,7 +4260,7 @@
 <tr>
 	<td>type</td>
 	<td>id=loginId</td>
-	<td>st2</td>
+	<td>st2${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4272,7 +4285,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
-	<td>Core Test Team</td>
+	<td>Core Team${dayseconds}</td>
 </tr>
 <!--Add user to private channel using link in-channel-->
 <tr>
@@ -4303,12 +4316,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>@testst</td>
+	<td>@testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=div.more-modal__name</td>
-	<td>@testst</td>
+	<td>@testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -4367,7 +4380,7 @@
 <tr>
 	<td>type</td>
 	<td>id=loginId</td>
-	<td>testst</td>
+	<td>testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4530,7 +4543,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span:contains('testst updated the channel purpose from: ST2's purpose to: ST2's purpose, edited by testST')</td>
+	<td>css=span:contains('testst${dayseconds} updated the channel purpose from: ST2's purpose to: ST2's purpose, edited by testST')</td>
 	<td></td>
 </tr>
 <!--Add channel header from link (use markdown)-->
@@ -4744,18 +4757,18 @@
 <!--from member icon > Manage Members-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@href='/stteam']</td>
+	<td>//a[@href='/stteam${dayseconds}']</td>
 	<td>STSTTeam</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@href='/stteam']</td>
+	<td>//a[@href='/stteam${dayseconds}']</td>
 	<td>STSTTeam</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
-	<td>STTeam</td>
+	<td>STTeam${dayseconds}</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -4800,7 +4813,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>@st2</td>
+	<td>@st2${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4850,7 +4863,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>@testst</td>
+	<td>@testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4864,7 +4877,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div:contains('st2 was removed from the channel')</td>
+	<td>css=div:contains('st2${dayseconds} was removed from the channel')</td>
 	<td></td>
 </tr>
 <!--Log out testST-->
@@ -4898,7 +4911,7 @@
 <tr>
 	<td>type</td>
 	<td>name=loginId</td>
-	<td>st2</td>
+	<td>st2${dayseconds}</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -4921,18 +4934,18 @@
 <!--Verify removed from testchannel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@href='/stteam']</td>
+	<td>//a[@href='/stteam${dayseconds}']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@href='/stteam']</td>
+	<td>//a[@href='/stteam${dayseconds}']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
-	<td>STTeam</td>
+	<td>STTeam${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
@@ -4953,7 +4966,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
-	<td>Core Test Team</td>
+	<td>Core Team${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -4978,7 +4991,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div:contains('testst left the channel')</td>
+	<td>css=div:contains('testst${dayseconds} left the channel')</td>
 	<td></td>
 </tr>
 <tr>
@@ -5218,18 +5231,18 @@
 <!--Switch to STTeam-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@href='/stteam']</td>
+	<td>//a[@href='/stteam${dayseconds}']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@href='/stteam']</td>
+	<td>//a[@href='/stteam${dayseconds}']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
-	<td>STTeam</td>
+	<td>STTeam${dayseconds}</td>
 </tr>
 <!--Find public channel in autocomplete-->
 <tr>
