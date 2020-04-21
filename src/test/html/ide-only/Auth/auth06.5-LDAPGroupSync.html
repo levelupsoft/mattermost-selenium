@@ -289,7 +289,16 @@
 	<td>css=div.counter &gt; span</td>
 	<td>1 - 1 of 1</td>
 </tr>
-<!--*** May need to rewrite for being newly configured....-->
+<tr>
+	<td>waitForText</td>
+	<td>css=span.group-description &gt; a &gt; span</td>
+	<td>Not Linked</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.group-description &gt; a &gt; span</td>
+	<td>Not Linked</td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=span.group-actions &gt; a &gt; span</td>
@@ -569,6 +578,52 @@
 	<td></td>
 </tr>
 <!--Sync team Constrain-Dev-->
+<!--First get team invite-->
+<tr>
+	<td>open</td>
+	<td>https://selenium.test.mattermost.com/constrain-dev/channels/town-square</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.MenuItem__with-help</td>
+	<td>Invite PeopleAdd or invite people to the team</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.MenuItem__with-help</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.share-link-input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>css=input.share-link-input</td>
+	<td>preconstrainedinvite</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close-x</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close-x</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=headerTeamName</td>
@@ -581,12 +636,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=System Console</td>
+	<td>css=#systemConsole &gt; a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=System Console</td>
+	<td>css=#systemConsole &gt; a</td>
 	<td></td>
 </tr>
 <tr>
@@ -669,6 +724,57 @@
 	<td>css=label.control-label</td>
 	<td>*will be removed from this team. They are not in groups linked to this team.View These Users</td>
 </tr>
+<!--View users being removed, roles, groups-->
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.btn.btn-link span</td>
+	<td>View These Users</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.btn.btn-link span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=b</td>
+	<td>@admin</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[2]/div[2]/div[2]/div/div/span</td>
+	<td>System User, System Admin</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//span[2]/a/span</td>
+	<td>0 Groups</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[2]/div/div/div[2]/div/b</td>
+	<td>@lindy.test-simulator.amazonses.com</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[2]/div[2]/div/span</td>
+	<td>System User</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[2]/div/span[2]/a/span</td>
+	<td>2 Groups</td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>//div[2]/div/span[2]/a/span</td>
+	<td>2 Groups</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>engineering, groupA</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForEditable</td>
 	<td>css=#saveSetting</td>
@@ -699,66 +805,28 @@
 	<td>css=#saveSetting</td>
 	<td></td>
 </tr>
-<!--Get team invite for a team that was just constrained - Constrain-Dev-->
-<!--This breaks if the sysadmin you're logged in as was removed from the team-->
-<!--Oh this doesn't work b/c invite link is hidden for constrained team-->
-<!--Manually tested trying to invite non-member-->
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>https://selenium.test.mattermost.com/constrain-dev/channels/town-square</td>
-	<td></td>
-</tr>
+<!--LOG OUT admin-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.style--none.sidebar-header-dropdown__icon span</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.sidebar-header-dropdown__icon span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=button.style--none.MenuItem__with-help</td>
-	<td>Invite PeopleAdd or invite people to the team</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.style--none.MenuItem__with-help</td>
+	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=input.share-link-input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>storeValue</td>
-	<td>css=input.share-link-input</td>
-	<td>preconstrainedinvite</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.close-x</td>
+	<td>css=span.MenuItem__primary-text:contains('Log Out')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.close-x</td>
+	<td>css=span.MenuItem__primary-text:contains('Log Out')</td>
 	<td></td>
 </tr>
-<tr>
-	<td>rollup</td>
-	<td>logout</td>
-	<td></td>
-</tr>
-<!--Try to use team invite link - email/password user-->
+<!--Try to use invite for now-constrained team - email/password user-->
 <tr>
 	<td>open</td>
 	<td>${preconstrainedinvite}</td>
@@ -808,13 +876,6 @@
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
 	<td>Unable to join a group-constrained team by invite.</td>
-</tr>
-<!--*** Be sure to sync LDAP before trying to have lindy.test join by invite link-->
-<!--*** Oh, but following tests are based on admin being logged in before sync :/-->
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
 </tr>
 <!--Try to use team invite link - LDAP user not in appropriate group-->
 <!--lindy.test created the team but is not in the group-->
@@ -1180,19 +1241,24 @@
 </tr>
 <!--Current user removed from Constrain-QA-Channel-->
 <tr>
-	<td>waitForText</td>
-	<td>css=div.modal-body &gt; p &gt; span</td>
-	<td>Someone removed you from Constrain-QA-Channel</td>
+	<td>open</td>
+	<td>https://selenium.test.mattermost.com/no-con-qa-team/channels/constrain-qa-channel</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.btn.btn-primary</td>
-	<td>Okay</td>
+	<td>css=p &gt; span</td>
+	<td>The channel you're requesting is private or does not exist. Please contact an Administrator to be added to the channel.</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=a &gt; span</td>
+	<td>Back to Town Square</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td>Okay</td>
+	<td>css=a &gt; span</td>
+	<td></td>
 </tr>
 <!--But still on non-constrained team that that channel is on-->
 <tr>
@@ -1201,7 +1267,7 @@
 	<td>No-Con-QA-Team</td>
 </tr>
 <!--Member management available for non-constrained team-->
-<!--Main menu > Add Members to Team-->
+<!--Invite People-->
 <tr>
 	<td>click</td>
 	<td>id=headerTeamName</td>
@@ -1209,8 +1275,34 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#addUsersToTeam &gt; button.style--none.</td>
+	<td>css=span.MenuItem__primary-text:contains('Invite People')</td>
 	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.MenuItem__primary-text:contains('Invite People')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.share-link-input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close-x</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close-x</td>
+	<td></td>
+</tr>
+<!--Manage Members-->
+<tr>
+	<td>click</td>
+	<td>id=headerTeamName</td>
+	<td>No-Con-QA-Team</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1219,36 +1311,101 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#addUsersToTeam &gt; button.style--none.</td>
+	<td>css=#manageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.more-modal__name</td>
+	<td>id=searchUsersInput</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.more-modal__name</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=saveItems</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveItems</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>added to the team by you</td>
+	<td>waitForElementPresent</td>
+	<td>id=invitePeople</td>
 	<td></td>
 </tr>
 <!--Copy team invite link-->
+<tr>
+	<td>click</td>
+	<td>id=invitePeople</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input.share-link-input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>css=input.share-link-input</td>
+	<td>nonconteaminvite</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close-x</td>
+	<td></td>
+</tr>
 <!--Make non-constrained team open-->
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>No-Con-QA-Team</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=headerTeamName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#teamSettings &gt; button.style--none.</td>
+	<td>Team Settings</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#teamSettings &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=open_inviteDesc</td>
+	<td>No</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=open_inviteEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=open_inviteEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=teamOpenInvite</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=teamOpenInvite</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=open_inviteDesc</td>
+	<td>Yes</td>
+</tr>
 <!--LOG OUT system admin-->
 <tr>
 	<td>rollup</td>
@@ -1256,7 +1413,66 @@
 	<td></td>
 </tr>
 <!--test2 use team invite link successfully-->
-<!--test2 leave and re-join team-->
+<tr>
+	<td>open</td>
+	<td>${nonconteaminvite}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.color--light &gt; a &gt; span</td>
+	<td>Click here to sign in.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.color--light &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>test2</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>https://selenium.test.mattermost.com/no-con-qa-team</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>No-Con-QA-Team</td>
+</tr>
 <!--LOG OUT test2-->
 <tr>
 	<td>rollup</td>
@@ -1296,12 +1512,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#no-con-qa-teamTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>css=#no-con-qa-teamTeamButton &gt; div.team-btn.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#no-con-qa-teamTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>css=#no-con-qa-teamTeamButton &gt; div.team-btn.</td>
 	<td></td>
 </tr>
 <!--Cannot add users to constrained channel-->
@@ -1333,7 +1549,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>User cannot be added to this channel because it is constrained to group members only.</td>
+	<td> channel is managed by groups. This user is not part of a group that is synced to this channel.</td>
 	<td></td>
 </tr>
 <!--Channel drop-down option is to add groups, not users-->
@@ -1354,8 +1570,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.modal-header</td>
-	<td>×CloseAdd New Groups To Constrain-QA-Channel Channel</td>
+	<td>css=h4.modal-title &gt; span</td>
+	<td>Add New Groups to Constrain-QA-Channel Channel</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1388,8 +1604,18 @@
 	<td>×CloseConstrain-QA-Channel GroupsAdd Groups</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=teamGroupsDropdown_qa</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=teamGroupsDropdown_qa</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
-	<td>id=removeMember</td>
+	<td>//div[2]/div/div/ul/li[2]/button</td>
 	<td>Remove Group</td>
 </tr>
 <!--Need to add removing group from here (but haven't added xyz yet)-->
@@ -1433,7 +1659,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h4.modal-title &gt; span</td>
-	<td>Add New Groups To Constrain-QA-Channel Channel</td>
+	<td>Add New Groups to Constrain-QA-Channel Channel</td>
 </tr>
 <!--The following are probably too brittle to include (number of members)-->
 <tr>
@@ -1510,17 +1736,170 @@
 	<td>logout</td>
 	<td></td>
 </tr>
+<!--LOG IN admin-->
 <!--Sync LDAP-->
-<!--Log in george.test-->
-<!--Verify xyz group added to Constrain-QA-Channel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#no-con-qa-teamTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>${ldapadmin}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>${ldappwd}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<!--Sync LDAP-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=headerTeamName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#no-con-qa-teamTeamButton &gt; div.team-btn. &gt; div.team-btn__content &gt; div.team-btn__initials</td>
+	<td>id=headerTeamName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=authentication/ldap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=authentication/ldap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.job-table__create-button &gt; div &gt; button.btn.btn-default</td>
+	<td>AD/LDAP Synchronize Now</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.job-table__create-button &gt; div &gt; button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>Pending</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>Pending</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>In Progress</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.status-icon-success &gt; span</td>
+	<td>Success</td>
+</tr>
+<!--LOG OUT system admin user-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=svg[title=&quot;Menu Icon&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=svg[title=&quot;Menu Icon&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
+	<td></td>
+</tr>
+<!--Log in george.test-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>george.test</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>Password1</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#tutorialSkipLink &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#tutorialSkipLink &gt; span</td>
+	<td></td>
+</tr>
+<!--Verify xyz group added to Constrain-QA-Channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#no-con-qa-teamTeamButton &gt; div.team-btn.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#no-con-qa-teamTeamButton &gt; div.team-btn.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1534,21 +1913,78 @@
 	<td></td>
 </tr>
 <!--Verify can't remove lindy.test from constrained channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=member_popover</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=member_popover</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>lindy.test-simulator.amazonses.com</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__button &gt; button.btn.btn-link</td>
+	<td>Manage Members</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__button &gt; button.btn.btn-link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__actions &gt; div &gt; span</td>
+	<td>Channel Member</td>
+</tr>
+<!--^ How to verify not a drop-down?-->
+<!--/kick for user in constrained channel shows ephemeral message:-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>/kick @lindy.test-simulator.amazonses.com${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>User cannot be removed from the channel by you because they are a member of the groups linked to this channel. To remove them from this channel, they must be removed from the linked groups.</td>
+</tr>
 <!--Verify that dev group member can't add members to Constrain-Dev-->
 <tr>
 	<td>waitForText</td>
-	<td>css=div.team-btn__initials</td>
+	<td>css=div.TeamIcon__initials.TeamIcon__initials__md</td>
 	<td>Co</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.team-btn__initials</td>
+	<td>css=div.TeamIcon__initials.TeamIcon__initials__md</td>
 	<td>Co</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
 	<td>Constrain-Dev</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=headerTeamName</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
 </tr>
 <!--*** Manage Members shows in main menu but behaves like View?-->
 <!--*** ^Logging in as another dev user to be sure jesse.test-->
@@ -1560,8 +1996,6 @@
 	<td></td>
 	<td></td>
 </tr>
-<!--/kick for user in constrained channel shows ephemeral message:-->
-<!--"User cannot be removed from the channel by you because they are a member of the groups linked to this channel. To remove them from this channel, they must be removed from the linked groups."-->
 <tr>
 	<td></td>
 	<td></td>
@@ -1789,7 +2223,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.group-name &gt; span</td>
+	<td>css=div.group-row &gt; div.group-name &gt; span</td>
 	<td>qa</td>
 </tr>
 <tr>
@@ -1849,7 +2283,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.group-teams-and-channels-row div.name:contains('MentionGroup')</td>
+	<td>css=td:contains('MentionGroup')</td>
 	<td></td>
 </tr>
 <!--Link xyz group to MentionGroup channel-->
@@ -1885,7 +2319,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.group-name &gt; span</td>
+	<td>css=div.group-row &gt; div.group-name</td>
 	<td>xyz</td>
 </tr>
 <tr>
@@ -1945,23 +2379,83 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.group-teams-and-channels-row div.name:contains('MentionGroup')</td>
+	<td>css=td:contains('MentionGroup')</td>
+	<td></td>
+</tr>
+<!--Constrain (sync) MentionGroup channel-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=user_management/channels</td>
 	<td></td>
 </tr>
 <tr>
-	<td></td>
-	<td></td>
+	<td>click</td>
+	<td>id=user_management/channels</td>
 	<td></td>
 </tr>
-<!--***** Manually use CLI to enable constraint on:-->
-<!--***** MentionGroup channel-->
-<!--./mattermost group channel enable engineering:mentiongroup-->
-<!--***** Can verify constrained:-->
-<!--./mattermost group channel status engineering:mentiongroup-->
-<!--Enabled-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
 	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>mentiongroup</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[3]/div/div/span</td>
+	<td>MentionGroup</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.group-actions &gt; a &gt; span</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.group-actions &gt; a &gt; span</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=label.line-switch__label</td>
+	<td>Sync Group Members</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//button[@type='button']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@type='button']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#channel_groups &gt; div.header &gt; div &gt; h3 &gt; span</td>
+	<td>Synced Groups</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <!--Sync LDAP-->
@@ -2247,17 +2741,17 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>Hi @jesse</td>
+	<td>Hi @corey</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=span.mention--align</td>
-	<td>@jesse.test-simulator.amazonses.com</td>
+	<td>@corey.test-simulator.amazonses.com</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=span.mention--align</td>
-	<td>@jesse.test-simulator.amazonses.com</td>
+	<td>@corey.test-simulator.amazonses.com</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -2314,22 +2808,22 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>Hello, @jesse</td>
+	<td>Hello, @admin</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=span.mention--align</td>
-	<td>@jesse.test-simulator.amazonses.com</td>
+	<td>@admin</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=span.mention--align</td>
-	<td>@jesse.test-simulator.amazonses.com</td>
+	<td>@admin</td>
 </tr>
 <tr>
 	<td>waitForNotText</td>
 	<td>css=span.mention--align</td>
-	<td>@jesse.test-simulator.amazonses.com</td>
+	<td>@admin</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -2358,7 +2852,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>@corey.test-simulator.amazonses.com and @jesse.test-simulator.amazonses.com did not get notified by this mention because they are not in the channel. They cannot be added to the channel because they are not a member of the linked groups. To add them to this channel, they must be added to the linked groups.</td>
+	<td>@admin and @corey.test-simulator.amazonses.com did not get notified by this mention because they are not in the channel. They cannot be added to the channel because they are not a member of the linked groups. To add them to this channel, they must be added to the linked groups.</td>
 	<td></td>
 </tr>
 <!--Mention 2 users in group > link to add them (don't add them yet)-->
@@ -2462,22 +2956,22 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
-	<td>and @jesse</td>
+	<td>and @admin</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=span.mention--align</td>
-	<td>@jesse.test-simulator.amazonses.com</td>
+	<td>@admin</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=span.mention--align</td>
-	<td>@jesse.test-simulator.amazonses.com</td>
+	<td>@admin</td>
 </tr>
 <tr>
 	<td>waitForNotText</td>
 	<td>css=span.mention--align</td>
-	<td>@jesse.test-simulator.amazonses.com</td>
+	<td>@admin</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -2507,7 +3001,7 @@
 <!--Two ephemeral posts, one with link to add in-group users-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>@george.test-simulator.amazonses.com and @lindy.test-simulator.amazonses.com did not get notified by this mention because they are not in the channel. Would you like to add them to this private channel? They will have access to all message history.*@corey.test-simulator.amazonses.com and @jesse.test-simulator.amazonses.com did not get notified by this mention because they are not in the channel. They cannot be added to the channel because they are not a member of the linked groups. To add them to this channel, they must be added to the linked groups.</td>
+	<td>@george.test-simulator.amazonses.com and @lindy.test-simulator.amazonses.com did not get notified by this mention because they are not in the channel. Would you like to add them to this private channel? They will have access to all message history.</td>
 	<td></td>
 </tr>
 <!--Can add the in-group users via the link in ephemeral post-->
@@ -2524,6 +3018,11 @@
 <tr>
 	<td>waitForTextPresent</td>
 	<td>@lindy.test-simulator.amazonses.com and @george.test-simulator.amazonses.com added to the channel by you.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>@admin and @corey.test-simulator.amazonses.com did not get notified by this mention because they are not in the channel. They cannot be added to the channel because they are not a member of the linked groups. To add them to this channel, they must be added to the linked groups.</td>
 	<td></td>
 </tr>
 <!--LOG OUT linda.test-->
@@ -3144,7 +3643,6 @@
 	<td></td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

@@ -3105,7 +3105,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=channelHeaderDescription</td>
+	<td>css=span.header-description__text &gt; p.markdown__paragraph-inline &gt; a.theme.markdown__link</td>
 	<td>${ts1}</td>
 </tr>
 <tr>
@@ -3115,17 +3115,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelHeaderDescription</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.popover-content &gt; p &gt; a.theme.markdown__link</td>
-	<td>${ts1}</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.popover-content &gt; p &gt; a.theme.markdown__link</td>
+	<td>css=span.header-description__text &gt; p.markdown__paragraph-inline &gt; a.theme.markdown__link</td>
 	<td></td>
 </tr>
 <tr>
@@ -3525,28 +3515,28 @@
 	<td>Permalinkpost${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>dotMenuItemVerifyAndSelect</td>
-	<td>Item=Permalink</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalTextArea</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>storeText</td>
-	<td>id=linkModalTextArea</td>
-	<td>permalinkurl</td>
+	<td>sendKeys</td>
+	<td>id=searchBox</td>
+	<td>permalinkpost${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=linkModalCloseButton</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=a.search-item__jump &gt; span</td>
+	<td>Jump</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=a.search-item__jump &gt; span</td>
+	<td>Jump</td>
+</tr>
+<tr>
+	<td>storeLocation</td>
+	<td>permalinkurl</td>
 	<td></td>
 </tr>
 <!--Leave Test- channel-->
@@ -3593,11 +3583,6 @@
 	<td>Test-${datetime}</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#archive-link-home &gt; a &gt; span</td>
-	<td>Click here to jump to recent messages.</td>
-</tr>
-<tr>
 	<td>waitForTextPresent</td>
 	<td>You joined the channel.</td>
 	<td></td>
@@ -3608,6 +3593,7 @@
 	<td></td>
 </tr>
 <!--Delete permalink post from permalink view-->
+<!--*** May have to re-click Jump if permalink view has already faded-->
 <!--*** Manually click ... and Delete on "Permalinkpost" for now-->
 <tr>
 	<td>pause</td>

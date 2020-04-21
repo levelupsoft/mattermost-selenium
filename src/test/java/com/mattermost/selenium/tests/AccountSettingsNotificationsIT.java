@@ -57,7 +57,7 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         // Sleep
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Desktop notifications".equals(driver.findElement(By.id("settingTitle")).getText())) break; } catch (Exception e) {}
+        	try { if ("Desktop Notifications".equals(driver.findElement(By.id("settingTitle")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -135,7 +135,7 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         driver.findElement(By.id("pushEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Push notifications have not been enabled by your System Administrator.".equals(driver.findElement(By.cssSelector("div.padding-top > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Push notifications have not been enabled by your System Administrator.".equals(driver.findElement(By.cssSelector("div.pt-2 > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
@@ -155,7 +155,7 @@ public class AccountSettingsNotificationsIT extends DriverBase {
         // Words that trigger mentions
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Words that trigger mentions".equals(driver.findElement(By.id("keysTitle")).getText())) break; } catch (Exception e) {}
+        	try { if ("Words That Trigger Mentions".equals(driver.findElement(By.id("keysTitle")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 

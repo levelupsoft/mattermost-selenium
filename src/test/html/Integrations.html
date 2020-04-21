@@ -84,12 +84,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/away</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/away</td>
 </tr>
 <tr>
@@ -109,16 +109,6 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>You are now away</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextNotPresent</td>
 	<td>You are now away</td>
 	<td></td>
 </tr>
@@ -139,12 +129,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/offline</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/offline</td>
 </tr>
 <tr>
@@ -169,42 +159,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Off-Topic</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Off-Topic</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Town Square</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Town Square</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>You are now offline</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyTextNotPresent</td>
-	<td>New Messages</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
 	<td>css=svg.offline--icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -219,12 +174,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/online</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/online</td>
 </tr>
 <tr>
@@ -264,12 +219,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/offline</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/offline</td>
 </tr>
 <tr>
@@ -293,14 +248,19 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.comment-icon &gt; #Layer_1</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>Reply${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=span.comment-icon &gt; #Layer_1</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_SHIFT}${KEY_UP}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -314,12 +274,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/online</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/online</td>
 </tr>
 <tr>
@@ -343,9 +303,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div[@id='sidebar-right']/div[2]/div/div[3]/div[2]/div/div/div[3]/div/div/div/div[2]/div/div/div/span/p</td>
-	<td>You are now online</td>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('You are now online')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -360,11 +320,6 @@
 <tr>
 	<td>waitForTextPresent</td>
 	<td>You are now online</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
 	<td></td>
 </tr>
 <!--echo-->
@@ -401,16 +356,6 @@
 	<td>delay</td>
 	<td></td>
 </tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#lastPostMessageText &gt; p</td>
-	<td>delay</td>
-</tr>
 <!--join (leaves Off-Topic then re-joins using slash command)-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -424,23 +369,23 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdown</td>
+	<td>css=button.channel-header__trigger.style--none</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelHeaderDropdown</td>
+	<td>css=button.channel-header__trigger.style--none</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#channelLeave &gt; a &gt; span</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=#channelLeaveChannel &gt; button.style--none</td>
+	<td>Leave Channel</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelLeave &gt; a &gt; span</td>
-	<td></td>
+	<td>css=#channelLeaveChannel &gt; button.style--none</td>
+	<td>Leave Channel</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -488,10 +433,11 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#lastPostMessageText &gt; p</td>
-	<td>Posting after re-joining Off-Topic</td>
+	<td>waitForElementPresent</td>
+	<td>css=p:contains('Posting after re-joining Off-Topic')</td>
+	<td></td>
 </tr>
+<!--THESE are in the IDE-only tests-->
 <!--me-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -646,12 +592,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/expand</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/expand</td>
 </tr>
 <tr>
@@ -702,12 +648,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/collapse</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/collapse</td>
 </tr>
 <tr>
@@ -732,12 +678,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/expand</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/expand</td>
 </tr>
 <tr>
@@ -2278,7 +2224,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=string</td>
+	<td>css=div.command__title</td>
 	<td>/away</td>
 </tr>
 <tr>

@@ -384,24 +384,34 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>link=Click here to jump to recent messages.</td>
+	<td></td>
+</tr>
+<tr>
 	<td>storeLocation</td>
 	<td>urlwhole</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeEval</td>
-	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[6]</td>
+	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[5]</td>
 	<td>postid</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Click here to jump to recent messages.</td>
+	<td></td>
 </tr>
 <!--Cancel out of a delete (use postid to locate the right ... menu)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=SEARCH_button_${postid}</td>
+	<td>css=#SEARCH_button_${postid}</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=SEARCH_button_${postid}</td>
+	<td>css=#SEARCH_button_${postid}</td>
 	<td></td>
 </tr>
 <!--*** If needed, manually click the [...] menu on Greetings post in RHS search results-->
@@ -556,14 +566,24 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>link=Click here to jump to recent messages.</td>
+	<td></td>
+</tr>
+<tr>
 	<td>storeLocation</td>
 	<td>urlwhole</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeEval</td>
-	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[6]</td>
+	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[5]</td>
 	<td>replyid</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Click here to jump to recent messages.</td>
+	<td></td>
 </tr>
 <!--Edit reply in RHS-->
 <tr>
@@ -583,17 +603,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#rhsPostMessageText_${replyid} p</td>
+	<td>xpath=//div[@id='${replyid}_message']</td>
 	<td>Reply</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=RHS_COMMENT_button_${replyid}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=RHS_COMMENT_button_${replyid}</td>
+	<td>rollup</td>
+	<td>openSearchDotMenuForTopPost</td>
 	<td></td>
 </tr>
 <tr>
@@ -607,6 +622,7 @@
 	<td>dotMenuItemVerifyAndSelect</td>
 	<td>Item=Edit</td>
 </tr>
+<!--^^2 steps above need maintenance to find Edit on ... menu^^-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=edit_textbox</td>
@@ -698,7 +714,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=reply_textbox</td>
-	<td>Ok thankstoyou!${KEY_ENTER}</td>
+	<td>Ok thanks!${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -749,40 +765,40 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>link=Click here to jump to recent messages.</td>
+	<td></td>
+</tr>
+<tr>
 	<td>storeLocation</td>
 	<td>urlwhole</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeEval</td>
-	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[6]</td>
+	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[5]</td>
 	<td>deleteid</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Click here to jump to recent messages.</td>
+	<td></td>
 </tr>
 <!--Delete from search RHS-->
 <tr>
 	<td>pause</td>
-	<td>2000</td>
+	<td>4000</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=SEARCH_button_${deleteid}</td>
+	<td>rollup</td>
+	<td>openSearchDotMenuForTopPost</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=SEARCH_button_${deleteid}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=button.style--none.MenuItem__dangerous</td>
-	<td>Delete</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.style--none.MenuItem__dangerous</td>
-	<td></td>
+	<td>rollup</td>
+	<td>dotMenuItemVerifyAndSelect</td>
+	<td>Item=Dele</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -818,7 +834,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=searchBox</td>
-	<td>thankstoyou${KEY_ENTER}</td>
+	<td>thanks${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -908,13 +924,18 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>link=Click here to jump to recent messages.</td>
+	<td></td>
+</tr>
+<tr>
 	<td>storeLocation</td>
 	<td>urlwhole</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeEval</td>
-	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[6]</td>
+	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[5]</td>
 	<td>editid</td>
 </tr>
 <!--Edit comment in RHS while permalink view is also open in center-->
@@ -994,6 +1015,16 @@
 	<td>hopefully.*(edited)</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#archive-link-home &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#archive-link-home &gt; a &gt; span</td>
+	<td></td>
+</tr>
 <!--Delete comment from RHS-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1016,17 +1047,7 @@
 	<td></td>
 </tr>
 <!--No longer finding the post menu-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=RHS_COMMENT_button_${editid}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=RHS_COMMENT_button_${editid}</td>
-	<td></td>
-</tr>
-<!--** Manually hover over `The clouds...`-->
+<!--** Manually click `The clouds...` post menu-->
 <tr>
 	<td>waitForText</td>
 	<td>css=button.style--none.MenuItem__dangerous</td>
@@ -1186,6 +1207,11 @@
 <tr>
 	<td>mouseOver</td>
 	<td>css=button.style--none.flag-icon__container </td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Flag for follow up</td>
 	<td></td>
 </tr>
 <tr>
@@ -1396,14 +1422,29 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>link=Click here to jump to recent messages.</td>
+	<td></td>
+</tr>
+<tr>
 	<td>storeLocation</td>
 	<td>urlwhole</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeEval</td>
-	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[6]</td>
+	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[5]</td>
 	<td>pinnedid</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Click here to jump to recent messages.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
 </tr>
 <!--Use keyboard command for Edit to open RHS (still can't get to [...] in center-->
 <tr>
@@ -1431,27 +1472,9 @@
 	<td>css=span.sidebar--right__title</td>
 	<td>Message Details</td>
 </tr>
-<!--Pin "important post" in RHS, pinned badge in RHS and center-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=RHS_ROOT_button_${pinnedid}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=RHS_ROOT_button_${pinnedid}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#pin_post_${pinnedid} &gt; button.style--none</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#pin_post_${pinnedid} &gt; button.style--none</td>
-	<td></td>
-</tr>
+<!--Pin in RHS, pinned badge in RHS and center-->
+<!--*** No longer finding [...] in RHS-->
+<!--*** In RHS on "This is an important..." click [...] and Pin to channel manually-->
 <tr>
 	<td>pause</td>
 	<td>5000</td>
@@ -1481,7 +1504,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Test-${datetime}</td>
+	<td>Pinned posts in Test-${datetime}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1532,7 +1555,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Off-Topic</td>
+	<td>Pinned posts in Off-Topic</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1579,7 +1602,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Off-Topic</td>
+	<td>Pinned posts in Off-Topic</td>
 </tr>
 <!--Pinned post in different channel in center was not added to RHS-->
 <tr>
@@ -1667,7 +1690,7 @@
 <tr>
 	<td>waitForNotText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Test-${datetime}</td>
+	<td>Pinned posts in Test-${datetime}</td>
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
@@ -1689,7 +1712,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Off-Topic</td>
+	<td>Pinned posts in Off-Topic</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1731,30 +1754,25 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>link=Click here to jump to recent messages.</td>
+	<td></td>
+</tr>
+<tr>
 	<td>storeLocation</td>
 	<td>urlwhole</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeEval</td>
-	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[6]</td>
+	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[5]</td>
 	<td>pinned2id</td>
 </tr>
 <!--Un-pin in RHS - Maually click dot menu of pinned post in RHS -->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=SEARCH_button_${pinned2id}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=SEARCH_button_${pinned2id}</td>
-	<td></td>
-</tr>
-<tr>
 	<td>rollup</td>
 	<td>dotMenuItemVerifyAndSelect</td>
-	<td>Item=Unpin from Channel</td>
+	<td>Item=Un-pin from channel</td>
 </tr>
 <!--I'll come back to this later...-->
 <tr>
@@ -2347,21 +2365,6 @@
 </tr>
 <!--*** Manually enter user testst (figured this out in another test but need to go find it)-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.css-151xaom-placeholder.users-emails-input__placeholder</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=react-select-2-input</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=react-select-2-input</td>
-	<td>testst${dayseconds}</td>
-</tr>
-<tr>
 	<td>waitForText</td>
 	<td>id=react-select-2-option-0</td>
 	<td>@testst${dayseconds}</td>
@@ -2537,7 +2540,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newChannelName</td>
+	<td>id=PrivateChannelName</td>
 	<td>Private-${datetime}</td>
 </tr>
 <tr>
@@ -3264,7 +3267,7 @@
 <tr>
 	<td>type</td>
 	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
-	<td>testst${dayseconds}</td>
+	<td>testst</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3443,13 +3446,18 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>link=Click here to jump to recent messages.</td>
+	<td></td>
+</tr>
+<tr>
 	<td>storeLocation</td>
 	<td>permaurl</td>
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>1000</td>
+	<td>click</td>
+	<td>link=Click here to jump to recent messages.</td>
 	<td></td>
 </tr>
 <tr>
@@ -3493,11 +3501,26 @@
 	<td>5000</td>
 	<td></td>
 </tr>
-<!--*** Visually verify temporarily highlighted message "This message will be permalinked"-->
+<!--*** Visually verify permalink highlighted message "This message will be permalinked"-->
 <tr>
 	<td>waitForText</td>
 	<td>css=p.markdown__paragraph-inline</td>
 	<td>ST2${dayseconds} wrote this header</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#archive-link-home &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#archive-link-home &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=div.post.post--highlight.same--user.same--root:contains('This message will be permalinked.')</td>
+	<td></td>
 </tr>
 <!--Leave public channel using /leave-->
 <tr>
@@ -4527,12 +4550,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#channelHeaderDescription &gt; button.style--none</td>
-	<td>Add a channel description(Edit)</td>
+	<td>Add a channel description</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=#channelHeaderDescription &gt; button.style--none</td>
-	<td></td>
+	<td>Add a channel description</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -4603,26 +4626,40 @@
 	<td>css=em</td>
 	<td>Header</td>
 </tr>
-<!--*** Manually hover over *Header*-->
 <tr>
-	<td>waitForText</td>
-	<td>css=div.popover-content &gt; span &gt; p</td>
+	<td>click</td>
+	<td>css=em</td>
 	<td>Header</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.popover-content &gt; span &gt; ul.markdown__list &gt; li &gt; span</td>
+	<td>css=div.popover-content &gt; p &gt; em</td>
+	<td>Header</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.popover-content &gt; ul &gt; li</td>
 	<td>Item 1</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.popover-content &gt; span &gt; ul.markdown__list &gt; li &gt; span &gt; a.theme.markdown__link</td>
+	<td>xpath=(//a[contains(text(),'Item 2 is a link')])[3]</td>
 	<td>Item 2 is a link</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Item 2 is a link</td>
 	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=em</td>
+	<td>Header</td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=div.popover-content &gt; div &gt; ul &gt; li</td>
+	<td>Item 1</td>
 </tr>
 <!--Verify View info shows edited Purpose and added Header (with markdown)-->
 <tr>
@@ -4780,6 +4817,26 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
+	<td>//span[contains(text(),'×')] </td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span[contains(text(),'×')] </td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>openChanMenu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>chanMenuItemVerifyAndSelect</td>
+	<td>Item=Manage Members</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
 	<td>//div[@class='MenuWrapper ']//*/span[contains(text(),'Channel Member')]</td>
 	<td></td>
 </tr>
@@ -4822,11 +4879,6 @@
 	<td>waitForElementPresent</td>
 	<td>css=div:contains('st2${dayseconds} was removed from the channel')</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=member_popover</td>
-	<td>1</td>
 </tr>
 <!--Log out testST-->
 <tr>

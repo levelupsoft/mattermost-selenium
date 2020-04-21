@@ -16,6 +16,7 @@
 <tr><td><a href="auth06-LDAPGroups.html">auth06-LDAPGroups</a></td></tr>
 <tr><td><a href="auth07-SAML.html">auth07-SAML</a></td></tr>
 <tr><td><a href="auth08-GitLab.html">auth08-GitLab</a></td></tr>
+<tr><td><a href="auth06.5-LDAPGroupSync.html">auth06.5-LDAPGroupSync</a></td></tr>
 </tbody></table>
 </body>
 </html>

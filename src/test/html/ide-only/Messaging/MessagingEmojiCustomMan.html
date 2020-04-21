@@ -76,10 +76,44 @@
 <!--Add emojis with emoji picker-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span[@role='button'][@class='emoji-picker__container']</td>
+	<td>id=emojiPickerButton</td>
 	<td></td>
 </tr>
-<!--^^Can't figure out why this is not clickable^^-->
+<tr>
+	<td>click</td>
+	<td>id=emojiPickerButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=emoji-1f600</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=emoji-1f600</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=emojiPickerButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=emoji-1f990</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=emoji-1f990</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>post with emojis from emoji picker${KEY_ENTER}</td>
+</tr>
 <!--Emojis only are jumbo (including with whitespace padding-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -248,7 +282,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.col-md-5.col-sm-8 &gt; div &gt; div.form__help &gt; span</td>
-	<td>Choose the image for your emoji. The image can be a gif, png, or jpeg file with a max size of 1 MB. Dimensions will automatically resize to fit 128 by 128 pixels but keeping aspect ratio.</td>
+	<td>Specify a .gif, .png, or .jpg file for your emoji. The file can be up to 1 MB. The dimensions are resized automatically to 128 pixels by 128 pixels while maintaining the aspect ratio.</td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
@@ -401,8 +435,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.backstage-form</td>
-	<td>NameChoose a name for your emoji made of up to 64 characters consisting of lowercase letters, numbers, and the symbols '-' and '_'.<br /><br /><br />ImageSelect<br />JPG.jpgChoose the image for your emoji. The image can be a gif, png, or jpeg file with a max size of 1 MB. Dimensions will automatically resize to fit 128 by 128 pixels but keeping aspect ratio.<br /><br /><br /><br />PreviewThis is a sentence with in it.<br /><br />CancelSave</td>
+	<td>css=div.form__help &gt; span</td>
+	<td>Specify an emoji name that's up to 64 characters. It can contain lowercase letters, numbers, and the symbols '-' and '_'.</td>
 </tr>
 <!--Save new custom emoji-->
 <tr>
@@ -570,11 +604,6 @@
 	<td>waitForTextPresent</td>
 	<td>This is a sentence with</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.form-group</td>
-	<td>NameChoose a name for your emoji made of up to 64 characters consisting of lowercase letters, numbers, and the symbols '-' and '_'.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

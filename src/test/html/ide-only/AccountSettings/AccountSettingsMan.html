@@ -2822,6 +2822,12 @@
 	<td>id=post_textbox</td>
 	<td>Followed by Control and Enter${KEY_CTRL}${KEY_ENTER}</td>
 </tr>
+<!--These stopped finding the css contains....-->
+<tr>
+	<td>waitForText</td>
+	<td>//div[13]/div/div/div/div[2]/div[2]/div/div/div/div/p</td>
+	<td>Just Enter<br />Followed by Control and Enter</td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=p:contains('Just Enter<br />Followed by Control and Enter')</td>
@@ -2879,6 +2885,12 @@
 	<td>sendKeys</td>
 	<td>id=reply_textbox</td>
 	<td>Followed by Control and Enter${KEY_CTRL}${KEY_ENTER}</td>
+</tr>
+<!--These stopped finding the css contains....-->
+<tr>
+	<td>waitForText</td>
+	<td>//div[3]/div[2]/div/div[2]/div[2]/div/div/div/div/p</td>
+	<td>Reply just Enter<br />Followed by Control and Enter</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2967,7 +2979,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#advancedCtrlSendTitle &gt; span</td>
-	<td>Send messages on ⌘+ENTER</td>
+	<td>Send Messages on ⌘+ENTER</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3172,12 +3184,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.flex-child.search-bar__container &gt; div.sidebar-right__table &gt; #searchFormContainer &gt; form.search__form &gt; #searchClearButton &gt; span.sidebar__search-clear-x</td>
+	<td>css=span.input-clear-x</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.flex-child.search-bar__container &gt; div.sidebar-right__table &gt; #searchFormContainer &gt; form.search__form &gt; #searchClearButton &gt; span.sidebar__search-clear-x</td>
+	<td>css=span.input-clear-x</td>
 	<td></td>
 </tr>
 <tr>
@@ -3254,12 +3266,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.flex-child.search-bar__container &gt; div.sidebar-right__table &gt; #searchFormContainer &gt; form.search__form &gt; #searchClearButton &gt; span.sidebar__search-clear-x</td>
+	<td>css=span.input-clear-x</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.flex-child.search-bar__container &gt; div.sidebar-right__table &gt; #searchFormContainer &gt; form.search__form &gt; #searchClearButton &gt; span.sidebar__search-clear-x</td>
+	<td>css=span.input-clear-x</td>
 	<td></td>
 </tr>
 <tr>
@@ -3336,12 +3348,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.flex-child.search-bar__container &gt; div.sidebar-right__table &gt; #searchFormContainer &gt; form.search__form &gt; #searchClearButton &gt; span.sidebar__search-clear-x</td>
+	<td>css=span.input-clear-x</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.flex-child.search-bar__container &gt; div.sidebar-right__table &gt; #searchFormContainer &gt; form.search__form &gt; #searchClearButton &gt; span.sidebar__search-clear-x</td>
+	<td>css=span.input-clear-x</td>
 	<td></td>
 </tr>
 <tr>
@@ -3474,7 +3486,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.margin-top.x3</td>
+	<td>css=div.mt-5 span</td>
 	<td>When &quot;On&quot;, System Messages saying a user has joined or left a channel will be visible. When &quot;Off&quot;, the System Messages about joining or leaving a channel will be hidden. A message will still show up when you are added to a channel, so you can receive a notification.</td>
 </tr>
 <!--Turn off-->
@@ -4091,7 +4103,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=TeamSettings.MaxUsersPerTeam</td>
+	<td>css=input#TeamSettings.MaxUsersPerTeam.form-control</td>
 	<td>200</td>
 </tr>
 <tr>

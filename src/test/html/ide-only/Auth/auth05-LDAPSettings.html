@@ -455,7 +455,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.alert.alert-warning &gt; span</td>
-	<td>AD/LDAP Test Failure: Unable to connect to AD/LDAP server</td>
+	<td>AD/LDAP Test Failure: Unable to connect to AD/LDAP server.</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -521,7 +521,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
-	<td>Invalid AD/LDAP Filter</td>
+	<td>Invalid AD/LDAP Filter.</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -592,7 +592,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.alert.alert-warning &gt; span</td>
-	<td>AD/LDAP Test Failure: Unable to connect to AD/LDAP server</td>
+	<td>AD/LDAP Test Failure: Unable to connect to AD/LDAP server.</td>
 </tr>
 <!--Connection Security - Change setting back, test successful-->
 <tr>
@@ -1192,7 +1192,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
-	<td>Invalid Password</td>
+	<td>Invalid Password.</td>
 </tr>
 <!--Switch LDAP to email login - Successful-->
 <tr>
@@ -1416,7 +1416,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
-	<td>Login failed because of invalid password</td>
+	<td>Login failed because of invalid password.</td>
 </tr>
 <!--Switch email to LDAP login successfully-->
 <tr>
@@ -3020,4 +3020,25 @@
 	<td>waitForText</td>
 	<td>id=headerTeamName</td>
 	<td>UI Automation 2</td>
+</tr>
+<!--LOG OUT test.two-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
 </tr>

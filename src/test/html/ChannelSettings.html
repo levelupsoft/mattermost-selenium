@@ -60,22 +60,12 @@
 <!--Add Public Channel from + icon, header tests-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=+</td>
+	<td>id=createPublicChannel</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=+</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.modal-intro &gt; a &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Create a private channel</td>
+	<td>id=createPublicChannel</td>
 	<td></td>
 </tr>
 <tr>
@@ -95,7 +85,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.channel-intro__title &gt; span</td>
+	<td>css=h2.channel-intro__title &gt; span</td>
 	<td>Beginning of NoHeader</td>
 </tr>
 <tr>
@@ -105,43 +95,43 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Invite others to this channel</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#channelViewInfo &gt; a &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#channelViewInfo &gt; a &gt; span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.modal-title &gt; strong</td>
+	<td>css=#channelViewInfo &gt; button.style--none.</td>
+	<td>View Info</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelViewInfo &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#channelInfoModalLabel &gt; strong</td>
 	<td>NoHeader</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.info__value</td>
 	<td>exact:https://selenium.test.mattermost.com/ui-automation/channels/noheader</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -154,23 +144,23 @@
 	<td>exact:Header:</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.about-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//div/div/div/button[2]</td>
+	<td>Set a Header</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Set a Header</td>
+	<td>//div/div/div/button[2]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=edit_header</td>
+	<td>id=edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=edit_header</td>
+	<td>id=edit_textbox</td>
 	<td>https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&amp;</td>
 </tr>
 <tr>
@@ -183,17 +173,17 @@
 <!--Sleep-->
 <tr>
 	<td>waitForValue</td>
-	<td>id=edit_header</td>
+	<td>id=edit_textbox</td>
 	<td>exact:https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm&amp;</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[13]</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-primary.save-button span</td>
+	<td>Save</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[13]</td>
+	<td>css=button.btn.btn-primary.save-button span</td>
 	<td></td>
 </tr>
 <tr>
@@ -203,37 +193,37 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[11]</td>
+	<td>css=button.btn.btn-link.cancel-button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[11]</td>
+	<td>css=button.btn.btn-link.cancel-button</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Set a Header</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//div/div/div/button[2]</td>
+	<td>Set a Header</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Set a Header</td>
+	<td>//div/div/div/button[2]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=edit_header</td>
+	<td>id=edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=edit_header</td>
+	<td>id=edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=edit_header</td>
+	<td>id=edit_textbox</td>
 	<td>https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.html https://docs.mattermost.com/process/release-process.htm</td>
 </tr>
 <tr>
@@ -245,13 +235,8 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
-	<td>waitForEditable</td>
-	<td>xpath=(//button[@type='button'])[13]</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[13]</td>
+	<td>css=button.btn.btn-primary.save-button span</td>
 	<td></td>
 </tr>
 <tr>
@@ -271,17 +256,27 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelViewInfo &gt; a &gt; span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelViewInfo &gt; a &gt; span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.modal-title &gt; strong</td>
+	<td>css=#channelViewInfo &gt; button.style--none.</td>
+	<td>View Info</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelViewInfo &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#channelInfoModalLabel &gt; strong</td>
 	<td>NoHeader</td>
 </tr>
 <tr>
@@ -305,38 +300,38 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Set a Header</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//div/div/div/button[2]</td>
+	<td>Set a Header</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Set a Header</td>
+	<td>//div/div/div/button[2]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=edit_header</td>
+	<td>id=edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=edit_header</td>
+	<td>id=edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=edit_header</td>
+	<td>id=edit_textbox</td>
 	<td>h${KEY_BACKSPACE}</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=edit_header</td>
+	<td>id=edit_textbox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[13]</td>
+	<td>css=button.btn.btn-primary.save-button span</td>
 	<td></td>
 </tr>
 <tr>
@@ -346,27 +341,27 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#channelViewInfo &gt; a &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#channelViewInfo &gt; a &gt; span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=h4.modal-title &gt; strong</td>
+	<td>css=#channelViewInfo &gt; button.style--none.</td>
+	<td>View Info</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelViewInfo &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#channelInfoModalLabel &gt; strong</td>
 	<td>NoHeader</td>
 </tr>
 <tr>
@@ -385,43 +380,25 @@
 	<td></td>
 </tr>
 <tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=a.nav-more &gt; span</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>id=sidebarPublicChannelsMore</td>
+	<td>More...</td>
 </tr>
 <!--Create Public Channel through More... modal-->
 <tr>
 	<td>click</td>
-	<td>css=a.nav-more &gt; span</td>
-	<td></td>
+	<td>id=sidebarPublicChannelsMore</td>
+	<td>More...</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//button[@type='button'])[12]</td>
-	<td>Create New Channel</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[12]</td>
-	<td></td>
+	<td>id=createNewChannel</td>
+	<td>Create Channel</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[12]</td>
-	<td></td>
+	<td>id=createNewChannel</td>
+	<td>Create Channel</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -454,7 +431,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>css=div.col-sm-9 &gt; input.form-control</td>
 	<td>qa</td>
 </tr>
@@ -464,7 +441,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>css=textarea.form-control.no-resize</td>
 	<td>This channel's reason to live.</td>
 </tr>
@@ -483,72 +460,72 @@
 	<td>link=qa</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>Channels*+*NoHeader*Off-Topic*qa*Town Square*More...</td>
-	<td></td>
-</tr>
 <!--Public Channel drop-down-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#channelViewInfo &gt; a &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#channelNotificationPreferences &gt; a &gt; span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#channelAddMembers &gt; a &gt; span</td>
+	<td>css=#channelViewInfo &gt; button.style--none.</td>
+	<td>View Info</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
+	<td>Notification Preferences</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#channelAddMembers &gt; button.style--none.</td>
 	<td>Add Members</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#channelManageMembers &gt; a &gt; span</td>
+	<td>css=#channelManageMembers &gt; button.style--none.</td>
 	<td>Manage Members</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#channelEditHeader &gt; a &gt; span</td>
+	<td>css=#channelEditHeader &gt; button.style--none.</td>
 	<td>Edit Channel Header</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#channelEditPurpose &gt; a &gt; span</td>
+	<td>css=#channelEditPurpose &gt; button.style--none.</td>
 	<td>Edit Channel Purpose</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#channelRename &gt; a &gt; span</td>
+	<td>css=#channelRename &gt; button.style--none.</td>
 	<td>Rename Channel</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#channelDelete &gt; a &gt; span</td>
-	<td>Delete Channel</td>
+	<td>css=#channelCovertToPrivate &gt; button.style--none.</td>
+	<td>Convert to Private Channel</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#channelLeave &gt; a &gt; span</td>
+	<td>css=#channelArchiveChannel &gt; button.style--none.</td>
+	<td>Archive Channel</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#channelLeaveChannel &gt; button.style--none</td>
 	<td>Leave Channel</td>
 </tr>
 <!--Edit Purpose, View Info-->
 <tr>
 	<td>click</td>
-	<td>css=#channelViewInfo &gt; a &gt; span</td>
-	<td></td>
+	<td>css=#channelViewInfo &gt; button.style--none.</td>
+	<td>View Info</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -572,22 +549,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#channelEditPurpose &gt; a &gt; span</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=#channelEditPurpose &gt; button.style--none.</td>
+	<td>Edit Channel Purpose</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelEditPurpose &gt; a &gt; span</td>
+	<td>css=#channelEditPurpose &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -601,33 +578,38 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>css=textarea.form-control.no-resize</td>
 	<td>This channel's reason to live, edited.</td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>xpath=(//button[@type='button'])[10]</td>
+	<td>Save</td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[13]</td>
+	<td>xpath=(//button[@type='button'])[10]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#channelViewInfo &gt; a &gt; span</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=#channelViewInfo &gt; button.style--none.</td>
+	<td>View Info</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelViewInfo &gt; a &gt; span</td>
+	<td>css=#channelViewInfo &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -652,238 +634,134 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>admin updated the channel purpose from: This channel's reason to live. to: This channel's reason to live, edited.</td>
+	<td>admin updated the channel purpose *to: This channel's reason to live, edited.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <!--Channel Notifications (UI only; actual notifications tested in Notifications)-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#channelNotificationPreferences &gt; a &gt; span</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
+	<td>Notification Preferences</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelNotificationPreferences &gt; a &gt; span</td>
+	<td>css=#channelNotificationPreferences &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Send_desktop_notificationsDesc &gt; span</td>
-	<td>Global default (For all activity)</td>
+	<td>id=desktopDesc</td>
+	<td>Global default (Mention)</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>For all unread messages</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelUnreadMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelUnreadMentions</td>
-	<td></td>
+	<td>id=markUnreadDesc</td>
+	<td>Off</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.setting-list__hint &gt; span &gt; span</td>
-	<td>The channel name is bolded in the sidebar when there are unread messages. Selecting &quot;Only for mentions&quot; will bold the channel only when you are mentioned.</td>
+	<td>id=ignoreChannelMentionsDesc</td>
+	<td>Off</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadCancel &gt; span</td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#Mark_Channel_UnreadCancel &gt; span</td>
-	<td></td>
-</tr>
-<!--Bug here; change following to "For all unread messages" after fixed-->
-<tr>
-	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>Only for mentions</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#Mark_Channel_UnreadEdit &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelUnreadMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelUnreadMentions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#Mark_Channel_UnreadDesc &gt; span</td>
-	<td>Only for mentions</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[11]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[11]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
 <!--Add Members-->
 <tr>
-	<td>click</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>waitForElementPresent</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#channelAddMembers &gt; a &gt; span</td>
+	<td>click</td>
+	<td>id=channelHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#channelAddMembers &gt; button.style--none.</td>
 	<td>Add Members</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelAddMembers &gt; a &gt; span</td>
-	<td>Add Members</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=addMembers</td>
+	<td>css=#channelAddMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>corey</td>
+	<td>@corey</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=input.form-control.filter-textbox</td>
+	<td>css=div.react-select-auto.react-select__input</td>
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>css=input.form-control.filter-textbox</td>
+	<td>type</td>
+	<td>id=react-select-2-input</td>
 	<td>test8</td>
 </tr>
 <tr>
 	<td>waitForNotText</td>
 	<td>css=div.more-modal__name</td>
-	<td>corey</td>
+	<td>@corey</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=input.form-control.filter-textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=input.form-control.filter-textbox</td>
-	<td>h${KEY_BACKSPACE}</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>css=input.form-control.filter-textbox</td>
+	<td>id=react-select-2-input</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>corey</td>
+	<td>@corey</td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>css=input.form-control.filter-textbox</td>
+	<td>type</td>
+	<td>id=react-select-2-input</td>
 	<td>test8</td>
 </tr>
 <tr>
 	<td>waitForNotText</td>
 	<td>css=div.more-modal__name</td>
-	<td>corey</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=addMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=addMembers</td>
-	<td></td>
+	<td>@corey</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__placeholder-row &gt; p &gt; span</td>
-	<td>No users found</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test8</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__name</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.more-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.more-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -894,22 +772,22 @@
 <!--Manage Members-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdown</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=channelHeaderDropdown</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#channelManageMembers &gt; a &gt; span</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=#channelManageMembers &gt; button.style--none.</td>
+	<td>Manage Members</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelManageMembers &gt; a &gt; span</td>
+	<td>css=#channelManageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -924,13 +802,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#channelMemberDropdown &gt; span &gt; span</td>
-	<td>Channel Member</td>
+	<td>xpath=(//button[@type='button'])[9]</td>
+	<td>test8Channel Member</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>admin</td>
+	<td>@admin</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -945,7 +823,7 @@
 <tr>
 	<td>waitForNotText</td>
 	<td>css=div.more-modal__name</td>
-	<td>admin</td>
+	<td>@admin</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -965,96 +843,71 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>admin</td>
+	<td>@admin</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelMemberDropdown &gt; span &gt; span</td>
+	<td>css=button.dropdown-toggle.theme.color--link.style--none span span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelMemberDropdown &gt; span &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#makeChannelAdmin &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#makeChannelAdmin &gt; span</td>
+	<td>css=button.dropdown-toggle.theme.color--link.style--none span span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#channelMemberDropdown &gt; span &gt; span</td>
-	<td>Channel Admin</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#showInviteModal &gt; span</td>
-	<td></td>
+	<td>css=#test8-make-channel-admin &gt; button.style--none</td>
+	<td>Make Channel Admin</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#showInviteModal &gt; span</td>
-	<td></td>
+	<td>css=#test8-make-channel-admin &gt; button.style--none</td>
+	<td>Make Channel Admin</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.form-control.filter-textbox</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>xpath=(//button[@type='button'])[9]</td>
+	<td>test8Channel Admin</td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>css=input.form-control.filter-textbox</td>
+	<td>waitForText</td>
+	<td>id=showInviteModal</td>
+	<td>Add Members</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=showInviteModal</td>
+	<td>Add Members</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=react-select-3-input</td>
 	<td>test7</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>1 member of 10 total</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=addMembers</td>
-	<td>Add</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>test7</td>
+	<td>@test7</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test7</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test7</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=addMembers</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=addMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.member-count.pull-left &gt; span</td>
-	<td>0 members of 10 total</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.more-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
@@ -1063,39 +916,39 @@
 	<td>3</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.fa.fa-user</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>css=span.fa.fa-user</td>
+	<td>id=member_popover</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='member-list-popover']/div[2]/div/div[2]/div/div</td>
+	<td>//div[2]/div[2]/div/div[2]</td>
 	<td>test7</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=member_popover</td>
+	<td></td>
 </tr>
 <!--Rename Channel (edit Header and Purpose covered above)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#channelRename &gt; a &gt; span</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=#channelRename &gt; button.style--none.</td>
+	<td>Rename Channel</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelRename &gt; a &gt; span</td>
+	<td>css=#channelRename &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1119,7 +972,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
+	<td>type</td>
 	<td>id=display_name</td>
 	<td>renamed</td>
 </tr>
@@ -1161,73 +1014,38 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#channelLeave &gt; a &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#channelLeave &gt; a &gt; span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
+	<td>css=#channelLeaveChannel &gt; button.style--none</td>
+	<td>Leave Channel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#channelLeaveChannel &gt; button.style--none</td>
+	<td>Leave Channel</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
 	<td>css=strong.heading</td>
-	<td>Town Square</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=renamed</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=renamed</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#channelLeave &gt; a &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#channelLeave &gt; a &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
+	<td>renamed</td>
 </tr>
 <!--Find and join channel from More...-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=a.nav-more &gt; span</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=a.nav-more &gt; span</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
@@ -1242,18 +1060,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=p.more-modal__name</td>
-	<td>renamed</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>css=input.form-control.filter-textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=input.form-control.filter-textbox</td>
-	<td>h${KEY_BACKSPACE}</td>
+	<td>css=div.more-modal__details</td>
+	<td>renamedThis channel's reason to live, edited.</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -1262,7 +1070,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=p.more-modal__name</td>
+	<td>css=div.more-modal__details</td>
 	<td>NoHeader</td>
 </tr>
 <tr>
@@ -1272,13 +1080,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=p.more-modal__name</td>
-	<td>renamed</td>
+	<td>css=div.more-modal__details</td>
+	<td>renamedThis channel's reason to live, edited.</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
+	<td>waitForText</td>
 	<td>css=div.more-modal__actions &gt; button.btn.btn-primary</td>
-	<td></td>
+	<td>Join</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -1292,7 +1100,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>admin has joined the channel.</td>
+	<td>You joined the channel.</td>
 	<td></td>
 </tr>
 <!--Join channel from link-->
@@ -1343,7 +1151,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>admin has joined the channel.</td>
+	<td>You joined the channel.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1377,29 +1185,24 @@
 	<td>3</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.fa.fa-user</td>
+	<td>click</td>
+	<td>id=member_popover</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__button &gt; button.btn.btn-link</td>
+	<td>Manage Members</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.fa.fa-user</td>
+	<td>css=div.more-modal__button &gt; button.btn.btn-link</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.more-modal__name &gt; a &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal__name &gt; a &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
+	<td>waitForText</td>
 	<td>css=#showInviteModal &gt; span</td>
-	<td></td>
+	<td>Add Members</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -1408,37 +1211,37 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=input.form-control.filter-textbox</td>
+	<td>css=div.react-select-auto.react-select__input</td>
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>css=input.form-control.filter-textbox</td>
+	<td>type</td>
+	<td>id=react-select-4-input</td>
 	<td>test1</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>test10</td>
+	<td>@test10</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.more-modal__name</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=addMembers</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=addMembers</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.more-modal.modal-dialog &gt; div.modal-content &gt; div.modal-header &gt; button.close</td>
+	<td>id=saveItems</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>added to the channel by admin</td>
+	<td>added to the channel by you</td>
 	<td></td>
 </tr>
 <tr>
@@ -1447,29 +1250,19 @@
 	<td>4</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.fa.fa-user</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>css=span.fa.fa-user</td>
+	<td>id=member_popover</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='member-list-popover']/div[2]/div/div[2]/div/div</td>
+	<td>//div[2]/div[2]/div/div[2]/div</td>
 	<td>test10</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=a.btn-message &gt; span</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>css=a.btn-message &gt; span</td>
-	<td></td>
+	<td>//div[2]/div[2]/div/div[2]/div</td>
+	<td>test10</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1488,27 +1281,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
+	<td>id=channelHeaderDropdownButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelManageMembers &gt; a &gt; span</td>
+	<td>css=#channelManageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelManageMembers &gt; a &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.form-control.filter-textbox</td>
+	<td>css=#channelManageMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1519,73 +1307,27 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
-	<td>test7</td>
+	<td>@test7</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#channelMemberDropdown &gt; span &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#channelMemberDropdown &gt; span &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#removeFromChannel &gt; span</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>xpath=(//button[@type='button'])[9]</td>
+	<td>test7Channel Member</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#removeFromChannel &gt; span</td>
-	<td></td>
-</tr>
-<!--Note that Se does not cause the UI to change as it should for some reason-->
-<!--But the user is removed from the channel.-->
-<!--May need to keep Remove From Channel manual until we figure this one out-->
-<tr>
-	<td>pause</td>
-	<td>3000</td>
-	<td></td>
-</tr>
-<!--Sleep-->
-<!--Sleep-->
-<!--Sleep-->
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
+	<td>xpath=(//button[@type='button'])[9]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//li[2]/button</td>
+	<td>Remove from Channel</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id='channelHeaderDropdown']/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#channelManageMembers &gt; a &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#channelManageMembers &gt; a &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input.form-control.filter-textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>css=input.form-control.filter-textbox</td>
-	<td>test7</td>
+	<td>//li[2]/button</td>
+	<td>Remove from Channel</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1593,15 +1335,21 @@
 	<td>No users found</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>link=Town Square</td>
-	<td>Town Square</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>link=Off-Topic</td>
+	<td>css=button.close</td>
 	<td></td>
 </tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Update these tests using the above public channel tests-->
 <!--PRIVATE CHANNEL-->
 <!--Add Private Channel from + icon, header tests-->
 <tr>
@@ -3907,7 +3655,6 @@
 	<td>css=#logout &gt; span</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

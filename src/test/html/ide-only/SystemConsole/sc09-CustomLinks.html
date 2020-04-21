@@ -87,9 +87,19 @@
 </tr>
 <!--Edit links for TOS, Privacy, About, Help, Report a Problem-->
 <tr>
+	<td>type</td>
+	<td>id=SupportSettings.TermsOfServiceLink</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=SupportSettings.TermsOfServiceLink</td>
 	<td>https://mattermost.com/</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=SupportSettings.PrivacyPolicyLink</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -97,14 +107,29 @@
 	<td>https://github.com/mattermost</td>
 </tr>
 <tr>
+	<td>type</td>
+	<td>id=SupportSettings.AboutLink</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=SupportSettings.AboutLink</td>
 	<td>https://about.gitlab.com/</td>
 </tr>
 <tr>
+	<td>type</td>
+	<td>id=SupportSettings.HelpLink</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=SupportSettings.HelpLink</td>
 	<td>https://www.google.com/</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=SupportSettings.ReportAProblemLink</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -520,7 +545,7 @@
 </tr>
 <!--May fail to switch to tab / popup-->
 <tr>
-	<td>selectPopUp</td>
+	<td>selectWindow</td>
 	<td></td>
 	<td></td>
 </tr>
@@ -681,6 +706,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>type</td>
+	<td>id=SupportSettings.SupportEmail</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=SupportSettings.SupportEmail</td>
 	<td>feedback-edit@mattermost.com</td>
@@ -711,6 +741,11 @@
 	<td>storeValue</td>
 	<td>id=NativeAppSettings.AppDownloadLink</td>
 	<td>downloadpagelink</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=NativeAppSettings.AppDownloadLink</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -1244,7 +1279,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h3</td>
-	<td>How Mattermost works:</td>
+	<td>How Mattermost Works:</td>
 </tr>
 <tr>
 	<td>waitForNotText</td>
@@ -1353,9 +1388,19 @@
 	<td></td>
 </tr>
 <tr>
+	<td>type</td>
+	<td>id=SupportSettings.TermsOfServiceLink</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=SupportSettings.TermsOfServiceLink</td>
 	<td>${toslink}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=SupportSettings.PrivacyPolicyLink</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -1363,9 +1408,19 @@
 	<td>${privacylink}</td>
 </tr>
 <tr>
+	<td>type</td>
+	<td>id=SupportSettings.AboutLink</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=SupportSettings.AboutLink</td>
 	<td>${aboutlink}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=SupportSettings.HelpLink</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -1373,9 +1428,19 @@
 	<td>${helplink}</td>
 </tr>
 <tr>
+	<td>type</td>
+	<td>id=SupportSettings.ReportAProblemLink</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=SupportSettings.ReportAProblemLink</td>
 	<td>${reportlink}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=SupportSettings.SupportEmail</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
