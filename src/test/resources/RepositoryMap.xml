@@ -30,7 +30,7 @@
             <version id="79">
                 <bitrate sixtyfourbit="true">
                     <filelocation>http://chromedriver.storage.googleapis.com/79.0.3945.36/chromedriver_linux64.zip</filelocation>
-                    <hash>14c4b2465de3d63ed03d2b2fb8c37cbcb7711b31</hash>
+                    <hash>3cf7d35a154ad53c7df627ad8d33d70dc941e658</hash>
                     <hashtype>sha1</hashtype>
                 </bitrate>
             </version>
