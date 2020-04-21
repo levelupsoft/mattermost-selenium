@@ -1,17 +1,17 @@
 seleniumhub:
-  image: selenium/hub:3.0.0-cerium
+  image: selenium/hub:3.141.59-zinc
   ports:
     - 4444:4444
 
 firefoxnode:
-  image: selenium/node-firefox:3.0.0-cerium
+  image: selenium/node-firefox:3.141.59-zinc
   ports:
     - 5900
   links:
     - seleniumhub:hub
 
 chromenode:
-  image: selenium/node-chrome:3.0.0-cerium
+  image: selenium/node-chrome:3.141.59-zinc
   ports:
     - 5900
   links:
