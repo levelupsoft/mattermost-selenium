@@ -28,7 +28,7 @@ test-firefox: patch-files
 	mvn -Dbrowser=firefox clean verify
 
 test-all: patch-files
-	# Log google chroe version
+	# Log google chrome version
 	google-chrome --version
 
 	#mvn -Dbrowser=firefox clean verify
