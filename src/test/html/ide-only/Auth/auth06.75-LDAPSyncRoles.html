@@ -752,6 +752,16 @@
 	<td>css=div.MenuWrapper. &gt; a &gt; span</td>
 	<td>Team Admin</td>
 </tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close</td>
+	<td></td>
+</tr>
 <!--LOG OUT system admin user-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -802,6 +812,47 @@
 <tr>
 	<td>click</td>
 	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<!--Set roles on Manage Groups page and save-->
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>Constrain-Dev</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=headerTeamName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#manageGroups &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#manageGroups &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=teamGroupsDropdown_developers</td>
+	<td>Team Members</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=teamGroupsDropdown_developers</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
+	<td>Make Team Admins</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
 	<td></td>
 </tr>
 

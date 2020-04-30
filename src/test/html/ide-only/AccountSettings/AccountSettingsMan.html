@@ -2729,6 +2729,12 @@
 	<td>On only for code blocks starting with ```</td>
 </tr>
 <!--Advanced: Send messages on Ctrl+Enter-->
+<!--On Mac text says ⌘+ENTER (instead of CTRL+ENTER) MM-T1432-->
+<tr>
+	<td>waitForText</td>
+	<td>css=#advancedCtrlSendTitle &gt; span</td>
+	<td>Send Messages on ⌘+ENTER</td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=advancedCtrlSendEdit</td>
@@ -2738,6 +2744,11 @@
 	<td>click</td>
 	<td>id=advancedCtrlSendEdit</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//fieldset/div[4]/span</td>
+	<td>When enabled, ⌘ + ENTER will send the message and ENTER inserts a new line.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
