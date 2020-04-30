@@ -454,14 +454,14 @@ public class AccountSettingsSecurityIT extends DriverBase {
         driver.findElement(By.id("securityButton")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if (isElementPresent(By.cssSelector("button.style--none.security-links.color--link.margin-top span"))) break; } catch (Exception e) {}
+        	try { if (isElementPresent(By.cssSelector("button.style--none.security-links.color--link.mt-2 span"))) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 
-        driver.findElement(By.cssSelector("button.style--none.security-links.color--link.margin-top span")).click();
+        driver.findElement(By.cssSelector("button.style--none.security-links.color--link.mt-2 span")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Sessions are created when you log in to a new browser on a device. Sessions let you use Mattermost without having to log in again for a time period specified by the System Admin. If you want to log out sooner, use the 'Logout' button below to end a session.".equals(driver.findElement(By.cssSelector("p.session-help-text > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Sessions are created when you log in through a new browser on a device. Sessions let you use Mattermost without having to log in again for a time period specified by the System Admin. To end the session sooner, use the 'Log Out' button.".equals(driver.findElement(By.cssSelector("p.session-help-text > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 

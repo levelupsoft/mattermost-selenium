@@ -249,17 +249,17 @@
 <!--Verify error bar text and links-->
 <tr>
 	<td>waitForText</td>
-	<td>css=span &gt; span</td>
-	<td>Please configure your Site URL in the System Console.</td>
+	<td>css=span</td>
+	<td>Please configure your site URL on the System Console.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>link=Site URL</td>
-	<td>Site URL</td>
+	<td>link=site URL</td>
+	<td>site URL</td>
 </tr>
 <tr>
 	<td>waitForAttribute</td>
-	<td>link=Site URL@href</td>
+	<td>link=site URL@href</td>
 	<td>https://docs.mattermost.com/administration/config-settings.html#site-url</td>
 </tr>
 <tr>
@@ -454,6 +454,11 @@
 	<td>waitForNotEditable</td>
 	<td>id=saveSetting</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=ServiceSettings.SiteURL</td>
+	<td>exact:https://selenium.test.mattermost.com</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

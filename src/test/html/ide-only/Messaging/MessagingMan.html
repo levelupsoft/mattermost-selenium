@@ -285,7 +285,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=showMoreButton</td>
-	<td>Show Less</td>
+	<td>Show less</td>
 </tr>
 <!--Re-collapse to truncated post view-->
 <tr>
@@ -296,7 +296,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=showMoreButton</td>
-	<td>Show More</td>
+	<td>Show more</td>
 </tr>
 <!--Edit long message (starting in truncated view)-->
 <tr>
@@ -471,7 +471,7 @@
 	<td>id=reply_textbox</td>
 	<td></td>
 </tr>
-<!--*** Visually verify Show More button in RHS-->
+<!--*** Visually verify Show more button in RHS-->
 <!--*** Visually verify link preview displays in RHS-->
 <tr>
 	<td>pause</td>
@@ -1515,6 +1515,7 @@
 	<td></td>
 </tr>
 <!--*** Timestamp is a link, opens permalink view-->
+<!--*** Needs updating \/-->
 <!--*** Manually click to jump to recent messages-->
 <tr>
 	<td>pause</td>
@@ -1970,9 +1971,15 @@
 	<td>id=post_textbox</td>
 	<td></td>
 </tr>
+<!--No longer working to verify that 0 is the first number in the list; verified manually-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=ol.markdown__list:contains('*0.*Zeroth*1.*First*2.*Second*')</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>0. Zeroth 1. First 2. Second</td>
+	<td>*0.*Zeroth*1.*First*2.*Second*</td>
 	<td></td>
 </tr>
 <!--Verify markdown test file-->
@@ -2308,14 +2315,14 @@
 </tr>
 <!--"Help" link-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#helpTextLink &gt; span</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=a.textbox-help-link &gt; span</td>
+	<td>Help</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#helpTextLink &gt; span</td>
-	<td></td>
+	<td>css=a.textbox-help-link &gt; span</td>
+	<td>Help</td>
 </tr>
 <tr>
 	<td>waitForText</td>

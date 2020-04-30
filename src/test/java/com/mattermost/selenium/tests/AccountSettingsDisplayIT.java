@@ -207,7 +207,7 @@ public class AccountSettingsDisplayIT extends DriverBase {
         driver.findElement(By.id("collapseEdit")).click();
         for (int second = 0;; second++) {
         	if (second >= 60) fail("timeout");
-        	try { if ("Default appearance of image previews".equals(driver.findElement(By.cssSelector("#settingTitle > span")).getText())) break; } catch (Exception e) {}
+        	try { if ("Default Appearance of Image Previews".equals(driver.findElement(By.cssSelector("#settingTitle > span")).getText())) break; } catch (Exception e) {}
         	Thread.sleep(1000);
         }
 

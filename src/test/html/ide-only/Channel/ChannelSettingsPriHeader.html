@@ -76,12 +76,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label &gt; div.flex-parent</td>
-	<td>Public - Anyone can join this channel.</td>
+	<td>Public - Anyone can join this channel</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>//div[2]/label/div</td>
-	<td>Private - Only invited members can join this channel.</td>
+	<td>Private - Only invited members can join this channel</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
@@ -139,11 +139,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>selectWindow</td>
-	<td>null</td>
-	<td></td>
-</tr>
-<tr>
 	<td>verifyText</td>
 	<td>css=#channelInfoModalLabel &gt; span</td>
 	<td>About</td>
@@ -172,12 +167,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#channelHeaderDescription &gt; button.style--none</td>
-	<td>Add a channel description</td>
+	<td>Add a channel description(Edit)</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=#channelHeaderDescription &gt; button.style--none</td>
-	<td>Add a channel description</td>
+	<td>Add a channel description(Edit)</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -430,23 +425,23 @@
 	<td>Header</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=em</td>
-	<td>Header</td>
+	<td>mouseOver</td>
+	<td>css=span.header-description__text p.markdown__paragraph-inline em</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.popover-content &gt; p &gt; em</td>
-	<td>Header</td>
+	<td>//body/div[4]/div[2]</td>
+	<td>Header <br /> Item 1 Item 2 is a linkItem 3 links to ~Town Square</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.popover-content &gt; ul &gt; li</td>
+	<td>css=span.header-description__text ul.markdown__list li span p.markdown__paragraph-inline</td>
 	<td>Item 1</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>xpath=(//a[contains(text(),'Item 2 is a link')])[3]</td>
+	<td>css=ul.markdown__list li span p.markdown__paragraph-inline a.theme.markdown__link</td>
 	<td>Item 2 is a link</td>
 </tr>
 <tr>
@@ -692,12 +687,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#channelHeaderDescription &gt; button.style--none</td>
-	<td>Add a channel description</td>
+	<td>Add a channel description(Edit)</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=#channelHeaderDescription &gt; button.style--none</td>
-	<td>Add a channel description</td>
+	<td>Add a channel description(Edit)</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -706,7 +701,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.post-create-footer &gt; div.help__text. &gt; #helpTextLink &gt; span</td>
+	<td>css=div.help__text a.textbox-help-link span</td>
 	<td>Help</td>
 </tr>
 <tr>

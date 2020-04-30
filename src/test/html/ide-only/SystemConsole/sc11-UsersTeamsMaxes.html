@@ -294,6 +294,13 @@
 	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td></td>
 </tr>
+<!--The next sendKeys is failing (so is type) so you can note the number-->
+<!--It is usually 3 in this test-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td>sendKeys</td>
 	<td>id=TeamSettings.MaxUsersPerTeam</td>
@@ -820,6 +827,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=TeamSettings.MaxUsersPerTeam</td>
 	<td>${usersCurrentTeam2}</td>
@@ -1222,7 +1234,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=p.input__help.error</td>
-	<td>Unable to create more than 5 channels for current team</td>
+	<td>Unable to create more than 5 channels for current team.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1288,7 +1300,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=p.input__help.error</td>
-	<td>Unable to create more than 5 channels for current team</td>
+	<td>Unable to create more than 5 channels for current team.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2239,7 +2251,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=p:contains('@channel has been disabled because the channel has more than 3 users.')</td>
+	<td>css=p:contains('@channel has been disabled because the channel has more than 4 users.')</td>
 	<td></td>
 </tr>
 <tr>
@@ -2260,7 +2272,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=p:contains('@all has been disabled because the channel has more than 3 users.')</td>
+	<td>css=p:contains('@all has been disabled because the channel has more than 4 users.')</td>
 	<td></td>
 </tr>
 <!--Return maximum settings to defaults-->

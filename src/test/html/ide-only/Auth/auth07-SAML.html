@@ -96,7 +96,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h3 &gt; span</td>
-	<td>How Mattermost works:</td>
+	<td>How Mattermost Works:</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -368,7 +368,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
-	<td>Login failed because of invalid password</td>
+	<td>Login failed because of invalid password.</td>
 </tr>
 <!--Switch email to SAML successfully, log in-->
 <tr>
@@ -511,6 +511,11 @@
 <tr>
 	<td>type</td>
 	<td>id=SamlSettings.LoginButtonText</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=SamlSettings.LoginButtonText</td>
 	<td>New Button Text</td>
 </tr>
 <tr>
@@ -527,6 +532,11 @@
 	<td>waitForNotEditable</td>
 	<td>id=saveSetting</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=SamlSettings.LoginButtonText</td>
+	<td>New Button Text</td>
 </tr>
 <!--LOG OUT system admin user-->
 <tr>
@@ -656,6 +666,11 @@
 	<td>waitForNotEditable</td>
 	<td>id=saveSetting</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=SamlSettings.LoginButtonText</td>
+	<td>${oltext}</td>
 </tr>
 <!--Invalid SSO URL error-->
 <!--Store the original SSO ULR (though we discard changes, so shouldn't need it)-->
@@ -1672,7 +1687,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=searchUsers</td>
-	<td>qa-onelogin</td>
+	<td>linda+qaol@mattermost.com</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1869,7 +1884,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=searchUsers</td>
-	<td>qa-onelogin</td>
+	<td>linda+qaol@mattermost.com</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2224,7 +2239,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=h3 &gt; span</td>
-	<td>How Mattermost works:</td>
+	<td>How Mattermost Works:</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2734,7 +2749,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
-	<td>Login failed because of invalid password</td>
+	<td>Login failed because of invalid password.</td>
 </tr>
 <!--Switch email to SAML successfully, log in-->
 <tr>

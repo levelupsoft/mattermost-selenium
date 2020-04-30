@@ -1458,7 +1458,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.padding-top &gt; span</td>
+	<td>css=div.pt-2</td>
 	<td>Push notifications have not been enabled by your System Administrator.</td>
 </tr>
 <tr>
@@ -2245,6 +2245,11 @@
 <tr>
 	<td>type</td>
 	<td>id=MetricsSettings.ListenAddress</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=MetricsSettings.ListenAddress</td>
 	<td>:8068</td>
 </tr>
 <tr>
@@ -2261,6 +2266,11 @@
 	<td>waitForNotEditable</td>
 	<td>id=saveSetting</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=MetricsSettings.ListenAddress</td>
+	<td>exact::8068</td>
 </tr>
 <tr>
 	<td>refreshAndWait</td>
@@ -2284,6 +2294,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>type</td>
+	<td>id=MetricsSettings.ListenAddress</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=MetricsSettings.ListenAddress</td>
 	<td>${listen}</td>
@@ -2302,6 +2317,11 @@
 	<td>waitForNotEditable</td>
 	<td>id=saveSetting</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=MetricsSettings.ListenAddress</td>
+	<td>${listen}</td>
 </tr>
 <!--DEVELOPER-->
 <tr>

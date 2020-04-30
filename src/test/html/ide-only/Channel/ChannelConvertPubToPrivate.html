@@ -218,53 +218,33 @@
 	<td>Can join from permalink before but not after converted to private channel....${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>waitForValue</td>
-	<td>id=post_textbox</td>
+	<td>waitForElementPresent</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>id=post_textbox</td>
-	<td>${KEY_SHIFT}${KEY_UP}</td>
+	<td>id=searchBox</td>
+	<td>after converted${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.col.col__reply div.MenuWrapper</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//p</td>
+	<td>Can join from permalink before but not after converted to private channel....</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.col.col__reply div.MenuWrapper</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=li &gt; button.style--none:contains('Permalink')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>//a/span</td>
+	<td>Jump</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li &gt; button.style--none:contains('Permalink')</td>
+	<td>//a/span</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=linkModalTextArea</td>
-	<td></td>
-</tr>
-<tr>
-	<td>storeText</td>
-	<td>id=linkModalTextArea</td>
+	<td>storeLocation</td>
 	<td>pubtopripermalink</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=linkModalCloseButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=linkModalCloseButton</td>
 	<td></td>
 </tr>
 <!--Leave public channel-->
@@ -414,9 +394,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
+	<td>waitForNotText</td>
 	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
+	<td>Public_to_Private</td>
 </tr>
 <!--LOG OUT test-->
 <tr>
@@ -946,28 +926,23 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span</td>
-	<td>Message Not Found</td>
+	<td>//span</td>
+	<td>Channel Not Found</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=p &gt; span</td>
-	<td>Permalink belongs to a deleted message or to a channel to which you do not have access.</td>
+	<td>//p/span</td>
+	<td>The channel you're requesting is private or does not exist. Please contact an Administrator to be added to the channel.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=a &gt; span</td>
-	<td>Back to Mattermost</td>
+	<td>//a/span</td>
+	<td>Back to Town Square</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=a &gt; span</td>
+	<td>//a/span</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Off-Topic</td>
 </tr>
 <!--Private channel does not appear in channel switcher-->
 <tr>
@@ -1118,7 +1093,7 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Public_to_Private</td>
 </tr>
-<!--Add test to private channel-->
+<!--Add test4 to private channel-->
 <tr>
 	<td>waitForText</td>
 	<td>//div[@id='channelIntro']/button</td>
@@ -1137,22 +1112,17 @@
 <tr>
 	<td>type</td>
 	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
-	<td>test</td>
+	<td>test4</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.light</td>
-	<td>This Is a Very Long Name That Should Truncate</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test4</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.light</td>
-	<td>This Is a Very Long Name That Should Truncate</td>
-</tr>
-<tr>
-	<td>waitForNotText</td>
-	<td>css=span.light</td>
-	<td>This Is a Very Long Name That Should Truncate</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test4</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1167,7 +1137,7 @@
 <!--May fail if teammate name display is set to first/last, for example-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>test added to the channel by you.</td>
+	<td>test4 added to the channel by you.</td>
 	<td></td>
 </tr>
 <!--LOG OUT admin-->
@@ -1191,7 +1161,7 @@
 	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
-<!--LOG IN test-->
+<!--LOG IN test4-->
 <!--DisableAnimations-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1201,7 +1171,7 @@
 <tr>
 	<td>type</td>
 	<td>name=loginId</td>
-	<td>test</td>
+	<td>test4</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -1277,7 +1247,7 @@
 	<td>css=#channelViewMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
-<!--LOG OUT test-->
+<!--LOG OUT test4-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -1741,6 +1711,11 @@
 </tr>
 <!--Make sure it's on the UI2 team (other one is already still public)-->
 <tr>
+	<td>waitForTextPresent</td>
+	<td></td>
+	<td>Off-TopicUI Automation 2Manual InvitesEdit</td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>//div[@id='channels']/div[2]/div[3]/div[2]/div/span[2]</td>
 	<td>ui-automation2</td>
@@ -1788,6 +1763,21 @@
 <tr>
 	<td>click</td>
 	<td>id=confirmModalButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.menu-icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Switch to UI Automation 2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Switch to UI Automation 2</td>
 	<td></td>
 </tr>
 <tr>

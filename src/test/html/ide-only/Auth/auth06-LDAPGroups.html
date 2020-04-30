@@ -639,6 +639,11 @@
 </tr>
 <tr>
 	<td>sendKeys</td>
+	<td>id=LdapSettings.GroupFilter</td>
+	<td>(&amp;(objectClass=groupOfNames)(!(cn=Test Group *))(!(cn=*filter*)))</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
 	<td>id=LdapSettings.GroupDisplayNameAttribute</td>
 	<td>cn</td>
 </tr>
@@ -1071,6 +1076,11 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=LdapSettings.GroupIdAttribute</td>
+	<td>CN</td>
+</tr>
 <!--Sync LDAP-->
 <tr>
 	<td>waitForText</td>
@@ -1179,6 +1189,11 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=LdapSettings.GroupIdAttribute</td>
+	<td>cn</td>
+</tr>
 <!--Default channels are not included in list of channels to link-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1192,13 +1207,23 @@
 </tr>
 <tr>
 	<td>waitForText</td>
+	<td>css=span.group-description &gt; a &gt; span</td>
+	<td>Not Linked</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.group-description &gt; a &gt; span</td>
+	<td>Not Linked</td>
+</tr>
+<tr>
+	<td>waitForText</td>
 	<td>css=span.group-actions &gt; a &gt; span</td>
-	<td>Edit</td>
+	<td>Configure</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=span.group-actions &gt; a &gt; span</td>
-	<td>Edit</td>
+	<td>Configure</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2956,6 +2981,8 @@
 	<td>id=user_management/groups</td>
 	<td></td>
 </tr>
+<!--*** Add step to remove group filter!-->
+<!--(&(objectClass=groupOfNames)(!(cn=Test Group *))(!(cn=*filter*)))-->
 <!--Remove buttons on both team and channel (alpha-filter group)-->
 <tr>
 	<td>waitForElementPresent</td>

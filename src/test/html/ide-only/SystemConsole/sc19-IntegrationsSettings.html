@@ -249,7 +249,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.padding-bottom.x2 &gt; span &gt; span</td>
+	<td>id=extraInfo</td>
 	<td>Personal access tokens function similarly to session tokens and can be used by integrations to authenticate against the REST API.</td>
 </tr>
 <tr>
@@ -265,13 +265,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#confirmModal &gt; div.modal-dialog &gt; div.modal-content &gt; div.modal-header</td>
-	<td>exact:Have you copied your token?</td>
+	<td>css=#confirmModalLabel &gt; span</td>
+	<td>exact:Copied Your Token?</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#confirmModal &gt; div.modal-dialog &gt; div.modal-content &gt; div.modal-body &gt; div</td>
-	<td>Make sure you have copied and saved the access token below. You won't be able to see it again!<br /><br />Access Token: *</td>
+	<td>css=div.modal-body &gt; div &gt; span</td>
+	<td>Make sure you have copied and saved the access token below. You won't be able to see it again!</td>
 </tr>
 <tr>
 	<td>waitForText</td>
