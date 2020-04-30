@@ -316,37 +316,12 @@
 <!--Verify pre-packaged plugins are present-->
 <tr>
 	<td>waitForTextPresent</td>
-	<td>Autolink (mattermost-autolink - *)<br />Automatically rewrite text matching a regular expression into a Markdown link.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>Custom User Attributes (com.mattermost.custom-attributes - *)<br />Add custom user attributes to the Mattermost user profile popover.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>GitHub (github - *)<br />GitHub plugin for Mattermost.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>Jira (jira - *, pre-packaged)<br />Atlassian Jira plugin for Mattermost.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
 	<td>User Satisfaction Surveys (com.mattermost.nps - *)<br />This plugin sends quarterly user satisfaction surveys to gather feedback and help improve Mattermost.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>User Satisfaction Surveys (com.mattermost.nps - *)<br />This plugin sends quarterly user satisfaction surveys to gather feedback and help improve Mattermost.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>Zoom (zoom - *, pre-packaged)<br />Zoom audio and video conferencing plugin for Mattermost 5.2+.</td>
 	<td></td>
 </tr>
 <!--Enable Plugins false - All plugins hidden-->
@@ -438,37 +413,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>Autolink (mattermost-autolink - *)<br />Automatically rewrite text matching a regular expression into a Markdown link.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>Custom User Attributes (com.mattermost.custom-attributes - *)<br />Add custom user attributes to the Mattermost user profile popover.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>GitHub (github - *)<br />GitHub plugin for Mattermost.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>Jira (jira - *, pre-packaged)<br />Atlassian Jira plugin for Mattermost.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
 	<td>User Satisfaction Surveys (com.mattermost.nps - *)<br />This plugin sends quarterly user satisfaction surveys to gather feedback and help improve Mattermost.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>Welcome Bot (com.mattermost.welcomebot - *)<br />This plugin adds a WelcomeBot that helps add new users to channels.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>Zoom (zoom - *, pre-packaged)<br />Zoom audio and video conferencing plugin for Mattermost 5.2+.</td>
 	<td></td>
 </tr>
 <!--LOG OUT of windows.test-->
@@ -484,12 +429,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.style--none:contains('Logout')</td>
+	<td>//span[contains(text(),'Log Out')] </td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none:contains('Logout')</td>
+	<td>//span[contains(text(),'Log Out')] </td>
 	<td></td>
 </tr>
 <!--BACK TO Selenium server-->
@@ -505,6 +450,72 @@
 </tr>
 <!--Open each pre-packaged plugin's Settings page, verify elements-->
 <!--Autolink-->
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#marketplaceModal &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#marketplaceModal &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='marketplace-plugin-com.mattermost.custom-attributes']/div[2]/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='marketplace-plugin-com.mattermost.custom-attributes']/div[2]/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='marketplace-plugin-com.mattermost.aws-sns']//*//*[contains(text(),'Configure')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='marketplace-plugin-com.mattermost.aws-sns']//*/span[contains(text(),'Configure')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[@href='/admin_console/plugins/plugin_com.mattermost.aws-sns']</td>
+	<td></td>
+</tr>
+<!--Not sure what's happening here. tried this 2 different ways. For now continue manual install from market place -->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=plugins/plugin_mattermost-autolink</td>
@@ -1558,7 +1569,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.padding-top:contains('This plugin demonstrates the capabilities of a Mattermost plugin.')</td>
+	<td>css=div.pt-2:contains('This plugin demonstrates the capabilities of a Mattermost plugin.')</td>
 	<td></td>
 </tr>
 <!--Uploading the same plugin twice prompts to overwrite (new behavior v5.8)-->
@@ -1674,13 +1685,13 @@
 </tr>
 <!--Demo plugin channel created - fails unless first in list (could create new team first)-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>verifyElementPresent</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
@@ -1754,7 +1765,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=form.form-horizontal &gt; div.modal-footer &gt; button.btn.btn-primary</td>
-	<td>Create New Channel</td>
+	<td>Create Channel</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2224,12 +2235,12 @@
 <!--Join Demo Plugin channel for this team-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
@@ -2564,12 +2575,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sidebarChannelsMore</td>
+	<td>id=sidebarPublicChannelsMore</td>
 	<td></td>
 </tr>
 <tr>
