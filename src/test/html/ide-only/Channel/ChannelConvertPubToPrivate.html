@@ -121,16 +121,6 @@
 <!--Add admin to channel-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
 	<td>css=#channelAddMembers &gt; button.style--none.</td>
 	<td></td>
 </tr>
@@ -527,12 +517,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span &gt; span</td>
+	<td>css=a.backstage-navbar__back &gt; span &gt; span</td>
 	<td>Back to Mattermost</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span &gt; span</td>
+	<td>css=a.backstage-navbar__back &gt; span &gt; span</td>
 	<td>Back to Mattermost</td>
 </tr>
 <tr>
@@ -617,13 +607,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=a</td>
-	<td>Switch to UI Automation</td>
+	<td>waitForElementPresent</td>
+	<td>link=Switch to UI Automation</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=a</td>
+	<td>link=Switch to UI Automation</td>
 	<td></td>
 </tr>
 <!--Cancel out of converting channel to private-->
@@ -834,12 +824,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span &gt; span</td>
+	<td>css=a.backstage-navbar__back &gt; span &gt; span</td>
 	<td>Back to Mattermost</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span &gt; span</td>
+	<td>css=a.backstage-navbar__back &gt; span &gt; span</td>
 	<td>Back to Mattermost</td>
 </tr>
 <tr>
@@ -1717,13 +1707,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='channels']/div[2]/div[3]/div[2]/div/span[2]</td>
-	<td>ui-automation2</td>
+	<td>//div[2]/div/span[2]</td>
+	<td>UI Automation 2</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='channels']/div[2]/div[3]/div[2]/div/span[2]</td>
-	<td>ui-automation2</td>
+	<td>//div[2]/div/span[2]</td>
+	<td>UI Automation 2</td>
 </tr>
 <tr>
 	<td>waitForText</td>

@@ -853,40 +853,10 @@
 <!--Open GitLab-->
 <tr>
 	<td>open</td>
-	<td>https://gitlab.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=a.header-user-dropdown-toggle</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=a.header-user-dropdown-toggle</td>
+	<td>https://gitlab.com/profile</td>
 	<td></td>
 </tr>
 <!--Edit email address in Profile-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Profile</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Profile</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=i.fa.fa-pencil</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=i.fa.fa-pencil</td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=user_email</td>
@@ -898,24 +868,9 @@
 	<td>mmostqa+edit@gmail.com</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>name=commit</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=input[name=&quot;commit&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=input[name=&quot;commit&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>name=commit</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>id=user_email</td>
+	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
@@ -930,13 +885,8 @@
 </tr>
 <!--Edit username in Account-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Account</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Account</td>
+	<td>open</td>
+	<td>https://gitlab.com/profile/account</td>
 	<td></td>
 </tr>
 <tr>
@@ -950,34 +900,29 @@
 	<td>-edit</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=button.btn.btn-warning</td>
-	<td>Update username</td>
-</tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>css=button.btn.btn-warning</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-warning</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=button.btn.js-modal-primary-action.qa-modal-primary-button.btn-warning</td>
-	<td>Update username</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.js-modal-primary-action.qa-modal-primary-button.btn-warning</td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForValue</td>
 	<td>id=username-change-input</td>
 	<td>mmostqa-edit</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.btn.btn-warning</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-warning</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>xpath=(//button[@type='button'])[12]</td>
+	<td>Update username</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[12]</td>
+	<td>Update username</td>
 </tr>
 <!--Back to Mattermost, sign in using GitLab-->
 <tr>
@@ -1773,37 +1718,7 @@
 <!--Open GitLab and de-authorize Mattermost-->
 <tr>
 	<td>open</td>
-	<td>https://gitlab.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=a.header-user-dropdown-toggle</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=a.header-user-dropdown-toggle</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Settings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Settings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Applications</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Applications</td>
+	<td>https://gitlab.com/profile/applications</td>
 	<td></td>
 </tr>
 <!--This part is brittle; may have to manually click Revoke next to rc.test-->
@@ -2162,40 +2077,10 @@
 <!--Cleanup in GitLab-->
 <tr>
 	<td>open</td>
-	<td>https://gitlab.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=a.header-user-dropdown-toggle</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=a.header-user-dropdown-toggle</td>
+	<td>https://gitlab.com/profile</td>
 	<td></td>
 </tr>
 <!--Edit email address in Profile-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Profile</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Profile</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=i.fa.fa-pencil</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=i.fa.fa-pencil</td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=user_email</td>
@@ -2207,14 +2092,9 @@
 	<td>mmostqa@gmail.com</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>name=commit</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>name=commit</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>id=user_email</td>
+	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForValue</td>
@@ -2223,13 +2103,8 @@
 </tr>
 <!--Edit username in Account-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Account</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Account</td>
+	<td>open</td>
+	<td>https://gitlab.com/profile/account</td>
 	<td></td>
 </tr>
 <tr>

@@ -436,12 +436,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.header-description__text ul.markdown__list li span p.markdown__paragraph-inline</td>
+	<td>css=div.popover-content &gt; span &gt; ul.markdown__list &gt; li &gt; span</td>
 	<td>Item 1</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=ul.markdown__list li span p.markdown__paragraph-inline a.theme.markdown__link</td>
+	<td>css=div.popover-content &gt; span &gt; ul.markdown__list</td>
+	<td>Item 1 Item 2 is a linkItem 3 links to ~Town Square</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[4]/div[2]/span/ul/li[2]</td>
 	<td>Item 2 is a link</td>
 </tr>
 <tr>
@@ -461,7 +466,7 @@
 </tr>
 <tr>
 	<td>waitForNotVisible</td>
-	<td>css=div.popover-content &gt; div &gt; ul &gt; li</td>
+	<td>css=div.popover-content &gt; span &gt; ul.markdown__list &gt; li &gt; span</td>
 	<td>Item 1</td>
 </tr>
 <tr>
