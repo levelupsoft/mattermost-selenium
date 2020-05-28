@@ -312,7 +312,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.signup-team-dir__name</td>
+	<td>css=#Six &gt; span.signup-team-dir__name</td>
 	<td>Six</td>
 </tr>
 <tr>
@@ -524,13 +524,13 @@
 <!--Create team from `+` in team sidebar when no more open teams are available-->
 <!--*** Brittle test; if other tests have left other open teams in there, this will fail-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.team-btn.team-btn__add</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=#createNewTeamLink &gt; span</td>
+	<td>Create a team</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.team-btn.team-btn__add</td>
+	<td>css=#createNewTeamLink &gt; span</td>
 	<td></td>
 </tr>
 <tr>

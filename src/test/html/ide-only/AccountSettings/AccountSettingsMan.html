@@ -446,6 +446,8 @@
 	<td></td>
 </tr>
 <!--*** Manually type `test10` in the Invite People field-->
+<!--***** No idea why this test uses test10, who should already be on the team and so doesn't show up-->
+<!--***** For now I removed test10 from UI2 team. Could be a change in an earlier test that used to remove the user-->
 <tr>
 	<td>waitForTextPresent</td>
 	<td>@test10</td>
@@ -4113,7 +4115,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>sendKeys</td>
 	<td>css=input#TeamSettings.MaxUsersPerTeam.form-control</td>
 	<td>200</td>
 </tr>
@@ -4779,9 +4781,9 @@
 </tr>
 <!--*** Visually verify that `Bold!` in the post is in boldface-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=p strong:(contains:'Bold!')</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=p &gt; strong</td>
+	<td>Bold!</td>
 </tr>
 <tr>
 	<td>waitForText</td>

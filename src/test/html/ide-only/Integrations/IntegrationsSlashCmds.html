@@ -362,6 +362,16 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
+	<td>To make a reply${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=post_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
 	<td>${KEY_SHIFT}${KEY_UP}</td>
 </tr>
 <tr>
@@ -915,6 +925,11 @@
 	<td></td>
 </tr>
 <!--/invite_people error message (success is verified manually in another test)-->
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -1828,24 +1843,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.header__info</td>
-	<td>System Console<br />@admin</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.header__info</td>
-	<td>System Console<br />@admin</td>
+	<td>open</td>
+	<td>https://selenium.test.mattermost.com/ui-automation</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=a</td>
-	<td>Switch to UI Automation</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=a</td>
-	<td>Switch to UI Automation</td>
+	<td>id=headerTeamName</td>
+	<td>UI Automation</td>
 </tr>
 <!--LOG OUT as admin (using slash command)-->
 <tr>

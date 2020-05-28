@@ -743,27 +743,27 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.group-name &gt; span</td>
+	<td>css=div.group-row &gt; div.group-name &gt; span</td>
 	<td>abc</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='ldap_groups']/div[2]/div[3]/div[2]/div/span</td>
+	<td>css=#developers_group &gt; div.group-row &gt; div.group-name &gt; span</td>
 	<td>developers</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='ldap_groups']/div[2]/div[3]/div[3]/div/span</td>
+	<td>css=#engineering_group &gt; div.group-row &gt; div.group-name &gt; span</td>
 	<td>engineering</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='ldap_groups']/div[2]/div[3]/div[5]/div/span</td>
+	<td>css=#qa_group &gt; div.group-row &gt; div.group-name &gt; span</td>
 	<td>qa</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='ldap_groups']/div[2]/div[3]/div[6]/div/span</td>
+	<td>css=#xyz_group &gt; div.group-row &gt; div.group-name &gt; span</td>
 	<td>xyz</td>
 </tr>
 <tr>
@@ -2976,14 +2976,49 @@
 	<td>css=div.AdminPanel__content</td>
 	<td>NameTypeAssigned RolesDevelopersTeamMember <br /><br /><br />RemoveABCChannel (Private)Member <br /><br /><br />Remove</td>
 </tr>
+<!--Remove group filter-->
+<!--(&(objectClass=groupOfNames)(!(cn=Test Group *))(!(cn=*filter*)))-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=authentication/ldap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=authentication/ldap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=LdapSettings.GroupFilter</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=LdapSettings.GroupFilter</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--Remove buttons on both team and channel (alpha-filter group)-->
 <tr>
 	<td>click</td>
 	<td>id=user_management/groups</td>
 	<td></td>
 </tr>
-<!--*** Add step to remove group filter!-->
-<!--(&(objectClass=groupOfNames)(!(cn=Test Group *))(!(cn=*filter*)))-->
-<!--Remove buttons on both team and channel (alpha-filter group)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>

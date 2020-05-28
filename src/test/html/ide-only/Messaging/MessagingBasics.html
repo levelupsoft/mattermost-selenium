@@ -268,32 +268,22 @@
 <!--Cancel out of editing parent post in RHS-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button.sidebar--right__expand</td>
+	<td>xpath=(//button[@type='button'])[3]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.sidebar--right__expand</td>
+	<td>xpath=(//button[@type='button'])[3]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[3]</td>
+	<td>css=button.style--none:contains('Edit')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[3]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div/div/ul/li[4]/button</td>
-	<td>Edit</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div/div/ul/li[4]/button</td>
+	<td>css=button.style--none:contains('Edit')</td>
 	<td></td>
 </tr>
 <tr>
@@ -348,13 +338,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>//div/div/ul/li[4]/button</td>
-	<td>Edit</td>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none:contains('Edit')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div/div/ul/li[4]/button</td>
+	<td>css=button.style--none:contains('Edit')</td>
 	<td></td>
 </tr>
 <tr>
@@ -3632,6 +3622,7 @@
 	<td>${permalinkurl}</td>
 	<td></td>
 </tr>
+<!--Also may not have caught the permalink URL in time, now that permalink fades-->
 <tr>
 	<td>waitForText</td>
 	<td>css=span</td>
@@ -3727,28 +3718,18 @@
 </tr>
 <!--Get permalink-->
 <tr>
-	<td>rollup</td>
-	<td>dotMenuItemVerifyAndSelect</td>
-	<td>Item=Permalink</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalTextArea</td>
-	<td></td>
-</tr>
-<tr>
-	<td>storeValue</td>
-	<td>id=linkModalTextArea</td>
-	<td>privatepermalink</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=linkModalCloseButton</td>
+	<td>link=*M</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=linkModalCloseButton</td>
+	<td>link=*M</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeLocation</td>
+	<td>privatepermalink</td>
 	<td></td>
 </tr>
 <tr>
@@ -3794,26 +3775,21 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span</td>
-	<td>Message Not Found</td>
+	<td>Channel Not Found</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=p &gt; span</td>
-	<td>Permalink belongs to a deleted message or to a channel to which you do not have access.</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=a &gt; span</td>
-	<td>Back to Mattermost</td>
+	<td>The channel you're requesting is private or does not exist. Please contact an Administrator to be added to the channel.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Back to Mattermost</td>
+	<td>link=Back to Town Square</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Back to Mattermost</td>
+	<td>link=Back to Town Square</td>
 	<td></td>
 </tr>
 <tr>
@@ -3854,28 +3830,28 @@
 	<td></td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>dotMenuItemVerifyAndSelect</td>
-	<td>Item=Permalink</td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_SHIFT}${KEY_UP}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalTextArea</td>
+	<td>id=reply_textbox</td>
 	<td></td>
 </tr>
 <tr>
-	<td>storeText</td>
-	<td>id=linkModalTextArea</td>
-	<td>logoutpermalink</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=time.post__time &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=linkModalCloseButton</td>
+	<td>css=time.post__time &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeLocation</td>
+	<td>logoutpermalink</td>
 	<td></td>
 </tr>
 <!--Log out-->
@@ -3949,19 +3925,14 @@
 </tr>
 <!--After logging back in, opens to permalink-->
 <tr>
+	<td>waitForLocation</td>
+	<td>${logoutpermalink}</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>css=strong.heading</td>
 	<td>Test-${datetime}</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>link=Click here to jump to recent messages.</td>
-	<td>Click here to jump to recent messages.</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Click here to jump to recent messages.</td>
-	<td>Click here to jump to recent messages.</td>
 </tr>
 <!--Verify proper error page whan a user hit a permalink to a DM-->
 <tr>
@@ -4010,28 +3981,23 @@
 	<td>Sample DM Message${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>openDotMenuForLastPost</td>
-	<td></td>
-</tr>
-<tr>
-	<td>rollup</td>
-	<td>dotMenuItemVerifyAndSelect</td>
-	<td>Item=Permalink</td>
-</tr>
-<tr>
-	<td>storeText</td>
-	<td>id=linkModalTextArea</td>
-	<td>DMPermalink</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
-	<td>id=linkModalCloseButton</td>
+	<td>link=*M</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=linkModalCloseButton</td>
+	<td>link=*M</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeLocation</td>
+	<td>DMPermalink</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
 	<td></td>
 </tr>
 <tr>
@@ -4116,7 +4082,7 @@
 	<td>css=a &gt; span</td>
 	<td>Back to Mattermost</td>
 </tr>
-<!--Switching back to User2 to continue test-->
+<!--Switching back to test2 to continue test-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
