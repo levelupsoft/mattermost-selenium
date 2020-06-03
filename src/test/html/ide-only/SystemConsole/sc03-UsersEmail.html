@@ -514,9 +514,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=switchChannel_test2</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>css=input.form-control.focused</td>
+	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -695,6 +695,47 @@
 <tr>
 	<td>waitForTextPresent</td>
 	<td>Email: test2@test.com</td>
+	<td></td>
+</tr>
+<!--Update Email option hidden for current user-->
+<tr>
+	<td>type</td>
+	<td>id=searchUsers</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=searchUsers</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name &gt; a &gt; span</td>
+	<td>@admin</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.text-right &gt; a &gt; span &gt; span</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.text-right &gt; a &gt; span &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=li.MenuItem &gt; button.style--none</td>
+	<td>Manage Roles</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//li[3]/button</td>
+	<td>Reset Password</td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>css=span.MenuItem__primary-text:contains('Update Email')</td>
 	<td></td>
 </tr>
 <!--LOG OUT admin-->

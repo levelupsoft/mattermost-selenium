@@ -919,6 +919,28 @@
 	<td>css=div.profile-img-preview</td>
 	<td></td>
 </tr>
+<!--Verify tooltip doesn't automatically display when reopening Edit-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=pictureEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=pictureEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.profile-img__remove</td>
+	<td></td>
+</tr>
+<!--*** Visually verify tooltip `Remove Profile Picture` doesn't appear w/o hover-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
 <!--*** Can visually verify in other browser that profile picture updated on post-->
 <!--*** Or wait for the test to log in as test9 (below) and visually verify there-->
 <!--Verify other user sees updates in popover-->
