@@ -186,27 +186,22 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.comment-count</td>
+	<td>css=span.post-menu__comment-count</td>
 	<td>1</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.comment-count</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>css=span.comment-count</td>
+	<td>css=span.post-menu__comment-count</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title &gt; span</td>
-	<td>Message Details</td>
+	<td>Thread</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.post-right-channel__name</td>
+	<td>css=button.style--none.sidebar--right__title__channel</td>
 	<td>Test-${datetime}</td>
 </tr>
 <tr>
@@ -478,13 +473,13 @@
 	<td>hungry</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.comment-icon</td>
+	<td>click</td>
+	<td>css=div.col__controls.post-menu</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.comment-icon</td>
+	<td>css=div.post__header div.col__controls.post-menu</td>
 	<td></td>
 </tr>
 <tr>
@@ -1072,14 +1067,14 @@
 </tr>
 <!--Click link to add users to channel-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=#add_channel_member_link &gt; span</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=a.PostBody_addChannelMemberLink &gt; span</td>
+	<td>add them to the channel</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#add_channel_member_link &gt; span</td>
-	<td></td>
+	<td>css=a.PostBody_addChannelMemberLink &gt; span</td>
+	<td>add them to the channel</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2063,13 +2058,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#add_channel_member_link &gt; span</td>
+	<td>css=a.PostBody_addChannelMemberLink &gt; span</td>
 	<td>add them to this private channel</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#add_channel_member_link &gt; span</td>
-	<td>add them to this private channel</td>
+	<td>css=a.PostBody_addChannelMemberLink &gt; span</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2826,9 +2821,9 @@
 	<td>~off-t</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.mention__align &gt; span</td>
-	<td>Off-Topic</td>
+	<td>waitForElementPresent</td>
+	<td>css=span.mention__channelname:contains('~off-topic')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -2841,9 +2836,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.mention__align &gt; span</td>
-	<td>Off-Topic</td>
+	<td>waitForElementPresent</td>
+	<td>css=span.mention__channelname:contains('~off-topic')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -2856,9 +2851,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.mention__align &gt; span</td>
-	<td>Off-Topic</td>
+	<td>waitForElementPresent</td>
+	<td>css=span.mention__channelname:contains('~off-topic')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -2998,14 +2993,14 @@
 	<td> ~oFF</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.mention__align &gt; span</td>
-	<td>Off-Topic</td>
+	<td>waitForElementPresent</td>
+	<td>css=span.mention__channelname:contains('~off-topic')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.mention__align &gt; span</td>
-	<td>Off-Topic</td>
+	<td>css=span.mention__channelname:contains('~off-topic')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3160,14 +3155,9 @@
 	<td>~purposet</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.mention__align &gt; span</td>
-	<td>Test-${datetime}</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.mention__purpose</td>
-	<td>purposetest</td>
+	<td>waitForElementPresent</td>
+	<td>css=span.mention__channelname:contains('~test-${datetime}')</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -3499,10 +3489,16 @@
 	<td></td>
 </tr>
 <!--Post message and copy permalink (just copies value; doesn't work in Se to click Copy button)-->
+<!--*** Need to rewrite this all for the new permalink behavior-->
 <tr>
 	<td>sendKeys</td>
 	<td>id=post_textbox</td>
 	<td>Permalinkpost${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

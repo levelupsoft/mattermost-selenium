@@ -124,10 +124,36 @@
 	<td></td>
 	<td>500</td>
 </tr>
+<!--Get post ID-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=*M</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=*M</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeLocation</td>
+	<td>fullurl</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>&quot;${fullurl}&quot;.split(&quot;/&quot;)[7]</td>
+	<td>postid</td>
+</tr>
 <!--Ensure that reactions remain in place when you pin and unpin a post-->
 <tr>
-	<td>rollup</td>
-	<td>openEmojiPickerForLastPost</td>
+	<td>waitForElementPresent</td>
+	<td>css=button.emoji-picker__container.post-action</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.emoji-picker__container.post-action</td>
 	<td></td>
 </tr>
 <tr>
@@ -196,16 +222,11 @@
 	<td>css=span.post__pinned-badge &gt; span</td>
 	<td></td>
 </tr>
+<!--Reply-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.comment-icon &gt; #Layer_1</td>
-	<td></td>
-</tr>
-<!--Reply using reply arrow-->
-<tr>
-	<td>click</td>
-	<td>css=span.comment-icon &gt; #Layer_1</td>
-	<td></td>
+	<td>sendKeys</td>
+	<td>id=post_textbox</td>
+	<td>${KEY_SHIFT}${KEY_UP}</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -268,17 +289,34 @@
 	<td>css=button.sidebar--right__expand</td>
 	<td></td>
 </tr>
-<!--Viewing pinned posts in RHS, parent post only, no replies-->
+<!--Pinned post count displays on icon when viewing reply thread (not pinned posts)-->
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderPinButton</td>
+	<td>1</td>
+</tr>
+<!--Pinned post count displays on icon when viewing pinned posts RHS-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.icon.icon__pin &gt; svg</td>
+	<td>id=channelHeaderPinButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.icon.icon__pin &gt; svg</td>
+	<td>id=channelHeaderPinButton</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.sidebar--right__title</td>
+	<td>Pinned postsPin-${datetime}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderPinButton</td>
+	<td>1</td>
+</tr>
+<!--Viewing pinned posts in RHS, parent post only, no replies-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.sidebar--right__expand</td>
@@ -292,7 +330,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Pin-${datetime}</td>
+	<td>Pinned postsPin-${datetime}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -340,10 +378,17 @@
 	<td>css=strong.heading</td>
 	<td>Off-Topic</td>
 </tr>
+<!--Empty pinned shows `Search` but empty states are being worked on right now-->
+<!--Empty state improvements coming in v5.26: MM-22815-->
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
 	<td>Pinned Posts in Off-Topic</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.sidebar--right__title__channel</td>
+	<td>Off-Topic</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -354,6 +399,17 @@
 	<td>waitForElementPresent</td>
 	<td>css=button.sidebar--right__expand</td>
 	<td></td>
+</tr>
+<!--No count appears on pin icon when no posts are pinned in the channel-->
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderPinButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>id=channelHeaderPinButton</td>
+	<td>1</td>
 </tr>
 <!--Return to original channel in center-->
 <tr>
@@ -371,15 +427,21 @@
 	<td>css=strong.heading</td>
 	<td>Pin-${datetime}</td>
 </tr>
+<!--Pinned count appears on pin icon when returning to prev channel with Pinned RHS open-->
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderPinButton</td>
+	<td>1</td>
+</tr>
 <!--Pin icon toggles pinned posts RHS closed and open-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.icon.icon__pin &gt; svg</td>
+	<td>id=channelHeaderPinButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.icon.icon__pin &gt; svg</td>
+	<td>id=channelHeaderPinButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -389,13 +451,13 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.icon.icon__pin &gt; svg</td>
+	<td>id=channelHeaderPinButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Pin-${datetime}</td>
+	<td>Pinned postsPin-${datetime}</td>
 </tr>
 <!--Show posts pinned in a different channel-->
 <tr>
@@ -483,6 +545,12 @@
 	<td>waitForValue</td>
 	<td>id=post_textbox</td>
 	<td></td>
+</tr>
+<!--Count on pin icon shows 2-->
+<tr>
+	<td>waitForText</td>
+	<td>id=channelHeaderPinButton</td>
+	<td>2</td>
 </tr>
 <!--Search and edit, verify still Pinned and edits show in center and RHS-->
 <tr>
@@ -644,14 +712,19 @@
 </tr>
 <!--View pinned posts to verify post was un-pinned-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelHeaderPinButton</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=span.icon.icon__pin &gt; svg</td>
+	<td>id=channelHeaderPinButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Pin-${datetime}</td>
+	<td>Pinned postsPin-${datetime}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1066,7 +1139,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Direct Message</td>
+	<td>Pinned postscorey</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1128,7 +1201,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Direct Message</td>
+	<td>Pinned postscorey</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1154,7 +1227,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Direct Message</td>
+	<td>Pinned postscorey</td>
 </tr>
 <tr>
 	<td>rollup</td>
@@ -1184,7 +1257,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Direct Message</td>
+	<td>Pinned postscorey</td>
 </tr>
 <!--Open pinned posts RHS for center channel-->
 <tr>
@@ -1227,7 +1300,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Pin2-${datetime}</td>
+	<td>Pinned postsPin2-${datetime}</td>
 </tr>
 <tr>
 	<td>waitForNotText</td>

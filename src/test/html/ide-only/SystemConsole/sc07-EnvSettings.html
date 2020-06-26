@@ -128,13 +128,33 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=#maxIdleConns</td>
+	<td>id=maxIdleConns</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>6000</td>
 	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
 	<td>id=maxIdleConns</td>
 	<td>999</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=maxIdleConns</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>id=maxIdleConns</td>
+	<td>change</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=maxIdleConns</td>
+	<td></td>
 </tr>
 <tr>
 	<td>type</td>
@@ -2213,6 +2233,13 @@
 </tr>
 <!--PERFORMANCE MONITORING settings save and persist-->
 <tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--*** This broke the Se server (blank screen, had to change value in config.sys)-->
+<!--*** Worked fine on postgres.test-->
+<tr>
 	<td>waitForElementPresent</td>
 	<td>id=environment/performance_monitoring</td>
 	<td></td>
@@ -2322,6 +2349,11 @@
 	<td>waitForValue</td>
 	<td>id=MetricsSettings.ListenAddress</td>
 	<td>${listen}</td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
 </tr>
 <!--DEVELOPER-->
 <tr>

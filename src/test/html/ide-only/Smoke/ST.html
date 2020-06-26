@@ -449,12 +449,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.comment-count</td>
+	<td>css=span.post-menu__comment-count</td>
 	<td>1</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.comment-count</td>
+	<td>css=span.post-menu__comment-count</td>
 	<td>1</td>
 </tr>
 <tr>
@@ -500,7 +500,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.comment-count</td>
+	<td>css=span.post-menu__comment-count</td>
 	<td>2</td>
 </tr>
 <!--Find reply's message ID (searches text string in:channel)-->
@@ -526,8 +526,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.search-autocomplete__name</td>
-	<td>Test-${datetime} (~test-${datetime})</td>
+	<td>css=div.search-autocomplete__item.selected</td>
+	<td>Test-${datetime}~test-${datetime}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -568,18 +568,18 @@
 <!--Edit reply in RHS-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.comment-count</td>
+	<td>css=span.post-menu__comment-count</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.comment-count</td>
+	<td>css=span.post-menu__comment-count</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.sidebar--right__header</td>
-	<td>Message Details</td>
+	<td>css=span.sidebar--right__title</td>
+	<td>ThreadTest-${datetime}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1008,7 +1008,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title &gt; span</td>
-	<td>Message Details</td>
+	<td>Thread</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1329,22 +1329,12 @@
 <!--Flag icon toggles RHS closed and is no longer active style-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button#channelHeaderFlagButton.channel-header__icon.style--none.active span.icon.icon__flag</td>
+	<td>id=channelHeaderFlagButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button#channelHeaderFlagButton.channel-header__icon.style--none.active span.icon.icon__flag</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementNotPresent</td>
-	<td>css=button#channelHeaderFlagButton.channel-header__icon.style--none.active span.icon.icon__flag</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=button#channelHeaderFlagButton.channel-header__icon.style--none span.icon.icon__flag</td>
+	<td>id=channelHeaderFlagButton</td>
 	<td></td>
 </tr>
 <!--Pin a message in Test- channel-->
@@ -1428,8 +1418,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.sidebar--right__title</td>
-	<td>Message Details</td>
+	<td>css=span.sidebar--right__title &gt; span</td>
+	<td>Thread</td>
 </tr>
 <!--Pin "important post" in RHS, pinned badge in RHS and center-->
 <tr>
@@ -1481,7 +1471,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Test-${datetime}</td>
+	<td>Pinned postsTest-${datetime}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1532,7 +1522,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Off-Topic</td>
+	<td>Pinned postsOff-Topic</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1579,7 +1569,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Off-Topic</td>
+	<td>Pinned postsOff-Topic</td>
 </tr>
 <!--Pinned post in different channel in center was not added to RHS-->
 <tr>
@@ -1656,18 +1646,18 @@
 <!--Toggle off pinned posts to close RHS then toggle back on-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=button#channelHeaderPinButton.style--none.channel-header__icon.active</td>
+	<td>id=channelHeaderPinButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button#channelHeaderPinButton.style--none.channel-header__icon.active</td>
+	<td>id=channelHeaderPinButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForNotText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Test-${datetime}</td>
+	<td>Pinned postsOff-Topic</td>
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
@@ -1683,13 +1673,13 @@
 <!--Pinned posts RHS for current channel opens-->
 <tr>
 	<td>click</td>
-	<td>css=button#channelHeaderPinButton.style--none.channel-header__icon</td>
+	<td>id=channelHeaderPinButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Off-Topic</td>
+	<td>Pinned postsOff-Topic</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2106,8 +2096,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.mention__fullname &gt; span</td>
-	<td>Notifies everyone in this channel</td>
+	<td>css=div.mentions__name.suggestion--selected</td>
+	<td>@channelNotifies everyone in this channel</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3950,9 +3940,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
+	<td>waitForNotText</td>
 	<td>css=strong.heading</td>
-	<td>Town Square</td>
+	<td>st2${dayseconds}</td>
 </tr>
 <!--LOG OUT testst, then in as ST2, to set Core Test Team (ST2Test) to be open to any user on the server-->
 <tr>
@@ -5205,13 +5195,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.mention__align &gt; span</td>
-	<td>Test-${datetime}</td>
+	<td>css=span.mention__channelname.ml-2</td>
+	<td>~test-${datetime}</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.mention__align &gt; span</td>
-	<td>Test-${datetime}</td>
+	<td>css=span.mention__channelname.ml-2</td>
+	<td>~test-${datetime}</td>
 </tr>
 <tr>
 	<td>waitForText</td>

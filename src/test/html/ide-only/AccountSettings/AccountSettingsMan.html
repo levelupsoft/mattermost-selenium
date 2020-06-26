@@ -304,7 +304,7 @@
 <!--Verify full name displays and is styled span.light-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span span.light:(contains'Test9first Test9last')</td>
+	<td>css=div.more-modal__name span.light:(contains'Test9first Test9last')</td>
 	<td></td>
 </tr>
 <!--Verify nickname of other user displays inside parentheses, span.light-->
@@ -326,7 +326,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name &gt; span</td>
+	<td>css=div.more-modal__name</td>
 	<td>@test10 - (eggplant)</td>
 </tr>
 <tr>
@@ -385,8 +385,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.more-modal__name &gt; span</td>
-	<td>@test10 - (eggplant)</td>
+	<td>css=div.more-modal__name</td>
+	<td>@test10 (eggplant)</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2859,11 +2859,6 @@
 </tr>
 <!--These stopped finding the css contains....-->
 <tr>
-	<td>waitForText</td>
-	<td>//div[13]/div/div/div/div[2]/div[2]/div/div/div/div/p</td>
-	<td>Just Enter<br />Followed by Control and Enter</td>
-</tr>
-<tr>
 	<td>waitForElementPresent</td>
 	<td>css=p:contains('Just Enter<br />Followed by Control and Enter')</td>
 	<td></td>
@@ -2922,11 +2917,6 @@
 	<td>Followed by Control and Enter${KEY_CTRL}${KEY_ENTER}</td>
 </tr>
 <!--These stopped finding the css contains....-->
-<tr>
-	<td>waitForText</td>
-	<td>//div[3]/div[2]/div/div[2]/div[2]/div/div/div/div/p</td>
-	<td>Reply just Enter<br />Followed by Control and Enter</td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=p:contains('Reply just Enter<br />Followed by Control and Enter')</td>

@@ -524,13 +524,13 @@
 <!--Create team from `+` in team sidebar when no more open teams are available-->
 <!--*** Brittle test; if other tests have left other open teams in there, this will fail-->
 <tr>
-	<td>waitForText</td>
-	<td>css=#createNewTeamLink &gt; span</td>
-	<td>Create a team</td>
+	<td>waitForElementPresent</td>
+	<td>id=create_teamTeamButton</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#createNewTeamLink &gt; span</td>
+	<td>id=create_teamTeamButton</td>
 	<td></td>
 </tr>
 <tr>

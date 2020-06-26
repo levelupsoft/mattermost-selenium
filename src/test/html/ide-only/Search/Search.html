@@ -1296,11 +1296,6 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.icon.icon__mentions &gt; svg</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
 	<td>css=input.search-bar</td>
 	<td></td>
 </tr>
@@ -1311,8 +1306,13 @@
 </tr>
 <!--Sleep-->
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=channelHeaderMentionButton</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>css=span.icon.icon__mentions &gt; svg</td>
+	<td>id=channelHeaderMentionButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -1332,8 +1332,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=p span.mention--highlight</td>
-	<td>test2</td>
+	<td>css=a.mention-link.mention--highlight</td>
+	<td>@test2</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1594,12 +1594,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.icon.icon__mentions &gt; svg</td>
+	<td>id=channelHeaderMentionButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.icon.icon__mentions &gt; svg</td>
+	<td>id=channelHeaderMentionButton</td>
 	<td></td>
 </tr>
 <!--Sleep-->

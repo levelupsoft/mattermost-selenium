@@ -559,8 +559,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.modal-body &gt; span</td>
-	<td>*will be removed. They are not in groups linked to this group. Are you sure you wish to remove these users?</td>
+	<td>css=#confirmModalBody &gt; span</td>
+	<td>* will be removed. They are not in groups linked to this channel. Are you sure you wish to remove this user?</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -772,7 +772,7 @@
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>engineering, qa</td>
+	<td>qa, engineering</td>
 	<td></td>
 </tr>
 <tr>
@@ -788,7 +788,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.modal-body &gt; span</td>
-	<td>*will be removed. They are not in groups linked to this channel. Are you sure you wish to remove these users?</td>
+	<td>*will be removed. They are not in groups linked to this team. Are you sure you wish to remove these users?</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -853,9 +853,19 @@
 	<td>linda+notingroup@mattermost.com</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=name</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>id=name</td>
 	<td>notingroup</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=password</td>
+	<td></td>
 </tr>
 <tr>
 	<td>type</td>
@@ -877,18 +887,18 @@
 	<td>css=label.control-label</td>
 	<td>Unable to join a group-constrained team by invite.</td>
 </tr>
-<!--Try to use team invite link - LDAP user not in appropriate group-->
-<!--lindy.test created the team but is not in the group-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Back</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=a</td>
+	<td>Back</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Back</td>
-	<td></td>
+	<td>css=a</td>
+	<td>Back</td>
 </tr>
+<!--Try to use team invite link - LDAP user not in appropriate group-->
+<!--lindy.test created the team but is not in the group-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=loginId</td>
@@ -2410,8 +2420,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[3]/div/div/span</td>
-	<td>MentionGroup</td>
+	<td>css=div.group-row</td>
+	<td>MentionGroupEngineeringManual InvitesEdit</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3004,25 +3014,25 @@
 	<td>@george.test-simulator.amazonses.com and @lindy.test-simulator.amazonses.com did not get notified by this mention because they are not in the channel. Would you like to add them to this private channel? They will have access to all message history.</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>@admin and @corey.test-simulator.amazonses.com did not get notified by this mention because they are not in the channel. They cannot be added to the channel because they are not a member of the linked groups. To add them to this channel, they must be added to the linked groups.</td>
+	<td></td>
+</tr>
 <!--Can add the in-group users via the link in ephemeral post-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#add_channel_member_link &gt; span</td>
+	<td>css=a.PostBody_addChannelMemberLink &gt; span</td>
 	<td>add them to this private channel</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#add_channel_member_link &gt; span</td>
+	<td>css=a.PostBody_addChannelMemberLink &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>@lindy.test-simulator.amazonses.com and @george.test-simulator.amazonses.com added to the channel by you.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>@admin and @corey.test-simulator.amazonses.com did not get notified by this mention because they are not in the channel. They cannot be added to the channel because they are not a member of the linked groups. To add them to this channel, they must be added to the linked groups.</td>
 	<td></td>
 </tr>
 <!--LOG OUT linda.test-->
