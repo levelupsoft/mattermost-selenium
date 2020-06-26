@@ -406,12 +406,12 @@
 <!--Cancel out of a delete (use postid to locate the right ... menu)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#SEARCH_button_${postid}</td>
+	<td>id=SEARCH_button_${postid}</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#SEARCH_button_${postid}</td>
+	<td>id=SEARCH_button_${postid}</td>
 	<td></td>
 </tr>
 <!--*** If needed, manually click the [...] menu on Greetings post in RHS search results-->
@@ -537,7 +537,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.search-autocomplete__name</td>
-	<td>Test-${datetime} (~test-${datetime})</td>
+	<td>test-${datetime}</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -548,11 +548,6 @@
 	<td>waitForNotText</td>
 	<td>css=div.search-autocomplete__item.selected</td>
 	<td>test-${datetime}</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=searchBox</td>
-	<td>${KEY_ENTER}</td>
 </tr>
 <!--Get post ID after a search returns one desired result-->
 <tr>
@@ -607,22 +602,20 @@
 	<td>Reply</td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>openSearchDotMenuForTopPost</td>
+	<td>click</td>
+	<td>xpath=//div[@id='${replyid}_message']</td>
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
+	<td>waitForElementPresent</td>
+	<td>id=reply_textbox</td>
 	<td></td>
-	<td>3000</td>
 </tr>
-<!--Manually open dot menu for the "Reply" comment in RHS-->
 <tr>
-	<td>rollup</td>
-	<td>dotMenuItemVerifyAndSelect</td>
-	<td>Item=Edit</td>
+	<td>sendKeys</td>
+	<td>id=reply_textbox</td>
+	<td>${KEY_UP}</td>
 </tr>
-<!--^^2 steps above need maintenance to find Edit on ... menu^^-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=edit_textbox</td>
@@ -791,14 +784,24 @@
 	<td></td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>openSearchDotMenuForTopPost</td>
+	<td>waitForElementPresent</td>
+	<td>id=SEARCH_button_${deleteid}</td>
 	<td></td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>dotMenuItemVerifyAndSelect</td>
-	<td>Item=Dele</td>
+	<td>click</td>
+	<td>id=SEARCH_button_${deleteid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=button.style--none.MenuItem__dangerous</td>
+	<td>Delete</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.MenuItem__dangerous</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1025,7 +1028,7 @@
 	<td>css=#archive-link-home &gt; a &gt; span</td>
 	<td></td>
 </tr>
-<!--Delete comment from RHS-->
+<!--Delete comment from RHS by deleting all text from the post-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -1046,16 +1049,34 @@
 	<td>css=p:contains('The clouds should clear later, hopefully.')</td>
 	<td></td>
 </tr>
-<!--No longer finding the post menu-->
-<!--** Manually click `The clouds...` post menu-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=reply_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=reply_textbox</td>
+	<td>${KEY_UP}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=edit_textbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=edit_textbox</td>
+	<td>${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}${KEY_BACKSPACE}</td>
+</tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=button.style--none.MenuItem__dangerous</td>
-	<td>Delete</td>
+	<td>id=editButton</td>
+	<td>Save</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.style--none.MenuItem__dangerous</td>
+	<td>id=editButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -1586,7 +1607,7 @@
 <tr>
 	<td>rollup</td>
 	<td>dotMenuItemVerifyAndSelect</td>
-	<td>Item=Pin to Channel</td>
+	<td>Item=Pin to channel</td>
 </tr>
 <!--RHS updates-->
 <tr>
@@ -1979,12 +2000,12 @@
 <!--Join public channel from More...-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#sidebarPublicChannelsMore &gt; span</td>
+	<td>css=#sidebarChannelsMore &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#sidebarPublicChannelsMore &gt; span</td>
+	<td>css=#sidebarChannelsMore &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -2248,12 +2269,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Create a Team</td>
+	<td>link=Create a New Team</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Create a Team</td>
+	<td>link=Create a New Team</td>
 	<td></td>
 </tr>
 <tr>
@@ -2363,15 +2384,20 @@
 	<td>css=#invitePeople &gt; button.style--none.</td>
 	<td></td>
 </tr>
-<!--*** Manually enter user testst (figured this out in another test but need to go find it)-->
+<!--*** select- number may change....-->
+<tr>
+	<td>type</td>
+	<td>id=react-select-3-input</td>
+	<td>testst${dayseconds}</td>
+</tr>
 <tr>
 	<td>waitForText</td>
-	<td>id=react-select-2-option-0</td>
+	<td>id=react-select-3-option-0</td>
 	<td>@testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=react-select-2-option-0</td>
+	<td>id=react-select-3-option-0</td>
 	<td>@testst${dayseconds}</td>
 </tr>
 <tr>
@@ -2469,12 +2495,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=#removeFromTeam &gt; button.style--none</td>
-	<td>Remove from Team</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Remove from Team')</td>
-	<td></td>
+	<td>Remove From Team</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2540,7 +2561,7 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=PrivateChannelName</td>
+	<td>id=newChannelName</td>
 	<td>Private-${datetime}</td>
 </tr>
 <tr>
@@ -2801,12 +2822,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Remove from Team')</td>
+	<td>css=li.MenuItem button.style--none:contains('Remove From Team')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Remove from Team')</td>
+	<td>css=li.MenuItem button.style--none:contains('Remove From Team')</td>
 	<td></td>
 </tr>
 <tr>
@@ -3267,7 +3288,7 @@
 <tr>
 	<td>type</td>
 	<td>//div[@id=&quot;selectItems&quot;]//*/input</td>
-	<td>testst</td>
+	<td>testst${dayseconds}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3585,12 +3606,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=a.signup-team-login &gt; span</td>
-	<td>Create a team</td>
+	<td>Create a new team</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=a.signup-team-login &gt; span</td>
-	<td>Create a team</td>
+	<td>Create a new team</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -3858,7 +3879,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Create a team</td>
+	<td>link=Create a new team</td>
 	<td></td>
 </tr>
 <tr>
@@ -4207,15 +4228,14 @@
 	<td>css=div.tooltip-inner</td>
 	<td>Testing the team description.</td>
 </tr>
-<!--*** Fails if not first in open teams list-->
 <tr>
-	<td>waitForText</td>
-	<td>css=span.signup-team-dir__name</td>
-	<td>Core Team${dayseconds}</td>
+	<td>waitForElementPresent</td>
+	<td>css=#Core_Team12-54 &gt; span.signup-team-dir__name</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.signup-team-dir__name</td>
+	<td>css=#Core_Team12-54 &gt; span.signup-team-dir__name</td>
 	<td></td>
 </tr>
 <tr>
@@ -4847,12 +4867,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Remove from Channel')</td>
+	<td>css=li.MenuItem button.style--none:contains('Remove From Channel')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Remove from Channel')</td>
+	<td>css=li.MenuItem button.style--none:contains('Remove From Channel')</td>
 	<td></td>
 </tr>
 <tr>

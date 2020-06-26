@@ -127,9 +127,14 @@
 	<td></td>
 </tr>
 <tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>css=p.input__help.error &gt; span</td>
-	<td>Channel name must be 2 or more characters</td>
+	<td>Display name must have at least 2 characters.</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -376,8 +381,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//label[2]</td>
-	<td>Channel name must be 2 or more characters</td>
+	<td>css=p.input__help.error &gt; span</td>
+	<td>Display name must have at least 2 characters.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -562,8 +567,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.modal-intro &gt; span</td>
-	<td>Some characters are not allowed in URLs and may be removed.</td>
+	<td>css=p.input__help &gt; span</td>
+	<td>You can use lowercase letters, numbers, dashes, and underscores.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -633,8 +638,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.modal-intro &gt; span</td>
-	<td>Some characters are not allowed in URLs and may be removed.</td>
+	<td>css=p.input__help &gt; span</td>
+	<td>You can use lowercase letters, numbers, dashes, and underscores.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1004,7 +1009,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=p.input__help.error &gt; span</td>
-	<td>Channel name must be 2 or more characters</td>
+	<td>Display name must have at least 2 characters.</td>
 </tr>
 <!--Maximum 22 characters - On creation-->
 <tr>
@@ -1617,13 +1622,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.mention__align</td>
-	<td>TestForHeader (~testforheader)</td>
+	<td>//div/div/div/div/div[3]/div/div/div[2]</td>
+	<td>TestForHeader~testforheader</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.mention__align</td>
-	<td>TestForHeader (~testforheader)</td>
+	<td>//div/div/div/div/div[3]/div/div/div[2]</td>
+	<td>TestForHeader~testforheader</td>
 </tr>
 <tr>
 	<td>pause</td>

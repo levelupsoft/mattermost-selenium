@@ -170,6 +170,21 @@
 	<td>Team Admin</td>
 </tr>
 <tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
 	<td>refreshAndWait</td>
 	<td></td>
 	<td></td>
@@ -197,6 +212,21 @@
 <tr>
 	<td>click</td>
 	<td>id=confirmModalButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <!--Channel admin role can be set and saved-->
@@ -266,6 +296,21 @@
 	<td>Channel Admin</td>
 </tr>
 <tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
 	<td>refreshAndWait</td>
 	<td></td>
 	<td></td>
@@ -299,6 +344,21 @@
 <tr>
 	<td>click</td>
 	<td>id=confirmModalButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <!--Set roles from Channel Management page-->
@@ -454,8 +514,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
+	<td>css=span.group-actions &gt; a &gt; span</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.group-actions &gt; a &gt; span</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>waitForText</td>
 	<td>css=div.groups-list.groups-list-no-padding</td>
-	<td>Name<br />Member Count<br />Roles<br /><br /><br /><br />*Channel Admin<br /><br /><br />Remove<br /><br />*Member<br /><br /><br />Remove<br /><br />*Channel Admin<br /><br /><br />Remove<br /><br /><br />*</td>
+	<td>Group Name<br />Member Count<br />Roles<br /><br /><br /><br />*Channel Admin<br /><br /><br />Remove<br /><br />*Member<br /><br /><br />Remove<br /><br />*Member<br /><br /><br />Remove<br /><br /><br />*</td>
 </tr>
 <!--Cleanup: Remove groups-->
 <tr>

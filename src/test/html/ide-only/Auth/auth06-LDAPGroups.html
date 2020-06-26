@@ -1024,6 +1024,21 @@
 	<td>css=button.btn.btn-link</td>
 	<td>Remove</td>
 </tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
 <!--"Edit" after group is configured-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1194,92 +1209,7 @@
 	<td>id=LdapSettings.GroupIdAttribute</td>
 	<td>cn</td>
 </tr>
-<!--Default channels are not included in list of channels to link-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=user_management/groups</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=user_management/groups</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.group-description &gt; a &gt; span</td>
-	<td>Not Linked</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.group-description &gt; a &gt; span</td>
-	<td>Not Linked</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=span.group-actions &gt; a &gt; span</td>
-	<td>Configure</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.group-actions &gt; a &gt; span</td>
-	<td>Configure</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=button.btn.btn-primary</td>
-	<td>Add Team or Channel</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem button.style--none:contains('Add Channel')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=li.MenuItem button.style--none:contains('Add Channel')</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>Standup</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextNotPresent</td>
-	<td>Town Square</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextNotPresent</td>
-	<td>Off Topic</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=a.fa.fa-angle-left.back</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=a.fa.fa-angle-left.back</td>
-	<td></td>
-</tr>
+<!--v5.24 Removed; no longer the case: Default channels are not included in list of channels to link-->
 <!--Link qa group to QA team-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -1391,6 +1321,21 @@
 	<td>waitForText</td>
 	<td>css=div.group-users-empty &gt; span</td>
 	<td>No users found</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
 </tr>
 <!--LOG OUT system admin user-->
 <tr>
@@ -1663,6 +1608,21 @@
 	<td>waitForText</td>
 	<td>css=div.AdminPanel__content</td>
 	<td>NameTypeAssigned RolesQATeamMember <br /><br /><br />RemoveTicket ManagementChannelMember <br /><br /><br />Remove</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
 </tr>
 <!--Sync LDAP-->
 <tr>
@@ -2000,7 +1960,22 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.AdminPanel__content</td>
-	<td>NameTypeAssigned RolesDevelopersTeamMember <br /><br /><br />RemoveXYZChannel (Private)Member <br /><br /><br />Remove</td>
+	<td>NameTypeAssigned RolesDevelopersTeam (Private)RemoveXYZChannel (Private)Member <br /><br /><br />Remove</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
 </tr>
 <!--Sync LDAP-->
 <tr>
@@ -2441,6 +2416,68 @@
 	<td>css=#logout &gt; button.style--none</td>
 	<td></td>
 </tr>
+<!--LOG IN lindy.test, still has same teams as before-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>lindy.test</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>Password1</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>Engineering</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[@id='qaTeamButton']/div/div/div/div</td>
+	<td></td>
+</tr>
+<!--LOG OUT lindy.test-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
 <!--LOG IN system admin using stored credentials-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -2616,6 +2653,21 @@
 	<td>click</td>
 	<td>id=saveItems</td>
 	<td>Add</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
 </tr>
 <!--Back button on Group Configuration page-->
 <tr>
@@ -3106,6 +3158,21 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
 	<td>refreshAndWait</td>
 	<td></td>
 	<td></td>
@@ -3127,6 +3194,16 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=confirmModalButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=confirmModalButton</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>css=#confirmModalButton</td>
 	<td>Yes, Remove</td>
@@ -3140,6 +3217,13 @@
 	<td>waitForText</td>
 	<td>css=div.group-teams-and-channels-empty</td>
 	<td>No teams or channels specified yet</td>
+</tr>
+<!--Asking re: behavior here: Save is required now, and extra messaging re: group mention-->
+<!--https://community-release.mattermost.com/core/pl/o8tbn4m9jbbqmmrcjj95go6zjo-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
 </tr>
 <!--Add just team-->
 <tr>
@@ -3197,6 +3281,21 @@
 	<td>Team*Remove*Channel*Remove</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
 <!--Refresh and settings persist-->
 <tr>
 	<td>refreshAndWait</td>
@@ -3243,6 +3342,21 @@
 	<td>waitForText</td>
 	<td>css=div.group-teams-and-channels-empty</td>
 	<td>No teams or channels specified yet</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
 </tr>
 <!--Add two channels on the same team (should be two on Dev team at top of list)-->
 <tr>
@@ -3297,8 +3411,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=#selectItems</td>
-	<td>ABC (Developers)<br /><br /><br />Standup (Developers)</td>
+	<td>id=selectItems</td>
+	<td>ABC (Developers)<br /><br /><br />Off-Topic (Developers)</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

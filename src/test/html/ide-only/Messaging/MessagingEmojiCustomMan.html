@@ -140,7 +140,6 @@
 	<td>id=post_textbox</td>
 	<td>&nbsp;&nbsp;:sob:&nbsp;&nbsp;${KEY_ENTER}&nbsp;&nbsp;</td>
 </tr>
-<!--LM removed second `//span` between the [ ]  [ ]s and changed all-emoji to emoticon-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//span[@class='emoticon'][@title=':sob:']</td>
@@ -157,7 +156,6 @@
 	<td>id=post_textbox</td>
 	<td>Punctuation test 1 :\|. ${KEY_ENTER}&nbsp;&nbsp;</td>
 </tr>
-<!--LM removed second `//span` between the [ ]  [ ]s and changed all-emoji to emoticon-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//span[@class='emoticon'][@title=':neutral_face:']</td>
@@ -173,8 +171,6 @@
 	<td>id=post_textbox</td>
 	<td>Punctuation&nbsp;&nbsp;test 2 :-x! ${KEY_ENTER}&nbsp;&nbsp;</td>
 </tr>
-<!--LM removed second `//span` between the [ ]  [ ]s and changed all-emoji to emoticon-->
-<!--LM removed `//span[@class='all-emoji']` from beginning of target-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//span[@class='emoticon'][@title=':mask:']</td>
@@ -704,7 +700,167 @@
 	<td>4000</td>
 	<td></td>
 </tr>
-<!--New custom emoji renders as expected after logging out and back in-->
+<!--Custom emoji renders in custom branding text-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<!--LOG OUT test8-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Rendering custom emoji in custom branding was not implemented: https://mattermost.atlassian.net/browse/MM-12657-->
+<!--LOG IN admin-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>passwd</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#systemConsole &gt; a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#systemConsole &gt; a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=site_config/customization</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=site_config/customization</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=TeamSettings.EnableCustomBrandtrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=TeamSettings.EnableCustomBrandtrue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=TeamSettings.CustomBrandText</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=TeamSettings.CustomBrandText</td>
+	<td>:customlarge:</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=TeamSettings.CustomBrandText</td>
+	<td>exact::customlarge:</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=TeamSettings.CustomBrandText</td>
+	<td>exact::customlarge:</td>
+</tr>
+<!--LOG OUT admin-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.team__name</td>
+	<td>System Console</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.team__name</td>
+	<td>System Console</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//li[10]/button</td>
+	<td>Log Out</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//li[10]/button</td>
+	<td></td>
+</tr>
+<!--Insert steps to verify custom emoji renders in custom, log admin back in and remove-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -730,6 +886,12 @@
 	<td>2000</td>
 	<td></td>
 </tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--New custom emoji renders as expected after logging out and back in-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=loginId</td>
@@ -1591,7 +1753,7 @@
 	<td>css=button.sidebar--right__expand</td>
 	<td></td>
 </tr>
-<!--*** Visually verify sidebar expanded, LHS has overlay-->
+<!--*** Visually verify sidebar expanded, LHS no longer has overlay v5.24 MM-23046-->
 <tr>
 	<td>pause</td>
 	<td>4000</td>

@@ -1,0 +1,10 @@
+{
+  "name": "com.a9t9.kantu.xy",
+  "description": "UI.Vision Kantu XY Host",
+  "path": "HOST_PATH",
+  "type": "stdio",
+  "allowed_extensions": [
+    "{190d04a6-e387-4f5b-9751-e0d222cf8275}",
+	"kantu@a9t9.com"
+  ]
+}

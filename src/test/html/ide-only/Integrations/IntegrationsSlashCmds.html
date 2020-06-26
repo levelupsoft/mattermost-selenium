@@ -89,18 +89,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__title</td>
-	<td>/away</td>
+	<td>css=div.slash-command__title</td>
+	<td>away</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__desc</td>
-	<td>Set your status away</td>
+	<td>css=div.slash-command.suggestion--selected</td>
+	<td>/<br />away <br />Set your status away</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.command__title</td>
-	<td>/away</td>
+	<td>css=div.slash-command__title</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -114,7 +114,7 @@
 </tr>
 <tr>
 	<td>waitForNotText</td>
-	<td>css=div.command__desc</td>
+	<td>css=div.slash-command.suggestion--selected</td>
 	<td>Set your status away</td>
 </tr>
 <tr>
@@ -177,17 +177,17 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__title</td>
-	<td>/offline</td>
+	<td>css=div.slash-command__title</td>
+	<td>offline</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__desc</td>
-	<td>Set your status offline</td>
+	<td>css=div.slash-command.suggestion--selected</td>
+	<td>/<br />offline <br />Set your status offline</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.command__title</td>
+	<td>css=div.slash-command__title</td>
 	<td>/offline</td>
 </tr>
 <tr>
@@ -202,7 +202,7 @@
 </tr>
 <tr>
 	<td>waitForNotText</td>
-	<td>css=div.command__desc</td>
+	<td>css=div.slash-command.suggestion--selected</td>
 	<td>Set your status offline</td>
 </tr>
 <tr>
@@ -305,22 +305,22 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__title</td>
-	<td>/online</td>
+	<td>css=div.slash-command__title</td>
+	<td>online</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__desc</td>
+	<td>css=div.slash-command__desc</td>
 	<td>Set your status online</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.command__title</td>
+	<td>css=div.slash-command__title</td>
 	<td>/online</td>
 </tr>
 <tr>
 	<td>waitForNotText</td>
-	<td>css=div.command__desc</td>
+	<td>css=div.slash-command__desc</td>
 	<td>Set your status online</td>
 </tr>
 <tr>
@@ -386,13 +386,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__title</td>
-	<td>/offline</td>
+	<td>css=div.slash-command__title</td>
+	<td>offline</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.command__title</td>
-	<td>/offline</td>
+	<td>css=div.slash-command__title</td>
+	<td>offline</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -427,13 +427,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__title</td>
-	<td>/online</td>
+	<td>css=div.slash-command__title</td>
+	<td>online</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.command__title</td>
-	<td>/online</td>
+	<td>css=div.slash-command__title</td>
+	<td>online</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -498,13 +498,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__title</td>
-	<td>/online</td>
+	<td>css=div.slash-command__title</td>
+	<td>online</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.command__title</td>
-	<td>/online</td>
+	<td>css=div.slash-command__title</td>
+	<td>online</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -549,18 +549,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__title</td>
-	<td>/dnd</td>
+	<td>css=div.slash-command__title</td>
+	<td>dnd</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__desc</td>
+	<td>css=div.slash-command__desc</td>
 	<td>Do not disturb disables desktop and mobile push notifications.</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.command__desc</td>
-	<td>Do not disturb disables desktop and mobile push notifications.</td>
+	<td>css=div.slash-command__desc</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -631,7 +631,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelHeaderDescription &gt; span.status. &gt; svg &gt; g &gt; path.dnd--icon</td>
+	<td>css=#channelHeaderDescription &gt; span.status. &gt; svg &gt; path.dnd--icon</td>
 	<td></td>
 </tr>
 <!--/dnd off - Turn off Do Not Disturb-->
@@ -657,7 +657,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelHeaderDescription &gt; span.status. &gt; svg &gt; g &gt; path.online--icon</td>
+	<td>css=#channelHeaderDescription &gt; span.status. &gt; svg &gt; path.online--icon</td>
 	<td></td>
 </tr>
 <tr>
@@ -693,7 +693,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelHeaderDescription &gt; span.status. &gt; svg &gt; g &gt; path.dnd--icon</td>
+	<td>css=#channelHeaderDescription &gt; span.status. &gt; svg &gt; path.dnd--icon</td>
 	<td></td>
 </tr>
 <!--Toggle off DND using /dnd (while already on)-->
@@ -719,7 +719,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelHeaderDescription &gt; span.status. &gt; svg &gt; g &gt; path.online--icon</td>
+	<td>css=#channelHeaderDescription &gt; span.status. &gt; svg &gt; path.online--icon</td>
 	<td></td>
 </tr>
 <tr>
@@ -755,18 +755,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__title</td>
-	<td>/code [text]</td>
+	<td>css=div.slash-command__title</td>
+	<td>code [text]</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__desc</td>
+	<td>css=div.slash-command__desc</td>
 	<td>Display text as a code block</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.command__title</td>
-	<td>/code [text]</td>
+	<td>css=div.slash-command__desc</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -790,18 +790,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__title</td>
-	<td>/code [text]</td>
+	<td>css=div.slash-command__title</td>
+	<td>code [text]</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__desc</td>
+	<td>css=div.slash-command__desc</td>
 	<td>Display text as a code block</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.command__title</td>
-	<td>/code [text]</td>
+	<td>css=div.slash-command__title</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -880,12 +880,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__title</td>
-	<td>/help</td>
+	<td>css=div.slash-command__title</td>
+	<td>help</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__desc</td>
+	<td>css=div.slash-command__desc</td>
 	<td>Open the Mattermost help page</td>
 </tr>
 <tr>
@@ -942,18 +942,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__title</td>
-	<td>/invite_people [name@domain.com ...]</td>
+	<td>css=div.slash-command__title</td>
+	<td>invite_people [name@domain.com ...]</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__desc</td>
+	<td>css=div.slash-command__desc</td>
 	<td>Send an email invite to your Mattermost team</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.command__title</td>
-	<td>/invite_people [name@domain.com ...]</td>
+	<td>css=div.slash-command__title</td>
+	<td></td>
 </tr>
 <!--Error with no text following command-->
 <tr>
@@ -978,18 +978,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__title</td>
-	<td>/invite_people [name@domain.com ...]</td>
+	<td>css=div.slash-command__title</td>
+	<td>invite_people [name@domain.com ...]</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__desc</td>
+	<td>css=div.slash-command__desc</td>
 	<td>Send an email invite to your Mattermost team</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.command__title</td>
-	<td>/invite_people [name@domain.com ...]</td>
+	<td>css=div.slash-command__title</td>
+	<td></td>
 </tr>
 <!--Error with text that is not an email address-->
 <tr>
@@ -1235,13 +1235,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__title</td>
-	<td>/expand</td>
+	<td>css=div.slash-command__title</td>
+	<td>expand</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.command__title</td>
-	<td>/expand</td>
+	<td>css=div.slash-command__title</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -1286,12 +1286,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__title</td>
-	<td>/collapse</td>
+	<td>css=div.slash-command__title</td>
+	<td>collapse</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__desc</td>
+	<td>css=div.slash-command__desc</td>
 	<td>Turn on auto-collapsing of image previews</td>
 </tr>
 <tr>
@@ -1321,13 +1321,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__title</td>
-	<td>/expand</td>
+	<td>css=div.slash-command__title</td>
+	<td>expand</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.command__title</td>
-	<td>/expand</td>
+	<td>css=div.slash-command__title</td>
+	<td></td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -1925,14 +1925,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Slash Commands</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.integration-option__title &gt; span</td>
+	<td>Slash Commands</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Slash Commands</td>
-	<td></td>
+	<td>css=div.integration-option__title &gt; span</td>
+	<td>Slash Commands</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -2771,12 +2771,12 @@
 <!--Place focus into main input box-->
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__title</td>
-	<td>/badger test-hint</td>
+	<td>css=div.slash-command__title</td>
+	<td>badger test-hint</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__desc</td>
+	<td>css=div.slash-command__desc</td>
 	<td>Auto description</td>
 </tr>
 <!--Don't show custom slash command in autocomplete-->
@@ -2872,8 +2872,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__title</td>
-	<td>/away</td>
+	<td>css=div.slash-command__title</td>
+	<td>away</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -3009,9 +3009,9 @@
 	<td>(Only visible to you)</td>
 </tr>
 <tr>
-	<td>waitForTextPresent</td>
-	<td>css=div.post.post--system</td>
-	<td>command=/test-ephemeral</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.post.post--system:contains('command=/test-ephemeral')</td>
+	<td></td>
 </tr>
 <!--Regenerate token-->
 <tr>

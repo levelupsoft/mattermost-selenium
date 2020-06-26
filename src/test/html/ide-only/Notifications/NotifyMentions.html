@@ -87,16 +87,7 @@
 	<td>id=keysEdit</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForValue</td>
-	<td>id=notificationTriggerUsername</td>
-	<td>on</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=notificationTriggerUsername</td>
-	<td></td>
-</tr>
+<!--Changed in v5.24 to be off by default, so this just verifies that:-->
 <tr>
 	<td>waitForValue</td>
 	<td>id=notificationTriggerUsername</td>
@@ -365,9 +356,9 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
 </tr>
 <!--Verify mention badge - ^-->
 <!--Also mention triggered by being added to the channel,-->
@@ -408,7 +399,7 @@
 	<td>link=@test7</td>
 	<td></td>
 </tr>
-<!--Set notification settings back to trigger mention for username-->
+<!--Set notification settings to trigger mention for username-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarHeaderDropdownButton</td>
@@ -848,7 +839,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=em &gt; span.mention--highlight &gt; span &gt; span &gt; a.mention-link.mention--highlight</td>
+	<td>css=em &gt; span.mention--highlight &gt; span &gt; span &gt; a.mention-link</td>
 	<td>@test7</td>
 </tr>
 <tr>
@@ -1349,9 +1340,9 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
 </tr>
 <!--Get team invite link-->
 <tr>
@@ -1520,7 +1511,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>id=keysDesc</td>
-	<td>&quot;@notify.${datetime}&quot;, &quot;notify.${datetime}&quot;, &quot;@channel&quot;, &quot;@all&quot;, &quot;@here&quot;</td>
+	<td>&quot;@notify.${datetime}&quot;, &quot;@channel&quot;, &quot;@all&quot;, &quot;@here&quot;</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1908,9 +1899,9 @@
 <!--Sleep-->
 <!--Sleep-->
 <tr>
-	<td>waitForText</td>
-	<td>css=strong.heading</td>
-	<td>Town Square</td>
+	<td>waitForElementPresent</td>
+	<td>id=post_textbox</td>
+	<td></td>
 </tr>
 <!--Cleanup: Delete Mentions test channel-->
 <!--Join Mentions test channel-->
@@ -1980,9 +1971,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
+	<td>waitForNotText</td>
 	<td>id=channelHeaderDropdownButton</td>
-	<td>Town Square</td>
+	<td>Mentions-${datetime}</td>
 </tr>
 <!--Cleanup: Deactivate notify.${datetime}-->
 <tr>

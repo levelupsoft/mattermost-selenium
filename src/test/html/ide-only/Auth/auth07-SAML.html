@@ -1375,6 +1375,11 @@
 	<td>id=saveSetting</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=SamlSettings.EmailAttribute</td>
+	<td>${olemail}</td>
+</tr>
 <!--Username Attribute field required-->
 <tr>
 	<td>storeValue</td>
@@ -1410,6 +1415,11 @@
 	<td>waitForNotEditable</td>
 	<td>id=saveSetting</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=SamlSettings.UsernameAttribute</td>
+	<td>${olusername}</td>
 </tr>
 <!--Blank First AND Last Name attributes > fields editable in Account Settings-->
 <tr>
@@ -1692,7 +1702,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.light</td>
-	<td>QA Jesús* OneLogin</td>
+	<td>- QA Jesús* OneLogin</td>
 </tr>
 <!--This is supposed to verify literal `Jes&#xFA;` appears but-->
 <!--the command keeps converting it even if I try to escape it....-->

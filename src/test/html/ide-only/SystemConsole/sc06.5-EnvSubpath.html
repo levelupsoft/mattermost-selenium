@@ -249,6 +249,16 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.close-x</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.close-x</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>id=sidebarHeaderDropdownButton</td>
 	<td></td>
@@ -456,6 +466,7 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Se_Favorite_Channel</td>
 </tr>
+<!--Get post ID from permalink URL (Note: Eval uses [7] instead of [6] b/c of subpath)-->
 <tr>
 	<td>storeLocation</td>
 	<td>urlwhole</td>
@@ -463,8 +474,19 @@
 </tr>
 <tr>
 	<td>storeEval</td>
-	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[6]</td>
+	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[7]</td>
 	<td>postid</td>
+</tr>
+<!--*** May need to manually hover on the permalink post (before highlight fades)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=CENTER_flagIcon_${postid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=CENTER_flagIcon_${postid}</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -476,15 +498,12 @@
 	<td>css=button.sidebar--right__close</td>
 	<td></td>
 </tr>
-<!--Get post ID from permalink URL (Note: Eval uses [6] instead of [5] b/c of subpath)-->
-<!--No longer using the above Eval to verify post, but left it in there for reference if needed later-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=p:contains('finding${monthdaytime}')</td>
 	<td></td>
 </tr>
-<!--This test uses the subpath test servers -->
-<!--*** Manually Flag from permalink view (quickly, before permalink view fades)-->
+<!--*** May need to manually Flag from permalink view (quickly, before permalink view fades)-->
 <!--*** Visually verify permalink highlight-->
 <!--*** Flag is visible on that post-->
 <tr>
@@ -581,49 +600,7 @@
 	<td>css=button.sidebar--right__close</td>
 	<td></td>
 </tr>
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<!--Verify permalink highlight-->
-<tr>
-	<td>waitForText</td>
-	<td>css=#${postid}_message &gt; div.post-message.post-message--collapsed &gt; div.post-message__text-container &gt; div.post-message__text &gt; p</td>
-	<td>finding${monthdaytime}</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div#postListContent.post-list__content div#post_${postid}.post.post--highlight.other--root.current--user div.post__content div div div#${postid}_message.post__body div.post-message.post-message--collapsed div.post-message__text-container div.post-message__text p</td>
-	<td></td>
-</tr>
-<!--Jump to recent messages, pin message to channel from reply RHS-->
-<!--These all need to be updated w new permalink behavior-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=Click here to jump to recent messages.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Click here to jump to recent messages.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementNotPresent</td>
-	<td>link=Click here to jump to recent messages.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementNotPresent</td>
-	<td>css=div#postListContent.post-list__content div#post_${postid}.post.post--highlight.other--root.current--user div.post__content div div div#${postid}_message.post__body div.post-message.post-message--collapsed div.post-message__text-container div.post-message__text p</td>
-	<td></td>
-</tr>
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
+<!--Removed some outdated permalink verifications....Verify permalink highlight-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -641,26 +618,45 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.col.col__reply</td>
+	<td>id=reply_textbox</td>
 	<td></td>
 </tr>
 <!--Pin in RHS -->
 <tr>
-	<td>rollup</td>
-	<td>openDotMenuForLastPost</td>
+	<td>waitForElementPresent</td>
+	<td>id=RHS_ROOT_button_${postid}</td>
 	<td></td>
 </tr>
 <tr>
-	<td>rollup</td>
-	<td>dotMenuItemVerifyAndSelect</td>
-	<td>Item=Pin to Channel</td>
+	<td>click</td>
+	<td>id=RHS_ROOT_button_${postid}</td>
+	<td></td>
 </tr>
-<!--*** False positive; lots of Pinned posts in center already-->
-<!--*** But the following may narrow it down to the first RHS post-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#pin_post_${postid} &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#pin_post_${postid} &gt; button.style--none</td>
+	<td></td>
+</tr>
+<!--*** The following should narrow it down to the first RHS post-->
 <tr>
 	<td>waitForText</td>
 	<td>css=span.post__pinned-badge &gt; span</td>
 	<td>Pinned</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[61]/div/div/div/div[2]/div/div[2]/div/div/span/span</td>
+	<td>Pinned</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Pinned*finding${monthdaytime}</td>
+	<td></td>
 </tr>
 <!--View pinned posts-->
 <tr>
@@ -676,7 +672,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Se_Favorite_Channel</td>
+	<td>Pinned postsSe_Favorite_Channel</td>
 </tr>
 <!--Jump to permalink from pinned RHS-->
 <tr>
@@ -799,7 +795,7 @@
 	<td>css=a.search-item__jump &gt; span</td>
 	<td></td>
 </tr>
-<!--Get post ID from permalink URL (Note: Eval uses [6] instead of [5] b/c of subpath)-->
+<!--Get post ID from permalink URL (Note: Eval uses [7] instead of [6] b/c of subpath)-->
 <tr>
 	<td>storeLocation</td>
 	<td>urlwhole</td>
@@ -809,11 +805,6 @@
 	<td>storeEval</td>
 	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[7]</td>
 	<td>mentionid</td>
-</tr>
-<tr>
-	<td>sendKeys</td>
-	<td>id=post_textbox</td>
-	<td>${mentionid}</td>
 </tr>
 <!--Verify permalink post and highlight-->
 <tr>
@@ -1082,8 +1073,6 @@
 <!--Sleep-->
 <!--Sleep-->
 <!--Opens to private channel message permalink-->
-<!--*** This is dropping redirect for some reason on old FF; -->
-<!--*** Passes manually on FF ESR, Chrome, Safari-->
 <tr>
 	<td>waitForText</td>
 	<td>id=channelHeaderDropdownButton</td>

@@ -1,0 +1,17 @@
+{
+  "name": "com.a9t9.kantu.file_access",
+  "description": "UI.Vision RPA File Access Host",
+  "path": "HOST_PATH",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://dpdlhdbnlaefobeejcgfidghdllhemkl/",
+	"chrome-extension://gcbalfbdmfieckjlnblleoemohcganoc/",
+    "chrome-extension://dpdlhdbnlaefobeejcgfidghdllhemkl/",
+    "chrome-extension://chfonhilonimekkjdiojngiemaajoele/",
+    "chrome-extension://kknkjjhfadpnkmbdhmemjlklhhffkgal/",
+    "chrome-extension://fffapfncphmnlbhgcmbkdhpbjfbjcfco/",
+    "chrome-extension://mkplanokebelajeokbfnigdkhkefgdif/",
+	"chrome-extension://gcbalfbdmfieckjlnblleoemohcganoc/",
+	"chrome-extension://goapmjinbaeomoemgdcnnhoedopjnddd/"
+  ]
+}
