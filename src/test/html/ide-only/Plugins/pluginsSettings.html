@@ -429,15 +429,20 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//span[contains(text(),'Log Out')] </td>
+	<td>//*[contains(text(),'Log Out')] </td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//span[contains(text(),'Log Out')] </td>
+	<td>//*[contains(text(),'Log Out')] </td>
 	<td></td>
 </tr>
 <!--BACK TO Selenium server-->
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td>open</td>
 	<td>https://selenium.test.mattermost.com/admin_console/plugins/plugin_management</td>
@@ -1720,8 +1725,8 @@
 	<td>Demo Plugin</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=channelHeaderDescription</td>
+	<td>verifyText</td>
+	<td>css=span.header-description__text &gt; p.markdown__paragraph-inline</td>
 	<td>The channel used by the demo plugin.</td>
 </tr>
 <!--Message on config change (new config)-->
@@ -1941,13 +1946,13 @@
 	<td>Demo Plugin</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.badge</td>
+	<td>verifyText</td>
+	<td>id=unreadMentions</td>
 	<td>2</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.badge</td>
+	<td>id=unreadMentions</td>
 	<td>2</td>
 </tr>
 <tr>
@@ -2039,23 +2044,18 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__title</td>
-	<td>/demo_plugin (true|false)</td>
+	<td>css=div.slash-command__title</td>
+	<td>demo_plugin (true|false)</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.command__desc</td>
+	<td>css=div.slash-command__desc</td>
 	<td>Enables or disables the demo plugin hooks.</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.command__desc</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>id=post_textbox</td>
-	<td>/demo_plugin</td>
+	<td>css=div.slash-command__desc</td>
+	<td>Enables or disables the demo plugin hooks.</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
@@ -2308,11 +2308,6 @@
 	<td>waitForText</td>
 	<td>css=div.more-modal__name</td>
 	<td>@corey</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.more-modal__row</td>
-	<td>@corey<br />corey@test.com<br /><br />Member</td>
 </tr>
 <tr>
 	<td>click</td>
