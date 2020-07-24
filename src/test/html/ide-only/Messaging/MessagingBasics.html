@@ -3614,8 +3614,13 @@
 </tr>
 <!--Open permalink for deleted message-->
 <tr>
+	<td>storeEval</td>
+	<td>&quot;${permalinkurl}&quot;.split(&quot;/&quot;)[6]</td>
+	<td>postid</td>
+</tr>
+<tr>
 	<td>open</td>
-	<td>${permalinkurl}</td>
+	<td>https://selenium.test.mattermost.com/ui-automation/pl/${postid}</td>
 	<td></td>
 </tr>
 <!--Also may not have caught the permalink URL in time, now that permalink fades-->
