@@ -4127,8 +4127,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>type</td>
+	<td>css=div.admin-console__content form.form-horizontal div div div.form-group div.col-sm-8 input#TeamSettings.MaxUsersPerTeam.form-control</td>
+	<td>200</td>
+</tr>
+<tr>
 	<td>sendKeys</td>
-	<td>css=input#TeamSettings.MaxUsersPerTeam.form-control</td>
+	<td>css=div.admin-console__content form.form-horizontal div div div.form-group div.col-sm-8 input#TeamSettings.MaxUsersPerTeam.form-control</td>
 	<td>200</td>
 </tr>
 <tr>
@@ -4317,8 +4322,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div &gt; p.markdown__paragraph-inline</td>
-	<td>@test10 added to the team by you.</td>
+	<td>css=a.mention-link</td>
+	<td>@test10</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=p.markdown__paragraph-inline strong:contains('added to the team')</td>
+	<td></td>
 </tr>
 <!--LOG OUT admin-->
 <tr>

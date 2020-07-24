@@ -1136,7 +1136,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.admin-console__header</td>
-	<td>Groups (Beta)</td>
+	<td>Groups</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1211,6 +1211,16 @@
 </tr>
 <!--v5.24 Removed; no longer the case: Default channels are not included in list of channels to link-->
 <!--Link qa group to QA team-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=user_management/groups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_management/groups</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
@@ -1336,6 +1346,57 @@
 	<td>waitForNotEditable</td>
 	<td>id=saveSetting</td>
 	<td></td>
+</tr>
+<!--Link Engineering group (already has Engineering team)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=user_management/groups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_management/groups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#engineering_group &gt; div.group-row &gt; div.group-name &gt; span</td>
+	<td>engineering</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#engineering_group &gt; div.group-row &gt; div.group-content &gt; span.group-description &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#engineering_group &gt; div.group-row &gt; div.group-content &gt; span.group-description &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#engineering_group &gt; div.group-row &gt; div.group-content &gt; span.group-description &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#engineering_configure &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#engineering_configure &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=td</td>
+	<td>Engineering</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=td.type &gt; span</td>
+	<td>Team</td>
 </tr>
 <!--LOG OUT system admin user-->
 <tr>
@@ -3199,11 +3260,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=confirmModalButton</td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForText</td>
 	<td>css=#confirmModalButton</td>
 	<td>Yes, Remove</td>
@@ -3214,16 +3270,24 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>css=div.group-teams-and-channels-empty</td>
 	<td>No teams or channels specified yet</td>
-</tr>
-<!--Asking re: behavior here: Save is required now, and extra messaging re: group mention-->
-<!--https://community-release.mattermost.com/core/pl/o8tbn4m9jbbqmmrcjj95go6zjo-->
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
 </tr>
 <!--Add just team-->
 <tr>
@@ -3467,6 +3531,1058 @@
 	<td>Developers*Team*Channel*Remove</td>
 	<td></td>
 </tr>
+<!--User who leaves a team is not re-added on sync-->
+<!--Verify developers group linked to Constrain-Dev team, and synced-->
+<tr>
+	<td>click</td>
+	<td>id=user_management/groups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>developers</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.group-row &gt; div.group-name &gt; span</td>
+	<td>developers</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#developers_edit &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#developers_edit &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.name-no-arrow</td>
+	<td>Constrain-Dev</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.username</td>
+	<td>@jesus.test-simulator.amazonses.com</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=user_management/teams</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_management/teams</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=b</td>
+	<td>Constrain-Dev</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.group-actions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.group-actions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#team_groups &gt; div.header &gt; div &gt; h3 &gt; span</td>
+	<td>Synced Groups</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.group-name.row-content</td>
+	<td>developers</td>
+</tr>
+<!--Un-sync to allow carlos.test to leave the team-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//button[@type='button']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@type='button']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[2]/div[2]/div/div[2]/div</td>
+	<td>Anyone can join this team</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<!--LOG OUT system admin user-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=svg[title=&quot;Menu Icon&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=svg[title=&quot;Menu Icon&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
+	<td></td>
+</tr>
+<!--Log in carlos.test (abc group), view Constrain-Dev-->
+<!-- > Dev's team, Constrain-Dev team, & Engineering team, default channels-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>https://selenium.test.mattermost.com/constrain-dev</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>carlos.test</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>Password1</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<!--Leave Constrain-Dev team-->
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>Constrain-Dev</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#leaveTeam &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#leaveTeam &gt; button.style--none.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=leaveTeamYes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=leaveTeamYes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>id=headerTeamName</td>
+	<td>Constrain-Dev</td>
+</tr>
+<!--LOG OUT carlos.test-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<!--LOG IN system admin using stored credentials-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>${ldapadmin}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>${ldappwd}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<!--Re-link and sync the Constrain-Dev team-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=headerTeamName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=headerTeamName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=System Console</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=user_management/teams</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_management/teams</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=b</td>
+	<td>Constrain-Dev</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.group-actions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.group-actions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=label.line-switch__label</td>
+	<td>Sync Group Members</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.group-name.row-content</td>
+	<td>developers</td>
+</tr>
+<!--Re-sync -->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//button[@type='button']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@type='button']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>//div[2]/div[2]/div/div[2]/div</td>
+	<td>Anyone can join this team</td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=b</td>
+	<td>Constrain-Dev</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[2]/span/span</td>
+	<td>Group Sync</td>
+</tr>
+<!--Sync LDAP-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=authentication/ldap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=authentication/ldap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.job-table__create-button &gt; div &gt; button.btn.btn-default</td>
+	<td>AD/LDAP Synchronize Now</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.job-table__create-button &gt; div &gt; button.btn.btn-default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>Pending</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>Pending</td>
+</tr>
+<tr>
+	<td>waitForNotText</td>
+	<td>css=span.status-icon-warning &gt; span</td>
+	<td>In Progress</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.status-icon-success &gt; span</td>
+	<td>Success</td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>Scanned 0 LDAP users and 0 groups.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>--</td>
+	<td></td>
+</tr>
+<!--LOG OUT system admin user-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=svg[title=&quot;Menu Icon&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=svg[title=&quot;Menu Icon&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.MenuItem button.style--none:contains('Log Out')</td>
+	<td></td>
+</tr>
+<!--Log in carlos.test -->
+<!-- > Dev's team, Engineering team, NO Constrain-Dev team-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>carlos.test</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>Password1</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[@id='engineeringTeamButton']/div/div/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id='engineeringTeamButton']/div/div/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>Engineering</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.TeamIcon__initials.TeamIcon__initials__md</td>
+	<td>De</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.TeamIcon__initials.TeamIcon__initials__md</td>
+	<td>De</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#sidebarItem_abc &gt; span.sidebar-item__name &gt; span</td>
+	<td>ABC</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>https://selenium.test.mattermost.com/constrain-dev</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span</td>
+	<td>Team Not Found</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=a &gt; span</td>
+	<td>Back to Mattermost</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a &gt; span</td>
+	<td>Back to Mattermost</td>
+</tr>
+<!--LOG OUT carlos.test-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<!--LOG IN william.test for the first time, should get Constrain-Dev team-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>william.test</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>Password1</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h3 &gt; span</td>
+	<td>Welcome to:</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>https://selenium.test.mattermost.com/constrain-dev</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=headerTeamName</td>
+	<td>Constrain-Dev</td>
+</tr>
+<!--LOG OUT william.test-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sidebarHeaderDropdownButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#logout &gt; button.style--none</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--LOG IN system admin using stored credentials-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginId</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginId</td>
+	<td>${ldapadmin}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=loginPassword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=loginPassword</td>
+	<td>${ldappwd}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Search and pagination in Groups list-->
+<tr>
+	<td>click</td>
+	<td>id=user_management/groups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.admin-console__header &gt; span</td>
+	<td>Groups</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.group-row &gt; div.group-name</td>
+	<td>.Dot Group-Filter</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.counter &gt; span</td>
+	<td>1 - 200 of 270</td>
+</tr>
+<!--Next page-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//button[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.group-row &gt; div.group-name</td>
+	<td>abc</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.counter &gt; span</td>
+	<td>201 - 270 of 270</td>
+</tr>
+<!--Previous page-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[4]/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[4]/button</td>
+	<td></td>
+</tr>
+<!--Search, with pagination-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>filter</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.counter &gt; span</td>
+	<td>1 - 200 of 261</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.group-row &gt; div.group-name</td>
+	<td>.Dot Group-Filter</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//button[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.group-row &gt; div.group-name</td>
+	<td>alpha-Filter</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.counter &gt; span</td>
+	<td>201 - 261 of 261</td>
+</tr>
+<!--Clear search filter-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div/div/i</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div/div/i</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.counter &gt; span</td>
+	<td>1 - 200 of 270</td>
+</tr>
+<!--No results found-->
+<tr>
+	<td>type</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>nonsenseandgibberish</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>nonsenseandgibberish</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.groups-list-empty &gt; span</td>
+	<td>No groups found</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div/div/i</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div/div/i</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.counter &gt; span</td>
+	<td>1 - 200 of 270</td>
+</tr>
+<!--Search from second page-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//button[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.group-row &gt; div.group-name</td>
+	<td>abc</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.counter &gt; span</td>
+	<td>201 - 270 of 270</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>qa</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.group-row &gt; div.group-name</td>
+	<td>qa</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.counter &gt; span</td>
+	<td>1 - 1 of 1</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div/div/i</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div/div/i</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.counter &gt; span</td>
+	<td>1 - 200 of 270</td>
+</tr>
+<!--Drop-down options-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//i[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//i[2]</td>
+	<td></td>
+</tr>
+<!--Is Linked-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.filter-row</td>
+	<td>Is Linked</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.filter-check.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//div[2]/a</td>
+	<td>Search</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[2]/a</td>
+	<td>Search</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.group-row &gt; div.group-name</td>
+	<td>abc</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.counter &gt; span</td>
+	<td>1 - 6 of 6</td>
+</tr>
+<!--Is Linked + search term-->
+<tr>
+	<td>type</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>is:linked er</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.group-row &gt; div.group-name</td>
+	<td>alpha-Filter</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.counter &gt; span</td>
+	<td>1 - 3 of 3</td>
+</tr>
+<!--Is Not Linked + search term-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div/div/i</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div/div/i</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.counter &gt; span</td>
+	<td>1 - 200 of 270</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>is:notlinked test-5</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.group-row &gt; div.group-name &gt; span</td>
+	<td>Test-51414-Filter</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.group-description &gt; a &gt; span</td>
+	<td>Not Linked</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.counter &gt; span</td>
+	<td>1 - 142 of 142</td>
+</tr>
+<!--Is Not Linked + Is Configured (no results)-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div/div/i</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div/div/i</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.counter &gt; span</td>
+	<td>1 - 200 of 270</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>is:notlinked is:configured</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.groups-list-empty &gt; span</td>
+	<td>No groups found</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div/div/i</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.counter &gt; span</td>
+	<td>1 - 200 of 270</td>
+</tr>
+<!--Is Configured + search term-->
+<tr>
+	<td>type</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>filter is:configured</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.group-row &gt; div.group-name &gt; span</td>
+	<td>alpha-Filter</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.group-description</td>
+	<td>Linked</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=#alpha-Filter_edit &gt; span</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.counter &gt; span</td>
+	<td>1 - 1 of 1</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div/div/i</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div/div/i</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.counter &gt; span</td>
+	<td>1 - 200 of 270</td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td></td>
 	<td></td>
@@ -3478,8 +4594,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td></td>
-	<td></td>
+	<td>waitForElementPresent</td>
+	<td>//button[@type='button']</td>
 	<td></td>
 </tr>
 </tbody></table>
