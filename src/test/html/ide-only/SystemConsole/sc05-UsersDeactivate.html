@@ -758,8 +758,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.post-create-message &gt; span</td>
-	<td>You are viewing an archived channel with a deactivated user.</td>
+	<td>css=div.channel-archived__message &gt; span</td>
+	<td>You are viewing an archived channel with a deactivated user. New messages cannot be posted.</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -852,8 +852,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.post-create-message &gt; span</td>
-	<td>You are viewing an archived channel with a deactivated user.</td>
+	<td>css=div.channel-archived__message &gt; span</td>
+	<td>You are viewing an archived channel with a deactivated user. New messages cannot be posted.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -885,6 +885,37 @@
 	<td>waitForText</td>
 	<td>css=p</td>
 	<td>DM with deactivated user is still accessible.</td>
+</tr>
+<!--Deactivated user not in list under channel member icon-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Off-Topic*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Off-Topic*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=member_popover</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=member_popover</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.more-modal__name</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>css=div.more-modal__name:contains('test2')</td>
+	<td></td>
 </tr>
 <!--Open System Console-->
 <tr>

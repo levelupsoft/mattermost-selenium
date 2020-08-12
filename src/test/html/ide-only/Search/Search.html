@@ -338,19 +338,14 @@
 	<td>&quot;hell&quot;*${KEY_ENTER}</td>
 </tr>
 <tr>
-	<td>waitForTextPresent</td>
-	<td>No results found.</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.no-results__title &gt; span</td>
+	<td>exact:No results for &quot;&quot;hell&quot;*&quot;</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.sidebar--right__subheader &gt; h4 &gt; span</td>
-	<td>exact:No results found. Try again?</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=li &gt; span</td>
-	<td>exact:If you're searching a partial phrase (ex. searching &quot;rea&quot;, looking for &quot;reach&quot; or &quot;reaction&quot;), append a * to your search term.</td>
+	<td>css=div.no-results__wrapper &gt; span</td>
+	<td>Check the spelling or try another search.</td>
 </tr>
 <!--The following will fail if Elasticsearch is not enabled-->
 <tr>
@@ -1817,9 +1812,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForTextPresent</td>
-	<td>No results found. Try again?</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.no-results__wrapper</td>
+	<td>No results for *</td>
 </tr>
 <tr>
 	<td>verifyNotText</td>
@@ -1932,8 +1927,8 @@
 <!--If run after emoji man test - This will return a post created by the previous test-->
 <tr>
 	<td>waitForText</td>
-	<td>css=div.sidebar--right__subheader &gt; h4 &gt; span</td>
-	<td>exact:No results found. Try again?</td>
+	<td>css=div.no-results__wrapper</td>
+	<td>No results for &quot;&quot;five six&quot;&quot;<br />Check the spelling or try another search.</td>
 </tr>
 <!--Verify without quotes returns result-->
 <tr>

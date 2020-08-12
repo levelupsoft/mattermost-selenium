@@ -177,7 +177,7 @@
 <tr>
 	<td>sendKeys</td>
 	<td>id=ServiceSettings.SiteURL</td>
-	<td>h${KEY_BACKSPACE}</td>
+	<td>https://selenium.test.mattermost.com</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -206,7 +206,139 @@
 	<td>Cancel</td>
 </tr>
 <tr>
+	<td>waitForValue</td>
+	<td>id=ServiceSettings.SiteURL</td>
+	<td>exact:https://selenium.test.mattermost.com</td>
+</tr>
+<!--For convenience, adding the same test for discarding changes for channels page-->
+<!--Make change, leave tab, warning displays-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=user_management/channels</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_management/channels</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
+	<td>css=div.admin-console__header &gt; span</td>
+	<td>Mattermost Channels</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=span.group-actions.TeamList_editRow &gt; a &gt; span</td>
+	<td>Edit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.group-actions.TeamList_editRow &gt; a &gt; span</td>
+	<td>Edit</td>
+</tr>
+<!--Click to archive channel-->
+<tr>
+	<td>waitForText</td>
+	<td>//div[3]/button</td>
+	<td>Archive Channel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[3]/button</td>
+	<td>Archive Channel</td>
+</tr>
+<!--Click to leave page-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=reporting/system_analytics</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=reporting/system_analytics</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-header</td>
+	<td>exact:Discard Changes?</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-body &gt; span</td>
+	<td>exact:You have unsaved changes, are you sure you want to discard them?</td>
+</tr>
+<!--Yes, Discard-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.modal-footer &gt; button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.admin-console__header</td>
+	<td>System Statistics</td>
+</tr>
+<!--Back to Web Server page-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=environment/web_server</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=environment/web_server</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.banner__content &gt; span &gt; span</td>
+	<td>Changing properties in this section will require a server restart before taking effect.</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=ServiceSettings.SiteURL</td>
+	<td>exact:https://selenium.test.mattermost.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ServiceSettings.SiteURL</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=reporting/system_analytics</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=reporting/system_analytics</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.modal-header</td>
+	<td>exact:Discard Changes?</td>
+</tr>
+<!--Cancel discarding changes (keep changes)-->
+<tr>
+	<td>waitForText</td>
+	<td>css=button.btn.btn-link</td>
+	<td>Cancel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-link</td>
+	<td>Cancel</td>
+</tr>
+<tr>
+	<td>waitForValue</td>
 	<td>id=ServiceSettings.SiteURL</td>
 	<td></td>
 </tr>
@@ -222,101 +354,11 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForNotEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
-	<td></td>
-</tr>
-<!--Verify error bar text and links-->
-<tr>
 	<td>waitForText</td>
-	<td>css=span</td>
-	<td>Please configure your site URL on the System Console.</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>link=site URL</td>
-	<td>site URL</td>
-</tr>
-<tr>
-	<td>waitForAttribute</td>
-	<td>link=site URL@href</td>
-	<td>https://docs.mattermost.com/administration/config-settings.html#site-url</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=System Console</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForAttribute</td>
-	<td>link=System Console@href</td>
-	<td>*/admin_console/environment/web_server</td>
-</tr>
-<!--Send email: Email sends but links are invalid (currently hardcoded to send to linda@mm)-->
-<tr>
-	<td>pause</td>
-	<td>8000</td>
-	<td></td>
-</tr>
-<!--Add email address manually where you can receive email-->
-<!--*** Actually, email is not configured on Se server. LM tested manually-->
-<!--*** Linda verifies manually on postgres.test-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=System Console</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=System Console</td>
-	<td></td>
+	<td>css=div.col-sm-12.has-error &gt; label.control-label</td>
+	<td>Site URL cannot be cleared.</td>
 </tr>
 <!--Trailing slash in Site URL doesn't break links-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=environment/web_server</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=environment/web_server</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=ServiceSettings.SiteURL</td>
-	<td></td>
-</tr>
 <tr>
 	<td>type</td>
 	<td>id=ServiceSettings.SiteURL</td>
@@ -460,59 +502,8 @@
 	<td>id=ServiceSettings.SiteURL</td>
 	<td>exact:https://selenium.test.mattermost.com</td>
 </tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//a[contains(text(),'Switch to&nbsp;&nbsp;UI Automation')]</td>
-	<td></td>
-</tr>
-<!--Error bar no longer displays-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=post_textbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyNotText</td>
-	<td>css=span &gt; span</td>
-	<td>Please configure your Site URL in the System Console.</td>
-</tr>
 <!--Add more tests for this page? Lots of fields never tested?-->
 <!--Enable Insecure Outgoing Connections-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=System Console</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=System Console</td>
-	<td></td>
-</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=environment/web_server</td>

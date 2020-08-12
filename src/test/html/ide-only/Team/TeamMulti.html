@@ -583,7 +583,7 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Town Square</td>
 </tr>
-<!--Post on team APlus and flag the post-->
+<!--Post on team APlus and save the post-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=post_textbox</td>
@@ -604,22 +604,13 @@
 	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
+<!--*** Manually click the Save icon-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.style--none.flag-icon__container </td>
+	<td>pause</td>
+	<td>6000</td>
 	<td></td>
 </tr>
-<tr>
-	<td>click</td>
-	<td>css=button.style--none.flag-icon__container </td>
-	<td></td>
-</tr>
-<tr>
-	<td>mouseOver</td>
-	<td>css=button.style--none.flag-icon__container.visible</td>
-	<td></td>
-</tr>
-<!--Switch teams, then send a DM and flag the DM-->
+<!--Switch teams, then send a DM and save the DM-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//a[@href='/six']</td>
@@ -705,22 +696,13 @@
 	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
+<!--*** Manually click the Save icon-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.style--none.flag-icon__container </td>
+	<td>pause</td>
+	<td>6000</td>
 	<td></td>
 </tr>
-<tr>
-	<td>click</td>
-	<td>css=button.style--none.flag-icon__container </td>
-	<td></td>
-</tr>
-<tr>
-	<td>mouseOver</td>
-	<td>css=button.style--none.flag-icon__container.visible</td>
-	<td></td>
-</tr>
-<!--View flagged posts, verify DM displays but not post from team APlus-->
+<!--View saved posts, verify DM displays but not post from team APlus-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=channelHeaderFlagButton</td>
