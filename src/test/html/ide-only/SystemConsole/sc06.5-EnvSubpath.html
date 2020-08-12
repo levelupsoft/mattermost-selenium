@@ -168,127 +168,12 @@
 	<td>id=ServiceSettings.SiteURL</td>
 	<td>https://subpath.test.mattermost.com/edit</td>
 </tr>
-<!--System Console link in banner routes correctly-->
-<!--Remove Site URL-->
+<!--Set back to https://subpath.test.mattermost.com/mattermost/-->
 <tr>
 	<td>type</td>
 	<td>id=ServiceSettings.SiteURL</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotEditable</td>
-	<td>id=saveSetting</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=p.markdown__paragraph-inline</td>
-	<td>Please configure your site URL on the System Console.</td>
-</tr>
-<!--Note: Removed following case per Invalid MM-24038-->
-<!--Navigate to different page to verify it goes back to Web Server page on link-->
-<!--Plugin Marketplace still opens with blank Site URL-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=div.MenuWrapper.AdminSidebarHeader &gt; div</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=li.MenuItem &gt; a</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=li.MenuItem &gt; a</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.style--none.sidebar-header-dropdown__icon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#marketplaceModal &gt; button.style--none.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#marketplaceModal &gt; button.style--none.</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=h1 &gt; strong &gt; span</td>
-	<td>Plugin Marketplace</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=searchMarketplaceTextbox</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.close-x</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.close-x</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=sidebarHeaderDropdownButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=#systemConsole &gt; a &gt; span.MenuItem__primary-text</td>
-	<td>System Console</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#systemConsole &gt; a &gt; span.MenuItem__primary-text</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=environment/web_server</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=environment/web_server</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=ServiceSettings.SiteURL</td>
-	<td></td>
-</tr>
-<!--Set back to https://subpath.test.mattermost.com/mattermost/-->
 <tr>
 	<td>sendKeys</td>
 	<td>id=ServiceSettings.SiteURL</td>
@@ -503,9 +388,9 @@
 	<td>css=p:contains('finding${monthdaytime}')</td>
 	<td></td>
 </tr>
-<!--*** May need to manually Flag from permalink view (quickly, before permalink view fades)-->
+<!--*** May need to manually Save from permalink view (quickly, before permalink view fades)-->
 <!--*** Visually verify permalink highlight (briefly)-->
-<!--*** Flag is visible on that post-->
+<!--*** Save is visible on that post-->
 <tr>
 	<td>pause</td>
 	<td>6000</td>
@@ -547,7 +432,7 @@
 	<td>id=channelHeaderDropdownButton</td>
 	<td>Off-Topic</td>
 </tr>
-<!--View flagged posts-->
+<!--View saved posts-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=channelHeaderFlagButton</td>
@@ -566,14 +451,14 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Flagged Posts</td>
+	<td>Saved Posts</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=p</td>
 	<td>finding${monthdaytime}</td>
 </tr>
-<!--Jump to permalink from flagged posts RHS-->
+<!--Jump to permalink from saved posts RHS-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=a.search-item__jump &gt; span</td>
@@ -645,12 +530,7 @@
 <!--*** The following should narrow it down to the first RHS post-->
 <tr>
 	<td>waitForText</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
-	<td>Pinned</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[61]/div/div/div/div[2]/div/div[2]/div/div/span/span</td>
+	<td>css=a &gt; span</td>
 	<td>Pinned</td>
 </tr>
 <tr>
@@ -683,11 +563,6 @@
 <tr>
 	<td>click</td>
 	<td>css=a.search-item__jump &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.post__header--info &gt; div.col &gt; span.post__pinned-badge &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -979,7 +854,7 @@
 <tr>
 	<td>type</td>
 	<td>css=input.form-control.focused</td>
-	<td>off-topic</td>
+	<td>off-topi</td>
 </tr>
 <tr>
 	<td>waitForText</td>

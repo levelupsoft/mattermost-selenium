@@ -478,11 +478,26 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.AdminPanel__content</td>
-	<td>NameTypeAssigned RolesNo-Con-QA-TeamTeamMember <br /><br /><br />RemoveConstrain-QA-ChannelChannel (Private)Member <br /><br /><br />RemoveQATeamMember <br /><br /><br />RemoveTicket ManagementChannelMember <br /><br /><br />Remove</td>
+	<td>NameTypeAssigned RolesNo-Con-QA-TeamTeam (Private)RemoveConstrain-QA-ChannelChannel (Private)Member <br /><br /><br />RemoveQATeamMember <br /><br /><br />RemoveTicket ManagementChannelMember <br /><br /><br />Remove</td>
 </tr>
 <tr>
 	<td>pause</td>
 	<td>8000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
 	<td></td>
 </tr>
 <!--Constrain / sync team and channel-->
@@ -504,22 +519,22 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>css=div.DataGrid_searchBar &gt; input[type=&quot;text&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>css=div.DataGrid_searchBar &gt; input[type=&quot;text&quot;]</td>
 	<td>constrain-qa-channel</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>css=div.DataGrid_searchBar &gt; input[type=&quot;text&quot;]</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[@id='groups-list--body']/div/div/span</td>
+	<td>css=span.TeamList_channelDisplayName</td>
 	<td>Constrain-QA-Channel</td>
 </tr>
 <tr>
@@ -676,17 +691,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>css=div.DataGrid_searchBar &gt; input[type=&quot;text&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>css=div.DataGrid_searchBar &gt; input[type=&quot;text&quot;]</td>
 	<td>constrain-dev</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>css=div.DataGrid_searchBar &gt; input[type=&quot;text&quot;]</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
@@ -696,8 +711,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.group-row.group-row-large &gt; div.group-content</td>
-	<td>Invite OnlyEdit</td>
+	<td>css=div.DataGrid_row</td>
+	<td>Co<br /><br /><br /><br />Constrain-Dev<br /><br /><br />Invite Only<br />Edit</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -2460,23 +2475,23 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>css=div.DataGrid_searchBar &gt; input[type=&quot;text&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>css=div.DataGrid_searchBar &gt; input[type=&quot;text&quot;]</td>
 	<td>mentiongroup</td>
 </tr>
 <tr>
 	<td>sendKeys</td>
-	<td>css=div.group-list-search &gt; input[type=&quot;text&quot;]</td>
+	<td>css=div.DataGrid_searchBar &gt; input[type=&quot;text&quot;]</td>
 	<td>${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.group-row</td>
-	<td>MentionGroupEngineeringManual InvitesEdit</td>
+	<td>css=div.DataGrid_row</td>
+	<td>MentionGroup<br />Engineering<br />Manual Invites<br />Edit</td>
 </tr>
 <tr>
 	<td>waitForText</td>

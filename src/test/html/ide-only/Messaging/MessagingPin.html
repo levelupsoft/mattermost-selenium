@@ -142,14 +142,29 @@
 </tr>
 <tr>
 	<td>storeEval</td>
-	<td>&quot;${fullurl}&quot;.split(&quot;/&quot;)[7]</td>
+	<td>&quot;${fullurl}&quot;.split(&quot;/&quot;)[6]</td>
 	<td>postid</td>
 </tr>
 <!--Ensure that reactions remain in place when you pin and unpin a post-->
 <!--Can't get this to find the reaction emoji picker anymore-->
 <tr>
+	<td>waitForText</td>
+	<td>css=#postMessageText_${postid} &gt; p</td>
+	<td>Pin the tail</td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
-	<td>id=CENTER_reaction_tgbgoo8y1py4mpb83khx9qxzja</td>
+	<td>id=CENTER_reaction_${postid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=CENTER_reaction_${postid}</td>
 	<td></td>
 </tr>
 <tr>
@@ -214,8 +229,13 @@
 	<td>Item=Pin to Channel</td>
 </tr>
 <tr>
+	<td>waitForText</td>
+	<td>css=div.post-pre-header</td>
+	<td>Pinned</td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
+	<td>css=span.icon-pin.icon.icon--post-pre-header</td>
 	<td></td>
 </tr>
 <!--Reply-->
@@ -267,7 +287,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
+	<td>css=span.icon-pin.icon.icon--post-pre-header</td>
 	<td></td>
 </tr>
 <tr>
@@ -345,7 +365,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
+	<td>css=span.icon-pin.icon.icon--post-pre-header</td>
 	<td></td>
 </tr>
 <tr>
@@ -379,17 +399,17 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Pinned Posts in Off-Topic</td>
+	<td>Pinned postsOff-Topic</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.sidebar--right__title__channel</td>
-	<td>Off-Topic</td>
+	<td>css=div.no-results__title &gt; span</td>
+	<td>No pinned posts yet</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=li &gt; span</td>
-	<td>There are no pinned messages yet.</td>
+	<td>css=div.no-results__wrapper &gt; span</td>
+	<td>Pin important messages which are visible to the whole channel. Open the context menu on a message and choose Pin to Channel to save it here.</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -508,7 +528,7 @@
 </tr>
 <tr>
 	<td>verifyElementNotPresent</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
+	<td>css=span.icon-pin.icon.icon--post-pre-header</td>
 	<td></td>
 </tr>
 <!--Pin last post-->
@@ -529,7 +549,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
+	<td>css=span.icon-pin.icon.icon--post-pre-header</td>
 	<td></td>
 </tr>
 <tr>
@@ -595,16 +615,7 @@
 	<td>Pinned*Jump*Pin the tail</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[3]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[3]</td>
-	<td></td>
-</tr>
+<!--*** Manually open Edit for search results post (Pin the tail)-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=button.style--none:contains('Edit')</td>
@@ -652,7 +663,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
+	<td>css=span.icon-pin.icon.icon--post-pre-header</td>
 	<td></td>
 </tr>
 <tr>
@@ -666,14 +677,11 @@
 	<td>Pinned*Jump*Pin the tail</td>
 	<td></td>
 </tr>
+<!--No longer finding the RHs menu-->
+<!--*** Manually open dot-menu for search results post (Pin the tail)-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[3]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[3]</td>
+	<td>css=span.icon-pin.icon.icon--post-pre-header</td>
 	<td></td>
 </tr>
 <tr>
@@ -684,6 +692,11 @@
 <tr>
 	<td>click</td>
 	<td>css=button.style--none:contains('Unpin')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=span.icon-pin.icon.icon--post-pre-header</td>
 	<td></td>
 </tr>
 <tr>
@@ -703,7 +716,7 @@
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
+	<td>css=span.icon-pin.icon.icon--post-pre-header</td>
 	<td></td>
 </tr>
 <!--View pinned posts to verify post was un-pinned-->
@@ -719,31 +732,30 @@
 </tr>
 <tr>
 	<td>waitForText</td>
+	<td>css=div.no-results__title &gt; span</td>
+	<td>No pinned posts yet</td>
+</tr>
+<tr>
+	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
 	<td>Pinned postsPin-${datetime}</td>
 </tr>
-<tr>
-	<td>waitForText</td>
-	<td>css=div.sidebar--right__subheader &gt; ul &gt; li &gt; span</td>
-	<td>There are no pinned messages yet.</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='search-items-container']/div/ul/li[2]/span</td>
-	<td>All members of this channel can pin important or useful messages.</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='search-items-container']/div/ul/li[3]/span</td>
-	<td>Pinned messages are visible to all channel members.</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[@id='search-items-container']/div/ul/li[4]/span</td>
-	<td>To pin a message: Go to the message that you want to pin and click [...] &gt; &quot;Pin to channel&quot;.</td>
-</tr>
 <!--Pin in center while empty pinned RHS is open-->
-<!--*** Manually pin the Pin the tail... post-->
+<tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.style--none:contains('Pin to')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.style--none:contains('Pin to')</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForNotText</td>
 	<td>css=div.sidebar--right__subheader &gt; ul &gt; li &gt; span</td>
@@ -752,7 +764,7 @@
 <!--Verify pinned post appears in RHS-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
+	<td>css=span.icon-pin.icon.icon--post-pre-header</td>
 	<td></td>
 </tr>
 <tr>
@@ -783,13 +795,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
+	<td>css=div.post-pre-header</td>
 	<td>Pinned</td>
-</tr>
-<tr>
-	<td>verifyTextPresent</td>
-	<td>Pinned*Pin the tail</td>
-	<td></td>
 </tr>
 <!--Create fresh test channel-->
 <tr>
@@ -883,34 +890,26 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
+	<td>css=div.post-pre-header</td>
 	<td>Pinned</td>
 </tr>
-<!--Flag the same message-->
-<!--No longer finding the flag to click-->
-<!--*** Manually hover-->
+<!--Save the same message-->
+<!--*** Manually click the Save icon on the post menu-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.style--none.flag-icon__container </td>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=button.style--none.flag-icon__container </td>
+	<td>pause</td>
+	<td>4000</td>
 	<td></td>
 </tr>
-<tr>
-	<td>mouseOver</td>
-	<td>css=button.style--none.flag-icon__container </td>
-	<td></td>
-</tr>
-<!--*** Tooltip not appearing on very old FF but works everywhere else-->
 <tr>
 	<td>waitForText</td>
-	<td>css=#flagTooltip &gt; div.tooltip-inner &gt; span</td>
-	<td>Unflag</td>
+	<td>css=div.post-pre-header</td>
+	<td>Pinned⬤Saved</td>
 </tr>
-<!--Removed test to verify actions in RHS while permalink is open-->
 <!--Verify still visible in brief permalink view-->
 <tr>
 	<td>waitForElementPresent</td>
@@ -924,10 +923,10 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
-	<td>Pinned</td>
+	<td>css=div.post-pre-header</td>
+	<td>Pinned⬤Saved</td>
 </tr>
-<!--Open flagged posts RHS, verify pinned in center and RHS-->
+<!--Open saved posts RHS, verify pinned in center and RHS-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=channelHeaderFlagButton</td>
@@ -941,24 +940,25 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Flagged Posts</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
-	<td></td>
+	<td>Saved Posts</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.post__header--info &gt; div.col &gt; span.post__pinned-badge &gt; span</td>
+	<td>css=div.post-pre-header</td>
 	<td>Pinned</td>
 </tr>
-<!--Un-pinning in center removes Pinned in flagged posts RHS-->
 <tr>
-	<td>rollup</td>
-	<td>openDotMenuForLastPost</td>
+	<td>waitForElementPresent</td>
+	<td>css=div.post-pre-header__icons-container</td>
 	<td></td>
 </tr>
+<!--Un-pinning in center removes Pinned in saved posts RHS-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<!--*** Manually open the post's dot menu in CENTER (rollup finds it in RHS)-->
 <tr>
 	<td>rollup</td>
 	<td>dotMenuItemVerifyAndSelect</td>
@@ -977,7 +977,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Flagged Posts</td>
+	<td>Saved Posts</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1013,8 +1013,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
-	<td>Pinned</td>
+	<td>css=div.post-pre-header__text-container &gt; span</td>
+	<td>Pinned⬤Saved</td>
 </tr>
 <!--Open reply RHS-->
 <tr>
@@ -1051,8 +1051,13 @@
 <!--Verify Pinned badge does not appear in center or RHS-->
 <tr>
 	<td>waitForNotText</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
-	<td>Pinned</td>
+	<td>css=div.post-pre-header</td>
+	<td>Pinned⬤Saved</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.post-pre-header</td>
+	<td>Saved</td>
 </tr>
 <tr>
 	<td>waitForNotText</td>
@@ -1139,8 +1144,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.sidebar--right__subheader &gt; ul &gt; li &gt; span</td>
-	<td>There are no pinned messages yet.</td>
+	<td>css=div.no-results__title &gt; span</td>
+	<td>No pinned posts yet</td>
 </tr>
 <!--Post a message and pin it to the DM channel-->
 <tr>
@@ -1154,18 +1159,18 @@
 	<td>A direct message!${KEY_ENTER}</td>
 </tr>
 <tr>
+	<td>rollup</td>
+	<td>openDotMenuForLastPost</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[5]</td>
+	<td>css=button.style--none:contains('Pin to Channel')</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[5]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span:contains('Pin to channel')</td>
+	<td>css=button.style--none:contains('Pin to Channel')</td>
 	<td></td>
 </tr>
 <!--Pin DM in center-->
@@ -1186,8 +1191,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
+	<td>css=div.post-pre-header</td>
 	<td>Pinned</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.post-pre-header__icons-container</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1200,31 +1210,22 @@
 	<td>Pinned postscorey</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
-	<td>Pinned</td>
-</tr>
-<tr>
 	<td>waitForTextPresent</td>
 	<td>Pinned*A direct message!</td>
 	<td></td>
 </tr>
 <!--Delete pinned post from center removes it from pinned posts RHS-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=channelHeaderPinButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=channelHeaderPinButton</td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
 	<td>Pinned postscorey</td>
 </tr>
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<!--*** Manually open the post's dot menu in CENTER (rollup finds it in RHS)-->
 <tr>
 	<td>rollup</td>
 	<td>dotMenuItemVerifyAndSelect</td>
@@ -1242,8 +1243,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=li &gt; span</td>
-	<td>There are no pinned messages yet.</td>
+	<td>css=div.no-results__title &gt; span</td>
+	<td>No pinned posts yet</td>
 </tr>
 <tr>
 	<td>waitForNotText</td>
@@ -1300,8 +1301,8 @@
 </tr>
 <tr>
 	<td>waitForNotText</td>
-	<td>css=div.sidebar--right__subheader &gt; ul &gt; li &gt; span</td>
-	<td>There are no pinned messages yet.</td>
+	<td>css=div.no-results__title &gt; span</td>
+	<td>No pinned posts yet</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1309,9 +1310,9 @@
 	<td>Pin2-${datetime}</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
-	<td>Pinned</td>
+	<td>waitForNotText</td>
+	<td>css=div.post-pre-header</td>
+	<td>Pinned⬤Saved</td>
 </tr>
 <tr>
 	<td>rollup</td>
@@ -1350,8 +1351,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.sidebar--right__subheader &gt; ul &gt; li &gt; span</td>
-	<td>There are no pinned messages yet.</td>
+	<td>css=div.no-results__title &gt; span</td>
+	<td>No pinned posts yet</td>
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>

@@ -739,7 +739,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.admin-console__header</td>
-	<td>Groups (Beta)</td>
+	<td>Groups</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1607,7 +1607,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.username</td>
-	<td>@lindy.test-simulator.amazonses.com</td>
+	<td>@lindy.test</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -3520,6 +3520,21 @@
 	<td>css=#confirmModalButton</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotEditable</td>
+	<td>id=saveSetting</td>
+	<td></td>
+</tr>
 <!--Team and other channel remain-->
 <tr>
 	<td>waitForTextNotPresent</td>
@@ -3532,6 +3547,7 @@
 	<td></td>
 </tr>
 <!--User who leaves a team is not re-added on sync-->
+<!--Hm. The following team is created in the next test, 6.5....-->
 <!--Verify developers group linked to Constrain-Dev team, and synced-->
 <tr>
 	<td>click</td>
