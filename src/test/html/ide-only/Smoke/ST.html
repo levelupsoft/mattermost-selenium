@@ -562,7 +562,7 @@
 </tr>
 <tr>
 	<td>storeEval</td>
-	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[6]</td>
+	<td>&quot;${urlwhole}&quot;.split(&quot;/&quot;)[7]</td>
 	<td>replyid</td>
 </tr>
 <!--Edit reply in RHS-->
@@ -827,8 +827,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.sidebar--right__subheader &gt; h4</td>
-	<td>No results found. Try again?</td>
+	<td>css=div.no-results__wrapper</td>
+	<td>No results for &quot;thankstoyou&quot;<br />Check the spelling or try another search.</td>
 </tr>
 <!--Edit a search result in RHS-->
 <tr>
@@ -1163,8 +1163,8 @@
 	<td>id=post_textbox</td>
 	<td></td>
 </tr>
-<!--Flag a message - this is working as of 12 Apr 2018-->
-<!--Flag doesn't appear until hover... Sounds like Se can't do pseudo class hover :|-->
+<!--Save a message -->
+<!--Save doesn't appear until hover... Sounds like Se can't do pseudo class hover :|-->
 <tr>
 	<td>waitForElementNotPresent</td>
 	<td>css=button.style--none.flag-icon__container </td>
@@ -1176,29 +1176,16 @@
 	<td>3000</td>
 	<td></td>
 </tr>
-<!--*** Manually hover over the flag on "I'll come back to this later"-->
+<!--*** Manually hover over the Save icon on "I'll come back to this later"-->
 <!--*** Hm. No tooltip on old FF but works on Chrome (5.14)-->
+<!--*** Visually verify `Save` tooltip-->
+<!--*** Manually click Save icon-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=button.style--none.flag-icon__container </td>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
-<tr>
-	<td>mouseOver</td>
-	<td>css=button.style--none.flag-icon__container </td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.style--none.flag-icon__container </td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.post__header--info &gt; div.col &gt; button.style--none.flag-icon__container.visible</td>
-	<td></td>
-</tr>
-<!--View flagged posts RHS-->
+<!--View saved posts RHS-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=channelHeaderFlagButton</td>
@@ -1212,17 +1199,12 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Flagged Posts</td>
+	<td>Saved Posts</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=p</td>
 	<td>I'll come back to this later...</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='search-items-container']/div/div[2]/div[2]/div[2]/div/div[2]/button</td>
-	<td></td>
 </tr>
 <!--Switch channel in center, RHS doesn't change-->
 <tr>
@@ -1263,14 +1245,27 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=span.sidebar--right__title</td>
-	<td>Flagged Posts</td>
+	<td>Saved Posts</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>css=p</td>
 	<td>I'll come back to this later...</td>
 </tr>
-<!--Unflag in RHS, empty flagged posts list and flag gone from center-->
+<!--Un-Save in RHS, empty saved posts list and save icon gone from center-->
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--*** Manually hover over the Save icon on "I'll come back to this later"-->
+<!--*** Visually verify `Remove from Saved` tooltip-->
+<!--*** Manually click Save icon to Un-Save in RHS-->
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=sidebarSwitcherButton</td>
@@ -1307,26 +1302,17 @@
 	<td>Test-${datetime}</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//div[@id='search-items-container']/div/div[2]/div[2]/div[2]/div/div[2]/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='search-items-container']/div/div[2]/div[2]/div[2]/div/div[2]/button</td>
-	<td></td>
-</tr>
-<tr>
 	<td>waitForText</td>
-	<td>css=div.sidebar--right__subheader &gt; ul &gt; li</td>
-	<td>You haven't flagged any messages yet.</td>
+	<td>css=div.no-results__wrapper</td>
+	<td>No Saved posts yet<br />Saved messages are only visible to you. Mark messages for follow-up or save something for later by clicking the to save them here.</td>
 </tr>
+<!--*** Visually verify no active Saved icon in center on the post you un-saved-->
 <tr>
-	<td>waitForElementNotPresent</td>
-	<td>css=div.post__header--info &gt; div.col &gt; button.style--none.flag-icon__container.visible</td>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td>
 </tr>
-<!--Flag icon toggles RHS closed and is no longer active style-->
+<!--Saved posts icon toggles RHS closed and is no longer active style-->
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=channelHeaderFlagButton</td>
@@ -1449,12 +1435,12 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
+	<td>css=a &gt; span</td>
 	<td>Pinned</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.post__header--info &gt; div.col &gt; span.post__pinned-badge &gt; span</td>
+	<td>css=div.post-pre-header div.post-pre-header__text-container span a span</td>
 	<td>Pinned</td>
 </tr>
 <!--View pinned posts RHS-->
@@ -1526,8 +1512,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=li &gt; span</td>
-	<td>There are no pinned messages yet.</td>
+	<td>css=div.no-results__title &gt; span</td>
+	<td>No pinned posts yet</td>
 </tr>
 <!--Pin a post in other channel-->
 <tr>
@@ -1683,11 +1669,6 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
-	<td>Pinned</td>
-</tr>
-<tr>
-	<td>waitForText</td>
 	<td>css=p</td>
 	<td>Different channel, different pinned posts list.</td>
 </tr>
@@ -1699,14 +1680,9 @@
 </tr>
 <!--Un-pin in RHS, pinned badge removed from center as well-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=div.post__header--info &gt; div.col &gt; span.post__pinned-badge &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>css=div.post-pre-header div.post-pre-header__text-container span a span</td>
+	<td>Pinned</td>
 </tr>
 <!--Get post ID to help find [...] in RHS-->
 <!--Get post ID from permalink URL-->
@@ -1749,20 +1725,15 @@
 <!--I'll come back to this later...-->
 <tr>
 	<td>waitForText</td>
-	<td>css=div.sidebar--right__subheader &gt; ul &gt; li &gt; span</td>
-	<td>There are no pinned messages yet.</td>
+	<td>css=div.no-results__wrapper</td>
+	<td>No pinned posts yet<br />Pin important messages which are visible to the whole channel. Open the context menu on a message and choose Pin to Channel to save it here.</td>
 </tr>
 <!--These could fail if testing on an old server with previously pinned posts-->
 <!--(Could re-vamp to add another new channel)-->
 <tr>
-	<td>waitForElementNotPresent</td>
-	<td>css=div.post__header--info &gt; div.col &gt; span.post__pinned-badge &gt; span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementNotPresent</td>
-	<td>css=span.post__pinned-badge &gt; span</td>
-	<td></td>
+	<td>waitForNotText</td>
+	<td>css=div.post-pre-header div.post-pre-header__text-container span a span</td>
+	<td>Pinned</td>
 </tr>
 <tr>
 	<td>refreshAndWait</td>
@@ -5152,18 +5123,13 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.sidebar--right__subheader &gt; h4 &gt; span</td>
-	<td>No results found. Try again?</td>
+	<td>css=div.no-results__title &gt; span</td>
+	<td>No results for &quot;arglbarglllll&quot;</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span:contains('If you're searching a partial phrase (ex. searching &quot;rea&quot;, looking for &quot;reach&quot; or &quot;reaction&quot;), append a * to your search term.')</td>
-	<td>exact:If you're searching a partial phrase (ex. searching &quot;rea&quot;, looking for &quot;reach&quot; or &quot;reaction&quot;), append a * to your search term.</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span:contains('Two letter searches and common words like &quot;this&quot;, &quot;a&quot; and &quot;is&quot; won't appear in search results due to excessive results returned.')</td>
-	<td>exact:If you're searching a partial phrase (ex. searching &quot;rea&quot;, looking for &quot;reach&quot; or &quot;reaction&quot;), append a * to your search term.</td>
+	<td>waitForText</td>
+	<td>css=div.no-results__wrapper &gt; span</td>
+	<td>Check the spelling or try another search.</td>
 </tr>
 <!--~ Channel linking - Autocomplete-->
 <!--Switch to STTeam-->
