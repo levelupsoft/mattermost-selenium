@@ -580,7 +580,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
-	<td>*will be removed from this team. They are not in groups linked to this team.View These Users</td>
+	<td>*will be removed from this channel. They are not in groups linked to this channel.View These Users</td>
 </tr>
 <tr>
 	<td>waitForEditable</td>
@@ -772,37 +772,32 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=b</td>
-	<td>@admin</td>
+	<td>css=div.UserGrid_name &gt; span</td>
+	<td>admin -</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[2]/div[2]/div[2]/div/div/span</td>
-	<td>System User, System Admin</td>
+	<td>css=div.UsersToRemoveRole</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.DataGrid_row</td>
+	<td>admin - admin@test.com<br /><br /><br />System Admin<br /><br />0 Groups</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//span[2]/a/span</td>
-	<td>0 Groups</td>
+	<td>//div[@id='confirmModal']/div/div/div[2]/div[2]/div/div[3]/div[2]</td>
+	<td>lindy.test-simulator.amazonses.com - Lindy Testlindy.test@simulator.amazonses.com<br /><br /><br />Member<br /><br />2 Groups</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>//div[2]/div/div/div[2]/div/b</td>
-	<td>@lindy.test-simulator.amazonses.com</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[2]/div[2]/div/span</td>
-	<td>System User</td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>//div[2]/div/span[2]/a/span</td>
+	<td>css=div.UsersToRemoveGroups &gt; a &gt; span</td>
 	<td>2 Groups</td>
 </tr>
 <tr>
 	<td>mouseOver</td>
-	<td>//div[2]/div/span[2]/a/span</td>
+	<td>css=div.UsersToRemoveGroups &gt; a &gt; span</td>
 	<td>2 Groups</td>
 </tr>
 <tr>
@@ -3342,12 +3337,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#all_users-private_channel-manage_private_channel_members &gt; span.permission-description &gt; span</td>
+	<td>id=all_users-private_channel-manage_private_channel_members_and_read_groups</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#all_users-private_channel-manage_private_channel_members &gt; span.permission-description &gt; span</td>
+	<td>id=all_users-private_channel-manage_private_channel_members_and_read_groups</td>
 	<td></td>
 </tr>
 <tr>
