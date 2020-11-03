@@ -982,20 +982,15 @@
 	<td>13000</td>
 	<td></td>
 </tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.post-reaction__emoji.emoticon</td>
-	<td></td>
-</tr>
 <!--Click reaction to remove it-->
 <tr>
-	<td>click</td>
-	<td>css=span.post-reaction__emoji.emoticon</td>
+	<td>waitForElementPresent</td>
+	<td>css=span.d-flex.align-items-center span.Reaction__count</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementNotPresent</td>
-	<td>css=span.post-reaction__emoji.emoticon</td>
+	<td>click</td>
+	<td>css=span.d-flex.align-items-center span.Reaction__count</td>
 	<td></td>
 </tr>
 <!--Add custom emoji reaction by typing `+`-->
@@ -1011,7 +1006,7 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.post-reaction__emoji.emoticon</td>
+	<td>css=div.post-reaction-list</td>
 	<td></td>
 </tr>
 <!--Add emoji reaction by clicking `+` button on post with existing emoji-->
@@ -1023,12 +1018,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=span.post-reaction__add</td>
+	<td>css=span.emoji-picker__container &gt; button.Reaction</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.post-reaction__add</td>
+	<td>css=span.emoji-picker__container &gt; button.Reaction</td>
 	<td></td>
 </tr>
 <tr>
