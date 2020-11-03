@@ -3157,7 +3157,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=code.hljs</td>
+	<td>css=code</td>
 	<td>Code block text, followed by ENTER</td>
 </tr>
 <tr>
@@ -3204,7 +3204,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=code.hljs</td>
+	<td>css=code</td>
 	<td>code1 code2, then CTRL+ENTER closes the code block and sends the post<br />code1 code2, then CTRL+ENTER closes the code block and sends the post</td>
 </tr>
 <tr>
@@ -3270,6 +3270,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>type</td>
+	<td>id=searchBox</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=searchBox</td>
 	<td>codeb${KEY_ENTER}</td>
@@ -3281,7 +3286,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=code.hljs</td>
+	<td>css=code</td>
 	<td>codeA codeB, then close the code block with a line of backticks and SHIFT+ENTER<br />codeA codeB, then close the code block with a line of backticks and SHIFT+ENTER</td>
 </tr>
 <tr>
@@ -3352,33 +3357,33 @@
 	<td></td>
 </tr>
 <tr>
+	<td>type</td>
+	<td>id=searchBox</td>
+	<td></td>
+</tr>
+<tr>
 	<td>sendKeys</td>
 	<td>id=searchBox</td>
 	<td>codeblock2${KEY_ENTER}</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=code.hljs</td>
+	<td>css=code</td>
 	<td>codeblock1</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.search-item-snippet.post__body</td>
-	<td>codeblock1<br />codeblock2<br />codeblock2</td>
+	<td>css=div.post__content</td>
+	<td>test10*codeblock1<br /><br />codeblock2<br />codeblock2</td>
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=code.hljs</td>
+	<td>css=code</td>
 	<td>codeblock1</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.input-clear-x</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span.input-clear-x</td>
+	<td>type</td>
+	<td>id=searchBox</td>
 	<td></td>
 </tr>
 <tr>

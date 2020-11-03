@@ -1421,9 +1421,9 @@
 	<td>Archive Channel</td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=div.alert.alert-danger &gt; span</td>
-	<td>This will archive the channel from the team and remove it from the user interface. Archived channels can be unarchived if needed again.<br /><br />Are you sure you wish to archive the To Manage channel?</td>
+	<td>assertText</td>
+	<td>css=div.alert.alert-danger</td>
+	<td>This will archive the channel from the team. Channel contents will still be accessible by channel members.<br /><br />Are you sure you wish to archive the To Manage channel?</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1441,8 +1441,8 @@
 	<td>Archive</td>
 </tr>
 <tr>
-	<td>waitForElementNotPresent</td>
-	<td>link=To Manage</td>
+	<td>waitForElementPresent</td>
+	<td>css=span.icon.icon__archive &gt; svg</td>
 	<td></td>
 </tr>
 <tr>
@@ -1489,6 +1489,21 @@
 	<td>waitForNotText</td>
 	<td>css=button.btn.btn-danger</td>
 	<td>Archive</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.icon.icon__archive &gt; svg &gt; path</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='channelArchivedMessage']/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='channelArchivedMessage']/button</td>
+	<td></td>
 </tr>
 <tr>
 	<td>waitForElementNotPresent</td>

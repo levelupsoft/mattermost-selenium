@@ -573,12 +573,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#all_users-private_channel-manage_private_channel_members &gt; div.permission-check.</td>
+	<td>css=#all_users-private_channel-manage_private_channel_members_and_read_groups &gt; span.permission-description &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#all_users-private_channel-manage_private_channel_members &gt; div.permission-check.</td>
+	<td>css=#all_users-private_channel-manage_private_channel_members_and_read_groups &gt; span.permission-description &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -644,12 +644,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelCovertToPrivate &gt; button.style--none.</td>
+	<td>css=#channelConvertToPrivate &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelCovertToPrivate &gt; button.style--none.</td>
+	<td>css=#channelConvertToPrivate &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -695,12 +695,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelCovertToPrivate &gt; button.style--none.</td>
+	<td>css=#channelConvertToPrivate &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelCovertToPrivate &gt; button.style--none.</td>
+	<td>css=#channelConvertToPrivate &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
@@ -1336,12 +1336,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#all_users-private_channel-manage_private_channel_members &gt; div.permission-check.</td>
+	<td>css=#all_users-private_channel-manage_private_channel_members_and_read_groups &gt; span.permission-name &gt; span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#all_users-private_channel-manage_private_channel_members &gt; div.permission-check.</td>
+	<td>css=#all_users-private_channel-manage_private_channel_members_and_read_groups &gt; span.permission-name &gt; span</td>
 	<td></td>
 </tr>
 <tr>
@@ -1412,8 +1412,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.alert.alert-danger &gt; span</td>
-	<td>This will archive the channel from the team and remove it from the user interface. Archived channels can be unarchived if needed again.<br /><br />Are you sure you wish to archive the Public_to_Private channel?</td>
+	<td>css=div.alert.alert-danger</td>
+	<td>This will archive the channel from the team. Channel contents will still be accessible by channel members.<br /><br />Are you sure you wish to archive the Public_to_Private channel?</td>
 </tr>
 <tr>
 	<td>waitForText</td>
@@ -1426,9 +1426,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForNotText</td>
-	<td>id=channelHeaderDropdownButton</td>
-	<td>Public_to_Private</td>
+	<td>waitForText</td>
+	<td>css=#channelArchivedMessage &gt; span</td>
+	<td>You are viewing an archived channel. New messages cannot be posted.</td>
 </tr>
 <!--Convert Off-Topic (on the open team) to private channel-->
 <tr>
@@ -1468,12 +1468,12 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#channelCovertToPrivate &gt; button.style--none.</td>
+	<td>css=#channelConvertToPrivate &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#channelCovertToPrivate &gt; button.style--none.</td>
+	<td>css=#channelConvertToPrivate &gt; button.style--none.</td>
 	<td></td>
 </tr>
 <tr>
