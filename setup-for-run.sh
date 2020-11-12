@@ -19,7 +19,6 @@ mv mattermost-5.29.0-rc3-linux-amd64.tar.gz mattermost.tar.gz
 # wget https://releases.mattermost.com/mattermost-platform/release-5.29/mattermost-enterprise-linux-amd64.tar.gz
 # mv mattermost-enterprise-linux-amd64.tar.gz mattermost.tar.gz
 
-
 rm -rf ~/mattermost
 
 mkdir -p ~/mattermost
