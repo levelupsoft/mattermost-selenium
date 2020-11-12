@@ -386,7 +386,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
-	<td>This team has reached the maximum number of allowed accounts. Contact your System Administrator to set a higher limit.</td>
+	<td>Unable to create the new team membership because the team has reached the limit of members</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -943,7 +943,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=label.control-label</td>
-	<td>This team has reached the maximum number of allowed accounts. Contact your System Administrator to set a higher limit.</td>
+	<td>Unable to create the new team membership because the team has reached the limit of members</td>
 </tr>
 <tr>
 	<td>pause</td>
@@ -1259,8 +1259,8 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=div.alert.alert-danger &gt; span</td>
-	<td>This will archive the channel from the team and remove it from the user interface. Archived channels can be unarchived if needed again.<br /><br />Are you sure you wish to archive the Fifth channel?</td>
+	<td>css=div.alert.alert-danger</td>
+	<td>This will archive the channel from the team. Channel contents will still be accessible by channel members.<br /><br />Are you sure you wish to archive the * channel?</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -1884,7 +1884,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>//div[2]/div/div/div[2]/span</td>
-	<td>exact:By using @all or @channel you are about to send notifications to 5 people. Are you sure you want to do this?</td>
+	<td>By using @all or @channel you are about to send notifications to 5 people*. Are you sure you want to do this?</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -1925,7 +1925,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>//div[2]/div/div/div[2]/span</td>
-	<td>exact:By using @all or @channel you are about to send notifications to 5 people. Are you sure you want to do this?</td>
+	<td>By using @all or @channel you are about to send notifications to 5 people*. Are you sure you want to do this?</td>
 </tr>
 <!--Cancel out of warning, message does not post-->
 <tr>
@@ -1952,7 +1952,7 @@
 <tr>
 	<td>waitForText</td>
 	<td>css=div.modal-body &gt; span</td>
-	<td>exact:By using @all or @channel you are about to send notifications to 5 people. Are you sure you want to do this?</td>
+	<td>By using @all or @channel you are about to send notifications to 5 people*. Are you sure you want to do this?</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
